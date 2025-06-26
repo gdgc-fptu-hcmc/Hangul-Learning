@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://hangul.online/</loc>
+    <lastmod>2025-06-26</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://hangul.online/grammar</loc>
+    <lastmod>2025-06-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hangul.online/vocabulary</loc>
+    <lastmod>2025-06-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hangul.online/exercises</loc>
+    <lastmod>2025-06-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://hangul.online/donate</loc>
+    <lastmod>2025-06-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hangul.online/privacy-policy</loc>
+    <lastmod>2025-06-26</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://hangul.online/terms-of-service</loc>
+    <lastmod>2025-06-26</lastmod>
+    <priority>0.4</priority>
+  </url>
+</urlset>

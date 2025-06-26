@@ -3,10 +3,12 @@ import AdsenseAd from '../components/AdsenseAd';
 // import { sc2Raw } from './Basic2';
 import SEO from '../components/SEO';
 
+
 function Grammar() {
   const [selectedLevel, setSelectedLevel] = useState('level1');
   const [selectedLesson, setSelectedLesson] = useState('lesson1');
   const [searchTerm, setSearchTerm] = useState('');
+
 
   // Grammar data for Sơ cấp 1 lessons
   const grammarData = {
@@ -1406,7 +1408,573 @@ function Grammar() {
         }
       ]
     }
-  };
+    };
+
+  const sc4Raw = {
+    lesson1: {
+      title: 'Bài 01: Quy Tắc Chia Có Quy Tắc',
+      
+          grammar: [
+      
+                        {
+              rule: 'Thì Hiện Tại (Đuôi 아/어/해요) - Nguyên âm ㅏ, ㅗ',
+              description: 'Cấu trúc: Gốc từ + 아요. Áp dụng khi gốc từ kết thúc bằng nguyên âm ㅏ, ㅗ.',
+              examples: [
+                { korean: '학교에 가요.', vietnamese: 'Tôi đi đến trường.', note: 'Gốc từ: 가다 + 아요 = 가요' },
+                { korean: 'TV를 봐요.', vietnamese: 'Tôi xem TV.', note: 'Gốc từ: 보다 + 아요 = 봐요' },
+                { korean: '아침에 일찍 일어나요.', vietnamese: 'Tôi dậy sớm vào buổi sáng.', note: 'Gốc từ: 일어나다 + 아요 = 일어나요' }
+              ]
+            },
+      
+                        {
+              rule: 'Thì Hiện Tại (Đuôi 아/어/해요) - Nguyên âm khác',
+              description: 'Cấu trúc: Gốc từ + 어요. Áp dụng khi gốc từ kết thúc bằng các nguyên âm còn lại (ㅓ,ㅜ,ㅣ,ㅐ,...).',
+              examples: [
+                { korean: '점심에 김치찌개를 먹어요.', vietnamese: 'Tôi ăn canh kim chi vào bữa trưa.', note: 'Gốc từ: 먹다 + 어요 = 먹어요' },
+                { korean: '매일 책을 읽어요.', vietnamese: 'Tôi đọc sách hàng ngày.', note: 'Gốc từ: 읽다 + 어요 = 읽어요' },
+                { korean: '친구와 같이 살아요.', vietnamese: 'Tôi sống cùng với bạn.', note: 'Gốc từ: 살다 + 어요 = 살아요' }
+              ]
+            },
+      
+                        {
+              rule: 'Thì Hiện Tại (Đuôi 아/어/해요) - Nguyên âm ㅣ',
+              description: 'Cấu trúc: ㅣ + 어요 → 여요. Quy tắc đặc biệt khi gốc từ kết thúc bằng nguyên âm ㅣ.',
+              examples: [
+                { korean: '카페에서 커피를 마셔요.', vietnamese: 'Tôi uống cà phê ở quán cà phê.', note: 'Gốc từ: 마시다 → 마셔요' },
+                { korean: '버스를 기다려요.', vietnamese: 'Tôi đang chờ xe buýt.', note: 'Gốc từ: 기다리다 → 기다려요' },
+                { korean: '한국어를 배워요.', vietnamese: 'Tôi học tiếng Hàn.', note: 'Gốc từ: 배우다 → 배워요' }
+              ]
+            },
+      
+                        {
+              rule: 'Thì Hiện Tại (Đuôi 아/어/해요) - Nguyên âm ㅡ',
+              description: 'Lược bỏ ㅡ, rồi xét nguyên âm liền trước nó theo quy tắc ㅏ,ㅗ → 아요 hoặc còn lại → 어요.',
+              examples: [
+                { korean: '편지를 써요.', vietnamese: 'Tôi viết thư.', note: 'Gốc từ: 쓰다 → 써요 (lược bỏ ㅡ)' },
+                { korean: '오늘 정말 바빠요.', vietnamese: 'Hôm nay thực sự bận rộn.', note: 'Gốc từ: 바쁘다 → 바빠요' },
+                { korean: '이 옷이 예뻐요.', vietnamese: 'Cái áo này đẹp.', note: 'Gốc từ: 예쁘다 → 예뻐요' }
+              ]
+            },
+      
+                        {
+              rule: 'Thì Hiện Tại (Đuôi 아/어/해요) - 하다',
+              description: 'Cấu trúc: 하다 → 해요. Quy tắc đặc biệt cho động từ kết thúc bằng 하다.',
+              examples: [
+                { korean: '도서관에서 공부해요.', vietnamese: 'Tôi học ở thư viện.', note: 'Gốc từ: 공부하다 → 공부해요' },
+                { korean: '부모님을 사랑해요.', vietnamese: 'Tôi yêu bố mẹ.', note: 'Gốc từ: 사랑하다 → 사랑해요' },
+                { korean: '주말에 청소해요.', vietnamese: 'Tôi dọn dẹp vào cuối tuần.', note: 'Gốc từ: 청소하다 → 청소해요' }
+              ]
+            },
+      
+                        {
+              rule: 'Thì Quá Khứ (Đuôi 았/었어요) - Nguyên âm ㅏ, ㅗ',
+              description: 'Cấu trúc: Gốc từ + 았어요. Áp dụng khi gốc từ có nguyên âm cuối là ㅏ, ㅗ.',
+              examples: [
+                { korean: '어제 친구가 집에 왔어요.', vietnamese: 'Hôm qua bạn tôi đã đến nhà.', note: 'Gốc từ: 오다 → 왔어요' },
+                { korean: '작년에 한국에 갔어요.', vietnamese: 'Năm ngoái tôi đã đi Hàn Quốc.', note: 'Gốc từ: 가다 → 갔어요' },
+                { korean: '그 방이 너무 작았어요.', vietnamese: 'Căn phòng đó quá nhỏ.', note: 'Gốc từ: 작다 → 작았어요' }
+              ]
+            },
+      
+                        {
+              rule: 'Thì Quá Khứ (Đuôi 았/었어요) - Nguyên âm khác',
+              description: 'Cấu trúc: Gốc từ + 었어요. Áp dụng khi gốc từ có nguyên âm cuối là các âm còn lại.',
+              examples: [
+                { korean: '어머니가 맛있는 음식을 만들었어요.', vietnamese: 'Mẹ đã nấu món ăn ngon.', note: 'Gốc từ: 만들다 → 만들었어요' },
+                { korean: '여행에서 사진을 많이 찍었어요.', vietnamese: 'Tôi đã chụp nhiều ảnh trong chuyến du lịch.', note: 'Gốc từ: 찍다 → 찍었어요' },
+                { korean: '어제 밤에 일찍 잤어요.', vietnamese: 'Tối qua tôi đã ngủ sớm.', note: 'Gốc từ: 자다 → 잤어요' }
+              ]
+            },
+      
+                        {
+              rule: 'Thì Quá Khứ (Đuôi 았/었어요) - 하다',
+              description: 'Cấu trúc: 하다 → 했어요. Quy tắc đặc biệt cho động từ kết thúc bằng 하다.',
+              examples: [
+                { korean: '어제 회사에서 늦게까지 일했어요.', vietnamese: 'Hôm qua tôi đã làm việc muộn ở công ty.', note: 'Gốc từ: 일하다 → 일했어요' },
+                { korean: '시험 준비 때문에 너무 피곤했어요.', vietnamese: 'Tôi đã rất mệt vì chuẩn bị thi.', note: 'Gốc từ: 피곤하다 → 피곤했어요' },
+                { korean: '친구들과 파티했어요.', vietnamese: 'Tôi đã tiệc tùng với bạn bè.', note: 'Gốc từ: 파티하다 → 파티했어요' }
+              ]
+            },
+      
+                        {
+              rule: 'Thì Tương Lai (Đuôi (으)ㄹ 거예요) - Có patchim',
+              description: 'Cấu trúc: Gốc từ + 을 거예요. Áp dụng khi gốc từ có phụ âm cuối (patchim).',
+              examples: [
+                { korean: '내일 도서관에서 책을 찾을 거예요.', vietnamese: 'Ngày mai tôi sẽ tìm sách ở thư viện.', note: 'Gốc từ: 찾다 → 찾을 거예요' },
+                { korean: '파티에 예쁜 옷을 입을 거예요.', vietnamese: 'Tôi sẽ mặc đồ đẹp đến bữa tiệc.', note: 'Gốc từ: 입다 → 입을 거예요' },
+                { korean: '주말에 친구들을 만날 거예요.', vietnamese: 'Cuối tuần tôi sẽ gặp bạn bè.', note: 'Gốc từ: 만나다 → 만날 거예요' }
+              ]
+            },
+      
+                        {
+              rule: 'Thì Tương Lai (Đuôi (으)ㄹ 거예요) - Không patchim',
+              description: 'Cấu trúc: Gốc từ + ㄹ 거예요. Áp dụng khi gốc từ không có phụ âm cuối hoặc có patchim là ㄹ.',
+              examples: [
+                { korean: '내년에 중국어를 배울 거예요.', vietnamese: 'Năm sau tôi sẽ học tiếng Trung.', note: 'Gốc từ: 배우다 → 배울 거예요' },
+                { korean: '졸업 후에 서울에서 살 거예요.', vietnamese: 'Sau khi tốt nghiệp tôi sẽ sống ở Seoul.', note: 'Gốc từ: 살다 → 살 거예요' },
+                { korean: '오늘 일찍 잘 거예요.', vietnamese: 'Hôm nay tôi sẽ ngủ sớm.', note: 'Gốc từ: 자다 → 잘 거예요' }
+              ]
+            },
+      
+            {
+      
+              rule: 'Liên kết câu "Nếu... thì..." (-(으)면) - Có patchim',
+      
+              description: 'Cấu trúc: Gốc từ + 으면. Áp dụng khi gốc từ có phụ âm cuối (patchim).',
+      
+              examples: [
+      
+                { korean: '좋다 → 좋 + 으면 = 좋으면', vietnamese: 'tốt → nếu tốt', note: 'Điều kiện' },
+      
+                { korean: '닫다 → 닫 + 으면 = 닫으면', vietnamese: 'đóng → nếu đóng', note: 'Điều kiện' }
+      
+              ]
+      
+            },
+      
+            {
+      
+              rule: 'Liên kết câu "Nếu... thì..." (-(으)면) - Không patchim',
+      
+              description: 'Cấu trúc: Gốc từ + 면. Áp dụng khi gốc từ không có phụ âm cuối hoặc có patchim là ㄹ.',
+      
+              examples: [
+      
+                { korean: '하다 → 하면', vietnamese: 'làm → nếu làm', note: 'Không có patchim' },
+      
+                { korean: '놀다 → 놀면', vietnamese: 'chơi → nếu chơi', note: 'ㄹ không bị lược bỏ' }
+      
+              ]
+      
+            },
+      
+            {
+      
+              rule: 'Liên kết câu "Và", "Rồi" (-고)',
+      
+              description: 'Cấu trúc: Gốc từ + 고. Áp dụng cho MỌI gốc từ để nối hai hành động.',
+      
+              examples: [
+      
+                { korean: '먹다 → 먹고', vietnamese: 'ăn → ăn rồi', note: 'Nối hành động' },
+      
+                { korean: '싸다 → 싸고', vietnamese: 'rẻ → rẻ và', note: 'Nối tính chất' },
+      
+                { korean: '공부하다 → 공부하고', vietnamese: 'học → học rồi', note: 'Động từ 하다' }
+      
+              ]
+      
+            }
+      
+          ]
+      
+        },
+      
+        lesson2: {
+      
+          title: 'Bài 02: Các Trường Hợp Bất Quy Tắc Phổ Biến',
+      
+          grammar: [
+      
+            {
+      
+              rule: "Bất quy tắc 'ㅂ'",
+      
+              description: 'Patchim ㅂ ở cuối gốc từ sẽ biến thành 우 (hoặc 오 với 돕다, 곱다) khi gặp nguyên âm.',
+      
+              examples: [
+      
+                { korean: '춥다 (lạnh) → 추우 + 어요 = 추워요', vietnamese: 'lạnh → lạnh', note: 'ㅂ → 우' },
+      
+                { korean: '덥다 (nóng) → 더우 + 어요 = 더워요', vietnamese: 'nóng → nóng', note: 'ㅂ → 우' },
+      
+                { korean: '돕다 (giúp) → 도오 + 아요 = 도와요', vietnamese: 'giúp → giúp', note: 'ㅂ → 오 (ngoại lệ)' }
+      
+              ]
+      
+            },
+      
+            {
+      
+              rule: "Bất quy tắc 'ㄷ'",
+      
+              description: 'Patchim ㄷ ở cuối gốc từ sẽ biến thành ㄹ khi gặp nguyên âm.',
+      
+              examples: [
+      
+                { korean: '듣다 (nghe) → 들 + 어요 = 들어요', vietnamese: 'nghe → nghe', note: 'ㄷ → ㄹ' },
+      
+                { korean: '걷다 (đi bộ) → 걸 + 어요 = 걸어요', vietnamese: 'đi bộ → đi bộ', note: 'ㄷ → ㄹ' },
+      
+                { korean: '묻다 (hỏi) → 물 + 어요 = 물어요', vietnamese: 'hỏi → hỏi', note: 'ㄷ → ㄹ' }
+      
+              ]
+      
+            },
+      
+            {
+      
+              rule: "Bất quy tắc '르'",
+      
+              description: 'Gốc từ kết thúc bằng 르 khi gặp đuôi -아/어요: 1. Lược bỏ ㅡ, 2. Thêm ㄹ vào làm patchim cho âm tiết trước, 3. Chia -아요/어요 theo âm tiết trước đó.',
+      
+              examples: [
+      
+                { korean: '모르다 (không biết) → 몰 + ㄹ + 아요 = 몰라요', vietnamese: 'không biết → không biết', note: '르 → ㄹ라' },
+      
+                { korean: '부르다 (gọi, hát) → 불 + ㄹ + 어요 = 불러요', vietnamese: 'gọi/hát → gọi/hát', note: '르 → ㄹ러' },
+      
+                { korean: '빠르다 (nhanh) → 빨 + ㄹ + 아요 = 빨라요', vietnamese: 'nhanh → nhanh', note: '르 → ㄹ라' }
+      
+              ]
+      
+            },
+      
+            {
+      
+              rule: "Bất quy tắc 'ㅅ'",
+      
+              description: 'Patchim ㅅ ở cuối một số gốc từ sẽ biến mất khi gặp nguyên âm.',
+      
+              examples: [
+      
+                { korean: '낫다 (khỏi bệnh) → 나 + 아요 = 나아요', vietnamese: 'khỏi bệnh → khỏi bệnh', note: 'ㅅ biến mất' },
+      
+                { korean: '젓다 (khuấy) → 저 + 어요 = 저어요', vietnamese: 'khuấy → khuấy', note: 'ㅅ biến mất' },
+      
+                { korean: '짓다 (xây, làm) → 지 + 어요 = 지어요', vietnamese: 'xây/làm → xây/làm', note: 'ㅅ biến mất' }
+      
+              ]
+      
+            },
+      
+            {
+      
+              rule: "Bất quy tắc 'ㅎ'",
+      
+              description: 'Patchim ㅎ ở một số tính từ (thường là màu sắc) sẽ biến mất và nguyên âm sẽ thay đổi khi gặp -아요/어요.',
+      
+              examples: [
+      
+                { korean: '그렇다 (như thế) → 그래요', vietnamese: 'như thế → như thế', note: 'ㅎ biến mất + nguyên âm thay đổi' },
+      
+                { korean: '어떻다 (như thế nào) → 어때요', vietnamese: 'như thế nào → như thế nao', note: 'ㅎ biến mất + nguyên âm thay đổi' },
+      
+                { korean: '빨갛다 (màu đỏ) → 빨개요', vietnamese: 'đỏ → đỏ', note: 'ㅎ biến mất + nguyên âm thay đổi' },
+      
+                { korean: '노랗다 (màu vàng) → 노래요', vietnamese: 'vàng → vàng', note: 'ㅎ biến mất + nguyên âm thay đổi' }
+      
+              ]
+      
+            },
+      
+            {
+      
+              rule: "Bất quy tắc 'ㄹ'",
+      
+              description: 'Gốc từ có patchim ㄹ sẽ mất ㄹ khi gặp các đuôi bắt đầu bằng ㄴ, ㅂ, ㅅ hoặc ngữ pháp -(으).',
+      
+              examples: [
+      
+                { korean: '살다 (sống) + -ㅂ니다 → 삽니다', vietnamese: 'sống → sống (trang trọng)', note: 'ㄹ mất khi gặp ㅂ' },
+      
+                { korean: '만들다 (làm) + -세요 → 만드세요', vietnamese: 'làm → hãy làm', note: 'ㄹ mất khi gặp ㅅ' },
+      
+                { korean: '알다 (biết) + -(으)면 → 알면', vietnamese: 'biết → nếu biết', note: 'Ngoại lệ của ngoại lệ' }
+      
+              ]
+      
+            }
+      
+          ]
+      
+        },
+      
+        lesson3: {
+      
+          title: 'Bài 03: Các Mức Độ Kính Ngữ (Đuôi Câu)',
+      
+          grammar: [
+      
+            {
+      
+              rule: 'Trang trọng, Lịch sự (격식체)',
+      
+              description: 'Cấu trúc: -(스)ㅂ니다 / -(스)ㅂ니까? Dùng trong các tình huống trang trọng: phát biểu, báo cáo, tin tức, quân đội.',
+      
+              examples: [
+      
+                { korean: '갑니다', vietnamese: 'Tôi đi.', note: 'Trần thuật trang trọng' },
+      
+                { korean: '갑니까?', vietnamese: 'Ngài đi à?', note: 'Nghi vấn trang trọng' }
+      
+              ]
+      
+            },
+      
+            {
+      
+              rule: 'Thân mật, Lịch sự (비격식체)',
+      
+              description: 'Cấu trúc: -아요 / -어요. Phổ biến nhất trong giao tiếp hàng ngày. Đủ lịch sự với người lớn tuổi, nhưng vẫn thân thiện.',
+      
+              examples: [
+      
+                { korean: '가요', vietnamese: 'Tôi đi / Bạn đi à?', note: 'Thân mật nhưng lịch sự' },
+      
+                { korean: '가요?', vietnamese: 'Đi à?', note: 'Hỏi một cách thân thiện' }
+      
+              ]
+      
+            },
+      
+            {
+      
+              rule: 'Thân mật, Suồng sã (반말)',
+      
+              description: 'Cấu trúc: -아 / -어. Dùng với bạn bè rất thân, người nhỏ tuổi hơn. KHÔNG dùng với người lạ hoặc người lớn tuổi.',
+      
+              examples: [
+      
+                { korean: '가', vietnamese: 'Đi đây / Đi à?', note: 'Rất thân mật' },
+      
+                { korean: '가?', vietnamese: 'Đi hả?', note: 'Hỏi thân mật' }
+      
+              ]
+      
+            }
+      
+          ]
+      
+        },
+      
+        lesson4: {
+      
+          title: 'Bài 04: Chia Danh Từ với 이다 (là)',
+      
+          grammar: [
+      
+            {
+      
+              rule: 'Danh từ có Patchim - Trang trọng',
+      
+              description: 'Cấu trúc: N + 입니다. Dùng với danh từ có phụ âm cuối trong văn cảnh trang trọng.',
+      
+              examples: [
+      
+                { korean: '학생 + 입니다 → 학생입니다', vietnamese: 'là học sinh', note: 'Danh từ có patchim ㅇ' }
+      
+              ]
+      
+            },
+      
+            {
+      
+              rule: 'Danh từ không có Patchim - Trang trọng',
+      
+              description: 'Cấu trúc: N + 입니다. Dùng với danh từ không có phụ âm cuối trong văn cảnh trang trọng.',
+      
+              examples: [
+      
+                { korean: '의사 + 입니다 → 의사입니다', vietnamese: 'là bác sĩ', note: 'Danh từ không có patchim' }
+      
+              ]
+      
+            },
+      
+            {
+      
+              rule: 'Danh từ có Patchim - Thân mật, Lịch sự',
+      
+              description: 'Cấu trúc: N + 이에요. Dùng với danh từ có phụ âm cuối trong văn cảnh thân mật nhưng lịch sự.',
+      
+              examples: [
+      
+                { korean: '학생 + 이에요 → 학생이에요', vietnamese: 'là học sinh', note: 'Thân mật với người có patchim' }
+      
+              ]
+      
+            },
+      
+            {
+      
+              rule: 'Danh từ không có Patchim - Thân mật, Lịch sự',
+      
+              description: 'Cấu trúc: N + 예요. Dùng với danh từ không có phụ âm cuối trong văn cảnh thân mật nhưng lịch sự.',
+      
+              examples: [
+      
+                { korean: '의사 + 예요 → 의사예요', vietnamese: 'là bác sĩ', note: 'Thân mật với người không có patchim' }
+      
+              ]
+      
+            },
+      
+            {
+      
+              rule: 'Phủ định với 이다',
+      
+              description: 'Cấu trúc: N + 이/가 아닙니다/아니에요. Dùng để phủ định danh từ.',
+      
+              examples: [
+      
+                { korean: '학생이/가 아닙니다', vietnamese: 'không phải là học sinh', note: 'Phủ định trang trọng' },
+      
+                { korean: '학생이/가 아니에요', vietnamese: 'không phải là học sinh', note: 'Phủ định thân mật' }
+      
+              ]
+      
+            }
+      
+          ]
+      
+        },
+      
+        lesson5: {
+      
+          title: 'Bài 05: Các Dạng Câu Phủ Định',
+      
+          grammar: [
+      
+            {
+      
+              rule: 'Phủ định với 안',
+      
+              description: 'Cấu trúc: 안 + V/A. Phổ biến trong văn nói. Với động từ 하다, 안 đứng trước 하다.',
+      
+              examples: [
+      
+                { korean: '안 봐요.', vietnamese: 'Không xem.', note: 'Phủ định động từ' },
+      
+                { korean: '운동을 안 해요', vietnamese: 'Không tập thể dục', note: 'Với động từ 하다' }
+      
+              ]
+      
+            },
+      
+            {
+      
+              rule: 'Phủ định với -지 않다',
+      
+              description: 'Cấu trúc: V/A + -지 않다. Trang trọng hơn, thường dùng trong văn viết. 않다 được chia đuôi câu.',
+      
+              examples: [
+      
+                { korean: '보지 않아요.', vietnamese: 'Không xem.', note: 'Phủ định trang trọng' }
+      
+              ]
+      
+            }
+      
+          ]
+      
+        },
+      
+        lesson6: {
+      
+          title: 'Bài 06: Các Đuôi Liên Kết Câu Phổ Biến',
+      
+          grammar: [
+      
+            {
+      
+              rule: '-지만',
+      
+              description: 'Cấu trúc: V/A + -지만. Ý nghĩa: "...nhưng...". Gắn trực tiếp vào gốc từ.',
+      
+              examples: [
+      
+                { korean: '예쁘다 → 예쁘지만 비싸요.', vietnamese: 'Đẹp nhưng đắt.', note: 'Liên từ đối lập' }
+      
+              ]
+      
+            },
+      
+            {
+      
+              rule: '-아서/어서',
+      
+              description: 'Cấu trúc: V/A + -아서/어서. Ý nghĩa: "...vì...nên... / ...rồi...". Chia giống hệt quy tắc -아요/어요.',
+      
+              examples: [
+      
+                { korean: '비가 오다 → 비가 와서 못 가요.', vietnamese: 'Vì trời mưa nên không đi được.', note: 'Chỉ nguyên nhân' }
+      
+              ]
+      
+            },
+      
+            {
+      
+              rule: '-(으)니까',
+      
+              description: 'Cấu trúc: V/A + -(으)니까. Ý nghĩa: "...vì...nên..." (thường đi với mệnh lệnh/rủ rê). Có patchim: +으니까, Không patchim/patchim ㄹ: +니까.',
+      
+              examples: [
+      
+                { korean: '덥다 → 더우니까 에어컨을 켜세요.', vietnamese: 'Vì nóng nên hãy bật điều hòa.', note: 'Lời khuyên' }
+      
+              ]
+      
+            }
+      
+                    ]
+        },
+
+        lessonIrregular: {
+          title: 'Bài 07: Quy Tắc Chia Bất Quy Tắc',
+          grammar: [
+            {
+              rule: 'ㅂ 불규칙 (Bất quy tắc ㅂ)',
+              description: 'Cấu trúc: Một số tính từ kết thúc bằng ㅂ khi gặp nguyên âm, ㅂ → 우. Không áp dụng cho động từ.',
+              examples: [
+                { korean: '덥다 → 더워요', vietnamese: 'nóng → nóng', note: 'ㅂ + 어요 → 우 + 어요 = 워요' },
+                { korean: '춥다 → 추워요', vietnamese: 'lạnh → lạnh', note: 'ㅂ + 어요 → 우 + 어요 = 워요' }
+              ]
+            },
+            {
+              rule: 'ㄷ 불규칙 (Bất quy tắc ㄷ)',
+              description: 'Cấu trúc: Một số động từ kết thúc bằng ㄷ khi gặp nguyên âm, ㄷ → ㄹ.',
+              examples: [
+                { korean: '듣다 → 들어요', vietnamese: 'nghe → nghe', note: 'ㄷ + 어요 → ㄹ + 어요' },
+                { korean: '걷다 → 걸어요', vietnamese: 'đi bộ → đi bộ', note: 'ㄷ + 어요 → ㄹ + 어요' }
+              ]
+            },
+            {
+              rule: '르 불규칙 (Bất quy tắc 르)',
+              description: 'Cấu trúc: Động từ/tính từ kết thúc bằng 르 khi gặp nguyên âm, ㅡ bị lược bỏ và thêm ㄹ vào âm tiết trước.',
+              examples: [
+                { korean: '부르다 → 불러요', vietnamese: 'hát → hát', note: '르 + 어요 → ㄹ + 러요' },
+                { korean: '모르다 → 몰라요', vietnamese: 'không biết → không biết', note: '르 + 아요 → ㄹ + 라요' }
+              ]
+            },
+            {
+              rule: 'ㅅ 불규칙 (Bất quy tắc ㅅ)',
+              description: 'Cấu trúc: Một số động từ/tính từ kết thúc bằng ㅅ khi gặp nguyên âm, ㅅ bị lược bỏ.',
+              examples: [
+                { korean: '낫다 → 나아요', vietnamese: 'khỏi → khỏi', note: 'ㅅ + 아요 → 아요' },
+                { korean: '짓다 → 지어요', vietnamese: 'xây → xây', note: 'ㅅ + 어요 → 어요' }
+              ]
+            },
+            {
+              rule: 'ㅎ 불규칙 (Bất quy tắc ㅎ)',
+              description: 'Cấu trúc: Tính từ kết thúc bằng ㅎ khi gặp nguyên âm có ㅇ, ㅎ và ㅇ đều bị lược bỏ.',
+              examples: [
+                { korean: '하얗다 → 하얘요', vietnamese: 'trắng → trắng', note: 'ㅎ + 아요 → 얘요' },
+                { korean: '어떻다 → 어때요', vietnamese: 'thế nào → thế nào', note: 'ㅎ + 어요 → 때요' }
+              ]
+            },
+            {
+              rule: 'ㄹ 불규칙 (Bất quy tắc ㄹ)',
+              description: 'Cấu trúc: Động từ/tính từ kết thúc bằng ㄹ khi gặp ㄴ, ㅂ, ㅅ, ㄹ bị lược bỏ.',
+              examples: [
+                { korean: '살다 → 살아요 (bình thường)', vietnamese: 'sống → sống', note: 'Không áp dụng với nguyên âm' },
+                { korean: '살다 → 사(ㄹ 탈락)ㄴ다 → 산다', vietnamese: 'sống → sống (thể phẳng)', note: 'ㄹ + ㄴ → ㄴ' }
+              ]
+            }
+          ]
+        }
+      };
 
   const grammarLevels = {
     level1: {
@@ -1420,6 +1988,10 @@ function Grammar() {
     level3: {
       title: 'Tiếng Hàn Tổng Hợp - Trung cấp 1',
       lessons: sc3Raw,
+    },
+    level4: {
+      title: 'Quy tắc chia: Có quy tắc & bất quy tắc',
+      lessons: sc4Raw,
     },
   };
 
@@ -1470,6 +2042,97 @@ function Grammar() {
     }
   };
 
+  // Function to highlight Korean text with colors based on grammar analysis
+  const highlightKoreanText = (text, note) => {
+    // For irregular verb examples (showing transformation)
+    if (text.includes('→')) {
+      const parts = text.split('→');
+      return (
+        <span className="flex items-center gap-2 flex-wrap">
+          <span className="bg-red-100 text-red-800 px-2 py-1 rounded font-semibold border border-red-200">
+            {parts[0].trim()}
+          </span>
+          <span className="text-gray-500 font-bold">→</span>
+          <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded font-semibold border border-blue-200">
+            {parts[1].trim()}
+          </span>
+        </span>
+      );
+    }
+    
+    // For regular sentence examples
+    if (note && note.includes('Gốc từ:') && !text.includes('→')) {
+      // Split by spaces but preserve punctuation
+      const words = text.split(/(\s+|[.,!?])/).filter(part => part.trim() !== '');
+      
+      return (
+        <span className="flex flex-wrap gap-1 items-center">
+          {words.map((word, index) => {
+            const cleanWord = word.replace(/[.,!?]/g, '');
+            
+            // Highlight verb endings (conjugated forms)
+            if (cleanWord.endsWith('요') || cleanWord.endsWith('어요') || cleanWord.endsWith('아요') || 
+                cleanWord.endsWith('해요') || cleanWord.endsWith('었어요') || cleanWord.endsWith('았어요') ||
+                cleanWord.endsWith('할게요') || cleanWord.endsWith('거예요')) {
+              return (
+                <span key={index} className="bg-blue-100 text-blue-800 px-2 py-1 rounded font-semibold border border-blue-200 shadow-sm">
+                  {word}
+                </span>
+              );
+            }
+            // Highlight particles
+            else if (word.includes('을') || word.includes('를') || word.includes('이') || word.includes('가') || 
+                     word.includes('에') || word.includes('에서') || word.includes('와') || word.includes('과') ||
+                     word.includes('의') || word.includes('도') || word.includes('만')) {
+              return (
+                <span key={index} className="bg-green-100 text-green-700 px-1.5 py-0.5 rounded font-medium border border-green-200">
+                  {word}
+                </span>
+              );
+            }
+            // Highlight time expressions
+            else if (cleanWord.includes('어제') || cleanWord.includes('오늘') || cleanWord.includes('내일') || 
+                     cleanWord.includes('주말') || cleanWord.includes('아침') || cleanWord.includes('저녁') ||
+                     cleanWord.includes('작년') || cleanWord.includes('내년') || cleanWord.includes('매일')) {
+              return (
+                <span key={index} className="bg-purple-100 text-purple-800 px-1.5 py-0.5 rounded font-medium border border-purple-200">
+                  {word}
+                </span>
+              );
+            }
+            // Highlight locations
+            else if (cleanWord.includes('집') || cleanWord.includes('학교') || cleanWord.includes('회사') || 
+                     cleanWord.includes('도서관') || cleanWord.includes('카페') || cleanWord.includes('서울') ||
+                     cleanWord.includes('한국')) {
+              return (
+                <span key={index} className="bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded font-medium border border-yellow-200">
+                  {word}
+                </span>
+              );
+            }
+            // Highlight objects/nouns
+            else if (cleanWord.includes('책') || cleanWord.includes('음식') || cleanWord.includes('커피') || 
+                     cleanWord.includes('옷') || cleanWord.includes('사진') || cleanWord.includes('친구') ||
+                     cleanWord.includes('부모님') || cleanWord.includes('TV')) {
+              return (
+                <span key={index} className="bg-orange-100 text-orange-800 px-1.5 py-0.5 rounded font-medium border border-orange-200">
+                  {word}
+                </span>
+              );
+            }
+            // Regular words
+            else {
+              return <span key={index} className="text-gray-800">{word}</span>;
+            }
+          })}
+        </span>
+      );
+    }
+    
+    // Default: return original text with basic styling
+    return <span className="text-gray-800 font-medium">{text}</span>;
+  };
+
   return (
     <>
       <SEO title={seo.title} description={seo.description} />
@@ -1505,7 +2168,10 @@ function Grammar() {
                         : 'bg-gray-100 text-gray-700 hover:bg-orange-100 hover:text-primary'
                     }`}
                   >
-                    {key === 'level1' ? 'Sơ cấp 1' : key === 'level2' ? 'Sơ cấp 2' : 'Trung cấp 1'}
+                    {key === 'level1' ? 'Sơ cấp 1' : 
+                     key === 'level2' ? 'Sơ cấp 2' : 
+                     key === 'level3' ? 'Trung cấp 1' : 
+                     'Quy tắc chia'}
                   </button>
                 ))}
               </div>
@@ -1562,8 +2228,11 @@ function Grammar() {
                            <div className="mt-3 space-y-2">
                              {item.examples.map((ex, i) => (
                                <div key={i} className="p-3 bg-light-gray rounded-md">
-                                 <p className="font-semibold text-text-dark">{ex.korean}</p>
-                                 <p className="text-sm text-text-light">{ex.vietnamese}</p>
+                                 <p className="font-semibold text-text-dark text-lg leading-relaxed">
+                                   {highlightKoreanText(ex.korean, ex.note)}
+                                 </p>
+                                 <p className="text-sm text-text-light mt-2">{ex.vietnamese}</p>
+                                 {ex.note && <p className="text-xs text-gray-500 mt-1 italic">💡 {ex.note}</p>}
                                </div>
                              ))}
                            </div>
@@ -1592,19 +2261,52 @@ function Grammar() {
                     <h2 className="text-3xl font-bold text-secondary border-b-2 border-primary pb-3">
                       {selectedLessonData.title}
                     </h2>
+                    
+                    {/* Color Legend */}
+                    <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                      <h4 className="text-sm font-semibold text-gray-700 mb-3">Chú thích màu sắc:</h4>
+                      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 text-xs">
+                        <div className="flex items-center gap-1">
+                          <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded border border-blue-200 font-semibold">동사</span>
+                          <span className="text-gray-600">Động từ</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <span className="bg-green-100 text-green-700 px-2 py-1 rounded border border-green-200">을/를</span>
+                          <span className="text-gray-600">Trợ từ</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded border border-purple-200">어제</span>
+                          <span className="text-gray-600">Thời gian</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded border border-yellow-200">집</span>
+                          <span className="text-gray-600">Địa điểm</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded border border-orange-200">책</span>
+                          <span className="text-gray-600">Danh từ</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <span className="bg-red-100 text-red-800 px-2 py-1 rounded border border-red-200">가다</span>
+                          <span className="text-gray-600">Gốc từ</span>
+                        </div>
+                      </div>
+                    </div>
                     {selectedLessonData.grammar.map((item, index) => (
                       <div key={index} className="pt-4">
                         <h3 className="text-2xl font-semibold text-primary mb-2">{item.rule}</h3>
                         <p className="text-base text-text-light mb-4">{item.description}</p>
                         <div className="space-y-3">
                           {item.examples.map((ex, i) => (
-                            <div key={i} className="border-l-4 border-orange-200 pl-4 py-2 bg-light-gray rounded-r-md">
-                              <p className="font-medium text-text-dark">{ex.korean}</p>
-                              <p className="text-text-light">{ex.vietnamese}</p>
-                              {ex.note && <p className="text-xs text-gray-400 mt-1 italic">({ex.note})</p>}
-                </div>
-              ))}
-            </div>
+                            <div key={i} className="border-l-4 border-orange-200 pl-4 py-3 bg-light-gray rounded-r-md">
+                              <p className="font-medium text-text-dark text-lg leading-relaxed">
+                                {highlightKoreanText(ex.korean, ex.note)}
+                              </p>
+                              <p className="text-text-light mt-2">{ex.vietnamese}</p>
+                              {ex.note && <p className="text-xs text-gray-500 mt-2 italic bg-gray-50 px-2 py-1 rounded">💡 {ex.note}</p>}
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     ))}
                   </div>
