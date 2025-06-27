@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
+import Basic from './pages/Basic';
 import Grammar from './pages/Grammar';
 import About from './pages/About';
 import Donate from './pages/Donate';
@@ -16,6 +17,7 @@ function App() {
   // Helper to derive current page id from path for active menu highlight
   const usePageId = () => {
     const { pathname } = useLocation();
+    if (pathname.startsWith('/basic')) return 'basic';
     if (pathname.startsWith('/grammar')) return 'grammar';
     if (pathname.startsWith('/vocabulary')) return 'vocabulary';
     if (pathname.startsWith('/exercises')) return 'exercises';
@@ -33,6 +35,7 @@ function App() {
           <Suspense fallback={<div style={{ textAlign: 'center', padding: '4rem' }}>Đang tải...</div>}>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/basic" element={<Basic />} />
               <Route path="/grammar" element={<Grammar />} />
               <Route path="/vocabulary" element={<Vocabulary />} />
               <Route path="/exercises" element={<Exercises />} />

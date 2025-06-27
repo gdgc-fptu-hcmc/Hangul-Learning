@@ -5,6 +5,7 @@ function Header() {
   const location = useLocation();
   const menuItems = [
     { path: '/', label: 'Trang chủ' },
+    { path: '/basic', label: 'Cơ bản' },
     { path: '/grammar', label: 'Ngữ pháp' },
     { path: '/vocabulary', label: 'Từ vựng' },
     { path: '/exercises', label: 'Bài tập' },

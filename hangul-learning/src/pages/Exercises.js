@@ -1,417 +1,789 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import SEO from '../components/SEO';
-import { Book, HelpCircle, Repeat, Award, ChevronLeft } from 'lucide-react';
+import AdsenseAd from '../components/AdsenseAd';
+import { Volume2, VolumeX, Headphones, BookOpen, PenTool, CheckCircle, XCircle, RotateCcw, Pause, SkipForward, Award } from 'lucide-react';
 
 function Exercises() {
-  // --- Data for all exercises ---
-  const exerciseData = useMemo(() => ({
-    vocabulary: {
-      title: 'Từ vựng cơ bản',
-      level: 'Sơ cấp',
-      category: 'Từ vựng',
-      description: 'Kiểm tra từ vựng thiết yếu trong giao tiếp hàng ngày',
-      questions: [
-        {
-          situation: 'Bạn muốn chào hỏi một người lạ một cách lịch sự',
-          question: 'Bạn sẽ nói gì?',
-          options: [
-            '안녕! (annyeong)',
-            '안녕하세요 (annyeonghaseyo)',
-            '여보세요 (yeoboseyo)',
-            '잘 가 (jal ga)'
-          ],
-          correct: 1,
-          explanation: '안녕하세요 là cách chào lịch sự dùng với người lạ. 안녕 chỉ dùng với bạn bè thân. 여보세요 dùng khi nghe điện thoại. 잘 가 có nghĩa là "đi nhé".'
-        },
-        {
-          situation: 'Bạn muốn cảm ơn ai đó một cách trang trọng',
-          question: 'Bạn sẽ nói gì?',
-          options: [
-            '고마워 (gomawo)',
-            '감사해요 (gamsahaeyo)', 
-            '감사합니다 (gamsahamnida)',
-            '미안해 (mianhae)'
-          ],
-          correct: 2,
-          explanation: '감사합니다 là cách cảm ơn trang trọng nhất. 고마워 và 감사해요 thân thiện hơn. 미안해 có nghĩa là "xin lỗi".'
-        },
-        {
-          situation: 'Từ: 친구',
-          question: 'Bạn chọn nghĩa tiếng Việt nào cho "친구"?',
-          options: ['Bạn bè', 'Thời tiết', 'Du lịch', 'Sinh viên'],
-          correct: 0,
-          explanation: '친구 = Bạn bè.'
-        },
-        {
-          situation: 'Từ: 음식',
-          question: '"음식" nghĩa là gì?',
-          options: ['Âm nhạc', 'Đồ ăn', 'Công ty', 'Gia đình'],
-          correct: 1,
-          explanation: '음식 = Đồ ăn.'
-        },
-        {
-          situation: 'Từ: 시간',
-          question: 'Nghĩa đúng của "시간"?',
-          options: ['Tiền', 'Thời gian', 'Trường học', 'Sách'],
-          correct: 1,
-          explanation: '시간 = Thời gian.'
-        },
-        {
-          situation: 'Từ: 돈',
-          question: '"돈" có nghĩa là?',
-          options: ['Tiền', 'Nước', 'Nhà', 'Công việc'],
-          correct: 0,
-          explanation: '돈 = Tiền.'
-        },
-        {
-          situation: 'Từ: 책',
-          question: 'Nghĩa tiếng Việt của "책" là?',
-          options: ['Sách', 'Thức ăn', 'Bạn', 'Tiền'],
-          correct: 0,
-          explanation: '책 = Sách.'
-        },
-        {
-          situation: 'Từ: 물',
-          question: '"물" nghĩa là gì?',
-          options: ['Nước', 'Nhà', 'Âm nhạc', 'Công việc'],
-          correct: 0,
-          explanation: '물 = Nước.'
-        }
-      ]
-    },
-    grammar: {
-      title: 'Ngữ pháp cơ bản',
-      level: 'Sơ cấp',
-      category: 'Ngữ pháp',
-      description: 'Luyện tập các cấu trúc ngữ pháp quan trọng',
-      questions: [
-        {
-          situation: 'Bạn muốn hỏi "Cái này là gì?"',
-          question: 'Câu nào đúng?',
-          options: [
-            '이것은 뭐예요?',
-            '이것이 뭐예요?',
-            '이거는 뭐예요?',
-            'Tất cả đều đúng'
-          ],
-          correct: 3,
-          explanation: 'Cả ba cách đều đúng. 이것은/이것이 trang trọng, 이거는 thân mật. 은/는 là trợ từ chủ đề, 이/가 là trợ từ chủ ngữ.'
-        },
-        {
-          situation: 'Bạn muốn nói "Tôi là sinh viên"',
-          question: 'Câu nào tự nhiên nhất?',
-          options: [
-            '나는 학생이에요',
-            '저는 학생입니다',
-            '나 학생이야',
-            '저 학생이에요'
-          ],
-          correct: 1,
-          explanation: '저는 학생입니다 là cách lịch sự và thường dùng nhất khi giới thiệu bản thân. 나는/나 thân mật hơn.'
-        },
-        {
-          situation: 'Bạn muốn nói "Tôi là người Việt Nam" (trang trọng).',
-          question: 'Câu nào đúng?',
-          options: [
-            '저는 베트남 사람입니다',
-            '나는 베트남 사람이야',
-            '저는 베트남 사람이다',
-            '나는 베트남 사람입니다'
-          ],
-          correct: 0,
-          explanation: 'Danh từ + 입니다 dùng giới thiệu trang trọng: 저는 베트남 사람입니다.'
-        },
-        {
-          situation: 'Muốn nối 2 danh từ "사과" và "바나나" bằng "và" trong câu.',
-          question: 'Cấu trúc nào đúng?',
-          options: ['사과 하고 바나나', '사과와 바나나', '사과에 바나나', '사과를 바나나'],
-          correct: 1,
-          explanation: '와/과 nối hai danh từ: 사과와 바나나.'
-        },
-        {
-          situation: 'Bạn muốn phủ định: "Không phải giáo viên" (trang trọng).',
-          question: 'Câu đúng là?',
-          options: ['선생님이 아닙니다', '선생님이 아니다', '선생님 아닙니까', '선생님이 아니에요?'],
-          correct: 0,
-          explanation: 'Cấu trúc phủ định: N + 이/가 아닙니다.'
-        },
-        {
-          situation: 'Bạn muốn nói "Đây là sách" (trang trọng).',
-          question: 'Câu nào đúng?',
-          options: ['이것은 책입니다', '이것은 책이에요', '이거 책이야', '책은 이것입니다'],
-          correct: 0,
-          explanation: 'Cấu trúc xác nhận N입니다: 이것은 책입니다.'
-        },
-        {
-          situation: 'Bạn muốn hỏi "Ai đã đến?" trong văn nói thân mật.',
-          question: 'Câu Hàn nào đúng?',
-          options: ['누가 왔어요?', '누가 옵니다?', '누가 왔다?', '누구 왔습니까?'],
-          correct: 0,
-          explanation: 'Thân mật-lịch sự: V/A-았/었어요? => 누가 왔어요?'
-        }
-      ]
-    },
-    reading: {
-      title: 'Đọc hiểu Sơ cấp',
-      level: 'Sơ cấp',
-      category: 'Đọc hiểu',
-      description: 'Đọc và hiểu các đoạn văn tiếng Hàn đơn giản',
-      questions: [
-        {
-          situation: 'Đọc đoạn văn: "저는 김민수입니다. 한국 사람이에요. 서울에 살아요. 대학생이에요."',
-          question: 'Thông tin nào đúng về Kim Min-su?',
-          options: [
-            'Anh ấy là người Nhật',
-            'Anh ấy sống ở Busan',
-            'Anh ấy là sinh viên đại học',
-            'Anh ấy làm việc tại công ty'
-          ],
-          correct: 2,
-          explanation: 'Trong đoạn văn có "대학생이에요" nghĩa là "tôi là sinh viên đại học". 한국 사람 = người Hàn, 서울에 살아요 = sống ở Seoul.'
-        }
-      ]
-    },
-    vocab_sc1: {
-      title: 'Từ vựng Sơ cấp 1',
-      level: 'Sơ cấp',
-      category: 'Từ vựng',
-      description: 'Ôn 10 từ căn bản theo sách Tiếng Hàn Tổng Hợp 1.',
-      questions: [
-        { situation: '"안녕하세요"', question: 'Nghĩa tiếng Việt?', options: ['Xin chào', 'Cảm ơn', 'Tạm biệt', 'Xin lỗi'], correct: 0, explanation: '안녕하세요 = Xin chào.' },
-        { situation: '"고맙습니다"', question: 'Nghĩa tiếng Việt?', options: ['Xin lỗi', 'Cảm ơn', 'Nhà', 'Trường'], correct: 1, explanation: '고맙습니다 = Cảm ơn (trang trọng).' },
-        { situation: '"학교"', question: 'Nghĩa tiếng Việt?', options: ['Công ty', 'Gia đình', 'Trường học', 'Bạn'], correct: 2, explanation: '학교 = Trường học.' },
-        { situation: '"집"', question: 'Nghĩa?', options: ['Nhà', 'Sách', 'Thời gian', 'Tiền'], correct: 0, explanation: '집 = Nhà.' },
-        { situation: '"물"', question: 'Nghĩa?', options: ['Nước', 'Cơm', 'Bạn', 'Du lịch'], correct: 0, explanation: '물 = Nước.' },
-        { situation: '"밥"', question: 'Nghĩa?', options: ['Cơm', 'Nhạc', 'Thời tiết', 'Tiền'], correct: 0, explanation: '밥 = Cơm.' },
-        { situation: '"친구"', question: 'Nghĩa?', options: ['Bạn bè', 'Gia đình', 'Du lịch', 'Thời gian'], correct: 0, explanation: '친구 = Bạn bè.' },
-        { situation: '"책"', question: 'Nghĩa?', options: ['Sách', 'Công việc', 'Tiền', 'Nước'], correct: 0, explanation: '책 = Sách.' },
-        { situation: '"시간"', question: 'Nghĩa?', options: ['Thời gian', 'Tiền', 'Nhà', 'Công ty'], correct: 0, explanation: '시간 = Thời gian.' },
-        { situation: '"돈"', question: 'Nghĩa?', options: ['Tiền', 'Đồ ăn', 'Trường', 'Sách'], correct: 0, explanation: '돈 = Tiền.' }
-      ]
-    },
-  }), []);
-
-  const [selectedExerciseId, setSelectedExerciseId] = useState('vocabulary');
-  const [gameState, setGameState] = useState('idle'); // 'idle', 'active', 'results'
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [answers, setAnswers] = useState([]);
-
-  const selectedExercise = exerciseData[selectedExerciseId];
-  const currentQuestion = selectedExercise.questions[currentQuestionIndex];
-  
-  // Reset state when exercise changes
-  useEffect(() => {
-    setGameState('idle');
-    setCurrentQuestionIndex(0);
-    setAnswers([]);
-  }, [selectedExerciseId]);
-
-  const handleAnswerSelect = (selectedIndex) => {
-    if (answers[currentQuestionIndex] !== undefined) return; // Prevent changing answer
-    const isCorrect = selectedIndex === currentQuestion.correct;
-    setAnswers([...answers, { question: currentQuestion.question, selected: selectedIndex, correct: currentQuestion.correct, isCorrect }]);
+  // Exercise types
+  const EXERCISE_TYPES = {
+    LISTENING: 'listening',
+    READING: 'reading', 
+    WRITING: 'writing'
   };
 
-  const handleNextQuestion = () => {
-    if (currentQuestionIndex < selectedExercise.questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
+  // Vocabulary data for exercises (from Vocabulary.js)
+  const vocabularyData = useMemo(() => ({
+    level1: [
+      { korean: "안녕하세요", pronunciation: "an-nyeong-ha-se-yo", meaning: "Xin chào", type: "인사말" },
+      { korean: "고맙습니다", pronunciation: "go-map-seub-ni-da", meaning: "Cảm ơn", type: "인사말" },
+      { korean: "학교", pronunciation: "hak-gyo", meaning: "Trường học", type: "명사" },
+      { korean: "집", pronunciation: "jip", meaning: "Nhà", type: "명사" },
+      { korean: "물", pronunciation: "mul", meaning: "Nước", type: "명사" },
+      { korean: "밥", pronunciation: "bap", meaning: "Cơm", type: "명사" },
+      { korean: "친구", pronunciation: "chin-gu", meaning: "Bạn", type: "명사" },
+      { korean: "책", pronunciation: "chaek", meaning: "Sách", type: "명사" },
+      { korean: "시간", pronunciation: "si-gan", meaning: "Thời gian", type: "명사" },
+      { korean: "돈", pronunciation: "don", meaning: "Tiền", type: "명사" },
+      { korean: "음식", pronunciation: "eum-sik", meaning: "Đồ ăn", type: "명사" },
+      { korean: "가족", pronunciation: "ga-jok", meaning: "Gia đình", type: "명사" },
+      { korean: "일", pronunciation: "il", meaning: "Công việc", type: "명사" },
+      { korean: "사람", pronunciation: "sa-ram", meaning: "Người", type: "명사" },
+      { korean: "날씨", pronunciation: "nal-ssi", meaning: "Thời tiết", type: "명사" }
+    ],
+    level2: [
+      { korean: "가져오다", pronunciation: "ga-jyeo-o-da", meaning: "mang đến", type: "동사" },
+      { korean: "걱정", pronunciation: "geok-jeong", meaning: "lo lắng", type: "명사" },
+      { korean: "먼저", pronunciation: "meon-jeo", meaning: "trước tiên", type: "부사" },
+      { korean: "명함", pronunciation: "myeong-ham", meaning: "danh thiếp", type: "명사" },
+      { korean: "사용하다", pronunciation: "sa-yong-ha-da", meaning: "sử dụng", type: "동사" }
+    ]
+  }), []);
+
+  // Grammar examples for exercises (from Grammar.js)
+  const grammarData = useMemo(() => ({
+    basic: [
+      { korean: "저는 베트남 사람입니다.", vietnamese: "Tôi là người Việt Nam.", grammar: "입니다" },
+      { korean: "여기는 교실입니다.", vietnamese: "Đây là lớp học.", grammar: "입니다" },
+      { korean: "선생님입니까?", vietnamese: "Anh/chị có phải là giáo viên không?", grammar: "입니까" },
+      { korean: "거기가 역입니까?", vietnamese: "Kia có phải là ga tàu không?", grammar: "입니까" },
+      { korean: "저는 학생입니다.", vietnamese: "Tôi là sinh viên.", grammar: "은/는" },
+      { korean: "오늘은 날씨가 좋아요.", vietnamese: "Hôm nay thời tiết đẹp.", grammar: "은/는" },
+      { korean: "여기가 도서관입니다.", vietnamese: "Đây là thư viện.", grammar: "여기/거기/저기" },
+      { korean: "거기가 회사예요?", vietnamese: "Đó có phài công ty không?", grammar: "여기/거기/저기" },
+      { korean: "이것은 무엇입니까?", vietnamese: "Đây là cái gì?", grammar: "이것/그것/저것" },
+      { korean: "그것은 제 가방이에요.", vietnamese: "Đó là cặp của tôi.", grammar: "이것/그것/저것" }
+    ]
+  }), []);
+
+  // Exercise data structure
+  const exerciseData = useMemo(() => ({
+    // LISTENING EXERCISES
+    listening_basic: {
+      title: 'Luyện nghe từ vựng cơ bản',
+      type: EXERCISE_TYPES.LISTENING,
+      level: 'Sơ cấp 1',
+      description: 'Nghe và chọn nghĩa đúng của từ vựng',
+      questions: vocabularyData.level1.slice(0, 10).map(word => ({
+        id: `listen_${word.korean}`,
+        audioText: word.korean,
+        question: `Từ bạn vừa nghe có nghĩa là gì?`,
+        options: [
+          word.meaning,
+          vocabularyData.level1[Math.floor(Math.random() * vocabularyData.level1.length)].meaning,
+          vocabularyData.level1[Math.floor(Math.random() * vocabularyData.level1.length)].meaning,
+          vocabularyData.level1[Math.floor(Math.random() * vocabularyData.level1.length)].meaning
+        ].filter((option, index, arr) => arr.indexOf(option) === index).slice(0, 4),
+        correctAnswer: 0,
+        explanation: `"${word.korean}" có nghĩa là "${word.meaning}"`
+      }))
+    },
+
+    listening_grammar: {
+      title: 'Luyện nghe câu ngữ pháp',
+      type: EXERCISE_TYPES.LISTENING,
+      level: 'Sơ cấp 1',
+      description: 'Nghe câu và chọn bản dịch đúng',
+      questions: grammarData.basic.slice(0, 8).map((sentence, index) => ({
+        id: `listen_grammar_${index}`,
+        audioText: sentence.korean,
+        question: `Câu bạn vừa nghe có nghĩa là gì?`,
+        options: [
+          sentence.vietnamese,
+          grammarData.basic[Math.floor(Math.random() * grammarData.basic.length)].vietnamese,
+          grammarData.basic[Math.floor(Math.random() * grammarData.basic.length)].vietnamese,
+          grammarData.basic[Math.floor(Math.random() * grammarData.basic.length)].vietnamese
+        ].filter((option, index, arr) => arr.indexOf(option) === index).slice(0, 4),
+        correctAnswer: 0,
+        explanation: `"${sentence.korean}" có nghĩa là "${sentence.vietnamese}"`
+      }))
+    },
+
+    // READING EXERCISES
+    reading_vocabulary: {
+      title: 'Đọc hiểu từ vựng',
+      type: EXERCISE_TYPES.READING,
+      level: 'Sơ cấp 1',
+      description: 'Đọc từ tiếng Hàn và chọn nghĩa đúng',
+      questions: vocabularyData.level1.slice(5, 15).map(word => ({
+        id: `read_vocab_${word.korean}`,
+        passage: word.korean,
+        question: `Từ "${word.korean}" có nghĩa là gì?`,
+        options: [
+          word.meaning,
+          vocabularyData.level1[Math.floor(Math.random() * vocabularyData.level1.length)].meaning,
+          vocabularyData.level1[Math.floor(Math.random() * vocabularyData.level1.length)].meaning,
+          vocabularyData.level1[Math.floor(Math.random() * vocabularyData.level1.length)].meaning
+        ].filter((option, index, arr) => arr.indexOf(option) === index).slice(0, 4),
+        correctAnswer: 0,
+        explanation: `"${word.korean}" nghĩa là "${word.meaning}"`
+      }))
+    },
+
+    reading_comprehension: {
+      title: 'Đọc hiểu đoạn văn',
+      type: EXERCISE_TYPES.READING,
+      level: 'Sơ cấp 1',
+      description: 'Đọc đoạn văn và trả lời câu hỏi',
+      questions: [
+        {
+          id: 'read_comp_1',
+          passage: '저는 김민수입니다. 한국 사람이에요. 서울에 살아요. 대학생이에요. 한국어를 공부해요.',
+          question: 'Kim Min-su là ai?',
+          options: [
+            'Sinh viên đại học người Hàn sống ở Seoul',
+            'Giáo viên người Nhật sống ở Tokyo', 
+            'Bác sĩ người Trung Quốc sống ở Bắc Kinh',
+            'Kỹ sư người Việt sống ở Hà Nội'
+          ],
+          correctAnswer: 0,
+          explanation: 'Trong đoạn văn có: "한국 사람이에요" (là người Hàn), "서울에 살아요" (sống ở Seoul), "대학생이에요" (là sinh viên đại học)'
+        },
+        {
+          id: 'read_comp_2',
+          passage: '오늘은 날씨가 좋아요. 친구와 공원에 가요. 공원에서 음식을 먹어요. 정말 즐거워요.',
+          question: 'Hôm nay họ làm gì?',
+          options: [
+            'Đi công viên với bạn và ăn uống',
+            'Ở nhà xem phim',
+            'Đi học ở trường',
+            'Đi làm ở công ty'
+          ],
+          correctAnswer: 0,
+          explanation: '"친구와 공원에 가요" (đi công viên với bạn), "공원에서 음식을 먹어요" (ăn ở công viên)'
+        }
+      ]
+    },
+
+    // WRITING EXERCISES
+    writing_translation: {
+      title: 'Dịch từ tiếng Việt sang tiếng Hàn',
+      type: EXERCISE_TYPES.WRITING,
+      level: 'Sơ cấp 1',
+      description: 'Dịch câu tiếng Việt sang tiếng Hàn',
+      questions: [
+        {
+          id: 'write_trans_1',
+          prompt: 'Dịch câu sau sang tiếng Hàn: "Tôi là sinh viên"',
+          correctAnswers: ['저는 학생입니다', '저는 학생이에요', '나는 학생이다'],
+          hints: ['Sử dụng "저는" hoặc "나는" cho "tôi"', 'Sử dụng "학생" cho "sinh viên"', 'Kết thúc với "입니다", "이에요" hoặc "이다"'],
+          explanation: 'Câu trả lời đúng: "저는 학생입니다" (trang trọng) hoặc "저는 학생이에요" (thân mật-lịch sự)'
+        },
+        {
+          id: 'write_trans_2', 
+          prompt: 'Dịch câu: "Đây là trường học"',
+          correctAnswers: ['여기는 학교입니다', '여기가 학교입니다', '이곳은 학교입니다'],
+          hints: ['Sử dụng "여기" cho "đây"', 'Sử dụng "학교" cho "trường học"', 'Có thể dùng "는" hoặc "가"'],
+          explanation: 'Câu trả lời đúng: "여기는 학교입니다" hoặc "여기가 학교입니다"'
+        },
+        {
+          id: 'write_trans_3',
+          prompt: 'Dịch câu: "Cảm ơn bạn"',
+          correctAnswers: ['고맙습니다', '감사합니다', '고마워요', '감사해요'],
+          hints: ['Có nhiều cách nói "cảm ơn"', '"고맙습니다" hoặc "감사합니다" trang trọng', '"고마워요" hoặc "감사해요" thân mật'],
+          explanation: 'Các cách nói cảm ơn: "고맙습니다", "감사합니다" (trang trọng), "고마워요", "감사해요" (thân mật)'
+        }
+      ]
+    },
+
+    writing_grammar: {
+      title: 'Luyện viết ngữ pháp',
+      type: EXERCISE_TYPES.WRITING,
+      level: 'Sơ cấp 1', 
+      description: 'Điền ngữ pháp vào chỗ trống',
+      questions: [
+        {
+          id: 'write_grammar_1',
+          prompt: 'Điền vào chỗ trống: "저___ 학생입니다" (Tôi là sinh viên)',
+          correctAnswers: ['는', '는'],
+          hints: ['Đây là trợ từ chủ đề', 'Sau "저" dùng trợ từ gì?'],
+          explanation: 'Đáp án: "저는 학생입니다". "는" là trợ từ chủ đề đi sau "저"'
+        },
+        {
+          id: 'write_grammar_2',
+          prompt: 'Điền vào chỗ trống: "이것___ 무엇입니까?" (Đây là cái gì?)',
+          correctAnswers: ['은', '은'],
+          hints: ['Đây là trợ từ chủ đề', '"이것" kết thúc bằng phụ âm'],
+          explanation: 'Đáp án: "이것은 무엇입니까?". "은" dùng sau từ kết thúc bằng phụ âm'
+        }
+      ]
+    }
+  }), [vocabularyData, grammarData, EXERCISE_TYPES.LISTENING, EXERCISE_TYPES.READING, EXERCISE_TYPES.WRITING]);
+
+  // States
+  const [selectedExerciseType, setSelectedExerciseType] = useState('listening_basic');
+  const [gameState, setGameState] = useState('menu'); // 'menu', 'active', 'results'
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [answers, setAnswers] = useState([]);
+  const [userAnswer, setUserAnswer] = useState('');
+  const [showExplanation, setShowExplanation] = useState(false);
+  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
+  const [audioSpeed, setAudioSpeed] = useState(0.7); // Slow speed for beginners
+
+  const currentExercise = exerciseData[selectedExerciseType];
+  const currentQuestion = currentExercise?.questions[currentQuestionIndex];
+
+  // Enhanced Text-to-Speech function with high-quality Korean voices
+  const speakText = (text, speed = audioSpeed) => {
+    if (!('speechSynthesis' in window)) return;
+    
+    const synth = window.speechSynthesis;
+    
+    const speak = () => {
+      // Cancel any ongoing speech
+      synth.cancel();
+      
+      // Get all Korean voices and prioritize high-quality ones
+      const voices = synth.getVoices().filter((v) => v.lang && v.lang.startsWith('ko'));
+      
+      // Prioritize premium voices from Google, Microsoft, Apple, Naver, Kakao
+      const preferredVoice = voices.find((v) => 
+        /Google|Microsoft|Apple|Naver|Kakao|Samsung/i.test(v.name)
+      ) || voices[0];
+      
+      const utterance = new SpeechSynthesisUtterance(text);
+      
+      // Set Korean language explicitly
+      utterance.lang = 'ko-KR';
+      
+      // Use the best available Korean voice
+      if (preferredVoice) {
+        utterance.voice = preferredVoice;
+      }
+      
+      // Set speech parameters optimized for learning
+      utterance.rate = speed; // Adjustable speed for beginners
+      utterance.pitch = 1.0; // Natural pitch
+      utterance.volume = 1.0; // Full volume
+      
+      // Set up event handlers
+      utterance.onstart = () => setIsAudioPlaying(true);
+      utterance.onend = () => setIsAudioPlaying(false);
+      utterance.onerror = () => {
+        setIsAudioPlaying(false);
+        console.warn('Speech synthesis error occurred');
+      };
+      
+      synth.speak(utterance);
+    };
+    
+    // Handle voices loading asynchronously
+    if (synth.getVoices().length) {
+      speak();
     } else {
-      setGameState('results');
+      synth.onvoiceschanged = speak;
     }
   };
 
-  const resetExercise = () => {
-    setGameState('idle');
-    setCurrentQuestionIndex(0);
-    setAnswers([]);
+  // Stop audio with proper cleanup
+  const stopAudio = () => {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      setIsAudioPlaying(false);
+    }
   };
 
-  const getScore = () => answers.filter(a => a.isCorrect).length;
-  const scorePercentage = (getScore() / selectedExercise.questions.length) * 100;
 
-  const exerciseCategories = useMemo(() => {
-    const categories = {};
-    Object.keys(exerciseData).forEach(id => {
-      const exercise = exerciseData[id];
-      if (!categories[exercise.category]) {
-        categories[exercise.category] = [];
-      }
-      categories[exercise.category].push({ id, ...exercise });
-    });
-    return categories;
-  }, [exerciseData]);
 
-  // --- Render Functions ---
-  const renderIdleState = () => (
-    <div className="text-center">
-      <h2 className="text-3xl font-bold text-secondary mb-2">{selectedExercise.title}</h2>
-      <p className="text-gray-500 mb-4">{selectedExercise.description}</p>
-      <div className="text-sm text-gray-400 mb-6">
-        <span>Số câu hỏi: {selectedExercise.questions.length}</span> | <span>Cấp độ: {selectedExercise.level}</span>
+  // Start exercise
+  const startExercise = (exerciseKey) => {
+    setSelectedExerciseType(exerciseKey);
+    setGameState('active');
+    setCurrentQuestionIndex(0);
+    setAnswers([]);
+    setUserAnswer('');
+    setShowExplanation(false);
+  };
+
+  // Handle answer selection (for multiple choice)
+  const handleAnswerSelect = (selectedIndex) => {
+    const isCorrect = selectedIndex === currentQuestion.correctAnswer;
+    const newAnswer = {
+      questionId: currentQuestion.id,
+      userAnswer: selectedIndex,
+      correctAnswer: currentQuestion.correctAnswer,
+      isCorrect
+    };
+    setAnswers([...answers, newAnswer]);
+    setShowExplanation(true);
+  };
+
+  // Handle text input (for writing exercises)
+  const handleTextSubmit = () => {
+    if (!userAnswer.trim()) return;
+    
+    const isCorrect = currentQuestion.correctAnswers.some(answer => 
+      userAnswer.trim().toLowerCase() === answer.toLowerCase()
+    );
+    
+    const newAnswer = {
+      questionId: currentQuestion.id,
+      userAnswer: userAnswer.trim(),
+      correctAnswer: currentQuestion.correctAnswers[0],
+      isCorrect
+    };
+    setAnswers([...answers, newAnswer]);
+    setShowExplanation(true);
+  };
+
+  // Next question
+  const nextQuestion = () => {
+    if (currentQuestionIndex < currentExercise.questions.length - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setUserAnswer('');
+      setShowExplanation(false);
+      stopAudio();
+    } else {
+      setGameState('results');
+      stopAudio();
+    }
+  };
+
+  // Reset exercise
+  const resetExercise = () => {
+    setGameState('menu');
+    setCurrentQuestionIndex(0);
+    setAnswers([]);
+    setUserAnswer('');
+    setShowExplanation(false);
+    stopAudio();
+  };
+
+  // Calculate score
+  const getScore = () => {
+    const correctCount = answers.filter(a => a.isCorrect).length;
+    const totalCount = answers.length;
+    return { correct: correctCount, total: totalCount, percentage: Math.round((correctCount / totalCount) * 100) };
+  };
+
+  // Render main menu
+  const renderMenu = () => (
+    <div className="max-w-6xl mx-auto">
+      <div className="text-center mb-12">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-secondary mb-4">
+          Luyện tập kỹ năng
+        </h1>
+        <p className="text-lg text-text-light max-w-2xl mx-auto">
+          Luyện tập 3 kỹ năng quan trọng: Nghe, Đọc và Viết với nội dung từ Grammar và Vocabulary
+        </p>
       </div>
-                  <button
-        onClick={() => setGameState('active')}
-        className="bg-primary text-white font-bold py-3 px-8 rounded-lg hover:bg-orange-700 transition-colors text-lg"
-                  >
-        Bắt đầu làm bài
-                  </button>
-                </div>
+
+      {/* Exercise Categories */}
+      <div className="grid gap-8 mb-8">
+        {/* Listening Exercises */}
+        <div className="bg-white rounded-2xl shadow-lg p-6">
+          <div className="flex items-center mb-4">
+            <Headphones className="w-8 h-8 text-blue-600 mr-3" />
+            <div>
+              <h2 className="text-2xl font-bold text-gray-800">Luyện nghe</h2>
+              <p className="text-gray-600">Cải thiện kỹ năng nghe với tốc độ chậm</p>
+            </div>
+          </div>
+          <div className="grid md:grid-cols-2 gap-4">
+            <button
+              onClick={() => startExercise('listening_basic')}
+              className="p-4 border-2 border-blue-200 rounded-xl hover:border-blue-400 hover:bg-blue-50 transition-all duration-200 text-left"
+            >
+              <h3 className="font-semibold text-blue-800 mb-2">Nghe từ vựng cơ bản</h3>
+              <p className="text-sm text-gray-600 mb-2">Nghe và chọn nghĩa đúng của từ vựng</p>
+              <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">10 câu hỏi</span>
+            </button>
+            <button
+              onClick={() => startExercise('listening_grammar')}
+              className="p-4 border-2 border-blue-200 rounded-xl hover:border-blue-400 hover:bg-blue-50 transition-all duration-200 text-left"
+            >
+              <h3 className="font-semibold text-blue-800 mb-2">Nghe câu ngữ pháp</h3>
+              <p className="text-sm text-gray-600 mb-2">Nghe câu và chọn bản dịch đúng</p>
+              <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">8 câu hỏi</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Reading Exercises */}
+        <div className="bg-white rounded-2xl shadow-lg p-6">
+          <div className="flex items-center mb-4">
+            <BookOpen className="w-8 h-8 text-green-600 mr-3" />
+            <div>
+              <h2 className="text-2xl font-bold text-gray-800">Luyện đọc</h2>
+              <p className="text-gray-600">Phát triển kỹ năng đọc hiểu</p>
+            </div>
+          </div>
+          <div className="grid md:grid-cols-2 gap-4">
+            <button
+              onClick={() => startExercise('reading_vocabulary')}
+              className="p-4 border-2 border-green-200 rounded-xl hover:border-green-400 hover:bg-green-50 transition-all duration-200 text-left"
+            >
+              <h3 className="font-semibold text-green-800 mb-2">Đọc hiểu từ vựng</h3>
+              <p className="text-sm text-gray-600 mb-2">Đọc từ tiếng Hàn và chọn nghĩa đúng</p>
+              <span className="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">10 câu hỏi</span>
+            </button>
+            <button
+              onClick={() => startExercise('reading_comprehension')}
+              className="p-4 border-2 border-green-200 rounded-xl hover:border-green-400 hover:bg-green-50 transition-all duration-200 text-left"
+            >
+              <h3 className="font-semibold text-green-800 mb-2">Đọc hiểu đoạn văn</h3>
+              <p className="text-sm text-gray-600 mb-2">Đọc đoạn văn và trả lời câu hỏi</p>
+              <span className="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">2 câu hỏi</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Writing Exercises */}
+        <div className="bg-white rounded-2xl shadow-lg p-6">
+          <div className="flex items-center mb-4">
+            <PenTool className="w-8 h-8 text-purple-600 mr-3" />
+            <div>
+              <h2 className="text-2xl font-bold text-gray-800">Luyện viết</h2>
+              <p className="text-gray-600">Rèn luyện kỹ năng viết tiếng Hàn</p>
+            </div>
+          </div>
+          <div className="grid md:grid-cols-2 gap-4">
+            <button
+              onClick={() => startExercise('writing_translation')}
+              className="p-4 border-2 border-purple-200 rounded-xl hover:border-purple-400 hover:bg-purple-50 transition-all duration-200 text-left"
+            >
+              <h3 className="font-semibold text-purple-800 mb-2">Dịch câu</h3>
+              <p className="text-sm text-gray-600 mb-2">Dịch từ tiếng Việt sang tiếng Hàn</p>
+              <span className="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">3 câu hỏi</span>
+            </button>
+            <button
+              onClick={() => startExercise('writing_grammar')}
+              className="p-4 border-2 border-purple-200 rounded-xl hover:border-purple-400 hover:bg-purple-50 transition-all duration-200 text-left"
+            >
+              <h3 className="font-semibold text-purple-800 mb-2">Luyện viết ngữ pháp</h3>
+              <p className="text-sm text-gray-600 mb-2">Điền ngữ pháp vào chỗ trống</p>
+              <span className="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">2 câu hỏi</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Audio Settings */}
+      <div className="bg-gray-50 rounded-xl p-6">
+        <h3 className="text-lg font-semibold text-gray-800 mb-6 text-center">Cài đặt âm thanh</h3>
+        
+        {/* Speed Control */}
+        <div className="mb-6">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-sm font-medium text-gray-700">Tốc độ phát</span>
+            <span className="text-sm font-medium text-primary">{audioSpeed}x</span>
+          </div>
+          <div className="flex items-center gap-4">
+            <span className="text-sm text-gray-600">Chậm</span>
+            <input
+              type="range"
+              min="0.5"
+              max="1.5"
+              step="0.1"
+              value={audioSpeed}
+              onChange={(e) => setAudioSpeed(parseFloat(e.target.value))}
+              className="flex-1 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+            />
+            <span className="text-sm text-gray-600">Nhanh</span>
+          </div>
+          <p className="text-xs text-gray-500 mt-2 text-center">Tốc độ chậm hơn giúp người mới bắt đầu dễ nghe và hiểu</p>
+        </div>
+
+        
+      </div>
+    </div>
   );
 
-  const renderActiveState = () => {
-    const progress = ((currentQuestionIndex + 1) / selectedExercise.questions.length) * 100;
-    const answered = answers[currentQuestionIndex] !== undefined;
+  // Render active exercise
+  const renderActiveExercise = () => {
+    if (!currentQuestion) return null;
+
+    const isListening = currentExercise.type === EXERCISE_TYPES.LISTENING;
+    const isReading = currentExercise.type === EXERCISE_TYPES.READING;
+    const isWriting = currentExercise.type === EXERCISE_TYPES.WRITING;
 
     return (
-      <div>
-        <div className="mb-6">
-          <div className="flex justify-between items-center mb-2">
-            <span className="text-sm font-semibold text-gray-500">Câu {currentQuestionIndex + 1}/{selectedExercise.questions.length}</span>
-            <button onClick={resetExercise} className="text-sm text-gray-400 hover:text-primary"><ChevronLeft size={16} className="inline"/> Quay lại</button>
-                  </div>
-          <div className="w-full bg-gray-200 rounded-full h-2">
-            <div className="bg-primary h-2 rounded-full" style={{ width: `${progress}%` }}></div>
-                  </div>
+      <div className="max-w-4xl mx-auto">
+        {/* Header */}
+        <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
+          <div className="flex items-center justify-between mb-4">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-800">{currentExercise.title}</h2>
+              <p className="text-gray-600">{currentExercise.description}</p>
+            </div>
+            <button
+              onClick={resetExercise}
+              className="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+            >
+              <RotateCcw className="w-5 h-5" />
+            </button>
+          </div>
+          
+          {/* Progress */}
+          <div className="flex items-center justify-between text-sm text-gray-600">
+            <span>Câu hỏi {currentQuestionIndex + 1} / {currentExercise.questions.length}</span>
+            <span>{currentExercise.level}</span>
+          </div>
+          <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
+            <div 
+              className="bg-primary h-2 rounded-full transition-all duration-300"
+              style={{ width: `${((currentQuestionIndex + 1) / currentExercise.questions.length) * 100}%` }}
+            />
+          </div>
+        </div>
+
+        {/* Question */}
+        <div className="bg-white rounded-2xl shadow-lg p-8">
+          {/* Listening Exercise */}
+          {isListening && (
+            <div className="text-center mb-8">
+              <div className="bg-blue-50 rounded-xl p-6 mb-6">
+                <Headphones className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                <p className="text-lg text-gray-800 mb-6">{currentQuestion.question}</p>
+                
+                {/* Audio Controls */}
+                <div className="flex items-center justify-center gap-4 mb-4">
+                  <button
+                    onClick={() => speakText(currentQuestion.audioText)}
+                    disabled={isAudioPlaying}
+                    className="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 disabled:opacity-50 transition-colors"
+                  >
+                    {isAudioPlaying ? (
+                      <>
+                        <VolumeX className="w-5 h-5" />
+                        Đang phát...
+                      </>
+                    ) : (
+                      <>
+                        <Volume2 className="w-5 h-5" />
+                        Nghe
+                      </>
+                    )}
+                  </button>
+                  
+                  {isAudioPlaying && (
+                    <button
+                      onClick={stopAudio}
+                      className="flex items-center gap-2 bg-red-600 text-white px-4 py-3 rounded-lg hover:bg-red-700 transition-colors"
+                    >
+                      <Pause className="w-5 h-5" />
+                      Dừng
+                    </button>
+                  )}
                 </div>
                 
-        <div className="bg-gray-50 p-4 rounded-lg mb-4">
-          <p className="text-sm text-gray-500 mb-2">{currentQuestion.situation}</p>
-          <p className="text-lg font-semibold text-gray-800">{currentQuestion.question}</p>
+                                 <p className="text-sm text-blue-600 font-medium">Tốc độ: {audioSpeed}x (Tối ưu cho người mới bắt đầu)</p>
               </div>
+            </div>
+          )}
 
-        <div className="space-y-3 mb-6">
-          {currentQuestion.options.map((option, index) => {
-            let buttonClass = "w-full text-left p-4 rounded-lg border-2 transition-colors duration-200";
-            if (answered) {
-              if (index === currentQuestion.correct) {
-                buttonClass += " bg-green-100 border-green-500 text-green-800 font-bold";
-              } else if (index === answers[currentQuestionIndex]?.selected) {
-                buttonClass += " bg-red-100 border-red-500 text-red-800";
-              } else {
-                buttonClass += " bg-gray-100 border-gray-200 text-gray-500";
-              }
-            } else {
-              buttonClass += " bg-white border-gray-300 hover:bg-orange-50 hover:border-primary";
-            }
-            return (
-              <button
-                    key={index}
-                    onClick={() => handleAnswerSelect(index)}
-                disabled={answered}
-                className={buttonClass}
-              >
-                        {option}
-              </button>
-            );
-          })}
+          {/* Reading Exercise */}
+          {isReading && (
+            <div className="mb-8">
+              <div className="bg-green-50 rounded-xl p-6 mb-6">
+                <BookOpen className="w-8 h-8 text-green-600 mb-4" />
+                {currentQuestion.passage && (
+                  <div className="mb-6">
+                    <h4 className="text-sm font-medium text-gray-600 mb-2">Đọc đoạn văn sau:</h4>
+                    <div className="bg-white p-4 rounded-lg border border-green-200">
+                      <p className="text-xl font-medium text-gray-800 leading-relaxed">
+                        {currentQuestion.passage}
+                      </p>
+                    </div>
+                  </div>
+                )}
+                <p className="text-lg text-gray-800">{currentQuestion.question}</p>
               </div>
+            </div>
+          )}
 
-        {answered && (
-          <div className="p-4 bg-blue-50 border-l-4 border-blue-400 text-blue-800 rounded-r-lg mb-6 fade-in">
-            <HelpCircle size={20} className="inline mr-2"/>
-            <span className="font-bold">Giải thích:</span> {currentQuestion.explanation}
-          </div>
-        )}
+          {/* Writing Exercise */}
+          {isWriting && (
+            <div className="mb-8">
+              <div className="bg-purple-50 rounded-xl p-6 mb-6">
+                <PenTool className="w-8 h-8 text-purple-600 mb-4" />
+                <p className="text-lg text-gray-800 mb-4">{currentQuestion.prompt}</p>
+                
+                {/* Hints */}
+                {currentQuestion.hints && (
+                  <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-4">
+                    <h5 className="text-sm font-medium text-yellow-800 mb-2">💡 Gợi ý:</h5>
+                    <ul className="text-sm text-yellow-700 space-y-1">
+                      {currentQuestion.hints.map((hint, index) => (
+                        <li key={index}>• {hint}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
-        <div className="text-center">
+                {/* Text Input */}
+                <div className="space-y-4">
+                  <input
+                    type="text"
+                    value={userAnswer}
+                    onChange={(e) => setUserAnswer(e.target.value)}
+                    placeholder="Nhập câu trả lời của bạn..."
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500 text-lg"
+                    disabled={showExplanation}
+                  />
+                  
+                  {!showExplanation && (
+                    <button
+                      onClick={handleTextSubmit}
+                      disabled={!userAnswer.trim()}
+                      className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    >
+                      Kiểm tra đáp án
+                    </button>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Multiple Choice Options (for listening and reading) */}
+          {(isListening || isReading) && !showExplanation && (
+            <div className="grid gap-3 mb-6">
+              {currentQuestion.options.map((option, index) => (
                 <button
-                  onClick={handleNextQuestion}
-            disabled={!answered}
-            className="bg-secondary text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-800 transition-colors text-lg disabled:bg-gray-300"
+                  key={index}
+                  onClick={() => handleAnswerSelect(index)}
+                  className="p-4 text-left border-2 border-gray-200 rounded-xl hover:border-primary hover:bg-orange-50 transition-all duration-200"
                 >
-            {currentQuestionIndex < selectedExercise.questions.length - 1 ? 'Câu tiếp theo' : 'Xem kết quả'}
+                  <span className="font-medium">{String.fromCharCode(65 + index)}. </span>
+                  {option}
+                </button>
+              ))}
+            </div>
+          )}
+
+          {/* Explanation */}
+          {showExplanation && (
+            <div className="space-y-4">
+              {/* Result */}
+              <div className={`p-4 rounded-lg flex items-center gap-3 ${
+                answers[answers.length - 1]?.isCorrect 
+                  ? 'bg-green-50 border border-green-200' 
+                  : 'bg-red-50 border border-red-200'
+              }`}>
+                {answers[answers.length - 1]?.isCorrect ? (
+                  <>
+                    <CheckCircle className="w-6 h-6 text-green-600" />
+                    <span className="font-medium text-green-800">Chính xác!</span>
+                  </>
+                ) : (
+                  <>
+                    <XCircle className="w-6 h-6 text-red-600" />
+                    <span className="font-medium text-red-800">Chưa chính xác</span>
+                  </>
+                )}
+              </div>
+
+              {/* Explanation */}
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <h4 className="font-medium text-blue-800 mb-2">Giải thích:</h4>
+                <p className="text-blue-700">{currentQuestion.explanation}</p>
+              </div>
+
+              {/* Next Button */}
+              <div className="text-center">
+                <button
+                  onClick={nextQuestion}
+                  className="bg-primary text-white px-8 py-3 rounded-lg hover:bg-orange-600 transition-colors font-medium"
+                >
+                  {currentQuestionIndex < currentExercise.questions.length - 1 ? (
+                    <>
+                      Câu tiếp theo
+                      <SkipForward className="w-5 h-5 ml-2 inline" />
+                    </>
+                  ) : (
+                    'Xem kết quả'
+                  )}
                 </button>
               </div>
             </div>
+          )}
+        </div>
+      </div>
     );
   };
 
-  const renderResultsState = () => {
-      const score = getScore();
-                return (
-        <div className="text-center fade-in">
-            <Award size={64} className="mx-auto text-yellow-500 mb-4" />
-            <h2 className="text-3xl font-bold text-secondary mb-2">Hoàn thành!</h2>
-            <p className="text-lg text-gray-600 mb-4">
-                Bạn đã trả lời đúng {score} trên {selectedExercise.questions.length} câu.
+  // Render results
+  const renderResults = () => {
+    const score = getScore();
+    const isGoodScore = score.percentage >= 70;
+
+    return (
+      <div className="max-w-4xl mx-auto">
+        <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
+          {/* Score Display */}
+          <div className={`inline-flex items-center justify-center w-24 h-24 rounded-full mb-6 ${
+            isGoodScore ? 'bg-green-100' : 'bg-orange-100'
+          }`}>
+            <Award className={`w-12 h-12 ${isGoodScore ? 'text-green-600' : 'text-orange-600'}`} />
+          </div>
+          
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">
+            Kết quả luyện tập
+          </h2>
+          
+          <div className="text-6xl font-bold mb-4">
+            <span className={isGoodScore ? 'text-green-600' : 'text-orange-600'}>
+              {score.percentage}%
+            </span>
+          </div>
+          
+          <p className="text-xl text-gray-600 mb-8">
+            Bạn đã trả lời đúng {score.correct}/{score.total} câu
+          </p>
+
+          {/* Performance Message */}
+          <div className={`p-4 rounded-lg mb-8 ${
+            isGoodScore ? 'bg-green-50 border border-green-200' : 'bg-orange-50 border border-orange-200'
+          }`}>
+            <p className={`font-medium ${isGoodScore ? 'text-green-800' : 'text-orange-800'}`}>
+              {isGoodScore 
+                ? '🎉 Xuất sắc! Bạn đã làm rất tốt!' 
+                : '💪 Hãy tiếp tục luyện tập để cải thiện!'
+              }
             </p>
-            <div className="w-full max-w-sm mx-auto bg-gray-200 rounded-full h-4 mb-6">
-                <div 
-                    className="bg-green-500 h-4 rounded-full" 
-                    style={{ width: `${scorePercentage}%` }}
-                ></div>
-            </div>
-            <p className="text-2xl font-bold mb-8">
-                {scorePercentage === 100 ? 'Xuất sắc! 🎉' : scorePercentage >= 70 ? 'Làm tốt lắm!' : 'Cố gắng hơn nhé!'}
-            </p>
-              <button
-                onClick={resetExercise}
-                className="bg-primary text-white font-bold py-3 px-8 rounded-lg hover:bg-orange-700 transition-colors text-lg flex items-center gap-2 mx-auto"
+          </div>
+
+          {/* Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              onClick={() => startExercise(selectedExerciseType)}
+              className="bg-primary text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors font-medium"
             >
-                <Repeat size={20}/>
-                Làm lại bài này
-              </button>
+              <RotateCcw className="w-5 h-5 mr-2 inline" />
+              Làm lại
+            </button>
+            <button
+              onClick={resetExercise}
+              className="bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition-colors font-medium"
+            >
+              Chọn bài khác
+            </button>
+          </div>
         </div>
-      );
+      </div>
+    );
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4 sm:p-6 lg:p-8">
-      <SEO
-        title="Bài tập tiếng Hàn | Hangul Learning"
-        description="Luyện tập từ vựng, ngữ pháp và kỹ năng đọc hiểu tiếng Hàn qua các bài tập trắc nghiệm."
-        keywords="bài tập tiếng Hàn, trắc nghiệm tiếng Hàn, Hangul Learning, luyện thi TOPIK"
+    <>
+      <SEO 
+        title="Luyện tập kỹ năng Tiếng Hàn - Nghe, Đọc, Viết" 
+        description="Luyện tập 3 kỹ năng quan trọng: Nghe, Đọc và Viết với nội dung từ Grammar và Vocabulary. Có âm thanh chậm cho người mới bắt đầu."
       />
-      <div className="max-w-7xl mx-auto">
-        <header className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-800">Bài tập thực hành</h1>
-          <p className="mt-2 text-lg text-gray-600">Kiểm tra kiến thức và kỹ năng của bạn</p>
-        </header>
-
-        <div className="flex flex-col lg:flex-row gap-8">
-          {/* --- Sidebar --- */}
-          <aside className="lg:w-1/3 xl:w-1/4 lg:sticky lg:top-8 self-start bg-white p-4 sm:p-6 rounded-lg shadow-md">
-            <h2 className="text-xl font-bold text-secondary mb-4">Chọn bài tập</h2>
-            <nav className="space-y-4">
-              {Object.entries(exerciseCategories).map(([category, exercises]) => (
-                <div key={category}>
-                  <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">{category}</h3>
-                  <div className="space-y-1">
-                    {exercises.map(exercise => (
-                      <a
-                        key={exercise.id}
-                        href={`#${exercise.id}`}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setSelectedExerciseId(exercise.id);
-                        }}
-                        className={`flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                          selectedExerciseId === exercise.id
-                            ? 'bg-orange-100 text-primary'
-                            : 'text-gray-600 hover:bg-gray-100'
-                        }`}
-                      >
-                        <Book size={16} />
-                        <span>{exercise.title}</span>
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </nav>
-          </aside>
-
-          {/* --- Main Content --- */}
-          <main className="flex-1 min-w-0">
-            <div className="bg-white p-6 sm:p-8 rounded-lg shadow-md min-h-[500px] flex items-center justify-center">
-              {gameState === 'idle' && renderIdleState()}
-              {gameState === 'active' && renderActiveState()}
-              {gameState === 'results' && renderResultsState()}
-            </div>
-          </main>
+      
+      <div className="min-h-screen bg-light-gray py-8">
+        <div className="container mx-auto px-4">
+          {gameState === 'menu' && renderMenu()}
+          {gameState === 'active' && renderActiveExercise()}
+          {gameState === 'results' && renderResults()}
+          
+          {/* AdSense */}
+          <div className="mt-12">
+            <AdsenseAd style={{ display: 'block', width: '100%' }} />
           </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

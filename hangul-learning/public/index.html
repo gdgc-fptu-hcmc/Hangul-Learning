@@ -5,9 +5,25 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    
+    <!-- Performance optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="%PUBLIC_URL%/logo192.png" as="image" type="image/png">
+    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    
+    <!-- Resource hints for better performance -->
+    <link rel="preload" href="%PUBLIC_URL%/static/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="%PUBLIC_URL%/static/css/main.css"></noscript>
+    
+    <!-- Critical viewport meta for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
     <meta name="description" content="Hangul Learning - Nền tảng học tiếng Hàn miễn phí cho người Việt. Tổng hợp ngữ pháp, từ vựng, bài tập chuẩn TOPIK từ Sơ đến Cao cấp." />
     <meta name="keywords" content="Học tiếng Hàn, Hangul, ngữ pháp tiếng Hàn, từ vựng tiếng Hàn, TOPIK, Korean, Korean grammar, Korean vocabulary" />
     <meta name="author" content="Nguyễn Đức Tuấn" />
+    <meta name="robots" content="index, follow" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a

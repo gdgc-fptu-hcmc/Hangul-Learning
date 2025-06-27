@@ -9,7 +9,7 @@ function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Sponsor Section */}
         <div className="text-center mb-10">
-          <p className="text-sm font-semibold text-gray-500 tracking-wider uppercase mb-4">
+          <p className="text-sm font-semibold text-white tracking-wider uppercase mb-4">
             Được tài trợ bởi
           </p>
           <div className="flex justify-center mb-4">

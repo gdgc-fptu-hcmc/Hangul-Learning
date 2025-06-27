@@ -1,3 +1,38 @@
 # https://www.robotstxt.org/robotstxt.html
+# Hangul Learning - Korean Language Learning Platform
+# https://hangul.online/
+
 User-agent: *
-Disallow:
+Allow: /
+Allow: /vocabulary
+Allow: /grammar
+Allow: /exercises
+Allow: /about
+Allow: /static/
+Allow: /images/
+Allow: /*.css
+Allow: /*.js
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /temp/
+Disallow: /*.json
+
+# Crawl rate - be respectful
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://hangul.online/sitemap.xml
+
+# AdSense crawlers
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+# Bing crawlers
+User-agent: bingbot
+Allow: /
+Crawl-delay: 1

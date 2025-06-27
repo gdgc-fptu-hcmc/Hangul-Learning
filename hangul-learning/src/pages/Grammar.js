@@ -1898,7 +1898,7 @@ function Grammar() {
       
               examples: [
       
-                { korean: '비가 오다 → 비가 와서 못 가요.', vietnamese: 'Vì trời mưa nên không đi được.', note: 'Chỉ nguyên nhân' }
+                { korean: '비가 와서 못 가요.', vietnamese: 'Vì trời mưa nên không đi được.', note: 'Chỉ nguyên nhân' }
       
               ]
       

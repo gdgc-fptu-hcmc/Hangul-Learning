@@ -14,10 +14,10 @@ const Donate = () => {
 
   return (
     <div className="page-container fade-in" style={{ textAlign: 'center', padding: '2rem' }}>
-      <SEO title="Ủng hộ Hangul Learning" description="Mua cho chúng tôi một cốc cà phê nếu bạn thấy trang hữu ích!" />
+      <SEO title="Ủng hộ Hangul Learning" description="Mua cho chúng tôi một cốc cà phê nếu bạn thấy trang hữu ích!  Nếu có bất kỳ đóng góp nào hãy liên hệ qua Email: nguyenductuan11012003@gmail.com" />
       <h1 className="page-title">Ủng hộ tác giả ☕</h1>
       <p className="page-subtitle" style={{ marginBottom: '2rem' }}>
-        Nếu bạn thấy dự án này hữu ích, hãy mời mình một ly cà phê để có thêm động lực phát triển nhé!
+        Nếu bạn thấy dự án này hữu ích, hãy mời mình một ly cà phê để có thêm động lực phát triển nhé!  Nếu có bất kỳ đóng góp nào hãy liên hệ qua Email: nguyenductuan11012003@gmail.com
       </p>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', justifyContent: 'center' }}>
         {qrImages.map(({ src, label }) => (
