@@ -2060,77 +2060,113 @@ function Grammar() {
       );
     }
     
-    // For regular sentence examples
-    if (note && note.includes('Gốc từ:') && !text.includes('→')) {
-      // Split by spaces but preserve punctuation
-      const words = text.split(/(\s+|[.,!?])/).filter(part => part.trim() !== '');
-      
-      return (
-        <span className="flex flex-wrap gap-1 items-center">
-          {words.map((word, index) => {
-            const cleanWord = word.replace(/[.,!?]/g, '');
-            
-            // Highlight verb endings (conjugated forms)
-            if (cleanWord.endsWith('요') || cleanWord.endsWith('어요') || cleanWord.endsWith('아요') || 
-                cleanWord.endsWith('해요') || cleanWord.endsWith('었어요') || cleanWord.endsWith('았어요') ||
-                cleanWord.endsWith('할게요') || cleanWord.endsWith('거예요')) {
-              return (
-                <span key={index} className="bg-blue-100 text-blue-800 px-2 py-1 rounded font-semibold border border-blue-200 shadow-sm">
-                  {word}
-                </span>
-              );
-            }
-            // Highlight particles
-            else if (word.includes('을') || word.includes('를') || word.includes('이') || word.includes('가') || 
-                     word.includes('에') || word.includes('에서') || word.includes('와') || word.includes('과') ||
-                     word.includes('의') || word.includes('도') || word.includes('만')) {
-              return (
-                <span key={index} className="bg-green-100 text-green-700 px-1.5 py-0.5 rounded font-medium border border-green-200">
-                  {word}
-                </span>
-              );
-            }
-            // Highlight time expressions
-            else if (cleanWord.includes('어제') || cleanWord.includes('오늘') || cleanWord.includes('내일') || 
-                     cleanWord.includes('주말') || cleanWord.includes('아침') || cleanWord.includes('저녁') ||
-                     cleanWord.includes('작년') || cleanWord.includes('내년') || cleanWord.includes('매일')) {
-              return (
-                <span key={index} className="bg-purple-100 text-purple-800 px-1.5 py-0.5 rounded font-medium border border-purple-200">
-                  {word}
-                </span>
-              );
-            }
-            // Highlight locations
-            else if (cleanWord.includes('집') || cleanWord.includes('학교') || cleanWord.includes('회사') || 
-                     cleanWord.includes('도서관') || cleanWord.includes('카페') || cleanWord.includes('서울') ||
-                     cleanWord.includes('한국')) {
-              return (
-                <span key={index} className="bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded font-medium border border-yellow-200">
-                  {word}
-                </span>
-              );
-            }
-            // Highlight objects/nouns
-            else if (cleanWord.includes('책') || cleanWord.includes('음식') || cleanWord.includes('커피') || 
-                     cleanWord.includes('옷') || cleanWord.includes('사진') || cleanWord.includes('친구') ||
-                     cleanWord.includes('부모님') || cleanWord.includes('TV')) {
-              return (
-                <span key={index} className="bg-orange-100 text-orange-800 px-1.5 py-0.5 rounded font-medium border border-orange-200">
-                  {word}
-                </span>
-              );
-            }
-            // Regular words
-            else {
-              return <span key={index} className="text-gray-800">{word}</span>;
-            }
-          })}
-        </span>
-      );
-    }
+    // For all regular sentence examples - apply color highlighting
+    // Split by spaces but preserve punctuation
+    const words = text.split(/(\s+|[.,!?])/).filter(part => part.trim() !== '');
     
-    // Default: return original text with basic styling
-    return <span className="text-gray-800 font-medium">{text}</span>;
+    return (
+      <span className="flex flex-wrap gap-1 items-center">
+        {words.map((word, index) => {
+          const cleanWord = word.replace(/[.,!?]/g, '');
+          
+          // Highlight verb endings and verb forms
+          if (cleanWord.endsWith('습니다') || cleanWord.endsWith('습니까') || cleanWord.endsWith('입니다') || cleanWord.endsWith('입니까') ||
+              cleanWord.endsWith('요') || cleanWord.endsWith('어요') || cleanWord.endsWith('아요') || 
+              cleanWord.endsWith('해요') || cleanWord.endsWith('었어요') || cleanWord.endsWith('았어요') ||
+              cleanWord.endsWith('할게요') || cleanWord.endsWith('거예요') || cleanWord.endsWith('예요') ||
+              cleanWord.endsWith('이에요') || cleanWord.endsWith('세요') || cleanWord.endsWith('십니다') ||
+              cleanWord.endsWith('읽습니다') || cleanWord.endsWith('공부합니다') || cleanWord.endsWith('시작됩니다') ||
+              cleanWord.endsWith('만났어요') || cleanWord.endsWith('봤어요') || cleanWord.endsWith('갔어요') ||
+              cleanWord.endsWith('왔어요') || cleanWord.endsWith('했어요') || cleanWord.endsWith('샀어요') ||
+              cleanWord.includes('드셨습니까') || cleanWord.includes('오셨습니까') || cleanWord.includes('계십니다') ||
+              cleanWord.includes('아닙니다') || cleanWord.includes('없습니다') || cleanWord.includes('있습니다')) {
+            return (
+              <span key={index} className="bg-blue-100 text-blue-800 px-2 py-1 rounded font-semibold border border-blue-200 shadow-sm">
+                {word}
+              </span>
+            );
+          }
+          // Highlight particles
+          else if (word.includes('을') || word.includes('를') || word.includes('이') || word.includes('가') || 
+                   word.includes('에') || word.includes('에서') || word.includes('와') || word.includes('과') ||
+                   word.includes('의') || word.includes('도') || word.includes('만') || word.includes('은') || 
+                   word.includes('는') || word.includes('하고') || word.includes('께서') || word.includes('부터') ||
+                   word.includes('까지') || word.includes('로') || word.includes('으로')) {
+            return (
+              <span key={index} className="bg-green-100 text-green-700 px-1.5 py-0.5 rounded font-medium border border-green-200">
+                {word}
+              </span>
+            );
+          }
+          // Highlight time expressions
+          else if (cleanWord.includes('어제') || cleanWord.includes('오늘') || cleanWord.includes('내일') || 
+                   cleanWord.includes('주말') || cleanWord.includes('아침') || cleanWord.includes('저녁') ||
+                   cleanWord.includes('작년') || cleanWord.includes('내년') || cleanWord.includes('매일') ||
+                   cleanWord.includes('월요일') || cleanWord.includes('화요일') || cleanWord.includes('수요일') ||
+                   cleanWord.includes('목요일') || cleanWord.includes('금요일') || cleanWord.includes('토요일') ||
+                   cleanWord.includes('일요일') || cleanWord.includes('지금') || cleanWord.includes('시') ||
+                   cleanWord.includes('분') || cleanWord.includes('월') || cleanWord.includes('일') ||
+                   cleanWord.includes('년') || cleanWord.includes('밤')) {
+            return (
+              <span key={index} className="bg-purple-100 text-purple-800 px-1.5 py-0.5 rounded font-medium border border-purple-200">
+                {word}
+              </span>
+            );
+          }
+          // Highlight locations and places
+          else if (cleanWord.includes('집') || cleanWord.includes('학교') || cleanWord.includes('회사') || 
+                   cleanWord.includes('도서관') || cleanWord.includes('카페') || cleanWord.includes('서울') ||
+                   cleanWord.includes('한국') || cleanWord.includes('여기') || cleanWord.includes('거기') ||
+                   cleanWord.includes('저기') || cleanWord.includes('교실') || cleanWord.includes('사무실') ||
+                   cleanWord.includes('화장실') || cleanWord.includes('역') || cleanWord.includes('식당') ||
+                   cleanWord.includes('위') || cleanWord.includes('아래') || cleanWord.includes('앞') ||
+                   cleanWord.includes('뒤') || cleanWord.includes('옆')) {
+            return (
+              <span key={index} className="bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded font-medium border border-yellow-200">
+                {word}
+              </span>
+            );
+          }
+          // Highlight objects/nouns and things
+          else if (cleanWord.includes('책') || cleanWord.includes('음식') || cleanWord.includes('커피') || 
+                   cleanWord.includes('옷') || cleanWord.includes('사진') || cleanWord.includes('친구') ||
+                   cleanWord.includes('부모님') || cleanWord.includes('TV') || cleanWord.includes('펜') ||
+                   cleanWord.includes('가방') || cleanWord.includes('빵') || cleanWord.includes('우유') ||
+                   cleanWord.includes('사과') || cleanWord.includes('바나나') || cleanWord.includes('영화') ||
+                   cleanWord.includes('이것') || cleanWord.includes('그것') || cleanWord.includes('저것') ||
+                   cleanWord.includes('무엇') || cleanWord.includes('누가') || cleanWord.includes('뭐') ||
+                   cleanWord.includes('교재') || cleanWord.includes('신문') || cleanWord.includes('컵') ||
+                   cleanWord.includes('모자') || cleanWord.includes('한국어') || cleanWord.includes('중국') ||
+                   cleanWord.includes('베트남') || cleanWord.includes('날씨') || cleanWord.includes('비') ||
+                   cleanWord.includes('회의') || cleanWord.includes('수업') || cleanWord.includes('점심') ||
+                   cleanWord.includes('가격') || cleanWord.includes('학생') || cleanWord.includes('선생님') ||
+                   cleanWord.includes('사람') || cleanWord.includes('아버지') || cleanWord.includes('어머니')) {
+            return (
+              <span key={index} className="bg-orange-100 text-orange-800 px-1.5 py-0.5 rounded font-medium border border-orange-200">
+                {word}
+              </span>
+            );
+          }
+          // Highlight numbers and counting
+          else if (cleanWord.includes('세') || cleanWord.includes('한') || cleanWord.includes('두') ||
+                   cleanWord.includes('십') || cleanWord.includes('개') || cleanWord.includes('살') ||
+                   cleanWord.includes('1') || cleanWord.includes('2') || cleanWord.includes('3') ||
+                   cleanWord.includes('4') || cleanWord.includes('5') || cleanWord.includes('6') ||
+                   cleanWord.includes('7') || cleanWord.includes('8') || cleanWord.includes('9') ||
+                   cleanWord.includes('0') || cleanWord.includes('얼마')) {
+            return (
+              <span key={index} className="bg-indigo-100 text-indigo-800 px-1.5 py-0.5 rounded font-medium border border-indigo-200">
+                {word}
+              </span>
+            );
+          }
+          // Regular words
+          else {
+            return <span key={index} className="text-gray-800">{word}</span>;
+          }
+        })}
+      </span>
+    );
   };
 
   return (
@@ -2265,7 +2301,7 @@ function Grammar() {
                     {/* Color Legend */}
                     <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                       <h4 className="text-sm font-semibold text-gray-700 mb-3">Chú thích màu sắc:</h4>
-                      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 text-xs">
+                      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-2 text-xs">
                         <div className="flex items-center gap-1">
                           <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded border border-blue-200 font-semibold">동사</span>
                           <span className="text-gray-600">Động từ</span>
@@ -2285,6 +2321,10 @@ function Grammar() {
                         <div className="flex items-center gap-1">
                           <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded border border-orange-200">책</span>
                           <span className="text-gray-600">Danh từ</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <span className="bg-indigo-100 text-indigo-800 px-2 py-1 rounded border border-indigo-200">세</span>
+                          <span className="text-gray-600">Số đếm</span>
                         </div>
                         <div className="flex items-center gap-1">
                           <span className="bg-red-100 text-red-800 px-2 py-1 rounded border border-red-200">가다</span>

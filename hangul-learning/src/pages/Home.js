@@ -128,22 +128,26 @@ function Home() {
                 Một hệ thống học tập dựa trên phương pháp giảng dạy chính quy với sự trợ giúp của các tài nguyên đa dạng. Học từ cơ bản đến nâng cao với hơn 1000+ từ vựng và ngữ pháp chi tiết.
               </p>
               <div className="mt-10 flex gap-4 justify-center md:justify-start flex-wrap">
-                <Link to="/basic" className="inline-block bg-primary text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-orange-600 transition-all duration-300 transform hover:scale-105">
+                <Link to="/basic" className="inline-block bg-primary text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-orange-600 transition-all duration-300 transform hover:scale-105 hover:shadow-xl animate-fade-in-up">
                   Học bảng chữ cái
                 </Link>
-                <Link to="/vocabulary" className="inline-block bg-secondary text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-700 transition-all duration-300 transform hover:scale-105">
+                <Link to="/vocabulary" className="inline-block bg-purple-500 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-purple-600 border-2 border-purple-500 hover:border-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-xl animate-fade-in-up animation-delay-200">
                   Từ vựng
                 </Link>
-                <Link to="/grammar" className="inline-block bg-gray-200 text-text-dark font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-300 transition-all duration-300 transform hover:scale-105">
+                <Link to="/grammar" className="inline-block bg-secondary text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 hover:shadow-xl animate-fade-in-up animation-delay-400">
                   Ngữ pháp
                 </Link>
               </div>
             </div>
             <div className="hidden md:block relative h-96">
-              <DecorShape />
-              <div style={{ top: '10%', left: '60%' }}><DecorShape /></div>
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-100 via-orange-100 to-pink-100 rounded-2xl shadow-xl flex items-center justify-center -rotate-6 transform hover:rotate-0 hover:scale-105 transition-transform duration-500">
-                 <img src="/logo_human.png" alt="Học tiếng Hàn miễn phí" className="h-80 w-80 object-contain opacity-90" />
+              <div className="animate-pulse">
+                <DecorShape />
+              </div>
+              <div style={{ top: '10%', left: '60%' }} className="animate-pulse animation-delay-1000">
+                <DecorShape />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-100 via-orange-100 to-pink-100 rounded-2xl shadow-xl flex items-center justify-center -rotate-6 transform hover:rotate-0 hover:scale-105 transition-all duration-500 animate-bounce-slow">
+                 <img src="/logo_human.png" alt="Học tiếng Hàn miễn phí" className="h-80 w-80 object-contain opacity-90 animate-float" />
               </div>
             </div>
           </div>
@@ -155,8 +159,8 @@ function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-full mb-4">
-              <Bell className="w-5 h-5" />
-              <span className="font-bold text-sm">TIN TỨC & CẬP NHẬT</span>
+              <Bell className="w-5 h-5 animate-bell-swing" />
+              <span className="font-bold text-sm animate-text-slide-out">TIN TỨC & CẬP NHẬT</span>
             </div>
             <h2 className="text-2xl font-bold text-gray-900">Những cập nhật mới nhất</h2>
             <p className="mt-2 text-gray-600">Theo dõi các tính năng và bài học mới được thêm vào website</p>
@@ -169,9 +173,9 @@ function Home() {
                 <Link
                   key={index}
                   to={update.link}
-                  className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 overflow-hidden"
+                  className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 overflow-hidden flex flex-col h-full"
                 >
-                  <div className="p-6">
+                  <div className="p-6 flex flex-col flex-1">
                     <div className="flex items-center justify-between mb-4">
                       <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold ${update.color}`}>
                         {update.type}
@@ -179,7 +183,7 @@ function Home() {
                       <span className="text-xs text-gray-500">{update.date}</span>
                     </div>
                     
-                    <div className="flex items-start gap-3">
+                    <div className="flex items-start gap-3 flex-1">
                       <div className="flex-shrink-0">
                         <div className="w-12 h-12 bg-gradient-to-br from-primary to-orange-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                           <IconComponent className="w-6 h-6 text-white" />
@@ -415,10 +419,10 @@ function Home() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {grammarBasics.map((item, index) => (
-              <div key={index} className="border border-gray-200 p-6 rounded-lg hover:shadow-md transition-shadow">
+              <div key={index} className="border border-gray-200 p-6 rounded-lg hover:shadow-md transition-shadow flex flex-col h-full">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                <p className="text-gray-600 mb-4">{item.description}</p>
-                <div className="bg-gray-50 p-3 rounded-md">
+                <p className="text-gray-600 mb-4 flex-1">{item.description}</p>
+                <div className="bg-gray-50 p-3 rounded-md mt-auto">
                   <div className="text-sm text-gray-500 mb-1">Ví dụ:</div>
                   <div className="font-mono text-primary">{item.example}</div>
                 </div>
@@ -426,7 +430,7 @@ function Home() {
             ))}
           </div>
           <div className="text-center mt-8">
-            <Link to="/grammar" className="inline-block bg-secondary text-white font-bold py-3 px-8 rounded-lg hover:bg-gray-700 transition-colors">
+            <Link to="/grammar" className="inline-block bg-primary text-white font-bold py-3 px-8 rounded-lg hover:bg-orange-600 transition-colors">
               Học ngữ pháp chi tiết →
             </Link>
           </div>
@@ -441,35 +445,35 @@ function Home() {
             <p className="mt-4 text-lg text-gray-600">Thực hành và kiểm tra kiến thức với bài tập nghe, đọc và viết</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="border border-gray-200 p-6 rounded-lg hover:shadow-md transition-shadow bg-white">
+            <div className="border border-gray-200 p-6 rounded-lg hover:shadow-md transition-shadow bg-white flex flex-col h-full">
               <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-full mb-4 mx-auto">
                 <Headphones className="w-6 h-6 text-blue-600" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Luyện nghe</h3>
-              <p className="text-gray-600 mb-4">Nghe từ vựng và câu ngữ pháp với giọng đọc chất lượng cao, tốc độ điều chỉnh được phù hợp cho người mới bắt đầu.</p>
-              <div className="bg-gray-50 p-3 rounded-md">
+              <p className="text-gray-600 mb-4 flex-1">Nghe từ vựng và câu ngữ pháp với giọng đọc chất lượng cao, tốc độ điều chỉnh được phù hợp cho người mới bắt đầu.</p>
+              <div className="bg-gray-50 p-3 rounded-md mt-auto">
                 <div className="text-sm text-gray-500 mb-1">Bao gồm:</div>
                 <div className="font-mono text-primary">18 bài tập nghe</div>
               </div>
             </div>
-            <div className="border border-gray-200 p-6 rounded-lg hover:shadow-md transition-shadow bg-white">
+            <div className="border border-gray-200 p-6 rounded-lg hover:shadow-md transition-shadow bg-white flex flex-col h-full">
               <div className="flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-4 mx-auto">
                 <Eye className="w-6 h-6 text-green-600" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Luyện đọc</h3>
-              <p className="text-gray-600 mb-4">Đọc hiểu từ vựng và đoạn văn tiếng Hàn, từ cơ bản đến nâng cao với câu hỏi comprehension chi tiết.</p>
-              <div className="bg-gray-50 p-3 rounded-md">
+              <p className="text-gray-600 mb-4 flex-1">Đọc hiểu từ vựng và đoạn văn tiếng Hàn, từ cơ bản đến nâng cao với câu hỏi comprehension chi tiết.</p>
+              <div className="bg-gray-50 p-3 rounded-md mt-auto">
                 <div className="text-sm text-gray-500 mb-1">Bao gồm:</div>
                 <div className="font-mono text-primary">12 bài tập đọc</div>
               </div>
             </div>
-            <div className="border border-gray-200 p-6 rounded-lg hover:shadow-md transition-shadow bg-white">
+            <div className="border border-gray-200 p-6 rounded-lg hover:shadow-md transition-shadow bg-white flex flex-col h-full">
               <div className="flex items-center justify-center w-12 h-12 bg-purple-100 rounded-full mb-4 mx-auto">
                 <PenTool className="w-6 h-6 text-purple-600" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Luyện viết</h3>
-              <p className="text-gray-600 mb-4">Dịch câu từ tiếng Việt sang tiếng Hàn và điền ngữ pháp với gợi ý chi tiết, chấp nhận nhiều đáp án đúng.</p>
-              <div className="bg-gray-50 p-3 rounded-md">
+              <p className="text-gray-600 mb-4 flex-1">Dịch câu từ tiếng Việt sang tiếng Hàn và điền ngữ pháp với gợi ý chi tiết, chấp nhận nhiều đáp án đúng.</p>
+              <div className="bg-gray-50 p-3 rounded-md mt-auto">
                 <div className="text-sm text-gray-500 mb-1">Bao gồm:</div>
                 <div className="font-mono text-primary">5 bài tập viết</div>
               </div>

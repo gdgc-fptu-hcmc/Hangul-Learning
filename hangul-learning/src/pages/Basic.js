@@ -380,14 +380,14 @@ function Basic() {
       {/* Cấu trúc câu */}
       <section>
         <h3 className="text-2xl font-bold text-secondary mb-4">Cấu trúc câu cơ bản</h3>
-        <div className="space-y-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {sentenceStructure.map((structure, idx) => (
-            <div key={idx} className="bg-white p-6 rounded-lg shadow-md border">
+            <div key={idx} className="bg-white p-6 rounded-lg shadow-md border flex flex-col h-full">
               <h4 className="text-xl font-bold text-gray-800 mb-2">{structure.type}</h4>
               <div className="bg-blue-50 p-3 rounded-lg mb-4">
                 <div className="font-semibold text-blue-800">{structure.pattern}</div>
               </div>
-              <div className="space-y-4">
+              <div className="space-y-4 flex-1">
                 {structure.examples.map((example, exIdx) => (
                   <div key={exIdx} className="bg-gray-50 p-4 rounded-lg">
                     <div className="text-lg font-bold text-primary mb-2">{example.korean}</div>
@@ -410,30 +410,26 @@ function Basic() {
       {/* Tiểu từ cơ bản */}
       <section>
         <h3 className="text-2xl font-bold text-secondary mb-4">Tiểu từ cơ bản (조사)</h3>
-        <div className="space-y-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {basicParticles.map((particle, idx) => (
-            <div key={idx} className="bg-white p-6 rounded-lg shadow-md border">
-              <div className="flex flex-col md:flex-row gap-4">
-                <div className="md:w-1/4">
-                  <div className="text-2xl font-bold text-primary mb-2">{particle.particle}</div>
-                  <div className="font-semibold text-gray-700">{particle.function}</div>
-                </div>
-                <div className="md:w-3/4">
-                  <div className="text-gray-600 mb-3">{particle.usage}</div>
-                  <div className="space-y-2">
-                    {particle.examples.map((example, exIdx) => (
-                      <div key={exIdx} className="flex items-center gap-2">
-                        <div className="text-lg text-primary">{example}</div>
-                        <button
-                          onClick={() => speakHangul(example)}
-                          className="text-primary hover:text-orange-700 transition-colors"
-                        >
-                          <Volume2 size={16} />
-                        </button>
-                      </div>
-                    ))}
+            <div key={idx} className="bg-white p-6 rounded-lg shadow-md border flex flex-col h-full">
+              <div className="text-center mb-4">
+                <div className="text-3xl font-bold text-primary mb-2">{particle.particle}</div>
+                <div className="font-semibold text-gray-700 mb-2">{particle.function}</div>
+                <div className="text-sm text-gray-600">{particle.usage}</div>
+              </div>
+              <div className="space-y-2 flex-1">
+                {particle.examples.map((example, exIdx) => (
+                  <div key={exIdx} className="flex items-center justify-between bg-gray-50 p-2 rounded">
+                    <div className="text-lg text-primary">{example}</div>
+                    <button
+                      onClick={() => speakHangul(example)}
+                      className="text-primary hover:text-orange-700 transition-colors"
+                    >
+                      <Volume2 size={16} />
+                    </button>
                   </div>
-                </div>
+                ))}
               </div>
             </div>
           ))}
@@ -443,57 +439,63 @@ function Basic() {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4 sm:p-6 lg:p-8">
+    <>
       <SEO
         title="Cơ bản tiếng Hàn - Bảng chữ cái Hangul | Hangul Learning" 
-        description="Học bảng chữ cái Hangul với nguyên âm, phụ âm, quy tắc phát âm và cấu trúc câu cơ bản trong tiếng Hàn."
+        description="Học bảng chữ cái Hangul với nguyên âm, phụ âm, quy tắc phát âm và cấu trúc câu cơ bản trong tiếng Hàn theo lộ trình Tiếng Hàn Tổng Hợp."
       />
-      
-      <div className="max-w-7xl mx-auto">
-        <header className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-800">Cơ bản tiếng Hàn</h1>
-          <p className="mt-2 text-lg text-gray-600">Bảng chữ cái Hangul và quy tắc cơ bản</p>
-        </header>
+      <div className="min-h-screen bg-light-gray p-4 sm:p-6 lg:p-8">
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <header className="text-center mb-10">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-secondary tracking-tight">
+              Cơ bản tiếng Hàn
+            </h1>
+            <p className="mt-3 text-lg text-text-light max-w-2xl mx-auto">
+              Bảng chữ cái Hangul và quy tắc cơ bản theo lộ trình Tiếng Hàn Tổng Hợp.
+            </p>
+          </header>
 
-        <div className="flex flex-col lg:flex-row gap-8">
-          {/* Sidebar */}
-          <aside className="lg:w-1/4 lg:sticky lg:top-8 self-start bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-xl font-bold text-secondary mb-4">Mục lục</h2>
-            <nav className="space-y-2">
-              {sections.map(({ key, title, icon: Icon }) => (
-                <button
-                  key={key}
-                  onClick={() => setSelectedSection(key)}
-                  className={`w-full text-left px-4 py-3 rounded-md transition-colors duration-200 flex items-center gap-3 ${
-                    selectedSection === key 
-                      ? 'bg-primary text-white shadow-sm' 
-                      : 'bg-gray-100 text-gray-700 hover:bg-orange-100 hover:text-primary'
-                  }`}
-                >
-                  <Icon size={20} />
-                  {title}
-                </button>
-              ))}
-            </nav>
-          </aside>
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Sidebar */}
+            <aside className="lg:w-1/3 xl:w-1/4 lg:sticky lg:top-8 self-start bg-white p-4 sm:p-6 rounded-lg shadow-md">
+              <h2 className="text-xl font-bold text-secondary mb-4">Mục lục</h2>
+              <nav className="space-y-2">
+                {sections.map(({ key, title, icon: Icon }) => (
+                  <button
+                    key={key}
+                    onClick={() => setSelectedSection(key)}
+                    className={`w-full text-left px-4 py-3 rounded-md transition-colors duration-200 flex items-center gap-3 ${
+                      selectedSection === key 
+                        ? 'bg-primary text-white shadow-sm' 
+                        : 'bg-gray-100 text-gray-700 hover:bg-orange-100 hover:text-primary'
+                    }`}
+                  >
+                    <Icon size={20} />
+                    {title}
+                  </button>
+                ))}
+              </nav>
+            </aside>
 
-          {/* Main Content */}
-          <main className="flex-1 min-w-0">
-            <div className="bg-gray-50 p-6 rounded-lg">
-              {selectedSection === 'vowels' && renderVowels()}
-              {selectedSection === 'consonants' && renderConsonants()}
-              {selectedSection === 'rules' && renderRules()}
-              {selectedSection === 'sentence' && renderSentence()}
-            </div>
-          </main>
-        </div>
-
-        {/* Ad Section */}
-        <div className="mt-8">
-          <AdsenseAd />
+            {/* Main Content */}
+            <main className="flex-1 min-w-0">
+              <div className="bg-white p-6 rounded-2xl shadow-lg">
+                {selectedSection === 'vowels' && renderVowels()}
+                {selectedSection === 'consonants' && renderConsonants()}
+                {selectedSection === 'rules' && renderRules()}
+                {selectedSection === 'sentence' && renderSentence()}
+              </div>
+              
+              {/* Ad Section */}
+              <div className="mt-8">
+                <AdsenseAd style={{ display: 'block', width: '100%' }} />
+              </div>
+            </main>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
