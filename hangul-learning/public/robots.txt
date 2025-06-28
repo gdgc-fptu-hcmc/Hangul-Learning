@@ -2,37 +2,178 @@
 # Hangul Learning - Korean Language Learning Platform
 # https://hangul.online/
 
+########################################
+# TOÀN BỘ BOT - GENERAL RULES
+########################################
 User-agent: *
 Allow: /
 Allow: /vocabulary
 Allow: /grammar
+Allow: /basic
+Allow: /basic2
 Allow: /exercises
 Allow: /about
+Allow: /donate
+Allow: /privacy-policy
+Allow: /terms-of-service
+Allow: /vocabulary-complete
 Allow: /static/
 Allow: /images/
-Allow: /*.css
-Allow: /*.js
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.ico$
+Allow: /*.webp$
 
-# Disallow admin and private areas
 Disallow: /admin/
 Disallow: /api/
 Disallow: /temp/
-Disallow: /*.json
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /node_modules/
+Disallow: /build/
+Disallow: /src/
 
-# Crawl rate - be respectful
+# Tốc độ crawl phù hợp để tránh quá tải server
 Crawl-delay: 1
 
-# Sitemap location
+# Sitemap XML để bots tìm nhanh các trang
 Sitemap: https://hangul.online/sitemap.xml
 
-# AdSense crawlers
+########################################
+# GOOGLE BOTS - OPTIMIZED
+########################################
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0.5
+
+User-agent: Googlebot-Image
+Allow: /
+Allow: /static/
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+
+User-agent: Googlebot-Mobile
+Allow: /
+Crawl-delay: 0.5
+
 User-agent: Mediapartners-Google
 Allow: /
 
 User-agent: AdsBot-Google
 Allow: /
 
-# Bing crawlers
+User-agent: Google-InspectionTool
+Allow: /
+
+########################################
+# BING BOTS - MICROSOFT
+########################################
 User-agent: bingbot
 Allow: /
 Crawl-delay: 1
+
+User-agent: msnbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: BingPreview
+Allow: /
+
+########################################
+# YANDEX - RUSSIAN SEARCH ENGINE
+########################################
+User-agent: Yandex
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Crawl-delay: 2
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: YandexImages
+Allow: /
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+
+########################################
+# CỐC CỐC - VIETNAMESE SEARCH ENGINE
+########################################
+User-agent: coccocbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: coccocbot-web
+Allow: /
+
+User-agent: coccocbot-image
+Allow: /
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+
+########################################
+# OTHER SEARCH ENGINES
+########################################
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+########################################
+# KOREAN SEARCH ENGINES
+########################################
+User-agent: NaverBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: DaumBot
+Allow: /
+Crawl-delay: 1
+
+########################################
+# BLOCKED BOTS
+########################################
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /

@@ -6,12 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     
+    <!-- SEO Meta Tags for Better Indexing -->
+    <meta name="description" content="Hangul Learning - Nền tảng học tiếng Hàn miễn phí cho người Việt. Tổng hợp ngữ pháp, từ vựng, bài tập chuẩn TOPIK từ Sơ đến Cao cấp." />
+    <meta name="keywords" content="Học tiếng Hàn, Hangul, ngữ pháp tiếng Hàn, từ vựng tiếng Hàn, TOPIK, Korean, Korean grammar, Korean vocabulary, 한국어 학습, 한글" />
+    <meta name="author" content="Nguyễn Đức Tuấn" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="language" content="Vietnamese" />
+    <meta name="geo.region" content="VN" />
+    <meta name="geo.country" content="Vietnam" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+    <meta name="revisit-after" content="7 days" />
+    
+    <!-- Mobile and App Meta Tags -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Hangul Learning" />
+    <meta name="application-name" content="Hangul Learning" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="msapplication-config" content="%PUBLIC_URL%/browserconfig.xml" />
+    
     <!-- Performance optimizations -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="%PUBLIC_URL%/logo192.png" as="image" type="image/png">
     <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
     
     <!-- Resource hints for better performance -->
     <link rel="preload" href="%PUBLIC_URL%/static/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -20,40 +45,98 @@
     <!-- Critical viewport meta for mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     
-    <meta name="description" content="Hangul Learning - Nền tảng học tiếng Hàn miễn phí cho người Việt. Tổng hợp ngữ pháp, từ vựng, bài tập chuẩn TOPIK từ Sơ đến Cao cấp." />
-    <meta name="keywords" content="Học tiếng Hàn, Hangul, ngữ pháp tiếng Hàn, từ vựng tiếng Hàn, TOPIK, Korean, Korean grammar, Korean vocabulary" />
-    <meta name="author" content="Nguyễn Đức Tuấn" />
-    <meta name="robots" content="index, follow" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+    <!-- Favicon and Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="mask-icon" href="%PUBLIC_URL%/logo.png" color="#000000" />
+    
+    <!-- Manifest and Canonical -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="canonical" href="https://hangul-learning.vercel.app" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
+    <link rel="canonical" href="https://hangul.online" />
+    
+    <!-- Alternate Languages -->
+    <link rel="alternate" hreflang="vi" href="https://hangul.online" />
+    <link rel="alternate" hreflang="ko" href="https://hangul.online" />
+    <link rel="alternate" hreflang="x-default" href="https://hangul.online" />
+    
     <title>Hangul Learning - Học tiếng Hàn miễn phí cho người Việt</title>
-    <!-- Open Graph / Facebook -->
+    
+    <!-- Enhanced Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://hangul-learning.vercel.app" />
-    <meta property="og:title" content="Hangul Learning - Học tiếng Hàn miễn phí" />
-    <meta property="og:description" content="Tổng hợp ngữ pháp, từ vựng, bài tập tiếng Hàn chuẩn TOPIK từ Sơ cấp đến Cao cấp." />
-    <meta property="og:image" content="%PUBLIC_URL%/logo512.png" />
+    <meta property="og:url" content="https://hangul.online" />
+    <meta property="og:title" content="Hangul Learning - Học tiếng Hàn miễn phí cho người Việt" />
+    <meta property="og:description" content="Nền tảng học tiếng Hàn miễn phí với tổng hợp ngữ pháp, từ vựng, bài tập chuẩn TOPIK từ Sơ cấp đến Cao cấp. Phù hợp cho người Việt Nam học tiếng Hàn." />
+    <meta property="og:image" content="https://hangul.online/logo512.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="Hangul Learning Logo" />
+    <meta property="og:site_name" content="Hangul Learning" />
+    <meta property="og:locale" content="vi_VN" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://hangul-learning.vercel.app" />
-    <meta property="twitter:title" content="Hangul Learning - Học tiếng Hàn miễn phí" />
-    <meta property="twitter:description" content="Tổng hợp ngữ pháp, từ vựng, bài tập tiếng Hàn chuẩn TOPIK từ Sơ cấp đến Cao cấp." />
-    <meta property="twitter:image" content="%PUBLIC_URL%/logo512.png" />
+    <!-- Enhanced Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://hangul.online" />
+    <meta name="twitter:title" content="Hangul Learning - Học tiếng Hàn miễn phí cho người Việt" />
+    <meta name="twitter:description" content="Nền tảng học tiếng Hàn miễn phí với tổng hợp ngữ pháp, từ vựng, bài tập chuẩn TOPIK từ Sơ cấp đến Cao cấp." />
+    <meta name="twitter:image" content="https://hangul.online/logo512.png" />
+    <meta name="twitter:image:alt" content="Hangul Learning - Korean Learning Platform" />
+    <meta name="twitter:creator" content="@hangullearning" />
+    <meta name="twitter:site" content="@hangullearning" />
+    
+    <!-- Structured Data (JSON-LD) for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Hangul Learning",
+      "description": "Nền tảng học tiếng Hàn miễn phí cho người Việt với tổng hợp ngữ pháp, từ vựng, bài tập chuẩn TOPIK",
+      "url": "https://hangul.online",
+      "logo": "https://hangul.online/logo512.png",
+      "image": "https://hangul.online/logo512.png",
+      "sameAs": [
+        "https://hangul.online"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "VN"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "VND",
+        "availability": "https://schema.org/InStock"
+      },
+      "educationalCredentialAwarded": "Korean Language Certificate",
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "TOPIK"
+      }
+    }
+    </script>
+    
+    <!-- Website Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Hangul Learning",
+      "description": "Học tiếng Hàn miễn phí cho người Việt",
+      "url": "https://hangul.online",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://hangul.online/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "inLanguage": "vi",
+      "copyrightYear": "2024",
+      "creator": {
+        "@type": "Person",
+        "name": "Nguyễn Đức Tuấn"
+      }
+    }
+    </script>
+    
     <!-- Google AdSense verification meta -->
     <meta name="google-adsense-account" content="ca-pub-5760828366443806" />
     <!-- Google AdSense -->
@@ -67,6 +150,12 @@
 
       gtag('config', 'G-RT9QEL23QL');
     </script>
+    
+    <!-- Bing Webmaster Tools verification (remove or update when needed) -->
+    <!-- <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE" /> -->
+    
+    <!-- Yandex Webmaster verification (remove or update when needed) -->
+    <!-- <meta name="yandex-verification" content="YOUR_YANDEX_VERIFICATION_CODE" /> -->
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
