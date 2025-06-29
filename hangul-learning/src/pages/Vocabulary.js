@@ -268,31 +268,6 @@ function Vocabulary() {
     setIsFlipped(false);
   }, [selectedLessonKey]);
 
-  // Preload data for other levels in background to improve UX
-  useEffect(() => {
-    if (isDataLoaded) {
-      // Preload data for all levels - this ensures smooth transitions
-      ['level1', 'level2', 'level3'].forEach(level => {
-        if (level !== selectedLevel) {
-          // Trigger lazy loading for other levels
-          setTimeout(() => {
-            const levelData = vocabularyData[level];
-                         // This forces the data to be computed and cached
-             if (levelData?.lessons) {
-               Object.keys(levelData.lessons).forEach(lessonKey => {
-                 // Access the words to trigger computation and caching
-                 const words = levelData.lessons[lessonKey].words;
-                 if (words.length > 0) {
-                   // Data is now cached
-                 }
-               });
-             }
-          }, 100);
-        }
-      });
-    }
-  }, [isDataLoaded, selectedLevel, vocabularyData]);
-
   const currentLevelData = useMemo(() => 
     vocabularyData[selectedLevel], [vocabularyData, selectedLevel]
   );
@@ -346,7 +321,7 @@ function Vocabulary() {
     synth.speak(utterance);
   }, [speechCache.preferredVoice]);
 
-  // Enhanced 3D card flip - Smooth and natural
+  // Enhanced 3D card flip - Smooth and natural for both directions
   const handleCardFlip = useCallback((event) => {
     // Check if click is on audio button - don't flip if so
     if (event.target.closest('button[title*="Phát âm"]') || 
@@ -358,13 +333,13 @@ function Vocabulary() {
     
     setIsFlipping(true);
     
-    // 3D flip with smooth animation
+    // 3D flip with direction-specific animation
     setIsFlipped(prevFlipped => !prevFlipped);
     
     // Reset flipping state after animation completes
     setTimeout(() => {
       setIsFlipping(false);
-    }, 800); // Match CSS transition duration (0.8s)
+    }, 600); // Match CSS animation duration (0.6s)
   }, [isFlipping]);
 
   // Flashcard controls - Simple navigation
@@ -407,7 +382,7 @@ function Vocabulary() {
 
   const seo = buildSeo;
 
-  // Enhanced Flashcard Modal Component with Animations
+  // Enhanced Flashcard Modal Component with Beautiful Design
   const FlashcardModal = () => {
     if (!isFlashcardMode || !selectedLesson) return null;
 
@@ -415,137 +390,182 @@ function Vocabulary() {
     const progress = ((currentCardIndex + 1) / selectedLesson.words.length) * 100;
 
     return (
-      <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4 backdrop-blur-sm">
-        <div className="bg-white rounded-3xl shadow-2xl w-full max-w-lg relative">
+      <div className="fixed inset-0 bg-black bg-opacity-80 flex items-start justify-center z-50 pt-4 pb-4 px-4 backdrop-blur-sm">
+        <div className="bg-white rounded-3xl shadow-2xl w-full max-w-4xl max-h-[92vh] overflow-hidden relative mt-8">
           {/* Close Button */}
           <button 
             onClick={() => setIsFlashcardMode(false)} 
             className="absolute top-4 right-4 z-10 text-gray-400 hover:text-red-500 hover:rotate-90 transition-all duration-300 p-2 rounded-full hover:bg-red-50"
           >
-            <X size={24} />
+            <X size={28} />
           </button>
           
           {/* Header */}
-          <div className="p-6 bg-gradient-to-r from-primary to-orange-600 rounded-t-3xl text-white">
-            <p className="text-center font-bold text-lg">{selectedLesson.title}</p>
-            <p className="text-center text-sm opacity-90">{getHeaderText()}</p>
+          <div className="p-6 bg-gradient-to-r from-primary via-orange-500 to-orange-600 rounded-t-3xl text-white">
+            <div className="text-center">
+              <h3 className="font-bold text-xl mb-1">{selectedLesson.title}</h3>
+              <p className="text-sm opacity-90">{getHeaderText()}</p>
+              <div className="mt-3 flex items-center justify-center gap-2 text-sm">
+                <span className="bg-white bg-opacity-20 px-3 py-1 rounded-full">
+                  {currentCardIndex + 1} / {selectedLesson.words.length}
+                </span>
+              </div>
+            </div>
           </div>
 
           {/* Enhanced 3D Card Container */}
-          <div 
-            className={`card-flip-container w-full h-80 p-6 ${isFlipping ? 'pointer-events-none cursor-wait' : 'cursor-pointer card-hover'}`}
-            onClick={handleCardFlip}
-          >
-            <div className={`card-flip-inner ${isFlipped ? 'flipped' : ''} ${isFlipping ? 'flipping' : ''}`}>
-              {/* Front of Card - Vietnamese Meaning */}
-              <div className="card-face card-face-front flex flex-col items-center justify-center p-8 border-2 border-gray-100 shadow-xl">
-                <div className="text-center">
-                  <div className="mb-4">
-                    <span className="text-xs text-primary bg-primary bg-opacity-10 px-3 py-1 rounded-full font-medium">
+          <div className="p-6">
+            <div 
+              className={`card-flip-container w-full h-80 ${isFlipping ? 'pointer-events-none cursor-wait' : 'cursor-pointer'}`}
+              onClick={handleCardFlip}
+            >
+              <div className={`card-flip-inner ${isFlipped ? 'flipped' : ''} ${isFlipping ? (isFlipped ? 'flipping-forward' : 'flipping-backward') : ''}`}>
+                {/* Front of Card - Vietnamese Meaning */}
+                <div className="card-face card-face-front flex flex-col justify-between p-6 shadow-2xl">
+                  <div className="text-center">
+                    <span className="text-sm text-primary bg-primary bg-opacity-10 px-4 py-2 rounded-full font-semibold inline-block">
                       Nghĩa tiếng Việt
                     </span>
                   </div>
-                  <h2 className="text-4xl font-bold text-gray-800 mb-3 leading-tight">{currentWord.meaning}</h2>
-                  <p className="text-lg text-gray-600 bg-gray-100 px-4 py-2 rounded-full">({currentWord.type})</p>
-                  <div className="mt-6 text-sm text-gray-500">
-                    <p>{isFlipping ? 'Đang xoay...' : 'Nhấn để xoay thẻ'}</p>
+                  
+                  <div className="text-center flex-1 flex flex-col justify-center">
+                    <h2 className="text-5xl font-bold text-gray-800 mb-6 leading-tight">{currentWord.meaning}</h2>
+                    <div className="text-xl text-gray-600 bg-gray-50 px-6 py-3 rounded-2xl inline-block">
+                      ({currentWord.type})
+                    </div>
+                  </div>
+                  
+                  <div className="text-center">
+                    <p className="text-sm text-gray-500 bg-gray-100 px-4 py-2 rounded-xl flex items-center justify-center gap-2 inline-flex">
+                      {isFlipping ? 'Đang xoay thẻ...' : 'Nhấn để xem tiếng Hàn'}
+                    </p>
                   </div>
                 </div>
-              </div>
 
-              {/* Back of Card - Korean Word */}
-              <div className="card-face card-face-back flex flex-col items-center justify-center p-8 border-2 border-blue-200 shadow-xl">
-                <div className="text-center">
-                  <div className="mb-4">
-                    <span className="text-xs text-blue-700 bg-blue-100 px-3 py-1 rounded-full font-medium">
-                      Tiếng Hàn
+                {/* Back of Card - Korean Word */}
+                <div className="card-face card-face-back flex flex-col justify-between p-6 shadow-2xl">
+                  <div className="text-center">
+                    <span className="text-xs text-blue-700 bg-blue-100 px-3 py-1 rounded-full font-medium inline-block">
+                      한국어
                     </span>
                   </div>
-                  <h2 className="text-6xl font-bold text-secondary mb-4 tracking-wide">{currentWord.korean}</h2>
-                  <p className="text-xl text-blue-700 mb-6 font-mono bg-blue-50 px-4 py-2 rounded-xl">[{currentWord.pronunciation}]</p>
                   
-                  {/* Instruction for back side */}
-                  <div className="mb-4 text-sm text-blue-600">
-                    <p>Nhấn để xoay lại | Nhấn nút để nghe</p>
+                  <div className="text-center flex-1 flex flex-col justify-center space-y-6">
+                    <h2 className="text-6xl font-bold text-blue-800 tracking-wide leading-tight">{currentWord.korean}</h2>
+                    <div className="flex justify-center">
+                      <p className="text-lg text-blue-600 font-mono bg-blue-50 px-3 py-2 rounded-xl inline-block">
+                        {currentWord.pronunciation}
+                      </p>
+                    </div>
+                    
+                    {/* Enhanced Audio Button */}
+                    <div className="flex justify-center">
+                      <button
+                        onClick={(e) => { e.stopPropagation(); speakWord(currentWord.korean); }}
+                        className={`group px-5 py-2 rounded-xl font-semibold text-sm transition-all duration-300 inline-flex items-center gap-2 ${
+                          isSpeechReady 
+                            ? 'bg-gradient-to-r from-primary to-orange-600 text-white hover:scale-105 shadow-md hover:shadow-lg active:scale-95 transform' 
+                            : 'bg-gray-300 text-gray-500 cursor-wait'
+                        }`}
+                        disabled={!isSpeechReady}
+                        title={isSpeechReady ? 'Phát âm từ này' : 'Đang tải giọng đọc...'}
+                      >
+                        {isSpeechReady ? (
+                          <>
+                            <Volume2 size={20} className="group-hover:animate-pulse" />
+                            <span>Phát âm</span>
+                          </>
+                        ) : (
+                          <>
+                            <div className="relative">
+                              <Volume2 size={20} className="opacity-50" />
+                              <div className="absolute inset-0 flex items-center justify-center">
+                                <div className="animate-spin rounded-full h-3 w-3 border-b-2 border-primary"></div>
+                              </div>
+                            </div>
+                            <span>Đang tải...</span>
+                          </>
+                        )}
+                      </button>
+                    </div>
                   </div>
                   
-                  {/* Enhanced Audio Button */}
-                  <button
-                    onClick={(e) => { e.stopPropagation(); speakWord(currentWord.korean); }}
-                    className={`group px-6 py-3 rounded-2xl font-semibold transition-all duration-300 ${
-                      isSpeechReady 
-                        ? 'bg-primary text-white hover:bg-orange-600 hover:scale-110 shadow-lg hover:shadow-xl active:scale-95' 
-                        : 'bg-gray-300 text-gray-500 cursor-wait'
-                    }`}
-                    disabled={!isSpeechReady}
-                    title={isSpeechReady ? 'Phát âm từ này' : 'Đang tải giọng đọc...'}
-                  >
-                    <div className="flex items-center gap-2">
-                      {isSpeechReady ? (
-                        <>
-                          <Volume2 size={24} className="group-hover:animate-pulse" />
-                          <span>Phát âm</span>
-                        </>
-                      ) : (
-                        <>
-                          <div className="relative">
-                            <Volume2 size={24} className="opacity-50" />
-                            <div className="absolute inset-0 flex items-center justify-center">
-                              <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary"></div>
-                            </div>
-                          </div>
-                          <span>Đang tải...</span>
-                        </>
-                      )}
-                    </div>
-                  </button>
+                  <div className="text-center">
+                    <p className="text-xs text-blue-600 bg-blue-50 px-3 py-2 rounded-lg inline-flex items-center gap-1">
+                      <span></span> Nhấn để xoay lại
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           
-          {/* Progress and Controls */}
-          <div className="p-6 bg-gray-50 rounded-b-3xl">
-            {/* Enhanced Progress Bar */}
-            <div className="w-full bg-gray-200 rounded-full h-3 mb-6 overflow-hidden">
-              <div 
-                className="bg-gradient-to-r from-primary to-orange-600 h-3 rounded-full transition-all duration-300 ease-out"
-                style={{ width: `${progress}%` }}
-              ></div>
+          {/* Progress and Enhanced Controls */}
+          <div className="px-6 pb-6">
+            {/* Enhanced Progress Bar with Glow Effect */}
+            <div className="mb-6">
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-sm font-medium text-gray-600">Tiến độ học</span>
+                <span className="text-sm font-bold text-primary">{Math.round(progress)}%</span>
+              </div>
+              <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden shadow-inner">
+                <div 
+                  className="bg-gradient-to-r from-primary via-orange-500 to-orange-600 h-3 rounded-full transition-all duration-500 ease-out animate-progress-glow"
+                  style={{ width: `${progress}%` }}
+                ></div>
+              </div>
             </div>
 
-            {/* Enhanced Navigation Controls */}
+            {/* Simple Navigation Controls */}
             <div className="flex justify-between items-center">
               <button 
                 onClick={prevCard} 
                 disabled={currentCardIndex === 0} 
-                className={`group flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                className={`group flex items-center gap-2 px-4 py-3 rounded-xl font-semibold text-base transition-all duration-300 ${
                   currentCardIndex === 0 
-                    ? 'bg-gray-200 text-gray-400 cursor-not-allowed' 
-                    : 'bg-white text-gray-700 hover:bg-primary hover:text-white shadow-md hover:shadow-lg hover:scale-105 active:scale-95'
+                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed' 
+                    : 'bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 hover:from-primary hover:to-orange-600 hover:text-white shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transform'
                 }`}
               >
                 <ChevronLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
                 <span className="hidden sm:inline">Trước</span>
               </button>
               
-              <div className="flex flex-col items-center">
-                <p className="font-bold text-lg text-gray-800">{currentCardIndex + 1} / {selectedLesson.words.length}</p>
-                <p className="text-xs text-gray-500">từ vựng</p>
+              {/* Center instruction */}
+              <div className="text-center px-4">
+                <p className="text-xs text-gray-500 bg-gray-50 px-3 py-2 rounded-lg inline-block">
+                  <span className="hidden sm:inline">Nhấn vào thẻ để lật</span>
+                  <span className="sm:hidden">Nhấn thẻ</span>
+                </p>
               </div>
               
               <button 
                 onClick={nextCard} 
                 disabled={currentCardIndex === selectedLesson.words.length - 1} 
-                className={`group flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                className={`group flex items-center gap-2 px-4 py-3 rounded-xl font-semibold text-base transition-all duration-300 ${
                   currentCardIndex === selectedLesson.words.length - 1 
-                    ? 'bg-gray-200 text-gray-400 cursor-not-allowed' 
-                    : 'bg-white text-gray-700 hover:bg-primary hover:text-white shadow-md hover:shadow-lg hover:scale-105 active:scale-95'
+                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed' 
+                    : 'bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 hover:from-primary hover:to-orange-600 hover:text-white shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transform'
                 }`}
               >
                 <span className="hidden sm:inline">Tiếp theo</span>
                 <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </button>
+            </div>
+
+            {/* Quick Stats */}
+            <div className="mt-4 flex justify-center">
+              <div className="bg-gray-50 rounded-xl px-4 py-2 inline-block">
+                <div className="flex items-center gap-3 text-sm">
+                  <span className="text-gray-600">
+                    <strong className="text-gray-800">{currentCardIndex + 1}</strong> / {selectedLesson.words.length}
+                  </span>
+                  <span className="text-gray-400">|</span>
+                  <span className="text-gray-600">
+                    <strong className="text-primary">{selectedLesson.title}</strong>
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -561,7 +581,7 @@ function Vocabulary() {
           <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
           <p className="mt-4 text-lg text-text-light">Đang tải từ vựng...</p>
           {isSpeechReady ? (
-            <p className="mt-2 text-sm text-green-600">✓ Giọng đọc đã sẵn sàng</p>
+            <p className="mt-2 text-sm text-green-600">Giọng đọc đã sẵn sàng</p>
           ) : (
             <p className="mt-2 text-sm text-gray-500">Đang tải giọng đọc...</p>
           )}
@@ -587,184 +607,185 @@ function Vocabulary() {
             </p>
           </header>
 
-        <div className="flex flex-col lg:flex-row gap-8">
-          {/* --- Sidebar --- */}
-          <aside className="lg:w-1/3 xl:w-1/4 lg:sticky lg:top-8 self-start bg-white p-4 sm:p-6 rounded-lg shadow-md">
-            <h2 className="text-xl font-bold text-secondary mb-4">Lộ trình học</h2>
-            
-            {/* Level Selector */}
-            <div className="space-y-2 mb-6">
-              {Object.entries(vocabularyData).map(([key, { title }]) => (
-                <button
-                  key={key}
-                  onClick={() => setSelectedLevel(key)}
-                  className={`w-full text-left px-4 py-2 rounded-md transition-colors duration-200 ${
-                    selectedLevel === key 
-                      ? 'bg-primary text-white shadow-sm' 
-                      : 'bg-gray-100 text-gray-700 hover:bg-orange-100 hover:text-primary'
-                  }`}
-                >
-                  {getHeaderText(key)}
-                </button>
-              ))}
-            </div>
-
-            {/* Search Bar */}
-            <div className="mb-4">
-              <input
-                type="text"
-                placeholder="Tìm từ vựng..."
-                value={searchTerm}
-                onChange={e => setSearchTerm(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary transition"
-              />
-            </div>
-            
-            {/* Lesson List */}
-            {currentLevelData && (
-              <nav className="space-y-1 max-h-[50vh] overflow-y-auto">
-                {Object.entries(currentLevelData.lessons).map(([key, lesson]) => (
-                  <a
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* --- Sidebar --- */}
+            <aside className="lg:w-1/3 xl:w-1/4 lg:sticky lg:top-8 self-start bg-white p-4 sm:p-6 rounded-lg shadow-md">
+              <h2 className="text-xl font-bold text-secondary mb-4">Lộ trình học</h2>
+              
+              {/* Level Selector */}
+              <div className="space-y-2 mb-6">
+                {Object.entries(vocabularyData).map(([key, { title }]) => (
+                  <button
                     key={key}
-                    href={`#${key}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setSelectedLessonKey(key);
-                      setSearchTerm(''); // Clear search when a lesson is clicked
-                    }}
-                    className={`block px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                      selectedLessonKey === key && !searchTerm
-                        ? 'bg-orange-100 text-primary font-bold'
-                        : 'text-gray-600 hover:bg-gray-100'
+                    onClick={() => setSelectedLevel(key)}
+                    className={`w-full text-left px-4 py-2 rounded-md transition-colors duration-200 ${
+                      selectedLevel === key 
+                        ? 'bg-primary text-white shadow-sm' 
+                        : 'bg-gray-100 text-gray-700 hover:bg-orange-100 hover:text-primary'
                     }`}
                   >
-                    {lesson.title}
-                  </a>
+                    {getHeaderText(key)}
+                  </button>
                 ))}
-              </nav>
-            )}
-          </aside>
-
-          {/* --- Main Content --- */}
-          <main className="flex-1 min-w-0">
-            {searchTerm.trim() ? (
-              // Search Results View
-              <div className="bg-white p-6 rounded-2xl shadow-lg">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">Kết quả tìm kiếm cho "{searchTerm}"</h2>
-                {searchResults.length > 0 ? (
-                  <div className="space-y-4">
-                    {searchResults.map((word, idx) => (
-                      <div key={idx} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                        <div>
-                          <p className="font-bold text-lg text-primary">{word.korean}</p>
-                          <p className="text-gray-600">{word.meaning}</p>
-                          <p className="text-sm text-gray-400">[{word.pronunciation}] - ({word.type})</p>
-                          <span 
-                            className="text-xs text-blue-500 cursor-pointer hover:underline"
-                            onClick={() => {
-                              setSelectedLevel(Object.keys(vocabularyData).find(l => vocabularyData[l].lessons[word.lessonKey]));
-                              setSelectedLessonKey(word.lessonKey);
-                              setSearchTerm('');
-                            }}
-                          >
-                           Bài: {word.lessonTitle}
-                          </span>
-                        </div>
-                        <button 
-                          onClick={() => speakWord(word.korean)} 
-                          className={`transition-colors duration-200 ${
-                            isSpeechReady 
-                              ? 'text-gray-500 hover:text-primary cursor-pointer' 
-                              : 'text-gray-300 cursor-wait'
-                          }`}
-                          disabled={!isSpeechReady}
-                          title={isSpeechReady ? 'Phát âm từ này' : 'Đang tải giọng đọc...'}
-                        >
-                          {isSpeechReady ? (
-                            <Volume2 />
-                          ) : (
-                            <div className="relative">
-                              <Volume2 className="opacity-50" />
-                              <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="animate-spin rounded-full h-3 w-3 border-b-2 border-primary"></div>
-                              </div>
-                            </div>
-                          )}
-                        </button>
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <p className="text-gray-500">Không tìm thấy từ vựng nào phù hợp.</p>
-                )}
               </div>
-            ) : (
-              // Lesson Detail View
-              selectedLesson && (
-                <div id={selectedLessonKey} className="bg-white p-6 rounded-2xl shadow-lg">
-                  <header className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
-                    <div>
-                      <h2 className="text-3xl font-bold text-secondary">{selectedLesson.title}</h2>
-                      <p className="mt-1 text-gray-500">
-                        {getHeaderText()} - {selectedLesson.words.length} từ vựng
-                      </p>
-                    </div>
-                    <button 
-                      onClick={() => {
-                        setIsFlashcardMode(true);
-                        setIsFlipped(false); // Reset to front when opening flashcard
-                        setCurrentCardIndex(0); // Start from first card
+
+              {/* Search Bar */}
+              <div className="mb-4">
+                <input
+                  type="text"
+                  placeholder="Tìm từ vựng..."
+                  value={searchTerm}
+                  onChange={e => setSearchTerm(e.target.value)}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary transition"
+                />
+              </div>
+              
+              {/* Lesson List */}
+              {currentLevelData && (
+                <nav className="space-y-1 max-h-[50vh] overflow-y-auto">
+                  {Object.entries(currentLevelData.lessons).map(([key, lesson]) => (
+                    <a
+                      key={key}
+                      href={`#${key}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setSelectedLessonKey(key);
+                        setSearchTerm(''); // Clear search when a lesson is clicked
                       }}
-                      className="mt-4 sm:mt-0 flex items-center gap-2 bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-orange-700 transition-colors"
+                      className={`block px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                        selectedLessonKey === key && !searchTerm
+                          ? 'bg-orange-100 text-primary font-bold'
+                          : 'text-gray-600 hover:bg-gray-100'
+                      }`}
                     >
-                      <Zap size={18} />
-                      Học với Flashcard
-                    </button>
-                  </header>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {selectedLesson.words.map((word, idx) => (
-                      <div key={idx} className="bg-gray-50 p-4 rounded-lg flex items-center justify-between">
-                        <div>
-                          <p className="font-bold text-lg text-primary">{word.korean}</p>
-                          <p className="text-gray-600">{word.meaning}</p>
-                          <p className="text-sm text-gray-400">[{word.pronunciation}]</p>
-                        </div>
-                        <button 
-                          onClick={() => speakWord(word.korean)} 
-                          className={`p-2 transition-colors duration-200 ${
-                            isSpeechReady 
-                              ? 'text-gray-500 hover:text-primary cursor-pointer' 
-                              : 'text-gray-300 cursor-wait'
-                          }`}
-                          disabled={!isSpeechReady}
-                          title={isSpeechReady ? 'Phát âm từ này' : 'Đang tải giọng đọc...'}
-                        >
-                          {isSpeechReady ? (
-                            <Volume2 />
-                          ) : (
-                            <div className="relative">
-                              <Volume2 className="opacity-50" />
-                              <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="animate-spin rounded-full h-3 w-3 border-b-2 border-primary"></div>
+                      {lesson.title}
+                    </a>
+                  ))}
+                </nav>
+              )}
+            </aside>
+
+            {/* --- Main Content --- */}
+            <main className="flex-1 min-w-0">
+              {searchTerm.trim() ? (
+                // Search Results View
+                <div className="bg-white p-6 rounded-2xl shadow-lg">
+                  <h2 className="text-2xl font-bold text-gray-800 mb-6">Kết quả tìm kiếm cho "{searchTerm}"</h2>
+                  {searchResults.length > 0 ? (
+                    <div className="space-y-4">
+                      {searchResults.map((word, idx) => (
+                        <div key={idx} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                          <div>
+                            <p className="font-bold text-lg text-primary">{word.korean}</p>
+                            <p className="text-gray-600">{word.meaning}</p>
+                            <p className="text-sm text-gray-400">[{word.pronunciation}] - ({word.type})</p>
+                            <span 
+                              className="text-xs text-blue-500 cursor-pointer hover:underline"
+                              onClick={() => {
+                                setSelectedLevel(Object.keys(vocabularyData).find(l => vocabularyData[l].lessons[word.lessonKey]));
+                                setSelectedLessonKey(word.lessonKey);
+                                setSearchTerm('');
+                              }}
+                            >
+                             Bài: {word.lessonTitle}
+                            </span>
+                          </div>
+                          <button 
+                            onClick={() => speakWord(word.korean)} 
+                            className={`transition-colors duration-200 ${
+                              isSpeechReady 
+                                ? 'text-gray-500 hover:text-primary cursor-pointer' 
+                                : 'text-gray-300 cursor-wait'
+                            }`}
+                            disabled={!isSpeechReady}
+                            title={isSpeechReady ? 'Phát âm từ này' : 'Đang tải giọng đọc...'}
+                          >
+                            {isSpeechReady ? (
+                              <Volume2 />
+                            ) : (
+                              <div className="relative">
+                                <Volume2 className="opacity-50" />
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                  <div className="animate-spin rounded-full h-3 w-3 border-b-2 border-primary"></div>
+                                </div>
                               </div>
-                            </div>
-                          )}
-                        </button>
-                      </div>
-                    ))}
-                  </div>
+                            )}
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-gray-500">Không tìm thấy từ vựng nào phù hợp.</p>
+                  )}
                 </div>
-              )
-            )}
-            {/* Google AdSense Banner */}
-            <div className="mt-8">
-              <AdsenseAd style={{ display: 'block', width: '100%' }} />
-            </div>
-          </main>
+              ) : (
+                // Lesson Detail View
+                selectedLesson && (
+                  <div id={selectedLessonKey} className="bg-white p-6 rounded-2xl shadow-lg">
+                    <header className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
+                      <div>
+                        <h2 className="text-3xl font-bold text-secondary">{selectedLesson.title}</h2>
+                        <p className="mt-1 text-gray-500">
+                          {getHeaderText()} - {selectedLesson.words.length} từ vựng
+                        </p>
+                      </div>
+                      <button 
+                        onClick={() => {
+                          setIsFlashcardMode(true);
+                          setIsFlipped(false); // Reset to front when opening flashcard
+                          setCurrentCardIndex(0); // Start from first card
+                        }}
+                        className="mt-4 sm:mt-0 flex items-center gap-2 bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-orange-700 transition-colors"
+                      >
+                        <Zap size={18} />
+                        Học với Flashcard
+                      </button>
+                    </header>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {selectedLesson.words.map((word, idx) => (
+                        <div key={idx} className="bg-gray-50 p-4 rounded-lg flex items-center justify-between">
+                          <div>
+                            <p className="font-bold text-lg text-primary">{word.korean}</p>
+                            <p className="text-gray-600">{word.meaning}</p>
+                            <p className="text-sm text-gray-400">[{word.pronunciation}]</p>
+                          </div>
+                          <button 
+                            onClick={() => speakWord(word.korean)} 
+                            className={`p-2 transition-colors duration-200 ${
+                              isSpeechReady 
+                                ? 'text-gray-500 hover:text-primary cursor-pointer' 
+                                : 'text-gray-300 cursor-wait'
+                            }`}
+                            disabled={!isSpeechReady}
+                            title={isSpeechReady ? 'Phát âm từ này' : 'Đang tải giọng đọc...'}
+                          >
+                            {isSpeechReady ? (
+                              <Volume2 />
+                            ) : (
+                              <div className="relative">
+                                <Volume2 className="opacity-50" />
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                  <div className="animate-spin rounded-full h-3 w-3 border-b-2 border-primary"></div>
+                                </div>
+                              </div>
+                            )}
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )
+              )}
+              
+              {/* Google AdSense Banner */}
+              <div className="mt-8">
+                <AdsenseAd style={{ display: 'block', width: '100%' }} />
+              </div>
+            </main>
+          </div>
         </div>
       </div>
-    </div>
     </>
   );
 }
