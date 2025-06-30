@@ -1,0 +1,9 @@
+    {
+      date: '2025-01-01',
+      type: 'NEW',
+      title: 'Ra m���t k��nh YouTube Hangul.online',
+      description: 'K��nh YouTube ch��nh th���c v���i n���i dung h���c ti���ng H��n qua Postcard. Video m���i v���i ph��t ��m chu���n b���n �����a v�� ph����ng ph��p h���c hi���u qu���.',
+      link: 'https://youtube.com/@hangul.online?si=JeMuUcJvBK9MuqrJ',
+      icon: Youtube,
+      color: 'bg-red-100 text-red-800'
+    },

@@ -188,7 +188,7 @@ function Vocabulary() {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isDataLoaded, setIsDataLoaded] = useState(false);
   const [isSpeechReady, setIsSpeechReady] = useState(false);
-  const [speechCache, setSpeechCache] = useState({ voices: [], preferredVoice: null });
+
   const [isFlipping, setIsFlipping] = useState(false);
 
   // Get vocabulary data with memoization - this prevents recreating data on every render
@@ -198,61 +198,15 @@ function Vocabulary() {
     return data;
   }, []);
 
-  // Preload speech synthesis voices and initialize TTS engine
+  // Simplified speech initialization - voice selection is now handled in speakWord function (matching Exercises)
   useEffect(() => {
-    const initializeSpeech = () => {
-      if (!('speechSynthesis' in window)) {
-        console.warn('Speech synthesis not supported');
-        return;
-      }
-
-      const synth = window.speechSynthesis;
-      
-      const loadVoices = () => {
-        const allVoices = synth.getVoices();
-        const koreanVoices = allVoices.filter((v) => v.lang && v.lang.startsWith('ko'));
-        
-        // Find the best Korean voice
-        const preferredVoice = koreanVoices.find((v) => 
-          /Google|Microsoft|Apple|Naver|Kakao/i.test(v.name)
-        ) || koreanVoices[0];
-
-        setSpeechCache({
-          voices: koreanVoices,
-          preferredVoice: preferredVoice
-        });
-
-        // Initialize TTS engine with a silent utterance to "warm up" the system
-        if (preferredVoice) {
-          const warmUpUtterance = new SpeechSynthesisUtterance('');
-          warmUpUtterance.lang = 'ko-KR';
-          warmUpUtterance.voice = preferredVoice;
-          warmUpUtterance.volume = 0; // Silent
-          warmUpUtterance.onend = () => {
-            setIsSpeechReady(true);
-          };
-          warmUpUtterance.onerror = () => {
-            setIsSpeechReady(true); // Set ready even on error
-          };
-          
-          synth.speak(warmUpUtterance);
-        } else {
-          setIsSpeechReady(true);
-        }
-      };
-
-      // Load voices immediately if available
-      if (synth.getVoices().length > 0) {
-        loadVoices();
-      } else {
-        // Wait for voices to be loaded
-        synth.onvoiceschanged = loadVoices;
-      }
-    };
-
-    // Initialize speech after component mounts
-    const timer = setTimeout(initializeSpeech, 100);
-    return () => clearTimeout(timer);
+    if ('speechSynthesis' in window) {
+      setIsSpeechReady(true);
+      console.log('🎤 Speech synthesis ready - using dynamic voice selection (same as Exercises)');
+    } else {
+      console.warn('Speech synthesis not supported');
+      setIsSpeechReady(false);
+    }
   }, []);
 
   // Reset states when changing level
@@ -294,32 +248,87 @@ function Vocabulary() {
   }, [searchTerm, allWordsForLevel]);
 
   const speakWord = useCallback((text) => {
-    if (!('speechSynthesis' in window) || !text.trim()) return;
+    if (!text?.trim()) return;
+    
+    // Fallback for unsupported browsers
+    if (!('speechSynthesis' in window)) {
+      console.warn('Speech synthesis not supported in this browser');
+      return;
+    }
     
     const synth = window.speechSynthesis;
     
-    // Cancel any ongoing speech
-    synth.cancel();
-    
-    // Use cached voice for instant speech
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'ko-KR';
-    utterance.rate = 0.9; // Slightly slower for better pronunciation
-    utterance.pitch = 1.0;
-    utterance.volume = 1.0;
-    
-    // Use cached preferred voice if available
-    if (speechCache.preferredVoice) {
-      utterance.voice = speechCache.preferredVoice;
-    }
-    
-    // Add error handling
-    utterance.onerror = (event) => {
-      console.warn('Speech synthesis error:', event.error);
+    const speak = () => {
+      // Cancel any ongoing speech
+      synth.cancel();
+      
+      // Get all Korean voices and prioritize highest quality ones (same as Exercises page)
+      const voices = synth.getVoices().filter((v) => v.lang && v.lang.startsWith('ko'));
+      
+      // Enhanced voice prioritization for maximum quality (matching Exercises.js algorithm)
+      const preferredVoice = 
+        // 1st Priority: Premium Neural/Cloud voices
+        voices.find((v) => 
+          /Google.*Neural|Microsoft.*Neural|Apple.*Premium|Naver.*Premium|Kakao.*Neural/i.test(v.name)
+        ) ||
+        // 2nd Priority: High-quality brand voices  
+        voices.find((v) => 
+          /Google|Microsoft|Apple|Naver|Kakao|Samsung|LG/i.test(v.name) &&
+          /Neural|Premium|HD|Enhanced|Pro|Quality|Natural/i.test(v.name)
+        ) ||
+        // 3rd Priority: Cloud-based voices (non-local)
+        voices.find((v) => 
+          /ko-KR/i.test(v.lang) && v.localService === false
+        ) ||
+        // 4th Priority: Any premium brand voice
+        voices.find((v) => 
+          /Google|Microsoft|Apple|Naver|Kakao|Samsung/i.test(v.name)
+        ) ||
+        // Fallback: First Korean voice
+        voices[0];
+      
+      if (preferredVoice) {
+        console.log('🎯 Using high-quality voice (matching Exercises):', preferredVoice.name);
+      }
+      
+      const utterance = new SpeechSynthesisUtterance(text);
+      
+      // Set Korean language explicitly
+      utterance.lang = 'ko-KR';
+      
+      // Use the best available Korean voice
+      if (preferredVoice) {
+        utterance.voice = preferredVoice;
+      }
+      
+      // Optimized speech parameters for high-quality Korean learning (matching Exercises)
+      utterance.rate = 0.8 * 0.95; // Slightly slower for better clarity 
+      utterance.pitch = 1.0; // Natural, authentic pitch
+      utterance.volume = 1.0; // Full volume for clarity
+      
+      // Set up enhanced event handlers
+      utterance.onstart = () => {
+        console.log('🎵 Started premium Korean voice playback (same as Exercises)');
+      };
+      
+      utterance.onend = () => {
+        console.log('🔇 Finished premium voice playback');
+      };
+      
+      utterance.onerror = (event) => {
+        console.error('❌ Speech synthesis error:', event.error);
+      };
+      
+      synth.speak(utterance);
     };
     
-    synth.speak(utterance);
-  }, [speechCache.preferredVoice]);
+    // Handle voices loading asynchronously
+    if (synth.getVoices().length) {
+      speak();
+    } else {
+      synth.onvoiceschanged = speak;
+    }
+  }, []);
 
   // Enhanced 3D card flip - Smooth and natural for both directions
   const handleCardFlip = useCallback((event) => {
@@ -427,14 +436,12 @@ function Vocabulary() {
                       Nghĩa tiếng Việt
                     </span>
                   </div>
-                  
                   <div className="text-center flex-1 flex flex-col justify-center">
                     <h2 className="text-5xl font-bold text-gray-800 mb-6 leading-tight">{currentWord.meaning}</h2>
                     <div className="text-xl text-gray-600 bg-gray-50 px-6 py-3 rounded-2xl inline-block">
                       ({currentWord.type})
                     </div>
                   </div>
-                  
                   <div className="text-center">
                     <p className="text-sm text-gray-500 bg-gray-100 px-4 py-2 rounded-xl flex items-center justify-center gap-2 inline-flex">
                       {isFlipping ? 'Đang xoay thẻ...' : 'Nhấn để xem tiếng Hàn'}
@@ -449,7 +456,6 @@ function Vocabulary() {
                       한국어
                     </span>
                   </div>
-                  
                   <div className="text-center flex-1 flex flex-col justify-center space-y-6">
                     <h2 className="text-6xl font-bold text-blue-800 tracking-wide leading-tight">{currentWord.korean}</h2>
                     <div className="flex justify-center">
@@ -457,9 +463,8 @@ function Vocabulary() {
                         {currentWord.pronunciation}
                       </p>
                     </div>
-                    
-                    {/* Enhanced Audio Button */}
-                    <div className="flex justify-center">
+                    {/* Enhanced Audio Button with Quality Indicator */}
+                    <div className="flex flex-col items-center gap-2">
                       <button
                         onClick={(e) => { e.stopPropagation(); speakWord(currentWord.korean); }}
                         className={`group px-5 py-2 rounded-xl font-semibold text-sm transition-all duration-300 inline-flex items-center gap-2 ${
@@ -468,7 +473,7 @@ function Vocabulary() {
                             : 'bg-gray-300 text-gray-500 cursor-wait'
                         }`}
                         disabled={!isSpeechReady}
-                        title={isSpeechReady ? 'Phát âm từ này' : 'Đang tải giọng đọc...'}
+                        title={isSpeechReady ? 'Phát âm từ này với giọng nam chất lượng cao' : 'Đang tải giọng đọc...'}
                       >
                         {isSpeechReady ? (
                           <>
@@ -487,9 +492,10 @@ function Vocabulary() {
                           </>
                         )}
                       </button>
+                      
+
                     </div>
                   </div>
-                  
                   <div className="text-center">
                     <p className="text-xs text-blue-600 bg-blue-50 px-3 py-2 rounded-lg inline-flex items-center gap-1">
                       <span></span> Nhấn để xoay lại
@@ -499,7 +505,6 @@ function Vocabulary() {
               </div>
             </div>
           </div>
-          
           {/* Progress and Enhanced Controls */}
           <div className="px-6 pb-6">
             {/* Enhanced Progress Bar with Glow Effect */}
@@ -581,9 +586,11 @@ function Vocabulary() {
           <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
           <p className="mt-4 text-lg text-text-light">Đang tải từ vựng...</p>
           {isSpeechReady ? (
-            <p className="mt-2 text-sm text-green-600">Giọng đọc đã sẵn sàng</p>
+            <div className="mt-2 space-y-1">
+              <p className="text-sm text-green-600">Premium Korean Voice Ready</p>
+            </div>
           ) : (
-            <p className="mt-2 text-sm text-gray-500">Đang tải giọng đọc...</p>
+            <p className="mt-2 text-sm text-gray-500">Đang tải giọng tiếng Hàn...</p>
           )}
         </div>
       </div>
@@ -605,6 +612,7 @@ function Vocabulary() {
             <p className="mt-3 text-lg text-text-light max-w-2xl mx-auto">
               Học theo lộ trình Tiếng Hàn Tổng Hợp.
             </p>
+  
           </header>
 
           <div className="flex flex-col lg:flex-row gap-8">
@@ -690,27 +698,15 @@ function Vocabulary() {
                              Bài: {word.lessonTitle}
                             </span>
                           </div>
-                          <button 
-                            onClick={() => speakWord(word.korean)} 
-                            className={`transition-colors duration-200 ${
-                              isSpeechReady 
-                                ? 'text-gray-500 hover:text-primary cursor-pointer' 
-                                : 'text-gray-300 cursor-wait'
-                            }`}
-                            disabled={!isSpeechReady}
-                            title={isSpeechReady ? 'Phát âm từ này' : 'Đang tải giọng đọc...'}
-                          >
-                            {isSpeechReady ? (
-                              <Volume2 />
-                            ) : (
-                              <div className="relative">
-                                <Volume2 className="opacity-50" />
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                  <div className="animate-spin rounded-full h-3 w-3 border-b-2 border-primary"></div>
-                                </div>
-                              </div>
-                            )}
-                          </button>
+                          <div className="flex flex-col items-center gap-1">
+                            <button 
+                              onClick={() => speakWord(word.korean)} 
+                              className="text-gray-500 hover:text-primary cursor-pointer transition-all duration-200 hover:scale-110 active:scale-95 p-2 rounded-lg hover:bg-white"
+                              title="Premium Korean Voice (same as Exercises)"
+                            >
+                              <Volume2 className="hover:animate-pulse" />
+                            </button>
+                          </div>
                         </div>
                       ))}
                     </div>
@@ -750,27 +746,15 @@ function Vocabulary() {
                             <p className="text-gray-600">{word.meaning}</p>
                             <p className="text-sm text-gray-400">[{word.pronunciation}]</p>
                           </div>
-                          <button 
-                            onClick={() => speakWord(word.korean)} 
-                            className={`p-2 transition-colors duration-200 ${
-                              isSpeechReady 
-                                ? 'text-gray-500 hover:text-primary cursor-pointer' 
-                                : 'text-gray-300 cursor-wait'
-                            }`}
-                            disabled={!isSpeechReady}
-                            title={isSpeechReady ? 'Phát âm từ này' : 'Đang tải giọng đọc...'}
-                          >
-                            {isSpeechReady ? (
-                              <Volume2 />
-                            ) : (
-                              <div className="relative">
-                                <Volume2 className="opacity-50" />
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                  <div className="animate-spin rounded-full h-3 w-3 border-b-2 border-primary"></div>
-                                </div>
-                              </div>
-                            )}
-                          </button>
+                          <div className="flex flex-col items-center gap-1">
+                            <button 
+                              onClick={() => speakWord(word.korean)} 
+                              className="p-2 text-gray-500 hover:text-primary cursor-pointer transition-all duration-200 hover:scale-110 active:scale-95 rounded-lg hover:bg-white"
+                              title="Premium Korean Voice (same as Exercises)"
+                            >
+                              <Volume2 className="hover:animate-pulse" />
+                            </button>
+                          </div>
                         </div>
                       ))}
                     </div>

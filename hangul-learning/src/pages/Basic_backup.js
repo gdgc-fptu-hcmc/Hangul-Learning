@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Volume2, BookOpen, FileText, MessageSquare, Hash } from 'lucide-react';
+import { Volume2, BookOpen, FileText, MessageSquare } from 'lucide-react';
 import SEO from '../components/SEO';
 import AdsenseAd from '../components/AdsenseAd';
 
@@ -71,6 +71,280 @@ function Basic() {
     { hangul: 'ㅁ', sound: '[m]', example: '봄, 김', description: 'Phát âm [m]' },
     { hangul: 'ㅂ, ㅍ', sound: '[p]', example: '밥, 앞', description: 'Tất cả đều phát âm [p]' },
     { hangul: 'ㅇ', sound: '[ŋ]', example: '강, 방', description: 'Phát âm [ŋ]' }
+  ];
+
+  // Dữ liệu số thuần Hàn
+  const nativeKoreanNumbers = [
+    { number: 1, hangul: '하나', pronunciation: 'hana', usage: 'Đếm đồ vật, tuổi, giờ' },
+    { number: 2, hangul: '둘', pronunciation: 'dul', usage: 'Đếm đồ vật, tuổi, giờ' },
+    { number: 3, hangul: '셋', pronunciation: 'set', usage: 'Đếm đồ vật, tuổi, giờ' },
+    { number: 4, hangul: '넷', pronunciation: 'net', usage: 'Đếm đồ vật, tuổi, giờ' },
+    { number: 5, hangul: '다섯', pronunciation: 'da-seot', usage: 'Đếm đồ vật, tuổi, giờ' },
+    { number: 6, hangul: '여섯', pronunciation: 'yeo-seot', usage: 'Đếm đồ vật, tuổi, giờ' },
+    { number: 7, hangul: '일곱', pronunciation: 'il-gop', usage: 'Đếm đồ vật, tuổi, giờ' },
+    { number: 8, hangul: '여덟', pronunciation: 'yeo-deol', usage: 'Đếm đồ vật, tuổi, giờ' },
+    { number: 9, hangul: '아홉', pronunciation: 'a-hop', usage: 'Đếm đồ vật, tuổi, giờ' },
+    { number: 10, hangul: '열', pronunciation: 'yeol', usage: 'Đếm đồ vật, tuổi, giờ' },
+    { number: 11, hangul: '열하나', pronunciation: 'yeol-hana', usage: '열 + 하나' },
+    { number: 12, hangul: '열둘', pronunciation: 'yeol-dul', usage: '열 + 둘' },
+    { number: 20, hangul: '스물', pronunciation: 'seu-mul', usage: 'Đặc biệt cho số 20' },
+    { number: 21, hangul: '스물하나', pronunciation: 'seu-mul-hana', usage: '스물 + 하나' },
+    { number: 30, hangul: '서른', pronunciation: 'seo-reun', usage: 'Đặc biệt cho số 30' },
+    { number: 40, hangul: '마흔', pronunciation: 'ma-heun', usage: 'Đặc biệt cho số 40' },
+    { number: 50, hangul: '쉰', pronunciation: 'swin', usage: 'Đặc biệt cho số 50' },
+    { number: 60, hangul: '예순', pronunciation: 'ye-sun', usage: 'Đặc biệt cho số 60' },
+    { number: 70, hangul: '일흔', pronunciation: 'il-heun', usage: 'Đặc biệt cho số 70' },
+    { number: 80, hangul: '여든', pronunciation: 'yeo-deun', usage: 'Đặc biệt cho số 80' },
+    { number: 90, hangul: '아흔', pronunciation: 'a-heun', usage: 'Đặc biệt cho số 90' },
+    { number: 99, hangul: '아흔아홉', pronunciation: 'a-heun-a-hop', usage: '아흔 + 아홉' }
+  ];
+
+  // Dữ liệu số Hán Hàn
+  const sinoKoreanNumbers = [
+    { number: 0, hangul: '영/공', pronunciation: 'yeong/gong', hanja: '零/空' },
+    { number: 1, hangul: '일', pronunciation: 'il', hanja: '一' },
+    { number: 2, hangul: '이', pronunciation: 'i', hanja: '二' },
+    { number: 3, hangul: '삼', pronunciation: 'sam', hanja: '三' },
+    { number: 4, hangul: '사', pronunciation: 'sa', hanja: '四' },
+    { number: 5, hangul: '오', pronunciation: 'o', hanja: '五' },
+    { number: 6, hangul: '육', pronunciation: 'yuk', hanja: '六' },
+    { number: 7, hangul: '칠', pronunciation: 'chil', hanja: '七' },
+    { number: 8, hangul: '팔', pronunciation: 'pal', hanja: '八' },
+    { number: 9, hangul: '구', pronunciation: 'gu', hanja: '九' },
+    { number: 10, hangul: '십', pronunciation: 'sip', hanja: '十' },
+    { number: 11, hangul: '십일', pronunciation: 'si-bil', hanja: '十一' },
+    { number: 20, hangul: '이십', pronunciation: 'i-sip', hanja: '二十' },
+    { number: 30, hangul: '삼십', pronunciation: 'sam-sip', hanja: '三十' },
+    { number: 100, hangul: '백', pronunciation: 'baek', hanja: '百' },
+    { number: 1000, hangul: '천', pronunciation: 'cheon', hanja: '千' },
+    { number: 10000, hangul: '만', pronunciation: 'man', hanja: '萬' },
+    { number: 100000000, hangul: '억', pronunciation: 'eok', hanja: '億' }
+  ];
+
+  // Quy tắc sử dụng số
+  const numberUsageRules = [
+    {
+      category: 'Số thuần Hàn (고유어)',
+      description: 'Sử dụng cho đếm tuổi, giờ, đồ vật, người',
+      usages: [
+        { context: 'Tuổi', example: '스무 살', translation: '20 tuổi' },
+        { context: 'Giờ', example: '세 시', translation: '3 giờ' },
+        { context: 'Đồ vật', example: '사과 다섯 개', translation: '5 quả táo' },
+        { context: 'Người', example: '학생 일곱 명', translation: '7 học sinh' }
+      ],
+      notes: [
+        'Chỉ dùng từ 1-99',
+        'Từ 100 trở lên dùng số Hán Hàn',
+        'Khi dùng với bộ đếm: 하나→한, 둘→두, 셋→세, 넷→네'
+      ]
+    },
+    {
+      category: 'Số Hán Hàn (한자어)',
+      description: 'Sử dụng cho phút, ngày, tháng, năm, tiền, số điện thoại',
+      usages: [
+        { context: 'Phút', example: '삼십 분', translation: '30 phút' },
+        { context: 'Ngày', example: '십일 일', translation: 'ngày 11' },
+        { context: 'Tháng', example: '십이 월', translation: 'tháng 12' },
+        { context: 'Năm', example: '이천이십사 년', translation: 'năm 2024' },
+        { context: 'Tiền', example: '만 원', translation: '10.000 won' }
+      ],
+      notes: [
+        'Có thể đếm vô hạn',
+        'Dùng cho các đơn vị đo lường',
+        'Dùng trong toán học và khoa học'
+      ]
+    }
+  ];
+
+  // Bộ đếm phổ biến
+  const commonCounters = [
+    { 
+      counter: '개', 
+      usage: 'Đồ vật chung chung',
+      examples: ['사과 세 개', '연필 두 개']
+    },
+    { 
+      counter: '명', 
+      usage: 'Người (tôn trọng)',
+      examples: ['학생 다섯 명', '선생님 한 명']
+    },
+    { 
+      counter: '마리', 
+      usage: 'Động vật',
+      examples: ['강아지 두 마리', '고양이 한 마리']
+    },
+    { 
+      counter: '장', 
+      usage: 'Giấy, ảnh, thẻ',
+      examples: ['사진 세 장', '종이 한 장']
+    },
+    { 
+      counter: '권', 
+      usage: 'Sách, tạp chí',
+      examples: ['책 네 권', '잡지 두 권']
+    },
+    { 
+      counter: '대', 
+      usage: 'Máy móc, xe cộ',
+      examples: ['자동차 한 대', '컴퓨터 두 대']
+    },
+    { 
+      counter: '병', 
+      usage: 'Chai lọ',
+      examples: ['물 세 병', '맥주 두 병']
+    },
+    { 
+      counter: '잔', 
+      usage: 'Cốc, chén',
+      examples: ['커피 한 잔', '차 두 잔']
+    },
+    { 
+      counter: '벌', 
+      usage: 'Quần áo (bộ)',
+      examples: ['옷 한 벌', '양복 두 벌']
+    },
+    { 
+      counter: '살', 
+      usage: 'Tuổi',
+      examples: ['스무 살', '서른 살']
+    }
+  ];
+
+  // Dữ liệu số thuần Hàn
+  const nativeKoreanNumbers = [
+    { number: 1, hangul: '하나', pronunciation: 'hana', usage: 'Đếm đồ vật, tuổi, giờ' },
+    { number: 2, hangul: '둘', pronunciation: 'dul', usage: 'Đếm đồ vật, tuổi, giờ' },
+    { number: 3, hangul: '셋', pronunciation: 'set', usage: 'Đếm đồ vật, tuổi, giờ' },
+    { number: 4, hangul: '넷', pronunciation: 'net', usage: 'Đếm đồ vật, tuổi, giờ' },
+    { number: 5, hangul: '다섯', pronunciation: 'da-seot', usage: 'Đếm đồ vật, tuổi, giờ' },
+    { number: 6, hangul: '여섯', pronunciation: 'yeo-seot', usage: 'Đếm đồ vật, tuổi, giờ' },
+    { number: 7, hangul: '일곱', pronunciation: 'il-gop', usage: 'Đếm đồ vật, tuổi, giờ' },
+    { number: 8, hangul: '여덟', pronunciation: 'yeo-deol', usage: 'Đếm đồ vật, tuổi, giờ' },
+    { number: 9, hangul: '아홉', pronunciation: 'a-hop', usage: 'Đếm đồ vật, tuổi, giờ' },
+    { number: 10, hangul: '열', pronunciation: 'yeol', usage: 'Đếm đồ vật, tuổi, giờ' },
+    { number: 11, hangul: '열하나', pronunciation: 'yeol-hana', usage: '열 + 하나' },
+    { number: 12, hangul: '열둘', pronunciation: 'yeol-dul', usage: '열 + 둘' },
+    { number: 20, hangul: '스물', pronunciation: 'seu-mul', usage: 'Đặc biệt cho số 20' },
+    { number: 21, hangul: '스물하나', pronunciation: 'seu-mul-hana', usage: '스물 + 하나' },
+    { number: 30, hangul: '서른', pronunciation: 'seo-reun', usage: 'Đặc biệt cho số 30' },
+    { number: 40, hangul: '마흔', pronunciation: 'ma-heun', usage: 'Đặc biệt cho số 40' },
+    { number: 50, hangul: '쉰', pronunciation: 'swin', usage: 'Đặc biệt cho số 50' },
+    { number: 60, hangul: '예순', pronunciation: 'ye-sun', usage: 'Đặc biệt cho số 60' },
+    { number: 70, hangul: '일흔', pronunciation: 'il-heun', usage: 'Đặc biệt cho số 70' },
+    { number: 80, hangul: '여든', pronunciation: 'yeo-deun', usage: 'Đặc biệt cho số 80' },
+    { number: 90, hangul: '아흔', pronunciation: 'a-heun', usage: 'Đặc biệt cho số 90' },
+    { number: 99, hangul: '아흔아홉', pronunciation: 'a-heun-a-hop', usage: '아흔 + 아홉' }
+  ];
+
+  // Dữ liệu số Hán Hàn
+  const sinoKoreanNumbers = [
+    { number: 0, hangul: '영/공', pronunciation: 'yeong/gong', hanja: '零/空' },
+    { number: 1, hangul: '일', pronunciation: 'il', hanja: '一' },
+    { number: 2, hangul: '이', pronunciation: 'i', hanja: '二' },
+    { number: 3, hangul: '삼', pronunciation: 'sam', hanja: '三' },
+    { number: 4, hangul: '사', pronunciation: 'sa', hanja: '四' },
+    { number: 5, hangul: '오', pronunciation: 'o', hanja: '五' },
+    { number: 6, hangul: '육', pronunciation: 'yuk', hanja: '六' },
+    { number: 7, hangul: '칠', pronunciation: 'chil', hanja: '七' },
+    { number: 8, hangul: '팔', pronunciation: 'pal', hanja: '八' },
+    { number: 9, hangul: '구', pronunciation: 'gu', hanja: '九' },
+    { number: 10, hangul: '십', pronunciation: 'sip', hanja: '十' },
+    { number: 11, hangul: '십일', pronunciation: 'si-bil', hanja: '十一' },
+    { number: 20, hangul: '이십', pronunciation: 'i-sip', hanja: '二十' },
+    { number: 30, hangul: '삼십', pronunciation: 'sam-sip', hanja: '三十' },
+    { number: 100, hangul: '백', pronunciation: 'baek', hanja: '百' },
+    { number: 1000, hangul: '천', pronunciation: 'cheon', hanja: '千' },
+    { number: 10000, hangul: '만', pronunciation: 'man', hanja: '萬' },
+    { number: 100000000, hangul: '억', pronunciation: 'eok', hanja: '億' }
+  ];
+
+  // Quy tắc sử dụng số
+  const numberUsageRules = [
+    {
+      category: 'Số thuần Hàn (고유어)',
+      description: 'Sử dụng cho đếm tuổi, giờ, đồ vật, người',
+      usages: [
+        { context: 'Tuổi', example: '스무 살', translation: '20 tuổi' },
+        { context: 'Giờ', example: '세 시', translation: '3 giờ' },
+        { context: 'Đồ vật', example: '사과 다섯 개', translation: '5 quả táo' },
+        { context: 'Người', example: '학생 일곱 명', translation: '7 học sinh' }
+      ],
+      notes: [
+        'Chỉ dùng từ 1-99',
+        'Từ 100 trở lên dùng số Hán Hàn',
+        'Khi dùng với bộ đếm: 하나→한, 둘→두, 셋→세, 넷→네'
+      ]
+    },
+    {
+      category: 'Số Hán Hàn (한자어)',
+      description: 'Sử dụng cho phút, ngày, tháng, năm, tiền, số điện thoại',
+      usages: [
+        { context: 'Phút', example: '삼십 분', translation: '30 phút' },
+        { context: 'Ngày', example: '십일 일', translation: 'ngày 11' },
+        { context: 'Tháng', example: '십이 월', translation: 'tháng 12' },
+        { context: 'Năm', example: '이천이십사 년', translation: 'năm 2024' },
+        { context: 'Tiền', example: '만 원', translation: '10.000 won' }
+      ],
+      notes: [
+        'Có thể đếm vô hạn',
+        'Dùng cho các đơn vị đo lường',
+        'Dùng trong toán học và khoa học'
+      ]
+    }
+  ];
+
+  // Bộ đếm phổ biến
+  const commonCounters = [
+    { 
+      counter: '개', 
+      usage: 'Đồ vật chung chung',
+      examples: ['사과 세 개', '연필 두 개']
+    },
+    { 
+      counter: '명', 
+      usage: 'Người (tôn trọng)',
+      examples: ['학생 다섯 명', '선생님 한 명']
+    },
+    { 
+      counter: '마리', 
+      usage: 'Động vật',
+      examples: ['강아지 두 마리', '고양이 한 마리']
+    },
+    { 
+      counter: '장', 
+      usage: 'Giấy, ảnh, thẻ',
+      examples: ['사진 세 장', '종이 한 장']
+    },
+    { 
+      counter: '권', 
+      usage: 'Sách, tạp chí',
+      examples: ['책 네 권', '잡지 두 권']
+    },
+    { 
+      counter: '대', 
+      usage: 'Máy móc, xe cộ',
+      examples: ['자동차 한 대', '컴퓨터 두 대']
+    },
+    { 
+      counter: '병', 
+      usage: 'Chai lọ',
+      examples: ['물 세 병', '맥주 두 병']
+    },
+    { 
+      counter: '잔', 
+      usage: 'Cốc, chén',
+      examples: ['커피 한 잔', '차 두 잔']
+    },
+    { 
+      counter: '벌', 
+      usage: 'Quần áo (bộ)',
+      examples: ['옷 한 벌', '양복 두 벌']
+    },
+    { 
+      counter: '살', 
+      usage: 'Tuổi',
+      examples: ['스무 살', '서른 살']
+    }
   ];
 
   // Quy tắc ghép chữ
@@ -175,94 +449,35 @@ function Basic() {
 
   // Dữ liệu số thuần Hàn
   const nativeKoreanNumbers = [
-    { number: 1, hangul: '하나', pronunciation: 'hana', usage: 'Đếm đồ vật, tuổi, giờ' },
-    { number: 2, hangul: '둘', pronunciation: 'dul', usage: 'Đếm đồ vật, tuổi, giờ' },
-    { number: 3, hangul: '셋', pronunciation: 'set', usage: 'Đếm đồ vật, tuổi, giờ' },
-    { number: 4, hangul: '넷', pronunciation: 'net', usage: 'Đếm đồ vật, tuổi, giờ' },
-    { number: 5, hangul: '다섯', pronunciation: 'da-seot', usage: 'Đếm đồ vật, tuổi, giờ' },
-    { number: 6, hangul: '여섯', pronunciation: 'yeo-seot', usage: 'Đếm đồ vật, tuổi, giờ' },
-    { number: 7, hangul: '일곱', pronunciation: 'il-gop', usage: 'Đếm đồ vật, tuổi, giờ' },
-    { number: 8, hangul: '여덟', pronunciation: 'yeo-deol', usage: 'Đếm đồ vật, tuổi, giờ' },
-    { number: 9, hangul: '아홉', pronunciation: 'a-hop', usage: 'Đếm đồ vật, tuổi, giờ' },
-    { number: 10, hangul: '열', pronunciation: 'yeol', usage: 'Đếm đồ vật, tuổi, giờ' },
-    { number: 11, hangul: '열하나', pronunciation: 'yeol-hana', usage: 'Số 11 trong tiếng Hàn' },
-    { number: 12, hangul: '열둘', pronunciation: 'yeol-dul', usage: 'Số 12 trong tiếng Hàn' },
-    { number: 13, hangul: '열셋', pronunciation: 'yeol-set', usage: 'Số 13 trong tiếng Hàn' },
-    { number: 14, hangul: '열넷', pronunciation: 'yeol-net', usage: 'Số 14 trong tiếng Hàn' },
-    { number: 15, hangul: '열다섯', pronunciation: 'yeol-da-seot', usage: 'Số 15 trong tiếng Hàn' },
-    { number: 16, hangul: '열여섯', pronunciation: 'yeol-yeo-seot', usage: 'Số 16 trong tiếng Hàn' },
-    { number: 17, hangul: '열일곱', pronunciation: 'yeol-il-gop', usage: 'Số 17 trong tiếng Hàn' },
-    { number: 18, hangul: '열여덟', pronunciation: 'yeol-yeo-deol', usage: 'Số 18 trong tiếng Hàn' },
-    { number: 19, hangul: '열아홉', pronunciation: 'yeol-a-hop', usage: 'Số 19 trong tiếng Hàn' },
-    { number: 20, hangul: '스물', pronunciation: 'seu-mul', usage: 'Đặc biệt cho số 20' },
-    { number: 21, hangul: '스물하나', pronunciation: 'seu-mul-hana', usage: 'Số 21 trong tiếng Hàn' },
-    { number: 30, hangul: '서른', pronunciation: 'seo-reun', usage: 'Đặc biệt cho số 30' },
-    { number: 40, hangul: '마흔', pronunciation: 'ma-heun', usage: 'Đặc biệt cho số 40' },
-    { number: 50, hangul: '쉰', pronunciation: 'swin', usage: 'Đặc biệt cho số 50' },
-    { number: 60, hangul: '예순', pronunciation: 'ye-sun', usage: 'Đặc biệt cho số 60' },
-    { number: 70, hangul: '일흔', pronunciation: 'il-heun', usage: 'Đặc biệt cho số 70' },
-    { number: 80, hangul: '여든', pronunciation: 'yeo-deun', usage: 'Đặc biệt cho số 80' },
-    { number: 90, hangul: '아흔', pronunciation: 'a-heun', usage: 'Đặc biệt cho số 90' },
-    { number: 99, hangul: '아흔아홉', pronunciation: 'a-heun-a-hop', usage: '아흔 + 아홉' }
+    { number: 1, hangul: '하나', pronunciation: 'hana', usage: '한 (khi đứng trước danh từ)' },
+    { number: 2, hangul: '둘', pronunciation: 'dul', usage: '두 (khi đứng trước danh từ)' },
+    { number: 3, hangul: '셋', pronunciation: 'set', usage: '세 (khi đứng trước danh từ)' },
+    { number: 4, hangul: '넷', pronunciation: 'net', usage: '네 (khi đứng trước danh từ)' },
+    { number: 5, hangul: '다섯', pronunciation: 'daseot', usage: '다섯' },
+    { number: 10, hangul: '열', pronunciation: 'yeol', usage: '열' },
+    { number: 20, hangul: '스물', pronunciation: 'seumul', usage: '스무 (khi đứng trước danh từ)' },
+    { number: 30, hangul: '서른', pronunciation: 'seoreun', usage: '서른' },
+    { number: 99, hangul: '아흔아홉', pronunciation: 'aheun-ahop', usage: '아흔아홉' }
   ];
 
   // Dữ liệu số Hán Hàn
   const sinoKoreanNumbers = [
-    { number: 0, hangul: '영/공', pronunciation: 'yeong/gong', hanja: '零/空', example: '영시 (0 giờ)' },
-    { number: 1, hangul: '일', pronunciation: 'il', hanja: '一', example: '일월 (tháng 1)' },
-    { number: 2, hangul: '이', pronunciation: 'i', hanja: '二', example: '이분 (2 phút)' },
-    { number: 3, hangul: '삼', pronunciation: 'sam', hanja: '三', example: '삼일 (ngày 3)' },
-    { number: 4, hangul: '사', pronunciation: 'sa', hanja: '四', example: '사월 (tháng 4)' },
-    { number: 5, hangul: '오', pronunciation: 'o', hanja: '五', example: '오천원 (5.000 won)' },
-    { number: 6, hangul: '육', pronunciation: 'yuk', hanja: '六', example: '육시 (6 giờ)' },
-    { number: 7, hangul: '칠', pronunciation: 'chil', hanja: '七', example: '칠월 (tháng 7)' },
-    { number: 8, hangul: '팔', pronunciation: 'pal', hanja: '八', example: '팔일 (ngày 8)' },
-    { number: 9, hangul: '구', pronunciation: 'gu', hanja: '九', example: '구월 (tháng 9)' },
-    { number: 10, hangul: '십', pronunciation: 'sip', hanja: '十', example: '십분 (10 phút)' },
-    { number: 11, hangul: '십일', pronunciation: 'sib-il', hanja: '十一', example: '십일일 (ngày 11)' },
-    { number: 20, hangul: '이십', pronunciation: 'i-sip', hanja: '二十', example: '이십분 (20 phút)' },
-    { number: 30, hangul: '삼십', pronunciation: 'sam-sip', hanja: '三十', example: '삼십분 (30 phút)' },
-    { number: 50, hangul: '오십', pronunciation: 'o-sip', hanja: '五十', example: '오십원 (50 won)' },
-    { number: 100, hangul: '백', pronunciation: 'baek', hanja: '百', example: '백원 (100 won)' },
-    { number: 500, hangul: '오백', pronunciation: 'o-baek', hanja: '五百', example: '오백원 (500 won)' },
-    { number: 1000, hangul: '천', pronunciation: 'cheon', hanja: '千', example: '천원 (1.000 won)' },
-    { number: 5000, hangul: '오천', pronunciation: 'o-cheon', hanja: '五千', example: '오천원 (5.000 won)' },
-    { number: 10000, hangul: '만', pronunciation: 'man', hanja: '萬', example: '만원 (10.000 won)' },
-    { number: 100000, hangul: '십만', pronunciation: 'sip-man', hanja: '十萬', example: '십만원 (100.000 won)' },
-    { number: 1000000, hangul: '백만', pronunciation: 'baek-man', hanja: '百萬', example: '백만원 (1 triệu won)' }
+    { number: 0, hangul: '영/공', hanja: '零/空', pronunciation: 'yeong/gong' },
+    { number: 1, hangul: '일', hanja: '一', pronunciation: 'il' },
+    { number: 10, hangul: '십', hanja: '十', pronunciation: 'sip' },
+    { number: 100, hangul: '백', hanja: '百', pronunciation: 'baek' },
+    { number: 1000, hangul: '천', hanja: '千', pronunciation: 'cheon' },
+    { number: 10000, hangul: '만', hanja: '萬', pronunciation: 'man' }
   ];
 
-  // Quy tắc sử dụng số
-  const numberUsageRules = [
-    {
-      category: 'Số thuần Hàn (고유어)',
-      description: 'Sử dụng cho đếm tuổi, giờ, đồ vật, người',
-      usages: [
-        { context: 'Tuổi', example: '스무 살', translation: '20 tuổi' },
-        { context: 'Giờ', example: '세 시', translation: '3 giờ' },
-        { context: 'Đồ vật', example: '사과 다섯 개', translation: '5 quả táo' }
-      ],
-      notes: ['Chỉ dùng từ 1-99', 'Từ 100 trở lên dùng số Hán Hàn']
-    },
-    {
-      category: 'Số Hán Hàn (한자어)',
-      description: 'Sử dụng cho phút, ngày, tháng, năm, tiền',
-      usages: [
-        { context: 'Phút', example: '삼십 분', translation: '30 phút' },
-        { context: 'Ngày', example: '십일 일', translation: 'ngày 11' },
-        { context: 'Tiền', example: '만 원', translation: '10.000 won' }
-      ],
-      notes: ['Có thể đếm vô hạn', 'Dùng cho các đơn vị đo lường']
-    }
-  ];
-
-  // Bộ đếm phổ biến
-  const commonCounters = [
-    { counter: '개', usage: 'Đồ vật chung chung', examples: ['사과 세 개', '연필 두 개'] },
-    { counter: '명', usage: 'Người (tôn trọng)', examples: ['학생 다섯 명', '선생님 한 명'] },
-    { counter: '마리', usage: 'Động vật', examples: ['강아지 두 마리', '고양이 한 마리'] },
-    { counter: '장', usage: 'Giấy, ảnh, thẻ', examples: ['사진 세 장', '종이 한 장'] },
-    { counter: '권', usage: 'Sách, tạp chí', examples: ['책 네 권', '잡지 두 권'] }
+  // Dữ liệu số cơ bản  
+  const basicNumbers = [
+    { korean: '하나', sino: '일', number: 1 },
+    { korean: '둘', sino: '이', number: 2 },
+    { korean: '셋', sino: '삼', number: 3 },
+    { korean: '넷', sino: '사', number: 4 },
+    { korean: '다섯', sino: '오', number: 5 },
+    { korean: '열', sino: '십', number: 10 }
   ];
 
   const speakHangul = (text) => {
@@ -287,7 +502,7 @@ function Basic() {
   const sections = [
     { key: 'vowels', title: 'Nguyên âm', icon: BookOpen },
     { key: 'consonants', title: 'Phụ âm', icon: FileText },
-    { key: 'numbers', title: 'Số', icon: Hash },
+    { key: 'numbers', title: 'Số', icon: FileText },
     { key: 'rules', title: 'Quy tắc', icon: MessageSquare },
     { key: 'sentence', title: 'Cấu trúc câu', icon: MessageSquare }
   ];
@@ -456,8 +671,7 @@ function Basic() {
                 <div className="text-2xl font-bold text-gray-600 mb-1">{num.number.toLocaleString()}</div>
                 <div className="text-3xl font-bold text-primary mb-2">{num.hangul}</div>
                 <div className="text-lg font-semibold text-gray-700 mb-2">[{num.pronunciation}]</div>
-                                 <div className="text-sm text-gray-500 mb-2">{num.hanja}</div>
-                 <div className="text-xs text-gray-600 mb-3">{num.example}</div>
+                <div className="text-sm text-gray-500 mb-3">{num.hanja}</div>
                 <button
                   onClick={() => speakHangul(num.hangul)}
                   className="text-primary hover:text-orange-700 transition-colors"

@@ -1,17 +1,10 @@
 import React, { useState, useMemo } from 'react';
 import AdsenseAd from '../components/AdsenseAd';
-// import { sc2Raw } from './Basic2';
 import SEO from '../components/SEO';
+import { Eye, EyeOff, Info } from 'lucide-react';
 
-
-function Grammar() {
-  const [selectedLevel, setSelectedLevel] = useState('level1');
-  const [selectedLesson, setSelectedLesson] = useState('lesson1');
-  const [searchTerm, setSearchTerm] = useState('');
-
-
-  // Grammar data for Sơ cấp 1 lessons
-  const grammarData = {
+// Grammar data for Sơ cấp 1 lessons
+const grammarData = {
         lesson1: {
           title: 'Bài 01: Giới thiệu (소개)',
           grammar: [
@@ -1976,7 +1969,26 @@ function Grammar() {
         }
       };
 
-  const grammarLevels = {
+function Grammar() {
+  const [selectedLevel, setSelectedLevel] = useState('level1');
+  const [selectedLesson, setSelectedLesson] = useState('lesson1');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [colorFilters, setColorFilters] = useState({
+    verbs: true,
+    particles: true,
+    time: true,
+    location: true,
+    nouns: true,
+    numbers: true,
+    adjectives: true,
+    pronouns: true,
+    adverbs: true,
+    conjunctions: true
+  });
+  const [showTooltips, setShowTooltips] = useState(true);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const grammarLevels = useMemo(() => ({
     level1: {
       title: 'Tiếng Hàn Tổng Hợp - Sơ cấp 1',
       lessons: grammarData,
@@ -1993,7 +2005,7 @@ function Grammar() {
       title: 'Quy tắc chia: Có quy tắc & bất quy tắc',
       lessons: sc4Raw,
     },
-  };
+  }), []);
 
   const currentLevelData = grammarLevels[selectedLevel];
   const selectedLessonData = currentLevelData?.lessons[selectedLesson];
@@ -2006,22 +2018,55 @@ function Grammar() {
         ...rule,
         lessonTitle: lesson.title,
         lessonKey: lessonKey,
+        levelKey: selectedLevel,
+        levelTitle: currentLevelData.title
       }));
     });
-  }, [currentLevelData]);
+  }, [currentLevelData, selectedLevel]);
+
+  const allGrammarFromAllLevels = useMemo(() => {
+    return Object.entries(grammarLevels).flatMap(([levelKey, levelData]) => {
+      if (!levelData?.lessons) return [];
+      return Object.entries(levelData.lessons).flatMap(([lessonKey, lesson]) => {
+        if (!lesson || !Array.isArray(lesson.grammar)) return [];
+        return lesson.grammar.map(rule => ({
+          ...rule,
+          lessonTitle: lesson.title,
+          lessonKey: lessonKey,
+          levelKey: levelKey,
+          levelTitle: levelData.title
+        }));
+      });
+    });
+  }, [grammarLevels]);
 
   const searchResults = useMemo(() => {
     if (!searchTerm.trim()) {
-      return [];
+      return { currentLevel: [], otherLevels: [] };
     }
+    
     const lowerCaseSearchTerm = searchTerm.toLowerCase();
-    return allGrammarForLevel.filter(
-      (item) =>
-        item.rule.toLowerCase().includes(lowerCaseSearchTerm) ||
-        item.description.toLowerCase().includes(lowerCaseSearchTerm) ||
-        item.examples.some(ex => ex.korean.toLowerCase().includes(lowerCaseSearchTerm) || ex.vietnamese.toLowerCase().includes(lowerCaseSearchTerm))
-    );
-  }, [searchTerm, allGrammarForLevel]);
+    const filterFunction = (item) =>
+      item.rule.toLowerCase().includes(lowerCaseSearchTerm) ||
+      item.description.toLowerCase().includes(lowerCaseSearchTerm) ||
+      item.examples.some(ex => 
+        ex.korean.toLowerCase().includes(lowerCaseSearchTerm) || 
+        ex.vietnamese.toLowerCase().includes(lowerCaseSearchTerm)
+      );
+
+    // Tìm trong level hiện tại
+    const currentLevelResults = allGrammarForLevel.filter(filterFunction);
+    
+    // Tìm trong các level khác
+    const otherLevelResults = allGrammarFromAllLevels
+      .filter(item => item.levelKey !== selectedLevel)
+      .filter(filterFunction);
+
+    return {
+      currentLevel: currentLevelResults,
+      otherLevels: otherLevelResults
+    };
+  }, [searchTerm, allGrammarForLevel, allGrammarFromAllLevels, selectedLevel]);
 
   // eslint-disable-next-line no-unused-vars
   const getHeaderText = (levelKey) => {
@@ -2042,7 +2087,7 @@ function Grammar() {
     }
   };
 
-  // Function to highlight Korean text with colors based on grammar analysis
+  // Enhanced function to highlight Korean text with improved categorization
   const highlightKoreanText = (text, note) => {
     // For irregular verb examples (showing transformation)
     if (text.includes('→')) {
@@ -2060,110 +2105,181 @@ function Grammar() {
       );
     }
     
-    // For all regular sentence examples - apply color highlighting
     // Split by spaces but preserve punctuation
     const words = text.split(/(\s+|[.,!?])/).filter(part => part.trim() !== '');
+    
+    const getWordType = (word) => {
+      const cleanWord = word.replace(/[.,!?]/g, '');
+      
+      // Verbs and verb endings (가장 우선)
+      if (cleanWord.endsWith('습니다') || cleanWord.endsWith('습니까') || cleanWord.endsWith('입니다') || cleanWord.endsWith('입니까') ||
+          cleanWord.endsWith('요') || cleanWord.endsWith('어요') || cleanWord.endsWith('아요') || cleanWord.endsWith('해요') ||
+          cleanWord.endsWith('었어요') || cleanWord.endsWith('았어요') || cleanWord.endsWith('할게요') || cleanWord.endsWith('거예요') ||
+          cleanWord.endsWith('예요') || cleanWord.endsWith('이에요') || cleanWord.endsWith('세요') || cleanWord.endsWith('십니다') ||
+          cleanWord.includes('읽습니다') || cleanWord.includes('공부합니다') || cleanWord.includes('시작됩니다') ||
+          cleanWord.includes('만났어요') || cleanWord.includes('봤어요') || cleanWord.includes('갔어요') ||
+          cleanWord.includes('왔어요') || cleanWord.includes('했어요') || cleanWord.includes('샀어요') ||
+          cleanWord.includes('드셨습니까') || cleanWord.includes('오셨습니까') || cleanWord.includes('계십니다') ||
+          cleanWord.includes('아닙니다') || cleanWord.includes('없습니다') || cleanWord.includes('있습니다') ||
+          cleanWord.includes('가다') || cleanWord.includes('오다') || cleanWord.includes('먹다') || 
+          cleanWord.includes('마시다') || cleanWord.includes('보다') || cleanWord.includes('듣다')) {
+        return 'verb';
+      }
+      
+      // Adjectives (tính từ)
+      if (cleanWord.includes('좋다') || cleanWord.includes('나쁘다') || cleanWord.includes('크다') || 
+          cleanWord.includes('작다') || cleanWord.includes('예쁘다') || cleanWord.includes('맛있다') ||
+          cleanWord.includes('재미있다') || cleanWord.includes('어렵다') || cleanWord.includes('쉽다') ||
+          cleanWord.includes('빠르다') || cleanWord.includes('느리다') || cleanWord.includes('높다') ||
+          cleanWord.includes('낮다') || cleanWord.includes('덥다') || cleanWord.includes('춥다') ||
+          cleanWord.includes('좋아요') || cleanWord.includes('나빠요') || cleanWord.includes('커요') ||
+          cleanWord.includes('작아요') || cleanWord.includes('예뻐요') || cleanWord.includes('맛있어요') ||
+          cleanWord.includes('매우') || cleanWord.includes('아주') || cleanWord.includes('정말')) {
+        return 'adjective';
+      }
+      
+      // Pronouns (đại từ nhân xưng và chỉ định)
+      if (cleanWord === '저' || cleanWord === '나' || cleanWord === '너' || cleanWord === '그' || 
+          cleanWord === '우리' || cleanWord === '그들' || cleanWord === '저는' || cleanWord === '나는' ||
+          cleanWord === '이' || cleanWord === '그' || cleanWord === '저' || 
+          cleanWord.includes('이것') || cleanWord.includes('그것') || cleanWord.includes('저것') ||
+          cleanWord.includes('누가') || cleanWord.includes('뭐') || cleanWord.includes('무엇') ||
+          cleanWord.includes('어디') || cleanWord.includes('언제') || cleanWord.includes('어떻게')) {
+        return 'pronoun';
+      }
+      
+      // Adverbs (trạng từ)  
+      if (cleanWord.includes('잘') || cleanWord.includes('빨리') || cleanWord.includes('천천히') ||
+          cleanWord.includes('조금') || cleanWord.includes('많이') || cleanWord.includes('자주') ||
+          cleanWord.includes('가끔') || cleanWord.includes('항상') || cleanWord.includes('보통') ||
+          cleanWord.includes('대부분') || cleanWord.includes('특히') || cleanWord.includes('정말로')) {
+        return 'adverb';
+      }
+      
+      // Conjunctions (từ nối)
+      if (cleanWord.includes('그리고') || cleanWord.includes('하지만') || cleanWord.includes('그래서') ||
+          cleanWord.includes('또') || cleanWord.includes('그런데') || cleanWord.includes('그러나') ||
+          cleanWord.includes('그럼') || cleanWord.includes('왜냐하면')) {
+        return 'conjunction';
+      }
+      
+      // Particles (trợ từ/tiểu từ) - nhưng tránh nhầm với đại từ nghi vấn
+      if ((word.includes('을') || word.includes('를') || word.includes('에') || word.includes('에서') || 
+           word.includes('와') || word.includes('과') || word.includes('의') || word.includes('도') || 
+           word.includes('만') || word.includes('은') || word.includes('는') || word.includes('하고') || 
+           word.includes('께서') || word.includes('부터') || word.includes('까지') || word.includes('로') || 
+           word.includes('으로')) && 
+          !cleanWord.includes('누가') && !cleanWord.includes('뭐가') && !cleanWord.includes('어디가')) {
+        // Kiểm tra riêng trường hợp 이/가
+        if ((word.includes('이') || word.includes('가')) && 
+            !cleanWord.includes('누가') && !cleanWord.includes('뭐가')) {
+          return 'particle';
+        } else if (!word.includes('이') && !word.includes('가')) {
+          return 'particle';
+        }
+      }
+      
+      // Time expressions (thời gian)
+      if (cleanWord.includes('어제') || cleanWord.includes('오늘') || cleanWord.includes('내일') || 
+          cleanWord.includes('주말') || cleanWord.includes('아침') || cleanWord.includes('저녁') ||
+          cleanWord.includes('작년') || cleanWord.includes('내년') || cleanWord.includes('매일') ||
+          cleanWord.includes('월요일') || cleanWord.includes('화요일') || cleanWord.includes('수요일') ||
+          cleanWord.includes('목요일') || cleanWord.includes('금요일') || cleanWord.includes('토요일') ||
+          cleanWord.includes('일요일') || cleanWord.includes('지금') || cleanWord.includes('시') ||
+          cleanWord.includes('분') || cleanWord.includes('월') || cleanWord.includes('일') ||
+          cleanWord.includes('년') || cleanWord.includes('밤')) {
+        return 'time';
+      }
+      
+      // Locations (địa điểm)
+      if (cleanWord.includes('집') || cleanWord.includes('학교') || cleanWord.includes('회사') || 
+          cleanWord.includes('도서관') || cleanWord.includes('카페') || cleanWord.includes('서울') ||
+          cleanWord.includes('한국') || cleanWord.includes('여기') || cleanWord.includes('거기') ||
+          cleanWord.includes('저기') || cleanWord.includes('교실') || cleanWord.includes('사무실') ||
+          cleanWord.includes('화장실') || cleanWord.includes('역') || cleanWord.includes('식당') ||
+          cleanWord.includes('위') || cleanWord.includes('아래') || cleanWord.includes('앞') ||
+          cleanWord.includes('뒤') || cleanWord.includes('옆')) {
+        return 'location';
+      }
+      
+      // Numbers (số đếm)
+      if (cleanWord.includes('세') || cleanWord.includes('한') || cleanWord.includes('두') ||
+          cleanWord.includes('십') || cleanWord.includes('개') || cleanWord.includes('살') ||
+          cleanWord.includes('1') || cleanWord.includes('2') || cleanWord.includes('3') ||
+          cleanWord.includes('4') || cleanWord.includes('5') || cleanWord.includes('6') ||
+          cleanWord.includes('7') || cleanWord.includes('8') || cleanWord.includes('9') ||
+          cleanWord.includes('0') || cleanWord.includes('얼마')) {
+        return 'number';
+      }
+      
+      // Nouns (danh từ) - cuối cùng
+      if (cleanWord.includes('책') || cleanWord.includes('음식') || cleanWord.includes('커피') || 
+          cleanWord.includes('옷') || cleanWord.includes('사진') || cleanWord.includes('친구') ||
+          cleanWord.includes('부모님') || cleanWord.includes('TV') || cleanWord.includes('펜') ||
+          cleanWord.includes('가방') || cleanWord.includes('빵') || cleanWord.includes('우유') ||
+          cleanWord.includes('사과') || cleanWord.includes('바나나') || cleanWord.includes('영화') ||
+          cleanWord.includes('교재') || cleanWord.includes('신문') || cleanWord.includes('컵') ||
+          cleanWord.includes('모자') || cleanWord.includes('한국어') || cleanWord.includes('중국') ||
+          cleanWord.includes('베트남') || cleanWord.includes('날씨') || cleanWord.includes('비') ||
+          cleanWord.includes('회의') || cleanWord.includes('수업') || cleanWord.includes('점심') ||
+          cleanWord.includes('가격') || cleanWord.includes('학생') || cleanWord.includes('선생님') ||
+          cleanWord.includes('사람') || cleanWord.includes('아버지') || cleanWord.includes('어머니')) {
+        return 'noun';
+      }
+      
+      return 'other';
+    };
+    
+    const renderWord = (word, index, type) => {
+      const colorClasses = {
+        verb: colorFilters.verbs ? 'bg-blue-100 text-blue-800 border-blue-200' : 'text-gray-800',
+        particle: colorFilters.particles ? 'bg-green-100 text-green-700 border-green-200' : 'text-gray-800',
+        time: colorFilters.time ? 'bg-purple-100 text-purple-800 border-purple-200' : 'text-gray-800',
+        location: colorFilters.location ? 'bg-yellow-100 text-yellow-800 border-yellow-200' : 'text-gray-800',
+        noun: colorFilters.nouns ? 'bg-orange-100 text-orange-800 border-orange-200' : 'text-gray-800',
+                 number: colorFilters.numbers ? 'bg-teal-100 text-teal-800 border-teal-200' : 'text-gray-800',
+        adjective: colorFilters.adjectives ? 'bg-pink-100 text-pink-800 border-pink-200' : 'text-gray-800',
+        pronoun: colorFilters.pronouns ? 'bg-cyan-100 text-cyan-800 border-cyan-200' : 'text-gray-800',
+        adverb: colorFilters.adverbs ? 'bg-lime-100 text-lime-800 border-lime-200' : 'text-gray-800',
+        conjunction: colorFilters.conjunctions ? 'bg-rose-100 text-rose-800 border-rose-200' : 'text-gray-800',
+        other: 'text-gray-800'
+      };
+      
+      const typeNames = {
+        verb: '동사 (Động từ)',
+        particle: '조사 (Trợ từ)', 
+        time: '시간 (Thời gian)',
+        location: '장소 (Địa điểm)',
+        noun: '명사 (Danh từ)',
+        number: '수사 (Số đếm)',
+        adjective: '형용사 (Tính từ)',
+        pronoun: '대명사 (Đại từ)',
+        adverb: '부사 (Trạng từ)',
+        conjunction: '접속사 (Từ nối)',
+        other: 'Khác'
+      };
+      
+      const classes = colorClasses[type];
+      const isColored = type !== 'other' && colorFilters[type];
+      
+      return (
+        <span 
+          key={index} 
+          className={`${classes} ${isColored ? 'px-1.5 py-0.5 rounded border font-medium' : ''} ${
+            showTooltips && type !== 'other' ? 'cursor-help' : ''
+          }`}
+          title={showTooltips && type !== 'other' ? typeNames[type] : ''}
+        >
+          {word}
+        </span>
+      );
+    };
     
     return (
       <span className="flex flex-wrap gap-1 items-center">
         {words.map((word, index) => {
-          const cleanWord = word.replace(/[.,!?]/g, '');
-          
-          // Highlight verb endings and verb forms
-          if (cleanWord.endsWith('습니다') || cleanWord.endsWith('습니까') || cleanWord.endsWith('입니다') || cleanWord.endsWith('입니까') ||
-              cleanWord.endsWith('요') || cleanWord.endsWith('어요') || cleanWord.endsWith('아요') || 
-              cleanWord.endsWith('해요') || cleanWord.endsWith('었어요') || cleanWord.endsWith('았어요') ||
-              cleanWord.endsWith('할게요') || cleanWord.endsWith('거예요') || cleanWord.endsWith('예요') ||
-              cleanWord.endsWith('이에요') || cleanWord.endsWith('세요') || cleanWord.endsWith('십니다') ||
-              cleanWord.endsWith('읽습니다') || cleanWord.endsWith('공부합니다') || cleanWord.endsWith('시작됩니다') ||
-              cleanWord.endsWith('만났어요') || cleanWord.endsWith('봤어요') || cleanWord.endsWith('갔어요') ||
-              cleanWord.endsWith('왔어요') || cleanWord.endsWith('했어요') || cleanWord.endsWith('샀어요') ||
-              cleanWord.includes('드셨습니까') || cleanWord.includes('오셨습니까') || cleanWord.includes('계십니다') ||
-              cleanWord.includes('아닙니다') || cleanWord.includes('없습니다') || cleanWord.includes('있습니다')) {
-            return (
-              <span key={index} className="bg-blue-100 text-blue-800 px-2 py-1 rounded font-semibold border border-blue-200 shadow-sm">
-                {word}
-              </span>
-            );
-          }
-          // Highlight particles
-          else if (word.includes('을') || word.includes('를') || word.includes('이') || word.includes('가') || 
-                   word.includes('에') || word.includes('에서') || word.includes('와') || word.includes('과') ||
-                   word.includes('의') || word.includes('도') || word.includes('만') || word.includes('은') || 
-                   word.includes('는') || word.includes('하고') || word.includes('께서') || word.includes('부터') ||
-                   word.includes('까지') || word.includes('로') || word.includes('으로')) {
-            return (
-              <span key={index} className="bg-green-100 text-green-700 px-1.5 py-0.5 rounded font-medium border border-green-200">
-                {word}
-              </span>
-            );
-          }
-          // Highlight time expressions
-          else if (cleanWord.includes('어제') || cleanWord.includes('오늘') || cleanWord.includes('내일') || 
-                   cleanWord.includes('주말') || cleanWord.includes('아침') || cleanWord.includes('저녁') ||
-                   cleanWord.includes('작년') || cleanWord.includes('내년') || cleanWord.includes('매일') ||
-                   cleanWord.includes('월요일') || cleanWord.includes('화요일') || cleanWord.includes('수요일') ||
-                   cleanWord.includes('목요일') || cleanWord.includes('금요일') || cleanWord.includes('토요일') ||
-                   cleanWord.includes('일요일') || cleanWord.includes('지금') || cleanWord.includes('시') ||
-                   cleanWord.includes('분') || cleanWord.includes('월') || cleanWord.includes('일') ||
-                   cleanWord.includes('년') || cleanWord.includes('밤')) {
-            return (
-              <span key={index} className="bg-purple-100 text-purple-800 px-1.5 py-0.5 rounded font-medium border border-purple-200">
-                {word}
-              </span>
-            );
-          }
-          // Highlight locations and places
-          else if (cleanWord.includes('집') || cleanWord.includes('학교') || cleanWord.includes('회사') || 
-                   cleanWord.includes('도서관') || cleanWord.includes('카페') || cleanWord.includes('서울') ||
-                   cleanWord.includes('한국') || cleanWord.includes('여기') || cleanWord.includes('거기') ||
-                   cleanWord.includes('저기') || cleanWord.includes('교실') || cleanWord.includes('사무실') ||
-                   cleanWord.includes('화장실') || cleanWord.includes('역') || cleanWord.includes('식당') ||
-                   cleanWord.includes('위') || cleanWord.includes('아래') || cleanWord.includes('앞') ||
-                   cleanWord.includes('뒤') || cleanWord.includes('옆')) {
-            return (
-              <span key={index} className="bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded font-medium border border-yellow-200">
-                {word}
-              </span>
-            );
-          }
-          // Highlight objects/nouns and things
-          else if (cleanWord.includes('책') || cleanWord.includes('음식') || cleanWord.includes('커피') || 
-                   cleanWord.includes('옷') || cleanWord.includes('사진') || cleanWord.includes('친구') ||
-                   cleanWord.includes('부모님') || cleanWord.includes('TV') || cleanWord.includes('펜') ||
-                   cleanWord.includes('가방') || cleanWord.includes('빵') || cleanWord.includes('우유') ||
-                   cleanWord.includes('사과') || cleanWord.includes('바나나') || cleanWord.includes('영화') ||
-                   cleanWord.includes('이것') || cleanWord.includes('그것') || cleanWord.includes('저것') ||
-                   cleanWord.includes('무엇') || cleanWord.includes('누가') || cleanWord.includes('뭐') ||
-                   cleanWord.includes('교재') || cleanWord.includes('신문') || cleanWord.includes('컵') ||
-                   cleanWord.includes('모자') || cleanWord.includes('한국어') || cleanWord.includes('중국') ||
-                   cleanWord.includes('베트남') || cleanWord.includes('날씨') || cleanWord.includes('비') ||
-                   cleanWord.includes('회의') || cleanWord.includes('수업') || cleanWord.includes('점심') ||
-                   cleanWord.includes('가격') || cleanWord.includes('학생') || cleanWord.includes('선생님') ||
-                   cleanWord.includes('사람') || cleanWord.includes('아버지') || cleanWord.includes('어머니')) {
-            return (
-              <span key={index} className="bg-orange-100 text-orange-800 px-1.5 py-0.5 rounded font-medium border border-orange-200">
-                {word}
-              </span>
-            );
-          }
-          // Highlight numbers and counting
-          else if (cleanWord.includes('세') || cleanWord.includes('한') || cleanWord.includes('두') ||
-                   cleanWord.includes('십') || cleanWord.includes('개') || cleanWord.includes('살') ||
-                   cleanWord.includes('1') || cleanWord.includes('2') || cleanWord.includes('3') ||
-                   cleanWord.includes('4') || cleanWord.includes('5') || cleanWord.includes('6') ||
-                   cleanWord.includes('7') || cleanWord.includes('8') || cleanWord.includes('9') ||
-                   cleanWord.includes('0') || cleanWord.includes('얼마')) {
-            return (
-              <span key={index} className="bg-indigo-100 text-indigo-800 px-1.5 py-0.5 rounded font-medium border border-indigo-200">
-                {word}
-              </span>
-            );
-          }
-          // Regular words
-          else {
-            return <span key={index} className="text-gray-800">{word}</span>;
-          }
+          const type = getWordType(word);
+          return renderWord(word, index, type);
         })}
       </span>
     );
@@ -2214,13 +2330,26 @@ function Grammar() {
 
               {/* Search Bar */}
               <div className="mb-4">
-                <input
-                  type="text"
-                  placeholder="Tìm ngữ pháp..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary transition"
-                />
+                <div className="relative">
+                  <input
+                    type="text"
+                    placeholder={`Tìm trong ${selectedLevel === 'level1' ? 'Sơ cấp 1' : 
+                      selectedLevel === 'level2' ? 'Sơ cấp 2' : 
+                      selectedLevel === 'level3' ? 'Trung cấp 1' : 
+                      'Quy tắc chia'}...`}
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full px-4 py-2 pr-10 border border-gray-300 rounded-md focus:ring-primary focus:border-primary transition"
+                  />
+                  <div className="absolute right-3 top-2.5 text-gray-400">
+                    🔍
+                  </div>
+                </div>
+                {searchTerm && (
+                  <p className="text-xs text-gray-500 mt-1">
+                    💡 Tìm ưu tiên trong level hiện tại, sau đó gợi ý từ level khác
+                  </p>
+                )}
               </div>
               
               {/* Lesson List */}
@@ -2250,47 +2379,123 @@ function Grammar() {
             {/* --- Main Content --- */}
             <main id="grammar-main-content" className="flex-1 min-w-0">
               {searchTerm.trim() ? (
-                // Search View
+                // Enhanced Search View
                 <div className="bg-white p-6 rounded-2xl shadow-lg">
                    <h2 className="text-2xl font-bold text-gray-800 mb-6">
                     Kết quả cho: <span className="text-primary">"{searchTerm}"</span>
                   </h2>
-                  {searchResults.length > 0 ? (
-                    <div className="space-y-6">
-                      {searchResults.map((item, index) => (
-                         <div key={index} className="border-b border-gray-200 pb-6">
-                           <h3 className="text-xl font-bold text-secondary">{item.rule}</h3>
-                           <p className="mt-2 text-text-light">{item.description}</p>
-                           <div className="mt-3 space-y-2">
-                             {item.examples.map((ex, i) => (
-                               <div key={i} className="p-3 bg-light-gray rounded-md">
-                                 <p className="font-semibold text-text-dark text-lg leading-relaxed">
-                                   {highlightKoreanText(ex.korean, ex.note)}
-                                 </p>
-                                 <p className="text-sm text-text-light mt-2">{ex.vietnamese}</p>
-                                 {ex.note && <p className="text-xs text-gray-500 mt-1 italic">💡 {ex.note}</p>}
-                               </div>
-                             ))}
+                  
+                  {/* Current Level Results */}
+                  {searchResults.currentLevel.length > 0 && (
+                    <div className="mb-8">
+                      <h3 className="text-lg font-semibold text-green-700 mb-4 flex items-center gap-2">
+                        <span className="bg-green-100 px-2 py-1 rounded-full text-sm">
+                          {currentLevelData?.title}
+                        </span>
+                        <span className="text-sm text-gray-500">({searchResults.currentLevel.length} kết quả)</span>
+                      </h3>
+                      <div className="space-y-6">
+                        {searchResults.currentLevel.map((item, index) => (
+                           <div key={index} className="border-l-4 border-green-400 pl-4 pb-6 bg-green-50 rounded-r-lg p-4">
+                             <h4 className="text-xl font-bold text-secondary">{item.rule}</h4>
+                             <p className="mt-2 text-text-light">{item.description}</p>
+                             <div className="mt-3 space-y-2">
+                               {item.examples.map((ex, i) => (
+                                 <div key={i} className="p-3 bg-white rounded-md border border-green-200">
+                                   <p className="font-semibold text-text-dark text-lg leading-relaxed">
+                                     {highlightKoreanText(ex.korean, ex.note)}
+                                   </p>
+                                   <p className="text-sm text-text-light mt-2">{ex.vietnamese}</p>
+                                   {ex.note && <p className="text-xs text-gray-500 mt-1 italic">💡 {ex.note}</p>}
+                                 </div>
+                               ))}
+                             </div>
+                             <button
+                                onClick={() => handleLessonClick(item.lessonKey)}
+                                className="mt-3 text-xs text-green-700 hover:underline font-medium"
+                              >
+                                ➤ Xem trong {item.lessonTitle}
+                             </button>
                            </div>
-                           <button
-                              onClick={() => {
-                                setSelectedLevel(Object.keys(grammarLevels).find(l => grammarLevels[l].lessons[item.lessonKey]));
-                                handleLessonClick(item.lessonKey)
-                              }}
-                              className="mt-3 text-xs text-primary hover:underline"
-                            >
-                              Xem trong {item.lessonTitle}
-                           </button>
-                         </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
-                  ) : (
-                    <p className="text-center text-text-light py-10">
-                      Không tìm thấy ngữ pháp phù hợp.
-                    </p>
-            )}
-          </div>
-        ) : (
+                  )}
+                  
+                  {/* Other Levels Results */}
+                  {searchResults.otherLevels.length > 0 && (
+                    <div className="mb-8">
+                      <h3 className="text-lg font-semibold text-blue-700 mb-4 flex items-center gap-2">
+                        <span className="bg-blue-100 px-2 py-1 rounded-full text-sm">
+                          💡 Tìm thấy ở level khác
+                        </span>
+                        <span className="text-sm text-gray-500">({searchResults.otherLevels.length} kết quả)</span>
+                      </h3>
+                      <div className="space-y-6">
+                        {searchResults.otherLevels.map((item, index) => (
+                           <div key={index} className="border-l-4 border-blue-400 pl-4 pb-6 bg-blue-50 rounded-r-lg p-4">
+                             <div className="flex items-start justify-between mb-2">
+                               <h4 className="text-xl font-bold text-secondary">{item.rule}</h4>
+                               <span className="bg-blue-200 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">
+                                 {item.levelKey === 'level1' ? 'Sơ cấp 1' : 
+                                  item.levelKey === 'level2' ? 'Sơ cấp 2' : 
+                                  item.levelKey === 'level3' ? 'Trung cấp 1' : 
+                                  'Quy tắc chia'}
+                               </span>
+                             </div>
+                             <p className="mt-2 text-text-light">{item.description}</p>
+                             <div className="mt-3 space-y-2">
+                               {item.examples.slice(0, 2).map((ex, i) => (
+                                 <div key={i} className="p-3 bg-white rounded-md border border-blue-200">
+                                   <p className="font-semibold text-text-dark text-lg leading-relaxed">
+                                     {highlightKoreanText(ex.korean, ex.note)}
+                                   </p>
+                                   <p className="text-sm text-text-light mt-2">{ex.vietnamese}</p>
+                                   {ex.note && <p className="text-xs text-gray-500 mt-1 italic">💡 {ex.note}</p>}
+                                 </div>
+                               ))}
+                               {item.examples.length > 2 && (
+                                 <p className="text-xs text-gray-500 italic">... và {item.examples.length - 2} ví dụ khác</p>
+                               )}
+                             </div>
+                             <button
+                                onClick={() => {
+                                  setSelectedLevel(item.levelKey);
+                                  setTimeout(() => handleLessonClick(item.lessonKey), 100);
+                                }}
+                                className="mt-3 px-3 py-1 bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-full text-xs font-medium transition-colors"
+                              >
+                                🔄 Chuyển đến {item.levelKey === 'level1' ? 'Sơ cấp 1' : 
+                                  item.levelKey === 'level2' ? 'Sơ cấp 2' : 
+                                  item.levelKey === 'level3' ? 'Trung cấp 1' : 
+                                  'Quy tắc chia'} → {item.lessonTitle}
+                             </button>
+                           </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {/* No Results */}
+                  {searchResults.currentLevel.length === 0 && searchResults.otherLevels.length === 0 && (
+                    <div className="text-center py-12">
+                      <h3 className="text-xl font-semibold text-gray-600 mb-2">
+                        Không tìm thấy "{searchTerm}"
+                      </h3>
+                      <p className="text-gray-500 mb-4">
+                        Hãy thử tìm kiếm với từ khóa khác hoặc kiểm tra chính tả.
+                      </p>
+                      <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 max-w-md mx-auto">
+                        <p className="text-sm text-amber-700">
+                          <strong>💡 Mẹo tìm kiếm:</strong><br/>
+                          • Tìm theo ngữ pháp: "입니다", "아/어요"<br/>
+                          • Tìm theo ý nghĩa: "quá khứ", "lịch sự"<br/>
+                          • Tìm theo từ vựng: "친구", "학교"
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ) : (
                 // Lesson View
                 selectedLessonData && (
                   <div id={selectedLesson} className="bg-white p-6 rounded-2xl shadow-lg space-y-8">
@@ -2298,40 +2503,101 @@ function Grammar() {
                       {selectedLessonData.title}
                     </h2>
                     
-                    {/* Color Legend */}
-                    <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                      <h4 className="text-sm font-semibold text-gray-700 mb-3">Chú thích màu sắc:</h4>
-                      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-2 text-xs">
-                        <div className="flex items-center gap-1">
-                          <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded border border-blue-200 font-semibold">동사</span>
-                          <span className="text-gray-600">Động từ</span>
+                    {/* Enhanced Color Legend & Controls */}
+                    <div className="bg-gradient-to-r from-gray-50 to-blue-50 p-6 rounded-xl border border-gray-200 shadow-sm">
+                      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 mb-4">
+                        <div className="flex items-center gap-3">
+                          <h4 className="text-lg font-bold text-gray-800">Chú thích màu sắc</h4>
+                          <button
+                            onClick={() => setShowTooltips(!showTooltips)}
+                            className="flex items-center gap-2 px-3 py-1 bg-white rounded-full shadow-sm hover:shadow-md transition-shadow text-sm"
+                          >
+                            <Info size={14} />
+                            {showTooltips ? 'Ẩn tooltip' : 'Hiện tooltip'}
+                          </button>
                         </div>
-                        <div className="flex items-center gap-1">
-                          <span className="bg-green-100 text-green-700 px-2 py-1 rounded border border-green-200">을/를</span>
-                          <span className="text-gray-600">Trợ từ</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded border border-purple-200">어제</span>
-                          <span className="text-gray-600">Thời gian</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded border border-yellow-200">집</span>
-                          <span className="text-gray-600">Địa điểm</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded border border-orange-200">책</span>
-                          <span className="text-gray-600">Danh từ</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <span className="bg-indigo-100 text-indigo-800 px-2 py-1 rounded border border-indigo-200">세</span>
-                          <span className="text-gray-600">Số đếm</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <span className="bg-red-100 text-red-800 px-2 py-1 rounded border border-red-200">가다</span>
-                          <span className="text-gray-600">Gốc từ</span>
+                        
+                        <div className="flex flex-wrap gap-2">
+                          <button
+                            onClick={() => setColorFilters(prev => {
+                              const allTrue = Object.values(prev).every(v => v);
+                              return Object.keys(prev).reduce((acc, key) => ({ ...acc, [key]: !allTrue }), {});
+                            })}
+                            className="px-3 py-1 bg-white rounded-full shadow-sm hover:shadow-md transition-shadow text-sm font-medium"
+                          >
+                            {Object.values(colorFilters).every(v => v) ? 'Ẩn tất cả' : 'Hiện tất cả'}
+                          </button>
                         </div>
                       </div>
+                      
+                      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 text-sm">
+                        {[
+                          { key: 'verbs', color: 'bg-blue-100 text-blue-800 border-blue-200', label: '동사', desc: 'Động từ' },
+                          { key: 'particles', color: 'bg-green-100 text-green-700 border-green-200', label: '조사', desc: 'Trợ từ' },
+                          { key: 'adjectives', color: 'bg-pink-100 text-pink-800 border-pink-200', label: '형용사', desc: 'Tính từ' },
+                          { key: 'pronouns', color: 'bg-cyan-100 text-cyan-800 border-cyan-200', label: '대명사', desc: 'Đại từ' },
+                          { key: 'adverbs', color: 'bg-lime-100 text-lime-800 border-lime-200', label: '부사', desc: 'Trạng từ' },
+                          { key: 'time', color: 'bg-purple-100 text-purple-800 border-purple-200', label: '시간', desc: 'Thời gian' },
+                          { key: 'location', color: 'bg-yellow-100 text-yellow-800 border-yellow-200', label: '장소', desc: 'Địa điểm' },
+                          { key: 'nouns', color: 'bg-orange-100 text-orange-800 border-orange-200', label: '명사', desc: 'Danh từ' },
+                                                     { key: 'numbers', color: 'bg-teal-100 text-teal-800 border-teal-200', label: '수사', desc: 'Số đếm' },
+                          { key: 'conjunctions', color: 'bg-rose-100 text-rose-800 border-rose-200', label: '접속사', desc: 'Từ nối' }
+                        ].map(({ key, color, label, desc }) => (
+                          <div key={key} className="flex items-center gap-2 p-2 bg-white rounded-lg hover:shadow-sm transition-shadow">
+                            <button
+                              onClick={() => setColorFilters(prev => ({ ...prev, [key]: !prev[key] }))}
+                              className="flex items-center gap-2 w-full"
+                            >
+                              {colorFilters[key] ? (
+                                <Eye size={16} className="text-green-600" />
+                              ) : (
+                                <EyeOff size={16} className="text-gray-400" />
+                              )}
+                              <span className={`px-2 py-1 rounded border font-medium ${
+                                colorFilters[key] ? color : 'bg-gray-100 text-gray-500 border-gray-300'
+                              }`}>
+                                {label}
+                              </span>
+                              <span className="text-gray-600 text-xs">{desc}</span>
+                            </button>
+                          </div>
+                        ))}
+                      </div>
+                      
+                                             <div className="mt-4 space-y-3">
+                         <div className="p-3 bg-blue-50 rounded-lg border border-blue-200">
+                           <p className="text-sm text-blue-700">
+                             💡 <strong>Mẹo:</strong> Nhấp vào các nút mắt để ẩn/hiện từng loại từ. 
+                             {showTooltips && ' Di chuột qua từ để xem loại từ.'} 
+                             Điều này giúp bạn tập trung vào những ngữ pháp cần học!
+                           </p>
+                         </div>
+                         
+                         <div className="p-3 bg-amber-50 rounded-lg border border-amber-200">
+                           <details className="group">
+                             <summary className="cursor-pointer text-sm font-semibold text-amber-800 hover:text-amber-900 flex items-center gap-2">
+                              <span>Từ chưa được phân loại (màu xám)</span>
+                               <span className="text-xs text-amber-600 group-open:hidden">▼ Xem chi tiết</span>
+                               <span className="text-xs text-amber-600 group-open:block hidden">▲ Thu gọn</span>
+                             </summary>
+                             <div className="mt-3 text-sm text-amber-700 space-y-2">
+                               <p><strong>Các từ này chưa được tô màu vì:</strong></p>
+                               <ul className="list-disc list-inside space-y-1 ml-2">
+                                 <li><strong>Từ ghép phức tạp:</strong> Một số từ ghép hoặc cụm từ chưa được nhận diện</li>
+                                 <li><strong>Biến thể ngữ pháp:</strong> Các dạng biến đổi đặc biệt của động/tính từ</li>
+                                 <li><strong>Từ chuyên ngành:</strong> Thuật ngữ, tên riêng, từ vay mượn</li>
+                                 <li><strong>Từ cảm thán:</strong> 아, 오, 와, 어머나 v.v.</li>
+                                 <li><strong>Từ nối đặc biệt:</strong> Một số liên từ, cảm từ chưa được phân loại</li>
+                               </ul>
+                               <p className="mt-2 text-xs bg-amber-100 p-2 rounded">
+                                <strong>Cách học:</strong> Hãy tra cứu những từ xám trong từ điển để hiểu rõ hơn về ý nghĩa và cách sử dụng!
+                               </p>
+                             </div>
+                           </details>
+                         </div>
+                       </div>
                     </div>
+                    
                     {selectedLessonData.grammar.map((item, index) => (
                       <div key={index} className="pt-4">
                         <h3 className="text-2xl font-semibold text-primary mb-2">{item.rule}</h3>
