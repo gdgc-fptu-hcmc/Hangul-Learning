@@ -2,9 +2,9 @@ import React, { useState, useMemo } from 'react';
 import AdsenseAd from '../components/AdsenseAd';
 import SEO from '../components/SEO';
 import { Eye, EyeOff, Info } from 'lucide-react';
-
-// Grammar data for Sơ cấp 1 lessons
-const grammarData = {
+  
+  // Grammar data for Sơ cấp 1 lessons
+  const grammarData = {
         lesson1: {
           title: 'Bài 01: Giới thiệu (소개)',
           grammar: [
@@ -1401,7 +1401,7 @@ const grammarData = {
         }
       ]
     }
-    };
+  };
 
   const sc4Raw = {
     lesson1: {
@@ -2047,8 +2047,8 @@ function Grammar() {
     
     const lowerCaseSearchTerm = searchTerm.toLowerCase();
     const filterFunction = (item) =>
-      item.rule.toLowerCase().includes(lowerCaseSearchTerm) ||
-      item.description.toLowerCase().includes(lowerCaseSearchTerm) ||
+        item.rule.toLowerCase().includes(lowerCaseSearchTerm) ||
+        item.description.toLowerCase().includes(lowerCaseSearchTerm) ||
       item.examples.some(ex => 
         ex.korean.toLowerCase().includes(lowerCaseSearchTerm) || 
         ex.vietnamese.toLowerCase().includes(lowerCaseSearchTerm)
@@ -2074,7 +2074,7 @@ function Grammar() {
   };
 
   const seo = {
-    title: 'Ngữ pháp Tiếng Hàn theo Giáo trình Tiếng Hàn Tổng hợp | Hangul Learning',
+    title: 'Ngữ pháp Tiếng Hàn theo Giáo trình Tiếng Hàn Tổng hợp | 한국어학습',
     description: 'Học và tra cứu ngữ pháp tiếng Hàn theo từng bài của bộ giáo trình Tiếng Hàn Tổng Hợp (Sơ cấp 1, 2 và Trung cấp 1). Giải thích chi tiết, ví dụ rõ ràng.',
   };
 
@@ -2331,14 +2331,14 @@ function Grammar() {
               {/* Search Bar */}
               <div className="mb-4">
                 <div className="relative">
-                  <input
-                    type="text"
+                <input
+                  type="text"
                     placeholder={`Tìm trong ${selectedLevel === 'level1' ? 'Sơ cấp 1' : 
                       selectedLevel === 'level2' ? 'Sơ cấp 2' : 
                       selectedLevel === 'level3' ? 'Trung cấp 1' : 
                       'Quy tắc chia'}...`}
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
                     className="w-full px-4 py-2 pr-10 border border-gray-300 rounded-md focus:ring-primary focus:border-primary transition"
                   />
                   <div className="absolute right-3 top-2.5 text-gray-400">
@@ -2394,22 +2394,22 @@ function Grammar() {
                         </span>
                         <span className="text-sm text-gray-500">({searchResults.currentLevel.length} kết quả)</span>
                       </h3>
-                      <div className="space-y-6">
+                    <div className="space-y-6">
                         {searchResults.currentLevel.map((item, index) => (
                            <div key={index} className="border-l-4 border-green-400 pl-4 pb-6 bg-green-50 rounded-r-lg p-4">
                              <h4 className="text-xl font-bold text-secondary">{item.rule}</h4>
-                             <p className="mt-2 text-text-light">{item.description}</p>
-                             <div className="mt-3 space-y-2">
-                               {item.examples.map((ex, i) => (
+                           <p className="mt-2 text-text-light">{item.description}</p>
+                           <div className="mt-3 space-y-2">
+                             {item.examples.map((ex, i) => (
                                  <div key={i} className="p-3 bg-white rounded-md border border-green-200">
                                    <p className="font-semibold text-text-dark text-lg leading-relaxed">
                                      {highlightKoreanText(ex.korean, ex.note)}
                                    </p>
                                    <p className="text-sm text-text-light mt-2">{ex.vietnamese}</p>
                                    {ex.note && <p className="text-xs text-gray-500 mt-1 italic">💡 {ex.note}</p>}
-                                 </div>
-                               ))}
-                             </div>
+                               </div>
+                             ))}
+                           </div>
                              <button
                                 onClick={() => handleLessonClick(item.lessonKey)}
                                 className="mt-3 text-xs text-green-700 hover:underline font-medium"
@@ -2458,21 +2458,21 @@ function Grammar() {
                                  <p className="text-xs text-gray-500 italic">... và {item.examples.length - 2} ví dụ khác</p>
                                )}
                              </div>
-                             <button
-                                onClick={() => {
+                           <button
+                              onClick={() => {
                                   setSelectedLevel(item.levelKey);
                                   setTimeout(() => handleLessonClick(item.lessonKey), 100);
-                                }}
+                              }}
                                 className="mt-3 px-3 py-1 bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-full text-xs font-medium transition-colors"
-                              >
+                            >
                                 🔄 Chuyển đến {item.levelKey === 'level1' ? 'Sơ cấp 1' : 
                                   item.levelKey === 'level2' ? 'Sơ cấp 2' : 
                                   item.levelKey === 'level3' ? 'Trung cấp 1' : 
                                   'Quy tắc chia'} → {item.lessonTitle}
-                             </button>
-                           </div>
-                        ))}
-                      </div>
+                           </button>
+                         </div>
+                      ))}
+                    </div>
                     </div>
                   )}
                   {/* No Results */}
@@ -2493,9 +2493,9 @@ function Grammar() {
                         </p>
                       </div>
                     </div>
-                  )}
-                </div>
-              ) : (
+            )}
+          </div>
+        ) : (
                 // Lesson View
                 selectedLessonData && (
                   <div id={selectedLesson} className="bg-white p-6 rounded-2xl shadow-lg space-y-8">
@@ -2610,9 +2610,9 @@ function Grammar() {
                               </p>
                               <p className="text-text-light mt-2">{ex.vietnamese}</p>
                               {ex.note && <p className="text-xs text-gray-500 mt-2 italic bg-gray-50 px-2 py-1 rounded">💡 {ex.note}</p>}
-                            </div>
-                          ))}
-                        </div>
+                </div>
+              ))}
+            </div>
                       </div>
                     ))}
                   </div>

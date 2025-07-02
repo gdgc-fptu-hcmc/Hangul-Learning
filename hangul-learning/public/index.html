@@ -2,12 +2,13 @@
 <html lang="vi">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.svg" type="image/svg+xml" />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#6B73FF" />
     
     <!-- SEO Meta Tags for Better Indexing -->
-    <meta name="description" content="Hangul Learning - Nền tảng học tiếng Hàn miễn phí cho người Việt. Tổng hợp ngữ pháp, từ vựng, bài tập chuẩn TOPIK từ Sơ đến Cao cấp." />
+    <meta name="description" content="한국어학습 - 한국어를 무료로 배우는 온라인 플랫폼. Tổng hợp ngữ pháp, từ vựng, bài tập chuẩn TOPIK từ Sơ đến Cao cấp." />
     <meta name="keywords" content="Học tiếng Hàn, Hangul, ngữ pháp tiếng Hàn, từ vựng tiếng Hàn, TOPIK, Korean, Korean grammar, Korean vocabulary, 한국어 학습, 한글" />
     <meta name="author" content="Nguyễn Đức Tuấn" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
@@ -24,15 +25,17 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="Hangul Learning" />
-    <meta name="application-name" content="Hangul Learning" />
-    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="apple-mobile-web-app-title" content="한국어학습" />
+    <meta name="application-name" content="한국어학습" />
+    <meta name="msapplication-TileColor" content="#6B73FF" />
     <meta name="msapplication-config" content="%PUBLIC_URL%/browserconfig.xml" />
     
     <!-- Performance optimizations -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="%PUBLIC_URL%/logo192.png" as="image" type="image/png">
+    <link rel="preload" href="%PUBLIC_URL%/logo.png" as="image" type="image/png">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+CJK+KR:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+CJK+KR:wght@400;500;600;700&display=swap"></noscript>
     <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -46,9 +49,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     
     <!-- Favicon and Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/logo512.png" />
+    <link rel="icon" type="image/svg+xml" sizes="32x32" href="%PUBLIC_URL%/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="%PUBLIC_URL%/favicon.svg" />
     <link rel="mask-icon" href="%PUBLIC_URL%/logo.png" color="#000000" />
     
     <!-- Manifest and Canonical -->
@@ -60,27 +63,27 @@
     <link rel="alternate" hreflang="ko" href="https://hangul.online" />
     <link rel="alternate" hreflang="x-default" href="https://hangul.online" />
     
-    <title>Hangul Learning - Học tiếng Hàn miễn phí cho người Việt</title>
+    <title>한국어학습 | 韓國語學習 - Học tiếng Hàn miễn phí cho người Việt</title>
     
     <!-- Enhanced Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://hangul.online" />
-    <meta property="og:title" content="Hangul Learning - Học tiếng Hàn miễn phí cho người Việt" />
+    <meta property="og:title" content="한국어학습 | 韓國語學習 - Học tiếng Hàn miễn phí cho người Việt" />
     <meta property="og:description" content="Nền tảng học tiếng Hàn miễn phí với tổng hợp ngữ pháp, từ vựng, bài tập chuẩn TOPIK từ Sơ cấp đến Cao cấp. Phù hợp cho người Việt Nam học tiếng Hàn." />
     <meta property="og:image" content="https://hangul.online/logo512.png" />
     <meta property="og:image:width" content="512" />
     <meta property="og:image:height" content="512" />
-    <meta property="og:image:alt" content="Hangul Learning Logo" />
-    <meta property="og:site_name" content="Hangul Learning" />
+    <meta property="og:image:alt" content="한국어학습 Logo" />
+    <meta property="og:site_name" content="한국어학습" />
     <meta property="og:locale" content="vi_VN" />
 
     <!-- Enhanced Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://hangul.online" />
-    <meta name="twitter:title" content="Hangul Learning - Học tiếng Hàn miễn phí cho người Việt" />
+    <meta name="twitter:title" content="한국어학습 | 韓國語學習 - Học tiếng Hàn miễn phí cho người Việt" />
     <meta name="twitter:description" content="Nền tảng học tiếng Hàn miễn phí với tổng hợp ngữ pháp, từ vựng, bài tập chuẩn TOPIK từ Sơ cấp đến Cao cấp." />
     <meta name="twitter:image" content="https://hangul.online/logo512.png" />
-    <meta name="twitter:image:alt" content="Hangul Learning - Korean Learning Platform" />
+    <meta name="twitter:image:alt" content="한국어학습 - Korean Learning Platform" />
     <meta name="twitter:creator" content="@hangullearning" />
     <meta name="twitter:site" content="@hangullearning" />
     
@@ -89,7 +92,7 @@
     {
       "@context": "https://schema.org",
       "@type": "EducationalOrganization",
-      "name": "Hangul Learning",
+      "name": "한국어학습",
       "description": "Nền tảng học tiếng Hàn miễn phí cho người Việt với tổng hợp ngữ pháp, từ vựng, bài tập chuẩn TOPIK",
       "url": "https://hangul.online",
       "logo": "https://hangul.online/logo512.png",
@@ -120,7 +123,7 @@
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "Hangul Learning",
+      "name": "한국어학습",
       "description": "Học tiếng Hàn miễn phí cho người Việt",
       "url": "https://hangul.online",
       "potentialAction": {
@@ -139,16 +142,101 @@
     
     <!-- Google AdSense verification meta -->
     <meta name="google-adsense-account" content="ca-pub-5760828366443806" />
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5760828366443806" crossorigin="anonymous"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RT9QEL23QL"></script>
+    
+    <!-- IndexNow API key for instant Bing indexing -->
+    <meta name="indexnow" content="65432198765432189876543210987654" />
+    
+    <!-- Deferred scripts for better performance -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-RT9QEL23QL');
+      // Load Analytics and AdSense after page load
+      window.addEventListener('load', function() {
+        // Google AdSense - deferred loading
+        setTimeout(function() {
+          var ads = document.createElement('script');
+          ads.async = true;
+          ads.crossOrigin = 'anonymous';
+          ads.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5760828366443806';
+          document.head.appendChild(ads);
+        }, 1000);
+        
+        // Google Analytics - deferred loading
+        setTimeout(function() {
+          var gtagScript = document.createElement('script');
+          gtagScript.async = true;
+          gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-RT9QEL23QL';
+          
+          // Initialize gtag function and wait for script to load
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+          
+          // Add a fallback function to prevent errors
+          if (!window.gtag) {
+            window.gtag = function() {
+              window.dataLayer = window.dataLayer || [];
+              window.dataLayer.push(arguments);
+            };
+          }
+          
+          gtagScript.onload = function() {
+            // Double-check that gtag is available before calling
+            if (typeof window.gtag === 'function') {
+              gtag('js', new Date());
+              gtag('config', 'G-RT9QEL23QL');
+            } else {
+              // Fallback: wait a bit more and try again
+              setTimeout(function() {
+                if (typeof window.gtag === 'function') {
+                  gtag('js', new Date());
+                  gtag('config', 'G-RT9QEL23QL');
+                }
+              }, 500);
+            }
+          };
+          
+          document.head.appendChild(gtagScript);
+        }, 1500);
+        
+        // IndexNow API for instant Bing indexing - deferred loading
+        setTimeout(function() {
+          try {
+            // Only submit if in production environment
+            if (window.location.hostname === 'hangul.online') {
+              var indexNowData = {
+                host: 'hangul.online',
+                key: '65432198765432189876543210987654',
+                urlList: [window.location.href]
+              };
+              
+              // Submit to search engines supporting IndexNow
+              var searchEngines = [
+                'https://www.bing.com/indexnow',
+                'https://api.indexnow.org/indexnow',
+                'https://yandex.com/indexnow'
+              ];
+              
+              searchEngines.forEach(function(endpoint) {
+                fetch(endpoint, {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json; charset=utf-8'
+                  },
+                  body: JSON.stringify(indexNowData)
+                }).then(function(response) {
+                  // Handle IndexNow response codes silently
+                  console.debug('IndexNow: Submitted to', endpoint, 'Status:', response.status);
+                }).catch(function(error) {
+                  // Silent fail - don't throw errors to console
+                  console.debug('IndexNow: Completed for', endpoint);
+                });
+              });
+            }
+          } catch (error) {
+            // Silent fail to prevent browser errors
+            console.debug('IndexNow: Not available');
+          }
+        }, 3000);
+      });
     </script>
     
     <!-- Bing Webmaster Tools verification (remove or update when needed) -->

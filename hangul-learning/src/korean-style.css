@@ -1,0 +1,172 @@
+/* Korean Design System - Obangsaek (Five Traditional Colors) */
+:root {
+  /* Traditional Korean Colors */
+  --korean-blue: #5470C6;    /* 청색 - Youth, Hope */
+  --korean-red: #EA4335;     /* 적색 - Energy, Happiness */
+  --korean-yellow: #F4B942;  /* 황색 - Wisdom, Sacredness */
+  --korean-white: #FAFAFA;   /* 백색 - Purity, Simplicity */
+  --korean-black: #2D3436;   /* 흑색 - Dignity, Formality */
+  --korean-green: #34C759;   /* 녹색 - Growth, Harmony */
+  --korean-purple: #AF52DE;  /* 자색 - Nobility */
+}
+
+/* Korean Typography */
+.korean-title {
+  font-family: 'Noto Sans CJK KR', 'Malgun Gothic', system-ui, sans-serif;
+  font-weight: 700;
+  color: var(--korean-black);
+}
+
+.korean-gradient-text {
+  background: linear-gradient(135deg, var(--korean-blue), var(--korean-red), var(--korean-yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Saekdong Pattern (Traditional Korean Colorful Stripes) */
+.saekdong-horizontal {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.saekdong-horizontal > div:nth-child(1) { background-color: var(--korean-blue); }
+.saekdong-horizontal > div:nth-child(2) { background-color: var(--korean-red); }
+.saekdong-horizontal > div:nth-child(3) { background-color: var(--korean-yellow); }
+.saekdong-horizontal > div:nth-child(4) { background-color: var(--korean-green); }
+.saekdong-horizontal > div:nth-child(5) { background-color: var(--korean-purple); }
+
+.saekdong-border {
+  height: 4px;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Korean Paper Texture (Hanji-inspired) */
+.korean-paper-bg {
+  background-color: var(--korean-white);
+  background-image: radial-gradient(circle at 1px 1px, var(--korean-blue) 1px, transparent 0);
+  background-size: 20px 20px;
+  position: relative;
+}
+
+.korean-paper-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at 1px 1px, var(--korean-blue) 1px, transparent 0);
+  background-size: 20px 20px;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+/* Korean Card Styles */
+.korean-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(84, 112, 198, 0.1);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.korean-card-blue { border-color: var(--korean-blue); }
+.korean-card-red { border-color: var(--korean-red); }
+.korean-card-yellow { border-color: var(--korean-yellow); }
+
+.korean-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(84, 112, 198, 0.2);
+}
+
+/* Korean Button Styles */
+.korean-btn {
+  padding: 1rem 2rem;
+  border-radius: 16px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.korean-btn-primary {
+  background-color: var(--korean-blue);
+  color: white;
+}
+
+.korean-btn-secondary {
+  background-color: white;
+  color: var(--korean-red);
+  border-color: var(--korean-red);
+}
+
+.korean-btn-accent {
+  background-color: var(--korean-yellow);
+  color: var(--korean-black);
+}
+
+.korean-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Korean Flag Component */
+.korean-flag {
+  width: 24px;
+  height: 16px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.korean-flag::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 8px;
+  height: 6px;
+  background: linear-gradient(45deg, var(--korean-red) 50%, var(--korean-blue) 50%);
+  border-radius: 50%;
+}
+
+/* Animations */
+@keyframes saekdong-flow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.saekdong-animated {
+  animation: saekdong-flow 3s infinite linear;
+}
+
+/* Responsive Korean Typography */
+@media (max-width: 768px) {
+  .korean-title {
+    font-size: 2rem;
+  }
+}
+
+/* Korean Decorative Elements */
+.korean-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--korean-red);
+  display: inline-block;
+  margin: 0 4px;
+}
+
+.korean-separator {
+  height: 2px;
+  width: 64px;
+  border-radius: 2px;
+  margin: 0 8px;
+} 

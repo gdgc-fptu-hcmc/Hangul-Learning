@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import OptimizedImage from './OptimizedImage';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -18,7 +19,7 @@ function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
+              <OptimizedImage
                 src="/logo_nha_tai_tro.jpg"
                 alt="Logo nhà tài trợ"
                 className="h-16 md:h-20 object-contain hover:grayscale-0 transition-all duration-300 cursor-pointer"
@@ -37,7 +38,7 @@ function Footer() {
             <Link to="/terms-of-service" className="hover:text-white">Điều khoản sử dụng</Link>
             <Link to="/donate" className="hover:text-white">Ủng hộ</Link>
           </div>
-          <p className="order-2 text-center md:text-right">&copy; {currentYear} Hangul Learning. All rights reserved.</p>
+          <p className="order-2 text-center md:text-right">&copy; {currentYear} 한국어학습 | 韓國語學習. All rights reserved.</p>
         </div>
       </div>
     </footer>

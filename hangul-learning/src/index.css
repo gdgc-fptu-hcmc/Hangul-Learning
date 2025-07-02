@@ -5,13 +5,239 @@
 @layer base {
   html {
     @apply scroll-smooth;
+    /* Prevent horizontal scroll on mobile */
+    overflow-x: hidden;
   }
   body {
     @apply font-sans bg-background text-text-dark;
+    /* Prevent horizontal scroll on mobile */
+    overflow-x: hidden;
+    /* Improve text rendering on mobile */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Mobile viewport fix */
+  @media screen and (max-width: 640px) {
+    html, body {
+      min-height: 100dvh; /* Dynamic viewport height */
+      position: relative;
+    }
+  }
+}
+
+@layer components {
+  /* Mobile-first responsive containers */
+  .container-mobile {
+    @apply w-full px-4 mx-auto;
+  }
+  
+  .container-mobile-sm {
+    @apply w-full px-6 mx-auto;
+  }
+  
+  @media (min-width: 640px) {
+    .container-mobile, .container-mobile-sm {
+      @apply max-w-2xl px-8;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .container-mobile, .container-mobile-sm {
+      @apply max-w-4xl px-10;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .container-mobile, .container-mobile-sm {
+      @apply max-w-6xl px-12;
+    }
+  }
+  
+  /* Mobile-optimized cards */
+  .mobile-card {
+    @apply bg-white rounded-mobile shadow-mobile p-4;
+  }
+  
+  @media (min-width: 640px) {
+    .mobile-card {
+      @apply rounded-xl shadow-card p-6;
+    }
+  }
+  
+  /* Mobile-optimized buttons */
+  .btn-mobile {
+    @apply px-4 py-3 rounded-mobile font-semibold text-mobile-base;
+    min-height: 48px; /* iOS touch target minimum */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  @media (min-width: 640px) {
+    .btn-mobile {
+      @apply px-6 py-2 text-base;
+      min-height: auto;
+    }
+  }
+  
+  /* Mobile-first grid system */
+  .grid-mobile-1 {
+    @apply grid grid-cols-1 gap-4;
+  }
+  
+  .grid-mobile-2 {
+    @apply grid grid-cols-1 gap-4;
+  }
+  
+  @media (min-width: 640px) {
+    .grid-mobile-2 {
+      @apply grid-cols-2 gap-6;
+    }
+  }
+  
+  .grid-mobile-3 {
+    @apply grid grid-cols-1 gap-4;
+  }
+  
+  @media (min-width: 640px) {
+    .grid-mobile-3 {
+      @apply grid-cols-2 gap-6;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .grid-mobile-3 {
+      @apply grid-cols-3 gap-8;
+    }
+  }
+  
+  /* Mobile typography */
+  .heading-mobile-xl {
+    @apply text-mobile-2xl font-bold leading-tight;
+  }
+  
+  @media (min-width: 640px) {
+    .heading-mobile-xl {
+      @apply text-3xl;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .heading-mobile-xl {
+      @apply text-4xl;
+    }
+  }
+  
+  .heading-mobile-lg {
+    @apply text-mobile-xl font-bold leading-tight;
+  }
+  
+  @media (min-width: 640px) {
+    .heading-mobile-lg {
+      @apply text-2xl;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .heading-mobile-lg {
+      @apply text-3xl;
+    }
+  }
+  
+  /* Mobile spacing utilities */
+  .section-mobile {
+    @apply py-8 px-4;
+  }
+  
+  @media (min-width: 640px) {
+    .section-mobile {
+      @apply py-12 px-6;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .section-mobile {
+      @apply py-16 px-8;
+    }
   }
 }
 
 @layer utilities {
+  /* Essential page animations */
+  .page-container {
+    animation: page-fade-in 0.5s ease-out forwards;
+  }
+
+  @keyframes page-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Mobile-optimized animations */
+  .animate-float-mobile {
+    animation: float-mobile 3s ease-in-out infinite;
+  }
+  
+  @keyframes float-mobile {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-5px); /* Smaller movement for mobile */
+    }
+  }
+  
+  .animate-bounce-slow {
+    animation: bounce-slow 4s ease-in-out infinite;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  /* Safe area support for mobile navigation */
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+    margin-bottom: env(safe-area-inset-bottom, 0);
+  }
+
+  /* Mobile navigation specific styles */
+  .mobile-nav-container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Loading state for page transitions */
+  .page-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+
+  /* Card flip for flashcards - mobile optimized */
   .perspective-1000 {
     perspective: 1000px;
   }
@@ -27,216 +253,16 @@
   .rotate-y-180 {
     transform: rotateY(180deg);
   }
-  
-  /* Page Transition Animations */
-  .page-enter {
-    opacity: 0;
-    transform: translateY(20px);
-  }
 
-  .page-enter-active {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-  }
-
-  .page-exit {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .page-exit-active {
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.3s ease-in, transform 0.3s ease-in;
-  }
-
-  .page-container {
-    animation: page-fade-in 0.5s ease-out forwards;
-  }
-
-  @keyframes page-fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(30px) scale(0.98);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  }
-
-  /* Smooth tab transition */
-  .nav-link {
-    position: relative;
-    transition: all 0.3s ease;
-  }
-
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -2px;
-    left: 50%;
-    background: linear-gradient(90deg, #f97316, #ea580c);
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-  }
-
-  .nav-link.active::after {
-    width: 100%;
-  }
-
-  .nav-link:hover::after {
-    width: 100%;
-    background: linear-gradient(90deg, #f97316, #ea580c);
-  }
-
-  /* Loading overlay for page transitions */
-  .page-loading {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.9);
-    -webkit-backdrop-filter: blur(4px);
-    backdrop-filter: blur(4px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    animation: fade-in 0.2s ease-out;
-  }
-
-  @keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  /* Custom animations cho chuyển động nhẹ */
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
-  
-  .animate-bounce-slow {
-    animation: bounce-slow 4s ease-in-out infinite;
-  }
-  
-  .animation-delay-200 {
-    animation-delay: 0.2s;
-  }
-  
-  .animation-delay-400 {
-    animation-delay: 0.4s;
-  }
-  
-  .animation-delay-1000 {
-    animation-delay: 1s;
-  }
-  
-  .animate-fade-in-up {
-    animation: fade-in-up 0.6s ease-out forwards;
-  }
-  
-  .animate-bell-swing {
-    animation: bell-swing 3s ease-in-out infinite;
-    transform-origin: top center;
-  }
-  
-  .animate-text-slide-out {
-    opacity: 0;
-    transform: translateX(-30px) scale(0.5);
-    animation: text-slide-out 2s ease-out forwards;
-    animation-delay: 0.8s;
-  }
-
-  /* Line clamp utilities cho text truncation */
-  .line-clamp-2 {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .line-clamp-3 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  /* Flashcard Animation Utilities */
-  .animate-flashcard-enter {
-    animation: flashcard-enter 0.6s ease-out forwards;
-  }
-
-  .animate-flashcard-flip {
-    animation: flashcard-flip 0.6s ease-in-out forwards;
-  }
-
-  .animate-flashcard-flip-back {
-    animation: flashcard-flip-back 0.6s ease-in-out forwards;
-  }
-
-  .animate-card-shake {
-    animation: card-shake 0.5s ease-in-out;
-  }
-
-  .animate-card-glow {
-    animation: card-glow 2s ease-in-out infinite;
-  }
-
-  .animate-card-bounce-in {
-    animation: card-bounce-in 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-  }
-
-  .animate-progress-glow {
-    animation: progress-glow 2s ease-in-out infinite;
-  }
-
-  /* Ripple effect utility */
-  .ripple-container {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .ripple-effect {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(249, 115, 22, 0.3);
-    animation: ripple 0.6s linear;
-    pointer-events: none;
-  }
-
-  /* Hover effects - Disabled to prevent flip conflicts */
-  .card-hover-lift {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  /* Removed hover effect to prevent flip conflicts
-  .card-hover-lift:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  }
-  */
-
-  /* Gradient backgrounds for cards */
-  .card-gradient-front {
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-  }
-
-  .card-gradient-back {
-    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-  }
-
-  /* Swipe navigation styles */
-
-  /* 3D Flip Card Styles */
   .card-flip-container {
     perspective: 1000px;
-    position: relative;
+    height: 180px; /* Smaller on mobile */
+  }
+  
+  @media (min-width: 640px) {
+    .card-flip-container {
+      height: 200px;
+    }
   }
 
   .card-flip-inner {
@@ -244,7 +270,7 @@
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transition: transform 0.6s;
     transform-style: preserve-3d;
   }
 
@@ -252,249 +278,172 @@
     transform: rotateY(180deg);
   }
 
-  .card-flip-inner.flipping-forward {
-    animation: card-flip-forward 0.6s ease-in-out;
-  }
-
-  .card-flip-inner.flipping-backward {
-    animation: card-flip-backward 0.6s ease-in-out;
-  }
-
   .card-face {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    border-radius: 1rem;
-    transition: all 0.3s ease;
+    border-radius: 0.75rem; /* Mobile radius */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem; /* Smaller padding on mobile */
   }
-
-  .card-face-front {
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-    border: 2px solid #e2e8f0;
+  
+  @media (min-width: 640px) {
+    .card-face {
+      border-radius: 0.5rem;
+      padding: 1rem;
+    }
   }
 
   .card-face-back {
-    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-    border: 2px solid #bfdbfe;
     transform: rotateY(180deg);
   }
 
-  /* Card hover effects */
-  .card-hover {
-    transition: all 0.3s ease;
-  }
-
-  .card-hover:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  }
-
-  /* Smooth flip animations for both directions */
-  @keyframes card-flip-forward {
-    0% {
-      transform: rotateY(0deg) scale(1);
+  /* Special mobile adjustments */
+  @media (max-width: 640px) {
+    /* Ensure mobile navigation doesn't interfere with content */
+    body {
+      padding-bottom: calc(80px + env(safe-area-inset-bottom, 0));
     }
-    25% {
-      transform: rotateY(45deg) scale(1.02);
+    
+    /* Mobile navigation z-index fix */
+    .mobile-navigation {
+      z-index: 60;
     }
-    50% {
-      transform: rotateY(90deg) scale(1.05);
-    }
-    75% {
-      transform: rotateY(135deg) scale(1.02);
-    }
-    100% {
-      transform: rotateY(180deg) scale(1);
+    
+    /* Improved touch targets for mobile navigation */
+    .mobile-nav-button {
+      min-height: 44px;
+      min-width: 44px;
     }
   }
 
-  @keyframes card-flip-backward {
-    0% {
-      transform: rotateY(180deg) scale(1);
-    }
-    25% {
-      transform: rotateY(135deg) scale(1.02);
-    }
-    50% {
-      transform: rotateY(90deg) scale(1.05);
-    }
-    75% {
-      transform: rotateY(45deg) scale(1.02);
-    }
-    100% {
-      transform: rotateY(0deg) scale(1);
-    }
+  /* Progress indicator animations */
+  .progress-dot {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .progress-dot-active {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+  }
+  
+  .progress-dot-completed {
+    transform: scale(1.1);
   }
 
+  /* Smooth page transitions */
+  .page-transition {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  .page-transition-enter {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  
+  .page-transition-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Mobile-optimized scrollbar */
+  .mobile-scroll {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+  
+  .mobile-scroll::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  
+  .mobile-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .mobile-scroll::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+  }
+
+  /* Mobile-optimized line clamp */
+  .line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Mobile touch optimizations */
+  .touch-target {
+    min-height: 48px;
+    min-width: 48px;
+  }
+  
+  .tap-highlight-none {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Safe area for notched devices */
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .safe-area-left {
+    padding-left: env(safe-area-inset-left);
+  }
+
+  .safe-area-right {
+    padding-right: env(safe-area-inset-right);
+  }
+
+  /* Prevent zoom on inputs */
+  .no-zoom {
+    font-size: 16px;
+  }
+  
+  @media (max-width: 640px) {
+    input, select, textarea {
+      font-size: 16px !important; /* Prevent zoom on iOS */
+    }
+  }
 }
 
-/* Keyframes cho animations */
+/* Essential keyframes only */
 @keyframes float {
   0%, 100% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translateY(0px);
   }
   50% {
-    transform: translateY(-10px) rotate(1deg);
+    transform: translateY(-10px);
   }
 }
 
 @keyframes bounce-slow {
   0%, 100% {
-    transform: translateY(0px) scale(1);
-  }
-  50% {
-    transform: translateY(-5px) scale(1.02);
-  }
-}
-
-@keyframes fade-in-up {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
     transform: translateY(0);
   }
-}
-
-@keyframes bell-swing {
-  0%, 100% {
-    transform: rotate(0deg);
-  }
-  10% {
-    transform: rotate(-12deg);
-  }
-  20% {
-    transform: rotate(12deg);
-  }
-  30% {
-    transform: rotate(-10deg);
-  }
-  40% {
-    transform: rotate(10deg);
-  }
   50% {
-    transform: rotate(-8deg);
-  }
-  60% {
-    transform: rotate(8deg);
-  }
-  70% {
-    transform: rotate(-5deg);
-  }
-  80% {
-    transform: rotate(5deg);
-  }
-  90% {
-    transform: rotate(-2deg);
+    transform: translateY(-5px);
   }
 }
 
-@keyframes text-slide-out {
-  0%, 60% {
-    opacity: 0;
-    transform: translateX(-30px) scale(0.5);
-  }
-  80% {
-    opacity: 0.7;
-    transform: translateX(-10px) scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
-}
-
-/* Flashcard Animation Styles */
-@keyframes flashcard-enter {
-  0% {
-    opacity: 0;
-    transform: scale(0.8) rotateY(-20deg);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) rotateY(0deg);
-  }
-}
-
-@keyframes flashcard-flip {
-  0% {
-    transform: rotateY(0deg) scale(1);
-  }
-  50% {
-    transform: rotateY(90deg) scale(1.05);
-  }
-  100% {
-    transform: rotateY(180deg) scale(1);
-  }
-}
-
-@keyframes flashcard-flip-back {
-  0% {
-    transform: rotateY(180deg) scale(1);
-  }
-  50% {
-    transform: rotateY(90deg) scale(1.05);
-  }
-  100% {
-    transform: rotateY(0deg) scale(1);
-  }
-}
-
-@keyframes card-shake {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  10%, 30%, 50%, 70%, 90% {
-    transform: translateX(-2px);
-  }
-  20%, 40%, 60%, 80% {
-    transform: translateX(2px);
-  }
-}
-
-@keyframes card-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(249, 115, 22, 0.2);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(249, 115, 22, 0.4), 0 0 40px rgba(249, 115, 22, 0.2);
-  }
-}
-
-@keyframes ripple {
-  0% {
-    transform: scale(0);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
-
-@keyframes card-bounce-in {
-  0% {
-    opacity: 0;
-    transform: scale(0.3) rotateX(-30deg);
-  }
-  50% {
-    opacity: 0.8;
-    transform: scale(1.1) rotateX(10deg);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) rotateX(0deg);
-  }
-}
-
-@keyframes progress-glow {
-  0%, 100% {
-    box-shadow: 0 0 10px rgba(249, 115, 22, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 20px rgba(249, 115, 22, 0.6);
-  }
-}
+/* Korean Design System - Added for Korean aesthetics */
+@import './korean-style.css';

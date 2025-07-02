@@ -741,10 +741,10 @@ function Exercises() {
             <div>
               <h2 className="text-2xl font-bold text-gray-800">Luyện nghe</h2>
               <p className="text-gray-600">Nghe hiểu postcard, truyện ngắn và cuộc sống hàng ngày với giọng chất lượng cao</p>
-            </div>
+      </div>
           </div>
           <div className="grid md:grid-cols-3 gap-4">
-            <button
+                  <button
               onClick={() => startExercise('listening_basic')}
               className="p-4 border-2 border-blue-200 rounded-xl hover:border-blue-400 hover:bg-blue-50 transition-all duration-200 text-left"
             >
@@ -756,7 +756,7 @@ function Exercises() {
                 <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">3 thư ngắn</span>
                 <span className="text-xs text-gray-500">0.7x</span>
               </div>
-            </button>
+                  </button>
             <button
               onClick={() => startExercise('listening_daily')}
               className="p-4 border-2 border-blue-200 rounded-xl hover:border-blue-400 hover:bg-blue-50 transition-all duration-200 text-left"
@@ -919,7 +919,7 @@ function Exercises() {
 
         
       </div>
-    </div>
+                </div>
   );
 
   // Render active exercise
@@ -936,7 +936,7 @@ function Exercises() {
         {/* Header */}
         <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
           <div className="flex items-center justify-between mb-4">
-            <div>
+      <div>
               <h2 className="text-2xl font-bold text-gray-800">{currentExercise.title}</h2>
               <p className="text-gray-600">{currentExercise.description}</p>
             </div>
@@ -1019,17 +1019,17 @@ function Exercises() {
               <div className="bg-green-50 rounded-xl p-6 mb-6">
                 <BookOpen className="w-8 h-8 text-green-600 mb-4" />
                 {currentQuestion.passage && (
-                  <div className="mb-6">
+        <div className="mb-6">
                     <h4 className="text-sm font-medium text-gray-600 mb-2">Đọc đoạn văn sau:</h4>
                     <div className="bg-white p-4 rounded-lg border border-green-200">
                       <p className="text-xl font-medium text-gray-800 leading-relaxed">
                         {currentQuestion.passage}
                       </p>
-                    </div>
+                  </div>
                   </div>
                 )}
                 <p className="text-lg text-gray-800">{currentQuestion.question}</p>
-              </div>
+                </div>
             </div>
           )}
 
@@ -1049,7 +1049,7 @@ function Exercises() {
                         <li key={index}>• {hint}</li>
                       ))}
                     </ul>
-                  </div>
+              </div>
                 )}
 
                 {/* Text Input */}
@@ -1204,16 +1204,16 @@ function Exercises() {
           {(isListening || isReading) && !showExplanation && (
             <div className="grid gap-3 mb-6">
               {currentQuestion.options.map((option, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleAnswerSelect(index)}
+              <button
+                    key={index}
+                    onClick={() => handleAnswerSelect(index)}
                   className="p-4 text-left border-2 border-gray-200 rounded-xl hover:border-primary hover:bg-orange-50 transition-all duration-200"
-                >
+              >
                   <span className="font-medium">{String.fromCharCode(65 + index)}. </span>
-                  {option}
-                </button>
+                        {option}
+              </button>
               ))}
-            </div>
+              </div>
           )}
 
           {/* Explanation */}
@@ -1231,7 +1231,7 @@ function Exercises() {
                     <div className="flex items-center gap-2">
                       <span className="font-medium text-green-800">🎉 Chính xác!</span>
                       <span className="text-sm text-green-600">(정답입니다!)</span>
-                    </div>
+          </div>
                   </>
                 ) : (
                   <>
@@ -1270,7 +1270,7 @@ function Exercises() {
               </div>
 
               {/* Next Button */}
-              <div className="text-center">
+        <div className="text-center">
                 <button
                   onClick={nextQuestion}
                   className="bg-primary text-white px-8 py-3 rounded-lg hover:bg-orange-600 transition-colors font-medium"
@@ -1287,8 +1287,8 @@ function Exercises() {
               </div>
             </div>
           )}
-        </div>
-      </div>
+              </div>
+            </div>
     );
   };
 
@@ -1311,7 +1311,7 @@ function Exercises() {
     const score = getScore();
     const isGoodScore = score.percentage >= 70;
 
-    return (
+                return (
       <div className="max-w-4xl mx-auto">
         <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
           {/* Score Display */}
@@ -1319,7 +1319,7 @@ function Exercises() {
             isGoodScore ? 'bg-green-100' : 'bg-orange-100'
           }`}>
             <Award className={`w-12 h-12 ${isGoodScore ? 'text-green-600' : 'text-orange-600'}`} />
-          </div>
+            </div>
           
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
             Kết quả luyện tập
@@ -1356,16 +1356,16 @@ function Exercises() {
               <RotateCcw className="w-5 h-5 mr-2 inline" />
               Làm lại
             </button>
-            <button
-              onClick={resetExercise}
+              <button
+                onClick={resetExercise}
               className="bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition-colors font-medium"
             >
               Chọn bài khác
-            </button>
+              </button>
           </div>
         </div>
-      </div>
-    );
+        </div>
+      );
   };
 
   return (
@@ -1384,8 +1384,8 @@ function Exercises() {
           {/* AdSense */}
           <div className="mt-12">
             <AdsenseAd style={{ display: 'block', width: '100%' }} />
+            </div>
           </div>
-        </div>
       </div>
     </>
   );
