@@ -1577,7 +1577,7 @@ function Vocabulary() {
 
         <div className="flex flex-col lg:flex-row gap-8">
           {/* --- Sidebar --- */}
-          <aside className="lg:w-1/3 xl:w-1/4 lg:sticky lg:top-8 self-start bg-white p-4 sm:p-6 rounded-lg shadow-md">
+          <aside className="w-full lg:w-1/3 xl:w-1/4 lg:sticky lg:top-8 self-start bg-white p-4 sm:p-6 rounded-lg shadow-md">
             <h2 className="text-xl font-bold text-secondary mb-4">Lộ trình học</h2>
             
             {/* Level Selector */}
@@ -1698,7 +1698,7 @@ function Vocabulary() {
                     </button>
                   </header>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {selectedLesson.words.map((word, idx) => (
                       <div key={idx} className="bg-gray-50 p-4 rounded-lg flex items-center justify-between">
                         <div>

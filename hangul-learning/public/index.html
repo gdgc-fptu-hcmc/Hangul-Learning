@@ -150,14 +150,16 @@
     <script>
       // Load Analytics and AdSense after page load
       window.addEventListener('load', function() {
-        // Google AdSense - deferred loading
-        setTimeout(function() {
-          var ads = document.createElement('script');
-          ads.async = true;
-          ads.crossOrigin = 'anonymous';
-          ads.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5760828366443806';
-          document.head.appendChild(ads);
-        }, 1000);
+        // Google AdSense - deferred loading (skip on local dev)
+        if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+          setTimeout(function() {
+            var ads = document.createElement('script');
+            ads.async = true;
+            ads.crossOrigin = 'anonymous';
+            ads.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5760828366443806';
+            document.head.appendChild(ads);
+          }, 1000);
+        }
         
         // Google Analytics - deferred loading
         setTimeout(function() {

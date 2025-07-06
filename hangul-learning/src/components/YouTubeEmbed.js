@@ -1,3 +1,6 @@
+// Thư mục: src/components/YouTubeEmbed.js
+// Component YouTubeEmbed: nhúng video YouTube privacy-enhanced với lazy-load thumbnail và fallback
+// Props: videoId, title, className, autoplay, mute, controls
 import React, { useState } from 'react';
 
 const YouTubeEmbed = ({ 

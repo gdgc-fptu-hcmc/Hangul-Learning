@@ -1,6 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { Search, Volume2, ChevronLeft, ChevronRight, RotateCcw } from 'lucide-react';
 
+// Thư mục: src/pages/VocabularyComplete.js
+// Component VocabularyComplete: trang hoàn chỉnh danh sách từ vựng theo bài, hỗ trợ tìm kiếm, điều hướng flashcard và phát âm từng từ
 function Vocabulary() {
   // Complete Level 1 Data - Sơ cấp 1 (15 bài đầy đủ)
   const level1Lessons = {

@@ -37,7 +37,7 @@ function Home() {
       date: '2025-06-29',
       type: 'HOT',
       title: 'Ra mắt kênh YouTube Hangul.online',
-      description: 'Kênh YouTube chính thức với nội dung học tiếng Hàn qua Postcard. Video mới với phát âm chuẩn bản địa và phương pháp học hiệu quả.',
+      description: 'Kênh YouTube chính thức với nội dung học tiếng Hàn qua video. Video mới với phát âm chuẩn bản địa và phương pháp học hiệu quả.',
       link: 'https://youtube.com/@hangul.online?si=JeMuUcJvBK9MuqrJ',
       icon: Youtube,
       color: 'bg-red-100 text-red-800'
@@ -164,10 +164,10 @@ function Home() {
               <div className="w-2 h-2 bg-red-300 rounded-full animate-pulse"></div>
             </div>
             <h2 className="text-3xl font-extrabold text-gray-900 mb-4">
-              Học tiếng Hàn qua <span className="text-red-500">Postcard</span>
+              Học tiếng Hàn qua <span className="text-red-500">Video hoạt hình</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Khám phá cách học tiếng Hàn thú vị và hiệu quả thông qua các video postcard tương tác. 
+              Khám phá cách học tiếng Hàn thú vị và hiệu quả thông qua các video hoạt hình tương tác. 
               Mỗi video mang đến trải nghiệm học tập sinh động với nội dung thực tế và phát âm chuẩn.
             </p>
           </div>
@@ -178,8 +178,8 @@ function Home() {
               <div className="aspect-video bg-black rounded-2xl shadow-2xl overflow-hidden group">
                 <iframe
                   className="w-full h-full"
-                  src="https://www.youtube.com/embed/gIr1q8ZfQds?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1"
-                  title="Hangul.online - Học tiếng Hàn qua Postcard"
+                  src="https://www.youtube.com/embed/2aZ84ZjVUXc?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1"
+                  title="Hangul.online - Học tiếng Hàn qua Hoạt Hình"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -189,7 +189,7 @@ function Home() {
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="text-white">
                     <h3 className="font-bold text-lg mb-1">Video mới nhất</h3>
-                    <p className="text-sm text-gray-300">Postcard tiếng Hàn với phát âm chuẩn</p>
+                    <p className="text-sm text-gray-300">Video hoạt hình tiếng Hàn với phát âm chuẩn</p>
                   </div>
                 </div>
               </div>
@@ -216,8 +216,8 @@ function Home() {
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">Nội dung Postcard độc đáo</h4>
-                      <p className="text-gray-600 text-sm">Học tiếng Hàn thông qua các tình huống thực tế trong postcard</p>
+                      <h4 className="font-semibold text-gray-900">Nội dung Video hoạt hình độc đáo</h4>
+                      <p className="text-gray-600 text-sm">Học tiếng Hàn thông qua các tình huống thực tế trong video hoạt hình</p>
                     </div>
                   </div>
                   
@@ -250,7 +250,7 @@ function Home() {
                   </a>
                   
                   <a
-                    href="https://youtu.be/gIr1q8ZfQds?si=HlyIHolNOSA1j5PY"
+                    href="https://youtu.be/2aZ84ZjVUXc?si=HlyIHolNOSA1j5PY"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-gray-100 text-gray-700 py-3 px-6 rounded-lg font-bold hover:bg-gray-200 transition-all duration-300 flex items-center justify-center gap-2"

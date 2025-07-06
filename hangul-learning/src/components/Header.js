@@ -1,26 +1,64 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import OptimizedImage from './OptimizedImage';
 
+// Component Header: hiển thị thanh header với logo, điều hướng và menu mobile
 function Header() {
   const location = useLocation();
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hasTestedLevel, setHasTestedLevel] = useState(false);
+  const [showTestPrompt, setShowTestPrompt] = useState(false);
   
+  // Kiểm tra trạng thái kiểm tra trình độ khi component mount
+  useEffect(() => {
+    const checkTestStatus = () => {
+      const tested = localStorage.getItem('hasTestedLevel') === 'true';
+      const lastVisit = localStorage.getItem('lastVisit');
+      const isNewUser = !lastVisit;
+      
+      setHasTestedLevel(tested);
+      
+      // Nếu là người dùng mới và chưa kiểm tra, hiển thị đề xuất sau 2 giây
+      if (isNewUser && !tested) {
+        setTimeout(() => {
+          setShowTestPrompt(true);
+        }, 2000);
+      }
+      
+      // Cập nhật thời gian truy cập gần nhất
+      localStorage.setItem('lastVisit', new Date().toISOString());
+    };
+    
+    checkTestStatus();
+  }, []);
+
+  // Xử lý chuyển đến trang kiểm tra
+  const handleStartTest = () => {
+    setShowTestPrompt(false);
+    navigate('/guide');
+  };
+  
+  // State quản lý việc mở/tắt menu mobile
   const menuItems = [
+    // Danh sách các mục menu chính hiển thị trong header
     { path: '/', label: 'Trang chủ' },
     { path: '/guide', label: 'Hướng dẫn' },
     { path: '/basic', label: 'Cơ bản' },
     { path: '/vocabulary', label: 'Từ vựng' },
     { path: '/grammar', label: 'Ngữ pháp' },
     { path: '/exercises', label: 'Bài tập' },
+    { path: '/topik', label: 'TOPIK' },
   ];
 
   const toggleMenu = () => {
+    // Hàm chuyển trạng thái menu mobile: mở hoặc đóng
     setIsMenuOpen(!isMenuOpen);
   };
 
   const closeMenu = () => {
+    // Hàm đóng menu mobile (đặt isMenuOpen về false)
     setIsMenuOpen(false);
   };
 
@@ -31,9 +69,6 @@ function Header() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center space-x-2 xs:space-x-3 relative group tap-highlight-none" onClick={closeMenu}>
-              {/* Korean decorative accent line - hidden on very small screens */}
-
-              
               <OptimizedImage 
                 className="h-8 w-8 xs:h-10 xs:w-10 rounded-full shadow-lg border-2 border-korean-blue object-cover group-hover:scale-105 transition-transform" 
                 src="/logo.webp" 
@@ -158,6 +193,35 @@ function Header() {
           onClick={closeMenu}
           aria-hidden="true"
         ></div>
+      )}
+
+      {/* Test Prompt Modal */}
+      {showTestPrompt && !hasTestedLevel && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
+          <div className="absolute inset-0 bg-black bg-opacity-50" onClick={() => setShowTestPrompt(false)}></div>
+          <div className="bg-white rounded-2xl p-6 md:p-8 max-w-md w-full relative z-10 shadow-xl">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">
+              Kiểm tra trình độ tiếng Hàn
+            </h3>
+            <p className="text-gray-600 mb-6">
+              Chào mừng bạn! Hãy làm bài kiểm tra nhanh để chúng tôi có thể đề xuất lộ trình học phù hợp nhất với trình độ của bạn.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <button
+                onClick={handleStartTest}
+                className="flex-1 bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-orange-600 transition-colors"
+              >
+                Bắt đầu kiểm tra
+              </button>
+              <button
+                onClick={() => setShowTestPrompt(false)}
+                className="flex-1 bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-200 transition-colors"
+              >
+                Để sau
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </header>
   );

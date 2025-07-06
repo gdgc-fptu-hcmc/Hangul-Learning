@@ -1,3 +1,6 @@
+// Thư mục: src/components/SponsorSection.js
+// Component SponsorSection: hiển thị phần Nhà tài trợ với logo, đường dẫn đối tác và lời cảm ơn
+// prop className: tùy chỉnh lớp CSS cho container wrapper
 import React from 'react';
 
 const SponsorSection = ({ className = "" }) => {

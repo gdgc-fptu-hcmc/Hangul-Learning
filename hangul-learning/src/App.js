@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
@@ -7,16 +7,16 @@ import Grammar from './pages/Grammar';
 import Donate from './pages/Donate';
 import Footer from './components/Footer';
 import SEOOptimizer from './components/SEOOptimizer';
-
-const Vocabulary = lazy(() => import('./pages/Vocabulary'));
-const Exercises = lazy(() => import('./pages/Exercises'));
-const Guide = lazy(() => import('./pages/Guide'));
-const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
-const TermsOfService = lazy(() => import('./pages/TermsOfService'));
+import Guide from './pages/Guide';
+import Vocabulary from './pages/Vocabulary';
+import Exercises from './pages/Exercises';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import Topik from './pages/Topik';
 
 // Simple page navigation for desktop
 // Define page order for navigation
-const PAGE_ORDER = ['/', '/guide', '/basic', '/vocabulary', '/grammar', '/exercises'];
+const PAGE_ORDER = ['/', '/guide', '/basic', '/vocabulary', '/grammar', '/exercises', '/topik'];
 
 const PageNavigation = ({ navigate }) => {
   const location = useLocation();
@@ -53,7 +53,8 @@ const PageNavigation = ({ navigate }) => {
       '/basic': 'Cơ bản',
       '/vocabulary': 'Từ vựng',
       '/grammar': 'Ngữ pháp',
-      '/exercises': 'Bài tập'
+      '/exercises': 'Bài tập',
+      '/topik': 'TOPIK'
     };
     return pageNames[path] || 'Trang';
   };
@@ -177,6 +178,7 @@ function App() {
     if (pathname.startsWith('/grammar')) return 'grammar';
     if (pathname.startsWith('/exercises')) return 'exercises';
     if (pathname.startsWith('/donate')) return 'donate';
+    if (pathname.startsWith('/topik')) return 'topik';
     return 'home';
   };
 
@@ -243,6 +245,7 @@ function App() {
               <Route path="/vocabulary" element={<Vocabulary />} />
               <Route path="/grammar" element={<Grammar />} />
                <Route path="/exercises" element={<Exercises />} />
+              <Route path="/topik" element={<Topik />} />
               <Route path="/donate" element={<Donate />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-of-service" element={<TermsOfService />} />

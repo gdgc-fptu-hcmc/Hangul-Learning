@@ -1,36 +1,43 @@
+// Thư mục: src/components/SEOOptimizer.js
+// Lớp SEOOptimizer: tự động gửi URL và sitemap đến công cụ tìm kiếm (IndexNow, Bing, Google) để cải thiện SEO
+
 // SEO Optimizer Component
 // Handles automatic sitemap submission and IndexNow updates
 
 class SEOOptimizer {
   constructor() {
+    // Môi trường production: chỉ gửi khi host là hangul.online
     this.isProduction = window.location.hostname === 'hangul.online';
+    // Khóa IndexNow để xác thực yêu cầu gửi URL lên dịch vụ IndexNow
     this.indexNowKey = '65432198765432189876543210987654';
+    // URL sitemap.xml để ping cho các công cụ tìm kiếm hỗ trợ sitemap ping
     this.sitemapUrl = 'https://hangul.online/sitemap.xml';
   }
 
-  // Submit current page to IndexNow for instant indexing
+  // Gửi URL hiện tại đến IndexNow để cập nhật chỉ mục ngay lập tức (chỉ môi trường production)
   submitToIndexNow(url = window.location.href) {
     if (!this.isProduction) {
+      // Bỏ qua nếu không phải môi trường production
       console.debug('IndexNow: Skipping submission in development');
       return;
     }
 
     try {
-      // IndexNow data structure (Option 1 - key file at root, no keyLocation needed)
+      // Tạo payload dữ liệu theo chuẩn IndexNow cho việc submit nhiều URL
       const indexNowData = {
         host: 'hangul.online',
         key: this.indexNowKey,
         urlList: [url]
       };
 
-      // List of search engines supporting IndexNow
+      // Danh sách các endpoint hỗ trợ IndexNow
       const searchEngines = [
         'https://www.bing.com/indexnow',
         'https://api.indexnow.org/indexnow', // Fallback endpoint
         'https://yandex.com/indexnow'
       ];
 
-      // Submit to each search engine
+      // Gửi POST request đến endpoint IndexNow với body JSON
       searchEngines.forEach(endpoint => {
         fetch(endpoint, {
           method: 'POST',
@@ -63,7 +70,7 @@ class SEOOptimizer {
               console.debug('IndexNow: Response', response.status, 'from', endpoint);
           }
         }).catch(error => {
-          // Silent fail - IndexNow is optional optimization
+          // Im lặng bắt lỗi (IndexNow là tối ưu tùy chọn)
           console.debug('IndexNow: Submission completed for', endpoint);
         });
       });
@@ -72,21 +79,22 @@ class SEOOptimizer {
     }
   }
 
-  // Alternative: Submit single URL using GET method (for testing)
+  // Phương pháp GET: gửi single URL đến IndexNow (thích hợp cho testing hoặc tránh CORS)
   submitSingleUrlToIndexNow(url = window.location.href) {
     if (!this.isProduction) {
+      // Bỏ qua khi không phải môi trường production
       console.debug('IndexNow: Skipping single URL submission in development');
       return;
     }
 
     try {
-      // Encode URL according to RFC-3986 standard
+      // Mã hóa URL theo chuẩn RFC-3986 để embed vào query string
       const encodedUrl = encodeURIComponent(url);
       
-      // Submit to Bing using GET method
+      // Tạo URL GET cho Bing IndexNow
       const bingUrl = `https://www.bing.com/indexnow?url=${encodedUrl}&key=${this.indexNowKey}`;
       
-      // Use image request for GET submission (avoids CORS issues)
+      // Dùng Image request để ping Bing, tránh lỗi CORS
       const img = new Image();
       img.onload = img.onerror = () => {
         console.debug('IndexNow: Single URL submitted to Bing via GET');
@@ -97,9 +105,10 @@ class SEOOptimizer {
     }
   }
 
-  // Submit sitemap to search engines
+  // Gửi sitemap.xml đến Google và Bing để cập nhật sitemap trên công cụ tìm kiếm
   submitSitemap() {
     if (!this.isProduction) {
+      // Bỏ qua khi không phải môi trường production
       console.debug('SEO: Skipping sitemap submission in development');
       return;
     }
@@ -111,7 +120,7 @@ class SEOOptimizer {
 
     searchEngines.forEach(url => {
       try {
-        // Use image request for cross-origin sitemap submission
+        // Dùng Image request để gửi ping sitemap, tránh lỗi CORS
         const img = new Image();
         img.onload = img.onerror = () => {
           console.debug('SEO: Sitemap ping completed');
@@ -123,21 +132,22 @@ class SEOOptimizer {
     });
   }
 
-  // Initialize SEO optimizations on page load
+  // Khởi tạo tự động các tác vụ SEO khi trang load xong
   init() {
     if (typeof window !== 'undefined') {
-      // Submit current page after delay
+      // Gửi URL hiện tại đến IndexNow sau 5 giây
       setTimeout(() => {
         this.submitToIndexNow();
       }, 5000);
 
-      // Submit sitemap weekly (only on homepage)
+      // Nếu là trang chủ, kiểm tra và gửi sitemap mỗi tuần một lần
       if (window.location.pathname === '/') {
         const lastSitemapSubmit = localStorage.getItem('lastSitemapSubmit');
         const now = Date.now();
         const oneWeek = 7 * 24 * 60 * 60 * 1000;
 
         if (!lastSitemapSubmit || now - parseInt(lastSitemapSubmit) > oneWeek) {
+          // Gửi sitemap nếu đã quá 1 tuần kể từ lần cuối lưu trong localStorage
           setTimeout(() => {
             this.submitSitemap();
             localStorage.setItem('lastSitemapSubmit', now.toString());
@@ -151,11 +161,11 @@ class SEOOptimizer {
 // Export for use in other components
 export default SEOOptimizer;
 
-// Auto-initialize if in browser
+// Tự động khởi tạo SEOOptimizer khi trang đã sẵn sàng
+// Kiểm tra trạng thái document để gọi init() đúng thời điểm
 if (typeof window !== 'undefined') {
   const seoOptimizer = new SEOOptimizer();
   
-  // Initialize after page load
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       seoOptimizer.init();

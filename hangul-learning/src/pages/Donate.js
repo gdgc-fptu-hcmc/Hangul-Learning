@@ -2,6 +2,8 @@ import React from 'react';
 import SEO from '../components/SEO';
 import OptimizedImage from '../components/OptimizedImage';
 
+// Thư mục: src/pages/Donate.js
+// Component Donate: trang quyên góp với QR code, mô tả lý do ủng hộ và thông tin liên hệ
 const Donate = () => {
   // List of QR images (local public image paths)
   const qrImages = [

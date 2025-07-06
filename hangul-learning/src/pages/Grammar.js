@@ -2302,7 +2302,7 @@ function Grammar() {
 
           <div className="flex flex-col lg:flex-row gap-8">
             {/* --- Sidebar --- */}
-            <aside className="lg:w-1/3 xl:w-1/4 lg:sticky lg:top-8 self-start bg-white p-4 sm:p-6 rounded-lg shadow-md">
+            <aside className="w-full lg:w-1/3 xl:w-1/4 lg:sticky lg:top-8 self-start bg-white p-4 sm:p-6 rounded-lg shadow-md">
               <h2 className="text-xl font-bold text-secondary mb-4">Lộ trình học</h2>
               
               {/* Level Selector */}
@@ -2530,7 +2530,7 @@ function Grammar() {
                         </div>
                       </div>
                       
-                      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 text-sm">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 text-sm">
                         {[
                           { key: 'verbs', color: 'bg-blue-100 text-blue-800 border-blue-200', label: '동사', desc: 'Động từ' },
                           { key: 'particles', color: 'bg-green-100 text-green-700 border-green-200', label: '조사', desc: 'Trợ từ' },

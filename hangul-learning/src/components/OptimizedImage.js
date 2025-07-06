@@ -1,6 +1,13 @@
 import React from 'react';
 
+// Component OptimizedImage: tối ưu hiển thị ảnh với WebP và fallback sang PNG/JPG, hỗ trợ lazy load và eager load khi cần thiết
 const OptimizedImage = ({
+  // src: đường dẫn file ảnh gốc (PNG/JPG)
+  // alt: thuộc tính thay thế cho ảnh
+  // width, height: kích thước hiển thị ảnh
+  // className, style: tuỳ chỉnh lớp CSS và style inline
+  // loading: ['lazy'|'eager'] điều khiển lazy load ảnh
+  // priority: nếu true sẽ dùng eager load và decoding sync để ưu tiên hiển thị
   src,
   alt,
   width,
@@ -11,14 +18,14 @@ const OptimizedImage = ({
   priority = false,
   ...props
 }) => {
-  // Generate WebP version path (assuming we have WebP versions)
+  // Tạo đường dẫn WebP tương ứng từ src gốc để cung cấp định dạng hiện đại
   const webpSrc = src.replace(/\.(png|jpg|jpeg)$/i, '.webp');
   
   return (
     <picture>
-      {/* WebP version for modern browsers */}
+      {/* Nguồn WebP cho trình duyệt hỗ trợ WebP */}
       <source srcSet={webpSrc} type="image/webp" />
-      {/* Fallback for older browsers */}
+      {/* Thẻ img fallback cho trình duyệt không hỗ trợ WebP */}
       <img
         src={src}
         alt={alt}

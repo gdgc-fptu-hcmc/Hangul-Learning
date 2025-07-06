@@ -1,3 +1,5 @@
+// Thư mục: src/pages/Basic.js
+// Component Basic: trang học bảng chữ cái Hangul, bao gồm nguyên âm, phụ âm, quy tắc phát âm và cấu trúc câu
 import React, { useState } from 'react';
 import { Volume2, BookOpen, FileText, MessageSquare, Hash } from 'lucide-react';
 import SEO from '../components/SEO';
@@ -297,7 +299,7 @@ function Basic() {
       {/* Nguyên âm cơ bản */}
       <section>
         <h3 className="text-2xl font-bold text-secondary mb-4">Nguyên âm cơ bản (기본 모음)</h3>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {basicVowels.map((vowel, idx) => (
             <div key={idx} className="bg-white p-4 rounded-lg shadow-md border hover:shadow-lg transition-shadow">
               <div className="text-center">
@@ -320,7 +322,7 @@ function Basic() {
       {/* Nguyên âm phức */}
       <section>
         <h3 className="text-2xl font-bold text-secondary mb-4">Nguyên âm phức (복합 모음)</h3>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {complexVowels.map((vowel, idx) => (
             <div key={idx} className="bg-white p-4 rounded-lg shadow-md border hover:shadow-lg transition-shadow">
               <div className="text-center">
@@ -347,7 +349,7 @@ function Basic() {
       {/* Phụ âm cơ bản */}
       <section>
         <h3 className="text-2xl font-bold text-secondary mb-4">Phụ âm cơ bản (기본 자음)</h3>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {basicConsonants.map((consonant, idx) => (
             <div key={idx} className="bg-white p-4 rounded-lg shadow-md border hover:shadow-lg transition-shadow">
               <div className="text-center">
@@ -370,7 +372,7 @@ function Basic() {
       {/* Phụ âm căng */}
       <section>
         <h3 className="text-2xl font-bold text-secondary mb-4">Phụ âm căng (된소리)</h3>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {tensedConsonants.map((consonant, idx) => (
             <div key={idx} className="bg-white p-4 rounded-lg shadow-md border hover:shadow-lg transition-shadow">
               <div className="text-center">
@@ -421,7 +423,7 @@ function Basic() {
             Dùng cho đếm tuổi, giờ, đồ vật, người. Chỉ dùng từ 1-99, từ 100 trở lên dùng số Hán Hàn.
           </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {nativeKoreanNumbers.map((num, idx) => (
             <div key={idx} className="bg-white p-4 rounded-lg shadow-md border hover:shadow-lg transition-shadow">
               <div className="text-center">
@@ -449,7 +451,7 @@ function Basic() {
             Dùng cho phút, ngày, tháng, năm, tiền, số điện thoại. Có thể đếm vô hạn.
           </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {sinoKoreanNumbers.map((num, idx) => (
             <div key={idx} className="bg-white p-4 rounded-lg shadow-md border hover:shadow-lg transition-shadow">
               <div className="text-center">
@@ -522,7 +524,7 @@ function Basic() {
             Bộ đếm được sử dụng cùng với số thuần Hàn để đếm các loại đồ vật khác nhau.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-4">
           {commonCounters.map((counter, idx) => (
             <div key={idx} className="bg-white p-4 rounded-lg shadow-md border hover:shadow-lg transition-shadow">
               <div className="text-center">
@@ -611,7 +613,7 @@ function Basic() {
       {/* Cấu trúc câu */}
       <section>
         <h3 className="text-2xl font-bold text-secondary mb-4">Cấu trúc câu cơ bản</h3>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {sentenceStructure.map((structure, idx) => (
             <div key={idx} className="bg-white p-6 rounded-lg shadow-md border flex flex-col h-full">
               <h4 className="text-xl font-bold text-gray-800 mb-2">{structure.type}</h4>
@@ -641,7 +643,7 @@ function Basic() {
       {/* Tiểu từ cơ bản */}
       <section>
         <h3 className="text-2xl font-bold text-secondary mb-4">Tiểu từ cơ bản (조사)</h3>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {basicParticles.map((particle, idx) => (
             <div key={idx} className="bg-white p-6 rounded-lg shadow-md border flex flex-col h-full">
               <div className="text-center mb-4">
@@ -689,7 +691,7 @@ function Basic() {
 
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Sidebar */}
-            <aside className="lg:w-1/3 xl:w-1/4 lg:sticky lg:top-8 self-start bg-white p-4 sm:p-6 rounded-lg shadow-md">
+            <aside className="w-full lg:w-1/3 xl:w-1/4 lg:sticky lg:top-8 self-start bg-white p-4 sm:p-6 rounded-lg shadow-md">
               <h2 className="text-xl font-bold text-secondary mb-4">Mục lục</h2>
               <nav className="space-y-2">
                 {sections.map(({ key, title, icon: Icon }) => (

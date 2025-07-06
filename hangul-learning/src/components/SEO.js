@@ -1,7 +1,16 @@
 import { useEffect } from 'react';
 
+// Thư mục: src/components/SEO.js
+
+// Component SEO: quản lý và đảm bảo các thẻ meta cho SEO và mạng xã hội
+// Đảm bảo title, description, keywords, canonical, author và ngôn ngữ được cập nhật đúng
+
 function ensureMetaTag(selector, attrName, attrValue) {
-  let element = document.head.querySelector(selector);
+  // Hàm ensureMetaTag: kiểm tra và thêm hoặc cập nhật thẻ meta trong <head>
+  // selector: chuỗi selector để tìm thẻ meta, ví dụ 'meta[name="description"]'
+  // attrName: tên thuộc tính để thiết lập, ví dụ 'content'
+  // attrValue: giá trị thuộc tính, ví dụ mô tả hoặc URL canonical
+  let element = document.querySelector(selector);
   if (!element) {
     const isLink = selector.startsWith('link[');
     element = document.createElement(isLink ? 'link' : 'meta');
@@ -37,6 +46,17 @@ function SEO({
   author = '한국어학습',
   language = 'vi-VN'
 }) {
+  // props:
+  // title: tiêu đề trang hiển thị trên tab và thẻ meta title
+  // description: mô tả trang cho thẻ meta description
+  // keywords: danh sách từ khóa phân tách bởi dấu phẩy
+  // image: đường dẫn ảnh cho mạng xã hội (og:image)
+  // url: URL hiện tại hoặc URL canonical
+  // canonical: đường dẫn chuẩn nếu muốn chỉ định khác URL hiện tại
+  // type: loại nội dung (ví dụ 'website', 'article')
+  // author: tên tác giả hoặc tên trang
+  // language: ngôn ngữ trang, ví dụ 'vi-VN'
+
   useEffect(() => {
     if (title) {
       document.title = title;

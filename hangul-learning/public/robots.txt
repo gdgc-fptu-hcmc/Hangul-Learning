@@ -12,6 +12,7 @@ Allow: /grammar
 Allow: /basic
 Allow: /basic2
 Allow: /exercises
+Allow: /topik
 Allow: /about
 Allow: /donate
 Allow: /privacy-policy

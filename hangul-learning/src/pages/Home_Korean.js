@@ -61,6 +61,8 @@ const KoreanFlag = ({ className = "" }) => (
   </div>
 );
 
+// Thư mục: src/pages/Home_Korean.js
+// Component Home_Korean: trang chủ phong cách Hàn Quốc với họa tiết Saekdong, paper background và hero Hàn Quốc
 function Home() {
   // Korean color scheme (Obangsaek - Five Traditional Colors)
   const koreanColors = {
@@ -92,7 +94,7 @@ function Home() {
       date: '2025-06-29',
       type: 'HOT',
       title: 'Ra mắt kênh YouTube Hangul.online',
-      description: 'Kênh YouTube chính thức với nội dung học tiếng Hàn qua Postcard. Video mới với phát âm chuẩn bản địa và phương pháp học hiệu quả.',
+      description: 'Kênh YouTube chính thức với nội dung học tiếng Hàn qua Video. Video mới với phát âm chuẩn bản địa và phương pháp học hiệu quả.',
       link: 'https://youtube.com/@hangul.online?si=JeMuUcJvBK9MuqrJ',
       icon: Youtube,
       color: 'bg-red-100 text-red-800'
@@ -341,7 +343,7 @@ function Home() {
             </div>
             <h2 className="text-3xl font-extrabold mb-4" style={{ color: koreanColors.black }}>
               포스트카드로 배우는 한국어 
-              <span style={{ color: koreanColors.secondary }}>Postcard Korean</span>
+              <span style={{ color: koreanColors.secondary }}>Video hoạt hình</span>
             </h2>
             <SaekdongPattern className="h-2 w-48 mx-auto rounded-full mb-4" />
           </div>
@@ -352,7 +354,7 @@ function Home() {
               <div className="rounded-2xl overflow-hidden shadow-2xl bg-white p-2">
                 <SaekdongPattern className="h-2 w-full rounded-t-lg" />
                 <YouTubeEmbed 
-                  videoId="gIr1q8ZfQds"
+                  videoId="2aZ84ZjVUXc"
                   title="Hangul.online – 한국어 학습 비디오"
                   className="aspect-video"
                 />

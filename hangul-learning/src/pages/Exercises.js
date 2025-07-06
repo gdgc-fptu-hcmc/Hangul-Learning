@@ -3,6 +3,8 @@ import SEO from '../components/SEO';
 import AdsenseAd from '../components/AdsenseAd';
 import { Volume2, VolumeX, Headphones, BookOpen, PenTool, CheckCircle, XCircle, RotateCcw, Pause, SkipForward, Award } from 'lucide-react';
 
+// Thư mục: src/pages/Exercises.js
+// Component Exercises: trang luyện tập các kỹ năng Nghe, Đọc, Viết, Chính tả với giao diện tương tác và phản hồi âm thanh
 function Exercises() {
   // Exercise types
   const EXERCISE_TYPES = {
@@ -795,7 +797,7 @@ function Exercises() {
               <p className="text-gray-600">Phát triển kỹ năng đọc hiểu</p>
             </div>
           </div>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
             <button
               onClick={() => startExercise('reading_vocabulary')}
               className="p-4 border-2 border-green-200 rounded-xl hover:border-green-400 hover:bg-green-50 transition-all duration-200 text-left"
@@ -824,7 +826,7 @@ function Exercises() {
               <p className="text-gray-600">Rèn luyện kỹ năng viết tiếng Hàn</p>
             </div>
           </div>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
             <button
               onClick={() => startExercise('writing_translation')}
               className="p-4 border-2 border-purple-200 rounded-xl hover:border-purple-400 hover:bg-purple-50 transition-all duration-200 text-left"
@@ -853,7 +855,7 @@ function Exercises() {
               <p className="text-gray-600">Nghe và viết chính xác tiếng Hàn với tốc độ phù hợp</p>
             </div>
           </div>
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             <button
               onClick={() => startExercise('dictation_beginner')}
               className="p-4 border-2 border-orange-200 rounded-xl hover:border-orange-400 hover:bg-orange-50 transition-all duration-200 text-left"

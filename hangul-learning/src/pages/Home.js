@@ -19,6 +19,8 @@ const DecorShape = () => (
   </svg>
 );
 
+// Thư mục: src/pages/Home.js
+// Component Home: trang chủ với hero, cập nhật mới, từ vựng nổi bật, mẹo học và nhà tài trợ
 function Home() {
   // Dữ liệu cập nhật website
   const updates = [
@@ -26,7 +28,7 @@ function Home() {
       date: '2025-06-29',
       type: 'HOT',
       title: 'Ra mắt kênh YouTube Hangul.online',
-      description: 'Kênh YouTube chính thức với nội dung học tiếng Hàn qua Postcard. Video mới với phát âm chuẩn bản địa và phương pháp học hiệu quả.',
+      description: 'Kênh YouTube chính thức với nội dung học tiếng Hàn qua Video. Video mới với phát âm chuẩn bản địa và phương pháp học hiệu quả.',
       link: 'https://youtube.com/@hangul.online?si=JeMuUcJvBK9MuqrJ',
       icon: Youtube,
       color: 'bg-red-100 text-red-800'
@@ -163,11 +165,11 @@ function Home() {
                 </Link>
                 
                 <Link
-                  to="/basic"
+                  to="/guide"
                   className="btn-mobile border-2 border-primary text-primary bg-white hover:bg-primary hover:text-white transition-all duration-300 tap-highlight-none w-full sm:w-auto"
                 >
                   <Target className="w-5 h-5" />
-                  Học bảng chữ cái
+                  Kiểm tra trình độ ngay
                 </Link>
               </div>
 
@@ -281,10 +283,10 @@ function Home() {
               </a>
             </div>
             <h2 className="heading-mobile-lg text-gray-900 mb-4 text-center">
-              Học tiếng Hàn qua <span className="text-red-500">Postcard</span>
+              Học tiếng Hàn qua <span className="text-red-500">Video hoạt hình</span>
             </h2>
             <p className="text-gray-600 text-base sm:text-lg max-w-3xl mx-auto text-center">
-              Khám phá cách học tiếng Hàn thú vị và hiệu quả thông qua các video postcard tương tác. 
+              Khám phá cách học tiếng Hàn thú vị và hiệu quả thông qua các video hoạt hình vui nhộn. 
               Mỗi video mang đến trải nghiệm học tập sinh động với nội dung thực tế và phát âm chuẩn.
             </p>
           </div>
@@ -293,7 +295,7 @@ function Home() {
             {/* Video Player */}
             <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-4 sm:p-6 lg:p-8 rounded-2xl lg:rounded-3xl">
               <YouTubeEmbed 
-                videoId="gIr1q8ZfQds"
+                videoId="2aZ84ZjVUXc"
                 title="한국어학습 - Video học tiếng Hàn"
                 className="shadow-lg sm:shadow-2xl"
               />
@@ -316,7 +318,7 @@ function Home() {
                   <div className="flex items-start gap-3 lg:text-left text-center lg:justify-start justify-center">
                     <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
                     <div className="text-center lg:text-left">
-                      <h4 className="font-semibold text-gray-900 text-sm sm:text-base">Nội dung Postcard độc đáo</h4>
+                      <h4 className="font-semibold text-gray-900 text-sm sm:text-base">Nội dung Video hoạt hình độc đáo</h4>
                       <p className="text-gray-600 text-xs sm:text-sm">Học tiếng Hàn thông qua các tình huống thực tế trong postcard</p>
                     </div>
                   </div>
@@ -350,7 +352,7 @@ function Home() {
                   </a>
                   
                   <a
-                    href="https://youtu.be/gIr1q8ZfQds?si=HlyIHolNOSA1j5PY"
+                    href="https://youtu.be/2aZ84ZjVUXc?si=HlyIHolNOSA1j5PY"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-mobile bg-gray-100 text-gray-700 hover:bg-gray-200 transition-all duration-300 tap-highlight-none w-full sm:w-auto"
@@ -539,8 +541,8 @@ function Home() {
             </div>
           </div>
           <div className="text-center mt-8">
-            <Link to="/basic" className="inline-block bg-primary text-white font-bold py-3 px-8 rounded-lg hover:bg-orange-600 transition-colors">
-              Học bảng chữ cái Hangul →
+            <Link to="/guide" className="inline-block bg-primary text-white font-bold py-3 px-8 rounded-lg hover:bg-orange-600 transition-colors">
+              Kiểm tra trình độ ngay →
             </Link>
           </div>
         </div>

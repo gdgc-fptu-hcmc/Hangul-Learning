@@ -2,13 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import OptimizedImage from './OptimizedImage';
 
+// Component Footer: hiển thị chân trang với logo nhà tài trợ, liên kết phụ trợ và bản quyền
 function Footer() {
+  // Lấy năm hiện tại để hiển thị bản quyền động
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-secondary text-gray-400">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Sponsor Section */}
+        {/* Phần Nhà tài trợ: hiển thị logo, đường dẫn đối tác và lời cảm ơn */}
         <div className="text-center mb-10">
           <p className="text-sm font-semibold text-white tracking-wider uppercase mb-4">
             Được tài trợ bởi
@@ -32,6 +34,7 @@ function Footer() {
         </div>
 
         {/* Bottom links and copyright */}
+        {/* Phần liên kết chính sách, ủng hộ và thông tin bản quyền */}
         <div className="flex flex-col md:flex-row items-center justify-between text-sm border-t border-gray-700 pt-6">
           <div className="flex space-x-6 order-1 md:order-none mb-4 md:mb-0">
             <Link to="/privacy-policy" className="hover:text-white">Chính sách bảo mật</Link>
