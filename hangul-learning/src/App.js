@@ -13,11 +13,104 @@ import Exercises from './pages/Exercises';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import Topik from './pages/Topik';
+import DonatePrompt from './components/DonatePrompt';
 
 // Simple page navigation for desktop
 // Define page order for navigation
 const PAGE_ORDER = ['/', '/guide', '/basic', '/vocabulary', '/grammar', '/exercises', '/topik'];
 
+// Loading overlay component
+const LoadingOverlay = () => (
+  <div className="page-loading">
+    <div className="flex flex-col items-center space-y-4">
+      <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+      <p className="text-sm text-gray-600">Đang chuyển trang...</p>
+    </div>
+  </div>
+);
+
+// Main app content with routing logic
+const AppContent = () => {
+  // Helper to derive current page id from path for active menu highlight
+  const usePageId = () => {
+    const { pathname } = useLocation();
+    if (pathname.startsWith('/basic')) return 'basic';
+    if (pathname.startsWith('/vocabulary')) return 'vocabulary';
+    if (pathname.startsWith('/grammar')) return 'grammar';
+    if (pathname.startsWith('/exercises')) return 'exercises';
+    if (pathname.startsWith('/donate')) return 'donate';
+    if (pathname.startsWith('/topik')) return 'topik';
+    return 'home';
+  };
+
+  const currentPage = usePageId();
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
+  const [isPageVisible, setIsPageVisible] = useState(true);
+  
+  // Handle page transitions with loading and animations
+  useEffect(() => {
+    setIsLoading(true);
+    setIsPageVisible(false);
+    
+    // Small delay for page transition effect
+    const transitionTimer = setTimeout(() => {
+      setIsPageVisible(true);
+      setIsLoading(false);
+      
+      // Scroll to top with smooth animation
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+      
+      // Initialize SEO optimizer for the new page
+      const seoOptimizer = new SEOOptimizer();
+      seoOptimizer.init();
+    }, 150);
+    
+    return () => clearTimeout(transitionTimer);
+  }, [pathname]);
+
+  return (
+    <div className="flex flex-col min-h-screen">
+      {isLoading && <LoadingOverlay />}
+      <PageNavigation navigate={navigate} />
+      <Header currentPage={currentPage} />
+      <main className={`flex-grow transition-all duration-500 ${isPageVisible ? 'page-container' : 'opacity-0'}`}>
+        <Suspense fallback={
+          <div className="min-h-screen flex items-center justify-center">
+            <div className="text-center">
+              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+              <p className="mt-4 text-lg text-gray-600">Đang tải nội dung...</p>
+            </div>
+          </div>
+        }>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/guide" element={<Guide />} />
+            <Route path="/basic" element={<Basic />} />
+            <Route path="/vocabulary" element={<Vocabulary />} />
+            <Route path="/grammar" element={<Grammar />} />
+            <Route path="/exercises" element={<Exercises />} />
+            <Route path="/topik" element={<Topik />} />
+            <Route path="/donate" element={<Donate />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            {/* fallback */}
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </Suspense>
+      </main>
+      <DonatePrompt />
+      <Footer />
+    </div>
+  );
+};
+
+// Page navigation component
 const PageNavigation = ({ navigate }) => {
   const location = useLocation();
   
@@ -169,99 +262,11 @@ const PageNavigation = ({ navigate }) => {
   );
 };
 
+// Main App component
 function App() {
-  // Helper to derive current page id from path for active menu highlight
-  const usePageId = () => {
-    const { pathname } = useLocation();
-    if (pathname.startsWith('/basic')) return 'basic';
-    if (pathname.startsWith('/vocabulary')) return 'vocabulary';
-    if (pathname.startsWith('/grammar')) return 'grammar';
-    if (pathname.startsWith('/exercises')) return 'exercises';
-    if (pathname.startsWith('/donate')) return 'donate';
-    if (pathname.startsWith('/topik')) return 'topik';
-    return 'home';
-  };
-
-  const PageWrapper = () => {
-    const currentPage = usePageId();
-    const { pathname } = useLocation();
-    const navigate = useNavigate();
-    const [isLoading, setIsLoading] = useState(false);
-    const [isPageVisible, setIsPageVisible] = useState(true);
-    
-    // Handle page transitions with loading and animations
-    useEffect(() => {
-      setIsLoading(true);
-      setIsPageVisible(false);
-      
-      // Small delay for page transition effect
-      const transitionTimer = setTimeout(() => {
-        setIsPageVisible(true);
-        setIsLoading(false);
-        
-        // Scroll to top with smooth animation
-        window.scrollTo({
-          top: 0,
-          left: 0,
-          behavior: 'smooth'
-        });
-        
-        // Initialize SEO optimizer for the new page
-        const seoOptimizer = new SEOOptimizer();
-        seoOptimizer.init();
-      }, 150);
-      
-      return () => clearTimeout(transitionTimer);
-    }, [pathname]);
-
-    // Loading overlay component
-    const LoadingOverlay = () => (
-      <div className="page-loading">
-        <div className="flex flex-col items-center space-y-4">
-          <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
-          <p className="text-sm text-gray-600">Đang chuyển trang...</p>
-        </div>
-      </div>
-    );
-
-      return (
-        <>
-          {isLoading && <LoadingOverlay />}
-          <PageNavigation navigate={navigate} />
-          <Header currentPage={currentPage} />
-          <main className={`transition-all duration-500 ${isPageVisible ? 'page-container' : 'opacity-0'}`}>
-          <Suspense fallback={
-            <div className="min-h-screen flex items-center justify-center">
-              <div className="text-center">
-                <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-                <p className="mt-4 text-lg text-gray-600">Đang tải nội dung...</p>
-              </div>
-            </div>
-          }>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/guide" element={<Guide />} />
-              <Route path="/basic" element={<Basic />} />
-              <Route path="/vocabulary" element={<Vocabulary />} />
-              <Route path="/grammar" element={<Grammar />} />
-               <Route path="/exercises" element={<Exercises />} />
-              <Route path="/topik" element={<Topik />} />
-              <Route path="/donate" element={<Donate />} />
-              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-              <Route path="/terms-of-service" element={<TermsOfService />} />
-              {/* fallback */}
-              <Route path="*" element={<Home />} />
-            </Routes>
-          </Suspense>
-        </main>
-        <Footer />
-      </>
-    );
-  };
-
   return (
     <Router>
-      <PageWrapper />
+      <AppContent />
     </Router>
   );
 }

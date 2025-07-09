@@ -3,78 +3,21 @@ import SEO from '../components/SEO';
 import SponsorSection from '../components/SponsorSection';
 import { Link } from 'react-router-dom';
 import { BookOpen, CheckSquare, Users, Headphones, PenTool, Eye, Bell, Sparkles, Chrome, Monitor, Smartphone, ExternalLink, Youtube } from 'lucide-react';
-import YouTubeEmbed from '../components/YouTubeEmbed';
-import OptimizedImage from '../components/OptimizedImage';
 
-// Korean Saekdong Pattern (traditional colorful stripes from hanbok children's clothing)
-const SaekdongPattern = ({ className = "", orientation = "horizontal" }) => (
-  <div className={`${className} overflow-hidden`}>
-    <div className={`${orientation === 'horizontal' ? 'flex' : 'flex flex-col'} h-full w-full`}>
-      <div className="flex-1" style={{backgroundColor: '#5470C6'}}></div>
-      <div className="flex-1" style={{backgroundColor: '#EA4335'}}></div>
-      <div className="flex-1" style={{backgroundColor: '#F4B942'}}></div>
-      <div className="flex-1" style={{backgroundColor: '#34C759'}}></div>
-      <div className="flex-1" style={{backgroundColor: '#AF52DE'}}></div>
-    </div>
-  </div>
-);
-
-// Korean Taegeuk-inspired decorative shape
-const KoreanDecorShape = () => (
-  <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute opacity-20">
-    <circle cx="60" cy="60" r="58" fill="none" stroke="url(#korean_gradient)" strokeWidth="4"/>
-    <path d="M60 10 Q60 60 110 60 Q60 60 60 110 Q60 60 10 60 Q60 60 60 10" fill="url(#korean_gradient)" opacity="0.3"/>
+// A simple decorative SVG shape
+const DecorShape = () => (
+  <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute opacity-10">
+    <circle cx="50" cy="50" r="50" fill="url(#paint0_linear_1_2)"/>
     <defs>
-      <linearGradient id="korean_gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#5470C6"/>
-        <stop offset="25%" stopColor="#EA4335"/>
-        <stop offset="50%" stopColor="#F4B942"/>
-        <stop offset="75%" stopColor="#5470C6"/>
-        <stop offset="100%" stopColor="#EA4335"/>
+      <linearGradient id="paint0_linear_1_2" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+        <stop stopColor="#F97316"/>
+        <stop offset="1" stopColor="#EAB308"/>
       </linearGradient>
     </defs>
   </svg>
 );
 
-// Korean Paper Background (like Hanji paper)
-const KoreanPaperBg = ({ children, className = "" }) => (
-  <div className={`relative ${className}`}>
-    <div className="absolute inset-0 opacity-5">
-      <div className="w-full h-full" style={{
-        backgroundImage: `radial-gradient(circle at 1px 1px, #5470C6 1px, transparent 0)`,
-        backgroundSize: '20px 20px'
-      }}></div>
-    </div>
-    {children}
-  </div>
-);
-
-// Korean Flag mini component
-const KoreanFlag = ({ className = "" }) => (
-  <div className={`${className} relative inline-block`}>
-    <div className="w-8 h-6 bg-white border border-gray-300 rounded-sm overflow-hidden">
-      <div className="w-full h-full relative">
-        <div className="absolute inset-0 bg-white"></div>
-        <div className="absolute top-1 left-1 w-3 h-2 rounded-full" style={{background: 'linear-gradient(45deg, #EA4335 50%, #5470C6 50%)'}}></div>
-      </div>
-    </div>
-  </div>
-);
-
-// Thư mục: src/pages/Home_Korean.js
-// Component Home_Korean: trang chủ phong cách Hàn Quốc với họa tiết Saekdong, paper background và hero Hàn Quốc
 function Home() {
-  // Korean color scheme (Obangsaek - Five Traditional Colors)
-  const koreanColors = {
-    primary: '#5470C6',    // 청 (Blue) - Youth, hope
-    secondary: '#EA4335',  // 적 (Red) - Energy, happiness
-    accent: '#F4B942',     // 황 (Yellow) - Wisdom, sacredness
-    success: '#34C759',    // 녹 (Green) - Growth, harmony
-    purple: '#AF52DE',     // 자 (Purple) - Nobility
-    white: '#FAFAFA',      // 백 (White) - Purity, simplicity
-    black: '#2D3436'       // 흑 (Black) - Dignity, formality
-  };
-
   // Detect browser hiện tại
   const getCurrentBrowser = () => {
     const userAgent = navigator.userAgent;
@@ -94,7 +37,7 @@ function Home() {
       date: '2025-06-29',
       type: 'HOT',
       title: 'Ra mắt kênh YouTube Hangul.online',
-      description: 'Kênh YouTube chính thức với nội dung học tiếng Hàn qua Video. Video mới với phát âm chuẩn bản địa và phương pháp học hiệu quả.',
+      description: 'Kênh YouTube chính thức với nội dung học tiếng Hàn qua Video hoạt hình. Video mới với phát âm chuẩn bản địa và phương pháp học hiệu quả.',
       link: 'https://youtube.com/@hangul.online?si=JeMuUcJvBK9MuqrJ',
       icon: Youtube,
       color: 'bg-red-100 text-red-800'
@@ -119,280 +62,180 @@ function Home() {
     }
   ];
 
+  const featuredVocabulary = [
+    { korean: '안녕하세요', vietnamese: 'Xin chào (lịch sự)', pronunciation: 'an-nyeong-ha-se-yo' },
+    { korean: '감사합니다', vietnamese: 'Cảm ơn', pronunciation: 'gam-sa-ham-ni-da' },
+    { korean: '죄송합니다', vietnamese: 'Xin lỗi', pronunciation: 'joe-song-ham-ni-da' },
+    { korean: '사랑해요', vietnamese: 'Tôi yêu bạn', pronunciation: 'sa-rang-hae-yo' },
+    { korean: '공부하다', vietnamese: 'Học tập', pronunciation: 'gong-bu-ha-da' },
+    { korean: '친구', vietnamese: 'Bạn bè', pronunciation: 'chin-gu' }
+  ];
+
+  const learningTips = [
+    {
+      title: "Học bảng chữ cái Hangul trước tiên",
+      description: "Hangul là nền tảng của tiếng Hàn. Với 24 chữ cái cơ bản, bạn có thể đọc được hầu hết các từ tiếng Hàn."
+    },
+    {
+      title: "Luyện tập phát âm hàng ngày",
+      description: "Tiếng Hàn có nhiều âm đặc biệt. Hãy luyện tập phát âm 15-20 phút mỗi ngày để cải thiện khả năng nói."
+    },
+    {
+      title: "Học từ vựng theo chủ đề",
+      description: "Nhóm từ vựng theo chủ đề như gia đình, thức ăn, công việc sẽ giúp bạn ghi nhớ hiệu quả hơn."
+    },
+    {
+      title: "Sử dụng flashcard và spaced repetition",
+      description: "Áp dụng phương pháp lặp lại cách quãng để ghi nhớ từ vựng và ngữ pháp lâu dài."
+    }
+  ];
+
+  const grammarBasics = [
+    {
+      title: "Cấu trúc câu cơ bản",
+      description: "Tiếng Hàn theo cấu trúc SOV (Chủ ngữ - Tân ngữ - Vị ngữ), khác với tiếng Việt.",
+      example: "나는 사과를 먹어요 (Tôi ăn táo)"
+    },
+    {
+      title: "Các mức độ lịch sự",
+      description: "Tiếng Hàn có 3 mức độ lịch sự chính: Casual (반말), Polite (존댓말), Formal (격식체).",
+      example: "가요 / 갑니다 / 가"
+    },
+    {
+      title: "Trợ từ (Particles)",
+      description: "Trợ từ giúp xác định vai trò của từ trong câu: 은/는 (chủ đề), 이/가 (chủ ngữ), 을/를 (tân ngữ).",
+      example: "학생은 책을 읽어요"
+    }
+  ];
+
   return (
-    <div className="bg-white" style={{ backgroundColor: koreanColors.white }}>
+    <div className="bg-white">
       <SEO
-        title="한국어 학습 | 한국어학습 - Học Tiếng Hàn Dễ Dàng & Miễn Phí"
-        description="전통적인 한국 교육 방법으로 한국어를 무료로 배우세요. 어휘, 문법, 연습문제를 통해 기초부터 고급까지 단계별 학습."
+        title="Hangul Learning | Học Tiếng Hàn Dễ Dàng & Miễn Phí"
+        description="Nền tảng học tiếng Hàn miễn phí, cung cấp từ vựng, ngữ pháp và bài tập theo phương pháp giảng dạy chính quy. Hướng dẫn chi tiết từ cơ bản đến nâng cao."
       />
 
-      {/* Korean-style Hero Section */}
-      <KoreanPaperBg className="relative overflow-hidden" style={{ backgroundColor: koreanColors.white }}>
-        {/* Top Saekdong Border */}
-        <SaekdongPattern className="h-3 w-full" />
-        
+      {/* Hero Section */}
+      <div className="relative overflow-hidden bg-light-gray">
         <div className="max-w-6xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="text-center md:text-left relative">
-              {/* Korean decorative elements */}
-              <div className="absolute -top-8 -left-8 opacity-10">
-                <KoreanDecorShape />
-              </div>
-              
-              {/* Korean-style header with Hangul */}
-              <div className="mb-4">
-                <KoreanFlag className="mb-2" />
-                <span className="text-sm font-medium" style={{ color: koreanColors.primary }}>
-                  한국 문화와 함께하는 언어 학습
-                </span>
-              </div>
-              
-              <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter" 
-                  style={{ color: koreanColors.black, fontFamily: '"Noto Sans CJK KR", system-ui, sans-serif' }}>
-                한국어 학습
-                <span className="mt-2 block bg-gradient-to-r bg-clip-text text-transparent" 
-                      style={{ 
-                        background: `linear-gradient(135deg, ${koreanColors.primary}, ${koreanColors.secondary}, ${koreanColors.accent})`,
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent'
-                      }}>
-                  Học tiếng Hàn dễ dàng
-                </span>
+            <div className="text-center md:text-left">
+              <h1 className="text-4xl md:text-5xl font-extrabold text-text-dark tracking-tighter">
+                Học tiếng Hàn
+                <span className="mt-2 block text-primary">Dễ dàng & Miễn phí</span>
               </h1>
-              
-              {/* Saekdong decorative separator */}
-              <div className="mt-4 flex items-center justify-center md:justify-start gap-2">
-                <SaekdongPattern className="h-1 w-16 rounded-full" />
-                <span className="text-sm font-medium px-2" style={{ color: koreanColors.primary }}>
-                  전통과 현대의 만남
-                </span>
-                <SaekdongPattern className="h-1 w-16 rounded-full" />
-              </div>
-              
-              <p className="mt-6 text-lg max-w-md mx-auto md:mx-0" style={{ color: '#6C757D' }}>
-                한국의 아름다운 언어와 문화를 현대적인 학습 방법으로 경험해보세요. 
-                전통적인 교육 철학과 최신 기술이 결합된 체계적인 한국어 학습 프로그램입니다.
+              <p className="mt-6 text-lg text-text-light max-w-md mx-auto md:mx-0">
+                Một hệ thống học tập dựa trên phương pháp giảng dạy chính quy với sự trợ giúp của các tài nguyên đa dạng. Học từ cơ bản đến nâng cao với hơn 1000+ từ vựng và ngữ pháp chi tiết.
               </p>
-              
-              {/* Korean-style buttons */}
               <div className="mt-10 flex gap-4 justify-center md:justify-start flex-wrap">
-                <Link 
-                  to="/basic" 
-                  className="group relative inline-block font-bold py-4 px-8 rounded-2xl shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
-                  style={{ 
-                    backgroundColor: koreanColors.primary,
-                    color: 'white',
-                    border: `2px solid ${koreanColors.primary}`
-                  }}
-                >
-                  <span className="relative z-10 flex items-center gap-2">
-                    📚 한글 배우기 • Hangul
-                  </span>
+                <Link to="/basic" className="inline-block bg-primary text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-orange-600 transition-all duration-300 transform hover:scale-105 hover:shadow-xl animate-fade-in-up">
+                  Học bảng chữ cái
                 </Link>
-                
-                <Link 
-                  to="/vocabulary" 
-                  className="inline-block font-bold py-4 px-8 rounded-2xl shadow-lg border-2 transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
-                  style={{ 
-                    backgroundColor: 'white',
-                    color: koreanColors.secondary,
-                    borderColor: koreanColors.secondary
-                  }}
-                >
-                  🔤 어휘 • 단어
+                <Link to="/vocabulary" className="inline-block bg-purple-500 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-purple-600 border-2 border-purple-500 hover:border-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-xl animate-fade-in-up animation-delay-200">
+                  Từ vựng
                 </Link>
-                
-                <Link 
-                  to="/grammar" 
-                  className="inline-block font-bold py-4 px-8 rounded-2xl shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
-                  style={{ 
-                    backgroundColor: koreanColors.accent,
-                    color: 'white'
-                  }}
-                >
-                  📖 문법 • 규칙
+                <Link to="/grammar" className="inline-block bg-secondary text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 hover:shadow-xl animate-fade-in-up animation-delay-400">
+                  Ngữ pháp
                 </Link>
               </div>
             </div>
-            
-            {/* Korean-styled image section */}
             <div className="hidden md:block relative h-96">
-              <div className="absolute inset-0 rounded-3xl shadow-2xl overflow-hidden transform hover:rotate-1 hover:scale-105 transition-all duration-500" 
-                   style={{ backgroundColor: 'white' }}>
-                
-                {/* Top Saekdong border */}
-                <SaekdongPattern className="h-4 w-full" />
-                
-                <div className="p-8 h-full flex flex-col items-center justify-center">
-                  <div className="relative">
-                    <OptimizedImage src="/logo_human.png" alt="한국어 학습" className="h-64 w-64 object-contain opacity-90" />
-                    
-                    {/* Korean floating elements */}
-                    <div className="absolute -top-4 -right-4 animate-bounce">
-                      <div className="w-8 h-8 rounded-full" style={{ backgroundColor: koreanColors.primary }}></div>
-                    </div>
-                    <div className="absolute -bottom-2 -left-2 animate-pulse">
-                      <div className="w-6 h-6 rounded-full" style={{ backgroundColor: koreanColors.secondary }}></div>
-                    </div>
-                    <div className="absolute top-1/2 -right-6 animate-ping">
-                      <div className="w-4 h-4 rounded-full" style={{ backgroundColor: koreanColors.accent }}></div>
-                    </div>
-                  </div>
-                  
-                  {/* Korean text decoration */}
-                  <div className="mt-4 text-center">
-                    <p className="text-lg font-bold" style={{ color: koreanColors.primary }}>
-                      한국어를 배워봅시다! 🇰🇷
-                    </p>
-                    <p className="text-sm" style={{ color: '#6C757D' }}>
-                      Cùng khám phá vẻ đẹp ngôn ngữ Hàn Quốc
-                    </p>
-                  </div>
-                </div>
-                
-                {/* Bottom Saekdong border */}
-                <SaekdongPattern className="h-4 w-full" />
+              <div className="animate-pulse">
+                <DecorShape />
               </div>
-              
-              {/* Floating Korean decorative elements */}
-              <div className="absolute -top-8 -left-8 animate-float">
-                <KoreanDecorShape />
+              <div style={{ top: '10%', left: '60%' }} className="animate-pulse animation-delay-1000">
+                <DecorShape />
               </div>
-              <div className="absolute -bottom-4 -right-4 animate-float" style={{ animationDelay: '1s' }}>
-                <KoreanDecorShape />
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        {/* Bottom Saekdong border */}
-        <SaekdongPattern className="h-3 w-full" />
-      </KoreanPaperBg>
-
-      {/* Korean Traditional Learning Section */}
-      <div className="py-16" style={{ backgroundColor: koreanColors.white }}>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4" style={{ color: koreanColors.black }}>
-              전통적인 한국 학습법 • Traditional Korean Learning
-            </h2>
-            <SaekdongPattern className="h-2 w-32 mx-auto rounded-full mb-4" />
-            <p className="text-lg max-w-3xl mx-auto" style={{ color: '#6C757D' }}>
-              수천 년간 이어져 온 한국의 교육 철학을 현대적으로 재해석한 학습 경험을 제공합니다.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-lg border-2" style={{ borderColor: koreanColors.primary }}>
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" 
-                     style={{ backgroundColor: koreanColors.primary }}>
-                  <span className="text-2xl">한</span>
-                </div>
-                <h3 className="text-xl font-bold mb-3" style={{ color: koreanColors.black }}>
-                  한글 기초 • Hangul Basics
-                </h3>
-                <p className="text-gray-600">
-                  세종대왕이 만든 과학적인 문자 체계를 단계별로 학습하세요.
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-2xl p-8 shadow-lg border-2" style={{ borderColor: koreanColors.secondary }}>
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" 
-                     style={{ backgroundColor: koreanColors.secondary }}>
-                  <span className="text-2xl">국</span>
-                </div>
-                <h3 className="text-xl font-bold mb-3" style={{ color: koreanColors.black }}>
-                  한국 문화 • Korean Culture
-                </h3>
-                <p className="text-gray-600">
-                  언어와 함께 한국의 아름다운 전통과 현대 문화를 경험하세요.
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-2xl p-8 shadow-lg border-2" style={{ borderColor: koreanColors.accent }}>
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" 
-                     style={{ backgroundColor: koreanColors.accent }}>
-                  <span className="text-2xl">어</span>
-                </div>
-                <h3 className="text-xl font-bold mb-3" style={{ color: koreanColors.black }}>
-                  실용 한국어 • Practical Korean
-                </h3>
-                <p className="text-gray-600">
-                  일상생활에서 바로 사용할 수 있는 실용적인 한국어를 배우세요.
-                </p>
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-100 via-orange-100 to-pink-100 rounded-2xl shadow-xl flex items-center justify-center -rotate-6 transform hover:rotate-0 hover:scale-105 transition-all duration-500 animate-bounce-slow">
+                 <img src="/logo_human.png" alt="Học tiếng Hàn miễn phí" className="h-80 w-80 object-contain opacity-90 animate-float" />
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* YouTube Section with Korean styling */}
-      <div className="py-16" style={{ backgroundColor: '#FFF5F5' }}>
+      {/* YouTube Channel Section */}
+      <div className="py-16 bg-gradient-to-br from-red-50 via-pink-50 to-purple-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full mb-4 shadow-lg" 
-                 style={{ backgroundColor: koreanColors.secondary, color: 'white' }}>
+            <div className="inline-flex items-center gap-3 bg-red-500 text-white px-6 py-3 rounded-full mb-4 shadow-lg">
               <Youtube className="w-6 h-6" />
-              <span className="font-bold text-lg">유튜브 채널 • YouTube Channel</span>
+              <span className="font-bold text-lg">KÊNH YOUTUBE</span>
               <div className="w-2 h-2 bg-red-300 rounded-full animate-pulse"></div>
             </div>
-            <h2 className="text-3xl font-extrabold mb-4" style={{ color: koreanColors.black }}>
-              포스트카드로 배우는 한국어 
-              <span style={{ color: koreanColors.secondary }}>Video hoạt hình</span>
+            <h2 className="text-3xl font-extrabold text-gray-900 mb-4">
+              Học tiếng Hàn qua <span className="text-red-500">Video hoạt hình</span>
             </h2>
-            <SaekdongPattern className="h-2 w-48 mx-auto rounded-full mb-4" />
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Khám phá cách học tiếng Hàn thú vị và hiệu quả thông qua các video hoạt hình tương tác. 
+              Mỗi video mang đến trải nghiệm học tập sinh động với nội dung thực tế và phát âm chuẩn.
+            </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Video with Korean border */}
+            {/* Video Player */}
             <div className="relative">
-              <div className="rounded-2xl overflow-hidden shadow-2xl bg-white p-2">
-                <SaekdongPattern className="h-2 w-full rounded-t-lg" />
-                <YouTubeEmbed 
-                  videoId="2aZ84ZjVUXc"
-                  title="Hangul.online – 한국어 학습 비디오"
-                  className="aspect-video"
-                />
-                <SaekdongPattern className="h-2 w-full rounded-b-lg" />
+              <div className="aspect-video bg-black rounded-2xl shadow-2xl overflow-hidden group">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/2aZ84ZjVUXc?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1"
+                  title="Hangul.online - Học tiếng Hàn qua Video hoạt hình"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+                
+                {/* Video overlay info */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="text-white">
+                    <h3 className="font-bold text-lg mb-1">Video mới nhất</h3>
+                    <p className="text-sm text-gray-300">Video hoạt hình tiếng Hàn với phát âm chuẩn</p>
+                  </div>
+                </div>
               </div>
+
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-red-500 rounded-full animate-bounce"></div>
+              <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-pink-400 rounded-full animate-pulse"></div>
             </div>
 
-            {/* Channel info with Korean styling */}
+            {/* Channel Info */}
             <div className="space-y-6">
-              <div className="bg-white rounded-2xl p-8 shadow-xl border-4" style={{ borderColor: koreanColors.primary }}>
+              <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center shadow-lg" 
-                       style={{ background: `linear-gradient(135deg, ${koreanColors.secondary}, ${koreanColors.primary})` }}>
+                  <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg">
                     <Youtube className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold" style={{ color: koreanColors.black }}>
-                      Hangul.online 🇰🇷
-                    </h3>
-                    <p style={{ color: '#6C757D' }}>한국어 학습 공식 채널</p>
+                    <h3 className="text-2xl font-bold text-gray-900">Hangul.online</h3>
+                    <p className="text-gray-600">Kênh YouTube chính thức</p>
                   </div>
                 </div>
 
                 <div className="space-y-4 mb-8">
-                  {[
-                    { title: "독창적인 포스트카드 콘텐츠", desc: "실제 상황을 담은 포스트카드로 자연스럽게 한국어 학습" },
-                    { title: "원어민 발음", desc: "한국인 선생님의 정확하고 자연스러운 발음 제공" },
-                    { title: "정기 업데이트", desc: "매주 새로운 콘텐츠로 지속적인 학습 지원" }
-                  ].map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-3">
-                      <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" 
-                           style={{ backgroundColor: koreanColors.secondary }}></div>
-                      <div>
-                        <h4 className="font-semibold" style={{ color: koreanColors.black }}>{item.title}</h4>
-                        <p className="text-gray-600 text-sm">{item.desc}</p>
-                      </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Nội dung Video hoạt hình độc đáo</h4>
+                      <p className="text-gray-600 text-sm">Học tiếng Hàn thông qua các tình huống thực tế trong video hoạt hình</p>
                     </div>
-                  ))}
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Phát âm chuẩn bản địa</h4>
+                      <p className="text-gray-600 text-sm">Giọng đọc chất lượng cao từ người Hàn Quốc</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Cập nhật thường xuyên</h4>
+                      <p className="text-gray-600 text-sm">Video mới được đăng tải định kỳ hàng tuần</p>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="flex gap-4">
@@ -400,11 +243,20 @@ function Home() {
                     href="https://youtube.com/@hangul.online?si=JeMuUcJvBK9MuqrJ"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 text-center py-3 px-6 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
-                    style={{ backgroundColor: koreanColors.secondary, color: 'white' }}
+                    className="flex-1 bg-red-500 text-white text-center py-3 px-6 rounded-lg font-bold hover:bg-red-600 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
                   >
                     <Youtube className="w-5 h-5" />
-                    구독하기 • Subscribe
+                    Đăng ký kênh
+                  </a>
+                  
+                  <a
+                    href="https://youtu.be/2aZ84ZjVUXc?si=HlyIHolNOSA1j5PY"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gray-100 text-gray-700 py-3 px-6 rounded-lg font-bold hover:bg-gray-200 transition-all duration-300 flex items-center justify-center gap-2"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    Xem video
                   </a>
                 </div>
               </div>
@@ -413,16 +265,418 @@ function Home() {
         </div>
       </div>
 
-      {/* Korean-style footer note */}
-      <div className="py-8" style={{ backgroundColor: koreanColors.white }}>
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <SaekdongPattern className="h-1 w-24 mx-auto rounded-full mb-4" />
-          <p className="text-sm" style={{ color: '#6C757D' }}>
-            한국의 전통적인 미학과 현대적인 학습법의 조화 • Harmony of traditional Korean aesthetics and modern learning methods
+      {/* Updates Announcement Board */}
+      <div className="py-12 bg-gradient-to-r from-orange-50 via-yellow-50 to-orange-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-full mb-4">
+              <Bell className="w-5 h-5 animate-bell-swing" />
+              <span className="font-bold text-sm animate-text-slide-out">TIN TỨC & CẬP NHẬT</span>
+            </div>
+            <h2 className="text-2xl font-bold text-gray-900">Những cập nhật mới nhất</h2>
+            <p className="mt-2 text-gray-600">Theo dõi các tính năng và bài học mới được thêm vào website</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {updates.map((update, index) => {
+              const IconComponent = update.icon;
+              return (
+                <Link
+                  key={index}
+                  to={update.link}
+                  className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 overflow-hidden flex flex-col h-full"
+                >
+                  <div className="p-6 flex flex-col flex-1">
+                    <div className="flex items-center justify-between mb-4">
+                      <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold ${update.color}`}>
+                        {update.type}
+                      </span>
+                      <span className="text-xs text-gray-500">{update.date}</span>
+                    </div>
+                    
+                    <div className="flex items-start gap-3 flex-1">
+                      <div className="flex-shrink-0">
+                        <div className="w-12 h-12 bg-gradient-to-br from-primary to-orange-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                          <IconComponent className="w-6 h-6 text-white" />
+                        </div>
+                      </div>
+                      
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
+                          {update.title}
+                        </h3>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          {update.description}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="mt-4 flex items-center text-primary font-semibold text-sm group-hover:text-orange-600 transition-colors">
+                      <span>Khám phá ngay</span>
+                      <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
+
+                  {/* Decorative gradient border */}
+                  <div className="h-1 bg-gradient-to-r from-primary via-orange-400 to-yellow-400 group-hover:h-2 transition-all"></div>
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* Call to action */}
+        </div>
+      </div>
+
+      {/* Browser Recommendation Section */}
+      <div className="py-8 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-2xl p-6 md:p-8">
+            <div className="flex flex-col md:flex-row items-center gap-6">
+              <div className="flex-shrink-0">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
+                  <Headphones className="w-8 h-8 text-white" />
+                </div>
+              </div>
+              
+              <div className="flex-1 text-center md:text-left">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  Trải nghiệm nghe giọng đọc tốt nhất
+                </h3>
+                <div className="mb-4">
+                  <p className="text-gray-600 mb-2">
+                    Để có chất lượng phát âm tiếng Hàn tốt nhất, chúng tôi khuyến nghị sử dụng các trình duyệt sau:
+                  </p>
+                  
+                  {/* Hiển thị trạng thái browser hiện tại */}
+                  <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm ${
+                    isOptimalBrowser 
+                      ? 'bg-green-50 text-green-700 border border-green-200' 
+                      : 'bg-red-50 text-red-700 border border-red-200'
+                  }`}>
+                    <span className="w-2 h-2 rounded-full bg-current"></span>
+                    <span className="font-medium">
+                      {isOptimalBrowser 
+                        ? `Bạn đang dùng ${currentBrowser} - Tuyệt vời!` 
+                        : `Bạn đang dùng ${currentBrowser} - Có thể gặp vấn đề phát âm`
+                      }
+                    </span>
+                  </div>
+                </div>
+                
+                <div className="flex flex-wrap justify-center md:justify-start gap-4">
+                  <a 
+                    href="https://www.google.com/chrome/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 bg-green-50 px-4 py-2 rounded-lg border border-green-200 hover:bg-green-100 transition-colors group"
+                  >
+                    <Chrome className="w-5 h-5 text-green-600" />
+                    <span className="text-sm font-semibold text-green-700">Chrome</span>
+                    <span className="text-xs bg-green-100 text-green-600 px-2 py-1 rounded-full">Tốt nhất</span>
+                  </a>
+                  
+                  <a 
+                    href="https://www.microsoft.com/edge" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-lg border border-blue-200 hover:bg-blue-100 transition-colors group"
+                  >
+                    <Monitor className="w-5 h-5 text-blue-600" />
+                    <span className="text-sm font-semibold text-blue-700">Edge</span>
+                    <span className="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-full">Rất tốt</span>
+                  </a>
+                  
+                  <div className="flex items-center gap-2 bg-purple-50 px-4 py-2 rounded-lg border border-purple-200">
+                    <Smartphone className="w-5 h-5 text-purple-600" />
+                    <span className="text-sm font-semibold text-purple-700">Safari</span>
+                    <span className="text-xs bg-purple-100 text-purple-600 px-2 py-1 rounded-full">Có sẵn</span>
+                  </div>
+                </div>
+                
+                <div className="mt-4 text-center md:text-left">
+                  <p className="text-xs text-gray-500">
+                    💡 Nhấn vào Chrome hoặc Edge để tải về và cài đặt • Safari có sẵn trên macOS/iOS
+                  </p>
+                  {!isOptimalBrowser && (
+                    <div className="mt-2 bg-amber-50 border border-amber-200 rounded-lg p-3">
+                      <p className="text-xs text-amber-800">
+                        <strong>Cách chuyển browser:</strong> Sau khi tải về, mở link này bằng browser mới để có trải nghiệm tốt nhất!
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </div>
+              
+              <div className="flex-shrink-0">
+                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 max-w-xs">
+                  <div className="flex items-start gap-2">
+                    <div className="text-yellow-600 text-lg">💡</div>
+                    <div>
+                      <p className="text-xs text-yellow-800 font-medium mb-1">Lưu ý quan trọng:</p>
+                      <p className="text-xs text-yellow-700 leading-relaxed">
+                        Firefox có thể gặp vấn đề với một số giọng đọc tiếng Hàn. 
+                        Nếu không nghe được âm thanh, hãy thử chuyển sang Chrome.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Hangul Basics Section */}
+      <div className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-extrabold text-gray-900">Bắt đầu với bảng chữ cái Hangul</h2>
+            <p className="mt-4 text-lg text-gray-600">Nắm vững nền tảng với bảng chữ cái và quy tắc cơ bản của tiếng Hàn</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center">
+              <div className="text-4xl font-bold text-primary mb-4">ㅏㅓㅗㅜ</div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Nguyên âm cơ bản</h3>
+              <p className="text-gray-600 text-sm">10 nguyên âm cơ bản và 11 nguyên âm phức</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center">
+              <div className="text-4xl font-bold text-primary mb-4">ㄱㄴㄷㄹ</div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Phụ âm cơ bản</h3>
+              <p className="text-gray-600 text-sm">14 phụ âm cơ bản và 5 phụ âm căng</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center">
+              <div className="text-4xl font-bold text-primary mb-4">가나다</div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Quy tắc ghép chữ</h3>
+              <p className="text-gray-600 text-sm">Cách kết hợp phụ âm và nguyên âm thành âm tiết</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center">
+              <div className="text-4xl font-bold text-primary mb-4">SOV</div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Cấu trúc câu</h3>
+              <p className="text-gray-600 text-sm">Trật tự từ và tiểu từ cơ bản trong tiếng Hàn</p>
+            </div>
+          </div>
+          <div className="text-center mt-8">
+            <Link to="/basic" className="inline-block bg-primary text-white font-bold py-3 px-8 rounded-lg hover:bg-orange-600 transition-colors">
+              Học bảng chữ cái Hangul →
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Statistics Section */}
+      <div className="py-12 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="flex flex-col items-center">
+              <div className="text-3xl font-bold text-primary">1000+</div>
+              <div className="text-sm text-gray-600 mt-1">Từ vựng</div>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl font-bold text-primary">50+</div>
+              <div className="text-sm text-gray-600 mt-1">Bài ngữ pháp</div>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl font-bold text-primary">35+</div>
+              <div className="text-sm text-gray-600 mt-1">Bài tập thực hành</div>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl font-bold text-primary">24/7</div>
+              <div className="text-sm text-gray-600 mt-1">Hỗ trợ</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Featured Vocabulary Section */}
+      <div className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-extrabold text-gray-900">Từ vựng cơ bản hàng ngày</h2>
+            <p className="mt-4 text-lg text-gray-600">Bắt đầu với những từ vựng quan trọng nhất trong tiếng Hàn</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {featuredVocabulary.map((item, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <div className="text-2xl font-bold text-primary mb-2">{item.korean}</div>
+                <div className="text-gray-600 mb-1">{item.vietnamese}</div>
+                <div className="text-sm text-gray-500 italic">{item.pronunciation}</div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link to="/vocabulary" className="inline-block bg-primary text-white font-bold py-3 px-8 rounded-lg hover:bg-orange-600 transition-colors">
+              Xem thêm từ vựng →
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Grammar Basics Section */}
+      <div className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-extrabold text-gray-900">Ngữ pháp cơ bản</h2>
+            <p className="mt-4 text-lg text-gray-600">Nắm vững những quy tắc ngữ pháp quan trọng nhất</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {grammarBasics.map((item, index) => (
+              <div key={index} className="border border-gray-200 p-6 rounded-lg hover:shadow-md transition-shadow flex flex-col h-full">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                <p className="text-gray-600 mb-4 flex-1">{item.description}</p>
+                <div className="bg-gray-50 p-3 rounded-md mt-auto">
+                  <div className="text-sm text-gray-500 mb-1">Ví dụ:</div>
+                  <div className="font-mono text-primary">{item.example}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link to="/grammar" className="inline-block bg-primary text-white font-bold py-3 px-8 rounded-lg hover:bg-orange-600 transition-colors">
+              Học ngữ pháp chi tiết →
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Exercises Section */}
+      <div className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-extrabold text-gray-900">Luyện tập kỹ năng</h2>
+            <p className="mt-4 text-lg text-gray-600">Thực hành và kiểm tra kiến thức với bài tập nghe, đọc và viết</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="border border-gray-200 p-6 rounded-lg hover:shadow-md transition-shadow bg-white flex flex-col h-full">
+              <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-full mb-4 mx-auto">
+                <Headphones className="w-6 h-6 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Luyện nghe</h3>
+              <p className="text-gray-600 mb-4 flex-1">Nghe từ vựng và câu ngữ pháp với giọng đọc chất lượng cao, tốc độ điều chỉnh được phù hợp cho người mới bắt đầu.</p>
+              <div className="bg-gray-50 p-3 rounded-md mt-auto">
+                <div className="text-sm text-gray-500 mb-1">Bao gồm:</div>
+                <div className="font-mono text-primary">18 bài tập nghe</div>
+              </div>
+            </div>
+            <div className="border border-gray-200 p-6 rounded-lg hover:shadow-md transition-shadow bg-white flex flex-col h-full">
+              <div className="flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-4 mx-auto">
+                <Eye className="w-6 h-6 text-green-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Luyện đọc</h3>
+              <p className="text-gray-600 mb-4 flex-1">Đọc hiểu từ vựng và đoạn văn tiếng Hàn, từ cơ bản đến nâng cao với câu hỏi comprehension chi tiết.</p>
+              <div className="bg-gray-50 p-3 rounded-md mt-auto">
+                <div className="text-sm text-gray-500 mb-1">Bao gồm:</div>
+                <div className="font-mono text-primary">12 bài tập đọc</div>
+              </div>
+            </div>
+            <div className="border border-gray-200 p-6 rounded-lg hover:shadow-md transition-shadow bg-white flex flex-col h-full">
+              <div className="flex items-center justify-center w-12 h-12 bg-purple-100 rounded-full mb-4 mx-auto">
+                <PenTool className="w-6 h-6 text-purple-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Luyện viết</h3>
+              <p className="text-gray-600 mb-4 flex-1">Dịch câu từ tiếng Việt sang tiếng Hàn và điền ngữ pháp với gợi ý chi tiết, chấp nhận nhiều đáp án đúng.</p>
+              <div className="bg-gray-50 p-3 rounded-md mt-auto">
+                <div className="text-sm text-gray-500 mb-1">Bao gồm:</div>
+                <div className="font-mono text-primary">5 bài tập viết</div>
+              </div>
+            </div>
+          </div>
+          <div className="text-center mt-8">
+            <Link to="/exercises" className="inline-block bg-primary text-white font-bold py-3 px-8 rounded-lg hover:bg-orange-600 transition-colors">
+              Thực hành ngay →
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Learning Tips Section */}
+      <div className="py-16 bg-blue-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-extrabold text-gray-900">Bí quyết học tiếng Hàn hiệu quả</h2>
+            <p className="mt-4 text-lg text-gray-600">Những phương pháp đã được chứng minh hiệu quả</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {learningTips.map((tip, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{tip.title}</h3>
+                  <p className="text-gray-600">{tip.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+       {/* Languages bar */}
+       <div className="py-8 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-sm font-semibold text-gray-500 tracking-wider uppercase">
+            Nội dung được biên soạn chuẩn theo các giáo trình phổ biến như Sejong, Sogang, Yonsei
           </p>
         </div>
       </div>
 
+      {/* Features Section */}
+      <div className="bg-secondary py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-extrabold text-white">Tại sao nên chọn Hangul Learning?</h2>
+          <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
+            Chúng tôi cung cấp một lộ trình học tập rõ ràng, tài liệu chất lượng và hoàn toàn miễn phí, giúp bạn chinh phục tiếng Hàn một cách hiệu quả.
+          </p>
+          <div className="mt-16 grid gap-8 md:grid-cols-3">
+            <div className="bg-slate-700/50 p-8 rounded-xl backdrop-blur-sm border border-slate-600">
+              <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-primary mx-auto">
+                <BookOpen className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="mt-6 text-white text-xl font-bold">Tài liệu chất lượng</h3>
+              <p className="mt-2 text-base text-gray-300">Biên soạn theo giáo trình uy tín như Sejong, Sogang, dễ hiểu và thực tiễn.</p>
+            </div>
+            <div className="bg-slate-700/50 p-8 rounded-xl backdrop-blur-sm border border-slate-600">
+              <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-primary mx-auto">
+                <CheckSquare className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="mt-6 text-white text-xl font-bold">Bài tập đa dạng</h3>
+              <p className="mt-2 text-base text-gray-300">Luyện tập hiệu quả với nhiều dạng bài từ cơ bản đến nâng cao.</p>
+            </div>
+            <div className="bg-slate-700/50 p-8 rounded-xl backdrop-blur-sm border border-slate-600">
+              <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-primary mx-auto">
+                <Users className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="mt-6 text-white text-xl font-bold">Cộng đồng học tập</h3>
+              <p className="mt-2 text-base text-gray-300">Kết nối với hàng nghìn học viên khác để cùng học tập và chia sẻ kinh nghiệm.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-extrabold text-gray-900">Câu hỏi thường gặp</h2>
+          </div>
+          <div className="space-y-8">
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="font-bold text-lg text-gray-900 mb-2">Tôi có thể học tiếng Hàn miễn phí hoàn toàn không?</h3>
+              <p className="text-gray-600">Có, tất cả nội dung trên Hangul Learning đều hoàn toàn miễn phí. Chúng tôi cung cấp từ vựng, ngữ pháp, bài tập và hướng dẫn chi tiết mà không tính phí.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="font-bold text-lg text-gray-900 mb-2">Mất bao lâu để học được tiếng Hàn cơ bản?</h3>
+              <p className="text-gray-600">Với việc học 1-2 giờ mỗi ngày, bạn có thể nắm vững tiếng Hàn cơ bản trong 6-12 tháng. Thời gian này phụ thuộc vào khả năng và sự kiên trì của mỗi người.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="font-bold text-lg text-gray-900 mb-2">Tôi nên bắt đầu học từ đâu?</h3>
+              <p className="text-gray-600">Bắt đầu với bảng chữ cái Hangul, sau đó học từ vựng cơ bản và ngữ pháp đơn giản. Trang web có lộ trình học tập rõ ràng từ cơ bản đến nâng cao.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Sponsor Section */}
       <SponsorSection />
     </div>
   );

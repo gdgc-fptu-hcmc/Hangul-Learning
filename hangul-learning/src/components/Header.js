@@ -131,7 +131,7 @@ function Header() {
             {/* Desktop Donate Button */}
             <Link
               to="/donate"
-              className="hidden sm:inline-flex items-center justify-center px-3 xs:px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-text-dark bg-light-gray hover:bg-gray-200 transition-colors touch-target"
+              className="hidden sm:inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-lg shadow-md text-sm font-semibold text-white bg-primary hover:bg-orange-600 hover:scale-105 transform transition-all duration-300 ease-in-out"
             >
               Ủng hộ
             </Link>
@@ -176,7 +176,7 @@ function Header() {
               <Link
                 to="/donate"
                 onClick={closeMenu}
-                className="block w-full text-center px-4 py-4 mt-4 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary hover:bg-orange-600 transition-colors touch-target tap-highlight-none min-h-12 active:bg-orange-700"
+                className="block w-full text-center px-4 py-4 mt-4 border border-transparent rounded-lg shadow-lg text-base font-semibold text-white bg-gradient-to-r from-primary to-orange-600 hover:from-orange-600 hover:to-primary transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] touch-target tap-highlight-none min-h-12"
                 style={{ WebkitTapHighlightColor: 'transparent' }}
               >
                 Ủng hộ dự án
