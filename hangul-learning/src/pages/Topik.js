@@ -188,7 +188,7 @@ const ExamSchedule = ({ pbtExams, ibtExams }) => {
                 <td className="px-2 sm:px-4 py-2 sm:py-4 text-xs sm:text-sm text-gray-800 border-b whitespace-nowrap">{exam.ky}</td>
                 <td className="px-2 sm:px-4 py-2 sm:py-4 text-xs sm:text-sm text-gray-800 border-b whitespace-nowrap">{exam.ngayThi}</td>
                 <td className="px-2 sm:px-4 py-2 sm:py-4 text-xs sm:text-sm text-gray-800 border-b whitespace-nowrap">{exam.ngayKetQua}</td>
-                <td className="px-2 sm:px-4 py-2 sm:py-4 text-xs sm:text-sm text-gray-800 border-b whitespace-nowrap">{exam.diaDiem}</td>
+                <td className="px-2 sm:px-4 py-2 sm:py-4 text-xs sm:text-sm text-gray-800 border-b whitespace-pre-line">{exam.diaDiem}</td>
                 <td className="px-2 sm:px-4 py-2 sm:py-4 text-xs sm:text-sm text-gray-800 border-b whitespace-pre-line">{exam.baiThi}</td>
                 <td className="px-2 sm:px-4 py-2 sm:py-4 text-xs sm:text-sm text-gray-800 border-b whitespace-pre-line">{exam.thoiGianDangKy}</td>
               </tr>
@@ -686,7 +686,7 @@ function Topik() {
             <meta itemProp="image" content="/logo.webp" />
             <div itemProp="publisher" itemScope itemType="https://schema.org/Organization">
               <meta itemProp="name" content="한국어학습" />
-              <meta itemProp="url" content="https://hanguelhoc.com" />
+              <meta itemProp="url" content="https://hangul.online/" />
               <div itemProp="logo" itemScope itemType="https://schema.org/ImageObject">
                 <meta itemProp="url" content="/logo.webp" />
                 <meta itemProp="width" content="512" />
@@ -710,17 +710,31 @@ function Topik() {
                 <meta itemProp="name" content={`${exam.ky} - Kỳ thi TOPIK PBT tại Việt Nam`} />
                 <meta itemProp="startDate" content={exam.ngayThi.split('/').reverse().join('-')} />
                 <meta itemProp="endDate" content={exam.ngayThi.split('/').reverse().join('-')} />
-                <meta itemProp="location" content={exam.diaDiem} />
-                <meta itemProp="organizer" content="National Institute for International Education (NIIED)" />
-                <meta itemProp="performer" content="IIG Vietnam" />
+                <meta itemProp="category" content="Tổng Hợp Đề Thi TOPIK I & II Mới Nhất" />
+                <div itemProp="location" itemScope itemType="https://schema.org/Place">
+                  <meta itemProp="name" content={exam.diaDiem} />
+                  <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+                    <meta itemProp="addressCountry" content="VN" />
+                    <meta itemProp="addressRegion" content="Ho Chi Minh City" />
+                  </div>
+                </div>
+                <div itemProp="organizer" itemScope itemType="https://schema.org/Organization">
+                  <meta itemProp="name" content="National Institute for International Education (NIIED)" />
+                  <meta itemProp="url" content="https://www.niied.go.kr/" />
+                </div>
+                <div itemProp="performer" itemScope itemType="https://schema.org/Organization">
+                  <meta itemProp="name" content="IIG Vietnam" />
+                  <meta itemProp="url" content="https://iigvietnam.com/" />
+                </div>
                 <meta itemProp="description" content={`Kỳ thi đánh giá năng lực tiếng Hàn ${exam.ky} tổ chức tại ${exam.diaDiem}. Bao gồm TOPIK I và TOPIK II.`} />
                 <meta itemProp="eventStatus" content="https://schema.org/EventScheduled" />
-                <meta itemProp="image" content="/logo.webp" />
+                <meta itemProp="image" content="https://hangul.online/logo.webp" />
                 <div itemProp="offers" itemScope itemType="https://schema.org/Offer">
                   <meta itemProp="price" content="1400000" />
                   <meta itemProp="priceCurrency" content="VND" />
                   <meta itemProp="availability" content="https://schema.org/InStock" />
-                  <meta itemProp="validFrom" content={exam.thoiGianDangKy.split('-')[0].trim()} />
+                  <meta itemProp="url" content={`https://hangul.online/topik#${exam.ky.toLowerCase().replace(/\s+/g, '-')}`} />
+                  <meta itemProp="validFrom" content={exam.thoiGianDangKy.split('-')[0].trim().split('/').reverse().join('-')} />
                 </div>
               </div>
             ))}
@@ -738,6 +752,8 @@ function Topik() {
               </div>
               <meta itemProp="educationalLevel" content="beginner, intermediate, advanced" />
               <meta itemProp="learningResourceType" content="Practice Test" />
+              <meta itemProp="category" content="Korean Language Proficiency Test" />
+              <meta itemProp="courseCode" content="TOPIK-2025" />
               <div itemProp="offers" itemScope itemType="https://schema.org/Offer">
                 <meta itemProp="price" content="0" />
                 <meta itemProp="priceCurrency" content="VND" />
@@ -810,12 +826,12 @@ function Topik() {
             <div itemScope itemProp="itemListElement" itemType="https://schema.org/ListItem">
               <meta itemProp="position" content="1" />
               <meta itemProp="name" content="Trang chủ" />
-              <meta itemProp="item" content="https://hanguelhoc.com" />
+              <meta itemProp="item" content="https://hangul.online/" />
             </div>
             <div itemScope itemProp="itemListElement" itemType="https://schema.org/ListItem">
               <meta itemProp="position" content="2" />
               <meta itemProp="name" content="TOPIK" />
-              <meta itemProp="item" content="https://hanguelhoc.com/topik" />
+              <meta itemProp="item" content="https://hangul.online/topik" />
             </div>
           </div>
         </main>
