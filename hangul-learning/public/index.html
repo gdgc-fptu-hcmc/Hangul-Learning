@@ -2,7 +2,21 @@
 <html lang="vi">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.svg" type="image/svg+xml" />
+    <!-- Primary favicon configuration -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="icon" href="%PUBLIC_URL%/logo512.webp" type="image/webp" />
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo512.webp" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/logo512.webp" />
+    
+    <!-- Microsoft Tile Icons -->
+    <meta name="msapplication-TileImage" content="%PUBLIC_URL%/logo512.webp" />
+    <meta name="msapplication-TileColor" content="#6B73FF" />
+    <meta name="msapplication-config" content="%PUBLIC_URL%/browserconfig.xml" />
+    
+    <!-- Safari Pinned Tab Icon -->
+    <link rel="mask-icon" href="%PUBLIC_URL%/favicon.svg" color="#6B73FF" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#6B73FF" />
@@ -27,13 +41,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="한국어학습" />
     <meta name="application-name" content="한국어학습" />
-    <meta name="msapplication-TileColor" content="#6B73FF" />
-    <meta name="msapplication-config" content="%PUBLIC_URL%/browserconfig.xml" />
     
     <!-- Performance optimizations -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="%PUBLIC_URL%/logo.png" as="image" type="image/png">
+    <link rel="preload" href="%PUBLIC_URL%/logo.webp" as="image" type="image/png">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+CJK+KR:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+CJK+KR:wght@400;500;600;700&display=swap"></noscript>
     <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
@@ -49,10 +61,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     
     <!-- Favicon and Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/logo512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/logo512.webp" />
     <link rel="icon" type="image/svg+xml" sizes="32x32" href="%PUBLIC_URL%/favicon.svg" />
     <link rel="icon" type="image/svg+xml" sizes="16x16" href="%PUBLIC_URL%/favicon.svg" />
-    <link rel="mask-icon" href="%PUBLIC_URL%/logo.png" color="#000000" />
+    <link rel="mask-icon" href="%PUBLIC_URL%/logo.webp" color="#000000" />
     
     <!-- Manifest and Canonical -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
@@ -68,22 +80,22 @@
     <!-- Enhanced Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://hangul.online" />
-    <meta property="og:title" content="한국어학습 | 韓國語學習 - Học tiếng Hàn miễn phí cho người Việt" />
+    <meta property="og:title" content="한국어学習 | 韓國語學習 - Học tiếng Hàn miễn phí cho người Việt" />
     <meta property="og:description" content="Nền tảng học tiếng Hàn miễn phí với tổng hợp ngữ pháp, từ vựng, bài tập chuẩn TOPIK từ Sơ cấp đến Cao cấp. Phù hợp cho người Việt Nam học tiếng Hàn." />
-    <meta property="og:image" content="https://hangul.online/logo512.png" />
+    <meta property="og:image" content="https://hangul.online/logo512.webp" />
     <meta property="og:image:width" content="512" />
     <meta property="og:image:height" content="512" />
-    <meta property="og:image:alt" content="한국어학습 Logo" />
-    <meta property="og:site_name" content="한국어학습" />
+    <meta property="og:image:alt" content="한국어学習 Logo" />
+    <meta property="og:site_name" content="한국어学習" />
     <meta property="og:locale" content="vi_VN" />
 
     <!-- Enhanced Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://hangul.online" />
-    <meta name="twitter:title" content="한국어학습 | 韓國語學習 - Học tiếng Hàn miễn phí cho người Việt" />
+    <meta name="twitter:title" content="한국어学習 | 韓國語學習 - Học tiếng Hàn miễn phí cho người Việt" />
     <meta name="twitter:description" content="Nền tảng học tiếng Hàn miễn phí với tổng hợp ngữ pháp, từ vựng, bài tập chuẩn TOPIK từ Sơ cấp đến Cao cấp." />
-    <meta name="twitter:image" content="https://hangul.online/logo512.png" />
-    <meta name="twitter:image:alt" content="한국어학습 - Korean Learning Platform" />
+    <meta name="twitter:image" content="https://hangul.online/logo512.webp" />
+    <meta name="twitter:image:alt" content="한국어学習 - Korean Learning Platform" />
     <meta name="twitter:creator" content="@hangullearning" />
     <meta name="twitter:site" content="@hangullearning" />
     
@@ -95,8 +107,20 @@
       "name": "한국어학습",
       "description": "Nền tảng học tiếng Hàn miễn phí cho người Việt với tổng hợp ngữ pháp, từ vựng, bài tập chuẩn TOPIK",
       "url": "https://hangul.online",
-      "logo": "https://hangul.online/logo512.png",
-      "image": "https://hangul.online/logo512.png",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://hangul.online/logo512.webp",
+        "width": "512",
+        "height": "512",
+        "caption": "한국어학습 Logo"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://hangul.online/logo512.webp",
+        "width": "512",
+        "height": "512",
+        "caption": "한국어학습 - Korean Learning Platform"
+      },
       "sameAs": [
         "https://hangul.online"
       ],

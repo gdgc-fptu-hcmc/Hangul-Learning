@@ -124,7 +124,7 @@ function SEO({
         "name": "한국어학습",
         "alternateName": "Hangul Learning",
         "url": "https://hangul.online",
-        "logo": "https://hangul.online/logo.png",
+        "logo": "https://hangul.online/logo.webp",
         "description": "Nền tảng học tiếng Hàn miễn phí với bài học cơ bản, từ vựng, ngữ pháp và bài tập tương tác",
         "email": "nguyenductuan11012003@gmail.com",
         "foundingDate": "2025",

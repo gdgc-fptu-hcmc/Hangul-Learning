@@ -205,7 +205,7 @@ const ExamSchedule = ({ pbtExams, ibtExams }) => {
       
       <div className="text-center mb-8">
         <a 
-          href="https://iigvietnam.com/lich-thi-topik/" 
+          href="https://iigvietnam.com/dang-ky-thi/" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="text-primary hover:text-orange-600 transition-colors inline-flex items-center gap-1"
@@ -260,7 +260,7 @@ const TopikGuide = () => {
     <div className="space-y-8">
       {/* Thông tin chung */}
       <div>
-        <h3 className="text-2xl font-bold mb-4 text-gray-900">Thông tin chung về kỳ thi TOPIK</h3>
+        <h3 className="text-2xl font-bold mb-4 text-gray-900 ">Thông tin chung về kỳ thi TOPIK</h3>
         <div className="bg-white rounded-lg p-6 shadow-sm space-y-4">
           <div className="grid md:grid-cols-2 gap-6">
             <div>
@@ -710,7 +710,7 @@ function Topik() {
                 <meta itemProp="name" content={`${exam.ky} - Kỳ thi TOPIK PBT tại Việt Nam`} />
                 <meta itemProp="startDate" content={exam.ngayThi.split('/').reverse().join('-')} />
                 <meta itemProp="endDate" content={exam.ngayThi.split('/').reverse().join('-')} />
-                <meta itemProp="category" content="Tổng Hợp Đề Thi TOPIK I & II Mới Nhất" />
+                <meta itemProp="category" content="Language Proficiency Test" />
                 <div itemProp="location" itemScope itemType="https://schema.org/Place">
                   <meta itemProp="name" content={exam.diaDiem} />
                   <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
@@ -732,9 +732,10 @@ function Topik() {
                 <div itemProp="offers" itemScope itemType="https://schema.org/Offer">
                   <meta itemProp="price" content="1400000" />
                   <meta itemProp="priceCurrency" content="VND" />
+                  <meta itemProp="validFrom" content={`${exam.ngayThi.split('/').reverse().join('-')}T00:00:00+07:00`} />
+                  <meta itemProp="url" content="https://iigvietnam.com/lich-thi-topik/" />
                   <meta itemProp="availability" content="https://schema.org/InStock" />
-                  <meta itemProp="url" content={`https://hangul.online/topik#${exam.ky.toLowerCase().replace(/\s+/g, '-')}`} />
-                  <meta itemProp="validFrom" content={exam.thoiGianDangKy.split('-')[0].trim().split('/').reverse().join('-')} />
+                  <meta itemProp="category" content="Language Proficiency Test Registration" />
                 </div>
               </div>
             ))}
@@ -746,32 +747,34 @@ function Topik() {
             <div itemScope itemType="https://schema.org/Course">
               <meta itemProp="name" content="Đề Thi Thử TOPIK 2025" />
               <meta itemProp="description" content="Tuyển tập đề thi thử TOPIK I, II từ kỳ thi 35 đến 91 kèm đáp án và giải thích chi tiết." />
-              <div itemProp="provider" itemScope itemType="https://schema.org/Organization">
-                <meta itemProp="name" content="한국어학습" />
-                <meta itemProp="url" content="https://hanguelhoc.com" />
-              </div>
+              <meta itemProp="courseCode" content="TOPIK-2025" />
+              <meta itemProp="category" content="Korean Language Proficiency Test" />
               <meta itemProp="educationalLevel" content="beginner, intermediate, advanced" />
               <meta itemProp="learningResourceType" content="Practice Test" />
-              <meta itemProp="category" content="Korean Language Proficiency Test" />
-              <meta itemProp="courseCode" content="TOPIK-2025" />
+              <meta itemProp="timeRequired" content="PT3H" />
+              <meta itemProp="inLanguage" content="ko,vi" />
+              <meta itemProp="dateCreated" content="2025-01-01" />
+              <meta itemProp="dateModified" content="2025-07-02" />
+              <div itemProp="provider" itemScope itemType="https://schema.org/Organization">
+                <meta itemProp="name" content="한국어学習" />
+                <meta itemProp="url" content="https://hangul.online" />
+                <meta itemProp="email" content="nguyenductuan11012003@gmail.com" />
+              </div>
               <div itemProp="offers" itemScope itemType="https://schema.org/Offer">
                 <meta itemProp="price" content="0" />
                 <meta itemProp="priceCurrency" content="VND" />
                 <meta itemProp="availability" content="https://schema.org/InStock" />
+                <meta itemProp="url" content="https://hangul.online/topik" />
+                <meta itemProp="category" content="Korean Language Course" />
               </div>
               <div itemProp="hasCourseInstance" itemScope itemType="https://schema.org/CourseInstance">
-                <meta itemProp="name" content="Khóa Luyện Thi TOPIK Online 2025" />
+                <meta itemProp="name" content="TOPIK Practice Tests 2025" />
                 <meta itemProp="courseMode" content="online" />
-                <meta itemProp="courseWorkload" content="PT20H" />
-                <div itemProp="offers" itemScope itemType="https://schema.org/Offer">
-                  <meta itemProp="price" content="0" />
-                  <meta itemProp="priceCurrency" content="VND" />
-                  <meta itemProp="availability" content="https://schema.org/InStock" />
-                </div>
+                <meta itemProp="courseWorkload" content="PT3H" />
               </div>
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">Đề Thi Thử TOPIK</h2>
-              <MockTests />
             </div>
+            <h2 className="text-2xl font-bold mb-6 text-gray-900">Đề Thi Thử TOPIK</h2>
+            <MockTests />
           </section>
 
           {/* Guide Section with HowTo Schema */}

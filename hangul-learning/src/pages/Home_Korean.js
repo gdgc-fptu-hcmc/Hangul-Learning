@@ -154,7 +154,7 @@ function Home() {
         </div>
       </div>
 
-      {/* YouTube Channel Section */}
+      YouTube Channel Section
       <div className="py-16 bg-gradient-to-br from-red-50 via-pink-50 to-purple-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
@@ -223,11 +223,11 @@ function Home() {
                   
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <div>
+                      <div>
                       <h4 className="font-semibold text-gray-900">Phát âm chuẩn bản địa</h4>
                       <p className="text-gray-600 text-sm">Giọng đọc chất lượng cao từ người Hàn Quốc</p>
                     </div>
-                  </div>
+                      </div>
                   
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
