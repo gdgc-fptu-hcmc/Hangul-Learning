@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import OptimizedImage from './OptimizedImage';
+import Breadcrumb from './Breadcrumb';
 
 // Component Header: hiển thị thanh header với logo, điều hướng và menu mobile
 function Header() {
@@ -70,17 +71,26 @@ function Header() {
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center space-x-2 xs:space-x-3 relative group tap-highlight-none" onClick={closeMenu}>
               <OptimizedImage 
-                className="h-8 w-8 xs:h-10 xs:w-10 rounded-full shadow-lg border-2 border-korean-blue object-cover group-hover:scale-105 transition-transform" 
-                src="/logo.webp" 
-                alt="한국어학습 Logo" 
+                // className="h-10 w-10 xs:h-12 xs:w-12 rounded-full shadow-lg border-2 border-korean-blue object-cover group-hover:scale-105 transition-transform" 
+                src="/web-logo.svg" 
+                alt="Web Logo" 
                 style={{ borderColor: '#2B6CB0' }}
-                width="40"
-                height="40"
+                width="100"
+                height="100"
+                loading="eager"
+              />
+              <OptimizedImage 
+                // className="h-8 w-8 xs:h-10 xs:w-10 rounded-full shadow-lg border-2 border-korean-blue object-cover group-hover:scale-105 transition-transform ml-2" 
+                src="/favicon.svg" 
+                alt="Favicon Logo" 
+                style={{ borderColor: '#2B6CB0' }}
+                width="100"
+                height="100"
                 loading="eager"
               />
               
               <div className="relative">
-                <span className="korean-authentic-title text-base xs:text-lg sm:text-xl" style={{ 
+                {/* <span className="korean-authentic-title text-base xs:text-lg sm:text-xl" style={{ 
                   fontFamily: '"Noto Sans CJK KR", "Apple SD Gothic Neo", "나눔바른고딕", "NanumBarunGothic", "맑은 고딕", sans-serif',
                   fontSize: 'clamp(16px, 4vw, 20px)',
                   fontWeight: '600',
@@ -94,7 +104,7 @@ function Header() {
                   position: 'relative'
                 }}>
                   한국어학습
-                </span>
+                </span> */}
                 
                 {/* Korean traditional Obangsaek pattern dots - responsive */}
                 <div className="absolute -top-0.5 xs:-top-1 -right-2 xs:-right-3 flex space-x-0.5">
@@ -186,6 +196,11 @@ function Header() {
         )}
       </div>
 
+      {/* Breadcrumb navigation */}
+      <div className="container-mobile">
+        <Breadcrumb />
+      </div>
+
       {/* Overlay for mobile menu */}
       {isMenuOpen && (
         <div 
@@ -227,4 +242,4 @@ function Header() {
   );
 }
 
-export default Header; 
+export default Header;

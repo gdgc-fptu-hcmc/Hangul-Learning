@@ -43,7 +43,7 @@ function SEO({
   url = window.location.href,
   canonical,
   type = 'website',
-  author = '한국어학습',
+  author = 'Hangul Online',
   language = 'vi-VN'
 }) {
   // props:
@@ -88,12 +88,12 @@ function SEO({
       const fullImageUrl = image.startsWith('http') ? image : `https://hangul.online${image}`;
       ensureMetaTag("meta[property='og:image']", 'content', fullImageUrl);
       ensureMetaTag("meta[name='twitter:image']", 'content', fullImageUrl);
-      ensureMetaTag("meta[property='og:image:alt']", 'content', title || '한국어학습 - Korean Learning');
+      ensureMetaTag("meta[property='og:image:alt']", 'content', title || 'Hangul Online - Korean Learning');
     }
 
     // Additional important meta tags
     ensureMetaTag("meta[property='og:type']", 'content', type);
-    ensureMetaTag("meta[property='og:site_name']", 'content', '한국어학습');
+    ensureMetaTag("meta[property='og:site_name']", 'content', 'Hangul Online');
     ensureMetaTag("meta[property='og:locale']", 'content', language);
     
     // Twitter Card meta tags
@@ -124,7 +124,7 @@ function SEO({
         "name": "한국어학습",
         "alternateName": "Hangul Learning",
         "url": "https://hangul.online",
-        "logo": "https://hangul.online/logo.webp",
+        "logo": "https://hangul.online/web-logo.svg",
         "description": "Nền tảng học tiếng Hàn miễn phí với bài học cơ bản, từ vựng, ngữ pháp và bài tập tương tác",
         "email": "nguyenductuan11012003@gmail.com",
         "foundingDate": "2025",

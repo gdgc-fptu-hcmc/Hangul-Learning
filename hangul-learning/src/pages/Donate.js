@@ -117,6 +117,9 @@ const Donate = () => {
             <p className="font-medium text-blue-600 mt-2">
               Email: nguyenductuan11012003@gmail.com
             </p>
+            <p className="font-medium text-blue-600 mt-2">
+              Hỗ trợ 24/7: support@hangul.online
+            </p>
           </section>
         </main>
       </div>

@@ -24,7 +24,8 @@
     "eject": "react-scripts eject",
     "analyze": "npx source-map-explorer 'build/static/js/*.js'",
     "build:prod": "GENERATE_SOURCEMAP=false react-scripts build",
-    "serve": "serve -s build -l 3000"
+    "serve": "serve -s build -l 3000",
+    "generate-lessons": "node scripts/generate_lessons.js"
   },
   "eslintConfig": {
     "extends": [

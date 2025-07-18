@@ -1,6 +1,11 @@
 {
   "routes": [
     {
+      "route": "/ads.txt",
+      "serve": "/ads.txt",
+      "statusCode": 200
+    },
+    {
       "route": "/*",
       "serve": "/index.html",
       "statusCode": 200

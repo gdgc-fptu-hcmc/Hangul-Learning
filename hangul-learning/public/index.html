@@ -3,20 +3,23 @@
   <head>
     <meta charset="utf-8" />
     <!-- Primary favicon configuration -->
-    <link rel="icon" href="%PUBLIC_URL%/favicon.svg" type="image/svg+xml" sizes="any" />
-    <link rel="icon" href="%PUBLIC_URL%/logo512.webp" type="image/webp" />
+    <link rel="icon" href="%PUBLIC_URL%/web-logo.svg" type="image/svg+xml" sizes="any" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/web-logo.svg" type="image/svg+xml" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon-32x32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon-16x16.png" type="image/png" sizes="16x16" />
     
     <!-- Apple Touch Icons -->
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo512.webp" />
-    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/logo512.webp" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/favicon-192x192.png" />
     
     <!-- Microsoft Tile Icons -->
-    <meta name="msapplication-TileImage" content="%PUBLIC_URL%/logo512.webp" />
+    <meta name="msapplication-TileImage" content="%PUBLIC_URL%/favicon-192x192.png" />
     <meta name="msapplication-TileColor" content="#6B73FF" />
     <meta name="msapplication-config" content="%PUBLIC_URL%/browserconfig.xml" />
     
     <!-- Safari Pinned Tab Icon -->
-    <link rel="mask-icon" href="%PUBLIC_URL%/favicon.svg" color="#6B73FF" />
+    <link rel="mask-icon" href="%PUBLIC_URL%/web-logo.svg" color="#6B73FF" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#6B73FF" />
@@ -45,7 +48,7 @@
     <!-- Performance optimizations -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="%PUBLIC_URL%/logo.webp" as="image" type="image/png">
+    <link rel="preload" href="%PUBLIC_URL%/web-logo.svg" as="image" type="image/svg+xml">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+CJK+KR:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+CJK+KR:wght@400;500;600;700&display=swap"></noscript>
     <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
@@ -61,10 +64,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     
     <!-- Favicon and Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/logo512.webp" />
-    <link rel="icon" type="image/svg+xml" sizes="32x32" href="%PUBLIC_URL%/favicon.svg" />
-    <link rel="icon" type="image/svg+xml" sizes="16x16" href="%PUBLIC_URL%/favicon.svg" />
-    <link rel="mask-icon" href="%PUBLIC_URL%/logo.webp" color="#000000" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/favicon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png" />
+    <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/web-logo.svg" />
+    <link rel="mask-icon" href="%PUBLIC_URL%/web-logo.svg" color="#6B73FF" />
     
     <!-- Manifest and Canonical -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
@@ -75,14 +79,15 @@
     <link rel="alternate" hreflang="ko" href="https://hangul.online" />
     <link rel="alternate" hreflang="x-default" href="https://hangul.online" />
     
-    <title>한국어학습 | 韓國語學習 - Học tiếng Hàn miễn phí cho người Việt</title>
+    <title>한국어 배우기 | Học Tiếng Hàn Miễn Phí Từ Cơ Bản Đến Nâng Cao</title>
+
     
     <!-- Enhanced Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://hangul.online" />
-    <meta property="og:title" content="한국어学習 | 韓國語學習 - Học tiếng Hàn miễn phí cho người Việt" />
+    <meta property="og:title" content="Học tiếng Hàn miễn phí cho người Việt" />
     <meta property="og:description" content="Nền tảng học tiếng Hàn miễn phí với tổng hợp ngữ pháp, từ vựng, bài tập chuẩn TOPIK từ Sơ cấp đến Cao cấp. Phù hợp cho người Việt Nam học tiếng Hàn." />
-    <meta property="og:image" content="https://hangul.online/logo512.webp" />
+    <meta property="og:image" content="https://hangul.online/favicon-512x512.png" />
     <meta property="og:image:width" content="512" />
     <meta property="og:image:height" content="512" />
     <meta property="og:image:alt" content="한국어学習 Logo" />
@@ -92,80 +97,146 @@
     <!-- Enhanced Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://hangul.online" />
-    <meta name="twitter:title" content="한국어学習 | 韓國語學習 - Học tiếng Hàn miễn phí cho người Việt" />
+    <meta name="twitter:title" content="Học tiếng Hàn miễn phí cho người Việt" />
     <meta name="twitter:description" content="Nền tảng học tiếng Hàn miễn phí với tổng hợp ngữ pháp, từ vựng, bài tập chuẩn TOPIK từ Sơ cấp đến Cao cấp." />
-    <meta name="twitter:image" content="https://hangul.online/logo512.webp" />
-    <meta name="twitter:image:alt" content="한국어学習 - Korean Learning Platform" />
+    <meta name="twitter:image" content="https://hangul.online/favicon-512x512.png" />
+    <meta name="twitter:image:alt" content="Hangul Online -Korean Learning Platform" />
     <meta name="twitter:creator" content="@hangullearning" />
     <meta name="twitter:site" content="@hangullearning" />
     
-    <!-- Structured Data (JSON-LD) for Rich Snippets -->
-    <script type="application/ld+json">
+ <!-- Structured Data (JSON-LD) for EducationalOrganization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Hangul Online",
+  "description": "Nền tảng học tiếng Hàn miễn phí cho người Việt với tổng hợp ngữ pháp, từ vựng, bài tập chuẩn TOPIK",
+  "url": "https://hangul.online",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://hangul.online/favicon-512x512.png",
+    "width": "512",
+    "height": "512",
+    "caption": "Hangul Online Logo"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://hangul.online/favicon-512x512.png",
+    "width": "512",
+    "height": "512",
+    "caption": "Hangul Online - Korean Learning Platform"
+  },
+  "sameAs": [
+    "https://hangul.online"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "VN"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "VND",
+    "availability": "https://schema.org/InStock"
+  },
+  "educationalCredentialAwarded": "Korean Language Certificate",
+  "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "TOPIK"
+  }
+}
+</script>
+
+<!-- Additional Organization schema for logo display -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "url": "https://hangul.online",
+  "name": "한국어학습",
+  "logo": "https://hangul.online/favicon-512x512.png"
+}
+</script>
+
+<!-- BreadcrumbList Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
     {
-      "@context": "https://schema.org",
-      "@type": "EducationalOrganization",
-      "name": "한국어학습",
-      "description": "Nền tảng học tiếng Hàn miễn phí cho người Việt với tổng hợp ngữ pháp, từ vựng, bài tập chuẩn TOPIK",
-      "url": "https://hangul.online",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://hangul.online/logo512.webp",
-        "width": "512",
-        "height": "512",
-        "caption": "한국어학습 Logo"
-      },
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://hangul.online/logo512.webp",
-        "width": "512",
-        "height": "512",
-        "caption": "한국어학습 - Korean Learning Platform"
-      },
-      "sameAs": [
-        "https://hangul.online"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "VN"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "VND",
-        "availability": "https://schema.org/InStock"
-      },
-      "educationalCredentialAwarded": "Korean Language Certificate",
-      "hasCredential": {
-        "@type": "EducationalOccupationalCredential",
-        "credentialCategory": "TOPIK"
-      }
-    }
-    </script>
-    
-    <!-- Website Schema -->
-    <script type="application/ld+json">
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang chủ",
+      "item": "https://hangul.online"
+    },
     {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "한국어학습",
-      "description": "Học tiếng Hàn miễn phí cho người Việt",
-      "url": "https://hangul.online",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://hangul.online/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      },
-      "inLanguage": "vi",
-      "copyrightYear": "2024",
-      "creator": {
-        "@type": "Person",
-        "name": "Nguyễn Đức Tuấn"
-      }
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ngữ pháp",
+      "item": "https://hangul.online/grammar"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Từ vựng",
+      "item": "https://hangul.online/vocabulary"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Bài tập",
+      "item": "https://hangul.online/exercises"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "TOPIK",
+      "item": "https://hangul.online/topik"
     }
-    </script>
+  ]
+}
+</script>
+
+<!-- Website Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "한국어학습",
+  "description": "Học tiếng Hàn miễn phí cho người Việt",
+  "url": "https://hangul.online",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://hangul.online/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  "inLanguage": "vi",
+  "copyrightYear": "2025",
+  "copyrightHolder": "https://hangul.online",
+  "creator": {
+    "@type": "Person",
+    "name": "Nguyễn Đức Tuấn"
+  }
+}
+  </script>
+
+    <!-- Favicon & Apple Icon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/favicon-512x512.png">
+
+    <!-- Meta for Google Search -->
+    <meta itemprop="name" content="Học tiếng Hàn miễn phí cho người Việt">
+    <meta itemprop="description" content="Nền tảng học tiếng Hàn miễn phí với tổng hợp ngữ pháp, từ vựng, bài tập chuẩn TOPIK từ Sơ cấp đến Cao cấp. Phù hợp cho người Việt Nam học tiếng Hàn.">
+    <meta itemprop="image" content="https://hangul.online/favicon-512x512.png">
+
     
     <!-- Google AdSense verification meta -->
     <meta name="google-adsense-account" content="ca-pub-5760828366443806" />
+    
+    <!-- Google AdSense verification script -->
+    <script async crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5760828366443806"></script>
     
     <!-- IndexNow API key for instant Bing indexing -->
     <meta name="indexnow" content="65432198765432189876543210987654" />
@@ -270,8 +341,125 @@
     
     <!-- Yandex Webmaster verification (remove or update when needed) -->
     <!-- <meta name="yandex-verification" content="YOUR_YANDEX_VERIFICATION_CODE" /> -->
+    
+    <!-- AMP Auto Ads script -->
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+        
+    <!-- Dynamic Breadcrumb Schema Script -->
+    <script>
+      // Cập nhật breadcrumb schema dựa trên đường dẫn hiện tại
+      document.addEventListener('DOMContentLoaded', function() {
+        updateBreadcrumbSchema();
+      });
+      
+      // Theo dõi thay đổi URL (cho SPA)
+      if (typeof window !== 'undefined') {
+        window.addEventListener('popstate', updateBreadcrumbSchema);
+      }
+      
+      function updateBreadcrumbSchema() {
+        try {
+          const path = window.location.pathname;
+          const segments = path.split('/').filter(s => s);
+          
+          // Bản đồ các đường dẫn với tên hiển thị
+          const routeMap = {
+            '': 'Trang chủ',
+            'grammar': 'Ngữ pháp',
+            'vocabulary': 'Từ vựng',
+            'exercises': 'Bài tập',
+            'topik': 'TOPIK',
+            'basic': 'Cơ bản',
+            'basic2': 'Cơ bản 2',
+            'donate': 'Ủng hộ',
+            'guide': 'Hướng dẫn',
+            'privacy-policy': 'Chính sách bảo mật',
+            'terms-of-service': 'Điều khoản dịch vụ'
+          };
+          
+          // Bản đồ các đường dẫn con
+          const nestedRouteMap = {
+            'topik/35': 'Đề thi thử TOPIK I kỳ 35',
+            'topik/36': 'Đề thi thử TOPIK I kỳ 36',
+            'topik/37': 'Đề thi thử TOPIK I kỳ 37',
+            'topik/41': 'Đề thi thử TOPIK I kỳ 41',
+            'topik/47': 'Đề thi thử TOPIK I kỳ 47',
+            'topik/52': 'Đề thi thử TOPIK I kỳ 52',
+            'topik/60': 'Đề thi thử TOPIK I kỳ 60',
+            'topik/64': 'Đề thi thử TOPIK I kỳ 64',
+            'topik/83': 'Đề thi thử TOPIK I kỳ 83',
+            'topik/91': 'Đề thi thử TOPIK I kỳ 91'
+          };
+          
+          // Tạo mảng các mục breadcrumb
+          const items = [
+            {
+              '@type': 'ListItem',
+              'position': 1,
+              'name': 'Trang chủ',
+              'item': 'https://hangul.online'
+            }
+          ];
+          
+          // Xây dựng các mục breadcrumb dựa trên đường dẫn hiện tại
+          let currentPath = '';
+          segments.forEach((segment, index) => {
+            currentPath += '/' + segment;
+            const position = index + 2; // +2 vì chúng ta đã có Home ở vị trí 1
+            
+            // Kiểm tra nếu đường dẫn có trong bản đồ
+            let name = '';
+            if (nestedRouteMap[segments.slice(0, index + 1).join('/')]) {
+              name = nestedRouteMap[segments.slice(0, index + 1).join('/')];
+            } else if (routeMap[segment]) {
+              name = routeMap[segment];
+            } else {
+              // Định dạng phân đoạn thành tiêu đề nếu không có ánh xạ
+              name = segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' ');
+            }
+            
+            items.push({
+              '@type': 'ListItem',
+              'position': position,
+              'name': name,
+              'item': 'https://hangul.online' + currentPath
+            });
+          });
+          
+          // Cập nhật schema JSON-LD
+          const schema = {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            'itemListElement': items
+          };
+          
+          // Tìm script JSON-LD hiện có cho breadcrumb hoặc tạo mới
+          let script = document.querySelector('script[data-breadcrumb-schema]');
+          if (!script) {
+            script = document.createElement('script');
+            script.type = 'application/ld+json';
+            script.setAttribute('data-breadcrumb-schema', '');
+            document.head.appendChild(script);
+          }
+          
+          // Cập nhật nội dung script
+          script.textContent = JSON.stringify(schema);
+        } catch (e) {
+          console.error('Error updating breadcrumb schema:', e);
+        }
+      }
+    </script>
+        
+    <!-- Google Search Console specifics -->
+    <meta itemprop="name" content="Học tiếng Hàn miễn phí cho người Việt">
+    <meta itemprop="description" content="Nền tảng học tiếng Hàn miễn phí với tổng hợp ngữ pháp, từ vựng, bài tập chuẩn TOPIK từ Sơ cấp đến Cao cấp. Phù hợp cho người Việt Nam học tiếng Hàn.">
+    <meta itemprop="image" content="https://hangul.online/favicon-512x512.png">
   </head>
   <body>
+    <amp-auto-ads type="adsense"
+                  data-ad-client="ca-pub-5760828366443806">
+    </amp-auto-ads>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--

@@ -14,12 +14,25 @@ function Footer() {
           <div className="flex flex-col items-center md:items-start">
             <div className="relative">
               <Link to="/" className="flex items-center space-x-3 mb-4">
-                <OptimizedImage
-                  src="/logo.webp"
-                  alt="한국어학습 Logo"
-                  className="h-12 w-12 rounded-full shadow-lg border-2 border-korean-blue"
-                />
-                <span className="text-xl font-bold text-white">한국어학습</span>
+                <OptimizedImage 
+                // className="h-10 w-10 xs:h-12 xs:w-12 rounded-full shadow-lg border-2 border-korean-blue object-cover group-hover:scale-105 transition-transform" 
+                src="/web-logo.svg" 
+                alt="Web Logo" 
+                style={{ borderColor: '#2B6CB0' }}
+                width="100"
+                height="100"
+                loading="eager"
+              />
+              <OptimizedImage 
+                // className="h-8 w-8 xs:h-10 xs:w-10 rounded-full shadow-lg border-2 border-korean-blue object-cover group-hover:scale-105 transition-transform ml-2" 
+                src="/favicon.svg" 
+                alt="Favicon Logo" 
+                style={{ borderColor: '#2B6CB0' }}
+                width="100"
+                height="100"
+                loading="eager"
+              />
+                {/* <span className="text-xl font-bold text-white">public/favicon.svg</span> */}
               </Link>
               <div className="absolute -top-1 -right-2 flex space-x-0.5">
                 <div className="w-1.5 h-1.5 bg-blue-500 rounded-full opacity-60"></div>
@@ -41,6 +54,12 @@ function Footer() {
                 nguyenductuan11012003@gmail.com
 
               </a>
+              <a href="mailto:support@hangul.online" className="flex items-center hover:text-white transition-colors">
+                <Mail className="w-5 h-5 mr-3" />
+                Hỗ trợ: support@hangul.online
+
+              </a>
+              
               <a href="tel:+84387050243" className="flex items-center hover:text-white transition-colors">
                 <Phone className="w-5 h-5 mr-3" />
                 +84 387 050 243

@@ -10,23 +10,8 @@ import { TOPIK_52 } from '../data/topik52';
 import { TOPIK_47 } from '../data/topik47';
 import { TOPIK_41 } from '../data/topik41';
 import { TOPIK_37 } from '../data/topik37';
-import { TOPIK_36 } from '../data/topik36';
-import { TOPIK_35 } from '../data/topik35';
-
-/**
- * Hàm tiện ích để chuẩn hóa văn bản
- * Loại bỏ khoảng trắng dư thừa và chuẩn hóa các ký tự đặc biệt
- */
-const normalizeText = (text) => {
-  if (!text) return '';
-  
-  // Loại bỏ khoảng trắng dư thừa và chuẩn hóa dấu xuống dòng
-  return text.trim()
-    .replace(/\s+/g, ' ')  // Thay thế nhiều khoảng trắng bằng một khoảng trắng
-    .replace(/\n\s*/g, '\n')  // Loại bỏ khoảng trắng sau dấu xuống dòng
-    .replace(/\s*\n/g, '\n')  // Loại bỏ khoảng trắng trước dấu xuống dòng
-    .replace(/\n{3,}/g, '\n\n');  // Thay thế nhiều dấu xuống dòng bằng tối đa 2 dấu
-};
+import {TOPIK_36} from '../data/topik36';
+import {TOPIK_35} from '../data/topik35';
 
 /**
  * Hàm tiện ích để chuẩn hóa dữ liệu đề thi và loại bỏ khoảng trắng dư thừa
@@ -45,28 +30,20 @@ const normalizeTestContent = (content) => {
       const normalizedQuestion = {
         ...question,
         number: question.number,
-        instruction: question.instruction ? normalizeText(question.instruction) : '',
-        instructionViet: question.instructionViet ? normalizeText(question.instructionViet) : '',
-        sectionViet: question.sectionViet ? normalizeText(question.sectionViet) : '',
-        text: question.text ? normalizeText(question.text) : '',
+        instruction: question.instruction ? question.instruction.trim() : '',
+        instructionViet: question.instructionViet ? question.instructionViet.trim() : '',
+        sectionViet: question.sectionViet ? question.sectionViet.trim() : '',
+        text: question.text ? question.text.trim() : '',
         answer: question.answer ? question.answer.trim() : '',
       };
       
       // Chuẩn hóa các tùy chọn
       if (question.options) {
-        if (Array.isArray(question.options)) {
-          // Nếu options là một mảng
-          normalizedQuestion.options = question.options.map(option => 
-            option ? normalizeText(option) : ''
-          );
-        } else {
-          // Nếu options là một đối tượng
-          const normalizedOptions = {};
-          Object.keys(question.options).forEach(key => {
-            normalizedOptions[key] = question.options[key] ? normalizeText(question.options[key]) : '';
-          });
-          normalizedQuestion.options = normalizedOptions;
-        }
+        const normalizedOptions = {};
+        Object.keys(question.options).forEach(key => {
+          normalizedOptions[key] = question.options[key] ? question.options[key].trim() : '';
+        });
+        normalizedQuestion.options = normalizedOptions;
       }
       
       return normalizedQuestion;
@@ -76,89 +53,69 @@ const normalizeTestContent = (content) => {
   return normalizedContent;
 };
 
-// TopikExamLayout component hiển thị giao diện bài kiểm tra thực tế
+// Function to get the test content based on testId
 const TopikExamLayout = ({ testId, content, onClose }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const questionsPerPage = 15;
+  const questionsPerPage = 10;
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [showImageViewer, setShowImageViewer] = useState(false);
   const [currentImage, setCurrentImage] = useState(null);
   const [timeLeft, setTimeLeft] = useState(90 * 60); // 90 phút tính bằng giây
-  const contentRef = useRef(null); // Ref cho vùng nội dung có thể cuộn
+  const contentRef = useRef(null);
 
   const totalPages = Math.ceil(content.questions.length / questionsPerPage);
 
-  // Cuộn lên đầu vùng nội dung
+  // Scroll to the top of the content
   const scrollToTop = () => {
     if (contentRef.current) {
       contentRef.current.scrollTop = 0;
     }
   };
 
-  // Hàm setCurrentPage đã sửa đổi để cuộn lên đầu sau khi thay đổi trang
+  // Modified setCurrentPage function to scroll to top after page change
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
     
-    // Cuộn lên đầu vùng nội dung và cửa sổ
+    // Scroll to top of content area and window
     setTimeout(() => {
-      // Cuộn vùng chứa nội dung
+      // Scroll the content container
       if (contentRef.current) {
         contentRef.current.scrollTop = 0;
       }
       
-      // Cuộn cửa sổ để đảm bảo chúng ta đang ở trên cùng
+      // Also scroll the window to ensure we're at the top
       window.scrollTo(0, 0);
       
-      // Thử với document.body để tương thích tối đa
+      // Try with document.body as well for maximum compatibility
       if (document.body) {
         document.body.scrollTop = 0;
       }
       if (document.documentElement) {
         document.documentElement.scrollTop = 0;
       }
-    }, 50); // Độ trễ nhỏ để đảm bảo DOM được cập nhật trước khi cuộn
+    }, 50);
   };
 
-  // Xử lý nộp bài thi
   const handleSubmit = useCallback(() => {
-    // Trong một ứng dụng thực tế, bạn sẽ gửi selectedAnswers đến máy chủ
-    // Sử dụng hộp thông báo tùy chỉnh thay vì alert() theo hướng dẫn
-    const messageBox = document.createElement('div');
-    messageBox.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
-    messageBox.innerHTML = `
-      <div class="bg-white p-6 rounded-lg shadow-xl text-center">
-        <h3 class="text-xl font-semibold mb-4">Thông báo</h3>
-        <p class="mb-6">Đã nộp bài!</p>
-        <button id="closeMessageBox" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors">Đóng</button>
-      </div>
-    `;
-    document.body.appendChild(messageBox);
-
-    document.getElementById('closeMessageBox').onclick = () => {
-      document.body.removeChild(messageBox);
-    };
-
+    alert("Đã nộp bài!");
     console.log("Submitted Answers:", selectedAnswers);
   }, [selectedAnswers]);
 
-  // Hiệu ứng hẹn giờ cho thời gian làm bài
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft((prevTime) => {
         if (prevTime <= 0) {
           clearInterval(timer);
-          handleSubmit(); // Tự động nộp bài khi hết giờ
+          handleSubmit();
           return 0;
         }
         return prevTime - 1;
       });
-    }, 1000); // Cập nhật mỗi giây
+    }, 1000);
 
-    // Hàm dọn dẹp để xóa khoảng thời gian khi component bị hủy
     return () => clearInterval(timer);
   }, [handleSubmit]);
 
-  // Định dạng thời gian còn lại thành HH:MM:SS
   const formatTime = (seconds) => {
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);
@@ -166,83 +123,78 @@ const TopikExamLayout = ({ testId, content, onClose }) => {
     return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
 
-  // Xử lý lựa chọn câu trả lời cho một câu hỏi
   const handleAnswerSelect = (questionId, answer) => {
     setSelectedAnswers(prev => ({
       ...prev,
       [questionId]: answer
     }));
     
-    // Nếu nhấp vào một câu trả lời trong một phần khác với trang hiện tại,
-    // điều hướng đến trang tương ứng
+    // If clicking an answer in a different section than current page,
+    // navigate to the corresponding page
     const currentStartQuestion = (currentPage - 1) * questionsPerPage + 1;
     const currentEndQuestion = Math.min(currentPage * questionsPerPage, content.questions.length);
     
     if (questionId < currentStartQuestion || questionId > currentEndQuestion) {
-      // Tính toán trang nào chứa câu hỏi này
+      // Calculate which page contains this question
       const targetPage = Math.ceil(questionId / questionsPerPage);
       handlePageChange(targetPage);
     }
   };
 
-  // Trả về các câu hỏi cho trang hiện tại
   const getCurrentQuestions = () => {
     const start = (currentPage - 1) * questionsPerPage;
     return content.questions.slice(start, start + questionsPerPage);
   };
 
-  // Xử lý nhấp vào hình ảnh để mở trình xem hình ảnh
   const handleImageClick = (imageUrl) => {
     setCurrentImage(imageUrl);
     setShowImageViewer(true);
   };
 
-  // Xác định xem trang hiện tại có phải là một phần của phần nghe (câu hỏi 1-30) không
   const isListeningSection = currentPage <= Math.ceil(30 / questionsPerPage);
 
-  // Lấy tất cả các số câu hỏi cho phiếu trả lời
   const allQuestions = content.questions.map(q => q.number);
 
-  // Hiệu ứng cuộn lên đầu khi nội dung tải
+  // Scroll to top when content loads - with increased timeout and more robust selector
   useEffect(() => {
     if (content) {
-      // Sử dụng thời gian chờ dài hơn để đảm bảo DOM được hiển thị đầy đủ
+      // Use longer timeout to ensure DOM is fully rendered
       setTimeout(() => {
-        // Thử nhiều bộ chọn để đảm bảo chúng ta tìm thấy phần tử phù hợp
+        // Try multiple selectors to ensure we find the right element
         const contentContainer = contentRef.current || 
                                 document.querySelector('.content-scroll-container') || 
                                 document.querySelector('.overflow-y-auto');
         if (contentContainer) {
           contentContainer.scrollTop = 0;
           
-          // Cuộn cửa sổ lên đầu trong trường hợp có bất kỳ cuộn bên ngoài nào
+          // Also scroll the window to the top in case there's any outer scroll
           window.scrollTo(0, 0);
         }
-      }, 300); // Tăng thời gian chờ để đáng tin cậy hơn
+      }, 300); // Increased timeout for better reliability
     }
   }, [content]);
 
-  // Hiệu ứng cuộn lên đầu khi trang thay đổi
+  // Scroll to top when page changes
   useEffect(() => {
     scrollToTop();
     
-    // Cuộn cửa sổ và tài liệu
+    // Also scroll the window and document
     window.scrollTo(0, 0);
     if (document.body) document.body.scrollTop = 0;
     if (document.documentElement) document.documentElement.scrollTop = 0;
     
-    // Cố gắng cuộn vùng chứa chính
+    // Try to scroll the main container
     const container = document.querySelector('.topik-exam-container');
     if (container) container.scrollTop = 0;
     
   }, [currentPage]);
 
-  // Hiệu ứng cuộn lên đầu khi một bài kiểm tra được tải lần đầu
+  // Scroll to top when a test is first loaded
   useEffect(() => {
-    // Buộc cuộn cửa sổ lên đầu ngay lập tức khi component được gắn
+    // Scroll window to top immediately when component mounts
     window.scrollTo(0, 0);
     
-    // Thực hiện điều này sau khi nội dung được tải, với một độ trễ
+    // Also do this after content is loaded, with a delay
     setTimeout(() => {
       window.scrollTo(0, 0);
     }, 200);
@@ -252,24 +204,23 @@ const TopikExamLayout = ({ testId, content, onClose }) => {
     <div className="fixed inset-0 flex flex-col bg-white topik-exam-container" style={{scrollTop: 0}}>
       {/* Header */}
       <div className="bg-primary text-white p-4 flex justify-between items-center flex-shrink-0">
-        <h2 className="text-2xl font-bold">
-          {testId} - TOPIK I Mock Test
-        </h2>
         <div className="flex items-center space-x-4">
+          <h2 className="text-2xl font-bold">
+            {testId} - TOPIK I Mock Test
+          </h2>
           <div className="bg-white text-primary px-4 py-2 rounded-lg font-bold">
             {formatTime(timeLeft)}
           </div>
-          <button onClick={onClose} className="text-white hover:text-gray-200">
-            <X className="w-6 h-6" />
-          </button>
         </div>
+        <button onClick={onClose} className="text-white hover:text-gray-200">
+          <X className="w-6 h-6" />
+        </button>
       </div>
 
       {/* Main Content Area */}
       <div className="flex flex-grow overflow-hidden">
         {/* Left Side - Test Content */}
-        {/* Đã thêm flex-grow vào đây để cột bên trái giãn ra lấp đầy không gian */}
-        <div className="w-2/3 flex flex-col p-6 border-r flex-grow"> 
+        <div className="w-2/3 flex flex-col p-6 border-r">
           {/* Section Title */}
           <div className="mb-6 flex-shrink-0">
             <h3 className="text-xl font-semibold text-gray-700">
@@ -284,38 +235,37 @@ const TopikExamLayout = ({ testId, content, onClose }) => {
             </div>
           )}
 
-          {/* Container cho các câu hỏi và điều hướng xử lý cuộn */}
-          {/* Đã thêm flex-grow vào div này để nó lấp đầy không gian dọc còn lại */}
+          {/* Container for questions and navigation that handles scrolling */}
           <div ref={contentRef} className="flex flex-col flex-grow overflow-y-auto pr-2 -mr-2 content-scroll-container">
             {/* Questions */}
-            <div className="space-y-8 pb-4 flex-grow"> {/* Đã thêm flex-grow lại vào đây */}
+            <div className="space-y-8 pb-4 flex-grow">
               {getCurrentQuestions().map((question) => (
                 <div key={question.number} className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                   
-                  {/* Nội dung câu hỏi với hướng dẫn nội tuyến */}
+                  {/* Question Content with Instruction inline */}
                   <div className="mb-4">
                     <div className="flex items-start mb-2">
                       <span className="text-lg font-medium text-gray-800 mr-2">{question.number}.</span>
                       {question.instruction ? (
                         <div className="text-gray-700 font-medium flex-grow">
-                          <p className="text-lg font-medium text-gray-800 inline">{normalizeText(question.instruction.split('\n')[0])}</p>
+                          <p className="text-lg font-medium text-gray-800 inline">{question.instruction.split('\n')[0].trim()}</p>
                           {question.instruction.split('\n').slice(1).map((line, index) => (
                             <p key={index} className="text-primary mt-1">
-                              {normalizeText(line)}
+                              {line.trim()}
                             </p>
                           ))}
                         </div>
                       ) : (
-                        // Dự phòng nếu không có hướng dẫn, chỉ hiển thị văn bản câu hỏi
+                        // Fallback if no instruction, just display question text
                         <p className="text-lg font-medium text-gray-800 flex-grow">
-                          {question.text ? normalizeText(question.text) : ''}
+                          {question.text ? question.text.trim() : ''}
                         </p>
                       )}
                     </div>
-                    {/* Chỉ hiển thị văn bản câu hỏi nếu có hướng dẫn và văn bản câu hỏi khác */}
+                    {/* Display question text only if there's instruction and question text is different */}
                     {question.instruction && question.text && !question.instruction.includes(question.text) && (
                       <p className="text-gray-800 mb-2 ml-7"> 
-                        {normalizeText(question.text)}
+                        {question.text.trim()}
                       </p>
                     )}
                     {question.imageUrl && (
@@ -330,7 +280,7 @@ const TopikExamLayout = ({ testId, content, onClose }) => {
                     )}
                   </div>
 
-                  {/* Tùy chọn trả lời */}
+                  {/* Answer Options */}
                   <div className="space-y-3">
                     {['A', 'B', 'C', 'D'].map((option) => (
                       <div
@@ -342,7 +292,7 @@ const TopikExamLayout = ({ testId, content, onClose }) => {
                         }`}
                         onClick={() => handleAnswerSelect(question.number, option)}
                       >
-                        {option}. {question.options[option] ? normalizeText(question.options[option]) : ''}
+                        {option}. {question.options[option] ? question.options[option].trim() : ''}
                       </div>
                     ))}
                   </div>
@@ -350,7 +300,7 @@ const TopikExamLayout = ({ testId, content, onClose }) => {
               ))}
             </div>
 
-            {/* Điều hướng nhanh phần */}
+            {/* Section Quick Navigation */}
             <div className="mb-4 mt-8 flex justify-center items-center bg-white py-2 border-t flex-shrink-0">
               <div className="flex space-x-4">
                 <button
@@ -376,7 +326,7 @@ const TopikExamLayout = ({ testId, content, onClose }) => {
               </div>
             </div>
 
-            {/* Điều hướng */}
+            {/* Navigation */}
             <div className="mb-0 flex justify-between items-center bg-white py-4 border-t flex-shrink-0">
               <button
                 onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
@@ -401,12 +351,12 @@ const TopikExamLayout = ({ testId, content, onClose }) => {
           </div>
         </div>
 
-        {/* Right Side - Phiếu trả lời */}
+        {/* Right Side - Answer Sheet */}
         <div className="w-1/3 p-6 bg-gray-50 overflow-y-auto flex-shrink-0">
           <div className="sticky top-0 pt-0 pb-4 bg-gray-50 z-10">
             <h3 className="text-xl font-semibold text-gray-700 mb-4">Phiếu Trả Lời</h3>
             
-            {/* Điều hướng nhanh phần */}
+            {/* Quick Section Navigation */}
             <div className="flex space-x-2 mb-6">
               <button 
                 className={`flex-1 py-2 px-3 text-sm font-medium rounded-md transition ${
@@ -426,7 +376,7 @@ const TopikExamLayout = ({ testId, content, onClose }) => {
               </button>
             </div>
             
-            {/* Phần Nghe */}
+            {/* Listening Section */}
             <div className="mb-8">
               <h4 className="font-medium text-gray-600 mb-4">Phần Nghe (1-30)</h4>
               <div className="grid grid-cols-5 gap-2">
@@ -456,7 +406,7 @@ const TopikExamLayout = ({ testId, content, onClose }) => {
               </div>
             </div>
 
-            {/* Phần Đọc */}
+            {/* Reading Section */}
             <div className="mb-8">
               <h4 className="font-medium text-gray-600 mb-4">Phần Đọc (31-70)</h4>
               <div className="grid grid-cols-5 gap-2">
@@ -486,7 +436,7 @@ const TopikExamLayout = ({ testId, content, onClose }) => {
               </div>
             </div>
 
-            {/* Nút Nộp bài */}
+            {/* Submit Button */}
             <button
               onClick={handleSubmit}
               className="w-full py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors font-medium"
@@ -494,7 +444,7 @@ const TopikExamLayout = ({ testId, content, onClose }) => {
               Nộp Bài
             </button>
 
-            {/* Chú thích điều hướng câu hỏi */}
+            {/* Question Navigation Legend */}
             <div className="mt-6">
               <h4 className="font-medium text-gray-600 mb-4">Chú Thích</h4>
               <div className="flex items-center space-x-4 text-sm">
@@ -512,7 +462,7 @@ const TopikExamLayout = ({ testId, content, onClose }) => {
         </div>
       </div>
 
-      {/* Trình xem hình ảnh */}
+      {/* Image Viewer */}
       {showImageViewer && (
         <TopikImageViewer
           images={[currentImage]}
@@ -523,13 +473,11 @@ const TopikExamLayout = ({ testId, content, onClose }) => {
   );
 };
 
-// TopikTestContent component xử lý việc tải và hiển thị nội dung bài kiểm tra chính xác
 const TopikTestContent = ({ testId, onClose }) => {
   const [content, setContent] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Hiệu ứng để tải nội dung bài kiểm tra dựa trên testId
   useEffect(() => {
     try {
       setIsLoading(true);
@@ -562,7 +510,7 @@ const TopikTestContent = ({ testId, onClose }) => {
           testContent = TOPIK_37;
           break;
         case '36th':
-          testContent = TOPIK_36; 
+          testContent = TOPIK_36;
           break;
         case '35th':
           testContent = TOPIK_35;
@@ -586,15 +534,15 @@ const TopikTestContent = ({ testId, onClose }) => {
     }
   }, [testId]);
 
-  // Cuộn toàn cầu lên đầu khi component TopikTestContent được gắn
+  // Global scroll to top when TopikTestContent component mounts
   useEffect(() => {
-    // Buộc cuộn lên đầu khi component được gắn
+    // Force scroll to top when the component is mounted
     window.scrollTo(0, 0);
     
     if (document.body) document.body.scrollTop = 0;
     if (document.documentElement) document.documentElement.scrollTop = 0;
     
-    // Đính kèm MutationObserver để đảm bảo cuộn xảy ra sau bất kỳ thay đổi DOM nào
+    // Also attach a MutationObserver to ensure scrolling happens after any DOM changes
     const observer = new MutationObserver(() => {
       window.scrollTo(0, 0);
     });
@@ -607,7 +555,6 @@ const TopikTestContent = ({ testId, onClose }) => {
     return () => observer.disconnect();
   }, []);
 
-  // UI trạng thái tải
   if (isLoading) {
     return (
       <div className="fixed inset-0 bg-white flex items-center justify-center">
@@ -619,7 +566,6 @@ const TopikTestContent = ({ testId, onClose }) => {
     );
   }
 
-  // UI trạng thái lỗi
   if (error) {
     return (
       <div className="fixed inset-0 bg-white flex items-center justify-center">
@@ -642,7 +588,6 @@ const TopikTestContent = ({ testId, onClose }) => {
     );
   }
 
-  // UI trạng thái không có nội dung
   if (!content || !content.questions || content.questions.length === 0) {
     return (
       <div className="fixed inset-0 bg-white flex items-center justify-center">
@@ -665,11 +610,10 @@ const TopikTestContent = ({ testId, onClose }) => {
     );
   }
 
-  // Hiển thị bố cục bài kiểm tra nếu nội dung được tải thành công
   return <TopikExamLayout testId={testId} content={content} onClose={onClose} />;
 };
 
-// Buộc trang cuộn lên đầu khi mô-đun tải (để hiển thị ban đầu)
+// Force the page to scroll to top when the module loads
 if (typeof window !== 'undefined') {
   window.scrollTo(0, 0);
 }

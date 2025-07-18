@@ -659,7 +659,7 @@ function Topik() {
         description="Hướng dẫn chi tiết luyện thi TOPIK 2025: lịch thi, tips ôn tập, đề thi thử, ngữ pháp trọng tâm và bí quyết đạt điểm cao TOPIK I, II. Cập nhật mới nhất từ IIG Vietnam."
         keywords="TOPIK, luyện thi TOPIK, đề thi TOPIK, tips TOPIK, ngữ pháp TOPIK, TOPIK I, TOPIK II, lịch thi TOPIK 2025"
         type="article"
-        imageUrl="/logo.webp"
+        imageUrl="/web-logo.svg"
       />
 
       <div className="container mx-auto px-4">
@@ -683,12 +683,12 @@ function Topik() {
             <meta itemProp="author" content="한국어학습" />
             <meta itemProp="datePublished" content="2025-01-01" />
             <meta itemProp="dateModified" content="2025-01-01" />
-            <meta itemProp="image" content="/logo.webp" />
+            <meta itemProp="image" content="/web-logo.svg" />
             <div itemProp="publisher" itemScope itemType="https://schema.org/Organization">
               <meta itemProp="name" content="한국어학습" />
               <meta itemProp="url" content="https://hangul.online/" />
               <div itemProp="logo" itemScope itemType="https://schema.org/ImageObject">
-                <meta itemProp="url" content="/logo.webp" />
+                <meta itemProp="url" content="/web-logo.svg" />
                 <meta itemProp="width" content="512" />
                 <meta itemProp="height" content="512" />
               </div>
@@ -728,7 +728,7 @@ function Topik() {
                 </div>
                 <meta itemProp="description" content={`Kỳ thi đánh giá năng lực tiếng Hàn ${exam.ky} tổ chức tại ${exam.diaDiem}. Bao gồm TOPIK I và TOPIK II.`} />
                 <meta itemProp="eventStatus" content="https://schema.org/EventScheduled" />
-                <meta itemProp="image" content="https://hangul.online/logo.webp" />
+                <meta itemProp="image" content="https://hangul.online/web-logo.svg" />
                 <div itemProp="offers" itemScope itemType="https://schema.org/Offer">
                   <meta itemProp="price" content="1400000" />
                   <meta itemProp="priceCurrency" content="VND" />

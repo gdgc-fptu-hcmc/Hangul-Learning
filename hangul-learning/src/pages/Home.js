@@ -2,7 +2,7 @@ import React from 'react';
 import SEO from '../components/SEO';
 import SponsorSection from '../components/SponsorSection';
 import { Link } from 'react-router-dom';
-import { BookOpen, CheckSquare, Users, Headphones, PenTool, Eye, Bell, Sparkles, Chrome, Monitor, Smartphone, ExternalLink, Youtube, Target } from 'lucide-react';
+import { BookOpen, CheckSquare, Users, Headphones, PenTool, Eye, Bell, Sparkles, Chrome, Monitor, Smartphone, Target } from 'lucide-react';
 import OptimizedImage from '../components/OptimizedImage';
 import YouTubeEmbed from '../components/YouTubeEmbed';
 
@@ -30,7 +30,7 @@ function Home() {
       title: 'Ra mắt kênh YouTube Hangul.online',
       description: 'Kênh YouTube chính thức với nội dung học tiếng Hàn qua Video. Video mới với phát âm chuẩn bản địa và phương pháp học hiệu quả.',
       link: 'https://youtube.com/@hangul.online?si=JeMuUcJvBK9MuqrJ',
-      icon: Youtube,
+      icon: Sparkles,
       color: 'bg-red-100 text-red-800'
     },
     {
@@ -267,103 +267,36 @@ function Home() {
         </div>
       </div>
 
-      {/* YouTube Channel Section */}
+      {/* Video Banner */}
       <div className="section-mobile bg-gradient-to-r from-red-50 to-pink-50">
         <div className="container-mobile">
           <div className="text-center mb-8 sm:mb-12">
             <div className="flex justify-center items-center mb-4">
-              <a 
-                href="https://youtube.com/@hangul.online?si=JeMuUcJvBK9MuqrJ" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-red-600 hover:text-red-700 transition-colors tap-highlight-none"
-              >
+              <div className="inline-flex items-center gap-2 text-red-600 hover:text-red-700 transition-colors tap-highlight-none">
                 <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
                 <div className="w-2 h-2 bg-red-300 rounded-full animate-pulse"></div>
-              </a>
-            </div>
-            <h2 className="heading-mobile-lg text-gray-900 mb-4 text-center">
-              Học tiếng Hàn qua <span className="text-red-500">Video hoạt hình</span>
-            </h2>
-            <p className="text-gray-600 text-base sm:text-lg max-w-3xl mx-auto text-center">
-              Khám phá cách học tiếng Hàn thú vị và hiệu quả thông qua các video hoạt hình vui nhộn. 
-              Mỗi video mang đến trải nghiệm học tập sinh động với nội dung thực tế và phát âm chuẩn.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Video Player */}
-            <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-4 sm:p-6 lg:p-8 rounded-2xl lg:rounded-3xl">
-              <YouTubeEmbed 
-                videoId="2aZ84ZjVUXc"
-                title="한국어학습 - Video học tiếng Hàn"
-                className="shadow-lg sm:shadow-2xl"
-              />
-            </div>
-
-            {/* Channel Info */}
-            <div className="space-y-4 sm:space-y-6">
-              <div className="mobile-card border border-gray-100">
-                <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6 justify-center lg:justify-start">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-red-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg">
-                    <Youtube className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
-                  </div>
-                  <div className="text-center lg:text-left">
-                    <h3 className="text-lg sm:text-2xl font-bold text-gray-900">Hangul.online</h3>
-                    <p className="text-gray-600 text-sm sm:text-base">Kênh YouTube chính thức</p>
-                  </div>
-                </div>
-
-                <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
-                  <div className="flex items-start gap-3 lg:text-left text-center lg:justify-start justify-center">
-                    <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <div className="text-center lg:text-left">
-                      <h4 className="font-semibold text-gray-900 text-sm sm:text-base">Nội dung Video hoạt hình độc đáo</h4>
-                      <p className="text-gray-600 text-xs sm:text-sm">Học tiếng Hàn thông qua các tình huống thực tế trong postcard</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-3 lg:text-left text-center lg:justify-start justify-center">
-                    <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <div className="text-center lg:text-left">
-                      <h4 className="font-semibold text-gray-900 text-sm sm:text-base">Phát âm chuẩn bản địa</h4>
-                      <p className="text-gray-600 text-xs sm:text-sm">Giọng đọc chất lượng cao từ người Hàn Quốc</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-3 lg:text-left text-center lg:justify-start justify-center">
-                    <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <div className="text-center lg:text-left">
-                      <h4 className="font-semibold text-gray-900 text-sm sm:text-base">Cập nhật thường xuyên</h4>
-                      <p className="text-gray-600 text-xs sm:text-sm">Video mới được đăng tải định kỳ mỗi tuần</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center">
-                  <a
-                    href="https://youtube.com/@hangul.online?si=JeMuUcJvBK9MuqrJ"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-mobile bg-red-500 text-white hover:bg-red-600 transform hover:scale-105 shadow-lg tap-highlight-none w-full sm:w-auto"
-                  >
-                    <Youtube className="w-5 h-5" />
-                    Đăng ký kênh
-                  </a>
-                  
-                  <a
-                    href="https://youtu.be/2aZ84ZjVUXc?si=HlyIHolNOSA1j5PY"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-mobile bg-gray-100 text-gray-700 hover:bg-gray-200 transition-all duration-300 tap-highlight-none w-full sm:w-auto"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    Xem video
-                  </a>
-                </div>
               </div>
             </div>
+            <h2 className="heading-mobile-lg text-gray-900 mb-4 text-center">
+              Văn hóa Hàn Quốc - <span className="text-red-500">Khám phá xứ sở kim chi</span>
+            </h2>
+            <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
+              Khám phá những nét văn hóa độc đáo và cuộc sống thường ngày tại đất nước Hàn Quốc
+            </p>
           </div>
+          <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-4 sm:p-6 lg:p-8 rounded-2xl lg:rounded-3xl">
+            <div className="relative w-full overflow-hidden rounded-xl shadow-lg">
+              <YouTubeEmbed 
+                videoId="iyzliU1Sh_0"
+                title="한국어学習 - Video học tiếng Hàn"
+                className="w-full aspect-video"
+                autoplay={false}
+                mute={false}
+                controls={true}
+              />
+            </div>
+          </div>
+
         </div>
       </div>
 

@@ -1162,7 +1162,7 @@ function Vocabulary() {
   useEffect(() => {
     if ('speechSynthesis' in window) {
       setIsSpeechReady(true);
-      console.log('🎤 Speech synthesis ready - using dynamic voice selection (same as Exercises)');
+      console.log('Speech synthesis ready - using dynamic voice selection (same as Exercises)');
     } else {
       console.warn('Speech synthesis not supported');
       setIsSpeechReady(false);
