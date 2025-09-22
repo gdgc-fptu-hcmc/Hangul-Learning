@@ -1,6 +1,4 @@
 import React from 'react';
-
-import React from 'react';
 import DiscoverySection from '../components/DiscoverySection';
 import '../styles/Catalog.css';
 
