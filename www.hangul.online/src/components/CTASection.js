@@ -4,17 +4,17 @@ import '../styles/FeaturesSection.css';
 
 const CTASection = () => {
   return (
-    <div className='guest-front-door-block msg-body' style={{ background: '#f0f4ff', borderRadius: '16px', padding: '32px', boxShadow: '0 4px 24px rgba(0,0,0,0.06)' }}>
-      <div className='guest-front-door-logo' style={{ marginBottom: '24px' }}>
-        <img role="presentation" src={cloudLogo} style={{ height: 64 }} />
+    <div className='guest-front-door-block msg-body cta-panel'>
+      <div className='guest-front-door-logo cta-logo'>
+        <img role="presentation" src={cloudLogo} />
       </div>
-      <h2 className='ql-display-medium' style={{ color: '#1a237e' }}>
+      <h2 className='ql-display-medium cta-title'>
         <strong>Bắt đầu hành trình tiếng Hàn</strong>
       </h2>
-      <span className='ql-body-large' style={{ color: '#374151', display: 'block' }}>
+      <span className='ql-body-large cta-text'>
         Từ người mới bắt đầu đến luyện thi TOPIK, Hangul Online đồng hành cùng bạn trên con đường chinh phục tiếng Hàn.
       </span>
-      <ql-button href='users/sign_up0d31.html?locale=vi' style={{ background: '#1976d2', color: '#fff', borderRadius: '8px', padding: '12px 32px', fontWeight: 600 }}>
+      <ql-button href='users/sign_up0d31.html?locale=vi' class='cta-button'>
         Bắt đầu ngay
       </ql-button>
     </div>
@@ -22,5 +22,3 @@ const CTASection = () => {
 };
 
 export default CTASection;
-
-
