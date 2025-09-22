@@ -78,6 +78,7 @@
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
+    align-items: stretch;
 }
 
 .ql-activity-card {
@@ -87,6 +88,9 @@
     overflow: hidden;
     transition: all 0.3s ease;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .ql-activity-card:hover {
@@ -157,6 +161,7 @@
 
 .card-content {
     padding: 0 1.5rem 1.5rem;
+    flex: 1 1 auto;
 }
 
 .card-title {
@@ -187,6 +192,7 @@
 
 .card-actions {
     padding: 0 1.5rem 1.5rem;
+    margin-top: auto;
 }
 
 .card-actions .ql-button {
