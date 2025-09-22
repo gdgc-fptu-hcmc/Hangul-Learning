@@ -12,7 +12,7 @@ const LessonCard = ({ lesson }) => {
   };
 
   return (
-    <div className="ql-activity-card card" credential-type={lesson.credentialType} dark-mode>
+    <div className="ql-activity-card card" data-credential-type={lesson.credentialType} data-dark-mode="true">
       <div className="card-header">
         <div className="card-meta">
           <span className={`difficulty ${lesson.difficulty}`}>
@@ -28,7 +28,7 @@ const LessonCard = ({ lesson }) => {
           {lesson.type === 'course' ? 'Khóa học' : 'Bài học'}
         </div>
       </div>
-      
+
       <div className="card-content">
         <h3 className="card-title">{lesson.title}</h3>
         <p className="card-description">{lesson.description}</p>
@@ -36,7 +36,7 @@ const LessonCard = ({ lesson }) => {
           {lesson.koreanText}
         </div>
       </div>
-      
+
       <div className="card-actions">
         <button className="ql-button">
           <span className="material-icons">play_arrow</span>
