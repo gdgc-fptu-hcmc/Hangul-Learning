@@ -90,10 +90,6 @@ const DiscoverySection = () => {
   return (
     <section className="discovery-section">
       <div className="discovery-header">
-        <h2 className="ql-display-medium">Khám phá bài học</h2>
-        <p className="ql-body-large discovery-subtitle">
-          Các chủ đề độc lập, dễ bắt đầu – thiết kế đồng nhất, thân thiện.
-        </p>
         <div className="discovery-toolbar">
           <div className="discovery-filters">
             {categories.map(cat => (
