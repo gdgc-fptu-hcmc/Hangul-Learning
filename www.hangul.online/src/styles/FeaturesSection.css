@@ -190,16 +190,49 @@
     }
 }
 
+/* CTA Panel */
+.cta-panel {
+    background: var(--accent-surface-color-light);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+
+.cta-logo {
+    margin-bottom: 24px;
+}
+
+.cta-logo img {
+    height: 64px;
+}
+
+.cta-title {
+    color: var(--primary-text-on-surface-color);
+}
+
+.cta-text {
+    color: #5f6368;
+    display: block;
+}
+
+.cta-button {
+    background: var(--primary-text-on-surface-color);
+    color: white;
+    border-radius: 8px;
+    padding: 12px 32px;
+    font-weight: 600;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .credentials-layout {
         padding: 0 1rem;
     }
-    
+
     .credentials-image img {
         max-width: 250px;
     }
-    
+
     .credential-item {
         padding: 1rem;
         text-align: left;
