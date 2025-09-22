@@ -45,6 +45,10 @@ module.exports = {
     hot: true,
     open: true,
     historyApiFallback: true,
+    client: {
+      logging: 'error',
+      overlay: { errors: true, warnings: false }
+    }
   },
   resolve: {
     extensions: ['.js', '.jsx'],
