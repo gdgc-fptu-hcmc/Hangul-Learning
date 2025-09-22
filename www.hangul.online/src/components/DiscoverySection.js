@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Catalog.css';
 
@@ -10,6 +10,7 @@ const topics = [
     icon: 'translate',
     path: '/hangul',
     duration: '~2 giờ',
+    category: 'Bảng chữ cái',
   },
   {
     id: 'pronunciation',
@@ -18,6 +19,7 @@ const topics = [
     icon: 'record_voice_over',
     path: '/hangul',
     duration: '~3 giờ',
+    category: 'Phát âm',
   },
   {
     id: 'grammar',
@@ -26,6 +28,7 @@ const topics = [
     icon: 'menu_book',
     path: '/paths',
     duration: '~4 giờ',
+    category: 'Ngữ pháp',
   },
   {
     id: 'vocabulary',
@@ -34,6 +37,7 @@ const topics = [
     icon: 'inventory_2',
     path: '/catalog',
     duration: 'Hàng tuần',
+    category: 'Từ vựng',
   },
   {
     id: 'phrases',
@@ -42,6 +46,7 @@ const topics = [
     icon: 'chat_bubble',
     path: '/conversation',
     duration: 'Liên tục',
+    category: 'Giao tiếp',
   },
   {
     id: 'numbers-time',
@@ -50,6 +55,7 @@ const topics = [
     icon: 'schedule',
     path: '/catalog',
     duration: '1.5 giờ',
+    category: 'Cơ bản khác',
   },
   {
     id: 'honorifics',
@@ -58,6 +64,7 @@ const topics = [
     icon: 'military_tech',
     path: '/catalog',
     duration: '~2 giờ',
+    category: 'Giao tiếp',
   },
   {
     id: 'topik',
@@ -66,10 +73,20 @@ const topics = [
     icon: 'school',
     path: '/topik',
     duration: 'Theo lộ trình',
+    category: 'TOPIK',
   },
 ];
 
+const categories = ['Tất cả', 'Bảng chữ cái', 'Phát âm', 'Ngữ pháp', 'Từ vựng', 'Giao tiếp', 'Cơ bản khác', 'TOPIK'];
+
 const DiscoverySection = () => {
+  const [active, setActive] = useState('Tất cả');
+
+  const filtered = useMemo(() => {
+    if (active === 'Tất cả') return topics;
+    return topics.filter(t => t.category === active);
+  }, [active]);
+
   return (
     <section className="discovery-section">
       <div className="discovery-header">
@@ -77,16 +94,31 @@ const DiscoverySection = () => {
         <p className="ql-body-large discovery-subtitle">
           Các chủ đề độc lập, dễ bắt đầu – thiết kế đồng nhất, thân thiện.
         </p>
+        <div className="discovery-toolbar">
+          <div className="discovery-filters">
+            {categories.map(cat => (
+              <button
+                key={cat}
+                className={`ql-chip ${active === cat ? 'active' : ''}`}
+                onClick={() => setActive(cat)}
+                aria-pressed={active === cat}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+          <div className="discovery-count ql-body-medium">{filtered.length} chủ đề</div>
+        </div>
       </div>
 
       <div className="discovery-grid">
-        {topics.map((t) => (
+        {filtered.map((t) => (
           <div key={t.id} className="ql-activity-card discovery-card">
             <div className="discovery-card-header">
               <span className="material-icons discovery-icon" aria-hidden>
                 {t.icon}
               </span>
-              <span className="discovery-chip">Chủ đề</span>
+              <span className="discovery-chip">{t.category}</span>
             </div>
 
             <div className="discovery-card-content">
