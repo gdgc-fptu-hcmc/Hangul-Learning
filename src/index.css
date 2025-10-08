@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ====== Global font setup ====== */
+:root {
+  --font-nunito: 'Nunito', sans-serif;
+}
+
+body {
+  font-family: var(--font-nunito);
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #1f1f1f;
+  overflow-x: hidden;
+}
+
+/* ====== Root wrapper ====== */
+#root {
+  @apply flex flex-col min-h-screen items-center justify-start;
+}
+
+/* ====== Responsive container ======
+   - 100% width for smaller screens
+   - Max 1440px on large desktops
+*/
+.container {
+  @apply w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* ====== Typography ====== */
+.font-nunito-bold {
+  font-family: var(--font-nunito);
+  font-weight: 700;
+}
+
+.font-nunito-black {
+  font-family: var(--font-nunito);
+  font-weight: 900;
+}
+
+/* ====== Effects ====== */
+.text-shadow {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.75);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* ====== Responsive section scaling ======
+   These help sections adapt between desktop sizes
+*/
+.section {
+  @apply w-full py-12 sm:py-16 lg:py-24;
+}
+
+.section-content {
+  @apply container flex flex-col lg:flex-row items-center justify-between gap-8;
+}
+
+/* ====== Example hero section ====== */
+.hero-title {
+  @apply text-3xl sm:text-4xl lg:text-6xl font-nunito-black text-center lg:text-left leading-tight;
+}
+
+.hero-subtitle {
+  @apply text-base sm:text-lg lg:text-xl text-gray-600 mt-4 text-center lg:text-left;
+}
+
+.hero-image {
+  @apply w-full max-w-md sm:max-w-lg lg:max-w-xl;
+}
