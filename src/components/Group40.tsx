@@ -47,14 +47,14 @@ export default function Group40({ className = '' }: Group40Props) {
           />
         </div>
 
-        {/* "Học vượt?" button */}
-        <div className="absolute inset-[20.43%_37.42%_71.25%_40.76%]" data-name="Union" data-node-id="344:866">
+        {/* "Học vượt?" button - Union icon with text overlay */}
+        <div className="absolute inset-[20.43%_37.42%_71.25%_40.76%] z-10" data-name="Union" data-node-id="344:866">
           <div className="absolute inset-[-3.43%_-1.39%]">
             <img alt="Học vượt button" className="block max-w-none size-full" src={imgUnion} />
           </div>
         </div>
 
-        <p className="absolute font-['Nunito:Bold',_sans-serif] font-bold inset-[21.71%_40%_73.57%_43.18%] leading-[normal] text-[#4f4f4f] text-[24px] text-nowrap whitespace-pre" data-node-id="344:869">
+        <p className="absolute font-['Nunito:Bold',_sans-serif] font-bold inset-[21.71%_40%_73.57%_43.18%] leading-[normal] text-[#4f4f4f] text-[24px] text-nowrap whitespace-pre z-20" data-node-id="344:869">
           Học vượt?
         </p>
 

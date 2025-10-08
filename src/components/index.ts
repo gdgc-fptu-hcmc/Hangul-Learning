@@ -10,4 +10,5 @@ export { default as Group40 } from './Group40';
 export { default as Component27 } from './Component27';
 export { default as Group33 } from './Group33';
 export { default as Group43 } from './Group43';
+export { default as Group44 } from './Group44';
 export * from './learning';

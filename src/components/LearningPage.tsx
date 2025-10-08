@@ -2,12 +2,11 @@ import { useEffect, useState } from 'react';
 import NavBar from './NavBar';
 import ProgressSection from './ProgressSection';
 import StreakSection from './StreakSection';
-import TopicTitle from './TopicTitle';
-import KhoaHc from './KhoaHc';
 import LessonsCheckbox from './LessonsCheckbox';
 import Footer from './Footer';
 import Component32 from './Component32';
 import Group40 from './Group40';
+import Group44 from './Group44';
 
 export default function LearningPage() {
   const DESIGN_WIDTH = 1440;
@@ -106,35 +105,8 @@ export default function LearningPage() {
       {/* Topic 2 - Green - Group40 from Figma (395:2427) */}
       <Group40 className="absolute left-[277px] top-[796px] w-[660px] h-[700px]" />
 
-      {/* Topic 3 - Purple */}
-      <TopicTitle 
-        className="absolute left-[277px] top-[1525px] w-[660px] h-[93px]"
-        topicNumber={3}
-        title="Số đếm & Thời gian"
-        variant="purple"
-        sticky={true}
-      />
-
-      {/* Topic 3 Lesson Components */}
-      <div className="absolute flex left-[760px] top-[2177px] w-[154px] h-[208px] items-center justify-center">
-        <div className="flex-none h-[208px] rotate-[180deg] w-[154px]">
-          <div className="border-[#d9d9d9] border-b-[2.518px] border-dashed border-l-[2.518px] border-r-0 border-t-[2.518px] rounded-bl-[83.948px] rounded-tl-[83.948px] size-full" data-node-id="344:787" />
-        </div>
-      </div>
-
-      <KhoaHc property1="Bỏ qua" className="absolute left-[575px] top-[1714px] w-[87px] h-[87px]" />
-      <KhoaHc property1="Khóa" className="absolute left-[410px] top-[1826px] w-[90px] h-[90px]" />
-      <KhoaHc property1="Khóa" className="absolute left-[573px] top-[1926px] w-[90px] h-[90px]" />
-      <KhoaHc property1="Khóa" className="absolute left-[718px] top-[2037px] w-[90px] h-[90px]" />
-      <KhoaHc property1="Bài cuối" className="absolute left-[575px] top-[2131px] w-[90px] h-[90px]" />
-
-      <div className="absolute left-[547px] top-[1668px] w-[144px] h-[62px]" data-node-id="344:797">
-        <div className="absolute inset-0 bg-[#e8e8ff] rounded-lg flex items-center justify-center">
-          <p className="absolute font-bold leading-[normal] text-[#464394] text-[24px] flex items-center justify-center">
-            Học vượt?
-          </p>
-        </div>
-      </div>
+      {/* Topic 3 - Purple - Group44 from Figma (401:1699) */}
+      <Group44 className="absolute left-[277px] top-[1525px] w-[660px] h-[696px]" />
 
       {/* Footer */}
       <div className="absolute bg-white border-[#d9d9d9] border-b-0 border-l-0 border-r-0 border-solid border-t-[3px] box-border content-stretch flex h-[45px] items-center justify-between left-0 px-[51px] py-[7px] top-[2434px] w-[1440px]">
