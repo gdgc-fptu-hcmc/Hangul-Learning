@@ -7,6 +7,7 @@ import KhoaHc from './KhoaHc';
 import LessonsCheckbox from './LessonsCheckbox';
 import Footer from './Footer';
 import Component32 from './Component32';
+import Group40 from './Group40';
 
 export default function LearningPage() {
   const DESIGN_WIDTH = 1440;
@@ -102,30 +103,8 @@ export default function LearningPage() {
       {/* Topic 1 - Yellow - Component32 from Figma (383:625) */}
       <Component32 className="absolute left-[277px] top-[125px] w-[660px] h-[632px]" />
 
-      {/* Topic 2 - Green */}
-      <TopicTitle 
-        className="absolute left-[277px] top-[796px] w-[660px] h-[93px]"
-        topicNumber={2}
-        title="Gia đình & Bạn bè"
-        variant="green"
-        sticky={true}
-      />
-
-      {/* Topic 2 Lesson Components */}
-
-      <KhoaHc property1="Bỏ qua" className="absolute left-[575px] top-[989px] w-[87px] h-[87px]" />
-      <KhoaHc property1="Khóa" className="absolute left-[410px] top-[1101px] w-[90px] h-[90px]" />
-      <KhoaHc property1="Khóa" className="absolute left-[573px] top-[1201px] w-[90px] h-[90px]" />
-      <KhoaHc property1="Khóa" className="absolute left-[718px] top-[1312px] w-[90px] h-[90px]" />
-      <KhoaHc property1="Bài cuối" className="absolute left-[575px] top-[1406px] w-[90px] h-[90px]" />
-
-      <div className="absolute left-[546px] top-[939px] w-[144px] h-[58px]" data-node-id="344:801">
-        <div className="absolute inset-0 bg-[#f0f0f0] rounded-lg flex items-center justify-center">
-          <p className="absolute font-bold leading-[normal] text-[#4f4f4f] text-[24px] flex items-center justify-center">
-            Học vượt?
-          </p>
-        </div>
-      </div>
+      {/* Topic 2 - Green - Group40 from Figma (395:2427) */}
+      <Group40 className="absolute left-[277px] top-[796px] w-[660px] h-[700px]" />
 
       {/* Topic 3 - Purple */}
       <TopicTitle 

@@ -6,4 +6,8 @@ export { default as LessonsCheckbox } from './LessonsCheckbox';
 export { default as LessonChecklist } from './LessonChecklist';
 export { default as LessonRow } from './LessonRow';
 export { default as Component32 } from './Component32';
+export { default as Group40 } from './Group40';
+export { default as Component27 } from './Component27';
+export { default as Group33 } from './Group33';
+export { default as Group43 } from './Group43';
 export * from './learning';

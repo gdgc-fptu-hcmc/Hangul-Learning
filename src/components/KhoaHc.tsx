@@ -1,13 +1,13 @@
 import React from 'react';
 
-// Figma image assets (Component 18 from node 383:633)
-const imgSkipForward = "https://www.figma.com/api/mcp/asset/301455d8-260f-4fc0-ae3e-53808f2e2818";
-const imgFrame58 = "https://www.figma.com/api/mcp/asset/12f9815d-a32c-4149-9c8c-255db4d34322";
-const imgFrame59 = "https://www.figma.com/api/mcp/asset/ad7e7fdb-f46a-4fce-98d6-63db20fd218e";
-const imgEllipse14 = "https://www.figma.com/api/mcp/asset/77d0f2ef-af6c-4026-b5fc-16f5e92543f1";
-const imgEllipse39 = "https://www.figma.com/api/mcp/asset/69078be2-0e6d-46cc-944c-242f5d175683";
-const imgEllipse47 = "https://www.figma.com/api/mcp/asset/be161547-ece0-4922-8eb3-810b9893bcdc";
-const imgEllipse48 = "https://www.figma.com/api/mcp/asset/3f78a937-40d2-4347-9149-6459208d5ca8";
+// Local SVG assets from /src/assets
+const imgSkipForward = "/src/assets/89db31808a1e55e5d54200aa9f26badde12035a5.svg";
+const imgFrame58 = "/src/assets/c7e4405d39ce6e19bdd9c02b0caf88b63730f37a.svg";
+const imgFrame59 = "/src/assets/93f9ef8f561252242bed4d808054b890ba8d3f09.svg";
+const imgEllipse14 = "/src/assets/2dba0553c876bfcb2d6494975e2e5d473716307e.svg";
+const imgEllipse39 = "/src/assets/0a233db77c614d64ce2893444add8e0b64455513.svg";
+const imgEllipse47 = "/src/assets/3767912e0f3fa7a3b3c11b3ec6635810bbf0ed89.svg";
+const imgEllipse48 = "/src/assets/a11f0bf7ad4c4591cef586470adf5ce4f3b323ed.svg";
 
 const handleImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   (e.currentTarget as HTMLImageElement).style.display = 'none';
