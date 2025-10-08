@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import NavBar from './NavBar';
+import HeaderNav from './HeaderNav';
 import ProgressSection from './ProgressSection';
 import StreakSection from './StreakSection';
 import LessonsCheckbox from './LessonsCheckbox';
@@ -51,11 +51,13 @@ export default function LearningPage() {
           marginTop: `${verticalOffset}px`,
         }}
       >
-      {/* Navigation Bar */}
-      <NavBar className="absolute h-[60px] left-[50px] rounded-[10px] top-[12px] w-[1340px]" />
-      
-      {/* Breadcrumb */}
-      <div className="absolute content-stretch flex gap-[2px] items-center justify-center left-[50px] top-[91px] w-[268px] h-[25px]" data-node-id="245:281">
+      {/* Main Content Container - Centered with max-width */}
+      <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[1440px] max-w-full h-full">
+        {/* Navigation Bar - Simple navbar only */}
+        <HeaderNav className="absolute left-[50px] right-[50px] top-[20px] h-[60px]" />
+        
+        {/* Breadcrumb */}
+        <div className="absolute content-stretch flex gap-[2px] items-center justify-center left-[50px] top-[100px] w-[268px] h-[25px]" data-node-id="245:281">
         <a className="block cursor-pointer font-bold leading-[0] relative shrink-0 text-[#202020] text-[18px] whitespace-nowrap hover:text-[#464394] transition-colors" data-node-id="257:276">
           <p className="leading-[normal]">Lộ trình học</p>
         </a>
@@ -74,13 +76,13 @@ export default function LearningPage() {
       </div>
 
       {/* Progress Section */}
-      <ProgressSection className="absolute left-[1040px] top-[143px] w-[350px] h-[262px]" />
+      <ProgressSection className="absolute left-[1040px] top-[150px] w-[350px] h-[262px]" />
       
       {/* Streak Section */}
-      <StreakSection className="absolute left-[1040px] top-[425px] w-[350px] h-[100px]" />
+      <StreakSection className="absolute left-[1040px] top-[432px] w-[350px] h-[100px]" />
       
       {/* Lessons Checkboxes */}
-      <div className="absolute content-start flex flex-wrap gap-[10px_12px] items-start left-[1070px] top-[268px] w-[247px] h-[95px]" data-node-id="261:1387">
+      <div className="absolute content-start flex flex-wrap gap-[10px_12px] items-start left-[1070px] top-[275px] w-[247px] h-[95px]" data-node-id="261:1387">
         <LessonsCheckbox className="relative shrink-0 size-[25px]" />
         <LessonsCheckbox className="relative shrink-0 size-[25px]" />
         <LessonsCheckbox property1="Variant3" className="relative shrink-0 size-[25px]" />
@@ -100,18 +102,19 @@ export default function LearningPage() {
       </div>
 
       {/* Topic 1 - Yellow - Component32 from Figma (383:625) */}
-      <Component32 className="absolute left-[277px] top-[125px] w-[660px] h-[632px]" />
+      <Component32 className="absolute left-[277px] top-[135px] w-[660px] h-[632px]" />
 
       {/* Topic 2 - Green - Group40 from Figma (395:2427) */}
-      <Group40 className="absolute left-[277px] top-[796px] w-[660px] h-[700px]" />
+      <Group40 className="absolute left-[277px] top-[806px] w-[660px] h-[700px]" />
 
       {/* Topic 3 - Purple - Group44 from Figma (401:1699) */}
-      <Group44 className="absolute left-[277px] top-[1525px] w-[660px] h-[696px]" />
+      <Group44 className="absolute left-[277px] top-[1535px] w-[660px] h-[696px]" />
 
       {/* Footer */}
-      <div className="absolute bg-white border-[#d9d9d9] border-b-0 border-l-0 border-r-0 border-solid border-t-[3px] box-border content-stretch flex h-[45px] items-center justify-between left-0 px-[51px] py-[7px] top-[2434px] w-[1440px]">
+      <div className="absolute bg-white border-[#d9d9d9] border-b-0 border-l-0 border-r-0 border-solid border-t-[3px] box-border content-stretch flex h-[45px] items-center justify-between left-0 px-[51px] py-[7px] top-[2444px] w-[1440px]">
         <Footer />
       </div>
+      </div> {/* End Main Content Container */}
       </div>
     </div>
   );
