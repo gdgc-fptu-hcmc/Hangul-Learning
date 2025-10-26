@@ -9,26 +9,15 @@ const Footer: React.FC<FooterProps> = ({ className = "" }) => {
     <footer
       className={`w-full bg-white border-t-[3px] border-gray-300 ${className}`}
     >
-      <div className="w-full mx-auto h-[45px] flex items-center justify-between">
+      <div className="md:w-[95vw] mx-auto h-[45px] flex items-center justify-between">
         {/* ===== Left: Logo + Copyright ===== */}
         <div className="flex items-center gap-6">
           {/* Logo */}
-          <div className="relative flex items-center justify-center h-7 w-[82px]">
+          <div className="w-[100px] hover:cursor-pointer">
             <img
-              src="/hangul.svg"
-              alt="Hangul Logo Layer 1"
-              className="absolute inset-0 w-full h-full object-contain"
-              onError={(e) =>
-                ((e.currentTarget as HTMLImageElement).style.display = "none")
-              }
-            />
-            <img
-              src="https://www.figma.com/api/mcp/asset/78a93174-8799-45a8-a800-21f5852acae1"
-              alt="Hangul Logo Layer 2"
-              className="absolute inset-0 w-full h-full object-contain"
-              onError={(e) =>
-                ((e.currentTarget as HTMLImageElement).style.display = "none")
-              }
+              src="/logos/plain-hangul.svg"
+              alt="Logo"
+              className="w-full h-auto"
             />
           </div>
           {/* Copyright */}
@@ -42,16 +31,16 @@ const Footer: React.FC<FooterProps> = ({ className = "" }) => {
           </div>
         </div>
         {/* ===== Right: Links ===== */}
-        <div className="flex items-center gap-12 text-base font-semibold text-gray-700 underline underline-offset-4">
+        <div className="flex items-center gap-12 text-base font-semibold text-gray-700">
           <a
             href="#terms"
-            className="hover:text-blue-600 transition-colors whitespace-nowrap"
+            className="hover:text-gray-500 transition-colors whitespace-nowrap"
           >
             Điều khoản sử dụng
           </a>
           <a
             href="#privacy"
-            className="hover:text-blue-600 transition-colors whitespace-nowrap"
+            className="hover:text-gray-500 transition-colors whitespace-nowrap"
           >
             Chính sách quyền riêng tư
           </a>
