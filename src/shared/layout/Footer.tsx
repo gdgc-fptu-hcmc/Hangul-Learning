@@ -1,4 +1,6 @@
 import React from "react";
+import logo from "@/assets/logos/plain-hangul.svg";
+import ScrollToTop from "../effects/ScrollToTop";
 
 interface FooterProps {
   className?: string;
@@ -13,13 +15,11 @@ const Footer: React.FC<FooterProps> = ({ className = "" }) => {
         {/* ===== Left: Logo + Copyright ===== */}
         <div className="flex items-center gap-6">
           {/* Logo */}
-          <div className="w-[100px] hover:cursor-pointer">
-            <img
-              src="/logos/plain-hangul.svg"
-              alt="Logo"
-              className="w-full h-auto"
-            />
-          </div>
+          <ScrollToTop>
+            <div className="w-[100px] hover:cursor-pointer">
+              <img src={logo} alt="Logo" className="w-full h-auto" />
+            </div>
+          </ScrollToTop>
           {/* Copyright */}
           <div className="flex items-center gap-2 text-gray-700">
             <div className="flex items-center justify-center w-5 h-5 border-2 border-gray-700 rounded-full">
