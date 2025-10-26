@@ -9,6 +9,19 @@
   --font-nunito: "Nunito", sans-serif;
   --dark-pink: #f29095;
   --light-pink: #f9c6c8;
+  --custom-gray: #1f1f1f;
+  --custom-purple: #464394;
+  --darkest-pink: #c45a6e;
+  --custom-red: #b83032;
+  --custom-orange: #e18839;
+  --custom-yellow: #ffcf41;
+  --gradient-color: linear-gradient(
+    90deg,
+    var(--custom-purple) 0%,
+    var(--custom-red) 33%,
+    var(--custom-orange) 66%,
+    var(--custom-yellow) 100%
+  );
 }
 
 body {

@@ -21,7 +21,7 @@ const CoursesPage = () => {
       <NavBar></NavBar>
 
       {/* Container */}
-      <div className="w-[50%] mt-[10vh] mx-auto flex flex-col items-center">
+      <div className="xl:w-[50%] lg:w-[80%] md:w-[90%] w-[95%] mx-auto mt-[10vh]  flex flex-col items-center">
         {/* Title */}
         <div className="group flex flex-col items-center hover:cursor-pointer">
           <h1 className=" font-semibold text-3xl">Bài học theo cấp độ</h1>
