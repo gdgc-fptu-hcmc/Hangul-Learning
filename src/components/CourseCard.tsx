@@ -61,7 +61,7 @@ const CourseCard = ({
         {/* Lower */}
         <Link
           to={href}
-          className="block group w-[170px] rounded-md flex justify-between items-center border-2 border-[var(--dark-pink)] "
+          className="block group w-[170px] rounded-md flex justify-between items-center border-2 border-[var(--dark-pink)]"
         >
           <span className="inline-block flex-1 text-center bg-[var(--dark-pink)] text-white p-2 ">
             Bắt đầu học

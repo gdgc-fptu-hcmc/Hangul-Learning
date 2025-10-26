@@ -6,7 +6,7 @@ import iconPen from "@/assets/icons/pen.svg";
 import iconStar from "@/assets/icons/star.svg";
 import iconGlobe from "@/assets/icons/globe.svg";
 import { MdArrowDropDown } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { href, Link } from "react-router-dom";
 
 const menuItems = [
   { name: "Trang chủ", icon: iconHome, href: "/", hasDropdown: false },
@@ -16,9 +16,9 @@ const menuItems = [
     href: "/courses",
     hasDropdown: true,
     dropDownItems: [
-      { name: "Cấp độ 1: Sơ cấp" },
-      { name: "Cấp độ 2: Trung cấp" },
-      { name: "Cấp độ 3: Cao cấp" },
+      { name: "Cấp độ 1: Sơ cấp", href: "/courses/level-1" },
+      { name: "Cấp độ 2: Trung cấp", href: "/courses/level-2" },
+      { name: "Cấp độ 3: Cao cấp", href: "/courses/level-3" },
     ],
   },
   {
@@ -27,9 +27,9 @@ const menuItems = [
     href: "/basic",
     hasDropdown: true,
     dropDownItems: [
-      { name: "Bảng chữ cái" },
-      { name: "Từ vựng" },
-      { name: "Ngữ pháp" },
+      { name: "Bảng chữ cái", href: "/basic/" },
+      { name: "Từ vựng", href: "/basic/" },
+      { name: "Ngữ pháp", href: "/basic/" },
     ],
   },
   {
@@ -64,7 +64,7 @@ const NavBar = () => {
         {/* Menu */}
         <ul className="flex justify-center items-center gap-8">
           {menuItems.map((item) => (
-            <li key={item.name}>
+            <li key={item.name} className="relative group py-3">
               <Link
                 to={item.href}
                 className="flex justify-center items-center gap-1 hover:cursor-pointer"
@@ -74,13 +74,13 @@ const NavBar = () => {
                 {item.hasDropdown && item?.dropDownItems.length > 0 && (
                   <>
                     <MdArrowDropDown />
-                    <ul className="absolute mt-8 bg-white border border-gray-300 rounded-md shadow-lg opacity-0 top-full group-hover:opacity-100">
+                    <ul className="absolute top-full bg-white border w-max border-gray-300 rounded-md shadow-lg opacity-0 top-full group-hover:opacity-100">
                       {item.dropDownItems!.map((subItem) => (
                         <li
-                          className="px-4 py-2 hover:bg-gray-100"
+                          className="px-5 py-2 hover:bg-gray-100 text-sm font-semibold hover:scale-95 "
                           key={subItem.name}
                         >
-                          {subItem.name}
+                          <Link to={subItem.href}>{subItem.name}</Link>
                         </li>
                       ))}
                     </ul>
