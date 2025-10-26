@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +6,9 @@
 
 /* ====== Global font setup ====== */
 :root {
-  --font-nunito: 'Nunito', sans-serif;
+  --font-nunito: "Nunito", sans-serif;
+  --dark-pink: #f29095;
+  --light-pink: #f9c6c8;
 }
 
 body {

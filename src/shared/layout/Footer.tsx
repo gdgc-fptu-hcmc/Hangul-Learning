@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "@/assets/logos/plain-hangul.svg";
+import logo from "@/assets/logos/colored-hangul.svg";
 import ScrollToTop from "../effects/ScrollToTop";
 
 interface FooterProps {
@@ -9,7 +9,7 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({ className = "" }) => {
   return (
     <footer
-      className={`w-full bg-white border-t-[3px] border-gray-300 ${className}`}
+      className={`w-full bg-white border-t-[1px] border-gray-300 ${className}`}
     >
       <div className="md:w-[95vw] mx-auto h-[45px] flex items-center justify-between">
         {/* ===== Left: Logo + Copyright ===== */}
