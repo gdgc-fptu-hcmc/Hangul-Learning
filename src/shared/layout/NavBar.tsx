@@ -85,14 +85,14 @@ const NavBar = () => {
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center gap-8">
           {menuItems.map((item) => (
-            <li key={item.name} className="relative group">
+            <li key={item.name} className="relative group py-2">
               <Link to={item.href} className="flex items-center gap-1">
                 <img src={item.icon} alt="" className="w-[20px] h-[20px]" />
                 <span className="text-sm font-semibold">{item.name}</span>
                 {item.hasDropdown && (
                   <>
                     <MdArrowDropDown />
-                    <ul className="absolute top-full bg-white border w-max border-gray-300 rounded-md shadow-lg opacity-0 group-hover:opacity-100">
+                    <ul className="absolute top-full -left-1/2  bg-white border w-max border-gray-300 rounded-md shadow-lg opacity-0 group-hover:opacity-100">
                       {item.dropDownItems!.map((subItem) => (
                         <li
                           key={subItem.name}
