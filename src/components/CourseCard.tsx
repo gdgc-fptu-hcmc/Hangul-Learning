@@ -26,15 +26,11 @@ const CourseCard = ({
 }: CourseCardProps) => {
   return (
     <div
-      className={`w-full min-h-[400px] hover:cursor-pointer rounded-md border-gray-300 border-2 flex flex-col md:flex-row-reverse overflow-hidden mt-8 p-5 ${className}`}
+      className={`w-full min-h-[400px] hover:cursor-pointer rounded-md border-gray-300 border-2 flex flex-col md:flex-row-reverse overflow-hidden mt-8 md:p-5 p-1 ${className}`}
     >
       {/* Card Image */}
-      <div className="w-full md:w-1/3 h-48 md:h-auto overflow-hidden">
-        <img
-          src={describedImgUrl}
-          alt=""
-          className="w-full h-full object-cover object-center"
-        />
+      <div className="w-[50%] mx-auto md:w-1/3 h-48 md:h-auto overflow-hidden">
+        <img src={describedImgUrl} alt="" className="w-full h-full" />
       </div>
 
       {/* Card Info */}
@@ -61,7 +57,7 @@ const CourseCard = ({
         {/* Lower */}
         <Link
           to={href}
-          className="block group w-[170px] rounded-md flex justify-between items-center border-2 border-[var(--dark-pink)]"
+          className="block group w-[170px] rounded-md flex justify-between items-center border-2 border-[var(--dark-pink)] mt-5 md:mt-0"
         >
           <span className="inline-block flex-1 text-center bg-[var(--dark-pink)] text-white p-2 ">
             Bắt đầu học

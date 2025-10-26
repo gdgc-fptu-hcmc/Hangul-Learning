@@ -7,6 +7,7 @@ import iconStar from "@/assets/icons/star.svg";
 import iconGlobe from "@/assets/icons/globe.svg";
 import { MdArrowDropDown } from "react-icons/md";
 import { href, Link } from "react-router-dom";
+import ScrollToTop from "../effects/ScrollToTop";
 
 const menuItems = [
   { name: "Trang chủ", icon: iconHome, href: "/", hasDropdown: false },
@@ -58,9 +59,15 @@ const NavBar = () => {
         className={`w-[90vw] py-2 rounded-md flex justify-between items-center`}
       >
         {/* Logo */}
-        <div className="hover:cursor-pointer w-[150px] rounded-md">
-          <img src={logo} alt="Logo" className="w-full h-auto object-contain" />
-        </div>
+        <ScrollToTop>
+          <div className="hover:cursor-pointer w-[150px] rounded-md">
+            <img
+              src={logo}
+              alt="Logo"
+              className="w-full h-auto object-contain"
+            />
+          </div>
+        </ScrollToTop>
         {/* Menu */}
         <ul className="flex justify-center items-center gap-8">
           {menuItems.map((item) => (
@@ -77,7 +84,7 @@ const NavBar = () => {
                     <ul className="absolute top-full bg-white border w-max border-gray-300 rounded-md shadow-lg opacity-0 top-full group-hover:opacity-100">
                       {item.dropDownItems!.map((subItem) => (
                         <li
-                          className="px-5 py-2 hover:bg-gray-100 text-sm font-semibold hover:scale-95 "
+                          className="px-5 py-2 hover:bg-gray-100 text-sm font-semibold hover:scale-95 hover:text-[var(--dark-pink)] "
                           key={subItem.name}
                         >
                           <Link to={subItem.href}>{subItem.name}</Link>
