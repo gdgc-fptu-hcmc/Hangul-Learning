@@ -6,6 +6,7 @@ import Footer from "./shared/layout/Footer";
 function App() {
   return (
     <>
+      <NavBar></NavBar>
       <div className="h-[90vh]"></div>
       <Footer></Footer>
     </>
