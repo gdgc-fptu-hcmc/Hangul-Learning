@@ -1,11 +1,11 @@
-import LearningPage from './components/LearningPage';
-import './App.css';
+import "./App.css";
+import CoursesPage from "@/pages/CoursesPage";
 
 function App() {
   return (
-    <div className="App">
-      <LearningPage />
-    </div>
+    <>
+      <CoursesPage />
+    </>
   );
 }
 
