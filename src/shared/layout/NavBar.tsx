@@ -92,7 +92,7 @@ const NavBar = () => {
                 {item.hasDropdown && (
                   <>
                     <MdArrowDropDown />
-                    <ul className="absolute top-full -left-1/2  bg-white border w-max border-gray-300 rounded-md shadow-lg opacity-0 group-hover:opacity-100">
+                    <ul className="absolute top-full left-1/2 -translate-x-1/2  bg-white border w-max border-gray-300 rounded-md shadow-lg opacity-0 group-hover:opacity-100">
                       {item.dropDownItems!.map((subItem) => (
                         <li
                           key={subItem.name}
