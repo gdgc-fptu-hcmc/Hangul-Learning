@@ -55,7 +55,7 @@ const CourseRoadmap: React.FC = () => {
       {/* Topic section */}
       <TopicSection
         picks={picks}
-        className="w-full mx-auto max-w-[1114px] p-"
+        className="mx-auto w-[92vw] sm:w-[88vw] md:w-[84vw] lg:w-[80vw] xl:max-w-[1114px]"
       />
       <Footer />
     </>
