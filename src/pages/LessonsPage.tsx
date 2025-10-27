@@ -58,7 +58,7 @@ const LessonsPage = () => {
           <div className="flex-1 h-[200vh]">
             <div className="w-[90%] mx-auto">
               <section
-                id="target"
+                id="targets"
                 className="flex md:flex-row items-center gap-5"
               >
                 <img
