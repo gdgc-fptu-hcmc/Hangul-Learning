@@ -1,5 +1,5 @@
 import TopicTitle from "./TopicTitle";
-import { learningTopics, LearningTopic } from "@/data";
+import { learningCourses, LearningCourse } from "@/data";
 
 type Variant = 'yellow' | 'green' | 'purple';
 
@@ -13,39 +13,16 @@ const barToVariant: Record<string, Variant> = {
 interface TopicSectionProps {
   /**
    * 1-based topic selection, e.g. [1,2,3]
-   * Will be converted to zero-based indexes to look up learningTopics.
+   * Will be converted to zero-based indexes to look up learningCourses.
    */
   picks: number[];
   className?: string;
 }
 
 export default function TopicSection({ picks, className = "" }: TopicSectionProps) {
-  const topicsToShow: LearningTopic[] = (picks || [])
-    .map((t) => t - 1) // to zero-based index
-    .filter((idx) => Number.isInteger(idx) && idx >= 0 && idx < learningTopics.length)
-    // turn the indexes into LearningTopic objects
-    .map((idx) => learningTopics[idx]);
-
   return (
     <div className={`flex flex-col ${className}`}>
-      {topicsToShow.map((topic) => {
-        const variant = barToVariant[topic.barColor];
-        return (
-          <>
-            <TopicTitle
-              topicNumber={topic.number}
-              title={topic.title}
-              variant={variant}
-              sticky={false}
-            />
 
-            {/* actual roadmap section */}
-            <div className="mt-6 space-y-4">
-              <p>Placeholder</p>
-            </div>
-          </>
-        );
-      })}
-    </div>
+    </div >
   );
 }

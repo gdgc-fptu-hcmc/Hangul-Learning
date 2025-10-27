@@ -1,7 +1,7 @@
-export { default as NavBar } from "./shared/layout/NavBar";
+export { default as NavBar } from "../shared/layout/NavBar";
 export { default as ProgressSection } from "./ProgressSection";
 export { default as StreakSection } from "./StreakSection";
-export { default as Footer } from "./shared/layout/Footer";
+export { default as Footer } from "../shared/layout/Footer";
 export { default as LessonsCheckbox } from "./LessonsCheckbox";
 export { default as LessonChecklist } from "./LessonChecklist";
 export { default as LessonRow } from "./LessonRow";

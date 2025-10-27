@@ -4,38 +4,23 @@ import ColoredBanner from "@/shared/layout/ColoredBanner";
 import Footer from "@/shared/layout/Footer";
 import NavBar from "@/shared/layout/NavBar";
 import TopicSection from "@/components/TopicSection";
-
-const levelNames: Record<string, string> = {
-  "1": "Cấp độ 1: Sơ cấp",
-  "2": "Cấp độ 2: Trung cấp",
-  "3": "Cấp độ 3: Cao cấp",
-};
+import { learningCourses } from "@/data";
 
 const CourseRoadmap: React.FC = () => {
   const { id } = useParams();
   // extract number from id level-1, level-2, etc.
   const match = id?.toString().match(/(\d+)/);
   const idx = match ? match[1] : null;
-  // Determine level label for breadcrumb
+  const idNumber = Number(idx ?? 1);
+
+  // get level label
   const levelLabel = (() => {
-    if (!id) return "Cấp độ";
-    if (!match) return String(idx);
-    return levelNames[String(idx)] ?? `Cấp độ ${idx}`;
+    return (
+      learningCourses.find((course) => course.id === idNumber)?.level ??
+      "Cấp độ 1: Sơ cấp"
+    );
   })();
-  // Determine picks based on level number
-  const picks = (() => {
-    const n = Number(idx ?? 1);
-    switch (Number.isFinite(n) ? n : 1) {
-      case 1:
-        return [1, 2, 3];
-      case 2:
-        return [4, 5, 6];
-      case 3:
-        return [7, 8, 9];
-      default:
-        return [1, 2, 3];
-    }
-  })();
+
   return (
     <>
       <ColoredBanner />
@@ -53,10 +38,7 @@ const CourseRoadmap: React.FC = () => {
       </div>
 
       {/* Topic section */}
-      <TopicSection
-        picks={picks}
-        className="mx-auto w-[92vw] sm:w-[88vw] md:w-[84vw] lg:w-[80vw] xl:max-w-[1114px]"
-      />
+
       <Footer />
     </>
   );
