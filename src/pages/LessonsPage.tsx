@@ -8,20 +8,28 @@ import targetImg from "@/assets/images/wavy-clouds-pattern.svg";
 import { MdChatBubbleOutline, MdQuiz } from "react-icons/md";
 import { TbTextGrammar, TbVocabulary } from "react-icons/tb";
 import useScrollBy from "@/hooks/useScrollBy";
+import SpeakerBox from "@/components/lessons/SpeakerBox";
+import DialogueBox from "@/components/lessons/DialogueBox";
+import CustomBox from "@/shared/common/CustomBox";
 
 const LessonsPage = () => {
+  // get lesson content
   const courseId = 1;
   const topicId = 1;
   const lessonId = 1;
   const content = getLessonContent(courseId, topicId, lessonId);
+  console.log("Lesson Content:", content);
 
+  // active tab handler
   const sectionIds = ["dialogue", "vocabulary", "grammar", "revise"];
   const activeSection = useScrollBy(sectionIds, 50);
   const [activeTab, setActiveTab] = React.useState(activeSection || "dialogue");
-
   React.useEffect(() => {
     if (activeSection) setActiveTab(activeSection);
   }, [activeSection]);
+
+  // state for change dialogue from vn - to ko and vice versa
+  const [activeLanguage, setActiveLanguage] = React.useState("ko");
 
   return (
     <>
@@ -86,7 +94,44 @@ const LessonsPage = () => {
                   <MdChatBubbleOutline className="inline-block rounded-full p-2 text-[50px] border-2 border-gray-300 text-gray-600" />
                   <span className="text-2xl font-bold">Hội thoại</span>
                 </div>
-                <div className="flex items-center gap-2">
+                {/* Change tabs */}
+                <ul className="flex gap-5 mt-5 font-bold text-lg">
+                  <li>
+                    <button
+                      className={`${
+                        activeLanguage === "ko"
+                          ? "underline decoration-2 decoration-[var(--custom-purple)] underline-offset-8"
+                          : ""
+                      } cursor-pointer `}
+                      onClick={() => setActiveLanguage("ko")}
+                    >
+                      Tiếng Hàn
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className={`${
+                        activeLanguage === "vn"
+                          ? "underline decoration-2 decoration-[var(--custom-purple)] underline-offset-8"
+                          : ""
+                      } cursor-pointer `}
+                      onClick={() => setActiveLanguage("vn")}
+                    >
+                      Tiếng Việt
+                    </button>
+                  </li>
+                </ul>
+                {/* Dialogue Box */}
+                <div className="mt-5">
+                  <DialogueBox
+                    dialogue={
+                      activeLanguage === "ko"
+                        ? content?.koDialogue
+                        : content?.vnDialogue
+                    }
+                  />
+                </div>
+                <div className="flex items-center gap-2 mt-10">
                   <ImPushpin className="inline-block p-1 border-2 border-gray-300 rounded text-3xl text-[var(--custom-red)]" />
                   <span className="text-lg font-bold">Câu chuyện văn hóa:</span>
                 </div>

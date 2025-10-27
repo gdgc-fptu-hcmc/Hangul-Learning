@@ -1,4 +1,6 @@
 import { LearningCourse } from "./types";
+import speakerAAvatarUrl from "@/assets/images/lessons/speaker-A.svg";
+import speakerBAvatarUrl from "@/assets/images/lessons/speaker-B.svg";
 
 export const learningCourses: LearningCourse[] = [
   // Course 1: Cấp độ Sơ cấp
@@ -24,6 +26,58 @@ export const learningCourses: LearningCourse[] = [
             ],
             status: "available",
             highlight: true,
+            vnDialogue: {
+              mainRole: "B",
+              hasSpeakerBox: false,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [{ text: "Xin chào!" }],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    { text: "Chào bạn!" },
+                    { text: "Rất vui được gặp bạn." },
+                  ],
+                },
+              ],
+            },
+            koDialogue: {
+              mainRole: "B",
+              hasSpeakerBox: true,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "안녕하세요!",
+                      audioUrl:
+                        "https://commondatastorage.googleapis.com/codeskulptor-assets/Collision8-Bit.ogg",
+                    },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    {
+                      text: "안녕하세요!",
+                      audioUrl:
+                        "https://commondatastorage.googleapis.com/codeskulptor-assets/Collision8-Bit.ogg",
+                    },
+                    {
+                      text: "만나서 반갑습니다.",
+                      audioUrl:
+                        "https://commondatastorage.googleapis.com/codeskulptor-assets/Collision8-Bit.ogg",
+                    },
+                  ],
+                },
+              ],
+            },
           },
           {
             id: 2,

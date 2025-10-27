@@ -47,6 +47,8 @@ export function getLessonContent(
             if (lesson.id === lessonId) {
               resultData.lessonTitle = lesson.title;
               resultData.lessonTargets = lesson.targets;
+              resultData.vnDialogue = lesson.vnDialogue;
+              resultData.koDialogue = lesson.koDialogue;
               return resultData;
             }
           }
