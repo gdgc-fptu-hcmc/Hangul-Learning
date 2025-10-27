@@ -38,7 +38,7 @@ const CustomBox: React.FC<CustomBoxProps> = ({
 
   return (
     <div
-      className={`overflow-visible relative z-[999] w-full p-2 border-2 bg-white rounded-md min-w-[50px] min-h-[20px] border-gray-300 ${className}`}
+      className={`relative z-[999] w-full border-2 bg-white border-gray-300 ${className}`}
     >
       {children}
       {/* Tail Part */}

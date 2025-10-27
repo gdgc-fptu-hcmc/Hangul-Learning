@@ -78,6 +78,25 @@ export const learningCourses: LearningCourse[] = [
                 },
               ],
             },
+            culturalStory: {
+              title: "Chào hỏi",
+              content: `
+    Ở Hàn Quốc, câu <b>안녕하세요</b> (Annyeonghaseyo) không chỉ là “Xin chào”, 
+    mà còn thể hiện sự tôn trọng và lịch sự.
+    <ul className="list-disc list-inside ml-2">
+      <li>Với bạn bè, bạn chỉ cần nói <b>안녕</b> (Annyeong) thôi là đủ thân mật rồi!</li>
+      <li>Còn khi gặp người quan trọng, hãy dùng <b>안녕하십니까</b> (Annyeonghasimnikka) để thật trang trọng nhé~</li>
+    </ul>
+    <div className="mt-5">Nhớ <b>cúi nhẹ đầu khi chào</b>, đó là cách thể hiện lễ phép rất “chuẩn Hàn” đó.</div>
+  `,
+            },
+            funQuiz: {
+              question: "Khi gặp giáo viên, bạn nên chào như thế nào?",
+              options: ["안녕", "안녕하세요", "안녕하십니까"],
+              correctAnswerIndex: 1,
+              explanation:
+                "Khi gặp giáo viên, bạn nên sử dụng câu chào trang trọng để thể hiện sự tôn trọng.",
+            },
           },
           {
             id: 2,

@@ -49,6 +49,8 @@ export function getLessonContent(
               resultData.lessonTargets = lesson.targets;
               resultData.vnDialogue = lesson.vnDialogue;
               resultData.koDialogue = lesson.koDialogue;
+              resultData.culturalStory = lesson.culturalStory;
+              resultData.funQuiz = lesson.funQuiz;
               return resultData;
             }
           }

@@ -6,6 +6,8 @@ export interface LessonStep {
   highlight?: boolean;
   vnDialogue?: Dialogue; // Vietnamese dialogue box
   koDialogue?: Dialogue; // Korean dialogue box
+  culturalStory?: CulturalStory; // Cultural story section
+  funQuiz?: FunQuiz; // Fun quiz section
 }
 
 export interface LearningTopic {
@@ -38,9 +40,12 @@ export interface LessonContent {
   lessonTargets?: string[] | [];
   vnDialogue?: Dialogue; // Vietnamese dialogue box
   koDialogue?: Dialogue; // Korean dialogue box
+  culturalStory?: CulturalStory; // Cultural story section
+  funQuiz?: FunQuiz; // Fun quiz section
 }
 
-// Các thành phần bài học
+// Các thành phần bài học--------------------------
+// PHẦN HỘI THOẠI
 export interface Dialogue {
   hasSpeakerBox: boolean | false; // box ấn vào để đọc lên line hội thoại
   contents: DialogueContent[];
@@ -49,10 +54,24 @@ export interface Dialogue {
 
 export interface DialogueContent {
   role: string | ""; // giao vien, hoc sinh, ... hoac ko co role hoac la A/B
+  avatarUrl?: string | "";
   lines: DialogueLine[];
 }
 
 export interface DialogueLine {
   text: string | "";
   audioUrl?: string;
+}
+
+// PHẦN CÂU CHUYỆN VĂN HÓA
+export interface CulturalStory {
+  title: string | "";
+  content: string | ""; // HTML content
+}
+
+export interface FunQuiz {
+  question: string | "";
+  options: string[] | [];
+  correctAnswerIndex: number | 0; // count from 0
+  explanation: string | "";
 }

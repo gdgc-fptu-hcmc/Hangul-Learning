@@ -11,6 +11,8 @@ import useScrollBy from "@/hooks/useScrollBy";
 import SpeakerBox from "@/components/lessons/SpeakerBox";
 import DialogueBox from "@/components/lessons/DialogueBox";
 import CustomBox from "@/shared/common/CustomBox";
+import parse from "html-react-parser";
+import FunQuizBox from "@/components/lessons/FunQuizBox";
 
 const LessonsPage = () => {
   // get lesson content
@@ -133,8 +135,19 @@ const LessonsPage = () => {
                 </div>
                 <div className="flex items-center gap-2 mt-10">
                   <ImPushpin className="inline-block p-1 border-2 border-gray-300 rounded text-3xl text-[var(--custom-red)]" />
-                  <span className="text-lg font-bold">Câu chuyện văn hóa:</span>
+                  <span className="text-lg font-bold">
+                    Câu chuyện văn hóa: {`${content?.culturalStory?.title}`}
+                  </span>
                 </div>
+                <div className="mt-5">
+                  {parse(`${content?.culturalStory?.content}`)}
+                </div>
+                {content?.funQuiz && (
+                  <FunQuizBox
+                    quiz={content.funQuiz}
+                    className="mt-10 max-w-[50%] m mx-auto"
+                  />
+                )}
               </section>
               {/* Vocabs */}
               <section id="vocabulary" className="mt-5">
