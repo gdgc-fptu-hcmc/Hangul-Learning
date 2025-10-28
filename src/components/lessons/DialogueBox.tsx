@@ -1,7 +1,7 @@
 import { Dialogue } from "@/data";
 import CustomBox from "@/shared/common/CustomBox";
 import React from "react";
-import SpeakerBox from "./SpeakerBox";
+import SpeakerBox from "../vocab/SpeakerBox";
 
 const DialogueBox: React.FC<{ dialogue: Dialogue }> = ({ dialogue }) => {
   return (

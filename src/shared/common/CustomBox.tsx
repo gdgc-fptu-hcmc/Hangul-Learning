@@ -38,7 +38,9 @@ const CustomBox: React.FC<CustomBoxProps> = ({
 
   return (
     <div
-      className={`relative z-[999] w-full border-2 bg-white border-gray-300 ${className}`}
+      className={`${
+        tailPosition !== "none" ? "relative" : ""
+      } z-[999] w-full border-2 bg-white border-gray-300 ${className}`}
     >
       {children}
       {/* Tail Part */}

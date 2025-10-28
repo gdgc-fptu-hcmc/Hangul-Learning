@@ -1,18 +1,24 @@
 import LessonSideBar from "@/components/lessons/LessonSideBar";
 import React from "react";
-import { GrFormPreviousLink } from "react-icons/gr";
+import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
 import { ImPushpin } from "react-icons/im";
 import { Link } from "react-router-dom";
 import { getLessonContent } from "@/data/utils";
 import targetImg from "@/assets/images/wavy-clouds-pattern.svg";
+import userFour from "@/assets/icons/user-four.svg";
 import { MdChatBubbleOutline, MdQuiz } from "react-icons/md";
 import { TbTextGrammar, TbVocabulary } from "react-icons/tb";
 import useScrollBy from "@/hooks/useScrollBy";
-import SpeakerBox from "@/components/lessons/SpeakerBox";
+import SpeakerBox from "@/components/vocab/SpeakerBox";
 import DialogueBox from "@/components/lessons/DialogueBox";
 import CustomBox from "@/shared/common/CustomBox";
 import parse from "html-react-parser";
 import FunQuizBox from "@/components/lessons/FunQuizBox";
+import VocabDisplay from "@/components/vocab/VocabDisplay";
+import PurpleFlashCard from "@/components/grammar/PurpleFlashCard";
+import PracticeBox from "@/components/lessons/PracticeBox";
+import TuKhoa from "@/components/grammar/TuKhoa";
+import MeoNho from "@/components/grammar/MeoNho";
 
 const LessonsPage = () => {
   // get lesson content
@@ -65,7 +71,7 @@ const LessonsPage = () => {
           />
 
           {/* Lesson Content */}
-          <div className="flex-1 h-[200vh]">
+          <div className="flex-1 mb-[20vh]">
             <div className="w-[90%] mx-auto">
               <section
                 id="targets"
@@ -134,7 +140,10 @@ const LessonsPage = () => {
                   />
                 </div>
                 <div className="flex items-center gap-2 mt-10">
-                  <ImPushpin className="inline-block p-1 border-2 border-gray-300 rounded text-3xl text-[var(--custom-red)]" />
+                  <img
+                    className="inline-block p-1 border-2 border-gray-300 rounded text-3xl text-[var(--custom-red)]"
+                    src={userFour}
+                  />
                   <span className="text-lg font-bold">
                     Câu chuyện văn hóa: {`${content?.culturalStory?.title}`}
                   </span>
@@ -155,6 +164,41 @@ const LessonsPage = () => {
                   <TbVocabulary className="inline-block rounded-full p-2 text-[50px] border-2 border-gray-300 text-gray-600" />
                   <span className="text-2xl font-bold">Danh sách từ vựng</span>
                 </div>
+                <CustomBox className="rounded-lg mt-5 px-20 py-10 flex flex-col gap-3">
+                  {content.vocabs && content.vocabs.length > 0 ? (
+                    content.vocabs.map((vocab) => (
+                      <div key={vocab.text} className="flex gap-10 items-start">
+                        <img
+                          src={vocab.imgUrl}
+                          alt=""
+                          className="inline-block w-[150px] h-[150px] object-cover object-center rounded-md border-2 border-gray-300 "
+                        />
+                        <div className="flex-1">
+                          <VocabDisplay displayType={1} vocab={vocab} />
+
+                          <div className="mt-3 flex items-center gap-2 text-[var(--custom-purple)]">
+                            <SpeakerBox
+                              text={vocab.text}
+                              audioUrl={vocab.audioUrl}
+                              className="w-[30px] h-[30px]"
+                            />{" "}
+                            <span className="text-xl">
+                              {vocab.transcription}
+                            </span>
+                          </div>
+                          <p className="text-xl font-semibold mt-3">
+                            Nghĩa: {vocab.meaning}
+                          </p>
+                          <p className="text-md font-medium mt-3">
+                            {parse(`${vocab.subdescription || ""}`)}
+                          </p>
+                        </div>
+                      </div>
+                    ))
+                  ) : (
+                    <li>Không có từ vựng nào.</li>
+                  )}
+                </CustomBox>
               </section>
               {/* Grammar */}
               <section id="grammar" className="mt-5">
@@ -162,6 +206,11 @@ const LessonsPage = () => {
                   <TbTextGrammar className="inline-block rounded-full p-2 text-[50px] border-2 border-gray-300 text-gray-600" />
                   <span className="text-2xl font-bold">Ngữ pháp</span>
                 </div>
+                <CustomBox className="mt-5 rounded-md min-h-[30vh] p-10">
+                  {/* PHần phải tự viết manually từng phần rồi gắn vào trong data.tsx */}
+
+                  {content?.grammar}
+                </CustomBox>
               </section>
 
               {/* Revise */}
@@ -170,12 +219,21 @@ const LessonsPage = () => {
                   <MdQuiz className="inline-block rounded-full p-2 text-[50px] border-2 border-gray-300 text-[var(--custom-purple)]" />
                   <span className="text-2xl font-bold">Ôn tập</span>
                 </div>
+                <PracticeBox className="mt-5"></PracticeBox>
               </section>
+
+              <Link
+                to={`/`}
+                className="flex items-center mt-5 bg-[var(--custom-green)] w-max rounded-xl gap-3 px-3 py-2 text-white"
+              >
+                Minigame{" "}
+                <GrFormNextLink className="inline-block text-[20px] " />
+              </Link>
             </div>
           </div>
 
           {/* AI Chat Box */}
-          <div className="w-[400px] h-[100px] sticky top-5 border-2 border-gray-300 rounded-md p-5">
+          <div className="w-[30%] h-[100px] sticky top-5 border-2 border-gray-300 rounded-md p-5">
             <h2 className="text-2xl font-bold">AI Chat Box</h2>
           </div>
         </div>

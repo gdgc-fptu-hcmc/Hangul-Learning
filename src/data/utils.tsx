@@ -1,6 +1,6 @@
-import { LessonContent, LessonStep } from "./types";
-import { getLessonStatusStyles } from "./lessonStatus";
-import { learningCourses } from "./data";
+import { LessonContent, LessonStep } from "./types.js";
+import { getLessonStatusStyles } from "./lessonStatus.js";
+import { learningCourses, vocabList } from "./data.js";
 
 export function getLessonStatusLabel(status: LessonStep["status"]) {
   switch (status) {
@@ -51,6 +51,14 @@ export function getLessonContent(
               resultData.koDialogue = lesson.koDialogue;
               resultData.culturalStory = lesson.culturalStory;
               resultData.funQuiz = lesson.funQuiz;
+              resultData.grammar = lesson.grammar;
+              for (const vocabId of lesson.vocabIds || []) {
+                const vocabData = vocabList[vocabId];
+                if (vocabData) {
+                  resultData.vocabs = resultData.vocabs || [];
+                  resultData.vocabs.push(vocabData);
+                }
+              }
               return resultData;
             }
           }

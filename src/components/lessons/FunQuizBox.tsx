@@ -59,7 +59,7 @@ const FunQuizBox = ({ quiz, className }: FunQuizBoxProps) => {
         {/* explanation */}
         {correctAnswer !== null && (
           <p className="p-3 font-semibold text-sm text-[var(--custom-purple)]">
-            {correctAnswer ? quiz.explanation : "Hãy thử lại!"}
+            {correctAnswer ? "Chính xác! " + quiz.explanation : "Hãy thử lại!"}
           </p>
         )}
       </div>
