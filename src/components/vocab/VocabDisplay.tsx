@@ -40,10 +40,10 @@ const VocabDisplay: React.FC<VocabDisplayProps> = ({
       {vocab.parts && vocab.parts.length > 0 && (
         <CustomBox
           tailPosition="bottom-right"
-          tailSize={30}
+          tailSize={20}
           tailRounded="md"
           className="rounded-md p-2 bg-white shadow-md border border-gray-200 
-          !absolute bottom-full left-0 -translate-y-[25px] w-max opacity-0 group-hover:opacity-100 duration-200 "
+          !absolute bottom-full left-0 -translate-y-[15px] w-max opacity-0 hidden group-hover:block group-hover:opacity-100 duration-200 "
         >
           <p className="font-bold text-sm mb-1">Giải thích:</p>
           <ul className="space-y-1">

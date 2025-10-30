@@ -19,6 +19,7 @@ import PurpleFlashCard from "@/components/grammar/PurpleFlashCard";
 import PracticeBox from "@/components/lessons/PracticeBox";
 import TuKhoa from "@/components/grammar/TuKhoa";
 import MeoNho from "@/components/grammar/MeoNho";
+import ChatBox from "@/components/chat/ChatBox";
 
 const LessonsPage = () => {
   // get lesson content
@@ -41,15 +42,15 @@ const LessonsPage = () => {
 
   return (
     <>
-      <div className="md:w-[90%] w-[95%] mx-auto mt-[5vh]">
-        <Link
-          to={`/topics/${topicId}`}
-          className="group  flex justify-between items-center gap-4 w-max font-bold text-[var(--custom-purple)]"
-        >
-          <GrFormPreviousLink className="inline-block group-hover:translate-x-[-4px] transition-transform text-2xl " />
-          <span>Quay lại roadmap</span>
-        </Link>
-        <header className="mt-10">
+      <div className="w-[95%] mx-auto mt-[5vh]">
+        <header className="">
+          <Link
+            to={`/topics/${topicId}`}
+            className="group mt-2 ml-auto flex justify-between items-center gap-4 w-max font-bold text-[var(--custom-purple)]"
+          >
+            <GrFormPreviousLink className="inline-block group-hover:translate-x-[-4px] transition-transform text-2xl " />
+            <span>Quay lại</span>
+          </Link>
           <div className="rounded-md w-max p-1 ">
             <p className="text-gray-500 text-sm mb-2 font-semibold">
               Chủ đề {content?.topicId}: {content?.topicTitle}
@@ -60,19 +61,21 @@ const LessonsPage = () => {
           </div>
         </header>
         {/* Below Parts */}
-        <div className="flex flex-row gap-10 no-wrap items-start mt-10">
+        <div className="flex flex-row gap-5 lg:gap-5 items-start mt-10">
           {/* Side Bar */}
           <LessonSideBar
+            courseId={content?.courseId}
+            topicId={content?.topicId}
             lessonId={content?.lessonId}
             lessonName={content?.lessonTitle}
             activeTab={activeTab}
             onTabChange={setActiveTab}
-            className="w-[300px] sticky top-5"
+            className="w-[250px] lg:sticky h-max lg:top-5 z-[1000] bg-white fixed left-2 top-2 "
           />
 
           {/* Lesson Content */}
-          <div className="flex-1 mb-[20vh]">
-            <div className="w-[90%] mx-auto">
+          <div className="flex-1 mb-[10vh]">
+            <div className="mx-auto">
               <section
                 id="targets"
                 className="flex md:flex-row items-center gap-5"
@@ -222,20 +225,28 @@ const LessonsPage = () => {
                 <PracticeBox className="mt-5"></PracticeBox>
               </section>
 
-              <Link
-                to={`/`}
-                className="flex items-center mt-5 bg-[var(--custom-green)] w-max rounded-xl gap-3 px-3 py-2 text-white"
-              >
-                Minigame{" "}
-                <GrFormNextLink className="inline-block text-[20px] " />
-              </Link>
+              <div className="flex mt-[10vh] justify-between items-center w-full">
+                <Link
+                  to={`/topics/${topicId}`}
+                  className="group flex justify-between items-center gap-4 w-max font-bold text-[var(--custom-purple)]"
+                >
+                  <GrFormPreviousLink className="inline-block group-hover:translate-x-[-4px] transition-transform text-2xl " />
+                  <span>Quay lại roadmap</span>
+                </Link>
+
+                <Link
+                  to={`/`}
+                  className="flex group items-center bg-[var(--custom-green)] w-max rounded-xl gap-3 px-3 py-2 text-white"
+                >
+                  Minigame{" "}
+                  <GrFormNextLink className="inline-block text-[20px] group-hover:translate-x-[4px] transition-transform" />
+                </Link>
+              </div>
             </div>
           </div>
 
           {/* AI Chat Box */}
-          <div className="w-[30%] h-[100px] sticky top-5 border-2 border-gray-300 rounded-md p-5">
-            <h2 className="text-2xl font-bold">AI Chat Box</h2>
-          </div>
+          <ChatBox className="w-[30%] h-[calc(100vh-200px)] absolute lg:sticky top-5"></ChatBox>
         </div>
       </div>
     </>
