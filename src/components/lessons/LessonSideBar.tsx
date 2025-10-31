@@ -1,7 +1,9 @@
 import ScrollToSection from "@/shared/effects/ScrollToSection";
 import React from "react";
+import { GrFormPreviousLink } from "react-icons/gr";
 import { MdChatBubbleOutline, MdClose, MdMenu, MdQuiz } from "react-icons/md";
 import { TbTextGrammar, TbVocabulary } from "react-icons/tb";
+import { Link } from "react-router-dom";
 
 const tabTypes = [
   { type: "dialogue", label: "Hội thoại", icon: <MdChatBubbleOutline /> },
@@ -11,6 +13,8 @@ const tabTypes = [
 ];
 
 interface LessonSideBarProps {
+  courseId: number | 0;
+  topicId: number | 0;
   lessonId: number | 0;
   lessonName: string | "Không có bài học";
   className?: string;
@@ -20,18 +24,20 @@ interface LessonSideBarProps {
 
 const LessonSideBar: React.FC<LessonSideBarProps> = ({
   className,
+  courseId,
+  topicId,
   lessonId,
   lessonName,
   activeTab = "dialogue",
   onTabChange,
 }) => {
-  const [isOpen, setIsOpen] = React.useState(true);
+  const [isOpen, setIsOpen] = React.useState(false);
 
   return (
     <div
       className={`${
         isOpen ? "max-w-full" : "max-w-[50px]"
-      } p-3 shadow-xl rounded-md border-2 border-gray-300 transition-all duration-300 ${className}`}
+      } p-3 shadow-xl rounded-md border-2 border-gray-300 transition-all duration-300 ${className} `}
     >
       {/* Hamburger and close icon */}
       <div
@@ -96,6 +102,13 @@ const LessonSideBar: React.FC<LessonSideBarProps> = ({
           {/* Vertical line */}
           <div className="absolute translate-x-[21px] top-0 h-full w-[2px] bg-gray-300 -z-10 transition-all duration-300"></div>
         </ul>
+        <Link
+          to={`/topics/${topicId}`}
+          className="group mt-10 ml-auto flex justify-between items-center gap-4 w-max font-bold text-[var(--custom-purple)]"
+        >
+          <GrFormPreviousLink className="inline-block group-hover:translate-x-[-4px] transition-transform text-2xl " />
+          <span>Quay lại</span>
+        </Link>
       </div>
     </div>
   );
