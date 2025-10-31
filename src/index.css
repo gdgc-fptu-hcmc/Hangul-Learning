@@ -13,8 +13,9 @@
   --custom-purple: #464394;
   --darkest-pink: #c45a6e;
   --custom-red: #b83032;
-  --custom-orange: #e18839;
+  --custom-orange: #ffaa00;
   --custom-yellow: #ffcf41;
+  --custom-green: #6ba823;
   --gradient-color: linear-gradient(
     90deg,
     var(--custom-purple) 0%,
