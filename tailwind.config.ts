@@ -1,56 +1,94 @@
 import type { Config } from "tailwindcss";
 
-export default <Partial<Config>>{
-  content: ["./index.html", "./src/**/*.{ts,tsx}"],
+export default {
+  darkMode: ["class"],
+  content: ["./client/**/*.{ts,tsx}"],
+  prefix: "",
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
-      colors: {
-        primaryRed: "#bb3030",
-        primaryBlue: "#464394",
-        accentYellow: "#ffcf41",
-        accentYellowLight: "#ffebb1",
-        accentOrange: "#ffaa00",
-        accentGreenLight: "#e3f2d2",
-        accentGreenBorder: "#c5e99a",
-        accentPurpleLight: "#eeedff",
-        accentPurpleBorder: "#d6d4ff",
-        yellowText: "#755700",
-        green: "#6ba823",
-        neutral: {
-          50: "#ffffff",
-          100: "#f5f5f5",
-          200: "#e5e5e5",
-          300: "#d9d9d9",
-          400: "#bdbdbd",
-          500: "#9e9e9e",
-          600: "#757575",
-          700: "#4f4f4f",
-          800: "#202020",
-          900: "#0d0d0d",
-        },
-      },
-      container: {
-        center: true,
-        padding: {
-          DEFAULT: "1rem",
-          md: "1.5rem",
-          lg: "2rem",
-          xl: "3rem",
-        },
-      },
       fontFamily: {
-        sans: [
-          "Nunito",
-          "Inter",
-          "ui-sans-serif",
-          "system-ui",
-          "Segoe UI",
-          "Roboto",
-          "Helvetica Neue",
-          "Arial",
-        ],
+        sans: ['Nunito', 'Inter', 'system-ui', 'sans-serif'],
+      },
+      colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        sidebar: {
+          DEFAULT: "hsl(var(--sidebar-background))",
+          foreground: "hsl(var(--sidebar-foreground))",
+          primary: "hsl(var(--sidebar-primary))",
+          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
+          accent: "hsl(var(--sidebar-accent))",
+          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
+          border: "hsl(var(--sidebar-border))",
+          ring: "hsl(var(--sidebar-ring))",
+        },
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: {
+            height: "0",
+          },
+          to: {
+            height: "var(--radix-accordion-content-height)",
+          },
+        },
+        "accordion-up": {
+          from: {
+            height: "var(--radix-accordion-content-height)",
+          },
+          to: {
+            height: "0",
+          },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
-  plugins: [],
-};
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config;
