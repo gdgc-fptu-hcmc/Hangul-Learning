@@ -8,7 +8,7 @@ import { MdOutlineZoomInMap, MdOutlineZoomOutMap } from "react-icons/md";
 import { GrFormNextLink } from "react-icons/gr";
 import { IoMdAdd } from "react-icons/io";
 import { functions } from "@/lib/firebase";
-import { httpsCallable } from "firebase/functions";
+import { connectFunctionsEmulator, httpsCallable } from "firebase/functions";
 
 interface ChatBoxProps {
   className?: string;
@@ -41,6 +41,10 @@ const MAX_RECOMMENDED_QUESTIONS_SHOWN = 3;
 const MAX_LINES = 5;
 
 const ChatBox = ({ className }: ChatBoxProps) => {
+  // loading state
+  const [isLoading, setIsLoading] = useState(false);
+
+  // parts for zoomed out
   const [isZoomedOut, setIsZoomedOut] = useState(true);
   const [questionsFull, setQuestionsFull] = useState(false);
   const [contents, setContents] = useState<Message[]>(() => {
@@ -56,11 +60,11 @@ const ChatBox = ({ className }: ChatBoxProps) => {
 
   useEffect(() => {
     localStorage.setItem("chatHistory", JSON.stringify(contents));
+    handleScrollToBottom();
   }, [contents]);
 
   const handleAddMessage = (newContent: Message) => {
     setContents((prev) => [...prev, newContent]);
-    handleScrollToBottom();
   };
 
   const handleClearChat = () => {
@@ -93,32 +97,67 @@ const ChatBox = ({ className }: ChatBoxProps) => {
     }
   };
 
-  const callApi = async () => {
-    const userMessage: Message = {
-      role: "user",
-      parts: [{ text: textAreaRef.current?.value || "" }],
-    };
+  const callApi = async (userContent: Message) => {
+    connectFunctionsEmulator(functions, "localhost", 5001); // uncomment this line to use emulator
     const getAiResponse = httpsCallable(functions, "getAiResponse");
-    handleAddMessage(userMessage);
-    textAreaRef.current!.value = "";
     try {
+      setIsLoading(true);
       const result = await getAiResponse({
         chatHistory: contents,
-        newContent: userMessage,
+        newContent: userContent,
       });
-      handleAddMessage(result.data);
+      return result.data;
     } catch (err) {
       console.error(err);
+      return {
+        role: "model",
+        parts: [{ text: "Tôi đang nghỉ ngơi, hãy thử lại sau nhé!" }],
+      };
     } finally {
-      handleInput();
+      setIsLoading(false);
     }
   };
 
-  const handleSubmit = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+  const handleSubmit = async (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
-      if (textAreaRef.current?.value.trim()) callApi();
+      if (textAreaRef.current?.value.trim()) {
+        const userContent = {
+          role: "user",
+          parts: [{ text: textAreaRef.current.value }],
+        };
+        handleAddMessage(userContent);
+        textAreaRef.current.value = "";
+        handleInput();
+        const resContent = await callApi(userContent);
+        handleAddMessage(resContent);
+      }
     }
+  };
+
+  const handleClickSubmit = async () => {
+    if (textAreaRef.current?.value.trim()) {
+      const userContent = {
+        role: "user",
+        parts: [{ text: textAreaRef.current.value }],
+      };
+      handleAddMessage(userContent);
+      textAreaRef.current.value = "";
+      handleInput();
+
+      const resContent = await callApi(userContent);
+      handleAddMessage(resContent);
+    }
+  };
+
+  const handleClickRecommended = async (question: string) => {
+    const recommendedContent: Message = {
+      role: "user",
+      parts: [{ text: question }],
+    };
+    handleAddMessage(recommendedContent);
+    const resContent = await callApi(recommendedContent);
+    handleAddMessage(resContent);
   };
 
   useEffect(() => {
@@ -127,13 +166,7 @@ const ChatBox = ({ className }: ChatBoxProps) => {
     const computedStyle = window.getComputedStyle(textarea);
     lineHeightRef.current = parseInt(computedStyle.lineHeight || "24", 10);
     handleInput();
-    handleScrollToBottom();
   }, []);
-
-  const handleClickRecommended = (question: string) => {
-    if (textAreaRef.current) textAreaRef.current.value = question;
-    handleInput();
-  };
 
   return (
     <div
@@ -260,6 +293,13 @@ const ChatBox = ({ className }: ChatBoxProps) => {
 
             {/* InputBox */}
             <div className="absolute w-[80%] -bottom-5 left-1/2 -translate-x-1/2 flex justify-center">
+              {isLoading && (
+                <div className="absolute bottom-full left-1/2 -translate-x-1/2 flex space-x-1 p-3">
+                  <span className="w-2 h-2 bg-[var(--darkest-pink)] rounded-full animate-bounce"></span>
+                  <span className="w-2 h-2 bg-[var(--dark-pink)] rounded-full animate-bounce [animation-delay:-0.2s]"></span>
+                  <span className="w-2 h-2 bg-[var(--light-pink)] rounded-full animate-bounce [animation-delay:-0.4s]"></span>
+                </div>
+              )}
               <motion.div
                 layout
                 transition={{ duration: 0.2 }}
@@ -282,7 +322,7 @@ const ChatBox = ({ className }: ChatBoxProps) => {
                   transition={{ duration: 0.2 }}
                 />
                 <ClickScaleDebounce
-                  onClick={callApi}
+                  onClick={handleClickSubmit}
                   className="ml-auto rounded-full bg-[var(--dark-pink)] p-2"
                 >
                   <FaArrowUp
