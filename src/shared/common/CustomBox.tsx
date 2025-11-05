@@ -40,7 +40,7 @@ const CustomBox: React.FC<CustomBoxProps> = ({
     <div
       className={`${
         tailPosition !== "none" ? "relative" : ""
-      } z-[999] w-full border-2 bg-white border-gray-300 ${className}`}
+      } z-0 w-full border-2 bg-white border-gray-300 ${className}`}
     >
       {children}
       {/* Tail Part */}

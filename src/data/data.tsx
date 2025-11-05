@@ -1,4 +1,4 @@
-import { LearningCourse, Vocab } from "./types.tsx";
+import { LearningCourse, MiniGame, Vocab } from "./types.tsx";
 import speakerAAvatarUrl from "@/assets/images/lessons/speaker-A.svg";
 import speakerBAvatarUrl from "@/assets/images/lessons/speaker-B.svg";
 import MeoNho from "@/components/grammar/MeoNho";
@@ -59,7 +59,7 @@ export const learningCourses: LearningCourse[] = [
                     {
                       text: "안녕하세요!",
                       audioUrl:
-                        "https://commondatastorage.googleapis.com/codeskulptor-assets/Collision8-Bit.ogg",
+                        "https://firebasestorage.googleapis.com/v0/b/hangul-chat-ai-be.firebasestorage.app/o/%EB%A7%8C%EB%82%98%EC%84%9C%20%EB%B0%98%EA%B0%91%EC%8A%B5%EB%8B%88%EB%8B%A4.mp3?alt=media&token=b96b625e-a715-46cd-82c3-2aa492b3a700",
                     },
                   ],
                 },
@@ -359,6 +359,9 @@ export const vocabList: Record<number, Vocab> = {
     ],
   },
 };
+
+// THƯ VIỆN MINI GAME:--------------------------------------
+export const miniGames: MiniGame[] = [{}];
 
 // THƯ VIỆN MÀU:--------------------------------------
 /**

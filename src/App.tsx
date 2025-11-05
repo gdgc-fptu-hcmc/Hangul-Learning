@@ -1,11 +1,22 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { routes } from "./routes";
 import "./App.css";
-import CoursesPage from "@/pages/CoursesPage";
-import LessonsPage from "./pages/LessonsPage";
+
+const renderRoutes = (routes) => {
+  console.log("Rendering routes:", routes);
+  return routes.map((r) => {
+    return (
+      <Route key={r.path} path={r.path} element={r.element}>
+        {r.children && renderRoutes(r.children)}
+      </Route>
+    );
+  });
+};
 
 function App() {
   return (
     <>
-      <LessonsPage />
+      <Routes>{renderRoutes(routes)}</Routes>
     </>
   );
 }

@@ -4,7 +4,7 @@ interface ScrollToSectionProps {
   targetId: string; // id of the element to scroll to
   behavior?: ScrollBehavior; // "smooth" or "auto"
   block?: ScrollLogicalPosition; // "start" | "center" | "end" | "nearest"
-  offset?: number; // pixel offset from top
+  offset?: number; // pixel offset from top 
   children: React.ReactNode;
   className?: string;
   onClick?: () => void;

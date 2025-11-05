@@ -13,8 +13,6 @@ const VocabDisplay: React.FC<VocabDisplayProps> = ({
   vocab,
   className = "",
 }) => {
-  console.log("vocab parts:", vocab.parts);
-
   return (
     <div className={`group relative font-bold text-3xl w-max ${className}`}>
       {/* display colored parts */}
