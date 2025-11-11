@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFunctions } from "firebase/functions";
+import { connectFunctionsEmulator, getFunctions } from "firebase/functions";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD4hykr4DaB3OzfxxJ4Y32qIKyfw5fihR4",

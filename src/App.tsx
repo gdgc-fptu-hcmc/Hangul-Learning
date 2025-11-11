@@ -1,17 +1,22 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { routes } from "./routes";
 import "./App.css";
-import CoursesPage from "@/pages/CoursesPage";
-import CourseRoadmap from "@/pages/CourseRoadmap";
-import { Routes, Route } from "react-router-dom";
+
+const renderRoutes = (routes) => {
+  console.log("Rendering routes:", routes);
+  return routes.map((r) => {
+    return (
+      <Route key={r.path} path={r.path} element={r.element}>
+        {r.children && renderRoutes(r.children)}
+      </Route>
+    );
+  });
+};
 
 function App() {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<CoursesPage />} />
-        <Route path="/courses" element={<CoursesPage />} />
-        <Route path="/courses/:id" element={<CourseRoadmap />} />
-        <Route path="*" element={<CoursesPage />} />
-      </Routes>
+      <Routes>{renderRoutes(routes)}</Routes>
     </>
   );
 }

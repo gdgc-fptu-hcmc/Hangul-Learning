@@ -2,7 +2,7 @@ import LessonSideBar from "@/components/lessons/LessonSideBar";
 import React from "react";
 import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
 import { ImPushpin } from "react-icons/im";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getLessonContent } from "@/data/utils";
 import targetImg from "@/assets/images/wavy-clouds-pattern.svg";
 import userFour from "@/assets/icons/user-four.svg";
@@ -23,10 +23,16 @@ import ChatBox from "@/components/chat/ChatBox";
 
 const LessonsPage = () => {
   // get lesson content
-  const courseId = 1;
-  const topicId = 1;
-  const lessonId = 1;
-  const content = getLessonContent(courseId, topicId, lessonId);
+  const { courseId, topicId, lessonId } = useParams<{
+    courseId: string;
+    topicId: string;
+    lessonId: string;
+  }>();
+  const content = getLessonContent(
+    Number(courseId),
+    Number(topicId),
+    Number(lessonId)
+  );
   console.log("Lesson Content:", content);
 
   // active tab handler
@@ -45,7 +51,7 @@ const LessonsPage = () => {
       <div className="w-[95%] mx-auto mt-[5vh]">
         <header className="">
           <Link
-            to={`/topics/${topicId}`}
+            to={`/courses/${courseId}`}
             className="group mt-2 ml-auto flex justify-between items-center gap-4 w-max font-bold text-[var(--custom-purple)]"
           >
             <GrFormPreviousLink className="inline-block group-hover:translate-x-[-4px] transition-transform text-2xl " />
@@ -227,7 +233,7 @@ const LessonsPage = () => {
 
               <div className="flex mt-[10vh] justify-between items-center w-full">
                 <Link
-                  to={`/topics/${topicId}`}
+                  to={`/courses/${courseId}`}
                   className="group flex justify-between items-center gap-4 w-max font-bold text-[var(--custom-purple)]"
                 >
                   <GrFormPreviousLink className="inline-block group-hover:translate-x-[-4px] transition-transform text-2xl " />
