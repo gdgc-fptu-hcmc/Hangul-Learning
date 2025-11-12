@@ -22,66 +22,14 @@ const PracticeBox: React.FC<PracticeBox> = ({ questions }) => {
   >({});
   const [showAnswers, setShowAnswers] = useState<boolean>(false);
 
-  // normalize pasted text: NFKC, collapse spaces, trim, limit length
-  const normalizeText = (s: string) =>
-    s.normalize?.("NFKC")
-      ? s
-          .normalize("NFKC")
-          .replace(/\s+/g, " ")
-          .trim()
-          .slice(0, MAX_PASTE_LENGTH)
-      : s.replace(/\s+/g, " ").trim().slice(0, MAX_PASTE_LENGTH);
-
-  /**
-   * onAnswerChange
-   * - qIndex: question index
-   * - value: string | number
-   * - blankIndex: optional index for fill-in-blank (when there are multiple blanks)
-   *
-   * Behavior:
-   * - if blankIndex provided -> ensure answers[qIndex] is an array and set arr[blankIndex] = value
-   * - else -> set answers[qIndex] = value (string or number)
-   */
-  const onAnswerChange = (
-    qIndex: number,
-    value: string | number,
-    blankIndex?: number
-  ) =>
+  const onAnswerChange = (qIndex: number, value: string | number) =>
     setAnswers((prev) => {
-      const cur = prev[qIndex];
-      if (typeof blankIndex === "number") {
-        // ensure array of at least blankIndex+1 length
-        const arr: Array<string | number> = Array.isArray(cur) ? [...cur] : [];
-        // fill missing slots with ""
-        for (let i = 0; i <= blankIndex; i++) {
-          if (typeof arr[i] === "undefined") arr[i] = "";
-        }
-        arr[blankIndex] = value;
-        return { ...prev, [qIndex]: arr };
-      } else {
-        return { ...prev, [qIndex]: value };
-      }
+      return { ...prev, [qIndex]: value };
     });
 
   const handleTryAgain = () => {
     setAnswers({});
     setShowAnswers(false);
-  };
-
-  // paste handler for inputs
-  const handlePaste = (
-    e: ClipboardEvent<HTMLInputElement>,
-    qIndex: number,
-    blankIndex?: number
-  ) => {
-    e.preventDefault();
-    const raw = e.clipboardData.getData("text");
-    const cleaned = normalizeText(raw);
-    if (typeof blankIndex === "number") {
-      onAnswerChange(qIndex, cleaned, blankIndex);
-    } else {
-      onAnswerChange(qIndex, cleaned);
-    }
   };
 
   /* ---------- scoring logic ---------- */
@@ -164,7 +112,6 @@ const PracticeBox: React.FC<PracticeBox> = ({ questions }) => {
 
   /* ---------- helpers for dynamic width inputs ---------- */
 
-  // compute width in ch units: based on correct length and current user input length
   const computeWidthCh = (
     correctVal: string | Array<string> | undefined,
     userVal: string
@@ -178,7 +125,7 @@ const PracticeBox: React.FC<PracticeBox> = ({ questions }) => {
             .reduce((a, b) => Math.max(a, (b as string).length), 0)
         : 0;
     const userLen = userVal.length;
-    const base = Math.max(correctLen, userLen, 3); // at least 3ch
+    const base = Math.max(correctLen, userLen, 10); // at least 5ch
     const clamped = Math.min(40, base + 1); // cap width to 40ch
     return clamped;
   };
@@ -322,162 +269,114 @@ const PracticeBox: React.FC<PracticeBox> = ({ questions }) => {
     index: number
   ) => {
     const parts = q.question.split(PLACEHOLDER_BLANK);
+    // Expect exactly one placeholder: parts.length === 2
     const correct = (q as FillInBlankPractice).correctAnswer;
 
-    const getUserForBlank = (blankIdx: number) => {
+    const getUser = () => {
       const cur = answers[index];
-      // If stored as array, return that index
-      if (Array.isArray(cur)) return String(cur[blankIdx] ?? "");
-      // If single string and only one placeholder, return it
-      if (typeof cur === "string") {
-        if (parts.length === 1) return cur;
-        // multiple placeholders but answers stored as string -> fallback empty
-        return "";
-      }
+      if (Array.isArray(cur)) return String(cur[0] ?? "");
+      if (typeof cur === "string") return cur;
       return "";
     };
 
-    const isBlankCorrect = (blankIdx: number) => {
+    const isCorrectFlag = () => {
       if (!showAnswers) return undefined;
-      const user = getUserForBlank(blankIdx).trim().toLowerCase();
-
-      if (Array.isArray(correct)) {
-        const expected = String(correct[blankIdx] ?? "")
-          .trim()
-          .toLowerCase();
-        if (user === "") return false;
-        return user === expected;
-      } else {
-        if (parts.length === 1) {
-          const expected = String(correct ?? "")
-            .trim()
-            .toLowerCase();
-          if (user === "") return false;
-          return user === expected;
-        }
-        return undefined;
-      }
+      const user = getUser().trim().toLowerCase();
+      const expected = String(correct ?? "")
+        .trim()
+        .toLowerCase();
+      if (user === "") return false;
+      return user === expected;
     };
 
-    const inputStyleFor = (flag: boolean | undefined) => {
-      if (flag === true) {
-        return {
-          className:
-            "rounded px-2 py-1 mx-1 align-middle bg-white transition-colors duration-150 border-2",
-          style: {
-            borderColor: "var(--custom-purple)",
-            color: "var(--custom-purple)",
-          },
-        };
-      }
-      if (flag === false) {
-        return {
-          className:
-            "rounded px-2 py-1 mx-1 align-middle bg-white transition-colors duration-150 border-2",
-          style: {
-            borderColor: "var(--custom-red)",
-            color: "var(--custom-red)",
-          },
-        };
-      }
-      return {
-        className:
-          "rounded px-2 py-1 mx-1 align-middle bg-white transition-colors duration-150 border border-gray-300",
-        style: {},
-      };
-    };
-
-    // single placeholder fallback
-    if (parts.length === 1) {
-      const user = getUserForBlank(0);
-      const w = computeWidthCh(correct as string | undefined, user);
-      const correctFlag = isBlankCorrect(0);
-      const { className, style } = inputStyleFor(correctFlag);
+    // fallback: if parts not exactly 2, just show the raw question (safer)
+    if (parts.length !== 2) {
+      const user = getUser();
+      const w = computeWidthCh(
+        Array.isArray(correct) ? (correct[0] as any) : (correct as any),
+        user
+      );
+      const correctFlag = isCorrectFlag();
 
       return (
         <div className="mb-4">
           <p className="font-semibold">{`${index + 1}. ${q.question}`}</p>
+
           <input
             name={`fib-${index}`}
             value={user}
             onChange={(e) => onAnswerChange(index, e.target.value)}
-            onPaste={(e) => handlePaste(e, index)}
+            onPaste={(e) => handlePaste?.(e as any, index)}
             type="text"
             readOnly={showAnswers}
             aria-disabled={showAnswers}
-            {...{ className }}
+            className="rounded px-2 py-1 mx-1 align-middle bg-white transition-colors duration-150 border border-gray-300"
             style={
               {
                 width: `${w}ch`,
-                ...style,
+                border:
+                  showAnswers && correctFlag !== undefined
+                    ? correctFlag
+                      ? "2px solid var(--custom-purple)"
+                      : "2px solid var(--custom-red)"
+                    : undefined,
+                color:
+                  showAnswers && correctFlag !== undefined
+                    ? correctFlag
+                      ? "var(--custom-purple)"
+                      : "var(--custom-red)"
+                    : undefined,
                 opacity: 1,
               } as React.CSSProperties
             }
             placeholder="..."
           />
-
-          {showAnswers && (
-            <div className="mt-2 pl-2 text-sm">
-              <div>
-                <strong>Đáp án: </strong>
-                <span className="text-[var(--custom-purple)] font-semibold">
-                  {Array.isArray(correct)
-                    ? correct.join(" / ")
-                    : String(correct ?? "")}
-                </span>
-              </div>
-              {q.explanation && (
-                <div className="mt-1 text-gray-700">
-                  <strong>Giải thích: </strong>
-                  <span>{q.explanation}</span>
-                </div>
-              )}
-            </div>
-          )}
         </div>
       );
     }
 
-    // multiple placeholders
+    // Proper single-placeholder rendering: part0 + input + part1
+    const user = getUser();
+    const w = computeWidthCh(
+      Array.isArray(correct) ? (correct[0] as any) : (correct as any),
+      user
+    );
+    const correctFlag = isCorrectFlag();
+
     return (
       <div className="mb-4">
         <p className="font-semibold">
           {`${index + 1}. `}
-          {parts.map((part, i) => {
-            const userVal = getUserForBlank(i);
-            const correctForWidth = Array.isArray(correct)
-              ? correct[i]
-              : correct;
-            const w = computeWidthCh(correctForWidth as any, userVal);
-            const correctFlag = isBlankCorrect(i);
-            const { className, style } = inputStyleFor(correctFlag);
-
-            return (
-              <React.Fragment key={i}>
-                <span>{part}</span>
-                {i < parts.length - 1 && (
-                  <input
-                    name={`fib-${index}-${i}`}
-                    value={userVal}
-                    onChange={(e) => onAnswerChange(index, e.target.value, i)}
-                    onPaste={(e) => handlePaste(e, index, i)}
-                    type="text"
-                    readOnly={showAnswers}
-                    aria-disabled={showAnswers}
-                    {...{ className }}
-                    style={
-                      {
-                        width: `${w}ch`,
-                        ...style,
-                        opacity: 1,
-                      } as React.CSSProperties
-                    }
-                    placeholder="..."
-                  />
-                )}
-              </React.Fragment>
-            );
-          })}
+          <span>{parts[0]}</span>
+          <input
+            name={`fib-${index}`}
+            value={user}
+            onChange={(e) => onAnswerChange(index, e.target.value)}
+            type="text"
+            readOnly={showAnswers}
+            aria-disabled={showAnswers}
+            className="rounded px-2 py-1 mx-1 align-middle bg-white transition-colors duration-150 border border-gray-300"
+            style={
+              {
+                width: `${w}ch`,
+                border:
+                  showAnswers && correctFlag !== undefined
+                    ? correctFlag
+                      ? "2px solid var(--custom-purple)"
+                      : "2px solid var(--custom-red)"
+                    : undefined,
+                color:
+                  showAnswers && correctFlag !== undefined
+                    ? correctFlag
+                      ? "var(--custom-purple)"
+                      : "var(--custom-red)"
+                    : undefined,
+                opacity: 1,
+              } as React.CSSProperties
+            }
+            placeholder="..."
+          />
+          <span>{parts[1]}</span>
         </p>
 
         {showAnswers && (
@@ -486,7 +385,7 @@ const PracticeBox: React.FC<PracticeBox> = ({ questions }) => {
               <strong>Đáp án: </strong>
               <span className="text-[var(--custom-purple)] font-semibold">
                 {Array.isArray(correct)
-                  ? (correct as string[]).join(" / ")
+                  ? correct.join(" / ")
                   : String(correct ?? "")}
               </span>
             </div>

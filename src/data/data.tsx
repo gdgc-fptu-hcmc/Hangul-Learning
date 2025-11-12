@@ -213,6 +213,7 @@ export const learningCourses: LearningCourse[] = [
                   question: "만나<<dropdown>> 반갑습니다.",
                   options: ["서", "고", "지만"],
                   correctAnswerIndex: 0,
+                  explanation: "만나서 반갑습니다. (Rất vui vì được gặp bạn.)",
                 },
               ],
             },
