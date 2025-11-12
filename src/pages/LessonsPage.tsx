@@ -244,7 +244,7 @@ const LessonsPage = () => {
                 </Link>
 
                 <Link
-                  to={`/`}
+                  to={`/courses/${courseId}/topics/${topicId}/lessons/${lessonId}/minigame`}
                   className="flex group items-center bg-[var(--custom-green)] w-max rounded-xl gap-3 px-3 py-2 text-white"
                 >
                   Minigame{" "}

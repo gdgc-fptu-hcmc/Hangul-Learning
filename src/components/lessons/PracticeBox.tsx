@@ -1,6 +1,6 @@
 // PracticeBox.tsx
 import CustomBox from "@/shared/common/CustomBox";
-import React, { useState, ClipboardEvent } from "react";
+import React, { useState } from "react";
 import type {
   PracticeBox,
   MultipleChoicePractice,
@@ -13,8 +13,6 @@ import { SlReload } from "react-icons/sl";
 
 const PLACEHOLDER_BLANK = "<<blank>>";
 const PLACEHOLDER_DROPDOWN = "<<dropdown>>";
-
-const MAX_PASTE_LENGTH = 120;
 
 const PracticeBox: React.FC<PracticeBox> = ({ questions }) => {
   const [answers, setAnswers] = useState<Record<number, string | number>>({});
