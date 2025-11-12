@@ -10,7 +10,6 @@ import type {
 import { RiPencilFill } from "react-icons/ri";
 import EyeIcon from "@/assets/icons/eyes.svg";
 import { SlReload } from "react-icons/sl";
-import { span } from "framer-motion/client";
 
 const PLACEHOLDER_BLANK = "<<blank>>";
 const PLACEHOLDER_DROPDOWN = "<<dropdown>>";
@@ -18,9 +17,7 @@ const PLACEHOLDER_DROPDOWN = "<<dropdown>>";
 const MAX_PASTE_LENGTH = 120;
 
 const PracticeBox: React.FC<PracticeBox> = ({ questions }) => {
-  const [answers, setAnswers] = useState<
-    Record<number, string | number | Array<string | number>>
-  >({});
+  const [answers, setAnswers] = useState<Record<number, string | number>>({});
   const [showAnswers, setShowAnswers] = useState<boolean>(false);
 
   const onAnswerChange = (qIndex: number, value: string | number) =>
@@ -144,7 +141,6 @@ const PracticeBox: React.FC<PracticeBox> = ({ questions }) => {
     return (
       <div className="mb-4">
         <p className="font-semibold">{`${index + 1}. ${q.question}`}</p>
-
         <ul className="list-none ml-0 mt-2">
           {q.options.map((option, i) => {
             const isSelected = selected === i;
@@ -249,12 +245,18 @@ const PracticeBox: React.FC<PracticeBox> = ({ questions }) => {
                   >
                     {option}
                   </span>
+                  {showAnswers &&
+                    i === correct &&
+                    answers[index] === undefined && (
+                      <span className="text-[var(--custom-red)] text-sm font-semibold">
+                        Bạn đã bỏ trống câu này
+                      </span>
+                    )}
                 </label>
               </li>
             );
           })}
         </ul>
-
         {showAnswers && q.explanation && (
           <div className="mt-2 text-sm text-gray-700 pl-2">
             <strong>Giải thích: </strong>
@@ -291,7 +293,6 @@ const PracticeBox: React.FC<PracticeBox> = ({ questions }) => {
     };
 
     const user = getUser();
-    console.log(user);
     const w = computeWidthCh(
       Array.isArray(correct) ? (correct[0] as any) : (correct as any),
       user
