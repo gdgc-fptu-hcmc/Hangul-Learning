@@ -64,7 +64,7 @@ const ChatBox = ({ className }: ChatBoxProps) => {
     handleScrollToBottom();
   }, [contents]);
 
-  const [openApiKeyManager, setOpenApiKeyManager] = useState(true);
+  const [openApiKeyManager, setOpenApiKeyManager] = useState(false);
 
   const handleAddMessage = (newContent: Message) => {
     setContents((prev) => [...prev, newContent]);

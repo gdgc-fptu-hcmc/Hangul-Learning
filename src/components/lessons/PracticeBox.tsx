@@ -10,6 +10,7 @@ import type {
 import { RiPencilFill } from "react-icons/ri";
 import EyeIcon from "@/assets/icons/eyes.svg";
 import { SlReload } from "react-icons/sl";
+import { span } from "framer-motion/client";
 
 const PLACEHOLDER_BLANK = "<<blank>>";
 const PLACEHOLDER_DROPDOWN = "<<dropdown>>";
@@ -289,54 +290,8 @@ const PracticeBox: React.FC<PracticeBox> = ({ questions }) => {
       return user === expected;
     };
 
-    // fallback: if parts not exactly 2, just show the raw question (safer)
-    if (parts.length !== 2) {
-      const user = getUser();
-      const w = computeWidthCh(
-        Array.isArray(correct) ? (correct[0] as any) : (correct as any),
-        user
-      );
-      const correctFlag = isCorrectFlag();
-
-      return (
-        <div className="mb-4">
-          <p className="font-semibold">{`${index + 1}. ${q.question}`}</p>
-
-          <input
-            name={`fib-${index}`}
-            value={user}
-            onChange={(e) => onAnswerChange(index, e.target.value)}
-            onPaste={(e) => handlePaste?.(e as any, index)}
-            type="text"
-            readOnly={showAnswers}
-            aria-disabled={showAnswers}
-            className="rounded px-2 py-1 mx-1 align-middle bg-white transition-colors duration-150 border border-gray-300"
-            style={
-              {
-                width: `${w}ch`,
-                border:
-                  showAnswers && correctFlag !== undefined
-                    ? correctFlag
-                      ? "2px solid var(--custom-purple)"
-                      : "2px solid var(--custom-red)"
-                    : undefined,
-                color:
-                  showAnswers && correctFlag !== undefined
-                    ? correctFlag
-                      ? "var(--custom-purple)"
-                      : "var(--custom-red)"
-                    : undefined,
-                opacity: 1,
-              } as React.CSSProperties
-            }
-            placeholder="..."
-          />
-        </div>
-      );
-    }
-
-    // Proper single-placeholder rendering: part0 + input + part1
     const user = getUser();
+    console.log(user);
     const w = computeWidthCh(
       Array.isArray(correct) ? (correct[0] as any) : (correct as any),
       user
@@ -355,7 +310,7 @@ const PracticeBox: React.FC<PracticeBox> = ({ questions }) => {
             type="text"
             readOnly={showAnswers}
             aria-disabled={showAnswers}
-            className="rounded px-2 py-1 mx-1 align-middle bg-white transition-colors duration-150 border border-gray-300"
+            className="rounded px-2 py-1 mx-1 align-middle bg-white transition-colors duration-150 border border-gray-300 focus:outline-none"
             style={
               {
                 width: `${w}ch`,
@@ -376,19 +331,16 @@ const PracticeBox: React.FC<PracticeBox> = ({ questions }) => {
             }
             placeholder="..."
           />
+          {showAnswers && (
+            <span className="text-[var(--custom-purple)] font-semibold px-2 py-1 border-2 border-[var(--custom-purple)] rounded">
+              / {Array.isArray(correct) ? correct[0] : correct}
+            </span>
+          )}
           <span>{parts[1]}</span>
         </p>
 
         {showAnswers && (
           <div className="mt-2 pl-2 text-sm">
-            <div>
-              <strong>Đáp án: </strong>
-              <span className="text-[var(--custom-purple)] font-semibold">
-                {Array.isArray(correct)
-                  ? correct.join(" / ")
-                  : String(correct ?? "")}
-              </span>
-            </div>
             {q.explanation && (
               <div className="mt-1 text-gray-700">
                 <strong>Giải thích: </strong>
@@ -408,34 +360,41 @@ const PracticeBox: React.FC<PracticeBox> = ({ questions }) => {
       typeof answers[index] === "number" ? (answers[index] as number) : -1;
 
     const selectEl = (
-      <select
-        aria-label={`drop-${index}`}
-        value={typeof answers[index] === "number" ? answers[index] : ""}
-        onChange={(e) => onAnswerChange(index, Number(e.target.value))}
-        disabled={showAnswers}
-        className="rounded px-2 py-1 mx-1 align-middle bg-white transition-colors duration-150"
-        style={{
-          borderWidth: 2,
-          borderStyle: "solid",
-          borderColor: showAnswers
-            ? user === correct
-              ? "var(--custom-purple)"
-              : "var(--custom-red)"
-            : undefined,
-          color: showAnswers
-            ? user === correct
-              ? "var(--custom-purple)"
-              : "var(--custom-red)"
-            : undefined,
-        }}
-      >
-        <option value="">--</option>
-        {q.options.map((option, idx) => (
-          <option key={idx} value={idx}>
-            {option}
-          </option>
-        ))}
-      </select>
+      <>
+        <select
+          aria-label={`drop-${index}`}
+          value={typeof answers[index] === "number" ? answers[index] : ""}
+          onChange={(e) => onAnswerChange(index, Number(e.target.value))}
+          disabled={showAnswers}
+          className="rounded px-2 py-1 mx-1 align-middle bg-white transition-colors duration-150"
+          style={{
+            borderWidth: 2,
+            borderStyle: "solid",
+            borderColor: showAnswers
+              ? user === correct
+                ? "var(--custom-purple)"
+                : "var(--custom-red)"
+              : undefined,
+            color: showAnswers
+              ? user === correct
+                ? "var(--custom-purple)"
+                : "var(--custom-red)"
+              : undefined,
+          }}
+        >
+          <option value="">--</option>
+          {q.options.map((option, idx) => (
+            <option key={idx} value={idx}>
+              {option}
+            </option>
+          ))}
+        </select>
+        {showAnswers && (
+          <span className="text-[var(--custom-purple)] font-semibold px-2 py-1 border-2 border-[var(--custom-purple)] rounded">
+            / {q.options[correct]}
+          </span>
+        )}
+      </>
     );
 
     return (
@@ -452,13 +411,6 @@ const PracticeBox: React.FC<PracticeBox> = ({ questions }) => {
 
         {showAnswers && (
           <div className="mt-2 pl-2 text-sm">
-            <div>
-              <strong>Đáp án: </strong>
-              <span className="text-[var(--custom-purple)] font-semibold">
-                {q.options[correct]}
-              </span>
-            </div>
-
             {q.explanation && (
               <div className="mt-1 text-gray-700">
                 <strong>Giải thích: </strong>
