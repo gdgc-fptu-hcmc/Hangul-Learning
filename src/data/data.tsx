@@ -183,6 +183,39 @@ export const learningCourses: LearningCourse[] = [
                 </li>
               </ul>
             ),
+            practiceBox: {
+              questions: [
+                {
+                  questionType: "multipleChoice",
+                  question: "Chọn cách chào phù hợp khi gặp bạn cùng lớp:",
+                  options: ["안녕", "안녕하세요", "안녕하십니까"],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "Khi gặp bạn cùng lớp, sử dụng câu chào thân mật nhưng vẫn lịch sự là phù hợp nhất.",
+                },
+                {
+                  questionType: "multipleChoice",
+                  question:
+                    "Bạn nên sử dụng đuôi câu nào khi nói chuyện với nhân viên cửa hàng?",
+                  options: ["-요", "-습니다", "-해요"],
+                  correctAnswerIndex: 0,
+                  explanation:
+                    "Khi nói chuyện với nhân viên cửa hàng, sử dụng đuôi câu -요 là phù hợp nhất.",
+                },
+                {
+                  questionType: "fillInBlank",
+                  question: "안녕<<blank>>? (Xin chào?)",
+                  correctAnswer: "하세요",
+                  explanation: "안녕하세요? (Xin chào?)",
+                },
+                {
+                  questionType: "dropDown",
+                  question: "만나<<dropdown>> 반갑습니다.",
+                  options: ["서", "고", "지만"],
+                  correctAnswerIndex: 0,
+                },
+              ],
+            },
           },
           {
             id: 2,

@@ -45,7 +45,7 @@ const ChatBox = ({ className }: ChatBoxProps) => {
   const [isLoading, setIsLoading] = useState(false);
 
   // parts for zoomed out
-  const [isZoomedOut, setIsZoomedOut] = useState(true);
+  const [isZoomedOut, setIsZoomedOut] = useState(false);
   const [questionsFull, setQuestionsFull] = useState(false);
   const [contents, setContents] = useState<Message[]>(() => {
     const saved = localStorage.getItem("chatHistory");

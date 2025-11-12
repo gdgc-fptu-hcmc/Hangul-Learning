@@ -1,31 +1,639 @@
+// PracticeBox.tsx
 import CustomBox from "@/shared/common/CustomBox";
-import React from "react";
+import React, { useState, ClipboardEvent } from "react";
+import type {
+  PracticeBox,
+  MultipleChoicePractice,
+  FillInBlankPractice,
+  DropDownPractice,
+} from "@/data";
+import { RiPencilFill } from "react-icons/ri";
+import EyeIcon from "@/assets/icons/eyes.svg";
+import { SlReload } from "react-icons/sl";
 
-interface PracticeBoxProps {
-  practiceType?:
-    | "fill-in-blank"
-    | "dropdown-choice"
-    | "multiple-choice"
-    | "none";
-  children?: React.ReactNode;
-  className?: string;
-}
+const PLACEHOLDER_BLANK = "<<blank>>";
+const PLACEHOLDER_DROPDOWN = "<<dropdown>>";
 
-const PracticeBox: React.FC<PracticeBoxProps> = ({
-  practiceType = "none",
-  children,
-  className,
-}) => {
+const MAX_PASTE_LENGTH = 120;
+
+const PracticeBox: React.FC<PracticeBox> = ({ questions }) => {
+  const [answers, setAnswers] = useState<
+    Record<number, string | number | Array<string | number>>
+  >({});
+  const [showAnswers, setShowAnswers] = useState<boolean>(false);
+
+  // normalize pasted text: NFKC, collapse spaces, trim, limit length
+  const normalizeText = (s: string) =>
+    s.normalize?.("NFKC")
+      ? s
+          .normalize("NFKC")
+          .replace(/\s+/g, " ")
+          .trim()
+          .slice(0, MAX_PASTE_LENGTH)
+      : s.replace(/\s+/g, " ").trim().slice(0, MAX_PASTE_LENGTH);
+
+  /**
+   * onAnswerChange
+   * - qIndex: question index
+   * - value: string | number
+   * - blankIndex: optional index for fill-in-blank (when there are multiple blanks)
+   *
+   * Behavior:
+   * - if blankIndex provided -> ensure answers[qIndex] is an array and set arr[blankIndex] = value
+   * - else -> set answers[qIndex] = value (string or number)
+   */
+  const onAnswerChange = (
+    qIndex: number,
+    value: string | number,
+    blankIndex?: number
+  ) =>
+    setAnswers((prev) => {
+      const cur = prev[qIndex];
+      if (typeof blankIndex === "number") {
+        // ensure array of at least blankIndex+1 length
+        const arr: Array<string | number> = Array.isArray(cur) ? [...cur] : [];
+        // fill missing slots with ""
+        for (let i = 0; i <= blankIndex; i++) {
+          if (typeof arr[i] === "undefined") arr[i] = "";
+        }
+        arr[blankIndex] = value;
+        return { ...prev, [qIndex]: arr };
+      } else {
+        return { ...prev, [qIndex]: value };
+      }
+    });
+
+  const handleTryAgain = () => {
+    setAnswers({});
+    setShowAnswers(false);
+  };
+
+  // paste handler for inputs
+  const handlePaste = (
+    e: ClipboardEvent<HTMLInputElement>,
+    qIndex: number,
+    blankIndex?: number
+  ) => {
+    e.preventDefault();
+    const raw = e.clipboardData.getData("text");
+    const cleaned = normalizeText(raw);
+    if (typeof blankIndex === "number") {
+      onAnswerChange(qIndex, cleaned, blankIndex);
+    } else {
+      onAnswerChange(qIndex, cleaned);
+    }
+  };
+
+  /* ---------- scoring logic ---------- */
+  const isCorrect = (
+    q: MultipleChoicePractice | FillInBlankPractice | DropDownPractice,
+    index: number
+  ) => {
+    if (!showAnswers) return undefined;
+    const a = answers[index];
+
+    switch (q.questionType) {
+      case "multipleChoice":
+      case "dropDown":
+        return typeof a === "number" && a === q.correctAnswerIndex;
+
+      case "fillInBlank": {
+        const correct = (q as FillInBlankPractice).correctAnswer;
+
+        // arrays: compare per-item or join depending on correct type
+        if (Array.isArray(a)) {
+          if (Array.isArray(correct)) {
+            if (correct.length !== a.length) return false;
+            return a.every(
+              (val, i) =>
+                String(val ?? "")
+                  .trim()
+                  .toLowerCase() ===
+                String(correct[i] ?? "")
+                  .trim()
+                  .toLowerCase()
+            );
+          } else {
+            const userJoined = a
+              .map((v) => String(v ?? ""))
+              .join(" ")
+              .trim()
+              .toLowerCase();
+            return (
+              userJoined ===
+              String(correct ?? "")
+                .trim()
+                .toLowerCase()
+            );
+          }
+        } else {
+          // a is string or undefined
+          return (
+            typeof a === "string" &&
+            String(a ?? "")
+              .trim()
+              .toLowerCase() ===
+              String(correct ?? "")
+                .trim()
+                .toLowerCase()
+          );
+        }
+      }
+
+      default:
+        return false;
+    }
+  };
+
+  // compute total correct & total questions
+  const computeResult = () => {
+    let correct = 0;
+    const total = questions.length;
+    questions.forEach((q, idx) => {
+      const c = isCorrect(q as any, idx);
+      if (c === true) correct += 1;
+    });
+    return { correct, total };
+  };
+
+  const getResultText = () => {
+    const { correct, total } = computeResult();
+    const percent = total === 0 ? 0 : Math.round((correct / total) * 100);
+    return `${correct}/${total} (${percent}%)`;
+  };
+
+  /* ---------- helpers for dynamic width inputs ---------- */
+
+  // compute width in ch units: based on correct length and current user input length
+  const computeWidthCh = (
+    correctVal: string | Array<string> | undefined,
+    userVal: string
+  ) => {
+    const correctLen =
+      typeof correctVal === "string"
+        ? correctVal.length
+        : Array.isArray(correctVal)
+        ? correctVal
+            .map((s) => String(s ?? ""))
+            .reduce((a, b) => Math.max(a, (b as string).length), 0)
+        : 0;
+    const userLen = userVal.length;
+    const base = Math.max(correctLen, userLen, 3); // at least 3ch
+    const clamped = Math.min(40, base + 1); // cap width to 40ch
+    return clamped;
+  };
+
+  /* ---------- renderers ---------- */
+
+  const renderMultipleChoiceQuestion = (
+    q: MultipleChoicePractice,
+    index: number
+  ) => {
+    const selected =
+      typeof answers[index] === "number" ? (answers[index] as number) : -1;
+    const correct = q.correctAnswerIndex;
+
+    return (
+      <div className="mb-4">
+        <p className="font-semibold">{`${index + 1}. ${q.question}`}</p>
+
+        <ul className="list-none ml-0 mt-2">
+          {q.options.map((option, i) => {
+            const isSelected = selected === i;
+
+            // determine visual state (priority: showAnswers -> correct/wrong; else selected)
+            const state = showAnswers
+              ? i === correct
+                ? "correct"
+                : isSelected && i !== correct
+                ? "wrong"
+                : "neutral"
+              : isSelected
+              ? "selected"
+              : "neutral";
+
+            const outerBase =
+              "w-5 h-5 rounded-full flex items-center justify-center transition-colors duration-150";
+            const outerStyle =
+              state === "correct"
+                ? {
+                    borderColor: "var(--custom-purple)",
+                    background: "white",
+                    borderWidth: 2,
+                  }
+                : state === "wrong"
+                ? {
+                    borderColor: "var(--custom-red)",
+                    background: "white",
+                    borderWidth: 2,
+                  }
+                : state === "selected"
+                ? {
+                    borderColor: "rgba(107,114,128,1)",
+                    background: "white",
+                    borderWidth: 2,
+                  }
+                : {
+                    borderColor: "rgba(209,213,219,1)",
+                    background: "white",
+                    borderWidth: 2,
+                  };
+
+            const innerStyle =
+              state === "correct"
+                ? { background: "var(--custom-purple)" }
+                : state === "wrong"
+                ? { background: "var(--custom-red)" }
+                : state === "selected"
+                ? { background: "rgba(156,163,175,1)" }
+                : { background: "white" };
+
+            return (
+              <li key={i} className="mb-2">
+                <label
+                  onClick={() => !showAnswers && onAnswerChange(index, i)}
+                  className="cursor-pointer flex items-center gap-3 rounded px-3 py-2 hover:bg-gray-50"
+                >
+                  {/* visually hidden native input for accessibility */}
+                  <input
+                    type="radio"
+                    name={`mc-${index}`}
+                    checked={isSelected}
+                    onChange={() => !showAnswers && onAnswerChange(index, i)}
+                    disabled={showAnswers}
+                    className="sr-only"
+                  />
+
+                  {/* custom circle */}
+                  <span className={outerBase} style={outerStyle} aria-hidden>
+                    {isSelected || showAnswers ? (
+                      <span
+                        style={{
+                          width: 12,
+                          height: 12,
+                          borderRadius: "9999px",
+                          display: "block",
+                          ...innerStyle,
+                        }}
+                      />
+                    ) : (
+                      <span
+                        style={{
+                          width: 12,
+                          height: 12,
+                          borderRadius: "9999px",
+                          background: "white",
+                          display: "block",
+                        }}
+                      />
+                    )}
+                  </span>
+
+                  {/* option text */}
+                  <span
+                    className={
+                      state === "correct"
+                        ? "text-[var(--custom-purple)] font-semibold"
+                        : state === "wrong"
+                        ? "text-[var(--custom-red)] font-semibold"
+                        : ""
+                    }
+                  >
+                    {option}
+                  </span>
+                </label>
+              </li>
+            );
+          })}
+        </ul>
+
+        {showAnswers && q.explanation && (
+          <div className="mt-2 text-sm text-gray-700 pl-2">
+            <strong>Giải thích: </strong>
+            <span>{q.explanation}</span>
+          </div>
+        )}
+      </div>
+    );
+  };
+
+  const renderFillInTheBlankQuestion = (
+    q: FillInBlankPractice,
+    index: number
+  ) => {
+    const parts = q.question.split(PLACEHOLDER_BLANK);
+    const correct = (q as FillInBlankPractice).correctAnswer;
+
+    const getUserForBlank = (blankIdx: number) => {
+      const cur = answers[index];
+      // If stored as array, return that index
+      if (Array.isArray(cur)) return String(cur[blankIdx] ?? "");
+      // If single string and only one placeholder, return it
+      if (typeof cur === "string") {
+        if (parts.length === 1) return cur;
+        // multiple placeholders but answers stored as string -> fallback empty
+        return "";
+      }
+      return "";
+    };
+
+    const isBlankCorrect = (blankIdx: number) => {
+      if (!showAnswers) return undefined;
+      const user = getUserForBlank(blankIdx).trim().toLowerCase();
+
+      if (Array.isArray(correct)) {
+        const expected = String(correct[blankIdx] ?? "")
+          .trim()
+          .toLowerCase();
+        if (user === "") return false;
+        return user === expected;
+      } else {
+        if (parts.length === 1) {
+          const expected = String(correct ?? "")
+            .trim()
+            .toLowerCase();
+          if (user === "") return false;
+          return user === expected;
+        }
+        return undefined;
+      }
+    };
+
+    const inputStyleFor = (flag: boolean | undefined) => {
+      if (flag === true) {
+        return {
+          className:
+            "rounded px-2 py-1 mx-1 align-middle bg-white transition-colors duration-150 border-2",
+          style: {
+            borderColor: "var(--custom-purple)",
+            color: "var(--custom-purple)",
+          },
+        };
+      }
+      if (flag === false) {
+        return {
+          className:
+            "rounded px-2 py-1 mx-1 align-middle bg-white transition-colors duration-150 border-2",
+          style: {
+            borderColor: "var(--custom-red)",
+            color: "var(--custom-red)",
+          },
+        };
+      }
+      return {
+        className:
+          "rounded px-2 py-1 mx-1 align-middle bg-white transition-colors duration-150 border border-gray-300",
+        style: {},
+      };
+    };
+
+    // single placeholder fallback
+    if (parts.length === 1) {
+      const user = getUserForBlank(0);
+      const w = computeWidthCh(correct as string | undefined, user);
+      const correctFlag = isBlankCorrect(0);
+      const { className, style } = inputStyleFor(correctFlag);
+
+      return (
+        <div className="mb-4">
+          <p className="font-semibold">{`${index + 1}. ${q.question}`}</p>
+          <input
+            name={`fib-${index}`}
+            value={user}
+            onChange={(e) => onAnswerChange(index, e.target.value)}
+            onPaste={(e) => handlePaste(e, index)}
+            type="text"
+            readOnly={showAnswers}
+            aria-disabled={showAnswers}
+            {...{ className }}
+            style={
+              {
+                width: `${w}ch`,
+                ...style,
+                opacity: 1,
+              } as React.CSSProperties
+            }
+            placeholder="..."
+          />
+
+          {showAnswers && (
+            <div className="mt-2 pl-2 text-sm">
+              <div>
+                <strong>Đáp án: </strong>
+                <span className="text-[var(--custom-purple)] font-semibold">
+                  {Array.isArray(correct)
+                    ? correct.join(" / ")
+                    : String(correct ?? "")}
+                </span>
+              </div>
+              {q.explanation && (
+                <div className="mt-1 text-gray-700">
+                  <strong>Giải thích: </strong>
+                  <span>{q.explanation}</span>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    // multiple placeholders
+    return (
+      <div className="mb-4">
+        <p className="font-semibold">
+          {`${index + 1}. `}
+          {parts.map((part, i) => {
+            const userVal = getUserForBlank(i);
+            const correctForWidth = Array.isArray(correct)
+              ? correct[i]
+              : correct;
+            const w = computeWidthCh(correctForWidth as any, userVal);
+            const correctFlag = isBlankCorrect(i);
+            const { className, style } = inputStyleFor(correctFlag);
+
+            return (
+              <React.Fragment key={i}>
+                <span>{part}</span>
+                {i < parts.length - 1 && (
+                  <input
+                    name={`fib-${index}-${i}`}
+                    value={userVal}
+                    onChange={(e) => onAnswerChange(index, e.target.value, i)}
+                    onPaste={(e) => handlePaste(e, index, i)}
+                    type="text"
+                    readOnly={showAnswers}
+                    aria-disabled={showAnswers}
+                    {...{ className }}
+                    style={
+                      {
+                        width: `${w}ch`,
+                        ...style,
+                        opacity: 1,
+                      } as React.CSSProperties
+                    }
+                    placeholder="..."
+                  />
+                )}
+              </React.Fragment>
+            );
+          })}
+        </p>
+
+        {showAnswers && (
+          <div className="mt-2 pl-2 text-sm">
+            <div>
+              <strong>Đáp án: </strong>
+              <span className="text-[var(--custom-purple)] font-semibold">
+                {Array.isArray(correct)
+                  ? (correct as string[]).join(" / ")
+                  : String(correct ?? "")}
+              </span>
+            </div>
+            {q.explanation && (
+              <div className="mt-1 text-gray-700">
+                <strong>Giải thích: </strong>
+                <span>{q.explanation}</span>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+    );
+  };
+
+  const renderDropDownQuestion = (q: DropDownPractice, index: number) => {
+    const parts = q.question.split(PLACEHOLDER_DROPDOWN);
+    const correct = q.correctAnswerIndex;
+    const user =
+      typeof answers[index] === "number" ? (answers[index] as number) : -1;
+
+    const selectEl = (
+      <select
+        aria-label={`drop-${index}`}
+        value={typeof answers[index] === "number" ? answers[index] : ""}
+        onChange={(e) => onAnswerChange(index, Number(e.target.value))}
+        disabled={showAnswers}
+        className="rounded px-2 py-1 mx-1 align-middle bg-white transition-colors duration-150"
+        style={{
+          borderWidth: 2,
+          borderStyle: "solid",
+          borderColor: showAnswers
+            ? user === correct
+              ? "var(--custom-purple)"
+              : "var(--custom-red)"
+            : undefined,
+          color: showAnswers
+            ? user === correct
+              ? "var(--custom-purple)"
+              : "var(--custom-red)"
+            : undefined,
+        }}
+      >
+        <option value="">--</option>
+        {q.options.map((option, idx) => (
+          <option key={idx} value={idx}>
+            {option}
+          </option>
+        ))}
+      </select>
+    );
+
+    return (
+      <div className="mb-4">
+        <p className="font-semibold">
+          {`${index + 1}. `}
+          {parts.map((part, i) => (
+            <React.Fragment key={i}>
+              <span>{part}</span>
+              {i < parts.length - 1 && selectEl}
+            </React.Fragment>
+          ))}
+        </p>
+
+        {showAnswers && (
+          <div className="mt-2 pl-2 text-sm">
+            <div>
+              <strong>Đáp án: </strong>
+              <span className="text-[var(--custom-purple)] font-semibold">
+                {q.options[correct]}
+              </span>
+            </div>
+
+            {q.explanation && (
+              <div className="mt-1 text-gray-700">
+                <strong>Giải thích: </strong>
+                <span>{q.explanation}</span>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+    );
+  };
+
+  const renderQuestion = (
+    question: MultipleChoicePractice | FillInBlankPractice | DropDownPractice,
+    index: number
+  ) => {
+    switch (question.questionType) {
+      case "multipleChoice":
+        return renderMultipleChoiceQuestion(question, index);
+      case "fillInBlank":
+        return renderFillInTheBlankQuestion(question, index);
+      case "dropDown":
+        return renderDropDownQuestion(question, index);
+      default:
+        return null;
+    }
+  };
+
   return (
-    <>
-      {practiceType !== "none" && (
-        <CustomBox
-          className={`border-2 border-dashed border-gray-400 p-4 mb-4 ${className}`}
-        >
-          {children}
-        </CustomBox>
-      )}
-    </>
+    <CustomBox className="mt-7 w-full rounded-lg overflow-hidden">
+      <header className="text-white bg-[var(--custom-purple)] p-2 pl-5 flex gap-2 items-center text-lg font-semibold">
+        <RiPencilFill />
+        <span>Luyện tập nhỏ</span>
+      </header>
+
+      <ul className="mt-3 px-5 list-none list-inside">
+        {questions.map((question, index) => (
+          <li key={index}>{renderQuestion(question as any, index)}</li>
+        ))}
+      </ul>
+
+      <div className="flex items-center gap-3 px-5 pb-4">
+        {!showAnswers ? (
+          <button
+            className="ml-3 my-3 p-2 border-2 rounded-xl border-gray-300 flex items-center gap-2"
+            onClick={() => setShowAnswers(true)}
+          >
+            <span className="font-semibold text-sm text-[var(--custom-purple)]">
+              Kiểm tra đáp án
+            </span>
+            {/* @ts-ignore */}
+            <img
+              src={EyeIcon?.src ?? EyeIcon}
+              alt=""
+              className="inline-block w-[20px] ml-1"
+            />
+          </button>
+        ) : (
+          <button
+            className="ml-3 my-3 p-2 rounded-xl bg-[var(--custom-purple)] flex items-center gap-2"
+            onClick={handleTryAgain}
+          >
+            <span className="font-semibold text-sm text-white">Làm lại</span>
+            <SlReload className="text-white" />
+          </button>
+        )}
+
+        {showAnswers && (
+          <div className="text-sm text-[var(--custom-purple)] font-semibold">
+            Kết quả: <span className="font-semibold">{getResultText()}</span>
+          </div>
+        )}
+      </div>
+    </CustomBox>
   );
 };
 

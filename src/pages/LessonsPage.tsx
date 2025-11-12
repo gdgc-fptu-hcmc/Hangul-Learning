@@ -228,7 +228,10 @@ const LessonsPage = () => {
                   <MdQuiz className="inline-block rounded-full p-2 text-[50px] border-2 border-gray-300 text-[var(--custom-purple)]" />
                   <span className="text-2xl font-bold">Ôn tập</span>
                 </div>
-                <PracticeBox className="mt-5"></PracticeBox>
+                <PracticeBox
+                  className="mt-5"
+                  questions={content?.practiceBox.questions}
+                />
               </section>
 
               <div className="flex mt-[10vh] justify-between items-center w-full">

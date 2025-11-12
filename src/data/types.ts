@@ -10,6 +10,7 @@ export interface LessonStep {
   funQuiz?: FunQuiz; // Fun quiz section
   vocabIds?: number[]; // list of vocab ids introduced in this lesson
   grammar?: React.ReactNode; // grammar content in HTML format
+  practiceBox?: PracticeBox; // practice box section
 }
 
 export interface LearningTopic {
@@ -46,6 +47,7 @@ export interface LessonContent {
   funQuiz?: FunQuiz; // Fun quiz section
   vocabs?: Vocab[]; // list of vocab ids introduced in this lesson
   grammar?: React.ReactNode; // grammar content in HTML format
+  practiceBox?: PracticeBox; // practice box section
 }
 
 // Các thành phần bài học--------------------------
@@ -80,6 +82,38 @@ export interface FunQuiz {
   explanation: string | "";
 }
 
+// Phần practice box
+export interface PracticeBox {
+  questions: (
+    | MultipleChoicePractice
+    | FillInBlankPractice
+    | DropDownPractice
+  )[];
+}
+
+export interface MultipleChoicePractice {
+  questionType: "multipleChoice";
+  question: string | "";
+  options: string[] | [];
+  correctAnswerIndex: number | 0; // count from 0
+  explanation?: string | "";
+}
+
+export interface FillInBlankPractice {
+  questionType: "fillInBlank";
+  question: string | ""; // insert string <<blank>> where the dropdown shoudl be at
+  correctAnswer: string;
+  explanation?: string;
+}
+
+export interface DropDownPractice {
+  questionType: "dropDown";
+  question: string | ""; // insert string <<dropdown>> where the dropdown shoudl be at
+  options: string[] | [];
+  correctAnswerIndex: number | 0; // count from 0
+  explanation?: string | "";
+}
+
 // THƯ VIỆN TỪ VỰNG --------------------------
 export interface Vocab {
   text: string;
@@ -99,4 +133,13 @@ export interface VocabPart {
   text: string; // tên loại từ vựng
   color: string;
   description: string; // mô tả
+}
+
+// THƯ VIỆN MINIGAMES --------------------------
+export interface MiniGame {
+  id: number;
+  title: string;
+  description: string;
+  imgUrl: string;
+  gameUrl: string;
 }
