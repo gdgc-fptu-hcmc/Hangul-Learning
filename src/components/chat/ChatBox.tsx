@@ -3,12 +3,13 @@ import bgImgUrl from "@/assets/images/wavy-clouds-pattern.svg";
 import logoImgUrl from "@/assets/logos/logo-only.svg";
 import ClickScaleDebounce from "@/shared/effects/ClickScaleDebounce";
 import { motion } from "framer-motion";
-import { FaArrowUp, FaTrashAlt } from "react-icons/fa";
+import { FaArrowUp, FaKey, FaTrashAlt } from "react-icons/fa";
 import { MdOutlineZoomInMap, MdOutlineZoomOutMap } from "react-icons/md";
 import { GrFormNextLink } from "react-icons/gr";
 import { IoMdAdd } from "react-icons/io";
 import { functions } from "@/lib/firebase";
-import { connectFunctionsEmulator, httpsCallable } from "firebase/functions";
+import { httpsCallable } from "firebase/functions";
+import ApiKeyManager from "./ApiKeyManager";
 
 interface ChatBoxProps {
   className?: string;
@@ -63,6 +64,8 @@ const ChatBox = ({ className }: ChatBoxProps) => {
     handleScrollToBottom();
   }, [contents]);
 
+  const [openApiKeyManager, setOpenApiKeyManager] = useState(true);
+
   const handleAddMessage = (newContent: Message) => {
     setContents((prev) => [...prev, newContent]);
   };
@@ -98,13 +101,13 @@ const ChatBox = ({ className }: ChatBoxProps) => {
   };
 
   const callApi = async (userContent: Message) => {
-    connectFunctionsEmulator(functions, "localhost", 5001); // uncomment this line to use emulator
     const getAiResponse = httpsCallable(functions, "getAiResponse");
     try {
       setIsLoading(true);
       const result = await getAiResponse({
         chatHistory: contents,
         newContent: userContent,
+        apiKey: localStorage.getItem("apiKey"),
       });
       return result.data;
     } catch (err) {
@@ -121,6 +124,11 @@ const ChatBox = ({ className }: ChatBoxProps) => {
   const handleSubmit = async (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
+      if (!localStorage.getItem("apiKey")) {
+        // force to open api key manager first
+        setOpenApiKeyManager(true);
+        return;
+      }
       if (textAreaRef.current?.value.trim()) {
         const userContent = {
           role: "user",
@@ -136,6 +144,11 @@ const ChatBox = ({ className }: ChatBoxProps) => {
   };
 
   const handleClickSubmit = async () => {
+    if (!localStorage.getItem("apiKey")) {
+      // force to open api key manager first
+      setOpenApiKeyManager(true);
+      return;
+    }
     if (textAreaRef.current?.value.trim()) {
       const userContent = {
         role: "user",
@@ -151,6 +164,11 @@ const ChatBox = ({ className }: ChatBoxProps) => {
   };
 
   const handleClickRecommended = async (question: string) => {
+    if (!localStorage.getItem("apiKey")) {
+      // force to open api key manager first
+      setOpenApiKeyManager(true);
+      return;
+    }
     const recommendedContent: Message = {
       role: "user",
       parts: [{ text: question }],
@@ -177,6 +195,13 @@ const ChatBox = ({ className }: ChatBoxProps) => {
       }`}
       style={{ backgroundImage: `url(${bgImgUrl})` }}
     >
+      {/* Api key manage */}
+      {openApiKeyManager && (
+        <ApiKeyManager
+          open={openApiKeyManager}
+          onClose={() => setOpenApiKeyManager(false)}
+        />
+      )}
       {/* Header */}
       <div className="flex justify-between items-center h-10 mb-2 px-2">
         <div className="flex items-center gap-1">
@@ -194,6 +219,12 @@ const ChatBox = ({ className }: ChatBoxProps) => {
             <span className="group-hover:mr-2 font-semibold max-w-0 opacity-0 transition-all duration-500 ease-in-out group-hover:max-w-xs group-hover:opacity-100 whitespace-nowrap">
               Xóa trò chuyện
             </span>
+          </ClickScaleDebounce>
+          <ClickScaleDebounce
+            onClick={() => setOpenApiKeyManager(true)}
+            className="flex items-center rounded-full text-[var(--dark-pink)] bg-white group overflow-hidden"
+          >
+            <FaKey className="text-xl m-2" />
           </ClickScaleDebounce>
           <ClickScaleDebounce
             onClick={() => setIsZoomedOut(!isZoomedOut)}
@@ -260,7 +291,7 @@ const ChatBox = ({ className }: ChatBoxProps) => {
         >
           <div
             ref={chatContainerRef}
-            className="w-full h-full overflow-y-scroll overflow-x-hidden pb-[5vh]"
+            className="w-full h-full overflow-y-scroll overflow-x-hidden overscroll-y-none pb-[5vh]"
           >
             {contents.map((content, index) => (
               <div

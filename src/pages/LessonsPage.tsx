@@ -76,7 +76,7 @@ const LessonsPage = () => {
             lessonName={content?.lessonTitle}
             activeTab={activeTab}
             onTabChange={setActiveTab}
-            className="w-[280px] lg:sticky h-max lg:top-5 z-[999] bg-white fixed left-2 top-2 "
+            className="w-[280px] lg:sticky h-max lg:top-5 bg-white fixed left-2 top-2 "
           />
 
           {/* Lesson Content */}

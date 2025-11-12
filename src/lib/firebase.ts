@@ -2,14 +2,21 @@ import { initializeApp } from "firebase/app";
 import { connectFunctionsEmulator, getFunctions } from "firebase/functions";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD4hykr4DaB3OzfxxJ4Y32qIKyfw5fihR4",
-  authDomain: "hangul-chat-ai-be.firebaseapp.com",
-  projectId: "hangul-chat-ai-be",
-  storageBucket: "hangul-chat-ai-be.firebasestorage.app",
-  messagingSenderId: "915829361665",
-  appId: "1:915829361665:web:a27949d90e9a615aca4400",
+  apiKey: "AIzaSyAT7vgHMdPyYFuvfY2ddr1g7smPTfx4Djw",
+  authDomain: "nguyenductuan-bf7a1.firebaseapp.com",
+  projectId: "nguyenductuan-bf7a1",
+  storageBucket: "nguyenductuan-bf7a1.firebasestorage.app",
+  messagingSenderId: "552862858398",
+  appId: "1:552862858398:web:f9811dc60d97d848b54f8f",
+  measurementId: "G-VLDBEV8E0Z",
 };
 
 const app = initializeApp(firebaseConfig);
 
-export const functions = getFunctions(app);
+const functions = getFunctions(app);
+
+if (import.meta.env.VITE_MODE === "development") {
+  connectFunctionsEmulator(functions, "localhost", 5001);
+}
+
+export { functions };
