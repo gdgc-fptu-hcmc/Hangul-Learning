@@ -52,6 +52,7 @@ export function getLessonContent(
               resultData.culturalStory = lesson.culturalStory;
               resultData.funQuiz = lesson.funQuiz;
               resultData.grammar = lesson.grammar;
+              resultData.practiceBox = lesson.practiceBox;
               for (const vocabId of lesson.vocabIds || []) {
                 const vocabData = vocabList[vocabId];
                 if (vocabData) {
