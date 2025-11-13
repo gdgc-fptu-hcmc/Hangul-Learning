@@ -9,7 +9,7 @@ import userFour from "@/assets/icons/user-four.svg";
 import { MdChatBubbleOutline, MdQuiz } from "react-icons/md";
 import { TbTextGrammar, TbVocabulary } from "react-icons/tb";
 import useScrollBy from "@/hooks/useScrollBy";
-import SpeakerBox from "@/components/vocab/SpeakerBox";
+import SpeakerBox from "@/shared/common/SpeakerBox";
 import DialogueBox from "@/components/lessons/DialogueBox";
 import CustomBox from "@/shared/common/CustomBox";
 import parse from "html-react-parser";
