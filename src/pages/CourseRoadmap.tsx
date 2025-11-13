@@ -4,22 +4,27 @@ import ColoredBanner from "@/shared/layout/ColoredBanner";
 import Footer from "@/shared/layout/Footer";
 import NavBar from "@/shared/layout/NavBar";
 import TopicSection from "@/components/TopicSection";
-import { learningCourses } from "@/data";
+import { LearningCourse, learningCourses } from "@/data";
 
 const CourseRoadmap: React.FC = () => {
-  const { id } = useParams();
-  // extract number from id level-1, level-2, etc.
-  const match = id?.toString().match(/(\d+)/);
-  const idx = match ? match[1] : null;
-  const idNumber = Number(idx ?? 1);
+  const { courseId } = useParams<{ courseId?: string }>();
 
-  // get level label
-  const levelLabel = (() => {
-    return (
-      learningCourses.find((course) => course.id === idNumber)?.level ??
-      "Cấp độ 1: Sơ cấp"
-    );
-  })();
+  const defaultCourse = learningCourses[0];
+  const normalizedCourseId = courseId?.toString().toLowerCase();
+
+  const selectedCourse: LearningCourse | undefined = learningCourses.find(
+    (course) => {
+      const idAsString = String(course.id);
+      const idAsSlug = `level-${course.id}`;
+
+      return (
+        normalizedCourseId === idAsString ||
+        normalizedCourseId === idAsSlug.toLowerCase()
+      );
+    }
+  ) ?? defaultCourse;
+
+  const levelLabel = selectedCourse?.level ?? "Cấp độ 1: Sơ cấp";
 
   return (
     <>
@@ -38,7 +43,7 @@ const CourseRoadmap: React.FC = () => {
       </div>
 
       {/* Topic section */}
-
+      <TopicSection learningTopics={selectedCourse?.topics} className="mb-20" />
       <Footer />
     </>
   );

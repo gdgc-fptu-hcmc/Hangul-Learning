@@ -1,28 +1,56 @@
+import React from "react";
 import TopicTitle from "./TopicTitle";
-import { learningCourses, LearningCourse } from "@/data";
+import type { LearningTopic } from "@/data";
 
-type Variant = 'yellow' | 'green' | 'purple';
-
-// Map barColor class from data.ts to our TopicTitle variants
-const barToVariant: Record<string, Variant> = {
-  "bg-amber-400": "yellow",
-  "bg-lime-400": "green",
-  "bg-indigo-400": "purple",
+type TopicSectionProps = {
+  learningTopics?: LearningTopic[];
+  className?: string;
 };
 
-interface TopicSectionProps {
-  /**
-   * 1-based topic selection, e.g. [1,2,3]
-   * Will be converted to zero-based indexes to look up learningCourses.
-   */
-  picks: number[];
-  className?: string;
-}
+const TopicSection: React.FC<TopicSectionProps> = ({
+  learningTopics = [],
+  className = "",
+}) => {
+  if (!learningTopics.length) return null;
 
-export default function TopicSection({ picks, className = "" }: TopicSectionProps) {
   return (
-    <div className={`flex flex-col ${className}`}>
+    <section className={`w-full flex justify-center ${className}`}>
+      <div className="w-[90vw] flex flex-col gap-12">
+        {learningTopics.map((topic, index) => (
+          <div key={topic.id} className="flex flex-col gap-4">
 
-    </div >
+            {/* TopicTitle Component */}
+            <TopicTitle
+              topicNumber={index + 1}
+              title={topic.title}
+              accent={topic.accent}
+              barColor={topic.barColor}
+            />
+
+            {/* TopicContent Frame */}
+            <div
+              className="
+                bg-white
+                rounded-[10px]
+                border-[4px]
+                border-[#D9D9D9]
+                p-6
+                w-full
+                min-h-[260px]
+                relative
+              "
+            >
+              {/* Placeholder until roadmap graphics are finished */}
+              <p className="text-gray-600 text-center opacity-70">
+                (Roadmap UI goes here)
+              </p>
+            </div>
+
+          </div>
+        ))}
+      </div>
+    </section>
   );
-}
+};
+
+export default TopicSection;
