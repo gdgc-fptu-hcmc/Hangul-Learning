@@ -1,4 +1,5 @@
-import React from "react";
+import MiniGameWrapper from "@/components/minigame/layout/MiniGameWrapper";
+import { getMiniGameContent } from "@/data";
 import { useParams } from "react-router-dom";
 
 const MiniGamePage = () => {
@@ -8,10 +9,17 @@ const MiniGamePage = () => {
     lessonId: string;
   }>();
 
-  const gameContent = `MiniGame for Course ${courseId}, Topic ${topicId}, Lesson ${lessonId}`;
+  const gameContent = getMiniGameContent(
+    Number(courseId),
+    Number(topicId),
+    Number(lessonId)
+  );
+
   console.log("gameContent:", gameContent);
 
-  return <div className="bg-red-400">MiniGamePage</div>;
+  return (
+    <MiniGameWrapper currentQuestion={3} totalQuestions={10}></MiniGameWrapper>
+  );
 };
 
 export default MiniGamePage;
