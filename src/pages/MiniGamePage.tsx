@@ -1,4 +1,4 @@
-import MiniGameWrapper from "@/components/minigame/common/MiniGameWrapper";
+import MiniGameWrapper from "@/components/minigame/layout/MiniGameWrapper";
 import { getMiniGameContent } from "@/data";
 import { useParams } from "react-router-dom";
 
