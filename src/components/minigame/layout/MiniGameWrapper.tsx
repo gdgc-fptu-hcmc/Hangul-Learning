@@ -1,5 +1,4 @@
 import React from "react";
-import MiniGameDashboardResult from "./MiniGameDashboardResult";
 import ProgressBar from "../../../shared/common/ProgressBar";
 import { IoClose } from "react-icons/io5";
 
@@ -7,26 +6,23 @@ interface MiniGameWrapperProps {
   children: React.ReactNode;
   currentQuestion?: number;
   totalQuestions?: number;
-  onSkip?: () => void;
+  answer: React.ReactNode;
+  onSkip: () => void;
   onCheck: () => void;
   onNext: () => void;
-  currentState?: "waiting" | "correct" | "incorrect" | "completed";
+  wrapperState?: "waiting" | "correct" | "incorrect"; // 'waiting' | 'correct' | 'incorrect'
 }
 
 const MiniGameWrapper: React.FC<MiniGameWrapperProps> = ({
   children,
   currentQuestion = 1,
   totalQuestions = 100,
+  answer,
   onSkip,
   onCheck,
   onNext,
-  currentState = "waiting", // 'waiting' | 'correct' | 'incorrect' | 'completed'
+  wrapperState = "waiting", // 'waiting' | 'correct' | 'incorrect'
 }) => {
-  // hoàn thành minigame thif show đáp án luôn
-  if (currentState === "completed") {
-    return <MiniGameDashboardResult correctAnswers={5} totalQuestions={10} />;
-  }
-
   return (
     <div className="relative min-h-screen w-full bg-gray-50 flex justify-between flex-col">
       {/* Phần nút thoát */}
@@ -43,30 +39,30 @@ const MiniGameWrapper: React.FC<MiniGameWrapperProps> = ({
         {/* Phần trên: gồm progress bar số câu,... */}
         <header className="w-full flex justify-between items-center ">
           {/* Progress indicator */}
-          <ProgressBar current={currentQuestion} total={totalQuestions} />
+          <ProgressBar current={currentQuestion + 1} total={totalQuestions} />
           {/* Acumalated Result */}
           <span className="text-sm text-[var(--custom-orange)] font-semibold px-10">
-            {currentQuestion}/{totalQuestions}
+            {currentQuestion + 1}/{totalQuestions}
           </span>
         </header>
         {/* Phần câu hỏi */}
-        <main className="mt-[2vh] h-[75vh] bg-white rounded-2xl shadow-lg p-6">
-          <div className="mb-6">{children}</div>
+        <main className="mt-[2vh] h-[75vh] bg-white rounded-2xl shadow-lg p-6 pb-16">
+          {children}
         </main>
       </div>
 
       <footer
         className={`flex items-center justify-center shadow-lg p-6 ${
-          currentState === "correct"
+          wrapperState === "correct"
             ? "bg-[var(--custom-green-light)]"
-            : currentState === "incorrect"
+            : wrapperState === "incorrect"
             ? "bg-[var(--custom-red-light)]"
             : "bg-white"
         }`}
       >
         <div className="max-w-7xl w-full px-10 flex justify-between items-center">
           {(() => {
-            switch (currentState) {
+            switch (wrapperState) {
               case "waiting":
                 return (
                   <>
@@ -91,7 +87,7 @@ const MiniGameWrapper: React.FC<MiniGameWrapperProps> = ({
                 return (
                   <>
                     <div className="flex justify-between items-center gap-5">
-                      {currentState === "correct" ? (
+                      {wrapperState === "correct" ? (
                         <>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -131,11 +127,14 @@ const MiniGameWrapper: React.FC<MiniGameWrapperProps> = ({
                         </>
                       )}
                     </div>
-
+                    {/* SHOW ĐÁP ÁN */}
+                    <div className="flex-1 flex justify-center items-center">
+                      {answer}
+                    </div>
                     <button
                       onClick={onNext}
                       className={`px-8 py-3 text-white rounded-xl font-semibold transition-all hover:shadow-lg ${
-                        currentState === "correct"
+                        wrapperState === "correct"
                           ? "bg-[var(--custom-green)]"
                           : "bg-[var(--custom-red)]"
                       }`}

@@ -141,6 +141,7 @@ export interface VocabPart {
 
 // THƯ VIỆN MINIGAMES --------------------------
 export interface MiniGame {
+  id?: number;
   title: string;
   type: "multipleChoice" | "phraseOrder" | "matching";
   content: MiniGameMc | MiniGamePhraseOrder | MiniGameMatching;

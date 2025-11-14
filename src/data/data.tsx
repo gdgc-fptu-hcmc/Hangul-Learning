@@ -217,7 +217,7 @@ export const learningCourses: LearningCourse[] = [
                 },
               ],
             },
-            minigameIds: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+            minigameIds: [1, 2, 3, 4, 5, 6, 7],
             minigameQuantity: 6, // random pick 6 câu trong danh sách miniGameIds trên
           },
           {
@@ -412,7 +412,7 @@ export const miniGames: Record<number, MiniGame> = {
         audio:
           "https://commondatastorage.googleapis.com/codeskulptor-assets/Collision8-Bit.ogg",
         image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
+          "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/images%2Fman-wave-his-hand.png?alt=media&token=7690d6a5-455d-41e7-a729-f61e4c51854d",
       },
       options: [
         {
@@ -447,7 +447,7 @@ export const miniGames: Record<number, MiniGame> = {
         audio:
           "https://commondatastorage.googleapis.com/codeskulptor-assets/Collision8-Bit.ogg",
         image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
+          "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/images%2Fman-wave-his-hand.png?alt=media&token=7690d6a5-455d-41e7-a729-f61e4c51854d",
       },
       options: [
         {
