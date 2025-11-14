@@ -303,73 +303,155 @@ export const learningCourses: LearningCourse[] = [
             },
 
             vocabIds: [4, 5, 6, 7],
-            grammar: (
-              <ul className="list-decimal list-inside">
-                <li className="font-semibold text-xl">
-                  <span className="font-semibold text-xl mb-3">
-                    Cấu trúc giới thiệu{" "}
-                    <span className="text-[var(--custom-green)]">
-                      [Danh từ] +{" "}
-                    </span>
-                    <span className="text-[var(--custom-orange)]"> 은/는</span>{" "}
-                    <span className="text-[var(--custom-green)]">
-                      + [Danh từ] +{" "}
-                    </span>
-                    <span className="text-[var(--custom-orange)]">입니다.</span>{" "}
-                  </span>
-                  <p className="font-medium text-[18px] my-3">
-                    Đây là cấu trúc "A là B"{" "}
-                    <b>cơ bản và quan trọng nhất trong</b> tiếng Hàn.
-                  </p>
-                  <p className="font-medium text-[18px] my-3">
-                    <strong>은 (eun) / 는 (neun):</strong> Là các tiểu từ chủ đề
-                    đứng sau chủ ngữ dùng để nhấn mạnh ai hoặc cái gì là chủ đề
-                    của câu.
-                    <br />
-                    Dùng <strong>은 (eun)</strong> nếu danh từ kết thúc bằng phụ
-                    âm. Ví dụ: <em>학생은</em> (học sinh)
-                    <br />
-                    Dùng <strong>는 (neun)</strong> nếu danh từ kết thúc bằng
-                    nguyên âm. Ví dụ: <em>저는</em> (tôi)
-                    <br />
-                    <br />
-                    <strong>입니다 (imnida):</strong> Luôn đứng ở cuối câu, có
-                    nghĩa là "là".
-                  </p>
-                </li>
-                <div className="xl:w-[90%] w-full mx-auto flex justify-between gap-10 2xl:flex-row flex-col">
-                  <PurpleFlashCard
-                    header="Ví dụ"
-                    className="text-sm font-medium"
-                  >
-                    <p>
-                      {" "}
-                      저는 학생입니다. (Tôi là học sinh.)
-                      <li>
-                        <strong>저</strong> (Tôi) + 는 + 학생 (học sinh) +
-                        입니다 (là).
-                      </li>
-                      <li>
-                        "저" kết thúc bằng nguyên âm "ㅓ" nên đi với "는". 제
-                      </li>
-                      이름은 민아입니다. (Tên của tôi là Mina.) 제 이름 (Tên của
-                      tôi) + 은 + 민아 (Mina)
-                      <li>
-                        + 입니다 (là). "이름" kết thúc bằng phụ âm "ㅁ" nên đi
-                        với "은"
-                      </li>
-                    </p>
-                  </PurpleFlashCard>
-                </div>
-              </ul>
-            ),
           },
 
           {
             id: 3,
-            title: "Giới thiệu tên và sở thích",
+            title: "Hỏi tên và sở thích",
+            targets: [
+              "Hỏi tên của người khác một cách lịch sự.",
+              "Hỏi và trả lời những câu đơn giản về sở thích.",
+              "Sử dụng thành thạo câu nghi vấn 'A là B 'phải không?",
+              "Hiểu và dùng đúng tiểu từ tân ngữ 을/를.",
+            ],
             status: "available",
-            targets: [],
+            highlight: true,
+            vnDialogue: {
+              mainRole: "B",
+              hasSpeakerBox: false,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [{ text: "Xin chào. Tên bạn là gì?" }],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [{ text: "Tên tôi là Mina. Tên bạn là gì?" }],
+                },
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [{ text: "Tôi là một người lạ. Bạn thích gì?" }],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [{ text: "Tôi thích học tiếng Hàn" }],
+                },
+              ],
+            },
+            koDialogue: {
+              mainRole: "B",
+              hasSpeakerBox: true,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "안녕하세요. 이름이 무엇입니까?.",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F5%2Fvocab%2F저는%20...입니다.mp3?alt=media",
+                    },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    {
+                      text: "저는 민아입니다. 이름이 무엇입니까? ",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F안녕하세요.mp3?alt=media", //chưa fix link
+                    },
+                  ],
+                },
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "저는 남입니다. 무엇을 좋아하세요?",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F5%2Fvocab%2F저는%20...입니다.mp3?alt=media",
+                    },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    {
+                      text: "저는 한국어 공부가 좋아요. ",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F안녕하세요.mp3?alt=media", //chưa fix link
+                    },
+                  ],
+                },
+              ],
+            },
+            culturalStory: {
+              title: "'Bạn thích gì?' - Câu hỏi mở đầu thân thiện",
+              content: `Khi làm quen với người Hàn, sau khi hỏi tên, thay vì hỏi tuổi (đây là một câu hỏi khá phổ biến nhưng đôi khi nhạy cảm), hỏi về sở thích <b>"무엇을 좋아하세요?"</b> là một cách tuyệt vời để kéo dài cuộc trò chuyện. 
+              Người Hàn rất cởi mở khi chia sẻ về sở thích như nghe nhạc K-Pop, xem phim, leo núi hay đi quán cà phê đẹp. Thử hỏi câu này trong lần tới gặp bạn người Hàn nhé!`,
+            },
+            funQuiz: {
+              question:
+                "Trong đoạn hội thoại, khi Nam và Mina giới thiệu bản thân ('Tôi là Nam', 'Tôi là Mina'), họ đã dùng đại từ xưng 'Tôi' ở dạng nào?",
+              options: ["저는", "나는", "내가"],
+              correctAnswerIndex: 1,
+              explanation:
+                "Đáp án đúng là A) 저는 (jeo-neun). Trong đoạn hội thoại, cả hai đều nói '저는 민아입니다' (Tôi là Mina) và '저는 남입니다' (Tôi là Nam). Đây là cách nói 'Tôi' một cách lịch sự, khiêm tốn (dùng '저'), phù hợp khi nói chuyện với người mới gặp.",
+            },
+
+            vocabIds: [8, 9],
+            practiceBox: {
+              questions: [
+                {
+                  questionType: "multipleChoice",
+                  question:
+                    "Khi bạn muốn hỏi 'Tên là gì?' bằng cấu trúc ngữ pháp đã học, bạn sẽ điền tiểu từ nào vào chỗ trống: '이름__ 무엇입니까?'",
+                  options: ["가 ", "을?", "이"],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "Danh từ '이름' (tên) kết thúc bằng phụ âm 'ㅁ' (m), vì vậy nó phải đi với tiểu từ chủ ngữ '이'.",
+                },
+                {
+                  questionType: "multipleChoice",
+                  question:
+                    "Bạn muốn nói 'Tôi thích âm nhạc' (Âm nhạc thì hay) bằng cấu trúc tính từ '...이/가 좋아요'. Bạn sẽ chọn câu nào?",
+                  options: [
+                    "음악가 좋아요",
+                    "음악을 좋아해요",
+                    "음악이 좋아요",
+                  ],
+                  correctAnswerIndex: 0,
+                  explanation:
+                    "Từ '음악' (âm nhạc) kết thúc bằng phụ âm 'ㄱ' (k), nên dùng tiểu từ '이' với tính từ '좋아요'.",
+                },
+                {
+                  questionType: "fillInBlank",
+                  question: "음악___ 좋아요.",
+                  correctAnswer: "이",
+                  explanation:
+                    "Từ '음악' (eumak - âm nhạc) kết thúc bằng một phụ âm ('ㄱ'), vì vậy bạn phải dùng tiểu từ chủ ngữ '이'.",
+                },
+                {
+                  questionType: "dropDown",
+                  question: "저는 <<dropdown>>",
+                  options: [
+                    "영화를 좋아요",
+                    "영화를 좋아해요",
+                    "영화가 좋아해요",
+                  ],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "Khi dùng động từ 'thích' (좋아해요), danh từ 'phim' (영화) phải là tân ngữ và đi kèm với tiểu từ tân ngữ 을/를. Vì 영화 (yeonghwa) kết thúc bằng nguyên âm nên ta dùng 를.",
+                },
+              ],
+            },
           },
           {
             id: 4,
@@ -671,6 +753,65 @@ export const vocabList: Record<number, Vocab> = {
         text: "세요",
         color: "--custom-orange",
         description: "đuôi lịch sự thân mật",
+      },
+    ],
+    examples: [
+      "안녕하세요! 만나서 반갑습니다.",
+      "안녕하세요! 오늘 기분이 어때요?",
+    ],
+  },
+  8: {
+    text: " 무엇",
+    transcription: "mu-eot",
+    meaning: "Gì",
+    usage:
+      "Câu chào hỏi phổ biến trong tiếng Hàn, sử dụng trong các tình huống trang trọng và lịch sự.",
+    description:
+      "Câu chào hỏi phổ biến trong tiếng Hàn, thể hiện sự lịch sự và tôn trọng.",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F5%2Fvocab%2F안녕하세요.mp3?alt=media",
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
+    wordType: "phrase",
+    subdescription: `<b>Mẹo nhỏ</b>: Trong văn nói, <b>"무엇"</b> thường được rút gọn thành <b>뭐</b> (mwo). 
+    Ví dụ: <b>이름이 뭐예요?</b>  (Tên bạn là gì? - dạng thân mật lịch sự).`,
+    parts: [
+      {
+        text: "무엇",
+        color: "--custom",
+        description: "Đại từ nghi vấn.",
+      },
+    ],
+    examples: [
+      "안녕하세요! 만나서 반갑습니다.",
+      "안녕하세요! 오늘 기분이 어때요?",
+    ],
+  },
+  9: {
+    text: "좋아요",
+    transcription: "jo-a-yo",
+    meaning: "Tuyệt",
+    usage:
+      "Câu chào hỏi phổ biến trong tiếng Hàn, sử dụng trong các tình huống trang trọng và lịch sự.",
+    description:
+      "Câu chào hỏi phổ biến trong tiếng Hàn, thể hiện sự lịch sự và tôn trọng.",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F5%2Fvocab%2F안녕하세요.mp3?alt=media",
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
+    wordType: "phrase",
+    subdescription:
+      "<b>Sự thật thú vị</b>: Khi bạn bấm 'Like' trên Facebook hoặc Instagram phiên bản tiếng Hàn, nút đó sẽ hiện chữ <b>좋아요!<b/>.",
+    parts: [
+      {
+        text: "좋다",
+        color: "--custom-green",
+        description: "tính từ gốc: tốt, thích",
+      },
+      {
+        text: "-아요",
+        color: "--custom-organge",
+        description: "đuôi câu thân mật lịch sự",
       },
     ],
     examples: [
