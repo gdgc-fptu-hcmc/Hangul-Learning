@@ -2,7 +2,6 @@ import CourseCard from "@/components/CourseCard";
 import ColoredBanner from "@/shared/layout/ColoredBanner";
 import Footer from "@/shared/layout/Footer";
 import NavBar from "@/shared/layout/NavBar";
-import React from "react";
 import { FaExternalLinkSquareAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
