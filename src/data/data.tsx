@@ -220,9 +220,14 @@ export const learningCourses: LearningCourse[] = [
           },
           {
             id: 2,
-            title: "Xưng hô và giới thiệu",
-            status: "completed",
-            targets: [],
+            title: "Xưng hô và giới thiệu bản thân",
+            target: [
+              "Giới thiệu tên và nghề nghiệp (học sinh) của mình một cách lịch sự.",
+              "Hiểu và sử dụng đúng cấu trúc câu: 'A là B'.",
+              "Phân biệt và sử dụng hai cách xưng 'Tôi' là 저 (jeo) và 나 (na).",
+            ],
+            status: "available",
+            highlight: true,
           },
           {
             id: 3,
