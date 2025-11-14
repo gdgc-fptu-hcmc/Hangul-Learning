@@ -223,14 +223,148 @@ export const learningCourses: LearningCourse[] = [
           {
             id: 2,
             title: "Xưng hô và giới thiệu bản thân",
-            target: [
+            targets: [
               "Giới thiệu tên và nghề nghiệp (học sinh) của mình một cách lịch sự.",
               "Hiểu và sử dụng đúng cấu trúc câu: 'A là B'.",
               "Phân biệt và sử dụng hai cách xưng 'Tôi' là 저 (jeo) và 나 (na).",
             ],
             status: "available",
             highlight: true,
+            vnDialogue: {
+              mainRole: "B",
+              hasSpeakerBox: false,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [{ text: "Tôi là sinh viên" }],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    { text: "À, xin chào. Tên tôi là Mina." },
+                    { text: "Tôi là một sinh viên." },
+                  ],
+                },
+              ],
+            },
+            koDialogue: {
+              mainRole: "B",
+              hasSpeakerBox: true,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "저는 학생입니다.",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F5%2Fvocab%2F저는%20...입니다.mp3?alt=media",
+                    },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    {
+                      text: "아, 안녕하세요. 저는 민아입니다. ",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F안녕하세요.mp3?alt=media", //chưa fix link
+                    },
+                    {
+                      text: "저는 학생입니다.",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F5%2Fvocab%2F만나서%20반갑습니다.mp3?alt=media", //chưa fix link
+                    },
+                  ],
+                },
+              ],
+            },
+            culturalStory: {
+              title: "Tôi",
+              content: `Ở <b>Việt Nam</b>, chúng ta có rất nhiều từ để xưng "tôi" (em, con, cháu, mình...). 
+              Trong tiếng Hàn cũng vậy 
+              <b>!저 (jeo)</b>: Là cách xưng "tôi" khiêm tốn, dùng khi nói chuyện với người lớn tuổi hoặc trong các tình huống trang trọng, lịch sự. 
+              Đây là từ bạn nên dùng khi mới làm quen.
+            <ul className="list-disc list-inside ml-2">
+              <li> <b>"나"</b> (na): Cũng có nghĩa là "tôi", nhưng dùng với bạn bè thân thiết, người nhỏ tuổi hơn hoặc trong các mối quan hệ suồng sã. </li>
+              <li>Dùng <b>"나"</b> với người lớn sẽ bị coi là thiếu lễ phép đó!</li> 
+            </ul>`,
+            },
+            funQuiz: {
+              question:
+                "Bạn đang nói chuyện với giáo viên của mình. Bạn nên dùng từ nào để xưng hô?",
+              options: ["내가", "저", "나"],
+              correctAnswerIndex: 1,
+              explanation:
+                "Chính xác! Khi bạn nói chuyện với giáo viên, bạn nên sử dụng từ 저 để thể hiện sự tôn trọng.",
+            },
+
+            vocabIds: [4, 5, 6, 7],
+            grammar: (
+              <ul className="list-decimal list-inside">
+                <li className="font-semibold text-xl">
+                  <span className="font-semibold text-xl mb-3">
+                    Cấu trúc giới thiệu{" "}
+                    <span className="text-[var(--custom-green)]">
+                      [Danh từ] +{" "}
+                    </span>
+                    <span className="text-[var(--custom-orange)]"> 은/는</span>{" "}
+                    <span className="text-[var(--custom-green)]">
+                      + [Danh từ] +{" "}
+                    </span>
+                    <span className="text-[var(--custom-orange)]">입니다.</span>{" "}
+                  </span>
+                  <p className="font-medium text-[18px] my-3">
+                    Đây là cấu trúc "A là B"{" "}
+                    <b>cơ bản và quan trọng nhất trong</b> tiếng Hàn.
+                  </p>
+                  <p className="font-medium text-[18px] my-3">
+                    <strong>은 (eun) / 는 (neun):</strong> Là các tiểu từ chủ đề
+                    đứng sau chủ ngữ dùng để nhấn mạnh ai hoặc cái gì là chủ đề
+                    của câu.
+                    <br />
+                    Dùng <strong>은 (eun)</strong> nếu danh từ kết thúc bằng phụ
+                    âm. Ví dụ: <em>학생은</em> (học sinh)
+                    <br />
+                    Dùng <strong>는 (neun)</strong> nếu danh từ kết thúc bằng
+                    nguyên âm. Ví dụ: <em>저는</em> (tôi)
+                    <br />
+                    <br />
+                    <strong>입니다 (imnida):</strong> Luôn đứng ở cuối câu, có
+                    nghĩa là "là".
+                  </p>
+                </li>
+                <div className="xl:w-[90%] w-full mx-auto flex justify-between gap-10 2xl:flex-row flex-col">
+                  <PurpleFlashCard
+                    header="Ví dụ"
+                    className="text-sm font-medium"
+                  >
+                    <p>
+                      {" "}
+                      저는 학생입니다. (Tôi là học sinh.)
+                      <li>
+                        <strong>저</strong> (Tôi) + 는 + 학생 (học sinh) +
+                        입니다 (là).
+                      </li>
+                      <li>
+                        "저" kết thúc bằng nguyên âm "ㅓ" nên đi với "는". 제
+                      </li>
+                      이름은 민아입니다. (Tên của tôi là Mina.) 제 이름 (Tên của
+                      tôi) + 은 + 민아 (Mina)
+                      <li>
+                        + 입니다 (là). "이름" kết thúc bằng phụ âm "ㅁ" nên đi
+                        với "은"
+                      </li>
+                    </p>
+                  </PurpleFlashCard>
+                </div>
+              </ul>
+            ),
           },
+
           {
             id: 3,
             title: "Giới thiệu tên và sở thích",
@@ -397,6 +531,151 @@ export const vocabList: Record<number, Vocab> = {
     examples: [
       "안녕하세요! 만나서 반갑습니다.",
       "처음 뵙겠습니다. 반갑습니다.",
+    ],
+  },
+  4: {
+    text: "저",
+    transcription: "jeo",
+    meaning: "Nghĩa: Tôi, em, con... (khiêm tốn)",
+    usage:
+      "Câu chào hỏi phổ biến trong tiếng Hàn, sử dụng trong các tình huống trang trọng và lịch sự.",
+    description:
+      "Câu chào hỏi phổ biến trong tiếng Hàn, thể hiện sự lịch sự và tôn trọng.",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F5%2Fvocab%2F안녕하세요.mp3?alt=media",
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
+    wordType: "phrase",
+    subdescription: `<b>Mẹo nhỏ:</b> Khi giới thiệu tên, người Hàn thường dùng <b>제 이름</b>
+     (je ireum, tên của tôi là) thay vì <b>저의 이름 (jeo ireum)</b>. 제 (je) là dạng sở hữu của 저 (jeo).”.`,
+    parts: [
+      {
+        text: "안녕",
+        color: "--custom-green",
+        description: "danh từ: bình an",
+      },
+      {
+        text: "하",
+        color: "--custom-red",
+        description: "động từ: làm",
+      },
+      {
+        text: "세요",
+        color: "--custom-orange",
+        description: "đuôi lịch sự thân mật",
+      },
+    ],
+    examples: [
+      "안녕하세요! 만나서 반갑습니다.",
+      "안녕하세요! 오늘 기분이 어때요?",
+    ],
+  },
+  5: {
+    text: "이름",
+    transcription: "ireum",
+    meaning: "Tên",
+    usage:
+      "Câu chào hỏi phổ biến trong tiếng Hàn, sử dụng trong các tình huống trang trọng và lịch sự.",
+    description:
+      "Câu chào hỏi phổ biến trong tiếng Hàn, thể hiện sự lịch sự và tôn trọng.",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F5%2Fvocab%2F안녕하세요.mp3?alt=media",
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
+    wordType: "phrase",
+
+    parts: [
+      {
+        text: "안녕",
+        color: "--custom-green",
+        description: "danh từ: bình an",
+      },
+      {
+        text: "하",
+        color: "--custom-red",
+        description: "động từ: làm",
+      },
+      {
+        text: "세요",
+        color: "--custom-orange",
+        description: "đuôi lịch sự thân mật",
+      },
+    ],
+    examples: [
+      "안녕하세요! 만나서 반갑습니다.",
+      "안녕하세요! 오늘 기분이 어때요?",
+    ],
+  },
+  6: {
+    text: "입니다",
+    transcription: "imnida",
+    meaning: "Là",
+    usage:
+      "Câu chào hỏi phổ biến trong tiếng Hàn, sử dụng trong các tình huống trang trọng và lịch sự.",
+    description:
+      "Câu chào hỏi phổ biến trong tiếng Hàn, thể hiện sự lịch sự và tôn trọng.",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F5%2Fvocab%2F안녕하세요.mp3?alt=media",
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
+    wordType: "phrase",
+    subdescription: `<b>Lưu ý</b>: <b>"입니다" </b>luôn được viết dính liền với danh từ đứng trước nó. Ví dụ: <b>학생입니다</b> (đúng), <b>학생 입니다</b> (sai)..`,
+    parts: [
+      {
+        text: "안녕",
+        color: "--custom-green",
+        description: "danh từ: bình an",
+      },
+      {
+        text: "하",
+        color: "--custom-red",
+        description: "động từ: làm",
+      },
+      {
+        text: "세요",
+        color: "--custom-orange",
+        description: "đuôi lịch sự thân mật",
+      },
+    ],
+    examples: [
+      "안녕하세요! 만나서 반갑습니다.",
+      "안녕하세요! 오늘 기분이 어때요?",
+    ],
+  },
+  7: {
+    text: "학생",
+    transcription: "haksaeng",
+    meaning: "Học sinh",
+    usage:
+      "Câu chào hỏi phổ biến trong tiếng Hàn, sử dụng trong các tình huống trang trọng và lịch sự.",
+    description:
+      "Câu chào hỏi phổ biến trong tiếng Hàn, thể hiện sự lịch sự và tôn trọng.",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F5%2Fvocab%2F안녕하세요.mp3?alt=media",
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
+    wordType: "phrase",
+
+    parts: [
+      {
+        text: "안녕",
+        color: "--custom-green",
+        description: "danh từ: bình an",
+      },
+      {
+        text: "하",
+        color: "--custom-red",
+        description: "động từ: làm",
+      },
+      {
+        text: "세요",
+        color: "--custom-orange",
+        description: "đuôi lịch sự thân mật",
+      },
+    ],
+    examples: [
+      "안녕하세요! 만나서 반갑습니다.",
+      "안녕하세요! 오늘 기분이 어때요?",
     ],
   },
 };
