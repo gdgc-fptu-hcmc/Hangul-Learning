@@ -62,12 +62,27 @@ export const getMiniGameContent = (
         if (topic.id === topicId) {
           for (const lesson of topic.lessons) {
             if (lesson.id === lessonId) {
-              const resultData: MiniGame[] = [];
+              const randomGameIds: number[] = [];
+              while (
+                randomGameIds.length < (lesson.minigameIds?.length || 0) &&
+                randomGameIds.length < (lesson.minigameQuantity || 0)
+              ) {
+                const randomIndex = Math.floor(
+                  Math.random() * (lesson.minigameIds?.length || 0)
+                );
+                const selectedId = lesson.minigameIds
+                  ? lesson.minigameIds[randomIndex]
+                  : null;
+                if (selectedId && !randomGameIds.includes(selectedId)) {
+                  randomGameIds.push(selectedId);
+                }
+              }
 
-              for (const miniGameId of lesson.minigameIds || []) {
+              const fullGameContents: MiniGame[] = [];
+              for (const miniGameId of randomGameIds || []) {
                 const miniGameData = miniGames[miniGameId];
                 if (miniGameData) {
-                  resultData.push(miniGameData);
+                  fullGameContents.push(miniGameData);
                 }
               }
 
@@ -76,7 +91,7 @@ export const getMiniGameContent = (
                 topicId,
                 lessonId,
                 quantity: lesson.minigameQuantity,
-                contents: resultData,
+                contents: fullGameContents,
               };
             }
           }
