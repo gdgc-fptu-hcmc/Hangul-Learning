@@ -1,9 +1,15 @@
-import { LearningCourse, MiniGame, Vocab } from "./types";
+import { LearningCourse, MiniGame, Vocab } from "./types.tsx";
 import speakerAAvatarUrl from "@/assets/images/lessons/speaker-A.svg";
 import speakerBAvatarUrl from "@/assets/images/lessons/speaker-B.svg";
 import MeoNho from "@/components/grammar/MeoNho";
 import PurpleFlashCard from "@/components/grammar/PurpleFlashCard";
 import TuKhoa from "@/components/grammar/TuKhoa";
+import { BsPersonBoundingBox } from "react-icons/bs";
+import { FaHandHoldingHeart, FaStar } from "react-icons/fa";
+import { FaHandshakeSimple } from "react-icons/fa6";
+import { GiThreeFriends } from "react-icons/gi";
+import { IoHomeSharp } from "react-icons/io5";
+import { MdEmojiEmotions, MdOutlineSportsEsports } from "react-icons/md";
 
 export const learningCourses: LearningCourse[] = [
   // Course 1: Cấp độ Sơ cấp
@@ -15,13 +21,22 @@ export const learningCourses: LearningCourse[] = [
       {
         id: 1,
         title: "Làm quen & Giới thiệu bản thân",
-        accent: "from-amber-200 to-amber-50 text-amber-700",
-        barColor: "bg-amber-400",
+        topicTitleClassName:
+          "bg-[#fff1c9] border-[var(--custom-orange)] text-[var(--custom-orange)]",
+        mainColor: "--custom-orange",
+        images: [
+          "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/images%2Fman-wave-hand-and-box.png?alt=media&token=9a7966c3-364f-49f1-9e23-43e9bee744c6",
+          "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/images%2Fman-thinking-and-box.png?alt=media&token=e0be2422-b7c4-4a73-bb4a-491ce3f2d444",
+          "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/images%2Fman-louding.png?alt=media&token=6e8d4ab2-5d47-42e9-8f45-9a067b2c43ce",
+        ],
         cta: { label: "Tiếp tục", tone: "neutral" },
         lessons: [
           {
             id: 1,
             title: "Chào hỏi cơ bản",
+            icon: <FaHandshakeSimple />,
+            lessonLink: "/courses/1/topics/1/lessons/1",
+            miniGameLink: "/courses/1/topics/1/lessons/1/mini-game",
             targets: [
               "Chào hỏi và đáp lại lời chào một cách lịch sự.",
               "Bày tỏ sự vui mừng khi gặp ai đó lần đầu.",
@@ -217,60 +232,106 @@ export const learningCourses: LearningCourse[] = [
                 },
               ],
             },
-            minigameIds: [1, 2, 3, 4, 5, 6, 7],
-            minigameQuantity: 6, // random pick 6 câu trong danh sách miniGameIds trên
           },
           {
             id: 2,
             title: "Xưng hô và giới thiệu",
+            icon: <BsPersonBoundingBox />,
+            lessonLink: "/courses/1/topics/1/lessons/2",
+            miniGameLink: "/courses/1/topics/1/lessons/2/mini-game",
             status: "completed",
             targets: [],
           },
           {
             id: 3,
             title: "Giới thiệu tên và sở thích",
+            icon: <MdOutlineSportsEsports />,
+            lessonLink: "/courses/1/topics/1/lessons/3",
+            miniGameLink: "/courses/1/topics/1/lessons/3/mini-game",
             status: "available",
             targets: [],
           },
           {
             id: 4,
             title: "Động lực và câu khích lệ",
+            icon: <FaHandshakeSimple />,
+            lessonLink: "/courses/1/topics/1/lessons/4",
+            miniGameLink: "/courses/1/topics/1/lessons/4/mini-game",
             status: "locked",
             targets: [],
           },
-          { id: 5, title: "Ôn tập", status: "final", targets: [] },
+          {
+            id: 5,
+            title: "Ôn tập",
+            icon: <FaStar />,
+            lessonLink: "/courses/1/topics/1/lessons/5",
+            miniGameLink: "/courses/1/topics/1/lessons/5/mini-game",
+            status: "final",
+            targets: [],
+          },
         ],
       },
       {
         id: 2,
         title: "Gia đình & Bạn bè",
-        accent: "from-lime-200 to-lime-50 text-lime-800",
-        barColor: "bg-lime-400",
+        topicTitleClassName:
+          "bg-[#e3f2d2] border-[var(--custom-green)] text-[var(--custom-green)]",
+        mainColor: "--custom-green",
         cta: { label: "Học vượt?", tone: "neutral" },
         lessons: [
           {
             id: 1,
             title: "Giới thiệu gia đình",
+            icon: <IoHomeSharp />,
+            lessonLink: "/courses/1/topics/1/lessons/1",
+            miniGameLink: "/courses/1/topics/1/lessons/1/mini-game",
             status: "locked",
             targets: [],
           },
-          { id: 2, title: "Từ vựng họ hàng", status: "locked", targets: [] },
+          {
+            id: 2,
+            title: "Bạn bè và các mối quan hệ",
+            icon: <GiThreeFriends />,
+            lessonLink: "/courses/1/topics/1/lessons/2",
+            miniGameLink: "/courses/1/topics/1/lessons/2/mini-game",
+            status: "locked",
+            targets: [],
+          },
           {
             id: 3,
-            title: "Trò chuyện hằng ngày",
+            title: "Biểu lộ cảm xúc với gia đình",
+            status: "locked",
+            icon: <MdEmojiEmotions />,
+            lessonLink: "/courses/1/topics/1/lessons/3",
+            miniGameLink: "/courses/1/topics/1/lessons/3/mini-game",
+            targets: [],
+          },
+          {
+            id: 4,
+            title: "Biết ơn và lời cảm ơn",
+            icon: <FaHandHoldingHeart />,
+            lessonLink: "/courses/1/topics/1/lessons/4",
+            miniGameLink: "/courses/1/topics/1/lessons/4/mini-game",
             status: "locked",
             targets: [],
           },
-          { id: 4, title: "Kết nối bạn bè", status: "locked", targets: [] },
-          { id: 5, title: "Bài cuối", status: "final", targets: [] },
+          {
+            id: 5,
+            title: "Ôn tập",
+            icon: <FaStar />,
+            lessonLink: "/courses/1/topics/1/lessons/5",
+            miniGameLink: "/courses/1/topics/1/lessons/5/mini-game",
+            status: "final",
+            targets: [],
+          },
         ],
       },
       {
         id: 3,
         title: "Số đếm & Thời gian",
-        accent: "from-indigo-200 to-indigo-50 text-indigo-800",
-        barColor: "bg-indigo-400",
-        cta: { label: "Học vượt?", tone: "accent" },
+        topicTitleClassName: "from-indigo-200 to-indigo-50 text-indigo-800",
+        mainColor: "bg-indigo-400",
+        cta: { label: "Học vượt?", tone: "topicTitleClassName" },
         lessons: [
           { id: 1, title: "Số đếm cơ bản", status: "locked", targets: [] },
           { id: 2, title: "Đếm giờ & phút", status: "locked", targets: [] },

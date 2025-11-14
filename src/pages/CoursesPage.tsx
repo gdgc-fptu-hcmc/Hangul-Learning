@@ -1,4 +1,4 @@
-import CourseCard from "@/components/CourseCard";
+import CourseCard from "@/components/courses-topics/CourseCard";
 import ColoredBanner from "@/shared/layout/ColoredBanner";
 import Footer from "@/shared/layout/Footer";
 import NavBar from "@/shared/layout/NavBar";

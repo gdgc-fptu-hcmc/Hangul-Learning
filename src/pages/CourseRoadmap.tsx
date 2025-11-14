@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import ColoredBanner from "@/shared/layout/ColoredBanner";
 import Footer from "@/shared/layout/Footer";
 import NavBar from "@/shared/layout/NavBar";
-import TopicSection from "@/components/topics/TopicSection";
+import TopicSection from "@/components/courses-topics/topic/TopicSection";
 import { LearningCourse, learningCourses } from "@/data";
 
 const CourseRoadmap: React.FC = () => {
@@ -23,7 +23,7 @@ const CourseRoadmap: React.FC = () => {
       );
     }) ?? defaultCourse;
 
-  const levelLabel = selectedCourse?.level ?? "Cấp độ 1: Sơ cấp";
+  const levelLabel = selectedCourse?.level ?? "Cấp độ không xác định";
 
   return (
     <>
@@ -45,7 +45,10 @@ const CourseRoadmap: React.FC = () => {
       </div>
 
       {/* Topic section */}
-      <TopicSection learningTopics={selectedCourse?.topics} className="mb-20" />
+      <TopicSection
+        learningTopics={selectedCourse?.topics}
+        className="w-full max-w-6xl mb-20"
+      />
       <Footer />
     </>
   );

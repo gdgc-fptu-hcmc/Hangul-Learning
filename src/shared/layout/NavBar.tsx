@@ -17,9 +17,9 @@ const menuItems = [
     href: "/courses",
     hasDropdown: true,
     dropDownItems: [
-      { name: "Cấp độ 1: Sơ cấp", href: "/courses/level-1" },
-      { name: "Cấp độ 2: Trung cấp", href: "/courses/level-2" },
-      { name: "Cấp độ 3: Cao cấp", href: "/courses/level-3" },
+      { name: "Cấp độ 1: Sơ cấp", href: "/courses/1" },
+      { name: "Cấp độ 2: Trung cấp", href: "/courses/2" },
+      { name: "Cấp độ 3: Cao cấp", href: "/courses/3" },
     ],
   },
   {
@@ -53,7 +53,7 @@ const NavBar = () => {
 
   return (
     <div
-      className={`sticky top-0 w-full bg-white z-50 ${
+      className={`sticky top-0 w-full bg-white z-[1000] ${
         isScrolled ? "shadow-md" : ""
       }`}
     >
