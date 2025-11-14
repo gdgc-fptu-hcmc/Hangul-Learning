@@ -1,27 +1,5 @@
-import { LessonContent, LessonStep } from "./types.js";
-import { getLessonStatusStyles } from "./lessonStatus.js";
-import { learningCourses, vocabList } from "./data.js";
-
-export function getLessonStatusLabel(status: LessonStep["status"]) {
-  switch (status) {
-    case "completed":
-      return "Đã hoàn thành";
-    case "available":
-      return "Sẵn sàng";
-    case "locked":
-      return "Chưa mở khóa";
-    case "final":
-      return "Bài cuối";
-    default:
-      return "";
-  }
-}
-
-export function getLessonChipStyles(lesson: LessonStep) {
-  return lesson.highlight
-    ? "border-amber-400 bg-amber-100 text-amber-700"
-    : getLessonStatusStyles(lesson.status);
-}
+import { LessonContent, MiniGame, MiniGameContent } from "./types.js";
+import { learningCourses, miniGames, vocabList } from "./data.js";
 
 export function getLessonContent(
   courseId: number,
@@ -53,6 +31,8 @@ export function getLessonContent(
               resultData.funQuiz = lesson.funQuiz;
               resultData.grammar = lesson.grammar;
               resultData.practiceBox = lesson.practiceBox;
+              resultData.minigameIds = lesson.minigameIds;
+              resultData.minigameQuantity = lesson.minigameQuantity;
               for (const vocabId of lesson.vocabIds || []) {
                 const vocabData = vocabList[vocabId];
                 if (vocabData) {
@@ -70,3 +50,55 @@ export function getLessonContent(
 
   return null;
 }
+
+export const getMiniGameContent = (
+  courseId: number,
+  topicId: number,
+  lessonId: number
+): MiniGameContent | null => {
+  for (const course of learningCourses) {
+    if (course.id === courseId) {
+      for (const topic of course.topics) {
+        if (topic.id === topicId) {
+          for (const lesson of topic.lessons) {
+            if (lesson.id === lessonId) {
+              const randomGameIds: number[] = [];
+              while (
+                randomGameIds.length < (lesson.minigameIds?.length || 0) &&
+                randomGameIds.length < (lesson.minigameQuantity || 0)
+              ) {
+                const randomIndex = Math.floor(
+                  Math.random() * (lesson.minigameIds?.length || 0)
+                );
+                const selectedId = lesson.minigameIds
+                  ? lesson.minigameIds[randomIndex]
+                  : null;
+                if (selectedId && !randomGameIds.includes(selectedId)) {
+                  randomGameIds.push(selectedId);
+                }
+              }
+
+              const fullGameContents: MiniGame[] = [];
+              for (const miniGameId of randomGameIds || []) {
+                const miniGameData = miniGames[miniGameId];
+                if (miniGameData) {
+                  fullGameContents.push(miniGameData);
+                }
+              }
+
+              return {
+                courseId,
+                topicId,
+                lessonId,
+                quantity: lesson.minigameQuantity,
+                contents: fullGameContents,
+              };
+            }
+          }
+        }
+      }
+    }
+  }
+
+  return null;
+};

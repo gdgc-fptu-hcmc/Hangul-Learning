@@ -1,7 +1,7 @@
 import { Dialogue } from "@/data";
 import CustomBox from "@/shared/common/CustomBox";
 import React from "react";
-import SpeakerBox from "../vocab/SpeakerBox";
+import SpeakerBox from "../../shared/common/SpeakerBox";
 
 const DialogueBox: React.FC<{ dialogue: Dialogue }> = ({ dialogue }) => {
   return (
@@ -36,7 +36,11 @@ const DialogueBox: React.FC<{ dialogue: Dialogue }> = ({ dialogue }) => {
                   } `}
                 >
                   {dialogue.hasSpeakerBox && (
-                    <SpeakerBox text={line.text} audioUrl={line.audioUrl} />
+                    <SpeakerBox
+                      text={line.text}
+                      audioUrl={line.audioUrl}
+                      speakerClassName="!m-1 text-xl"
+                    />
                   )}
                   <CustomBox
                     tailPosition={`${
@@ -59,7 +63,11 @@ const DialogueBox: React.FC<{ dialogue: Dialogue }> = ({ dialogue }) => {
                   } `}
                 >
                   {dialogue.hasSpeakerBox && (
-                    <SpeakerBox text={line.text} audioUrl={line.audioUrl} />
+                    <SpeakerBox
+                      text={line.text}
+                      audioUrl={line.audioUrl}
+                      speakerClassName="!m-1 text-xl"
+                    />
                   )}
                   <CustomBox className={`w-max text-xl p-3 rounded-xl`}>
                     {line.text}{" "}

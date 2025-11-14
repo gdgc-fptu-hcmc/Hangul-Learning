@@ -16,6 +16,9 @@
   --custom-orange: #ffaa00;
   --custom-yellow: #ffcf41;
   --custom-green: #6ba823;
+  --custom-blue: #40bbd1;
+  --custom-green-light: #e3f2d2;
+  --custom-red-light: #ffebeb;
   --gradient-color: linear-gradient(
     90deg,
     var(--custom-purple) 0%,
