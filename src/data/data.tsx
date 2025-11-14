@@ -59,7 +59,7 @@ export const learningCourses: LearningCourse[] = [
                     {
                       text: "안녕하세요!",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/v0/b/hangul-chat-ai-be.firebasestorage.app/o/%EB%A7%8C%EB%82%98%EC%84%9C%20%EB%B0%98%EA%B0%91%EC%8A%B5%EB%8B%88%EB%8B%A4.mp3?alt=media&token=b96b625e-a715-46cd-82c3-2aa492b3a700",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F안녕하세요.mp3?alt=media",
                     },
                   ],
                 },
@@ -70,12 +70,12 @@ export const learningCourses: LearningCourse[] = [
                     {
                       text: "안녕하세요!",
                       audioUrl:
-                        "https://commondatastorage.googleapis.com/codeskulptor-assets/Collision8-Bit.ogg",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F안녕하세요.mp3?alt=media",
                     },
                     {
                       text: "만나서 반갑습니다.",
                       audioUrl:
-                        "https://commondatastorage.googleapis.com/codeskulptor-assets/Collision8-Bit.ogg",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F5%2Fvocab%2F만나서%20반갑습니다.mp3?alt=media",
                     },
                   ],
                 },
@@ -306,7 +306,7 @@ export const vocabList: Record<number, Vocab> = {
     description:
       "Câu chào hỏi phổ biến trong tiếng Hàn, thể hiện sự lịch sự và tôn trọng.",
     audioUrl:
-      "https://commondatastorage.googleapis.com/codeskulptor-assets/Collision8-Bit.ogg",
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F5%2Fvocab%2F안녕하세요.mp3?alt=media",
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
     wordType: "phrase",
@@ -342,7 +342,7 @@ export const vocabList: Record<number, Vocab> = {
     description:
       "Cụm từ dùng để diễn tả việc đã gặp ai đó, thể hiện sự vui mừng khi gặp gỡ.",
     audioUrl:
-      "https://commondatastorage.googleapis.com/codeskulptor-assets/Collision8-Bit.ogg",
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F만나서.mp3?alt=media",
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
     wordType: "phrase",
@@ -371,7 +371,7 @@ export const vocabList: Record<number, Vocab> = {
     description:
       "Cụm từ dùng để diễn tả sự vui mừng khi gặp gỡ ai đó, thường sử dụng trong các tình huống trang trọng.",
     audioUrl:
-      "https://commondatastorage.googleapis.com/codeskulptor-assets/Collision8-Bit.ogg",
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F반갑습니다.mp3?alt=media",
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
     wordType: "phrase",
