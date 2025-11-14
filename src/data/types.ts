@@ -11,6 +11,8 @@ export interface LessonStep {
   vocabIds?: number[]; // list of vocab ids introduced in this lesson
   grammar?: React.ReactNode; // grammar content in HTML format
   practiceBox?: PracticeBox; // practice box section
+  minigameIds?: number[]; // list of minigame ids associated with this lesson
+  minigameQuantity?: number; // số lượng minigame trong lesson
 }
 
 export interface LearningTopic {
@@ -47,7 +49,9 @@ export interface LessonContent {
   funQuiz?: FunQuiz; // Fun quiz section
   vocabs?: Vocab[]; // list of vocab ids introduced in this lesson
   grammar?: React.ReactNode; // grammar content in HTML format
-  practiceBox?: PracticeBox; // practice box section
+  practiceBox?: PracticeBox; // practice box section,
+  minigameIds?: number[]; // list of minigame ids associated with this lesson
+  minigameQuantity?: number; // số lượng minigame trong lesson
 }
 
 // Các thành phần bài học--------------------------
@@ -137,9 +141,59 @@ export interface VocabPart {
 
 // THƯ VIỆN MINIGAMES --------------------------
 export interface MiniGame {
-  id: number;
   title: string;
-  description: string;
-  imgUrl: string;
-  gameUrl: string;
+  type: "multipleChoice" | "phraseOrder" | "matching";
+  content: MiniGameMc | MiniGamePhraseOrder | MiniGameMatching;
+}
+
+// multiple choice minigame
+export interface MiniGameMc {
+  displayType: 1 | 2 | 3 | 4; // 4 kiểu render khác nhau
+  question?: MiniGameQuestionPhrase;
+  options: MiniGameMcOption[];
+  correctValue: string; // lấy từ value của đáp án đúng
+}
+
+export interface MiniGameMcOption {
+  value: string;
+  text: TextDisplay;
+  image?: string;
+}
+
+// phrase order minigame
+export interface MiniGamePhraseOrder {
+  displayType: 1 | 2 | 3; // 3 kiểu render khác nhau
+  question: MiniGameQuestionPhrase;
+  texts: TextDisplay[]; // sẽ được random lúc render + có thể dư element
+  rightOrder: number[]; // mảng các index của texts theo thứ tự đúng (đếm từ 0)
+}
+
+// matching minigame
+export interface MiniGameMatching {
+  displayType: 1 | 2; // 2 kiểu render khác nhau
+  firstPhraseList: TextDisplay[]; // danh sách các phần ở cột bên trái
+  secondPhraseList: TextDisplay[]; // danh sách các phần ở cột bên phải
+  // sẽ được random khi render
+  // thứ tự trên cũng là thứ tự cặp cần được nối đúng
+}
+
+// COMMON: phần hiển thị từ vựng, cụm từ hoặc mệnh đề... trong minigame
+// có thể dùng chung cho minigame loại 1, loại 2, loại 3 (MC và Order, Matching)
+export interface MiniGameQuestionPhrase {
+  // phần hiển thị từ vựng câu hỏi, ảnh minh họa, audio nếu có
+  text?: TextDisplay;
+  audio?: string;
+  image?: string;
+}
+export interface TextDisplay {
+  // phần hiển thị văn bản chính và phụ (phụ có thể là romanji phiên âm hoặc mục đích khác)
+  main: string;
+  sub?: string;
+}
+export interface MiniGameContent {
+  courseId: number;
+  topicId: number;
+  lessonId: number;
+  quantity?: number;
+  contents: MiniGame[];
 }

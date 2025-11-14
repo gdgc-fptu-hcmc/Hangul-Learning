@@ -9,7 +9,7 @@ import userFour from "@/assets/icons/user-four.svg";
 import { MdChatBubbleOutline, MdQuiz } from "react-icons/md";
 import { TbTextGrammar, TbVocabulary } from "react-icons/tb";
 import useScrollBy from "@/hooks/useScrollBy";
-import SpeakerBox from "@/components/vocab/SpeakerBox";
+import SpeakerBox from "@/shared/common/SpeakerBox";
 import DialogueBox from "@/components/lessons/DialogueBox";
 import CustomBox from "@/shared/common/CustomBox";
 import parse from "html-react-parser";
@@ -96,12 +96,17 @@ const LessonsPage = () => {
                     <ImPushpin className="inline-block p-1 border-2 border-gray-300 rounded text-3xl text-[var(--custom-red)]" />
                     <span className="text-lg font-bold">Mục tiêu bài học:</span>
                   </div>
+                  {/* Target Lesson */}
                   <ul className="list-disc list-inside">
-                    {content?.lessonTargets.map((target, index) => (
-                      <li key={index} className="text-md mt-2">
-                        {target}
-                      </li>
-                    ))}
+                    {content?.lessonTargets ? (
+                      content.lessonTargets.map((target, index) => (
+                        <li key={index} className="text-md mt-2">
+                          {target}
+                        </li>
+                      ))
+                    ) : (
+                      <li>Thiếu data mn ơi.</li>
+                    )}
                   </ul>
                 </div>
               </section>
@@ -140,13 +145,15 @@ const LessonsPage = () => {
                 </ul>
                 {/* Dialogue Box */}
                 <div className="mt-5">
-                  <DialogueBox
-                    dialogue={
-                      activeLanguage === "ko"
-                        ? content?.koDialogue
-                        : content?.vnDialogue
-                    }
-                  />
+                  {content?.koDialogue && content?.vnDialogue && (
+                    <DialogueBox
+                      dialogue={
+                        activeLanguage === "ko"
+                          ? content?.koDialogue
+                          : content?.vnDialogue
+                      }
+                    />
+                  )}
                 </div>
                 <div className="flex items-center gap-2 mt-10">
                   <img
@@ -205,7 +212,7 @@ const LessonsPage = () => {
                       </div>
                     ))
                   ) : (
-                    <li>Không có từ vựng nào.</li>
+                    <li>Thiếu data mn ơi.</li>
                   )}
                 </CustomBox>
               </section>
@@ -218,7 +225,11 @@ const LessonsPage = () => {
                 <CustomBox className="mt-5 rounded-md min-h-[30vh] p-10">
                   {/* PHần phải tự viết manually từng phần rồi gắn vào trong data.tsx */}
 
-                  {content?.grammar}
+                  {content?.grammar ? (
+                    content.grammar
+                  ) : (
+                    <p>Thiếu data mn ơi.</p>
+                  )}
                 </CustomBox>
               </section>
 
@@ -228,10 +239,15 @@ const LessonsPage = () => {
                   <MdQuiz className="inline-block rounded-full p-2 text-[50px] border-2 border-gray-300 text-[var(--custom-purple)]" />
                   <span className="text-2xl font-bold">Ôn tập</span>
                 </div>
-                <PracticeBox
-                  className="mt-5"
-                  questions={content?.practiceBox.questions}
-                />
+                {content?.practiceBox?.questions &&
+                content?.practiceBox.questions.length > 0 ? (
+                  <PracticeBox
+                    className="mt-5"
+                    questions={content?.practiceBox.questions}
+                  />
+                ) : (
+                  <p>Thiếu data mn ơi.</p>
+                )}
               </section>
 
               <div className="flex mt-[10vh] justify-between items-center w-full">
