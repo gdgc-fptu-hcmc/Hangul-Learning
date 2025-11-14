@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import ColoredBanner from "@/shared/layout/ColoredBanner";
 import Footer from "@/shared/layout/Footer";
 import NavBar from "@/shared/layout/NavBar";
-import TopicSection from "@/components/TopicSection";
+import TopicSection from "@/components/topics/TopicSection";
 import { LearningCourse, learningCourses } from "@/data";
 
 const CourseRoadmap: React.FC = () => {
@@ -12,8 +12,8 @@ const CourseRoadmap: React.FC = () => {
   const defaultCourse = learningCourses[0];
   const normalizedCourseId = courseId?.toString().toLowerCase();
 
-  const selectedCourse: LearningCourse | undefined = learningCourses.find(
-    (course) => {
+  const selectedCourse: LearningCourse | undefined =
+    learningCourses.find((course) => {
       const idAsString = String(course.id);
       const idAsSlug = `level-${course.id}`;
 
@@ -21,8 +21,7 @@ const CourseRoadmap: React.FC = () => {
         normalizedCourseId === idAsString ||
         normalizedCourseId === idAsSlug.toLowerCase()
       );
-    }
-  ) ?? defaultCourse;
+    }) ?? defaultCourse;
 
   const levelLabel = selectedCourse?.level ?? "Cấp độ 1: Sơ cấp";
 
@@ -32,9 +31,12 @@ const CourseRoadmap: React.FC = () => {
       <NavBar />
 
       {/* Breadcrumb */}
-      <div className="w-full flex justify-center">
+      <div className="w-full flex justify-center mt-10">
         <div className="w-[90vw] mb-6 flex items-center gap-2 text-lg font-bold text-gray-900">
-          <Link to="/courses" className="hover:underline">
+          <Link
+            to="/courses"
+            className="hover:underline hover:cursor-pointer hover:underline-offset-4"
+          >
             Bài học
           </Link>
           <span className="opacity-60">/</span>

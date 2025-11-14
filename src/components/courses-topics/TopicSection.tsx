@@ -15,10 +15,9 @@ const TopicSection: React.FC<TopicSectionProps> = ({
 
   return (
     <section className={`w-full flex justify-center ${className}`}>
-      <div className="w-[90vw] flex flex-col gap-12">
+      <div className="w-[70vw] flex flex-col gap-12">
         {learningTopics.map((topic, index) => (
           <div key={topic.id} className="flex flex-col gap-4">
-
             {/* TopicTitle Component */}
             <TopicTitle
               topicNumber={index + 1}
@@ -45,7 +44,6 @@ const TopicSection: React.FC<TopicSectionProps> = ({
                 (Roadmap UI goes here)
               </p>
             </div>
-
           </div>
         ))}
       </div>
