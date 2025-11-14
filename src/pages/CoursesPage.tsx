@@ -1,4 +1,4 @@
-import CourseCard from "@/components/CourseCard";
+import CourseCard from "@/components/courses-topics/CourseCard";
 import ColoredBanner from "@/shared/layout/ColoredBanner";
 import Footer from "@/shared/layout/Footer";
 import NavBar from "@/shared/layout/NavBar";
@@ -53,7 +53,7 @@ const CoursesPage = () => {
           level="Cấp độ 1: Sơ cấp"
           numOfLessons={15}
           title="Giới thiệu về tiếng Hàn"
-          href="/courses/level-1"
+          href="/courses/1"
           describedImgUrl={course1ImgUrl}
         >
           <p className="mt-2">
@@ -77,10 +77,10 @@ const CoursesPage = () => {
 
         <CourseCard
           levelIconUrl={level2IconUrl}
-          level="Cấp độ : Trung cấp"
+          level="Cấp độ 2: Trung cấp"
           numOfLessons={15}
           title="Mở rộng giao tiếp"
-          href="/courses/level-2"
+          href="/courses/2"
           describedImgUrl={course2ImgUrl}
         >
           <p className="mt-2">
@@ -106,7 +106,7 @@ const CoursesPage = () => {
           level="Cấp độ 3: Cao cấp"
           numOfLessons={15}
           title="Hội thoại & Cảm xúc"
-          href="/courses/level-3"
+          href="/courses/3"
           describedImgUrl={course3ImgUrl}
         >
           <p className="mt-2">

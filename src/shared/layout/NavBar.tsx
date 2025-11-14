@@ -17,9 +17,9 @@ const menuItems = [
     href: "/courses",
     hasDropdown: true,
     dropDownItems: [
-      { name: "Cấp độ 1: Sơ cấp", href: "/courses/level-1" },
-      { name: "Cấp độ 2: Trung cấp", href: "/courses/level-2" },
-      { name: "Cấp độ 3: Cao cấp", href: "/courses/level-3" },
+      { name: "Cấp độ 1: Sơ cấp", href: "/courses/1" },
+      { name: "Cấp độ 2: Trung cấp", href: "/courses/2" },
+      { name: "Cấp độ 3: Cao cấp", href: "/courses/3" },
     ],
   },
   {
@@ -53,7 +53,7 @@ const NavBar = () => {
 
   return (
     <div
-      className={`sticky top-0 w-full bg-white z-50 ${
+      className={`sticky top-0 w-full bg-white z-[1000] ${
         isScrolled ? "shadow-md" : ""
       }`}
     >
@@ -92,7 +92,7 @@ const NavBar = () => {
                 {item.hasDropdown && (
                   <>
                     <MdArrowDropDown />
-                    <ul className="absolute top-full left-1/2 -translate-x-1/2  bg-white border w-max border-gray-300 rounded-md shadow-lg opacity-0 group-hover:opacity-100">
+                    <ul className="absolute top-full left-1/2 -translate-x-1/2  bg-white border w-max border-gray-300 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all mt-2">
                       {item.dropDownItems!.map((subItem) => (
                         <li
                           key={subItem.name}

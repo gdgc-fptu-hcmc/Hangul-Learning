@@ -1,6 +1,11 @@
+import React from "react";
+
 export interface LessonStep {
   id: number;
   title: string;
+  icon?: React.ReactNode; // this will be react icon or something else
+  lessonLink?: string; // link to the lesson page
+  miniGameLink?: string; // link to the minigame page
   targets: string[] | [];
   status: "available" | "completed" | "locked" | "final";
   highlight?: boolean;
@@ -18,14 +23,18 @@ export interface LessonStep {
 export interface LearningTopic {
   id: number;
   title: string;
-  accent: string;
-  barColor: string;
+  topicTitleClassName: string;
+  mainColor: string;
+  images?: string[];
   cta?: {
     label: string;
-    tone: "neutral" | "accent";
+    tone: "neutral" | "topicTitleClassName";
   };
   lessons: LessonStep[];
 }
+
+// this is used for a node on the dashed line of road map
+export interface LessonNode {}
 
 export interface LearningCourse {
   id: number;
@@ -141,7 +150,6 @@ export interface VocabPart {
 
 // THƯ VIỆN MINIGAMES --------------------------
 export interface MiniGame {
-  id?: number;
   title: string;
   type: "multipleChoice" | "phraseOrder" | "matching";
   content: MiniGameMc | MiniGamePhraseOrder | MiniGameMatching;
