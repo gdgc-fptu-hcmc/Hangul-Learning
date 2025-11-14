@@ -1,4 +1,4 @@
-import { LearningCourse, MiniGame, Vocab } from "./types.tsx";
+import { LearningCourse, MiniGame, Vocab } from "./types";
 import speakerAAvatarUrl from "@/assets/images/lessons/speaker-A.svg";
 import speakerBAvatarUrl from "@/assets/images/lessons/speaker-B.svg";
 import MeoNho from "@/components/grammar/MeoNho";
@@ -217,6 +217,8 @@ export const learningCourses: LearningCourse[] = [
                 },
               ],
             },
+            minigameIds: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+            minigameQuantity: 6, // random pick 6 câu trong danh sách miniGameIds trên
           },
           {
             id: 2,
@@ -395,7 +397,267 @@ export const vocabList: Record<number, Vocab> = {
 };
 
 // THƯ VIỆN MINI GAME:--------------------------------------
-export const miniGames: MiniGame[] = [{}];
+export const miniGames: Record<number, MiniGame> = {
+  1: {
+    title: "Hãy chọn nghĩa chính xác cho từ sau",
+    type: "multipleChoice",
+    content: {
+      displayType: 1,
+      question: {
+        // câu này cần có cả từ vựng, phiên âm, ảnh minh họa và audio
+        text: {
+          main: "안녕하세요",
+          sub: "annyeonghaseyo",
+        },
+        audio:
+          "https://commondatastorage.googleapis.com/codeskulptor-assets/Collision8-Bit.ogg",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
+      },
+      options: [
+        {
+          value: "A",
+          text: {
+            main: "Xin chào",
+          },
+        },
+        {
+          value: "B",
+          text: {
+            main: "Rất vui được gặp",
+          },
+        },
+        {
+          value: "C",
+          text: {
+            main: "Gặp gỡ (rồi...)",
+          },
+        },
+      ],
+      correctValue: "A",
+    },
+  },
+  2: {
+    title: "Hãy chọn đáp án mà bạn nghe được",
+    type: "multipleChoice",
+    content: {
+      displayType: 2,
+      question: {
+        // câu này chỉ cần ảnh minh họa và audio
+        audio:
+          "https://commondatastorage.googleapis.com/codeskulptor-assets/Collision8-Bit.ogg",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
+      },
+      options: [
+        {
+          value: "A",
+          text: {
+            main: "안녕하세요",
+            sub: "annyeonghaseyo",
+          },
+        },
+        {
+          value: "B",
+          text: {
+            main: "만나서",
+            sub: "mannaseo",
+          },
+        },
+        {
+          value: "C",
+          text: {
+            main: "반갑습니다",
+            sub: "bangapseumnida",
+          },
+        },
+      ],
+      correctValue: "A",
+    },
+  },
+  3: {
+    title: "Từ nào sau đây là `Rất vui khi gặp`?",
+    type: "multipleChoice",
+    content: {
+      // câu này chỉ cần options hiển thị là được, ko cần câu hỏi cx đc
+      displayType: 3,
+      options: [
+        // các đáp án cần có thêm ảnh minh họa
+        {
+          value: "A",
+          text: {
+            main: "안녕하세요",
+            sub: "annyeonghaseyo",
+          },
+          image:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
+        },
+        {
+          value: "B",
+          text: {
+            main: "만나서",
+            sub: "mannaseo",
+          },
+          image:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
+        },
+        {
+          value: "C",
+          text: {
+            main: "반갑습니다",
+            sub: "bangapseumnida",
+          },
+          image:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
+        },
+      ],
+      correctValue: "C",
+    },
+  },
+  4: {
+    title: "Hãy chọn nghĩa tương ứng với từ",
+    type: "multipleChoice",
+    content: {
+      displayType: 4,
+      question: {
+        text: {
+          main: "만나서",
+          sub: "mannaseo",
+        },
+      },
+      options: [
+        // các đáp án cần có thêm ảnh minh họa
+        {
+          value: "A",
+          text: {
+            main: "Xin chào",
+          },
+          image:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
+        },
+        {
+          value: "B",
+          text: {
+            main: "Rất vui được gặp",
+          },
+          image:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
+        },
+        {
+          value: "C",
+          text: {
+            main: "Gặp gỡ (rồi...)",
+          },
+          image:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
+        },
+      ],
+      correctValue: "C",
+    },
+  },
+  5: {
+    title: "Hãy viết câu này bằng Tiếng Việt",
+    type: "phraseOrder",
+    content: {
+      displayType: 1,
+      question: {
+        audio:
+          "https://commondatastorage.googleapis.com/codeskulptor-assets/Collision8-Bit.ogg",
+        text: {
+          main: "만나서 반갑습니다",
+          sub: "mannaseo bangapseumnida",
+        },
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
+      },
+      texts: [
+        { main: "Xin chào!" }, // 0
+        { main: "Rất vui" }, // 1
+        { main: "vì được" }, // 2
+        { main: "gặp" }, // 3
+        { main: "bạn" }, // 4
+      ],
+      rightOrder: [1, 2, 3, 4],
+    },
+  },
+  6: {
+    title: "Hãy viết câu này bằng Tiếng Hàn",
+    type: "phraseOrder",
+    content: {
+      displayType: 2,
+      question: {
+        text: {
+          main: "Xin chào",
+        },
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
+      },
+      texts: [
+        { main: "만", sub: "man" }, // 0
+        { main: "하", sub: "ha" }, // 1
+        { main: "나서", sub: "naseo" }, // 2
+        { main: "안녕", sub: "annyeong" }, // 3
+        { main: "(으)셔요", sub: "(eu)syeyo" }, // 4
+      ],
+      rightOrder: [3, 4],
+    },
+  },
+  7: {
+    title: "Hãy viết câu bạn nghe được",
+    type: "phraseOrder",
+    content: {
+      displayType: 3,
+      question: {
+        audio:
+          "https://commondatastorage.googleapis.com/codeskulptor-assets/Collision8-Bit.ogg",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
+      },
+      texts: [
+        { main: "만", sub: "man" }, // 0
+        { main: "하", sub: "ha" }, // 1
+        { main: "나서", sub: "naseo" }, // 2
+        { main: "안녕", sub: "annyeong" }, // 3
+        { main: "(으)셔요", sub: "(eu)syeyo" }, // 4
+      ],
+      rightOrder: [3, 4],
+    },
+  },
+  8: {
+    title: "Nối các cặp từ dựa trên nghĩa",
+    type: "matching",
+    content: {
+      displayType: 1,
+      firstPhraseList: [
+        { main: "만나서", sub: "mannaseo" },
+        { main: "안녕하세요", sub: "annyeonghaseyo" },
+        { main: "반갑습니다", sub: "bangapseumnida" },
+      ],
+      secondPhraseList: [
+        { main: "Xin chào" },
+        { main: "Gặp gỡ (rồi...)" },
+        { main: "Rất vui được gặp" },
+      ],
+    },
+  },
+  9: {
+    title: "Nối các cặp từ dựa trên phiên âm",
+    type: "matching",
+    content: {
+      displayType: 2,
+      firstPhraseList: [
+        { main: "만나서" },
+        { main: "안녕하세요" },
+        { main: "반갑습니다" },
+      ],
+      secondPhraseList: [
+        { main: "mannaseo" },
+        { main: "annyeonghaseyo" },
+        { main: "bangapseumnida" },
+      ],
+    },
+  },
+};
 
 // THƯ VIỆN MÀU:--------------------------------------
 /**
