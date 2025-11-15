@@ -5,11 +5,18 @@ import MeoNho from "@/components/grammar/MeoNho";
 import PurpleFlashCard from "@/components/grammar/PurpleFlashCard";
 import TuKhoa from "@/components/grammar/TuKhoa";
 import { BsPersonBoundingBox } from "react-icons/bs";
-import { FaHandHoldingHeart, FaStar } from "react-icons/fa";
+import {
+  FaCalendarAlt,
+  FaClock,
+  FaHandHoldingHeart,
+  FaStar,
+} from "react-icons/fa";
 import { FaHandshakeSimple } from "react-icons/fa6";
 import { GiThreeFriends } from "react-icons/gi";
+import { GoNumber } from "react-icons/go";
 import { IoHomeSharp } from "react-icons/io5";
 import { MdEmojiEmotions, MdOutlineSportsEsports } from "react-icons/md";
+import { TbCoins } from "react-icons/tb";
 
 export const learningCourses: LearningCourse[] = [
   // Course 1: Cấp độ Sơ cấp
@@ -277,14 +284,18 @@ export const learningCourses: LearningCourse[] = [
         topicTitleClassName:
           "bg-[#e3f2d2] border-[var(--custom-green)] text-[var(--custom-green)]",
         mainColor: "--custom-green",
+        images: [
+          "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/images%2Ftwo-man-hi-5.png?alt=media&token=8950cf99-2df2-4bac-9088-f19d199b5e18",
+          "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/images%2Ffamily-waving.png?alt=media&token=326fc5ff-949d-4a43-a924-598c95fe83a4",
+        ],
         cta: { label: "Học vượt?", tone: "neutral" },
         lessons: [
           {
             id: 1,
             title: "Giới thiệu gia đình",
             icon: <IoHomeSharp />,
-            lessonLink: "/courses/1/topics/1/lessons/1",
-            miniGameLink: "/courses/1/topics/1/lessons/1/mini-game",
+            lessonLink: "/courses/1/topics/2/lessons/1",
+            miniGameLink: "/courses/1/topics/2/lessons/1/mini-game",
             status: "locked",
             targets: [],
           },
@@ -292,8 +303,8 @@ export const learningCourses: LearningCourse[] = [
             id: 2,
             title: "Bạn bè và các mối quan hệ",
             icon: <GiThreeFriends />,
-            lessonLink: "/courses/1/topics/1/lessons/2",
-            miniGameLink: "/courses/1/topics/1/lessons/2/mini-game",
+            lessonLink: "/courses/1/topics/2/lessons/2",
+            miniGameLink: "/courses/1/topics/2/lessons/2/mini-game",
             status: "locked",
             targets: [],
           },
@@ -302,16 +313,16 @@ export const learningCourses: LearningCourse[] = [
             title: "Biểu lộ cảm xúc với gia đình",
             status: "locked",
             icon: <MdEmojiEmotions />,
-            lessonLink: "/courses/1/topics/1/lessons/3",
-            miniGameLink: "/courses/1/topics/1/lessons/3/mini-game",
+            lessonLink: "/courses/1/topics/2/lessons/3",
+            miniGameLink: "/courses/1/topics/2/lessons/3/mini-game",
             targets: [],
           },
           {
             id: 4,
             title: "Biết ơn và lời cảm ơn",
             icon: <FaHandHoldingHeart />,
-            lessonLink: "/courses/1/topics/1/lessons/4",
-            miniGameLink: "/courses/1/topics/1/lessons/4/mini-game",
+            lessonLink: "/courses/1/topics/2/lessons/4",
+            miniGameLink: "/courses/1/topics/2/lessons/4/mini-game",
             status: "locked",
             targets: [],
           },
@@ -319,8 +330,8 @@ export const learningCourses: LearningCourse[] = [
             id: 5,
             title: "Ôn tập",
             icon: <FaStar />,
-            lessonLink: "/courses/1/topics/1/lessons/5",
-            miniGameLink: "/courses/1/topics/1/lessons/5/mini-game",
+            lessonLink: "/courses/1/topics/2/lessons/5",
+            miniGameLink: "/courses/1/topics/2/lessons/5/mini-game",
             status: "final",
             targets: [],
           },
@@ -329,15 +340,60 @@ export const learningCourses: LearningCourse[] = [
       {
         id: 3,
         title: "Số đếm & Thời gian",
-        topicTitleClassName: "from-indigo-200 to-indigo-50 text-indigo-800",
-        mainColor: "bg-indigo-400",
+        topicTitleClassName:
+          "text-[var(--custom-purple)] bg-[#eeedff] border-[var(--custom-purple)]",
+        mainColor: "--custom-purple",
+        images: [
+          "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/images%2Fman-count-time.png?alt=media&token=b8ba6dfa-3bc1-40e2-92fa-0d3579c9801f",
+          "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/images%2Fman-show-calendar.png?alt=media&token=b2bee328-011f-4e7d-9235-cf6a244df518",
+        ],
         cta: { label: "Học vượt?", tone: "topicTitleClassName" },
         lessons: [
-          { id: 1, title: "Số đếm cơ bản", status: "locked", targets: [] },
-          { id: 2, title: "Đếm giờ & phút", status: "locked", targets: [] },
-          { id: 3, title: "Lịch hằng ngày", status: "locked", targets: [] },
-          { id: 4, title: "Lập kế hoạch", status: "locked", targets: [] },
-          { id: 5, title: "Bài cuối", status: "final", targets: [] },
+          {
+            id: 1,
+            title: "Số đếm cơ bản",
+            icon: <GoNumber />,
+            lessonLink: "/courses/1/topics/3/lessons/1",
+            miniGameLink: "/courses/1/topics/3/lessons/1/mini-game",
+            status: "locked",
+            targets: [],
+          },
+          {
+            id: 2,
+            title: "Thời gian",
+            icon: <FaClock />,
+            lessonLink: "/courses/1/topics/3/lessons/2",
+            miniGameLink: "/courses/1/topics/3/lessons/2/mini-game",
+            status: "locked",
+            targets: [],
+          },
+          {
+            id: 3,
+            title: "Hẹn lịch",
+            icon: <FaCalendarAlt />,
+            lessonLink: "/courses/1/topics/3/lessons/3",
+            miniGameLink: "/courses/1/topics/3/lessons/3/mini-game",
+            status: "locked",
+            targets: [],
+          },
+          {
+            id: 4,
+            title: "Tình huống thực tế về số đếm",
+            icon: <TbCoins />,
+            lessonLink: "/courses/1/topics/3/lessons/4",
+            miniGameLink: "/courses/1/topics/3/lessons/4/mini-game",
+            status: "locked",
+            targets: [],
+          },
+          {
+            id: 5,
+            title: "Ôn tập",
+            icon: <FaStar />,
+            lessonLink: "/courses/1/topics/3/lessons/5",
+            miniGameLink: "/courses/1/topics/3/lessons/5/mini-game",
+            status: "final",
+            targets: [],
+          },
         ],
       },
     ],
