@@ -34,7 +34,7 @@ export interface LearningTopic {
 }
 
 // this is used for a node on the dashed line of road map
-export interface LessonNode {}
+export interface LessonNode { }
 
 export interface LearningCourse {
   id: number;
