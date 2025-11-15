@@ -4,6 +4,7 @@ import speakerBAvatarUrl from "@/assets/images/lessons/speaker-B.svg";
 import MeoNho from "@/components/grammar/MeoNho";
 import PurpleFlashCard from "@/components/grammar/PurpleFlashCard";
 import TuKhoa from "@/components/grammar/TuKhoa";
+import BorderedGrammarBox from "../components/grammar/BorderedGrammarBox.jsx";
 import GreenExampleBox from "@/components/grammar/GreenExampleBox";
 import { BsPersonBoundingBox } from "react-icons/bs";
 import { FaHandHoldingHeart, FaStar } from "react-icons/fa";
@@ -244,7 +245,7 @@ export const learningCourses: LearningCourse[] = [
             targets: [],
             grammar: (
               <>
-                <p className="font-bold text-[22px] md:text-[24px] leading-normal" data-node-id="751:5766">
+                <p className="font-semibold text-xl" data-node-id="751:5766">
                   <span>Cấu trúc giới thiệu: </span>
                   <span className="text-[var(--custom-green)]">[Danh từ]</span>
                   <span> + </span>
@@ -294,6 +295,109 @@ export const learningCourses: LearningCourse[] = [
             miniGameLink: "/courses/1/topics/1/lessons/3/mini-game",
             status: "available",
             targets: [],
+            grammar: (
+              <ul className="list-decimal list-inside">
+                <li className="font-semibold text-xl">
+                  <span className="font-semibold text-xl mb-3">
+                    Câu hỏi "Cái gì?":{" "}
+                    <span className="text-[var(--custom-green)]">[Danh từ]</span>
+                    <span> + </span>
+                    <span className="text-[var(--custom-orange)]">이/가</span>
+                    <span> + </span>
+                    <span className="text-[var(--custom-orange)]">무엇</span>
+                    <span className="text-[var(--custom-red)]">입니까</span>?
+                  </span>
+                  <p className="font-medium text-[18px] my-3">
+                    Đây là cấu trúc dùng để hỏi "A là cái gì?".
+                  </p>
+                  <p className="font-medium text-[18px]">
+                    <b>이 (i) / 가 (ga):</b> Là các <b>tiểu từ chủ ngữ</b>.
+                    <ul className="list-disc list-inside mb-3">
+                      <li className="font-medium text-[18px]">
+                        Dùng <b>이 (i)</b> nếu danh từ kết thúc bằng <b>phụ âm</b>. Ví dụ: 이름이... (Tên là ...)
+                      </li>
+                      <li className="font-medium text-[18px]">
+                        Dùng <b>가 (ga)</b> nếu danh từ kết thúc bằng <b>nguyên âm</b>. Ví dụ: 저기가... (Chỗ kia là...)
+                      </li>
+                    </ul>
+                    <p className="font-medium text-[18px]">
+                      <b>무엇입니까?</b> (mueos-ibnikka) nghĩa là "Là gì?" (cách nói lịch sự, trang trọng).
+                    </p>
+                    <ul className="list-disc list-inside mb-3">
+                      <li className="font-medium text-[18px]">
+                        무엇 = cái gì
+                      </li>
+                      <li className="font-medium text-[18px]">
+                        입니까 = là (dạng hỏi của "이다")
+                      </li>
+                    </ul>
+                  </p>
+
+                  <GreenExampleBox className="my-3">
+                    <ul className="list-disc list-inside ml-4 mb-3">
+                      <li className="">이름이 무엇입니까? (Tên là gì?).</li>
+                      <li className="">이것이 무엇입니까? (Cái này là cái gì?)</li>
+                    </ul>
+                  </GreenExampleBox>
+                </li>
+
+                <hr className="h-[2px] w-full rounded bg-[#D9D9D9] my-3" />
+                <li className="font-semibold text-xl">
+                  <span className="font-semibold text-xl mb-3">
+                    Nói về điều mình thích: {" "}
+                    <span className="text-[var(--custom-green)]">[Danh từ]</span>
+                    <span> + </span>
+                    <span className="text-[var(--custom-orange)]">이/가</span>
+                    <span> + </span>
+                    <span className="text-[var(--custom-purple)]">좋아요</span>.
+                  </span>
+
+                  <p className="font-medium text-[18px] my-3">
+                    Cấu trúc này có nghĩa là "Cái gì đó thì tốt/thích". <br />
+                    Chủ thể của sự "thích" ở đây là danh từ được gắn với 이/가.
+                  </p>
+                  <GreenExampleBox className="my-3">
+                    <ul className="list-disc list-inside ml-4 mb-3">
+                      <li className="">한국어 공부가 좋아요. (Việc học tiếng Hàn thì thích.)</li>
+                      <li className="">음악이 좋아요. (Âm nhạc thì hay/ thích.)</li>
+                    </ul>
+                  </GreenExampleBox>
+                  <BorderedGrammarBox title="Phân biệt hai cách nói thích" className="mb-3">
+                    <ul className="list-decimal list-inside mb-3">
+                      <li className="font-semibold text-[18px]">
+                        [Sự vật] + 이/가 + 좋아요
+                        <ul className="list-disc list-inside">
+                          <li className="font-medium text-[18px]">
+                            Bình luận về sự vật.
+                          </li>
+                          <li className="font-medium text-[18px] mb-3">
+                            Ví dụ: 커피가 좋아요. (Cà phê ngon.)
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li className="font-semibold text-[18px]">
+                        [Người] + 은/는 + [Sự vật] + 을/를 + 좋아해요
+                        <ul className="list-disc list-inside">
+                          <li className="font-medium text-[18px]">
+                            Nói về hành động của người.
+                          </li>
+                          <li className="font-medium text-[18px]">
+                            Ví dụ: 저는 커피를 좋아해요. (Tôi thích cà phê.)
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <MeoNho className="font-medium text-[18px]">
+                      <p>
+                        <b>Mẹo nhỏ:</b> Khi giao tiếp, dùng …<b>이/가 좋아요</b> để khen hoặc nói bạn thích một thứ gì đó
+                        <br />— cách nói tự nhiên và phổ biến lắm đấy!
+                      </p>
+                    </MeoNho>
+                  </BorderedGrammarBox>
+                </li>
+              </ul >
+            )
           },
           {
             id: 4,
