@@ -59,7 +59,7 @@ export const learningCourses: LearningCourse[] = [
                     {
                       text: "안녕하세요!",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F안녕하세요.mp3?alt=media",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94%20.m4a?alt=media",
                     },
                   ],
                 },
@@ -353,7 +353,7 @@ export const learningCourses: LearningCourse[] = [
                     {
                       text: "안녕하세요. 이름이 무엇입니까?.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F5%2Fvocab%2F저는%20...입니다.mp3?alt=media",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94%20%EC%9D%B4%EB%A6%84%EC%9D%B4%20%EB%AC%B4%EC%97%87%EC%9E%85%EB%8B%88%EA%B9%8C%20.mp3?alt=media&token=5e06de31-f278-494c-a879-e97c44a2b27b",
                     },
                   ],
                 },
@@ -364,7 +364,7 @@ export const learningCourses: LearningCourse[] = [
                     {
                       text: "저는 민아입니다. 이름이 무엇입니까? ",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F안녕하세요.mp3?alt=media", //chưa fix link
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94%20%EC%9D%B4%EB%A6%84%EC%9D%B4%20%EB%AC%B4%EC%97%87%EC%9E%85%EB%8B%88%EA%B9%8C%20.mp3?alt=media&token=5e06de31-f278-494c-a879-e97c44a2b27b",
                     },
                   ],
                 },
@@ -375,7 +375,7 @@ export const learningCourses: LearningCourse[] = [
                     {
                       text: "저는 남입니다. 무엇을 좋아하세요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F5%2Fvocab%2F저는%20...입니다.mp3?alt=media",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F%EC%A0%80%EB%8A%94%20%EB%82%A8%EC%9E%85%EB%8B%88%EB%8B%A4%20%EB%AC%B4%EC%97%87%EC%9D%84%20%EC%A2%8B%EC%95%84%ED%95%98%EC%84%B8%EC%9A%94.m4a?alt=media&token=a29dfd4d-0a7e-4fb1-a82a-2c5da9f22d95",
                     },
                   ],
                 },
@@ -386,7 +386,7 @@ export const learningCourses: LearningCourse[] = [
                     {
                       text: "저는 한국어 공부가 좋아요. ",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F안녕하세요.mp3?alt=media", //chưa fix link
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F%EC%A0%80%EB%8A%94%20%ED%95%9C%EA%B5%AD%EC%96%B4%20%EA%B3%B5%EB%B6%80%EA%B0%80%20%EC%A2%8B%EC%95%84%EC%9A%94%20.m4a?alt=media&token=42352134-effe-412e-9cb9-8b2d776691a2",
                     },
                   ],
                 },
@@ -401,7 +401,7 @@ export const learningCourses: LearningCourse[] = [
               question:
                 "Trong đoạn hội thoại, khi Nam và Mina giới thiệu bản thân ('Tôi là Nam', 'Tôi là Mina'), họ đã dùng đại từ xưng 'Tôi' ở dạng nào?",
               options: ["저는", "나는", "내가"],
-              correctAnswerIndex: 1,
+              correctAnswerIndex: 0,
               explanation:
                 "Đáp án đúng là A) 저는 (jeo-neun). Trong đoạn hội thoại, cả hai đều nói '저는 민아입니다' (Tôi là Mina) và '저는 남입니다' (Tôi là Nam). Đây là cách nói 'Tôi' một cách lịch sự, khiêm tốn (dùng '저'), phù hợp khi nói chuyện với người mới gặp.",
             },
@@ -456,10 +456,317 @@ export const learningCourses: LearningCourse[] = [
           {
             id: 4,
             title: "Động lực và câu khích lệ",
+            targets: [
+              "Học viên có thể nói câu thể hiện khả năng và tự khích lệ bản thân",
+              "Học viên có thể sử dụng cấu trúc tương lai",
+              "Học viên có thể sử dụng các phó từ chỉ thời gian",
+            ],
             status: "locked",
-            targets: [],
+            vnDialogue: {
+              mainRole: "B",
+              hasSpeakerBox: false,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [{ text: "Việc học tiếng Hàn khó quá" }],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [{ text: "KHÔNG! Bạn có thể làm được điều đó!" }],
+                },
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [{ text: "Thật không?" }],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [{ text: "Vâng! Tôi sẽ luôn cố gắng! Cố lên!" }],
+                },
+              ],
+            },
+            koDialogue: {
+              mainRole: "B",
+              hasSpeakerBox: true,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "한국어 공부, 어려워요",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94%20.m4a?alt=media",
+                    },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    {
+                      text: "아니에요! 할 수 있어요!",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F%EC%95%84%EB%8B%88%EC%97%90%EC%9A%94%20%ED%95%A0%20%EC%88%98%20%EC%9E%88%EC%96%B4%EC%9A%94%20.m4a?alt=media",
+                    },
+                  ],
+                },
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "정말요?",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F%EC%A0%95%EB%A7%90%EC%9A%94%20.m4a?alt=media",
+                    },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    {
+                      text: "네! 언제나 노력할 거예요! 파이팅!",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F%EB%84%A4%20%EC%96%B8%EC%A0%9C%EB%82%98%20%EB%85%B8%EB%A0%A5%ED%95%A0%20%EA%B1%B0%EC%98%88%EC%9A%94%20%ED%8C%8C%EC%9D%B4%ED%8C%85%20.m4a?alt=media&token=09532f1a-8253-4e10-bfa8-06ddcc675a84",
+                    },
+                  ],
+                },
+              ],
+            },
+            culturalStory: {
+              title: "파이팅! (Fighting!) - Lời cổ vũ quốc dân",
+
+              content: `
+    Bạn có nghe thấy từ <b>Fighting!</b> (phát âm kiểu Hàn là<b> 파이팅!</b> - paiting!) trong phim ảnh hay các show giải trí Hàn Quốc không? 
+    <li>Đây là một từ vay mượn từ tiếng Anh nhưng đã trở thành một nét văn hóa đặc trưng.</li>
+     <li><b>파이팅!</b> được dùng để cổ vũ, khích lệ tinh thần người khác hoặc chính bản thân mình trong mọi tình huống:<b> trước một kỳ thi, một trận đấu, một buổi phỏng vấn, hay đơn giản là khi bắt đầu một ngày mới. 
+Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".</b></li>
+
+  `,
+            },
+            funQuiz: {
+              question:
+                "Bạn của bạn sắp có bài kiểm tra tiếng Hàn. Bạn sẽ nói gì để cổ vũ họ?",
+              options: ["안녕하세요!", "미안합니다", "파이팅!"],
+              correctAnswerIndex: 2,
+              explanation:
+                " 파이팅! là một từ mượn từ tiếng Anh fighting, nhưng trong tiếng Hàn nó không mang nghĩa 'chiến đấu' mà được dùng như một khẩu hiệu khích lệ, cổ vũ tinh thần. Người Hàn thường nói '파이팅!' để động viên ai đó trước khi làm việc khó khăn, thi cử, hoặc khi cần thêm năng lượng tinh thần.",
+            },
+            vocabIds: [10, 11, 12, 13],
+            practiceBox: {
+              questions: [
+                {
+                  questionType: "multipleChoice",
+                  question: "Câu nào thể hiện khả năng làm việc gì đó?",
+                  options: ["할 수 있어요", "노력할 거예요", "오늘", "언제나"],
+                  correctAnswerIndex: 0,
+                  explanation:
+                    "'할 수 있어요' có nghĩa là 'có thể làm được', dùng để diễn tả khả năng thực hiện hành động.",
+                },
+                {
+                  questionType: "multipleChoice",
+                  question: "Từ nào dùng để chỉ thời điểm hiện tại?",
+                  options: ["언제나", "오늘", "노력할 거예요", "할 수 있어요"],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "'오늘' có nghĩa là 'hôm nay', là danh từ chỉ thời gian hiện tại.",
+                },
+                {
+                  questionType: "fillInBlank",
+                  question: "저는 더 <<blank>>. (Tôi sẽ cố gắng hơn.)",
+                  correctAnswer: "노력할 거예요",
+                  explanation:
+                    "'노력할 거예요' là cách nói lịch sự ở thì tương lai của '노력하다' (nỗ lực, cố gắng).",
+                },
+                {
+                  questionType: "dropDown",
+                  question: "<<dropdown>> 수 있어요. (Có thể làm được.)",
+                  options: ["할", "하", "하겠"],
+                  correctAnswerIndex: 0,
+                  explanation:
+                    "'할 수 있어요' là cấu trúc diễn tả khả năng làm việc gì đó.",
+                },
+                {
+                  questionType: "multipleChoice",
+                  question:
+                    "Từ nào mang nghĩa 'luôn luôn' hoặc 'lúc nào cũng'?",
+                  options: ["오늘", "할 수 있어요", "언제나", "노력할 거예요"],
+                  correctAnswerIndex: 2,
+                  explanation:
+                    "'언제나' là phó từ chỉ tần suất, mang nghĩa 'luôn luôn', 'mọi lúc'.",
+                },
+              ],
+            },
           },
-          { id: 5, title: "Ôn tập", status: "final", targets: [] },
+          {
+            id: 5,
+            title: "Ôn tập",
+            status: "final",
+            targets: [
+              "Củng cố từ vựng cơ bản trong giao tiếp tiếng Hàn",
+              "Luyện tập cấu trúc ngữ pháp thông dụng",
+              "Phát triển khả năng giao tiếp thực tế bằng tiếng Hàn",
+            ],
+            vnDialogue: {
+              mainRole: "B",
+              hasSpeakerBox: false,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [{ text: "Xin chào!" }],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    { text: "Chào bạn!" },
+                    { text: "Rất vui được gặp bạn." },
+                  ],
+                },
+              ],
+            },
+            koDialogue: {
+              mainRole: "B",
+              hasSpeakerBox: true,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "안녕하세요!",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94%20.m4a?alt=media",
+                    },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    {
+                      text: "안녕하세요!",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F안녕하세요.mp3?alt=media",
+                    },
+                    {
+                      text: "만나서 반갑습니다.",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F5%2Fvocab%2F만나서%20반갑습니다.mp3?alt=media",
+                    },
+                  ],
+                },
+              ],
+            },
+            culturalStory: {
+              title: "Chào hỏi",
+              content: `
+    Ở Hàn Quốc, câu <b>안녕하세요</b> (Annyeonghaseyo) không chỉ là “Xin chào”, 
+    mà còn thể hiện sự tôn trọng và lịch sự.
+    <ul className="list-disc list-inside ml-2">
+      <li>Với bạn bè, bạn chỉ cần nói <b>안녕</b> (Annyeong) thôi là đủ thân mật rồi!</li>
+      <li>Còn khi gặp người quan trọng, hãy dùng <b>안녕하십니까</b> (Annyeonghasimnikka) để thật trang trọng nhé~</li>
+    </ul>
+    <div className="mt-5">Nhớ <b>cúi nhẹ đầu khi chào</b>, đó là cách thể hiện lễ phép rất “chuẩn Hàn” đó.</div>
+  `,
+            },
+            funQuiz: {
+              question: "Khi gặp giáo viên, bạn nên chào như thế nào?",
+              options: ["안녕", "안녕하세요", "안녕하십니까"],
+              correctAnswerIndex: 1,
+              explanation:
+                "Khi gặp giáo viên, bạn nên sử dụng câu chào trang trọng để thể hiện sự tôn trọng.",
+            },
+            vocabIds: [1, 2, 3],
+            grammar: (
+              <ul className="list-decimal list-inside">
+                <li className="font-semibold text-xl">
+                  <span className="font-semibold text-xl mb-3">
+                    Đuôi lịch sự{" "}
+                    <span className="text-[var(--custom-orange)]">-요</span> và{" "}
+                    <span className="text-[var(--custom-orange)]">-습니다</span>
+                  </span>
+                  <p className="font-medium text-[18px] my-3">
+                    Trong tiếng Hàn, cách bạn kết thúc một câu nói sẽ thể hiện
+                    mức độ lịch sự của bạn. Trong bài này, chúng ta đã gặp hai
+                    đuôi câu lịch sự phổ biến nhất:
+                  </p>
+
+                  <div className="xl:w-[90%] w-full mx-auto flex justify-between gap-10 2xl:flex-row flex-col">
+                    <PurpleFlashCard
+                      header="Đuôi câu -요"
+                      className="text-sm font-medium"
+                    >
+                      <p>
+                        Phổ biến nhất, có thể dùng trong hầu hết các trường hợp.
+                        Tạo cảm giác thân thiện, gần gũi.
+                      </p>
+                      <ul className="my-2 list-disc list-inside ">
+                        <li>
+                          <b>Dùng khi:</b> Giao tiếp hàng ngày, nói với người
+                          lớn tuổi, nhân viên cửa hàng, đồng nghiệp quen biết.
+                        </li>
+                        <li>
+                          <b>Ví dụ:</b> 안녕하세요? (Xin chào?), 맛있어요. (Ngon
+                          ạ.)
+                        </li>
+                      </ul>
+                      <TuKhoa>
+                        <b>Từ khóa:</b> Hàng ngày, Thân mật, Tự nhiên.
+                      </TuKhoa>
+                    </PurpleFlashCard>
+                    <PurpleFlashCard
+                      header="Đuôi câu -요"
+                      className="text-sm font-medium"
+                    >
+                      <p>
+                        Phổ biến nhất, có thể dùng trong hầu hết các trường hợp.
+                        Tạo cảm giác thân thiện, gần gũi.
+                      </p>
+                      <ul className="my-2 list-disc list-inside">
+                        <li>
+                          <b>Dùng khi:</b> Giao tiếp hàng ngày, nói với người
+                          lớn tuổi, nhân viên cửa hàng, đồng nghiệp quen biết.
+                        </li>
+                        <li>
+                          <b>Ví dụ:</b> 안녕하세요? (Xin chào?), 맛있어요. (Ngon
+                          ạ.)
+                        </li>
+                      </ul>
+                      <TuKhoa>
+                        <b>Từ khóa:</b> Hàng ngày, Thân mật, Tự nhiên.
+                      </TuKhoa>
+                    </PurpleFlashCard>
+                  </div>
+                  <MeoNho className="font-medium text-[16px] mt-5">
+                    <b>Mẹo nhỏ:</b> Khi mới học, chỉ cần nhớ rằng câu kết thúc
+                    bằng -요 hoặc -습니다 luôn là câu lịch sự!
+                  </MeoNho>
+                </li>
+                <li className="font-semibold mt-5 text-xl">
+                  <span className="font-semibold text-xl mb-3">
+                    Liên từ{" "}
+                    <span className="text-[var(--custom-orange)]">-서</span>
+                  </span>
+                  <ul className="list-disc list-inside">
+                    <li className="font-medium text-[18px] my-3">
+                      Dùng để nối hai hành động hoặc diễn tả nguyên nhân – kết
+                      quả.
+                    </li>
+                    <li className="font-medium text-[18px] my-3">
+                      만나서 반갑습니다 → Rất vui vì được gặp bạn
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            ),
+          },
         ],
       },
       {
@@ -618,11 +925,12 @@ export const vocabList: Record<number, Vocab> = {
   4: {
     text: "저",
     transcription: "jeo",
-    meaning: "Nghĩa: Tôi, em, con... (khiêm tốn)",
+    meaning:
+      "Nghĩa: 1. Tôi, em, con... (khiêm tốn) 2. Kia, đó (chỉ vật ở xa) 3. À, ờ, ừm... (từ đệm)",
     usage:
-      "Câu chào hỏi phổ biến trong tiếng Hàn, sử dụng trong các tình huống trang trọng và lịch sự.",
+      "Dùng để xưng hô ngôi thứ nhất một cách khiêm tốn. Sử dụng khi nói với người lớn tuổi, người có địa vị cao hơn, hoặc trong các tình huống trang trọng, lịch sự.",
     description:
-      "Câu chào hỏi phổ biến trong tiếng Hàn, thể hiện sự lịch sự và tôn trọng.",
+      "Là đại từ nhân xưng ngôi thứ nhất, dạng khiêm tốn của '나' (na).",
     audioUrl:
       "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F5%2Fvocab%2F안녕하세요.mp3?alt=media",
     imgUrl:
@@ -769,7 +1077,7 @@ export const vocabList: Record<number, Vocab> = {
     description:
       "Câu chào hỏi phổ biến trong tiếng Hàn, thể hiện sự lịch sự và tôn trọng.",
     audioUrl:
-      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F5%2Fvocab%2F안녕하세요.mp3?alt=media",
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F%EB%AC%B4%EC%97%87.m4a?alt=media&token=47142660-9d98-4496-9ea6-78a3972bacfe",
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
     wordType: "phrase",
@@ -796,7 +1104,7 @@ export const vocabList: Record<number, Vocab> = {
     description:
       "Câu chào hỏi phổ biến trong tiếng Hàn, thể hiện sự lịch sự và tôn trọng.",
     audioUrl:
-      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F5%2Fvocab%2F안녕하세요.mp3?alt=media",
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F%EC%A2%8B%EB%8B%A4%20%EC%95%84%EC%9A%94.m4a?alt=media&token=35d904c2-1b08-4824-9296-6b9a1f25dc63",
     imgUrl:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
     wordType: "phrase",
@@ -818,6 +1126,142 @@ export const vocabList: Record<number, Vocab> = {
       "안녕하세요! 만나서 반갑습니다.",
       "안녕하세요! 오늘 기분이 어때요?",
     ],
+  },
+  10: {
+    text: " 할 수 있어요",
+    transcription: "hal su isseoyo",
+    meaning: "tôi có thể làm được",
+    usage:
+      "Được dùng để khích lệ bản thân hoặc người khác, thể hiện sự tự tin và khả năng thực hiện một việc.",
+    description:
+      "Câu khẳng định phổ biến trong tiếng Hàn, mang ý nghĩa động viên và khích lệ.",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F%EC%95%84%EB%8B%88%EC%97%90%EC%9A%94%20%ED%95%A0%20%EC%88%98%20%EC%9E%88%EC%96%B4%EC%9A%94%20.m4a?alt=media",
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
+    wordType: "phrase",
+    subdescription: `<b>Sự thật thú vị:</b> Nghĩa gốc là “Bạn có khỏe không?” nhưng dịch tự nhiên là “Xin chào!”.`,
+    parts: [
+      {
+        text: "할",
+        color: "--custom-red",
+        description: "động từ: làm",
+      },
+      {
+        text: "수",
+        color: "--custom-red",
+        description: "danh từ: khả năng, năng lực",
+      },
+      {
+        text: "있어요",
+        color: "--custom-orange",
+        description: "cấu trúc: có, tồn tại (dạng lịch sự)",
+      },
+    ],
+    examples: [
+      "네, 할 수 있어요! (Vâng, tôi có thể làm được!)",
+      "걱정하지 마세요. 당신은 할 수 있어요! (Đừng lo, bạn có thể làm được!)",
+    ],
+  },
+  11: {
+    text: "오늘",
+    transcription: "oneul",
+    meaning: "hôm nay",
+    usage:
+      "Từ dùng để chỉ ngày hiện tại, thường xuất hiện trong các câu nói về thời gian hoặc kế hoạch trong ngày.",
+    description:
+      "Từ chỉ thời điểm hiện tại trong ngày, thường được dùng để nói về các hoạt động, cảm xúc hoặc sự kiện xảy ra trong ngày hôm nay.",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F%EC%98%A4%EB%8A%98.m4a?alt=media",
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
+    wordType: "phrase",
+    parts: [
+      {
+        text: "오",
+        color: "--custom-blue",
+        description: "gốc từ chỉ 'ngày' hoặc 'buổi sáng'",
+      },
+      {
+        text: "늘",
+        color: "--custom-green",
+        description: "gốc từ chỉ 'hiện tại' hoặc 'bây giờ'",
+      },
+    ],
+    examples: ["오늘 날씨가 정말 좋아요.", "오늘은 친구를 만날 거예요."],
+  },
+
+  12: {
+    text: "반갑습니다 ",
+    transcription: "ban-gap-seum-ni-da",
+    meaning:
+      "Luôn luôn, bất cứ lúc nào — diễn tả hành động hoặc trạng thái xảy ra thường xuyên, không thay đổi theo thời gian.",
+    usage:
+      "Được dùng để nhấn mạnh sự lặp lại hoặc tính liên tục của hành động trong mọi thời điểm. Thường xuất hiện trong các câu thể hiện thói quen, cảm xúc hoặc lời hứa.",
+
+    description:
+      "'언제나' là phó từ mang nghĩa 'luôn luôn', 'mọi lúc', dùng để chỉ sự việc xảy ra liên tục hoặc không thay đổi bất kể thời gian. Từ này thường được dùng trong cả văn nói và viết để thể hiện sự kiên định hoặc tình cảm bền vững.",
+
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F%EB%B0%98%EA%B0%91%EC%8A%B5%EB%8B%88%EB%8B%A4.mp3?alt=media",
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
+    wordType: "phrase",
+    subdescription: `"<b>Mẹo nhỏ:</b> '언제나' thường đi kèm với các biểu hiện tích cực như <b>고맙습니다</b> (cảm ơn), <b>사랑해요</b> (yêu), hoặc <b>행복하세요</b> (chúc hạnh phúc) để nhấn mạnh sự chân thành và thường xuyên."
+.`,
+    parts: [
+      {
+        text: "반갑",
+        color: "--custom-purple",
+        description: "gốc tính từ 'vui mừng, hân hoan khi gặp ai đó'",
+      },
+      {
+        text: "습니다",
+        color: "--custom-teal",
+        description:
+          "đuôi câu trang trọng, biểu thị sự lịch sự trong giao tiếp",
+      },
+    ],
+    examples: [
+      "안녕하세요! 만나서 반갑습니다.",
+      "처음 뵙겠습니다. 정말 반갑습니다!",
+    ],
+  },
+  13: {
+    text: "노력할 거예요",
+    transcription: "no-ryeok-hal-geo-ye-yo",
+    meaning:
+      "Tôi sẽ cố gắng, tôi sẽ nỗ lực — biểu hiện ý chí thực hiện điều gì đó trong tương lai.",
+    usage:
+      "Dùng để thể hiện quyết tâm hoặc cam kết sẽ cố gắng làm một việc gì đó. Thường xuất hiện trong các câu nói về mục tiêu, lời hứa hoặc khi muốn thể hiện sự nỗ lực với người khác.",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F%EB%85%B8%EB%A0%A5%ED%95%A0%20%EA%B1%B0%EC%98%88%EC%9A%94.m4a?alt=media",
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/330px-Flag_of_South_Korea.svg.png",
+    wordType: "phrase",
+    subdescription:
+      "<b>Mẹo nhỏ:</b> Bạn có thể dùng '노력할 거예요' sau khi nhận lời khuyên hoặc lời động viên để thể hiện sự quyết tâm, ví dụ: <b>더 열심히 노력할 거예요</b> (Tôi sẽ cố gắng chăm chỉ hơn).",
+
+    parts: [
+      {
+        text: "노력",
+        color: "--custom-orange",
+        description: "danh từ gốc mang nghĩa 'nỗ lực, cố gắng'",
+      },
+      {
+        text: "할",
+        color: "--custom-green",
+        description:
+          "dạng liên kết của động từ '하다' (làm), biểu thị hành động sẽ thực hiện",
+      },
+      {
+        text: "거예요",
+        color: "--custom-blue",
+        description:
+          "cấu trúc tương lai lịch sự, dùng để nói về việc sẽ xảy ra",
+      },
+    ],
+    examples: ["앞으로 더 노력할 거예요.", "시험을 위해 노력할 거예요."],
   },
 };
 
