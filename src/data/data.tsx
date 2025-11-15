@@ -4,6 +4,7 @@ import speakerBAvatarUrl from "@/assets/images/lessons/speaker-B.svg";
 import MeoNho from "@/components/grammar/MeoNho";
 import PurpleFlashCard from "@/components/grammar/PurpleFlashCard";
 import TuKhoa from "@/components/grammar/TuKhoa";
+import GreenExampleBox from "@/components/grammar/GreenExampleBox";
 import { BsPersonBoundingBox } from "react-icons/bs";
 import { FaHandHoldingHeart, FaStar } from "react-icons/fa";
 import { FaHandshakeSimple } from "react-icons/fa6";
@@ -241,6 +242,49 @@ export const learningCourses: LearningCourse[] = [
             miniGameLink: "/courses/1/topics/1/lessons/2/mini-game",
             status: "completed",
             targets: [],
+            grammar: (
+              <>
+                <p className="font-bold text-[22px] md:text-[24px] leading-normal" data-node-id="751:5766">
+                  <span>Cấu trúc giới thiệu: </span>
+                  <span className="text-[var(--custom-green)]">[Danh từ]</span>
+                  <span> + </span>
+                  <span className="text-[var(--custom-orange)]">은/는</span>
+                  <span> + </span>
+                  <span className="text-[var(--custom-green)]">[Danh từ]</span>
+                  <span> + </span>
+                  <span className="text-[var(--custom-red)]">입니다.</span>
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  Đây là cấu trúc "A là B" <b>cơ bản và quan trọng nhất</b> trong tiếng Hàn.
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  <b>은 (eun) / 는 (neun):</b> Là <b>các tiểu từ chủ đề</b> đứng sau chủ ngữ dùng để <b>nhấn mạnh ai hoặc cái gì</b> là chủ đề của câu.
+                  <ul className="list-disc list-inside">
+                    <li className="font-medium text-[18px] my-3">
+                      Dùng <b>은 (eun)</b> nếu danh từ kết thúc bằng <b>phụ âm</b>. Ví dụ: 학생은 (học sinh)
+                    </li>
+                    <li className="font-medium text-[18px] my-3">
+                      Dùng <b>는 (neun)</b> nếu danh từ kết thúc bằng <b>nguyên âm</b>. Ví dụ: 저는 (tôi)
+                    </li>
+                  </ul>
+                  <p className="font-medium text-[18px] my-3">
+                    <b>입니다 (imnida):</b> Luôn đứng ở cuối câu, có nghĩa là "là".
+                  </p>
+                  <GreenExampleBox className="my-4">
+                    <p className="">저는 학생입니다. (Tôi là học sinh.)</p>
+                    <ul className="list-disc list-inside ml-4 mb-3">
+                      <li className="">저 (Tôi) + 는 + 학생 (học sinh) + 입니다 (là).</li>
+                      <li className="">"저" kết thúc bằng nguyên âm "ㅓ" nên đi với "는".</li>
+                    </ul>
+                    <p className="">제 이름은 민아입니다. (Tên của tôi là Mina.)</p>
+                    <ul className="list-disc list-inside ml-4 mb-3">
+                      <li className="">제 이름 (Tên của tôi) + 은 + 민아 (Mina) + 입니다 (là).</li>
+                      <li className="">"이름" kết thúc bằng phụ âm "ㅁ" nên đi với "은"</li>
+                    </ul>
+                  </GreenExampleBox>
+                </p>
+              </>
+            )
           },
           {
             id: 3,
