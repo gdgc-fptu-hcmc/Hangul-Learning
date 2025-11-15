@@ -257,6 +257,8 @@ export const learningCourses: LearningCourse[] = [
                 },
               ],
             },
+            minigameIds: [5, 6],
+            minigameQuantity: 6,
           },
           {
             id: 2,
