@@ -7,6 +7,8 @@ import CustomBox from "@/shared/common/CustomBox";
 interface McGameProps {
   title?: string;
   content: MiniGameMc;
+  onChoose?: (value: string) => void;
+  chosenValue?: string;
   disabled?: boolean;
 }
 
@@ -14,6 +16,8 @@ const McGame: React.FC<McGameProps> = ({
   title,
   content: { displayType, question, options, correctValue },
   disabled = false,
+  onChoose,
+  chosenValue,
 }) => {
   console.log("McGame content:", title, displayType, options, correctValue);
 
@@ -80,6 +84,8 @@ const McGame: React.FC<McGameProps> = ({
             key={option.value}
             displayType={displayType}
             option={option}
+            onSelect={onChoose}
+            isSelected={option.value === chosenValue}
             disabled={disabled}
           />
         ))}

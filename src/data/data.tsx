@@ -257,7 +257,7 @@ export const learningCourses: LearningCourse[] = [
                 },
               ],
             },
-            minigameIds: [5, 6],
+            minigameIds: [8, 9],
             minigameQuantity: 6,
           },
           {

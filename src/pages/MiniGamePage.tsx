@@ -35,11 +35,14 @@ const MiniGamePage = () => {
     "waiting" | "correct" | "incorrect"
   >("waiting");
 
+  // test multiple choice game
+  const [chosenValue, setChosenValue] = useState<string | undefined>(undefined);
+
   // test phrase order game
-  const [chosenTexts, setChosenTexts] = useState<number[]>([]);
-  const [remainTexts, setRemainTexts] = useState<boolean[]>(
-    Array(currentQuestion?.content.texts.length).fill(true)
-  );
+  // const [chosenTexts, setChosenTexts] = useState<number[]>([]);
+  // const [remainTexts, setRemainTexts] = useState<boolean[]>(
+  //   Array(currentQuestion?.content.texts.length).fill(true) || []
+  // );
 
   useEffect(() => {
     setCurrentQuestion(gameData?.contents[currentQuestionId]);
@@ -75,11 +78,21 @@ const MiniGamePage = () => {
       currentQuestion={currentQuestionId}
       totalQuestions={gameData?.contents.length || 0}
       answer={retrieveAnswer()}
-      onSkip={() => setCurrentQuestionId(currentQuestionId + 1)}
-      onCheck={() => setWrapperState("correct")}
+      onSkip={() => {
+        setCurrentQuestionId(currentQuestionId + 1);
+      }}
+      onCheck={() => {
+        setWrapperState("correct");
+      }}
       onNext={() => {
         setWrapperState("waiting");
         setCurrentQuestionId(currentQuestionId + 1);
+        // reset states
+        setChosenValue(undefined);
+        // setChosenTexts([]);
+        // setRemainTexts(
+        //   Array(currentQuestion?.content.texts.length).fill(true)
+        // );
       }}
       wrapperState={wrapperState}
     >
@@ -87,6 +100,9 @@ const MiniGamePage = () => {
         <McGame
           title={currentQuestion?.title}
           content={currentQuestion?.content as MiniGameMc}
+          chosenValue={chosenValue}
+          onChoose={(value) => setChosenValue(value)}
+          disabled={wrapperState !== "waiting"}
         />
       )}
       {currentQuestion?.type === "phraseOrder" && (
