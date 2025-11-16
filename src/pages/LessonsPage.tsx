@@ -196,7 +196,7 @@ const LessonsPage = () => {
                             <SpeakerBox
                               text={vocab.text}
                               audioUrl={vocab.audioUrl}
-                              className="w-[30px] h-[30px]"
+                              speakerClassName="!m-1 w-[30px] h-[30px]"
                             />{" "}
                             <span className="text-xl">
                               {vocab.transcription}

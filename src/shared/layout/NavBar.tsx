@@ -17,9 +17,9 @@ const menuItems = [
     href: "/courses",
     hasDropdown: true,
     dropDownItems: [
-      { name: "Cấp độ 1: Sơ cấp", href: "/courses/level-1" },
-      { name: "Cấp độ 2: Trung cấp", href: "/courses/level-2" },
-      { name: "Cấp độ 3: Cao cấp", href: "/courses/level-3" },
+      { name: "Cấp độ 1: Sơ cấp", href: "/courses/1" },
+      { name: "Cấp độ 2: Trung cấp", href: "/courses/2" },
+      { name: "Cấp độ 3: Cao cấp", href: "/courses/3" },
     ],
   },
   {
@@ -53,7 +53,7 @@ const NavBar = () => {
 
   return (
     <div
-      className={`sticky top-0 w-full bg-white z-50 ${
+      className={`sticky top-0 w-full bg-white z-[1000] ${
         isScrolled ? "shadow-md" : ""
       }`}
     >
@@ -89,22 +89,22 @@ const NavBar = () => {
               <Link to={item.href} className="flex items-center gap-1">
                 <img src={item.icon} alt="" className="w-[20px] h-[20px]" />
                 <span className="text-sm font-semibold">{item.name}</span>
-                {item.hasDropdown && (
-                  <>
-                    <MdArrowDropDown />
-                    <ul className="absolute top-full left-1/2 -translate-x-1/2  bg-white border w-max border-gray-300 rounded-md shadow-lg opacity-0 group-hover:opacity-100">
-                      {item.dropDownItems!.map((subItem) => (
-                        <li
-                          key={subItem.name}
-                          className="px-5 py-2 hover:bg-gray-100 text-sm font-semibold hover:scale-95 hover:text-[var(--dark-pink)]"
-                        >
-                          <Link to={subItem.href}>{subItem.name}</Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </>
-                )}
+                {item.hasDropdown && <MdArrowDropDown />}
               </Link>
+              {item.hasDropdown && (
+                <>
+                  <ul className="absolute top-full left-1/2 -translate-x-1/2  bg-white border w-max border-gray-300 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                    {item.dropDownItems!.map((subItem) => (
+                      <li
+                        key={subItem.name}
+                        className="px-5 py-2 hover:bg-gray-100 text-sm font-semibold hover:scale-95 hover:text-[var(--dark-pink)]"
+                      >
+                        <Link to={subItem.href}>{subItem.name}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
             </li>
           ))}
           <li>
