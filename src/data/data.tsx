@@ -270,7 +270,6 @@ export const learningCourses: LearningCourse[] = [
               "Hiểu và sử dụng đúng cấu trúc câu: 'A là B'.",
               "Phân biệt và sử dụng hai cách xưng 'Tôi' là 저 (jeo) và 나 (na).",
             ],
-            status: "available",
             highlight: true,
             vnDialogue: {
               mainRole: "B",
@@ -684,7 +683,15 @@ export const learningCourses: LearningCourse[] = [
               </ul>
             ),
           },
-          { id: 5, title: "Ôn tập", status: "final", targets: [] },
+          {
+            id: 5,
+            icon: <FaStar />,
+            miniGameLink: "/courses/1/topics/2/lessons/5/minigame",
+            lessonLink: "/courses/1/topics/2/lessons/5",
+            title: "Ôn tập",
+            status: "final",
+            targets: [],
+          },
         ],
       },
       {
