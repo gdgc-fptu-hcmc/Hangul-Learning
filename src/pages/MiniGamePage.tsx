@@ -1,5 +1,6 @@
 import MiniGameDashboardResult from "@/components/minigame/layout/MiniGameDashboardResult";
 import MiniGameWrapper from "@/components/minigame/layout/MiniGameWrapper";
+import MatchingGame from "@/components/minigame/minigame-types/matching/MatchingGame";
 import McGame from "@/components/minigame/minigame-types/mc/McGame";
 import PhraseOrderGame from "@/components/minigame/minigame-types/phrase-order/PhraseOrderGame";
 import {
@@ -31,6 +32,12 @@ const MiniGamePage = () => {
   const [currentQuestion, setCurrentQuestion] = useState<MiniGame | undefined>(
     gameData?.contents[0]
   );
+
+  useEffect(() => {
+    setCurrentQuestion(gameData?.contents[currentQuestionId]);
+    console.log("currentQuestion updated:", currentQuestion);
+  }, [currentQuestionId]);
+
   const [wrapperState, setWrapperState] = useState<
     "waiting" | "correct" | "incorrect"
   >("waiting");
@@ -43,11 +50,6 @@ const MiniGamePage = () => {
   // const [remainTexts, setRemainTexts] = useState<boolean[]>(
   //   Array(currentQuestion?.content.texts.length).fill(true) || []
   // );
-
-  useEffect(() => {
-    setCurrentQuestion(gameData?.contents[currentQuestionId]);
-    console.log("currentQuestion updated:", currentQuestion);
-  }, [currentQuestionId]);
 
   // đoạn jsx show đáp án + (show giải thích nếu có)
   const retrieveAnswer = () => {
@@ -124,6 +126,12 @@ const MiniGamePage = () => {
             );
           }}
           disabled={wrapperState !== "waiting"}
+        />
+      )}
+      {currentQuestion?.type === "matching" && (
+        <MatchingGame
+          title={currentQuestion?.title}
+          content={currentQuestion?.content as MiniGameMatching}
         />
       )}
     </MiniGameWrapper>
