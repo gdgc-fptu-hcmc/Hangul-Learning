@@ -1,18 +1,71 @@
-import { MiniGameMatching, TextDisplay } from "@/data";
+import { MiniGameMatching, PhraseOrderOption, TextDisplay } from "@/data";
+import TextShow from "@/shared/common/TextShow";
+import { button, div } from "framer-motion/client";
 import React from "react";
 
 interface MatchingGameProps {
   title?: string;
   content: MiniGameMatching;
-  firstRemainList?: number[];
+  randomList: PhraseOrderOption[];
   firstChosenList?: number[];
-  secondRemainList?: number[];
   secondChosenList?: number[];
+  onClick?: (listOrder: string, valueIndex: number) => void;
+  disabled?: boolean;
 }
 
-const MatchingGame: React.FC<MatchingGameProps> = ({ title, content }) => {
-  const getText = (textList: TextDisplay[], idx: number): TextDisplay => {
-    return textList[idx];
+const MatchingGame: React.FC<MatchingGameProps> = ({
+  title,
+  content,
+  randomList,
+  firstChosenList,
+  secondChosenList,
+  onClick,
+  disabled,
+}) => {
+  const firstPhraseList = content.firstPhraseList;
+  const secondPhraseList = content.secondPhraseList;
+
+  console.log("MatchingGame firstChosenList:", firstChosenList);
+  console.log("MatchingGame secondChosenList:", secondChosenList);
+
+  const getText = (listOrder: string, index: number): TextDisplay => {
+    if (listOrder === "left") {
+      return firstPhraseList[index];
+    } else if (listOrder === "right") {
+      return secondPhraseList[index];
+    }
+    return { main: "none", sub: "none" };
+  };
+
+  const getIndexInOriginalList = (
+    listOrder: string,
+    valueIndex: number
+  ): number => {
+    if (listOrder === "left") {
+      return firstChosenList ? firstChosenList.indexOf(valueIndex) : -1;
+    } else if (listOrder === "right") {
+      return secondChosenList ? secondChosenList.indexOf(valueIndex) : -1;
+    }
+    return -1;
+  };
+
+  const getColorStyle = (index: number): string => {
+    switch (index) {
+      case 0:
+        return "bg-[var(--custom-red)]";
+      case 1:
+        return "bg-[var(--custom-green)]";
+      case 2:
+        return "bg-[var(--custom-blue)]";
+      case 3:
+        return "bg-[var(--custom-yellow)]";
+      case 4:
+        return "bg-[var(--custom-purple)]";
+      case 5:
+        return "bg-[var(--custom-pink)]";
+      default:
+        return "bg-gray-200";
+    }
   };
 
   return (
@@ -26,7 +79,23 @@ const MatchingGame: React.FC<MatchingGameProps> = ({ title, content }) => {
       </div>
 
       {/* Interact section */}
-      <div></div>
+      <div
+        className={`grid grid-cols-3 auto-rows-auto gap-2 w-full max-w-3xl min-h-[30vh] ${
+          disabled ? "pointer-events-none opacity-60" : ""
+        }`}
+      >
+        {randomList?.map((item, index) => (
+          <button
+            key={index}
+            className={`rounded-xl border min-w-full cursor-pointer flex justify-center items-center ${getColorStyle(
+              getIndexInOriginalList(item.listOrder, item.valueIndex)
+            )}`}
+            onClick={() => onClick?.(item.listOrder, item.valueIndex)}
+          >
+            <TextShow textDisplay={getText(item.listOrder, item.valueIndex)} />
+          </button>
+        ))}
+      </div>
     </div>
   );
 };

@@ -9,6 +9,7 @@ import {
   MiniGameMatching,
   MiniGameMc,
   MiniGamePhraseOrder,
+  PhraseOrderOption,
   TextDisplay,
 } from "@/data";
 import { useEffect, useState } from "react";
@@ -50,6 +51,14 @@ const MiniGamePage = () => {
   // const [remainTexts, setRemainTexts] = useState<boolean[]>(
   //   Array(currentQuestion?.content.texts.length).fill(true) || []
   // );
+
+  // test matching game
+  const [rightChosenList, setRightChosenList] = useState<number[]>(
+    Array(currentQuestion?.content.firstPhraseList.length).fill(-1)
+  );
+  const [leftChosenList, setLeftChosenList] = useState<number[]>(
+    Array(currentQuestion?.content.firstPhraseList.length).fill(-1)
+  );
 
   // đoạn jsx show đáp án + (show giải thích nếu có)
   const retrieveAnswer = () => {
@@ -132,6 +141,103 @@ const MiniGamePage = () => {
         <MatchingGame
           title={currentQuestion?.title}
           content={currentQuestion?.content as MiniGameMatching}
+          randomList={
+            currentQuestion?.content.randomList as PhraseOrderOption[]
+          }
+          firstChosenList={leftChosenList}
+          secondChosenList={rightChosenList}
+          onClick={(listOrder, valueIndex) => {
+            const leftChosenNumber = leftChosenList.filter(
+              (val) => val !== -1
+            ).length;
+            const rightChosenNumber = rightChosenList.filter(
+              (val) => val !== -1
+            ).length;
+
+            const isTwoListEqual = leftChosenNumber === rightChosenNumber;
+
+            // check if the item is already chosen
+            if (listOrder === "left") {
+              const index = leftChosenList.indexOf(valueIndex);
+              // already chosen
+              if (index !== -1) {
+                // unchoose in the left list
+                const newLeftChosenList = [...leftChosenList];
+                newLeftChosenList[index] = -1;
+                setLeftChosenList(newLeftChosenList);
+                // also unchoose in the right list
+                const newRightChosenList = [...rightChosenList];
+                newRightChosenList[index] = -1;
+                setRightChosenList(newRightChosenList);
+              } else {
+                let insertedIndex = -1;
+                if (isTwoListEqual) {
+                  // both lists are equal, insert in the first empty slot
+                  insertedIndex = leftChosenList.indexOf(-1);
+                } else {
+                  for (let i = 0; i < leftChosenList.length; i++) {
+                    if (
+                      (leftChosenList[i] !== -1 && rightChosenList[i] === -1) ||
+                      (leftChosenList[i] === -1 && rightChosenList[i] !== -1)
+                    ) {
+                      insertedIndex = i;
+                      break;
+                    }
+                  }
+                }
+
+                console.log("insertedIndex:", insertedIndex);
+
+                if (
+                  insertedIndex <= -1 ||
+                  insertedIndex >= leftChosenList.length
+                )
+                  return;
+                // choose in the left list
+                leftChosenList[insertedIndex] = valueIndex;
+                setLeftChosenList([...leftChosenList]);
+              }
+            } else if (listOrder === "right") {
+              const index = rightChosenList.indexOf(valueIndex);
+              // already chosen
+              if (index !== -1) {
+                // unchoose in the right list
+                const newRightChosenList = [...rightChosenList];
+                newRightChosenList[index] = -1;
+                setRightChosenList(newRightChosenList);
+                // also unchoose in the right list
+                const newLeftChosenList = [...leftChosenList];
+                newLeftChosenList[index] = -1;
+                setLeftChosenList(newLeftChosenList);
+              } else {
+                // choose in the right list
+                let insertedIndex = -1;
+                if (isTwoListEqual) {
+                  // both lists are equal, insert in the first empty slot
+                  insertedIndex = rightChosenList.indexOf(-1);
+                } else {
+                  for (let i = 0; i < leftChosenList.length; i++) {
+                    if (
+                      (leftChosenList[i] !== -1 && rightChosenList[i] === -1) ||
+                      (leftChosenList[i] === -1 && rightChosenList[i] !== -1)
+                    ) {
+                      insertedIndex = i;
+                      break;
+                    }
+                  }
+                }
+                console.log("insertedIndex:", insertedIndex);
+
+                if (
+                  insertedIndex <= -1 ||
+                  insertedIndex >= rightChosenList.length
+                )
+                  return;
+                rightChosenList[insertedIndex] = valueIndex;
+                setRightChosenList([...rightChosenList]);
+              }
+            }
+          }}
         />
       )}
     </MiniGameWrapper>

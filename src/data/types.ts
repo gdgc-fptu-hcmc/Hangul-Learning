@@ -184,6 +184,13 @@ export interface MiniGameMatching {
   secondPhraseList: TextDisplay[]; // danh sách các phần ở cột bên phải
   // sẽ được random khi render
   // thứ tự trên cũng là thứ tự cặp cần được nối đúng
+  randomList?: PhraseOrderOption[]; // sẽ được random khi lấy data 
+}
+
+
+export interface PhraseOrderOption {
+  listOrder: "right" | "left";
+  valueIndex: number;
 }
 
 // COMMON: phần hiển thị từ vựng, cụm từ hoặc mệnh đề... trong minigame

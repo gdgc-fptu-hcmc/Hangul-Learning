@@ -1,4 +1,9 @@
-import { LessonContent, MiniGame, MiniGameContent } from "./types.js";
+import {
+  LessonContent,
+  MiniGame,
+  MiniGameContent,
+  TextDisplay,
+} from "./types.js";
 import { learningCourses, miniGames, vocabList } from "./data.js";
 
 export function getLessonContent(
@@ -62,6 +67,7 @@ export const getMiniGameContent = (
         if (topic.id === topicId) {
           for (const lesson of topic.lessons) {
             if (lesson.id === lessonId) {
+              // start here
               const randomGameIds: number[] = [];
               while (
                 randomGameIds.length < (lesson.minigameIds?.length || 0) &&
@@ -82,6 +88,52 @@ export const getMiniGameContent = (
               for (const miniGameId of randomGameIds || []) {
                 const miniGameData = miniGames[miniGameId];
                 if (miniGameData) {
+                  // random cho phan phrase matching
+                  console.log("Before random:", miniGameData);
+                  // if (miniGameData.type === "matching") {
+                  //   const firstPhraseList =
+                  //     miniGameData.content.firstPhraseList.map(
+                  //       (val: TextDisplay, idx: number) => ({
+                  //         listOrder: "right",
+                  //         valueIndex: idx,
+                  //       })
+                  //     );
+                  //   const secondPhraseList =
+                  //     miniGameData.content.secondPhraseList.map(
+                  //       (val: TextDisplay, idx: number) => ({
+                  //         listOrder: "left",
+                  //         valueIndex: idx,
+                  //       })
+                  //     );
+                  //   const combinedList = [
+                  //     ...firstPhraseList,
+                  //     ...secondPhraseList,
+                  //   ];
+                  //   // shuffle combined list
+                  //   for (let i = combinedList.length - 1; i > 0; i--) {
+                  //     const j = Math.floor(Math.random() * (i + 1));
+                  //     [combinedList[i], combinedList[j]] = [
+                  //       combinedList[j],
+                  //       combinedList[i],
+                  //     ];
+                  //   }
+                  //   miniGameData.content.randomList = combinedList;
+                  // } else if (miniGameData.type === "multipleChoice") {
+                  //   // random cho phan multiple choice
+                  // } else if (miniGameData.type === "phraseOrder") {
+                  //   // random cho phan phrase order
+                  // }
+
+                  // hard code here for testing matching game
+                  miniGameData.content.randomList = [
+                    { listOrder: "left", valueIndex: 0 },
+                    { listOrder: "left", valueIndex: 1 },
+                    { listOrder: "left", valueIndex: 2 },
+                    { listOrder: "right", valueIndex: 0 },
+                    { listOrder: "right", valueIndex: 1 },
+                    { listOrder: "right", valueIndex: 2 },
+                  ];
+                  console.log("After random:", miniGameData);
                   fullGameContents.push(miniGameData);
                 }
               }
