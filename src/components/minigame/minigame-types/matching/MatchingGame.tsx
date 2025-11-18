@@ -1,5 +1,6 @@
 import { MiniGameMatching, PhraseOrderOption, TextDisplay } from "@/data";
 import TextShow from "@/shared/common/TextShow";
+import ClickScaleDebounce from "@/shared/effects/ClickScaleDebounce";
 import { button, div } from "framer-motion/client";
 import React from "react";
 
@@ -52,19 +53,19 @@ const MatchingGame: React.FC<MatchingGameProps> = ({
   const getColorStyle = (index: number): string => {
     switch (index) {
       case 0:
-        return "bg-[var(--custom-red)]";
+        return "bg-[#ffebeb]";
       case 1:
-        return "bg-[var(--custom-green)]";
+        return "bg-[#d4e8bc]";
       case 2:
-        return "bg-[var(--custom-blue)]";
+        return "bg-[#d8f9ff]";
       case 3:
-        return "bg-[var(--custom-yellow)]";
+        return "bg-[#fff3b0]";
       case 4:
-        return "bg-[var(--custom-purple)]";
+        return "bg-[#eeedff]";
       case 5:
-        return "bg-[var(--custom-pink)]";
+        return "bg-[#eeedff]";
       default:
-        return "bg-gray-200";
+        return "bg-gray-100";
     }
   };
 
@@ -85,7 +86,7 @@ const MatchingGame: React.FC<MatchingGameProps> = ({
         }`}
       >
         {randomList?.map((item, index) => (
-          <button
+          <ClickScaleDebounce
             key={index}
             className={`rounded-xl border min-w-full cursor-pointer flex justify-center items-center ${getColorStyle(
               getIndexInOriginalList(item.listOrder, item.valueIndex)
@@ -93,7 +94,7 @@ const MatchingGame: React.FC<MatchingGameProps> = ({
             onClick={() => onClick?.(item.listOrder, item.valueIndex)}
           >
             <TextShow textDisplay={getText(item.listOrder, item.valueIndex)} />
-          </button>
+          </ClickScaleDebounce>
         ))}
       </div>
     </div>

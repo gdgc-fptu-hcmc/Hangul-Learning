@@ -16,7 +16,7 @@ const ClickScaleDebounce = ({
     <motion.div
       initial={{ scale: 1 }}
       whileTap={{ scale: [1, 0.95, 1] }}
-      whileHover={{ scale: 1.03 }}
+      whileHover={{ scale: 1.02 }}
       transition={{ duration: 0.2, ease: "easeInOut" }}
       className={`cursor-pointer ${className}`}
       onClick={onClick}
