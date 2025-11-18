@@ -5,14 +5,16 @@ import { Link } from "react-router-dom";
 interface MiniGameDashboardResultProps {
   correctAnswers?: number;
   totalQuestions?: number;
+  onGoBack?: () => void;
 }
 
 const MiniGameDashboardResult: React.FC<MiniGameDashboardResultProps> = ({
   correctAnswers = 0,
   totalQuestions = 0,
+  onGoBack = () => {},
 }) => {
   return (
-    <div>
+    <div onClick={() => onGoBack()}>
       <h1>
         Mini Game Results{" "}
         <span>{(correctAnswers / totalQuestions) * 100}%</span>

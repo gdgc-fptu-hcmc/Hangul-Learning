@@ -90,49 +90,40 @@ export const getMiniGameContent = (
                 if (miniGameData) {
                   // random cho phan phrase matching
                   console.log("Before random:", miniGameData);
-                  // if (miniGameData.type === "matching") {
-                  //   const firstPhraseList =
-                  //     miniGameData.content.firstPhraseList.map(
-                  //       (val: TextDisplay, idx: number) => ({
-                  //         listOrder: "right",
-                  //         valueIndex: idx,
-                  //       })
-                  //     );
-                  //   const secondPhraseList =
-                  //     miniGameData.content.secondPhraseList.map(
-                  //       (val: TextDisplay, idx: number) => ({
-                  //         listOrder: "left",
-                  //         valueIndex: idx,
-                  //       })
-                  //     );
-                  //   const combinedList = [
-                  //     ...firstPhraseList,
-                  //     ...secondPhraseList,
-                  //   ];
-                  //   // shuffle combined list
-                  //   for (let i = combinedList.length - 1; i > 0; i--) {
-                  //     const j = Math.floor(Math.random() * (i + 1));
-                  //     [combinedList[i], combinedList[j]] = [
-                  //       combinedList[j],
-                  //       combinedList[i],
-                  //     ];
-                  //   }
-                  //   miniGameData.content.randomList = combinedList;
-                  // } else if (miniGameData.type === "multipleChoice") {
-                  //   // random cho phan multiple choice
-                  // } else if (miniGameData.type === "phraseOrder") {
-                  //   // random cho phan phrase order
-                  // }
+                  if (miniGameData.type === "matching") {
+                    const firstPhraseList =
+                      miniGameData.content.firstPhraseList.map(
+                        (val: TextDisplay, idx: number) => ({
+                          listOrder: "right",
+                          valueIndex: idx,
+                        })
+                      );
+                    const secondPhraseList =
+                      miniGameData.content.secondPhraseList.map(
+                        (val: TextDisplay, idx: number) => ({
+                          listOrder: "left",
+                          valueIndex: idx,
+                        })
+                      );
+                    const combinedList = [
+                      ...firstPhraseList,
+                      ...secondPhraseList,
+                    ];
+                    // shuffle combined list
+                    for (let i = combinedList.length - 1; i > 0; i--) {
+                      const j = Math.floor(Math.random() * (i + 1));
+                      [combinedList[i], combinedList[j]] = [
+                        combinedList[j],
+                        combinedList[i],
+                      ];
+                    }
+                    miniGameData.content.randomList = combinedList;
+                  } else if (miniGameData.type === "multipleChoice") {
+                    // random cho phan multiple choice
+                  } else if (miniGameData.type === "phraseOrder") {
+                    // random cho phan phrase order
+                  }
 
-                  // hard code here for testing matching game
-                  miniGameData.content.randomList = [
-                    { listOrder: "left", valueIndex: 0 },
-                    { listOrder: "left", valueIndex: 1 },
-                    { listOrder: "left", valueIndex: 2 },
-                    { listOrder: "right", valueIndex: 0 },
-                    { listOrder: "right", valueIndex: 1 },
-                    { listOrder: "right", valueIndex: 2 },
-                  ];
                   console.log("After random:", miniGameData);
                   fullGameContents.push(miniGameData);
                 }

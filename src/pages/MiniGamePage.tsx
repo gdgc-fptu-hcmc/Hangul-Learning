@@ -3,6 +3,7 @@ import MiniGameWrapper from "@/components/minigame/layout/MiniGameWrapper";
 import MatchingGame from "@/components/minigame/minigame-types/matching/MatchingGame";
 import McGame from "@/components/minigame/minigame-types/mc/McGame";
 import PhraseOrderGame from "@/components/minigame/minigame-types/phrase-order/PhraseOrderGame";
+import { useGameData } from "@/contexts/GameDataContext";
 import {
   getMiniGameContent,
   MiniGame,
@@ -13,21 +14,39 @@ import {
   TextDisplay,
 } from "@/data";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const MiniGamePage = () => {
+  const navigate = useNavigate();
+
   const { courseId, topicId, lessonId } = useParams<{
     courseId: string;
     topicId: string;
     lessonId: string;
   }>();
 
-  const gameData = getMiniGameContent(
+  const freshGameData = getMiniGameContent(
     Number(courseId),
     Number(topicId),
     Number(lessonId)
   );
-  console.log("gameData:", gameData);
+
+  // get/set from context
+  const {
+    gameData: savedGameData,
+    setGameData,
+    clearGameData,
+    addEarnedScoresByOne,
+    earnedScores,
+    resetEarnedScore,
+  } = useGameData();
+  useEffect(() => {
+    if (!savedGameData && freshGameData) {
+      setGameData(JSON.parse(JSON.stringify(freshGameData)));
+    }
+  }, [freshGameData, savedGameData, setGameData]);
+
+  const gameData = savedGameData ?? freshGameData;
 
   const [currentQuestionId, setCurrentQuestionId] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState<MiniGame | undefined>(
@@ -43,43 +62,91 @@ const MiniGamePage = () => {
     "waiting" | "correct" | "incorrect"
   >("waiting");
 
-  // test multiple choice game
+  // state for multiple choice game
   const [chosenValue, setChosenValue] = useState<string | undefined>(undefined);
 
-  // test phrase order game
-  // const [chosenTexts, setChosenTexts] = useState<number[]>([]);
-  // const [remainTexts, setRemainTexts] = useState<boolean[]>(
-  //   Array(currentQuestion?.content.texts.length).fill(true) || []
-  // );
+  // state for phrase order game
+  const [chosenTexts, setChosenTexts] = useState<number[]>([]);
+  const [remainTexts, setRemainTexts] = useState<boolean[]>([]);
+  if (currentQuestion?.type === "phraseOrder" && remainTexts.length === 0) {
+    setRemainTexts(Array(currentQuestion?.content.texts.length).fill(true));
+  }
 
-  // test matching game
-  const [rightChosenList, setRightChosenList] = useState<number[]>(
-    Array(currentQuestion?.content.firstPhraseList.length).fill(-1)
-  );
-  const [leftChosenList, setLeftChosenList] = useState<number[]>(
-    Array(currentQuestion?.content.firstPhraseList.length).fill(-1)
-  );
+  // state for matching game
+  const [rightChosenList, setRightChosenList] = useState<number[]>([]);
+  const [leftChosenList, setLeftChosenList] = useState<number[]>([]);
+  if (
+    currentQuestion?.type === "matching" &&
+    leftChosenList.length === 0 &&
+    rightChosenList.length === 0
+  ) {
+    setLeftChosenList(
+      Array(currentQuestion?.content.firstPhraseList.length).fill(-1)
+    );
+    setRightChosenList(
+      Array(currentQuestion?.content.secondPhraseList.length).fill(-1)
+    );
+  }
 
   // đoạn jsx show đáp án + (show giải thích nếu có)
   const retrieveAnswer = () => {
-    // switch (currentQuestion?.type) {
-    //   case "multiple-choice":
-    //     return currentQuestion?.options.find((option) => option.isCorrect)
-    //       ?.content;
-    //   case "fill-in-the-blank":
-    //     return currentQuestion?.answer;
-    //   default:
-    //     return null;
-    // }
-    return <div>Đáp án ở đây</div>;
+    let answer = null;
+    switch (currentQuestion?.type) {
+      case "multipleChoice":
+        answer = <>{currentQuestion?.content.correctValue}</>;
+        break;
+      case "phraseOrder":
+        answer = <>{currentQuestion?.content.rightOrder}</>;
+        break;
+      case "matching":
+        answer = <>{"Matching answers here"}</>;
+        break;
+    }
+
+    return (
+      // answer wrapper
+      <div>{answer}</div>
+    );
+  };
+
+  const isAnswerTrue = () => {
+    if (!currentQuestion) return false;
+
+    switch (currentQuestion.type) {
+      case "multipleChoice":
+        return (
+          chosenValue === (currentQuestion.content as MiniGameMc).correctValue
+        );
+      case "phraseOrder":
+        const rightOrder = (currentQuestion.content as MiniGamePhraseOrder)
+          .rightOrder;
+        return (
+          rightOrder.length === chosenTexts.length &&
+          rightOrder.every((val, idx) => val === chosenTexts[idx])
+        );
+      case "matching":
+        return (
+          rightChosenList.every((val, idx) => val !== -1) &&
+          leftChosenList.every((val, idx) => val !== -1) &&
+          leftChosenList.every((val, idx) => val === rightChosenList[idx])
+        );
+    }
+    return false;
   };
 
   // nếu đã trả lời hết câu hỏi thì hiện thị trang kết quả
   if (currentQuestionId + 1 >= (gameData?.contents.length || 0)) {
+    clearGameData();
     return (
       <MiniGameDashboardResult
-        correctAnswers={5}
+        correctAnswers={earnedScores}
         totalQuestions={gameData?.contents.length || 0}
+        onGoBack={() => {
+          resetEarnedScore();
+          navigate(
+            `/courses/${courseId}/topics/${topicId}/lessons/${lessonId}`
+          );
+        }}
       />
     );
   }
@@ -93,7 +160,12 @@ const MiniGamePage = () => {
         setCurrentQuestionId(currentQuestionId + 1);
       }}
       onCheck={() => {
-        setWrapperState("correct");
+        if (isAnswerTrue()) {
+          addEarnedScoresByOne();
+          setWrapperState("correct");
+        } else {
+          setWrapperState("incorrect");
+        }
       }}
       onNext={() => {
         setWrapperState("waiting");
@@ -146,6 +218,7 @@ const MiniGamePage = () => {
           }
           firstChosenList={leftChosenList}
           secondChosenList={rightChosenList}
+          disabled={wrapperState !== "waiting"}
           onClick={(listOrder, valueIndex) => {
             const leftChosenNumber = leftChosenList.filter(
               (val) => val !== -1
