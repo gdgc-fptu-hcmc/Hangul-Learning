@@ -26,8 +26,6 @@ const PhraseOrderGame: React.FC<PhraseOrderGameProps> = ({
 }) => {
   const getText = (index: number): TextDisplay => texts[randomTexts[index]];
 
-  console.log("randomTexts:", randomTexts);
-
   return (
     <div className="flex flex-col justify-between items-center w-full h-full gap-10">
       {/* Upper: title + question word ... */}

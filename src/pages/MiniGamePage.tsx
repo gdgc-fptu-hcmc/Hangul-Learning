@@ -13,6 +13,7 @@ import {
   MatchingOption,
   TextDisplay,
 } from "@/data";
+import { use } from "framer-motion/client";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -55,11 +56,6 @@ const MiniGamePage = () => {
     gameData?.contents[0]
   );
 
-  useEffect(() => {
-    setCurrentQuestion(gameData?.contents[currentQuestionId]);
-    console.log("currentQuestion updated:", currentQuestion);
-  }, [currentQuestionId]);
-
   const [wrapperState, setWrapperState] = useState<
     "waiting" | "correct" | "incorrect"
   >("waiting");
@@ -70,25 +66,10 @@ const MiniGamePage = () => {
   // state for phrase order game
   const [chosenTexts, setChosenTexts] = useState<number[]>([]);
   const [remainTexts, setRemainTexts] = useState<boolean[]>([]);
-  if (currentQuestion?.type === "phraseOrder" && remainTexts.length === 0) {
-    setRemainTexts(Array(currentQuestion?.content.texts.length).fill(true));
-  }
 
   // state for matching game
   const [rightChosenList, setRightChosenList] = useState<number[]>([]);
   const [leftChosenList, setLeftChosenList] = useState<number[]>([]);
-  if (
-    currentQuestion?.type === "matching" &&
-    leftChosenList.length === 0 &&
-    rightChosenList.length === 0
-  ) {
-    setLeftChosenList(
-      Array(currentQuestion?.content.firstPhraseList.length).fill(-1)
-    );
-    setRightChosenList(
-      Array(currentQuestion?.content.secondPhraseList.length).fill(-1)
-    );
-  }
 
   // đoạn jsx show đáp án + (show giải thích nếu có)
   const retrieveAnswer = () => {
@@ -171,16 +152,32 @@ const MiniGamePage = () => {
     // reset states for MC
     setChosenValue(undefined);
     // reset states for Phrase Order
+    console.log("Resetting states for Phrase Order game.");
+    console.log("Current question:", currentQuestion);
+    console.log("Remain texts before reset:", remainTexts);
     setChosenTexts([]);
-    setRemainTexts(Array(currentQuestion?.content.texts.length).fill(true));
+    if (currentQuestion?.type === "phraseOrder") {
+      setRemainTexts(Array(currentQuestion?.content.texts.length).fill(true));
+    }
     // reset states for Matching
-    setLeftChosenList(
-      Array(currentQuestion?.content.firstPhraseList.length).fill(-1)
-    );
-    setRightChosenList(
-      Array(currentQuestion?.content.secondPhraseList.length).fill(-1)
-    );
+    if (currentQuestion?.type === "matching") {
+      setLeftChosenList(
+        Array(currentQuestion?.content.firstPhraseList.length).fill(-1)
+      );
+      setRightChosenList(
+        Array(currentQuestion?.content.secondPhraseList.length).fill(-1)
+      );
+    }
   };
+
+  useEffect(() => {
+    setCurrentQuestion(gameData?.contents[currentQuestionId]);
+    console.log("currentQuestion updated:", currentQuestion);
+  }, [currentQuestionId]);
+
+  useEffect(() => {
+    resetStateForGameAnswer();
+  }, [currentQuestion]);
 
   // nếu đã trả lời hết câu hỏi thì hiện thị trang kết quả
   if (currentQuestionId >= (gameData?.contents.length || 0)) {
@@ -205,6 +202,8 @@ const MiniGamePage = () => {
       answer={retrieveAnswer()}
       onSkip={() => {
         setCurrentQuestionId(currentQuestionId + 1);
+        setWrapperState("waiting");
+        resetStateForGameAnswer();
       }}
       onCheck={() => {
         if (isAnswerTrue()) {

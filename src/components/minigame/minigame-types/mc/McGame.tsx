@@ -24,8 +24,16 @@ const McGame: React.FC<McGameProps> = ({
       {/* Upper: title + question word ... */}
       <div className="flex flex-col justify-between items-start max-w-3xl w-full">
         {/* Title Section */}
-        <h2 className="text-[var(--custom-purple)] font-bold text-[32px] mb-3 w-full text-center">
-          {title}
+        <h2 className="text-[var(--custom-purple)] font-bold text-[32px] mb-3 w-full text-center flex justify-center items-center gap-10">
+          {title}{" "}
+          {displayType === 4 && (
+            <TextShow
+              textDisplay={question?.text}
+              showSubText
+              subClassName="text-lg"
+              mainClassName="text-xl font-bold"
+            />
+          )}
         </h2>
 
         {/* Question Section show only when on displayType 1 or 2 */}
