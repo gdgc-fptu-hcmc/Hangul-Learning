@@ -34,7 +34,7 @@ export interface LearningTopic {
 }
 
 // this is used for a node on the dashed line of road map
-export interface LessonNode { }
+export interface LessonNode {}
 
 export interface LearningCourse {
   id: number;
@@ -175,6 +175,8 @@ export interface MiniGamePhraseOrder {
   question: MiniGameQuestionPhrase;
   texts: TextDisplay[]; // sẽ được random lúc render + có thể dư element
   rightOrder: number[]; // mảng các index của texts theo thứ tự đúng (đếm từ 0)
+  // sẽ được random khi render
+  randomTexts?: number[]; // sẽ được random khi lấy data
 }
 
 // matching minigame
@@ -184,6 +186,12 @@ export interface MiniGameMatching {
   secondPhraseList: TextDisplay[]; // danh sách các phần ở cột bên phải
   // sẽ được random khi render
   // thứ tự trên cũng là thứ tự cặp cần được nối đúng
+  randomList?: MatchingOption[]; // sẽ được random khi lấy data
+}
+
+export interface MatchingOption {
+  listOrder: "right" | "left";
+  valueIndex: number;
 }
 
 // COMMON: phần hiển thị từ vựng, cụm từ hoặc mệnh đề... trong minigame
