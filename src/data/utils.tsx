@@ -88,7 +88,7 @@ export const getMiniGameContent = (
               for (const miniGameId of randomGameIds || []) {
                 const miniGameData = miniGames[miniGameId];
                 if (miniGameData) {
-                  console.log("Before random:", miniGameData);
+                  // console.log("Before random:", miniGameData);
                   // random cho phan phrase matching
                   if (miniGameData.type === "matching") {
                     const firstPhraseList =
@@ -137,7 +137,7 @@ export const getMiniGameContent = (
                     miniGameData.content.randomTexts = textIndices;
                   }
 
-                  console.log("After random:", miniGameData);
+                  // console.log("After random:", miniGameData);
                   fullGameContents.push(miniGameData);
                 }
               }

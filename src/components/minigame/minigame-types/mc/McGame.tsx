@@ -19,8 +19,6 @@ const McGame: React.FC<McGameProps> = ({
   onChoose,
   chosenValue,
 }) => {
-  console.log("McGame content:", title, displayType, options, correctValue);
-
   return (
     <div className="flex flex-col justify-between items-center w-full h-full gap-10">
       {/* Upper: title + question word ... */}

@@ -3,12 +3,9 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App.tsx";
 import "./index.css";
-import { GameDataProvider } from "./contexts/GameDataContext.js";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
-    <GameDataProvider>
-      <App />
-    </GameDataProvider>
+    <App />
   </BrowserRouter>
 );

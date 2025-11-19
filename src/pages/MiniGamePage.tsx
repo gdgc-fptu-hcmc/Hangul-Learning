@@ -145,9 +145,18 @@ const MiniGamePage = () => {
       case "phraseOrder":
         const rightOrder = (currentQuestion.content as MiniGamePhraseOrder)
           .rightOrder;
+
+        console.log("Checking phrase order answer:");
+        console.log("Expected order:", rightOrder);
+        console.log("User chosen order:", chosenTexts);
         return (
           rightOrder.length === chosenTexts.length &&
-          rightOrder.every((val, idx) => val === chosenTexts[idx])
+          rightOrder.every((val, idx) => {
+            console.log(currentQuestion.content.randomTexts[chosenTexts[idx]]);
+            return (
+              val === currentQuestion.content.randomTexts[chosenTexts[idx]]
+            );
+          })
         );
       case "matching":
         return (
@@ -174,7 +183,7 @@ const MiniGamePage = () => {
   };
 
   // nếu đã trả lời hết câu hỏi thì hiện thị trang kết quả
-  if (currentQuestionId + 1 >= (gameData?.contents.length || 0)) {
+  if (currentQuestionId >= (gameData?.contents.length || 0)) {
     return (
       <MiniGameDashboardResult
         correctAnswers={earnedScores}
