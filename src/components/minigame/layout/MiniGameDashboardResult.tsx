@@ -14,7 +14,7 @@ const MiniGameDashboardResult: React.FC<MiniGameDashboardResultProps> = ({
   onGoBack = () => {},
 }) => {
   return (
-    <div onClick={() => onGoBack()}>
+    <div>
       <h1>
         Mini Game Results{" "}
         <span>{(correctAnswers / totalQuestions) * 100}%</span>
@@ -23,7 +23,7 @@ const MiniGameDashboardResult: React.FC<MiniGameDashboardResultProps> = ({
       <p>
         Bạn đã trả lời đúng {correctAnswers} trên {totalQuestions} câu hỏi.
       </p>
-      <button onClick={() => window.history.back()}>Go back</button>
+      <button onClick={() => onGoBack?.()}>Go back</button>
     </div>
   );
 };

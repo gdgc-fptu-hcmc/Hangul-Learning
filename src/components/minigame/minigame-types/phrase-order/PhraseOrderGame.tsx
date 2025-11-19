@@ -17,7 +17,7 @@ interface PhraseOrderGameProps {
 
 const PhraseOrderGame: React.FC<PhraseOrderGameProps> = ({
   title,
-  content: { displayType, question, texts, rightOrder },
+  content: { displayType, question, texts, randomTexts, rightOrder },
   onRemoveText = () => {},
   onChooseText = () => {},
   chosenTexts = [],

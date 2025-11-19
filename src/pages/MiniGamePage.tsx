@@ -10,7 +10,7 @@ import {
   MiniGameMatching,
   MiniGameMc,
   MiniGamePhraseOrder,
-  PhraseOrderOption,
+  MatchingOption,
   TextDisplay,
 } from "@/data";
 import { useEffect, useState } from "react";
@@ -40,11 +40,13 @@ const MiniGamePage = () => {
     earnedScores,
     resetEarnedScore,
   } = useGameData();
+
   useEffect(() => {
     if (!savedGameData && freshGameData) {
+      resetEarnedScore();
       setGameData(JSON.parse(JSON.stringify(freshGameData)));
     }
-  }, [freshGameData, savedGameData, setGameData]);
+  }, [freshGameData, savedGameData]);
 
   const gameData = savedGameData ?? freshGameData;
 
@@ -93,19 +95,42 @@ const MiniGamePage = () => {
     let answer = null;
     switch (currentQuestion?.type) {
       case "multipleChoice":
-        answer = <>{currentQuestion?.content.correctValue}</>;
+        answer = <>Câu {currentQuestion?.content.correctValue}</>;
         break;
       case "phraseOrder":
-        answer = <>{currentQuestion?.content.rightOrder}</>;
+        answer = (
+          <div className="flex gap-2">
+            {currentQuestion?.content.rightOrder.map((num, index) => (
+              <span key={index}>
+                {currentQuestion?.content.texts[num].main}{" "}
+                {index !== currentQuestion?.content.rightOrder.length - 1
+                  ? " --> "
+                  : ""}
+              </span>
+            ))}
+          </div>
+        );
         break;
       case "matching":
-        answer = <>{"Matching answers here"}</>;
+        answer = (
+          <div className="grid grid-flow-col grid-rows-3 gap-x-6 text-sm  ">
+            {currentQuestion?.content.firstPhraseList.map((text, idx) => (
+              <div key={idx}>
+                {text.main} {" --> "}{" "}
+                {currentQuestion.content.secondPhraseList[idx].main}
+              </div>
+            ))}
+          </div>
+        );
         break;
     }
 
     return (
       // answer wrapper
-      <div>{answer}</div>
+      <div className="flex gap-4 justify-center items-center">
+        <span className="font-bold text-lg">Đáp án đúng:</span>
+        {answer}
+      </div>
     );
   };
 
@@ -131,20 +156,33 @@ const MiniGamePage = () => {
           leftChosenList.every((val, idx) => val === rightChosenList[idx])
         );
     }
-    return false;
+  };
+
+  const resetStateForGameAnswer = () => {
+    // reset states for MC
+    setChosenValue(undefined);
+    // reset states for Phrase Order
+    setChosenTexts([]);
+    setRemainTexts(Array(currentQuestion?.content.texts.length).fill(true));
+    // reset states for Matching
+    setLeftChosenList(
+      Array(currentQuestion?.content.firstPhraseList.length).fill(-1)
+    );
+    setRightChosenList(
+      Array(currentQuestion?.content.secondPhraseList.length).fill(-1)
+    );
   };
 
   // nếu đã trả lời hết câu hỏi thì hiện thị trang kết quả
   if (currentQuestionId + 1 >= (gameData?.contents.length || 0)) {
-    clearGameData();
     return (
       <MiniGameDashboardResult
         correctAnswers={earnedScores}
         totalQuestions={gameData?.contents.length || 0}
         onGoBack={() => {
-          resetEarnedScore();
           navigate(
-            `/courses/${courseId}/topics/${topicId}/lessons/${lessonId}`
+            `/courses/${courseId}/topics/${topicId}/lessons/${lessonId}`,
+            { replace: true }
           );
         }}
       />
@@ -170,12 +208,12 @@ const MiniGamePage = () => {
       onNext={() => {
         setWrapperState("waiting");
         setCurrentQuestionId(currentQuestionId + 1);
-        // reset states
-        setChosenValue(undefined);
-        // setChosenTexts([]);
-        // setRemainTexts(
-        //   Array(currentQuestion?.content.texts.length).fill(true)
-        // );
+        resetStateForGameAnswer();
+      }}
+      onGoBack={() => {
+        navigate(`/courses/${courseId}/topics/${topicId}/lessons/${lessonId}`, {
+          replace: true,
+        });
       }}
       wrapperState={wrapperState}
     >
@@ -213,9 +251,7 @@ const MiniGamePage = () => {
         <MatchingGame
           title={currentQuestion?.title}
           content={currentQuestion?.content as MiniGameMatching}
-          randomList={
-            currentQuestion?.content.randomList as PhraseOrderOption[]
-          }
+          randomList={currentQuestion?.content.randomList as MatchingOption[]}
           firstChosenList={leftChosenList}
           secondChosenList={rightChosenList}
           disabled={wrapperState !== "waiting"}

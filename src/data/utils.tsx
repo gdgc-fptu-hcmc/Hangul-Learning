@@ -88,8 +88,8 @@ export const getMiniGameContent = (
               for (const miniGameId of randomGameIds || []) {
                 const miniGameData = miniGames[miniGameId];
                 if (miniGameData) {
-                  // random cho phan phrase matching
                   console.log("Before random:", miniGameData);
+                  // random cho phan phrase matching
                   if (miniGameData.type === "matching") {
                     const firstPhraseList =
                       miniGameData.content.firstPhraseList.map(
@@ -120,8 +120,21 @@ export const getMiniGameContent = (
                     miniGameData.content.randomList = combinedList;
                   } else if (miniGameData.type === "multipleChoice") {
                     // random cho phan multiple choice
+                    // NO NEED for random multiplechoice for now
                   } else if (miniGameData.type === "phraseOrder") {
                     // random cho phan phrase order
+                    const textIndices = miniGameData.content.texts.map(
+                      (_, idx) => idx
+                    );
+                    // shuffle textIndices
+                    for (let i = textIndices.length - 1; i > 0; i--) {
+                      const j = Math.floor(Math.random() * (i + 1));
+                      [textIndices[i], textIndices[j]] = [
+                        textIndices[j],
+                        textIndices[i],
+                      ];
+                    }
+                    miniGameData.content.randomTexts = textIndices;
                   }
 
                   console.log("After random:", miniGameData);

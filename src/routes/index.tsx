@@ -2,6 +2,7 @@ import LessonsPage from "@/pages/LessonsPage";
 import CoursesPage from "@/pages/CoursesPage";
 import MiniGamePage from "@/pages/MiniGamePage";
 import CourseRoadmap from "@/pages/CourseRoadmap";
+import { GameDataProvider } from "@/contexts/GameDataContext";
 
 export const routes = [
   { path: "/", element: <CoursesPage /> },
@@ -19,6 +20,10 @@ export const routes = [
   },
   {
     path: "/courses/:courseId/topics/:topicId/lessons/:lessonId/minigame",
-    element: <MiniGamePage />,
+    element: (
+      <GameDataProvider>
+        <MiniGamePage />
+      </GameDataProvider>
+    ),
   },
 ];

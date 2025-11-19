@@ -28,7 +28,7 @@ const McOptionButton: React.FC<OptionButtonProps> = ({
       } ${className}`}
     >
       {(displayType === 3 || displayType === 4) && option.image && (
-        <div className="w-full h-[200px] bg-gray-300 my-2 flex items-center justify-center overflow-hidden">
+        <div className="w-full h-[250px] my-2 flex items-center justify-center overflow-hidden">
           <img src={option.image} alt={option.value} className="" />
         </div>
       )}
