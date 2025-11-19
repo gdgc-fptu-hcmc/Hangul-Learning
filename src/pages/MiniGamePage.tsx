@@ -13,7 +13,6 @@ import {
   MatchingOption,
   TextDisplay,
 } from "@/data";
-import { use } from "framer-motion/client";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -52,9 +51,8 @@ const MiniGamePage = () => {
   const gameData = savedGameData ?? freshGameData;
 
   const [currentQuestionId, setCurrentQuestionId] = useState(0);
-  const [currentQuestion, setCurrentQuestion] = useState<MiniGame | undefined>(
-    gameData?.contents[0]
-  );
+  // derive currentQuestion from gameData + index (no separate state)
+  const currentQuestion = gameData?.contents?.[currentQuestionId];
 
   const [wrapperState, setWrapperState] = useState<
     "waiting" | "correct" | "incorrect"
@@ -148,36 +146,41 @@ const MiniGamePage = () => {
     }
   };
 
-  const resetStateForGameAnswer = () => {
-    // reset states for MC
+  // unified reset logic: run whenever gameData or currentQuestionId changes
+  useEffect(() => {
+    // reset MC
     setChosenValue(undefined);
-    // reset states for Phrase Order
-    console.log("Resetting states for Phrase Order game.");
-    console.log("Current question:", currentQuestion);
-    console.log("Remain texts before reset:", remainTexts);
+
+    // reset Phrase Order
     setChosenTexts([]);
     if (currentQuestion?.type === "phraseOrder") {
-      setRemainTexts(Array(currentQuestion?.content.texts.length).fill(true));
+      setRemainTexts(Array(currentQuestion.content.texts.length).fill(true));
+    } else {
+      setRemainTexts([]);
     }
-    // reset states for Matching
+
+    // reset Matching
     if (currentQuestion?.type === "matching") {
       setLeftChosenList(
-        Array(currentQuestion?.content.firstPhraseList.length).fill(-1)
+        Array(currentQuestion.content.firstPhraseList.length).fill(-1)
       );
       setRightChosenList(
-        Array(currentQuestion?.content.secondPhraseList.length).fill(-1)
+        Array(currentQuestion.content.secondPhraseList.length).fill(-1)
       );
+    } else {
+      setLeftChosenList([]);
+      setRightChosenList([]);
     }
-  };
 
-  useEffect(() => {
-    setCurrentQuestion(gameData?.contents[currentQuestionId]);
-    console.log("currentQuestion updated:", currentQuestion);
-  }, [currentQuestionId]);
-
-  useEffect(() => {
-    resetStateForGameAnswer();
-  }, [currentQuestion]);
+    // ensure wrapper state is waiting when question changes
+    setWrapperState("waiting");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    gameData,
+    currentQuestionId,
+    currentQuestion?.type,
+    currentQuestion?.content,
+  ]);
 
   // nếu đã trả lời hết câu hỏi thì hiện thị trang kết quả
   if (currentQuestionId >= (gameData?.contents.length || 0)) {
@@ -201,9 +204,10 @@ const MiniGamePage = () => {
       totalQuestions={gameData?.contents.length || 0}
       answer={retrieveAnswer()}
       onSkip={() => {
-        setCurrentQuestionId(currentQuestionId + 1);
+        // effect will reset state when currentQuestionId changes
+        setCurrentQuestionId((s) => s + 1);
+        // wrapper state will be set to waiting by the effect, but keep this for immediate UI consistency
         setWrapperState("waiting");
-        resetStateForGameAnswer();
       }}
       onCheck={() => {
         if (isAnswerTrue()) {
@@ -215,8 +219,8 @@ const MiniGamePage = () => {
       }}
       onNext={() => {
         setWrapperState("waiting");
-        setCurrentQuestionId(currentQuestionId + 1);
-        resetStateForGameAnswer();
+        // effect will reset state when index changes
+        setCurrentQuestionId((s) => s + 1);
       }}
       onGoBack={() => {
         navigate(`/courses/${courseId}/topics/${topicId}/lessons/${lessonId}`, {
@@ -241,15 +245,15 @@ const MiniGamePage = () => {
           remainTexts={remainTexts}
           chosenTexts={chosenTexts}
           onChooseText={(chosenIndex) => {
-            setChosenTexts([...chosenTexts, chosenIndex]);
-            setRemainTexts(
-              remainTexts.map((val, idx) => (idx === chosenIndex ? false : val))
+            setChosenTexts((prev) => [...prev, chosenIndex]);
+            setRemainTexts((prev) =>
+              prev.map((val, idx) => (idx === chosenIndex ? false : val))
             );
           }}
           onRemoveText={(removedIndex) => {
-            setChosenTexts(chosenTexts.filter((t) => t !== removedIndex));
-            setRemainTexts(
-              remainTexts.map((val, idx) => (idx === removedIndex ? true : val))
+            setChosenTexts((prev) => prev.filter((t) => t !== removedIndex));
+            setRemainTexts((prev) =>
+              prev.map((val, idx) => (idx === removedIndex ? true : val))
             );
           }}
           disabled={wrapperState !== "waiting"}
@@ -303,16 +307,15 @@ const MiniGamePage = () => {
                   }
                 }
 
-                console.log("insertedIndex:", insertedIndex);
-
                 if (
                   insertedIndex <= -1 ||
                   insertedIndex >= leftChosenList.length
                 )
                   return;
                 // choose in the left list
-                leftChosenList[insertedIndex] = valueIndex;
-                setLeftChosenList([...leftChosenList]);
+                const newLeft = [...leftChosenList];
+                newLeft[insertedIndex] = valueIndex;
+                setLeftChosenList(newLeft);
               }
             } else if (listOrder === "right") {
               const index = rightChosenList.indexOf(valueIndex);
@@ -322,7 +325,7 @@ const MiniGamePage = () => {
                 const newRightChosenList = [...rightChosenList];
                 newRightChosenList[index] = -1;
                 setRightChosenList(newRightChosenList);
-                // also unchoose in the right list
+                // also unchoose in the left list
                 const newLeftChosenList = [...leftChosenList];
                 newLeftChosenList[index] = -1;
                 setLeftChosenList(newLeftChosenList);
@@ -343,15 +346,15 @@ const MiniGamePage = () => {
                     }
                   }
                 }
-                console.log("insertedIndex:", insertedIndex);
 
                 if (
                   insertedIndex <= -1 ||
                   insertedIndex >= rightChosenList.length
                 )
                   return;
-                rightChosenList[insertedIndex] = valueIndex;
-                setRightChosenList([...rightChosenList]);
+                const newRight = [...rightChosenList];
+                newRight[insertedIndex] = valueIndex;
+                setRightChosenList(newRight);
               }
             }
           }}
