@@ -10,6 +10,7 @@ interface MiniGameWrapperProps {
   onSkip: () => void;
   onCheck: () => void;
   onNext: () => void;
+  onGoBack?: () => void;
   wrapperState?: "waiting" | "correct" | "incorrect"; // 'waiting' | 'correct' | 'incorrect'
 }
 
@@ -21,15 +22,14 @@ const MiniGameWrapper: React.FC<MiniGameWrapperProps> = ({
   onSkip,
   onCheck,
   onNext,
+  onGoBack,
   wrapperState = "waiting", // 'waiting' | 'correct' | 'incorrect'
 }) => {
   return (
     <div className="relative min-h-screen w-full bg-gray-50 flex justify-between flex-col">
       {/* Phần nút thoát */}
       <div
-        onClick={() => {
-          alert("Close mini game");
-        }}
+        onClick={() => onGoBack?.()}
         className="absolute top-4 left-10 border-2 border-transparent hover:border-gray-300 rounded-md"
       >
         <IoClose className="  text-[var(--custom-red)] text-3xl cursor-pointer  " />

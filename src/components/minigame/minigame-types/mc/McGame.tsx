@@ -7,6 +7,8 @@ import CustomBox from "@/shared/common/CustomBox";
 interface McGameProps {
   title?: string;
   content: MiniGameMc;
+  onChoose?: (value: string) => void;
+  chosenValue?: string;
   disabled?: boolean;
 }
 
@@ -14,16 +16,24 @@ const McGame: React.FC<McGameProps> = ({
   title,
   content: { displayType, question, options, correctValue },
   disabled = false,
+  onChoose,
+  chosenValue,
 }) => {
-  console.log("McGame content:", title, displayType, options, correctValue);
-
   return (
     <div className="flex flex-col justify-between items-center w-full h-full gap-10">
       {/* Upper: title + question word ... */}
       <div className="flex flex-col justify-between items-start max-w-3xl w-full">
         {/* Title Section */}
-        <h2 className="text-[var(--custom-purple)] font-bold text-[32px] mb-3 w-full text-center">
-          {title}
+        <h2 className="text-[var(--custom-purple)] font-bold text-[32px] mb-3 w-full text-center flex justify-center items-center gap-10">
+          {title}{" "}
+          {displayType === 4 && (
+            <TextShow
+              textDisplay={question?.text}
+              showSubText
+              subClassName="text-lg"
+              mainClassName="text-xl font-bold"
+            />
+          )}
         </h2>
 
         {/* Question Section show only when on displayType 1 or 2 */}
@@ -80,6 +90,8 @@ const McGame: React.FC<McGameProps> = ({
             key={option.value}
             displayType={displayType}
             option={option}
+            onSelect={onChoose}
+            isSelected={option.value === chosenValue}
             disabled={disabled}
           />
         ))}
