@@ -828,12 +828,211 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
           },
           {
             id: 5,
-            icon: <FaStar />,
-            miniGameLink: "/courses/1/topics/2/lessons/5/minigame",
-            lessonLink: "/courses/1/topics/2/lessons/5",
+
             title: "Ôn tập",
             status: "final",
-            targets: [],
+            targets: [
+              "Củng cố từ vựng cơ bản trong giao tiếp tiếng Hàn",
+              "Luyện tập cấu trúc ngữ pháp thông dụng",
+              "Phát triển khả năng giao tiếp thực tế bằng tiếng Hàn",
+            ],
+            vocabIds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+            practiceBox: {
+              questions: [
+                {
+                  questionType: "multipleChoice", //1
+                  question:
+                    " Chọn từ phù hợp để thể hiện sự tôn trọng khi xưng'Tôi'với người mới gặp.",
+                  options: ["나 ", "저?", "너"],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "<b>저</b> (jeo) là đại từ nhân xưng ngôi thứ nhất ở dạng khiêm tốn/lịch sự. Đây là từ bạn nên dùng khi nói chuyện với người lớn tuổi hoặc người lạ (như khi mới làm quen) để thể hiện sự tôn trọng. <b>나 </b>(na) là dạng thân mật, suồng sã.",
+                },
+                {
+                  questionType: "multipleChoice", //2
+                  question:
+                    "Chọn đuôi câu khẳng định trang trọng nhất (Dạng 'là')",
+                  options: ["이다", "이에요", "입니다"],
+                  correctAnswerIndex: 2,
+                  explanation:
+                    "Từ <b>'음악' </b>(âm nhạc) kết <b>입니다</b> (imnida) là đuôi câu khẳng định 'là' ở dạng trang trọng nhất (formal high). <b>이다</b> là dạng nguyên mẫu (dictionary form), còn <b>이에요/예요</b> là dạng thân mật lịch sựthúc bằng phụ âm 'ㄱ' (k), nên dùng tiểu từ '이' với tính từ <b>좋아요</b>.",
+                },
+                {
+                  questionType: "multipleChoice", //3
+                  question: "Từ nào sau đây có nghĩa là 'Hôm nay'?",
+                  options: ["언제나", "지금", "오늘"],
+                  correctAnswerIndex: 2,
+                  explanation:
+                    "<b>오늘</b> (oneul) có nghĩa là 'hôm nay'. <b>언제나</b> (eonjena) là 'luôn luôn', và <b>지금</b> (jigeum) là 'bây giờ' (ngay lúc này)",
+                },
+                {
+                  questionType: "multipleChoice", //4
+                  question:
+                    "Khi bạn muốn cổ vũ một người bạn Hàn Quốc sắp thi, bạn nên nói gì?",
+                  options: ["미안합니다", "감사합니다", "파이팅!"],
+                  correctAnswerIndex: 2,
+                  explanation:
+                    "<b>파이팅!</b> (Paiting!) là lời cổ vũ phổ biến nhất trong tiếng Hàn, mang nghĩa 'Cố lên!' hoặc 'Làm tốt nhé!'. Hai đáp án còn lại là lời chào hỏi và xin lỗi",
+                },
+
+                {
+                  questionType: "multipleChoice", //5
+                  question: "Chọn câu diễn tả khả năng ở dạng đúng:",
+                  options: ["할 수 있어요", "하다 수 있어요", "할 수 없어요"],
+                  correctAnswerIndex: 0,
+                  explanation:
+                    "Cấu trúc thể hiện khả năng là [Động từ gốc] + (으)ㄹ 수 있다. Gốc động từ của 'làm' là 하-. Vì 하- không có phụ âm cuối (patchim), ta dùng -ㄹ 수 있어요 (đã chia ở dạng lịch sự thân mật)",
+                },
+                {
+                  questionType: "multipleChoice", //6
+                  question: "Danh từ nào sau đây mang nghĩa là 'Học sinh'?:",
+                  options: ["이름", "학생", "선생님"],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "<b>학생</b> (haksaeng) có nghĩa là 'học sinh'. 이름 (ireum) là 'tên', và 선생님 (seonsaengnim) là 'giáo viên'",
+                },
+                {
+                  questionType: "multipleChoice", //7
+                  question:
+                    "Chọn tiểu từ chủ ngữ đúng cho câu sau: Tên (____) là gì?':",
+                  options: [
+                    "이름이 무엇입니까",
+                    "이름를 무엇입니까?",
+                    "이름은 무엇입니까?",
+                  ],
+                  correctAnswerIndex: 0,
+                  explanation:
+                    "Danh từ <b>이름</b> (ireum - tên) kết thúc bằng phụ âm cuối <b>(ㅁ)</b>, nên phải đi với tiểu từ chủ ngữ <b>이 </b>(i) trong cấu trúc câu hỏi <b>'A là cái gì?'</b>.",
+                },
+
+                {
+                  questionType: "fillInBlank", //8
+                  question:
+                    " Hoàn thành câu chào hỏi phổ biến: 안녕 ________? (Xin chào?)",
+                  correctAnswer: "하세요",
+                  explanation:
+                    "Câu chào hỏi phổ biến là<b> 안녕하세요? </b>(Annyeonghaseyo?).",
+                },
+                {
+                  questionType: "fillInBlank", //9
+                  question:
+                    " Hoàn thành câu giới thiệu: 'Tôi là Mina.' 저는 민아 ________.",
+                  correctAnswer: "입니다",
+                  explanation:
+                    "Trong câu giới thiệu trang trọng 저는 민아입니다 (Tôi là Mina), 입니다 là đuôi câu khẳng định trang trọng.",
+                },
+                {
+                  questionType: "fillInBlank", //10
+                  question:
+                    "Từ vựng nào sau đây mang nghĩa là 'Cái gì?'' ________ 무엇입니까?",
+                  correctAnswer: "하세요",
+                  explanation:
+                    "Câu chào hỏi phổ biến là<b> 안녕하세요? </b>(Annyeonghaseyo?).",
+                },
+                {
+                  questionType: "fillInBlank", //11
+                  question:
+                    "Hoàn thành câu thể hiện sự vui mừng: 'Rất vui được gặp.' 만나서 ____________.",
+                  correctAnswer: "반갑습니다",
+                  explanation:
+                    "Cụm từ đầy đủ để bày tỏ sự vui mừng khi gặp là 만나서 반갑습니다 (Mannaseo bangapseumnida - Rất vui được gặp).",
+                },
+                {
+                  questionType: "fillInBlank", //12
+                  question:
+                    "Hoàn thành câu với phó từ chỉ tần suất:  저는 ________ 노력할 거예요.'Tôi sẽ ________ cố gắng.'",
+                  correctAnswer: "언제나",
+                  explanation:
+                    "언제나 (eonjena) là phó từ chỉ tần suất, có nghĩa là 'luôn luôn' hoặc 'lúc nào cũng', làm nổi bật ý chí cố gắng bền bỉ.",
+                },
+                {
+                  questionType: "fillInBlank", //13
+                  question:
+                    " Hoàn thành câu sử dụng liên từ -서: 'Tôi thích vì ________ (gặp).' 만나**________** 반갑습니다",
+                  correctAnswer: "서",
+                  explanation:
+                    "-서 là tiểu từ liên kết hai hành động hoặc diễn tả nguyên nhân, tạo nên cụm từ 만나서 (vì đã gặp/nhân vì gặp) trong câu 만나서 반갑습니다.",
+                },
+                {
+                  questionType: "dropDown", //14
+                  question:
+                    "<<dropdown>>는 한국 사람입니다. (Tôi là người Hàn Quốc.)",
+                  options: [
+                    "영화를 좋아요",
+                    "영화를 좋아해요",
+                    "영화가 좋아해요",
+                  ],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "Dùng 저는 (dạng khiêm tốn của 'Tôi') để thể hiện sự lịch sự và tôn trọng với người có địa vị cao (giáo sư).Khi dùng động từ 'thích' (좋아해요), danh từ 'phim' (영화) phải là tân ngữ và đi kèm với tiểu từ tân ngữ 을/를. Vì 영화 (yeonghwa) kết thúc bằng nguyên âm nên ta dùng 를.",
+                },
+                {
+                  questionType: "dropDown", //15
+                  question:
+                    "저는 영화 <<dropdown>> 좋아해요. (Tôi thích phim.)",
+                  options: ["이 (i)", "를 (reul)", "은 (eun)"],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "Danh từ 영화 (yeonghwa - phim) kết thúc bằng nguyên âm, nên dùng tiểu từ tân ngữ 를 (reul) đi kèm với động từ 좋아해요.",
+                },
+                {
+                  questionType: "dropDown", //16
+                  question:
+                    "한국어 공부<<dropdown>> 좋아요. (Việc học tiếng Hàn thì hay/tốt.)",
+                  options: ["를 (reul)", "B. 이 (i)", "C. 가 (ga)"],
+                  correctAnswerIndex: 2,
+                  explanation:
+                    "Danh từ 공부 (gongbu - việc học) kết thúc bằng nguyên âm, nên dùng tiểu từ chủ ngữ 가 (ga) khi đi với tính từ 좋아요.",
+                },
+                {
+                  questionType: "dropDown", //17
+                  question:
+                    "한국어를 <<dropdown>> 수 있어요. (Có thể nói tiếng Hàn.)",
+                  options: [
+                    "말하 (Malha)",
+                    "말할 (Malhal)",
+                    "말해요 (Malhaeyo)",
+                  ],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "Cấu trúc là [Gốc Động từ + (으)ㄹ] + 수 있어요. Gốc động từ 말하- kết thúc bằng nguyên âm, ta dùng -ㄹ (Malhal).",
+                },
+                {
+                  questionType: "dropDown", //18
+                  question:
+                    "저는 내일 일찍 <<dropdown>>(Tôi sẽ dậy sớm vào ngày mai.)",
+                  options: [
+                    "일어났어요 (Quá khứ)",
+                    "일어날 거예요 (Tương lai)",
+                    "일어나요 (Hiện tại)",
+                  ],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "Dùng 일어날 거예요 (sẽ dậy) với cấu trúc -(으)ㄹ 거예요 để diễn tả dự định/hành động trong tương lai.",
+                },
+                {
+                  questionType: "dropDown", //19
+                  question: "이름이 <<dropdown>>입니까?",
+                  options: [
+                    "언제 (Eonje - khi nào)",
+                    "무엇 (Mueot - cái gì)",
+                    "어디 (Eodi - ở đâu)",
+                  ],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "무엇 (Mueot) là đại từ nghi vấn mang nghĩa 'cái gì', phù hợp để hỏi tên.",
+                },
+                {
+                  questionType: "dropDown", //20
+                  question:
+                    "학생 <<dropdown>>아닙니다. (Không phải là học sinh.)",
+                  options: ["은 (eun)", "는 (neun)", ". 를 (reul)"],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "Danh từ 학생 (haksaeng) kết thúc bằng phụ âm (ㅇ), nên dùng tiểu từ chủ đề 은 (eun).",
+                },
+              ],
+            },
           },
         ],
       },
