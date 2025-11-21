@@ -1057,7 +1057,161 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             lessonLink: "/courses/1/topics/2/lessons/1",
             miniGameLink: "/courses/1/topics/2/lessons/1/minigame",
             status: "locked",
-            targets: [],
+            targets: [
+              "Học viên nhận biết và sử dụng được các từ vựng cơ bản về gia đình: 가족, 어머니, 아버지.",
+              "Phân biệt và sử dụng đúng từ xưng hô trang trọng (아버지, 어머니) và thân mật (아빠, 엄마).",
+              "Hiểu văn hóa cộng đồng của người Hàn qua cách dùng '우리' (chúng tôi) thay vì '제' (của tôi).",
+            ],
+            vnDialogue: {
+              mainRole: "B",
+              hasSpeakerBox: false,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [{ text: "Bức ảnh này là gì vậy?" }],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [{ text: "Là ảnh gia đình của tôi." }],
+                },
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [{ text: "À! Vị này là bố bạn phải không?" }],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    { text: "Vâng, đúng rồi." },
+                    { text: "Và vị này là mẹ của chúng tôi." },
+                  ],
+                },
+              ],
+            },
+            koDialogue: {
+              mainRole: "B",
+              hasSpeakerBox: true,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "이 사진은 무엇입니까?",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_A1.mp3", // Thay link audio thực tế của bạn vào đây
+                    },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    {
+                      text: "제 가족 사진입니다.",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_B1.mp3",
+                    },
+                  ],
+                },
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "아! 이분은 아버지입니까?",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_A2.mp3",
+                    },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    {
+                      text: "네, 맞아요.",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_B2_1.mp3",
+                    },
+                    {
+                      text: "그리고 이분은 우리 어머니입니다.",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_B2_2.mp3",
+                    },
+                  ],
+                },
+              ],
+            },
+            culturalStory: {
+              title: "Cách gọi 'Bố', 'Mẹ' thân thương",
+              content: `
+      Trong tiếng Hàn, cách gọi bố mẹ thay đổi tùy theo mức độ thân thiết và trang trọng:
+      <ul className="list-disc list-inside ml-2 mt-2">
+        <li className="mb-2"><b>아버지 (abeoji) & 어머니 (eomeoni):</b> Là cách gọi trang trọng. Bạn dùng khi nói về bố mẹ với người ngoài, hoặc trong hoàn cảnh nghiêm túc.</li>
+        <li><b>아빠 (appa) & 엄마 (eomma):</b> Giống như "Bố/Ba", "Mẹ/Má" trong tiếng Việt. Đây là cách gọi thân mật, trẻ em và người lớn đều dùng khi nói chuyện trực tiếp với bố mẹ.</li>
+      </ul>
+      <div className="mt-4 p-3 bg-blue-50 rounded-lg">
+        💡 <b>Mẹo nhỏ:</b> Khi về nhà, đừng gọi "Abuji" mà hãy gọi "Appa" để không khí gia đình thêm ấm áp nhé!
+      </div>
+    `,
+            },
+            funQuiz: {
+              question:
+                "Khi bạn về nhà và thấy mẹ đang nấu ăn, bạn sẽ chào mẹ một cách tự nhiên là:",
+              options: [
+                "A. 어머니, 안녕하세요.",
+                "B. 엄마, 저 왔어요! (Mẹ ơi, con về rồi!)",
+              ],
+              correctAnswerIndex: 1,
+              explanation:
+                "Đáp án B (엄마) là cách nói tự nhiên và thân mật hơn trong tình huống gia đình hàng ngày. '어머니' thường quá trang trọng khi dùng trực tiếp ở nhà.",
+            },
+            vocabIds: [14, 15, 16],
+            practiceBox: {
+              questions: [
+                {
+                  questionType: "multipleChoice",
+                  question:
+                    "Từ nào sau đây mang nghĩa là 'Bố' (cách gọi trang trọng)?",
+                  options: ["어머니", "아버지", "가족"],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "'어머니' là Mẹ, '가족' là Gia đình. '아버지' là Bố.",
+                },
+                {
+                  questionType: "fillInBlank",
+                  question: "Cách gọi thân mật của '어머니' là <<blank>>.",
+                  correctAnswer: "엄마",
+                  explanation: "엄마 (eomma) là cách gọi mẹ thân mật, gần gũi.",
+                },
+                {
+                  questionType: "dropDown",
+                  question:
+                    "Giới thiệu với người khác về đất nước của mình: 'Đây là đất nước <<dropdown>>'.",
+                  options: ["제 (của tôi)", "우리 (của chúng tôi)"],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "Người Hàn dùng '우리' (chúng tôi) cho các khái niệm cộng đồng như gia đình, đất nước, nhà trường để thể hiện sự gắn kết.",
+                },
+                {
+                  questionType: "multipleChoice",
+                  question:
+                    "Tại sao nên dùng '우리 어머니' thay vì '제 어머니'?",
+                  options: [
+                    "Vì mẹ là của riêng tôi.",
+                    "Vì ngữ pháp bắt buộc.",
+                    "Để nghe tự nhiên và thể hiện sự thân thuộc kiểu Hàn Quốc.",
+                  ],
+                  correctAnswerIndex: 2,
+                  explanation:
+                    "Dù dịch là 'mẹ tôi', nhưng dùng '우리' (chúng tôi) nghe sẽ tự nhiên và mang tính văn hóa cộng đồng hơn.",
+                },
+              ],
+            },
           },
           {
             id: 2,
@@ -1066,7 +1220,173 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             lessonLink: "/courses/1/topics/2/lessons/2",
             miniGameLink: "/courses/1/topics/2/lessons/2/minigame",
             status: "locked",
-            targets: [],
+            targets: [
+              "Học viên có thể giới thiệu bạn bè và nói về việc có hay không có bạn bè.",
+              "Sử dụng thành thạo cấu trúc ngữ pháp sở hữu: 있다 (có) / 없다 (không có).",
+              "Hiểu văn hóa '친구' (Bạn bè) và cách xưng hô theo tuổi tác trong xã hội Hàn Quốc.",
+            ],
+            vnDialogue: {
+              mainRole: "B", // Người học đóng vai Mina (B)
+              hasSpeakerBox: false,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [{ text: "Mina ơi, bạn có bạn bè không?" }],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    { text: "Vâng, tôi có những người bạn tốt." },
+                    { text: "Còn Nam thì sao?" },
+                  ],
+                },
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    { text: "Tôi có nhiều bạn lắm." },
+                    { text: "Đây là bạn của tôi, Jihoon." },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [{ text: "Ồ, rất vui được gặp bạn!" }],
+                },
+              ],
+            },
+            koDialogue: {
+              mainRole: "B",
+              hasSpeakerBox: true,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "민아 씨, 친구가 있어요?",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_2_A1.mp3", // Thay link audio thực tế
+                    },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    {
+                      text: "네, 저는 좋은 친구가 있어요.",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_2_B1_1.mp3",
+                    },
+                    {
+                      text: "남 씨는요?",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_2_B1_2.mp3",
+                    },
+                  ],
+                },
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "저는 친구가 많아요.",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_2_A2_1.mp3",
+                    },
+                    {
+                      text: "이 사람은 제 친구, 지훈입니다.",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_2_A2_2.mp3",
+                    },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    {
+                      text: "아, 반갑습니다!",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_2_B2.mp3",
+                    },
+                  ],
+                },
+              ],
+            },
+            culturalStory: {
+              title: "'친구' (Bạn bè) ở Hàn Quốc",
+              content: `
+      Ở Hàn Quốc, khái niệm <b>"친구" (chingu)</b> rất đặc biệt và thường chỉ dùng cho những người <b>bằng tuổi nhau</b>.
+      <ul className="list-disc list-inside ml-2 mt-2">
+        <li className="mb-2">Nếu người kia lớn hơn bạn dù chỉ 1 tuổi, bạn phải gọi là:
+          <ul className="list-circle list-inside ml-4 text-gray-600">
+            <li><b>형 (hyeong) / 누나 (nuna)</b>: Nếu bạn là nam.</li>
+            <li><b>오빠 (oppa) / 언니 (eonni)</b>: Nếu bạn là nữ.</li>
+          </ul>
+        </li>
+        <li>Người ít tuổi hơn sẽ là <b>동생 (dongsaeng)</b>.</li>
+      </ul>
+      <div className="mt-4 p-3 bg-red-50 rounded-lg">
+        ⚠️ <b>Lưu ý:</b> Gọi người lớn tuổi hơn là "chingu" có thể bị coi là thiếu tôn trọng. Vì vậy, câu hỏi "Bạn bao nhiêu tuổi?" là rất phổ biến khi mới làm quen để chọn cách xưng hô đúng.
+      </div>
+    `,
+            },
+            funQuiz: {
+              question:
+                "Nếu gặp một người Hàn Quốc lớn hơn bạn 1 tuổi, bạn có nên gọi họ là '친구' ngay lập tức không?",
+              options: [
+                "A. Có, vì chúng ta đều là bạn bè quốc tế.",
+                "B. Không, vì ở Hàn Quốc 'bạn bè' thường chỉ những người bằng tuổi.",
+              ],
+              correctAnswerIndex: 1, // Đáp án B
+              explanation:
+                "Ở Hàn Quốc, văn hóa tuổi tác rất quan trọng. Gọi người lớn tuổi hơn là 'bạn' (chingu) có thể bị coi là vô lễ. Bạn nên dùng các danh xưng tôn trọng như anh/chị.",
+            },
+            vocabIds: [17, 18, 19],
+            practiceBox: {
+              questions: [
+                {
+                  questionType: "multipleChoice",
+                  question: "Cấu trúc nào dùng để nói 'Có cái gì đó'?",
+                  options: [
+                    "[Danh từ] + 이/가 있다",
+                    "[Danh từ] + 은/는 있다",
+                    "[Danh từ] + 을/를 있다",
+                  ],
+                  correctAnswerIndex: 0,
+                  explanation:
+                    "Cấu trúc sở hữu hoặc tồn tại trong tiếng Hàn luôn dùng trợ từ chủ ngữ 이/가 đi với 있다.",
+                },
+                {
+                  questionType: "fillInBlank",
+                  question:
+                    "저는 시간<<blank>> 없어요. (Tôi không có thời gian - '시간' kết thúc bằng phụ âm 'n')",
+                  correctAnswer: "이",
+                  explanation:
+                    "Vì '시간' (sigan) kết thúc bằng phụ âm (patchim 'ㄴ'), ta dùng trợ từ '이'.",
+                },
+                {
+                  questionType: "fillInBlank",
+                  question:
+                    "교실에 학생<<blank>> 있어요. (Trong lớp có học sinh - '학생' kết thúc bằng phụ âm 'ng')",
+                  correctAnswer: "이",
+                  explanation:
+                    "Vì '학생' (haksaeng) kết thúc bằng phụ âm (patchim 'ㅇ'), ta dùng trợ từ '이'.",
+                },
+                {
+                  questionType: "dropDown",
+                  question: "Chọn trợ từ đúng: 친구<<dropdown>> 있어요.",
+                  options: ["이", "가"],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "Vì '친구' (chingu) kết thúc bằng nguyên âm (không có patchim), ta dùng trợ từ '가'.",
+                },
+              ],
+            },
           },
           {
             id: 3,
@@ -1961,6 +2281,182 @@ export const vocabList: Record<number, Vocab> = {
       },
     ],
     examples: ["앞으로 더 노력할 거예요.", "시험을 위해 노력할 거예요."],
+  },
+  14: {
+    text: "가족",
+    transcription: "gajok",
+    meaning: "Gia đình",
+    usage:
+      "Dùng để chỉ các thành viên trong nhà hoặc tập thể gia đình nói chung.",
+    description: "Danh từ chỉ tập hợp những người thân thiết cùng chung sống.",
+    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_gajok.mp3", // Thay link
+    imgUrl: "https://cdn-icons-png.flaticon.com/512/2990/2990432.png", // Icon gia đình
+    wordType: "noun",
+    subdescription: "Bắt nguồn từ Hán tự 家族 (Gia tộc).",
+    parts: [
+      {
+        text: "가",
+        color: "--custom-blue",
+        description: "Gia (nhà)",
+      },
+      {
+        text: "족",
+        color: "--custom-green",
+        description: "Tộc (nhóm người)",
+      },
+    ],
+    examples: [
+      "제 가족은 4명입니다. (Gia đình tôi có 4 người.)",
+      "가족 사진. (Ảnh gia đình.)",
+    ],
+  },
+  15: {
+    text: "어머니",
+    transcription: "eomeoni",
+    meaning: "Mẹ (trang trọng)",
+    usage:
+      "Dùng khi giới thiệu mẹ với người lạ hoặc trong văn viết, hoàn cảnh trang trọng.",
+    description: "Danh từ chỉ người mẹ, mang sắc thái kính trọng.",
+    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_eomeoni.mp3", // Thay link
+    imgUrl: "https://cdn-icons-png.flaticon.com/512/2922/2922561.png", // Icon mẹ
+    wordType: "noun",
+    subdescription: "Cách gọi thân mật hàng ngày là <b>엄마 (eomma)</b>.",
+    parts: [
+      {
+        text: "어",
+        color: "--custom-orange",
+        description: "âm tiết 1",
+      },
+      {
+        text: "머",
+        color: "--custom-orange",
+        description: "âm tiết 2",
+      },
+      {
+        text: "니",
+        color: "--custom-orange",
+        description: "âm tiết 3",
+      },
+    ],
+    examples: [
+      "우리 어머니입니다. (Đây là mẹ tôi.)",
+      "어머니, 사랑해요. (Mẹ ơi, con yêu mẹ - trang trọng)",
+    ],
+  },
+  16: {
+    text: "아버지",
+    transcription: "abeoji",
+    meaning: "Bố (trang trọng)",
+    usage: "Dùng khi giới thiệu bố với người lạ hoặc thể hiện sự kính trọng.",
+    description: "Danh từ chỉ người cha, mang sắc thái kính trọng.",
+    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_abeoji.mp3", // Thay link
+    imgUrl: "https://cdn-icons-png.flaticon.com/512/2922/2922510.png", // Icon bố
+    wordType: "noun",
+    subdescription: "Cách gọi thân mật hàng ngày là <b>아빠 (appa)</b>.",
+    parts: [
+      {
+        text: "아",
+        color: "--custom-blue",
+        description: "âm tiết 1",
+      },
+      {
+        text: "버",
+        color: "--custom-blue",
+        description: "âm tiết 2",
+      },
+      {
+        text: "지",
+        color: "--custom-blue",
+        description: "âm tiết 3",
+      },
+    ],
+    examples: [
+      "아버지는 의사입니다. (Bố tôi là bác sĩ.)",
+      "아버지, 건강하세요. (Chúc bố mạnh khỏe.)",
+    ],
+  },
+
+  17: {
+    text: "친구",
+    transcription: "chingu",
+    meaning: "Bạn bè",
+    usage:
+      "Dùng để chỉ những người bạn cùng tuổi hoặc mối quan hệ bạn bè xã giao thân thiết (nếu đã thỏa thuận).",
+    description: "Danh từ chỉ người bạn.",
+    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_chingu.mp3",
+    imgUrl: "https://cdn-icons-png.flaticon.com/512/3002/3002655.png", // Icon bạn bè
+    wordType: "noun",
+    subdescription: "Bắt nguồn từ Hán tự 親舊 (Thân Cựu).",
+    parts: [
+      {
+        text: "친",
+        color: "--custom-blue",
+        description: "Thân (thân thiết)",
+      },
+      {
+        text: "구",
+        color: "--custom-green",
+        description: "Cựu (cũ/lâu năm)",
+      },
+    ],
+    examples: [
+      "제 친구입니다. (Đây là bạn tôi.)",
+      "친구가 있어요. (Tôi có bạn.)",
+    ],
+  },
+  18: {
+    text: "있다",
+    transcription: "itta",
+    meaning: "Có / Ở",
+    usage:
+      "Dùng để diễn tả sự sở hữu hoặc sự tồn tại của người/vật tại một địa điểm.",
+    description: "Động từ chỉ sự tồn tại.",
+    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_itta.mp3",
+    imgUrl: "https://cdn-icons-png.flaticon.com/512/10692/10692797.png", // Icon dấu tích/có
+    wordType: "verb",
+    subdescription:
+      "Khi chia đuôi câu thân mật lịch sự (-어요) sẽ thành <b>있어요 (isseoyo)</b>.",
+    parts: [
+      {
+        text: "있",
+        color: "--custom-orange",
+        description: "gốc từ",
+      },
+      {
+        text: "다",
+        color: "--custom-gray",
+        description: "đuôi từ điển",
+      },
+    ],
+    examples: ["친구가 있어요. (Tôi có bạn.)", "돈이 있어요. (Tôi có tiền.)"],
+  },
+  19: {
+    text: "없다",
+    transcription: "eopda",
+    meaning: "Không có / Không ở",
+    usage: "Là dạng phủ định của 있다.",
+    description: "Động từ chỉ sự vắng mặt hoặc không sở hữu.",
+    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_eopda.mp3",
+    imgUrl: "https://cdn-icons-png.flaticon.com/512/1828/1828843.png", // Icon dấu X/không có
+    wordType: "verb",
+    subdescription:
+      "Khi chia đuôi câu thân mật lịch sự (-어요) sẽ thành <b>없어요 (eopseoyo)</b>.",
+    parts: [
+      {
+        text: "없",
+        color: "--custom-red",
+        description: "gốc từ",
+      },
+      {
+        text: "다",
+        color: "--custom-gray",
+        description: "đuôi từ điển",
+      },
+    ],
+    examples: [
+      "시간이 없어요. (Tôi không có thời gian.)",
+      "친구가 없어요. (Tôi không có bạn.)",
+    ],
   },
 };
 
