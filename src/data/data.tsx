@@ -257,6 +257,8 @@ export const learningCourses: LearningCourse[] = [
                 },
               ],
             },
+            minigameIds: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+            minigameQuantity: 9,
           },
           {
             id: 2,
@@ -411,23 +413,12 @@ export const learningCourses: LearningCourse[] = [
             lessonLink: "/courses/1/topics/1/lessons/3",
             miniGameLink: "/courses/1/topics/1/lessons/3/minigame",
             status: "available",
-
-            targets: [],
-          },
-          {
-            id: 4,
-            title: "Động lực và câu khích lệ",
-            icon: <FaHandshakeSimple />,
-            lessonLink: "/courses/1/topics/1/lessons/4",
-            miniGameLink: "/courses/1/topics/1/lessons/4/minigame",
-            status: "locked",
             targets: [
               "Hỏi tên của người khác một cách lịch sự.",
               "Hỏi và trả lời những câu đơn giản về sở thích.",
               "Sử dụng thành thạo câu nghi vấn 'A là B 'phải không?",
               "Hiểu và dùng đúng tiểu từ tân ngữ 을/를.",
             ],
-            highlight: true,
             vnDialogue: {
               mainRole: "B",
               hasSpeakerBox: false,
@@ -507,7 +498,7 @@ export const learningCourses: LearningCourse[] = [
             culturalStory: {
               title: "'Bạn thích gì?' - Câu hỏi mở đầu thân thiện",
               content: `Khi làm quen với người Hàn, sau khi hỏi tên, thay vì hỏi tuổi (đây là một câu hỏi khá phổ biến nhưng đôi khi nhạy cảm), hỏi về sở thích <b>"무엇을 좋아하세요?"</b> là một cách tuyệt vời để kéo dài cuộc trò chuyện. 
-              Người Hàn rất cởi mở khi chia sẻ về sở thích như nghe nhạc K-Pop, xem phim, leo núi hay đi quán cà phê đẹp. Thử hỏi câu này trong lần tới gặp bạn người Hàn nhé!`,
+  Người Hàn rất cởi mở khi chia sẻ về sở thích như nghe nhạc K-Pop, xem phim, leo núi hay đi quán cà phê đẹp. Thử hỏi câu này trong lần tới gặp bạn người Hàn nhé!`,
             },
             funQuiz: {
               question:
@@ -561,6 +552,160 @@ export const learningCourses: LearningCourse[] = [
                   correctAnswerIndex: 1,
                   explanation:
                     "Khi dùng động từ 'thích' (좋아해요), danh từ 'phim' (영화) phải là tân ngữ và đi kèm với tiểu từ tân ngữ 을/를. Vì 영화 (yeonghwa) kết thúc bằng nguyên âm nên ta dùng 를.",
+                },
+              ],
+            },
+          },
+          {
+            id: 4,
+            title: "Động lực và câu khích lệ",
+            icon: <FaHandshakeSimple />,
+            lessonLink: "/courses/1/topics/1/lessons/4",
+            miniGameLink: "/courses/1/topics/1/lessons/4/minigame",
+            status: "locked",
+            targets: [
+              "Học viên có thể nói câu thể hiện khả năng và tự khích lệ bản thân",
+              "Học viên có thể sử dụng cấu trúc tương lai",
+              "Học viên có thể sử dụng các phó từ chỉ thời gian",
+            ],
+            highlight: true,
+            vnDialogue: {
+              mainRole: "B",
+              hasSpeakerBox: false,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [{ text: "Việc học tiếng Hàn khó quá" }],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [{ text: "KHÔNG! Bạn có thể làm được điều đó!" }],
+                },
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [{ text: "Thật không?" }],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [{ text: "Vâng! Tôi sẽ luôn cố gắng! Cố lên!" }],
+                },
+              ],
+            },
+            koDialogue: {
+              mainRole: "B",
+              hasSpeakerBox: true,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "한국어 공부, 어려워요",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94%20.m4a?alt=media",
+                    },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    {
+                      text: "아니에요! 할 수 있어요!",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F%EC%95%84%EB%8B%88%EC%97%90%EC%9A%94%20%ED%95%A0%20%EC%88%98%20%EC%9E%88%EC%96%B4%EC%9A%94%20.m4a?alt=media",
+                    },
+                  ],
+                },
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "정말요?",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F%EC%A0%95%EB%A7%90%EC%9A%94%20.m4a?alt=media",
+                    },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    {
+                      text: "네! 언제나 노력할 거예요! 파이팅!",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F1%2Fvocab%2F%EB%84%A4%20%EC%96%B8%EC%A0%9C%EB%82%98%20%EB%85%B8%EB%A0%A5%ED%95%A0%20%EA%B1%B0%EC%98%88%EC%9A%94%20%ED%8C%8C%EC%9D%B4%ED%8C%85%20.m4a?alt=media&token=09532f1a-8253-4e10-bfa8-06ddcc675a84",
+                    },
+                  ],
+                },
+              ],
+            },
+            culturalStory: {
+              title: "파이팅! (Fighting!) - Lời cổ vũ quốc dân",
+
+              content: `
+    Bạn có nghe thấy từ <b>Fighting!</b> (phát âm kiểu Hàn là<b> 파이팅!</b> - paiting!) trong phim ảnh hay các show giải trí Hàn Quốc không? 
+    <li>Đây là một từ vay mượn từ tiếng Anh nhưng đã trở thành một nét văn hóa đặc trưng.</li>
+     <li><b>파이팅!</b> được dùng để cổ vũ, khích lệ tinh thần người khác hoặc chính bản thân mình trong mọi tình huống:<b> trước một kỳ thi, một trận đấu, một buổi phỏng vấn, hay đơn giản là khi bắt đầu một ngày mới. 
+Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".</b></li>
+
+  `,
+            },
+            funQuiz: {
+              question:
+                "Bạn của bạn sắp có bài kiểm tra tiếng Hàn. Bạn sẽ nói gì để cổ vũ họ?",
+              options: ["안녕하세요!", "미안합니다", "파이팅!"],
+              correctAnswerIndex: 2,
+              explanation:
+                " 파이팅! là một từ mượn từ tiếng Anh fighting, nhưng trong tiếng Hàn nó không mang nghĩa 'chiến đấu' mà được dùng như một khẩu hiệu khích lệ, cổ vũ tinh thần. Người Hàn thường nói '파이팅!' để động viên ai đó trước khi làm việc khó khăn, thi cử, hoặc khi cần thêm năng lượng tinh thần.",
+            },
+            vocabIds: [10, 11, 12, 13],
+            practiceBox: {
+              questions: [
+                {
+                  questionType: "multipleChoice",
+                  question: "Câu nào thể hiện khả năng làm việc gì đó?",
+                  options: ["할 수 있어요", "노력할 거예요", "오늘", "언제나"],
+                  correctAnswerIndex: 0,
+                  explanation:
+                    "'할 수 있어요' có nghĩa là 'có thể làm được', dùng để diễn tả khả năng thực hiện hành động.",
+                },
+                {
+                  questionType: "multipleChoice",
+                  question: "Từ nào dùng để chỉ thời điểm hiện tại?",
+                  options: ["언제나", "오늘", "노력할 거예요", "할 수 있어요"],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "'오늘' có nghĩa là 'hôm nay', là danh từ chỉ thời gian hiện tại.",
+                },
+                {
+                  questionType: "fillInBlank",
+                  question: "저는 더 <<blank>>. (Tôi sẽ cố gắng hơn.)",
+                  correctAnswer: "노력할 거예요",
+                  explanation:
+                    "'노력할 거예요' là cách nói lịch sự ở thì tương lai của '노력하다' (nỗ lực, cố gắng).",
+                },
+                {
+                  questionType: "dropDown",
+                  question: "<<dropdown>> 수 있어요. (Có thể làm được.)",
+                  options: ["할", "하", "하겠"],
+                  correctAnswerIndex: 0,
+                  explanation:
+                    "'할 수 있어요' là cấu trúc diễn tả khả năng làm việc gì đó.",
+                },
+                {
+                  questionType: "multipleChoice",
+                  question:
+                    "Từ nào mang nghĩa 'luôn luôn' hoặc 'lúc nào cũng'?",
+                  options: ["오늘", "할 수 있어요", "언제나", "노력할 거예요"],
+                  correctAnswerIndex: 2,
+                  explanation:
+                    "'언제나' là phó từ chỉ tần suất, mang nghĩa 'luôn luôn', 'mọi lúc'.",
                 },
               ],
             },
