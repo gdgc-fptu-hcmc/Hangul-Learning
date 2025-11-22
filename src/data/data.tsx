@@ -555,6 +555,140 @@ export const learningCourses: LearningCourse[] = [
                 },
               ],
             },
+            grammar: (
+              <div className="flex flex-col text-[#202020] font-nunito gap-3 md:gap-[18px] text-base md:text-[18px] font-normal leading-normal">
+                {/* Phần 1 */}
+                <h1 className="text-xl md:text-2xl font-bold">
+                  <span>
+                    1. Câu hỏi "Cái gì?":{" "}
+                    <span className="text-[var(--custom-green)]">
+                      [Danh từ]
+                    </span>{" "}
+                    + <span className="text-[var(--custom-orange)]">이/가</span>{" "}
+                    + <span className="text-[var(--custom-green)]">무엇</span>
+                    <span className="text-[var(--custom-red)]">입니까</span>?
+                  </span>
+                </h1>
+
+                <p>Đây là cấu trúc dùng để hỏi "A là cái gì?".</p>
+
+                <div>
+                  <span>
+                    <span className="font-bold">이 (i) / 가 (ga):</span> Là các{" "}
+                    <span className="font-bold">tiểu từ chủ ngữ.</span>
+                  </span>
+                  <ul className="list-disc pl-5 md:pl-7">
+                    <li>
+                      Dùng <span className="font-bold">이 (i)</span> nếu danh từ
+                      kết thúc bằng <span className="font-bold">phụ âm</span>.
+                      Ví dụ: 이름이... (Tên là ...)
+                    </li>
+                    <li>
+                      Dùng <span className="font-bold">가 (ga)</span> nếu danh
+                      từ kết thúc bằng{" "}
+                      <span className="font-bold">nguyên âm</span>. Ví dụ:
+                      저기가... (Chỗ kia là...)
+                    </li>
+                  </ul>
+                  <br></br>
+                  <div>
+                    <span className="font-bold">무엇입니까?</span>{" "}
+                    (mueos-ibnikka) nghĩa là "Là gì?" (cách nói lịch sự, trang
+                    trọng).
+                    <ul className="list-disc pl-5 md:pl-7">
+                      <li>무엇 = cái gì</li>
+                      <li>입니까 = là (dạng hỏi của "이다")</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="flex p-4 md:p-5 flex-col items-start gap-2 md:gap-[10px] rounded-[10px] bg-[#F4FAEE]">
+                  <span className="text-green font-bold">Ví dụ:</span>
+                  <ul className="list-disc pl-5 md:pl-7">
+                    <li>이름이 무엇입니까? (Tên là gì?)</li>
+                    <li>이것이 무엇입니까? (Cái này là cái gì?)</li>
+                  </ul>
+                </div>
+
+                <hr className="my-4 border-gray-200" />
+
+                {/* Phần 2 */}
+                <h1 className="text-xl md:text-2xl font-bold">
+                  <span>
+                    2. Nói về điều mình thích:{" "}
+                    <span className="text-[var(--custom-green)]">
+                      [Danh từ]
+                    </span>{" "}
+                    + <span className="text-[var(--custom-orange)]">이/가</span>{" "}
+                    +{" "}
+                    <span className="text-[var(--custom-purple)]">좋아요</span>.
+                  </span>
+                </h1>
+
+                <div>
+                  <p>Cấu trúc này có nghĩa là "Cái gì đó thì tốt/thích".</p>
+                  <p>
+                    Chủ thể của sự "thích" ở đây là danh từ được gắn với 이/가.
+                  </p>
+                </div>
+
+                <div className="flex p-4 md:p-5 flex-col items-start gap-2 md:gap-[10px] rounded-[10px] bg-[#F4FAEE]">
+                  <span className="text-green font-bold">Ví dụ:</span>
+                  <ul className="list-disc pl-5 md:pl-7">
+                    <li>
+                      한국어 공부가 좋아요. (Việc học tiếng Hàn thì thích.)
+                    </li>
+                    <li>음악이 좋아요. (Âm nhạc thì hay/ thích.)</li>
+                  </ul>
+                </div>
+
+                {/* Phần phân biệt */}
+                <div className="flex flex-col items-start self-stretch gap-3 md:gap-[18px] p-4 md:p-[30px] border-2 border-gray-300 rounded-lg">
+                  <span className="font-bold">
+                    Phân biệt hai cách nói thích
+                  </span>
+
+                  <div className="w-full">
+                    <span className="font-bold">
+                      1. [Sự vật] + 이/가 + 좋아요
+                    </span>
+                    <ul className="list-disc pl-5 md:pl-7">
+                      <li>Bình luận về sự vật.</li>
+                      <li>Ví dụ: 커피가 좋아요. (Cà phê ngon.)</li>
+                    </ul>
+
+                    <div className="mt-3 md:mt-4">
+                      <span className="font-bold">
+                        2. [Người] + 은/는 + [Sự vật] + 을/를 + 좋아해요
+                      </span>
+                      <ul className="list-disc pl-5 md:pl-7">
+                        <li>Nói về hành động của người.</li>
+                        <li>
+                          Ví dụ: 저는 커피를 좋아해요. (Tôi thích cà phê.)
+                        </li>
+                      </ul>
+                      <p className="text-black text-sm italic font-normal leading-normal mt-2">
+                        Bạn sẽ được học về cấu trúc này kỹ hơn trong bài 4 của
+                        chủ đề 8
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Mẹo nhỏ */}
+                  <div className="font-normal text-base md:text-[18px] p-4  w-full">
+                    <MeoNho>
+                      <b>Mẹo nhỏ: </b>
+                      <span>
+                        Khi giao tiếp, dùng …
+                        <span className="font-bold">이/가 좋아요</span> để khen
+                        hoặc nói bạn thích một thứ gì đó — cách nói tự nhiên và
+                        phổ biến lắm đấy!
+                      </span>
+                    </MeoNho>
+                  </div>
+                </div>
+              </div>
+            ),
           },
           {
             id: 4,
@@ -836,6 +970,82 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             title: "Ôn tập",
             status: "final",
             targets: [],
+            grammar: (
+              <div className="flex flex-col text-[#202020] font-nunito gap-3 md:gap-[18px] text-base md:text-[18px] font-normal leading-normal">
+                <h1 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
+                  <span>
+                    Cấu trúc thể hiện khả năng:{" "}
+                    <span className="text-[var(--custom-red)]">[Động từ]</span>{" "}
+                    +{" "}
+                    <span className="text-[var(--custom-orange)]">(으)ㄹ</span>{" "}
+                    <span className="text-[var(--custom-green)]">수</span>{" "}
+                    <span className="text-[#464394]">있다/없다</span>
+                  </span>
+                </h1>
+
+                <div className="text-base sm:text-lg space-y-3">
+                  <div className="text-gray-700 mb-3 sm:mb-4">
+                    Đây là cấu trúc dùng để diễn tả ai đó{" "}
+                    <span className="font-bold">"có thể"</span> hoặc{" "}
+                    <span className="font-bold">"không thể"</span> làm một việc
+                    gì đó.
+                  </div>
+                  <span className="font-bold">(으)ㄹ 수 있다/없다</span> (eul su
+                  itda/eopda): Nghĩa là "có thể / không thể"
+                  <br />
+                  <div>
+                    <span className="ml-2 sm:ml-4 font-bold">
+                      • -ㄹ 수 있다:
+                    </span>{" "}
+                    Dùng khi gốc động từ kết thúc bằng nguyên âm.
+                    <div className="rounded-lg p-3 sm:p-4 mt-2 mb-2 bg-[#F4FAEE]">
+                      <span className="text-green font-bold">Ví dụ:</span>
+                      <ul className="list-disc pl-6 sm:pl-9 text-gray-700 space-y-1 sm:space-y-2 mt-2">
+                        <li>가다 → 가 + ㄹ 수 있다 → 갈 수 있다 (có thể đi)</li>
+                        <li>
+                          하다 → 하 + ㄹ 수 있다 → 할 수 있다 (có thể làm)
+                        </li>
+                      </ul>
+                    </div>
+                    <span className="ml-2 sm:ml-4 font-bold">
+                      • -을 수 있다:
+                    </span>{" "}
+                    Dùng khi gốc động từ kết thúc bằng phụ âm (patchim).
+                    <div className="rounded-lg p-3 sm:p-4 mt-2 mb-2 bg-[#F4FAEE]">
+                      <span className="text-green font-bold">Ví dụ:</span>
+                      <ul className="list-disc pl-6 sm:pl-9 text-gray-700 space-y-1 sm:space-y-2 mt-2">
+                        <li>
+                          먹다 → 먹 + 을 수 있다 → 먹을 수 있다 (có thể ăn)
+                        </li>
+                        <li>
+                          읽다 → 읽 + 을 수 있다 → 읽을 수 있다 (có thể đọc)
+                        </li>
+                      </ul>
+                    </div>
+                    <hr className="my-3 sm:my-4 border-gray-200" />
+                  </div>
+                  <div>
+                    <p>
+                      Để nói "không thể", chỉ cần thay{" "}
+                      <span className="font-bold">있다</span> (có) bằng{" "}
+                      <span className="font-bold">없다</span> (không có)
+                    </p>
+                    <div className="ml-2 sm:ml-4 rounded-lg p-3 sm:p-4 mt-2 mb-2 bg-[#F4FAEE]">
+                      <span className="text-green font-bold">Ví dụ:</span>
+                      <ul className="list-disc pl-6 sm:pl-9 text-gray-700 space-y-1 sm:space-y-2 mt-2">
+                        <li>할 수 없어요*. (Không thể làm được.)</li>
+                        <li>먹을 수 없어요*. (Không thể ăn được.)</li>
+                      </ul>
+                    </div>
+
+                    <p className="text-gray-600 text-sm sm:text-base italic font-normal leading-normal ml-2 sm:ml-6 mt-3">
+                      *없어요 là dạng thân thiện của 없다, dùng trong hội thoại
+                      hàng ngày.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ),
           },
         ],
       },
