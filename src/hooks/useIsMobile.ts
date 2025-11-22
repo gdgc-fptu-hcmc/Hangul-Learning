@@ -1,10 +1,15 @@
 import React from "react";
 
-const useIsMobile = () => {
-  const [isMobile, setIsMobile] = React.useState(window.innerWidth < 768);
+const DEFAULT_MAX_WIDTH = 768;
+
+const useIsMobile = (maxWidth?: number) => {
+  const [isMobile, setIsMobile] = React.useState(
+    window.innerWidth < (maxWidth || DEFAULT_MAX_WIDTH)
+  );
 
   React.useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    const handleResize = () =>
+      setIsMobile(window.innerWidth < (maxWidth || DEFAULT_MAX_WIDTH));
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);

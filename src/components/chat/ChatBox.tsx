@@ -3,15 +3,23 @@ import bgImgUrl from "@/assets/images/wavy-clouds-pattern.svg";
 import logoImgUrl from "@/assets/logos/logo-only.svg";
 import ClickScaleDebounce from "@/shared/effects/ClickScaleDebounce";
 import { motion } from "framer-motion";
-import { FaArrowUp, FaKey, FaTrashAlt } from "react-icons/fa";
+import {
+  FaArrowUp,
+  FaClosedCaptioning,
+  FaKey,
+  FaTrashAlt,
+} from "react-icons/fa";
 import { MdOutlineZoomInMap, MdOutlineZoomOutMap } from "react-icons/md";
-import { GrFormNextLink } from "react-icons/gr";
+import { GrClose, GrFormNextLink } from "react-icons/gr";
 import { IoMdAdd } from "react-icons/io";
 import { functions } from "@/lib/firebase";
 import { httpsCallable } from "firebase/functions";
 import ApiKeyManager from "./ApiKeyManager";
+import { IoClose } from "react-icons/io5";
 
 interface ChatBoxProps {
+  hasCloseButton?: boolean;
+  onClose?: () => void;
   className?: string;
 }
 
@@ -41,7 +49,11 @@ const recommendedQuestions = [
 const MAX_RECOMMENDED_QUESTIONS_SHOWN = 3;
 const MAX_LINES = 5;
 
-const ChatBox = ({ className }: ChatBoxProps) => {
+const ChatBox = ({
+  hasCloseButton = false,
+  onClose,
+  className,
+}: ChatBoxProps) => {
   // loading state
   const [isLoading, setIsLoading] = useState(false);
 
@@ -188,9 +200,9 @@ const ChatBox = ({ className }: ChatBoxProps) => {
 
   return (
     <div
-      className={`shadow-2xl min-h-[300px] shadow-[var(--dark-pink)] rounded-3xl pt-3 pb-10 px-4 flex flex-col ${className} ${
+      className={`shadow-2xl w-full h-full shadow-[var(--dark-pink)] rounded-3xl pt-3 pb-10 px-4 flex flex-col ${className} ${
         isZoomedOut
-          ? "!fixed !top-1/2 !left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[90vh] z-[1000] backdrop-blur-sm"
+          ? "!fixed !top-1/2 !left-1/2 -translate-x-1/2 -translate-y-1/2 !w-[90vw] !h-[90vh] z-[1000] backdrop-blur-sm"
           : ""
       }`}
       style={{ backgroundImage: `url(${bgImgUrl})` }}
@@ -216,9 +228,6 @@ const ChatBox = ({ className }: ChatBoxProps) => {
             className="flex items-center rounded-full text-[var(--dark-pink)] bg-white group overflow-hidden"
           >
             <FaTrashAlt className="text-xl m-2" />
-            <span className="group-hover:mr-2 font-semibold max-w-0 opacity-0 transition-all duration-500 ease-in-out group-hover:max-w-xs group-hover:opacity-100 whitespace-nowrap">
-              Xóa trò chuyện
-            </span>
           </ClickScaleDebounce>
           <ClickScaleDebounce
             onClick={() => setOpenApiKeyManager(true)}
@@ -236,6 +245,14 @@ const ChatBox = ({ className }: ChatBoxProps) => {
               <MdOutlineZoomOutMap className="text-xl m-2" />
             )}
           </ClickScaleDebounce>
+          {hasCloseButton && (
+            <ClickScaleDebounce
+              onClick={() => onClose?.()}
+              className="flex items-center rounded-full text-[var(--dark-pink)] bg-white group overflow-hidden"
+            >
+              <GrClose className="text-xl m-2" />
+            </ClickScaleDebounce>
+          )}
         </div>
       </div>
 

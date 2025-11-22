@@ -20,6 +20,7 @@ import PracticeBox from "@/components/lessons/PracticeBox";
 import TuKhoa from "@/components/grammar/TuKhoa";
 import MeoNho from "@/components/grammar/MeoNho";
 import ChatBox from "@/components/chat/ChatBox";
+import MobileChatBox from "@/components/chat/MobileChatBox";
 
 const LessonsPage = () => {
   // get lesson content
@@ -271,9 +272,14 @@ const LessonsPage = () => {
           </div>
 
           {/* AI Chat Box */}
-          <ChatBox className="w-[30%] h-[calc(100vh-200px)] absolute lg:sticky top-5"></ChatBox>
+          <div className="w-[30%] h-[calc(100vh-200px)] hidden xl:block xl:sticky top-5">
+            <ChatBox></ChatBox>
+          </div>
         </div>
       </div>
+
+      {/* Mobile Chat box here */}
+      <MobileChatBox></MobileChatBox>
     </>
   );
 };
