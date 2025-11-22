@@ -1711,9 +1711,9 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             miniGameLink: "/courses/1/topics/2/lessons/5/minigame",
             status: "final",
             targets: [
-              "Vận dụng chính xác ngữ pháp về sự tồn tại và định danh:Sử dụng thành thạo cấu trúc [Danh từ] + 이/가 있다/없다 (Có/Không có) và đuôi câu thân mật 이에요/예요 (Là) dựa trên quy tắc phụ âm cuối (batchim) để giới thiệu người hoặc sự vật.",
-              "<b>Phân biệt sắc thái sở hữu cách trong văn hóa Hàn:</b> Nắm vững cách dùng từ 우리 (chúng tôi/của chúng tôi) khi nói về các tập hợp cộng đồng (gia đình, nhà) và 제 (của tôi) cho đồ vật cá nhân, tránh nhầm lẫn khi xưng hô.",
-              "<b>Thực hành giao tiếp biểu cảm: Kết hợp từ vựng về cảm xúc</b> (사랑, 행복) và sự biết ơn (고맙습니다) để tự viết được các câu ngắn bày tỏ tình cảm với người thân hoặc hoàn thành đoạn hội thoại giới thiệu các mối quan hệ xã hội.",
+              "Hệ thống hóa từ vựng chủ đề: Ghi nhớ và sử dụng chính xác nhóm từ vựng về các thành viên trong Gia đình (가족), Mối quan hệ xã hội (친구) và các từ vựng biểu đạt Cảm xúc/Lòng biết ơn (사랑, 행복, 고맙습니다).",
+              "Vận dụng linh hoạt ngữ pháp căn bản: Thành thạo cách chia đuôi câu giới thiệu (이에요/예요), cấu trúc diễn tả sự sở hữu/tồn tại (이/가 있다/없다) và phân biệt rõ ràng cách dùng đại từ sở hữu văn hóa Hàn Quốc (우리 dùng cho tập thể/gia đình vs 제 dùng cho cá nhân).",
+              "Kỹ năng biểu đạt thực tế: Có khả năng viết được các câu hoàn chỉnh để giới thiệu về người thân hoặc viết những lời nhắn gửi yêu thương, cảm ơn ngắn gọn trong các dịp đặc biệt (như viết thiệp, nhắn tin).",
             ],
 
             vocabIds: [14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],
@@ -2558,8 +2558,211 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             lessonLink: "/courses/1/topics/3/lessons/5",
             miniGameLink: "/courses/1/topics/3/lessons/5/minigame",
             status: "final",
-            targets: [],
-            scvbasbfdvsd,
+            targets: [
+              "Vận dụng chính xác ngữ pháp về sự tồn tại và định danh:Sử dụng thành thạo cấu trúc [Danh từ] + 이/가 있다/없다 (Có/Không có) và đuôi câu thân mật 이에요/예요 (Là) dựa trên quy tắc phụ âm cuối (batchim) để giới thiệu người hoặc sự vật.",
+              "<b>Phân biệt sắc thái sở hữu cách trong văn hóa Hàn:</b> Nắm vững cách dùng từ 우리 (chúng tôi/của chúng tôi) khi nói về các tập hợp cộng đồng (gia đình, nhà) và 제 (của tôi) cho đồ vật cá nhân, tránh nhầm lẫn khi xưng hô.",
+              "<b>Thực hành giao tiếp biểu cảm: Kết hợp từ vựng về cảm xúc</b> (사랑, 행복) và sự biết ơn (고맙습니다) để tự viết được các câu ngắn bày tỏ tình cảm với người thân hoặc hoàn thành đoạn hội thoại giới thiệu các mối quan hệ xã hội.",
+            ],
+            vocabIds: [26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37],
+            practiceBox: {
+              questions: [
+                // --- PHẦN 1: TỪ VỰNG SỐ ĐẾM THUẦN HÀN (PURE KOREAN NUMBERS) ---
+                {
+                  questionType: "multipleChoice",
+                  question: "Số '3' trong tiếng Hàn (hệ thuần Hàn) là gì?",
+                  options: ["하나 (Hana)", "둘 (Dul)", "셋 (Set)", "넷 (Net)"],
+                  correctAnswerIndex: 2,
+                  explanation:
+                    "<b>셋</b> (Set) là số 3. Các số còn lại: 하나 (1), 둘 (2), 넷 (4).",
+                },
+                {
+                  questionType: "multipleChoice",
+                  question: "Từ '다섯' (Daseot) có nghĩa là số mấy?",
+                  options: ["Số 2", "Số 4", "Số 5", "Số 10"],
+                  correctAnswerIndex: 2,
+                  explanation:
+                    "<b>다섯</b> (Daseot) là số 5 trong hệ số thuần Hàn.",
+                },
+                {
+                  questionType: "fillInBlank",
+                  question:
+                    "Điền từ còn thiếu: '하나, 둘, 셋, ________, 다섯.'",
+                  correctAnswer: "넷",
+                  explanation:
+                    "Thứ tự đếm là: 하나 (1), 둘 (2), 셋 (3), <b>넷</b> (4), 다섯 (5).",
+                },
+
+                // --- PHẦN 2: QUY TẮC BIẾN ĐỔI SỐ (QUAN TRỌNG) ---
+                {
+                  questionType: "multipleChoice",
+                  question:
+                    "Khi đi với đơn vị đếm hoặc giờ, '하나' (1) đổi thành gì?",
+                  options: ["하나", "한", "일", "첫"],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "Các số 1, 2, 3, 4 bị biến đổi khi đứng trước danh từ đơn vị. 하나 trở thành <b>한</b> (ví dụ: 한 시 - 1 giờ).",
+                },
+                {
+                  questionType: "dropDown",
+                  question: "Bây giờ là 2 giờ. -> 지금 <<dropdown>> 시예요.",
+                  options: ["둘 (Dul)", "두 (Du)", "이 (I)"],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "Số 2 (둘) khi nói giờ phải đổi thành <b>두</b>. (두 시).",
+                },
+                {
+                  questionType: "dropDown",
+                  question: "Cho tôi 3 cái. -> <<dropdown>> 개 주세요.",
+                  options: ["셋 (Set)", "삼 (Sam)", "세 (Se)"],
+                  correctAnswerIndex: 2,
+                  explanation:
+                    "Số 3 (셋) khi đi với lượng từ '개' (cái) phải đổi thành <b>세</b>. (세 개).",
+                },
+                {
+                  questionType: "dropDown",
+                  question: "Bây giờ là 4 giờ. -> 지금 <<dropdown>> 시입니다.",
+                  options: ["넷 (Net)", "네 (Ne)", "사 (Sa)"],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "Số 4 (넷) khi nói giờ phải đổi thành <b>네</b>. (네 시).",
+                },
+
+                // --- PHẦN 3: THỜI GIAN & GIỜ GIẤC (TIME) ---
+                {
+                  questionType: "fillInBlank",
+                  question:
+                    "Điền từ để hỏi giờ: 'Bây giờ là ________ giờ?' -> 지금 몇 시예요?",
+                  correctAnswer: "몇",
+                  explanation:
+                    "<b>몇</b> (Myeot) nghĩa là 'Mấy/Bao nhiêu', dùng để hỏi số lượng hoặc thời gian.",
+                },
+                {
+                  questionType: "multipleChoice",
+                  question: "Từ nào có nghĩa là 'Hôm nay'?",
+                  options: ["내일", "오늘", "지금", "어제"],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "<b>오늘</b> (Oneul) là 'Hôm nay'. 내일 là 'Ngày mai', 지금 là 'Bây giờ'.",
+                },
+                {
+                  questionType: "multipleChoice",
+                  question: "Từ '점심시간' có nghĩa là gì?",
+                  options: [
+                    "Thời gian nghỉ ngơi",
+                    "Giờ ăn trưa",
+                    "Giờ tan tầm",
+                    "Buổi sáng",
+                  ],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "<b>점심시간</b> (Jeomsimsigan) là ghép của '점심' (bữa trưa) và '시간' (thời gian) -> Giờ ăn trưa.",
+                },
+                {
+                  questionType: "dropDown",
+                  question:
+                    "Gặp nhau <<dropdown>> 5 giờ nhé. (Tiểu từ chỉ thời gian)",
+                  options: ["이", "가", "에"],
+                  correctAnswerIndex: 2,
+                  explanation:
+                    "Tiểu từ <b>에</b> gắn sau danh từ chỉ thời gian để chỉ thời điểm hành động diễn ra (Vào lúc...). -> 다섯 시에.",
+                },
+
+                // --- PHẦN 4: MUA SẮM (SHOPPING) ---
+                {
+                  questionType: "multipleChoice",
+                  question: "Đơn vị đếm chung cho đồ vật (cái, chiếc) là gì?",
+                  options: ["명 (người)", "개 (cái)", "시 (giờ)", "병 (bình)"],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "<b>개</b> (Gae) là lượng từ phổ biến nhất, nghĩa là 'cái/chiếc/quả'.",
+                },
+                {
+                  questionType: "fillInBlank",
+                  question:
+                    "Điền từ còn thiếu để yêu cầu lịch sự: 'Cho tôi...' -> ________.",
+                  correctAnswer: "주세요",
+                  explanation:
+                    "<b>주세요</b> (Juseyo) nghĩa là 'Hãy cho tôi', dùng khi gọi món hoặc mua hàng.",
+                },
+                {
+                  questionType: "multipleChoice",
+                  question:
+                    "Sắp xếp câu đúng: 'Cho tôi 1 quả táo.' (Táo = 사과)",
+                  options: [
+                    "주세요 사과 한 개.",
+                    "사과 한 개 주세요.",
+                    "한 개 사과 주세요.",
+                  ],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "Cấu trúc mua hàng chuẩn: <b>[Danh từ] + [Số lượng] + [Đơn vị] + 주세요</b>.",
+                },
+                {
+                  questionType: "dropDown",
+                  question: "Bánh mì (빵) 5 cái. -> 빵 <<dropdown>> 개.",
+                  options: ["다섯", "오", "다세"],
+                  correctAnswerIndex: 0,
+                  explanation:
+                    "Số 5 (다섯) <b>không bị biến đổi</b> hình thái khi đi với lượng từ. -> 다섯 개.",
+                },
+
+                // --- PHẦN 5: HỘI THOẠI & TÌNH HUỐNG (CONTEXT) ---
+                {
+                  questionType: "multipleChoice",
+                  question:
+                    "A: '내일 시간 있어요?' (Ngày mai bạn rảnh không?) -> B nên trả lời:",
+                  options: [
+                    "네, 시간 주세요.",
+                    "네, 있어요.",
+                    "아니요, 다섯 시예요.",
+                  ],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "Câu hỏi dùng '있어요?' (có không?), nên câu trả lời xác nhận là '네, 있어요' (Vâng, tôi có).",
+                },
+                {
+                  questionType: "multipleChoice",
+                  question: "Dịch câu: 'Ngày mai gặp nhau lúc 2 giờ.'",
+                  options: [
+                    "내일 두 시 만나요.",
+                    "내일 두 시에 만나요.",
+                    "오늘 두 시에 만나요.",
+                  ],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "Cần dùng tiểu từ <b>에</b> sau thời gian và từ vựng <b>내일</b> (ngày mai).",
+                },
+                {
+                  questionType: "fillInBlank",
+                  question:
+                    "Hoàn thành câu: Bây giờ là 1 giờ. -> 지금 ____ 시예요.",
+                  correctAnswer: "한",
+                  explanation:
+                    "Số 1 (하나) chuyển thành <b>한</b> khi nói giờ.",
+                },
+                {
+                  questionType: "dropDown",
+                  question:
+                    "Cà phê (커피) hai ly (잔). -> 커피 <<dropdown>> 잔 주세요.",
+                  options: ["둘", "두", "이"],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "Tương tự như '개' hay '시', khi đếm ly (잔), số 2 (둘) cũng chuyển thành <b>두</b>.",
+                },
+                {
+                  questionType: "multipleChoice",
+                  question: "Câu nào sau đây SAI ngữ pháp?",
+                  options: [
+                    "세 시 (3 giờ)",
+                    "네 개 (4 cái)",
+                    "하나 시 (1 giờ)",
+                  ],
+                  correctAnswerIndex: 2,
+                  explanation:
+                    "Sai ở <b>하나 시</b>. Phải biến đổi thành <b>한 시</b> mới đúng.",
+                },
+              ],
+            },
           },
         ],
       },
