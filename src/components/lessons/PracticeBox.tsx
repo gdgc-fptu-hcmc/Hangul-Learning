@@ -461,11 +461,8 @@ const PracticeBox: React.FC<PracticeBox> = ({ questions }) => {
               Kiểm tra đáp án
             </span>
             {/* @ts-ignore */}
-            <img
-              src={EyeIcon?.src ?? EyeIcon}
-              alt=""
-              className="inline-block w-[20px] ml-1"
-            />
+            {/* @ts-ignore */}
+            <img src={EyeIcon} alt="" className="inline-block w-[20px] ml-1" />
           </button>
         ) : (
           <button

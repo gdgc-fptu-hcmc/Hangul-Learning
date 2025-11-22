@@ -1,4 +1,9 @@
-import { LessonContent, MiniGame, MiniGameContent } from "./types.js";
+import {
+  LessonContent,
+  MiniGame,
+  MiniGameContent,
+  TextDisplay,
+} from "./types.js";
 import { learningCourses, miniGames, vocabList } from "./data.js";
 
 export function getLessonContent(
@@ -62,12 +67,78 @@ export const getMiniGameContent = (
         if (topic.id === topicId) {
           for (const lesson of topic.lessons) {
             if (lesson.id === lessonId) {
-              const resultData: MiniGame[] = [];
+              // start here
+              const randomGameIds: number[] = [];
+              while (
+                randomGameIds.length < (lesson.minigameIds?.length || 0) &&
+                randomGameIds.length < (lesson.minigameQuantity || 0)
+              ) {
+                const randomIndex = Math.floor(
+                  Math.random() * (lesson.minigameIds?.length || 0)
+                );
+                const selectedId = lesson.minigameIds
+                  ? lesson.minigameIds[randomIndex]
+                  : null;
+                if (selectedId && !randomGameIds.includes(selectedId)) {
+                  randomGameIds.push(selectedId);
+                }
+              }
 
-              for (const miniGameId of lesson.minigameIds || []) {
+              const fullGameContents: MiniGame[] = [];
+              for (const miniGameId of randomGameIds || []) {
                 const miniGameData = miniGames[miniGameId];
                 if (miniGameData) {
-                  resultData.push(miniGameData);
+                  // console.log("Before random:", miniGameData);
+                  // random cho phan phrase matching
+                  if (miniGameData.type === "matching") {
+                    const firstPhraseList =
+                      miniGameData.content.firstPhraseList.map(
+                        (val: TextDisplay, idx: number) => ({
+                          listOrder: "right",
+                          valueIndex: idx,
+                        })
+                      );
+                    const secondPhraseList =
+                      miniGameData.content.secondPhraseList.map(
+                        (val: TextDisplay, idx: number) => ({
+                          listOrder: "left",
+                          valueIndex: idx,
+                        })
+                      );
+                    const combinedList = [
+                      ...firstPhraseList,
+                      ...secondPhraseList,
+                    ];
+                    // shuffle combined list
+                    for (let i = combinedList.length - 1; i > 0; i--) {
+                      const j = Math.floor(Math.random() * (i + 1));
+                      [combinedList[i], combinedList[j]] = [
+                        combinedList[j],
+                        combinedList[i],
+                      ];
+                    }
+                    miniGameData.content.randomList = combinedList;
+                  } else if (miniGameData.type === "multipleChoice") {
+                    // random cho phan multiple choice
+                    // NO NEED for random multiplechoice for now
+                  } else if (miniGameData.type === "phraseOrder") {
+                    // random cho phan phrase order
+                    const textIndices = miniGameData.content.texts.map(
+                      (_, idx) => idx
+                    );
+                    // shuffle textIndices
+                    for (let i = textIndices.length - 1; i > 0; i--) {
+                      const j = Math.floor(Math.random() * (i + 1));
+                      [textIndices[i], textIndices[j]] = [
+                        textIndices[j],
+                        textIndices[i],
+                      ];
+                    }
+                    miniGameData.content.randomTexts = textIndices;
+                  }
+
+                  // console.log("After random:", miniGameData);
+                  fullGameContents.push(miniGameData);
                 }
               }
 
@@ -76,7 +147,7 @@ export const getMiniGameContent = (
                 topicId,
                 lessonId,
                 quantity: lesson.minigameQuantity,
-                contents: resultData,
+                contents: fullGameContents,
               };
             }
           }

@@ -6,8 +6,7 @@ interface OptionButtonProps {
   displayType: 1 | 2 | 3 | 4;
   option: MiniGameMcOption;
   isSelected?: boolean;
-  onSelect: (optionValue: string) => void;
-  optionState?: "default" | "correct" | "incorrect";
+  onSelect?: (optionValue: string) => void;
   disabled?: boolean;
   className?: string;
 }
@@ -17,22 +16,19 @@ const McOptionButton: React.FC<OptionButtonProps> = ({
   option,
   isSelected = false,
   onSelect,
-  optionState = "default",
   disabled = false,
   className,
 }) => {
   return (
     <button
-      onClick={() => !disabled && onSelect(option.value)}
+      onClick={() => !disabled && onSelect && onSelect(option.value)}
       disabled={disabled}
-      className={`group ${
-        displayType === 3 || displayType === 4 ? "max-w-md" : "max-w-2xl"
-      } w-full px-2 py-1 border-[3px] flex flex-col items-center border-gray-300 rounded-lg ${
+      className={`group w-full px-2 py-1 border-[3px] flex flex-col items-center border-gray-300 rounded-lg ${
         disabled ? "cursor-not-allowed" : "cursor-pointer"
       } ${className}`}
     >
       {(displayType === 3 || displayType === 4) && option.image && (
-        <div className="w-full h-[200px] bg-gray-300 my-2 flex items-center justify-center overflow-hidden">
+        <div className="w-full h-[250px] my-2 flex items-center justify-center overflow-hidden">
           <img src={option.image} alt={option.value} className="" />
         </div>
       )}
