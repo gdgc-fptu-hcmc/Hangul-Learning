@@ -555,7 +555,6 @@ export const learningCourses: LearningCourse[] = [
                 },
               ],
             },
-            targets: [],
             grammar: (
               <div className="flex flex-col text-[#202020] font-nunito gap-3 md:gap-[18px] text-base md:text-[18px] font-normal leading-normal">
                 {/* Phần 1 */}
