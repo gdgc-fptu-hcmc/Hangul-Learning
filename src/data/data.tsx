@@ -2559,7 +2559,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             miniGameLink: "/courses/1/topics/3/lessons/5/minigame",
             status: "final",
             targets: [],
-            sdgvdv,
+            scvbasbfdvsd,
           },
         ],
       },
