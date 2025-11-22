@@ -1711,9 +1711,9 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             miniGameLink: "/courses/1/topics/2/lessons/5/minigame",
             status: "final",
             targets: [
-              "Củng cố và kiểm tra toàn bộ kiến thức về số Thuần Hàn, cách nói giờ và mua sắm. (Mục tiêu gốc của bạn).",
-              "Phân biệt chính xác ngữ cảnh sử dụng số Thuần Hàn (dùng cho giờ, số lượng) và số Hán Hàn (dùng cho phút, giá tiền) để tránh nhầm lẫn.",
-              "Rèn luyện phản xạ giao tiếp thực tế thông qua các tình huống hỏi đáp về thời gian, hỏi giá cả và yêu cầu mua hàng.",
+              "Vận dụng chính xác ngữ pháp về sự tồn tại và định danh:Sử dụng thành thạo cấu trúc [Danh từ] + 이/가 있다/없다 (Có/Không có) và đuôi câu thân mật 이에요/예요 (Là) dựa trên quy tắc phụ âm cuối (batchim) để giới thiệu người hoặc sự vật.",
+              "<b>Phân biệt sắc thái sở hữu cách trong văn hóa Hàn:</b> Nắm vững cách dùng từ 우리 (chúng tôi/của chúng tôi) khi nói về các tập hợp cộng đồng (gia đình, nhà) và 제 (của tôi) cho đồ vật cá nhân, tránh nhầm lẫn khi xưng hô.",
+              "<b>Thực hành giao tiếp biểu cảm: Kết hợp từ vựng về cảm xúc</b> (사랑, 행복) và sự biết ơn (고맙습니다) để tự viết được các câu ngắn bày tỏ tình cảm với người thân hoặc hoàn thành đoạn hội thoại giới thiệu các mối quan hệ xã hội.",
             ],
 
             vocabIds: [14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],
@@ -2559,6 +2559,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             miniGameLink: "/courses/1/topics/3/lessons/5/minigame",
             status: "final",
             targets: [],
+            sdgvdv,
           },
         ],
       },
