@@ -218,7 +218,7 @@ const ChatBox = ({
       <div className="flex justify-between items-center h-10 mb-2 px-2">
         <div className="flex items-center gap-1">
           <img src={logoImgUrl} alt="" className="inline-block h-full" />
-          <span className="font-bold text-[var(--dark-pink)] bg-white rounded-full px-3 py-1 text-xl">
+          <span className="xl:block hidden font-bold text-[var(--dark-pink)] bg-white rounded-full px-3 py-1 text-xl">
             AI Chat
           </span>
         </div>

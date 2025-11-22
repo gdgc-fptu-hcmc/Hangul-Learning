@@ -15,7 +15,7 @@ const MobileChatBox = () => {
             <ChatBox
               hasCloseButton
               onClose={() => setIsOpen(false)}
-              className="fixed bottom-[7vh] right-5 w-[400px] h-[600px] z-[1000]"
+              className="fixed bottom-[7vh] right-5 max-w-[500px] w-[75vw] h-[700px] z-[1000]"
             />
           ) : (
             <div
