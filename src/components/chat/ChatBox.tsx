@@ -202,7 +202,7 @@ const ChatBox = ({
     <div
       className={`shadow-2xl w-full h-full shadow-[var(--dark-pink)] rounded-3xl pt-3 pb-10 px-4 flex flex-col ${className} ${
         isZoomedOut
-          ? "!fixed !top-1/2 !left-1/2 -translate-x-1/2 -translate-y-1/2 !w-[90vw] !h-[90vh] z-[1000] backdrop-blur-sm"
+          ? "!fixed !top-1/2 !left-1/2 -translate-x-1/2 -translate-y-1/2 !max-w-full !w-[90vw] !h-[90vh] z-[1000] backdrop-blur-sm"
           : ""
       }`}
       style={{ backgroundImage: `url(${bgImgUrl})` }}
