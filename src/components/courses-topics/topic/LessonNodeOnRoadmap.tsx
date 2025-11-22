@@ -115,7 +115,7 @@ const LessonNodeOnRoadmap: React.FC<LessonNodeOnRoadmapProps> = ({
           bg-white
           rounded-lg
           duration-200
-          w-[220px] sm:w-[260px]
+          min-w-[220px]
           max-w-[80vw]
           !z-[999]
           ${
