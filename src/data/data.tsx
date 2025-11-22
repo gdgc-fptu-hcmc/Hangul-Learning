@@ -1395,7 +1395,165 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             icon: <MdEmojiEmotions />,
             lessonLink: "/courses/1/topics/2/lessons/3",
             miniGameLink: "/courses/1/topics/2/lessons/3/minigame",
-            targets: [],
+            targets: [
+              "Học viên có thể diễn đạt tình yêu, hạnh phúc và niềm tự hào về gia đình.",
+              "Sử dụng thành thạo đuôi câu thân mật, lịch sự: -이에요 / -예요 (là).",
+              "Tìm hiểu văn hóa 'bắn tim' (finger heart) đặc trưng của Hàn Quốc.",
+            ],
+            vnDialogue: {
+              mainRole: "B", // Người học đóng vai Nam (B)
+              hasSpeakerBox: false,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [{ text: "Nam ơi, trông bạn vui quá!" }],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [{ text: "Vâng! Hôm nay là sinh nhật bố mình." }],
+                },
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [{ text: "Wow, thật sao?" }],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    { text: "Vâng. Gia đình chúng mình thật sự hạnh phúc." },
+                    { text: "Là một gia đình chan chứa tình yêu thương." },
+                    { text: "Gia đình mình là tuyệt nhất!" },
+                  ],
+                },
+              ],
+            },
+            koDialogue: {
+              mainRole: "B",
+              hasSpeakerBox: true,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "남 씨, 기분이 좋아 보여요!",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_3_A1.mp3", // Thay link audio thực tế
+                    },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    {
+                      text: "네! 오늘은 우리 아버지 생신이에요.",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_3_B1.mp3",
+                    },
+                  ],
+                },
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "와, 정말요?",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_3_A2.mp3",
+                    },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    {
+                      text: "네. 우리 가족은 정말 행복해요.",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_3_B2_1.mp3",
+                    },
+                    {
+                      text: "사랑이 많은 가족이에요.",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_3_B2_2.mp3",
+                    },
+                    {
+                      text: "우리 가족 최고!",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_3_B2_3.mp3",
+                    },
+                  ],
+                },
+              ],
+            },
+            culturalStory: {
+              title: "Thả tim kiểu Hàn Quốc!",
+              content: `
+      Bạn có biết cử chỉ <b>"bắn tim" (finger heart)</b> bằng ngón tay cái và ngón trỏ không? Đó là một biểu tượng văn hóa đại chúng của Hàn Quốc.
+      <ul className="list-disc list-inside ml-2 mt-2">
+        <li className="mb-2">Được các ngôi sao K-Pop lan tỏa khắp thế giới.</li>
+        <li>Đây là cách nhanh chóng và đáng yêu để thể hiện <b>tình cảm, sự yêu mến (사랑)</b> hoặc sự ủng hộ.</li>
+      </ul>
+      <div className="mt-4 p-3 bg-pink-50 rounded-lg">
+        💖 <b>Thử ngay:</b> Lần tới khi muốn nói "사랑해요" (Tôi yêu bạn), hãy thử kết hợp với hành động "bắn tim" này nhé!
+      </div>
+    `,
+            },
+            funQuiz: {
+              question:
+                "Hành động dùng ngón cái và ngón trỏ tạo thành hình trái tim nhỏ dùng để biểu đạt điều gì?",
+              options: [
+                "A. Sự tức giận",
+                "B. Tình yêu và sự yêu mến (사랑)",
+                "C. Số tiền phải trả",
+              ],
+              correctAnswerIndex: 1, // Đáp án B
+              explanation:
+                "Đây là cử chỉ 'bắn tim' (finger heart) nổi tiếng của Hàn Quốc, dùng để thể hiện tình yêu thương.",
+            },
+            vocabIds: [20, 21, 22],
+            practiceBox: {
+              questions: [
+                {
+                  questionType: "multipleChoice",
+                  question: "Đuôi câu '-이에요 / -예요' có nghĩa là gì?",
+                  options: ["Là (thân mật, lịch sự)", "Ăn", "Đi"],
+                  correctAnswerIndex: 0,
+                  explanation:
+                    "Đây là đuôi câu định nghĩa 'Là', dùng trong giao tiếp hàng ngày thân mật nhưng vẫn lịch sự.",
+                },
+                {
+                  questionType: "dropDown",
+                  question:
+                    "이 사람은 제 친구<<dropdown>>. (Người này là bạn tôi - '친구' không có patchim)",
+                  options: ["이에요", "예요"],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "Vì '친구' (chingu) kết thúc bằng nguyên âm (không có patchim), ta dùng đuôi '-예요'.",
+                },
+                {
+                  questionType: "dropDown",
+                  question:
+                    "저의 아버지는 선생님<<dropdown>>. (Bố tôi là giáo viên - '선생님' có patchim 'm')",
+                  options: ["이에요", "예요"],
+                  correctAnswerIndex: 0,
+                  explanation:
+                    "Vì '선생님' (seonsaengnim) kết thúc bằng phụ âm (patchim 'ㅁ'), ta dùng đuôi '-이에요'.",
+                },
+                {
+                  questionType: "fillInBlank",
+                  question:
+                    "우리 가족은 최고<<blank>>! (Gia đình tôi là nhất! - '최고' không có patchim)",
+                  correctAnswer: "예요",
+                  explanation:
+                    "Vì '최고' (choego) kết thúc bằng nguyên âm 'ㅗ', ta dùng '-예요'.",
+                },
+              ],
+            },
           },
           {
             id: 4,
@@ -1404,7 +1562,146 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             lessonLink: "/courses/1/topics/2/lessons/4",
             miniGameLink: "/courses/1/topics/2/lessons/4/minigame",
             status: "locked",
-            targets: [],
+            targets: [
+              "Học viên có thể nói lời cảm ơn một cách lịch sự trong các tình huống phù hợp.",
+              "Phân biệt sự khác nhau về sắc thái giữa 고맙습니다 và 감사합니다.",
+              "Sử dụng phó từ '늘' và '항상' để nhấn mạnh lòng biết ơn thường xuyên.",
+            ],
+            vnDialogue: {
+              mainRole: "A", // Người học đóng vai Con (A)
+              hasSpeakerBox: false,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [{ text: "Mẹ, Bố, con luôn cảm ơn bố mẹ." }],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [{ text: "Con trai của mẹ, sao thế?" }],
+                },
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    { text: "Dạ không có gì ạ." },
+                    { text: "Con luôn yêu thương bố mẹ." },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [{ text: "Mẹ cũng yêu con." }],
+                },
+              ],
+            },
+            koDialogue: {
+              mainRole: "A",
+              hasSpeakerBox: true,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "엄마, 아버지, 늘 고맙습니다.",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_4_A1.mp3", // Thay link audio thực tế
+                    },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    {
+                      text: "우리 아들, 왜 그래?",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_4_B1.mp3",
+                    },
+                  ],
+                },
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "그냥요. 항상 사랑해요.",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_4_A2_1.mp3",
+                    },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    {
+                      text: "엄마도 사랑해.",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_4_B2.mp3",
+                    },
+                  ],
+                },
+              ],
+            },
+            culturalStory: {
+              title: "Cảm ơn trang trọng và cảm ơn thân mật",
+              content: `
+      Trong tiếng Hàn có hai từ "cảm ơn" rất phổ biến nhưng mang sắc thái khác nhau:
+      <ul className="list-disc list-inside ml-2 mt-2">
+        <li className="mb-2"><b>감사합니다 (gamsahamnida):</b> Gốc Hán (Cảm Tạ). Mang sắc thái trang trọng, khách quan. Thường dùng trong công sở, thông báo chính thức hoặc với người lạ.</li>
+        <li className="mb-2"><b>고맙습니다 (gomapseumnida):</b> Gốc thuần Hàn. Mang cảm giác gần gũi, ấm áp và chân thành hơn.</li>
+      </ul>
+      <div className="mt-4 p-3 bg-green-50 rounded-lg">
+        💡 <b>Mách nhỏ:</b> Với bạn bè thân thiết, bạn chỉ cần nói ngắn gọn là <b>고마워 (gomawo)</b> là đủ nhé!
+      </div>
+    `,
+            },
+            funQuiz: {
+              question:
+                "Khi bạn nhận được quà từ một người bạn rất thân cùng tuổi, bạn nên nói gì cho tự nhiên nhất?",
+              options: [
+                "A. 감사합니다 (Trang trọng)",
+                "B. 고마워 (Thân mật)",
+                "C. 고맙습니다 (Lịch sự)",
+              ],
+              correctAnswerIndex: 1, // Đáp án B
+              explanation:
+                "Với bạn bè thân thiết (친구), sử dụng đuôi câu thân mật (banmal) như '고마워' là tự nhiên và gần gũi nhất.",
+            },
+            vocabIds: [23, 24, 25],
+            practiceBox: {
+              questions: [
+                {
+                  questionType: "multipleChoice",
+                  question:
+                    "Bạn muốn cảm ơn người bạn đã LUÔN LUÔN ở bên cạnh mình để nhấn mạnh sự chân thành lâu dài. Bạn sẽ nói:",
+                  options: ["A. 친구, 고맙습니다.", "B. 친구, 항상 고마워요."],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "Thêm phó từ '항상' (luôn luôn) giúp câu nói thể hiện lòng biết ơn sâu sắc và kéo dài, không chỉ là nhất thời.",
+                },
+                {
+                  questionType: "fillInBlank",
+                  question:
+                    "Điền từ còn thiếu: 엄마, <<blank>> 고맙습니다. (Mẹ, con LUÔN biết ơn mẹ - dùng từ mang sắc thái tình cảm)",
+                  correctAnswer: "늘",
+                  explanation:
+                    "'늘' mang sắc thái tình cảm, nhẹ nhàng, rất hợp để nói với người thân trong gia đình.",
+                },
+                {
+                  questionType: "dropDown",
+                  question:
+                    "Trong cuộc họp công ty trang trọng, bạn nên dùng từ cảm ơn nào? <<dropdown>>",
+                  options: ["고마워", "감사합니다"],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "'감사합니다' (Cảm tạ) mang sắc thái trang trọng, khách quan, phù hợp môi trường công sở.",
+                },
+              ],
+            },
           },
           {
             id: 5,
@@ -1413,7 +1710,204 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             lessonLink: "/courses/1/topics/2/lessons/5",
             miniGameLink: "/courses/1/topics/2/lessons/5/minigame",
             status: "final",
-            targets: [],
+            targets: [
+              "Củng cố và kiểm tra toàn bộ kiến thức về số Thuần Hàn, cách nói giờ và mua sắm. (Mục tiêu gốc của bạn).",
+              "Phân biệt chính xác ngữ cảnh sử dụng số Thuần Hàn (dùng cho giờ, số lượng) và số Hán Hàn (dùng cho phút, giá tiền) để tránh nhầm lẫn.",
+              "Rèn luyện phản xạ giao tiếp thực tế thông qua các tình huống hỏi đáp về thời gian, hỏi giá cả và yêu cầu mua hàng.",
+            ],
+
+            vocabIds: [14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],
+            practiceBox: {
+              questions: [
+                // --- PHẦN 1: TỪ VỰNG (VOCABULARY) ---
+                {
+                  questionType: "multipleChoice",
+                  question:
+                    "Từ nào sau đây có nghĩa là 'Bố' (cách gọi thân mật)?",
+                  options: ["어머니", "아빠", "가족", "친구"],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "<b>아빠</b> (appa) là cách gọi thân mật của Bố. <b>아버지</b> là cách gọi trang trọng hơn.",
+                },
+                {
+                  questionType: "multipleChoice",
+                  question: "Chọn từ trái nghĩa với '있다' (Có/Tồn tại)?",
+                  options: ["없다", "이다", "아니다", "모르다"],
+                  correctAnswerIndex: 0,
+                  explanation:
+                    "<b>있다</b> (có) trái nghĩa với <b>없다</b> (không có).",
+                },
+                {
+                  questionType: "multipleChoice",
+                  question: "Từ '늘' (neul) đồng nghĩa với từ nào sau đây?",
+                  options: ["지금", "오늘", "항상", "내일"],
+                  correctAnswerIndex: 2,
+                  explanation:
+                    "<b>늘</b> và <b>항상</b> đều có nghĩa là 'luôn luôn', 'lúc nào cũng'.",
+                },
+                {
+                  questionType: "fillInBlank",
+                  question: "Điền từ còn thiếu: 'Em yêu anh' -> ________해요.",
+                  correctAnswer: "사랑",
+                  explanation:
+                    "<b>사랑해요</b> (Saranghaeyo) nghĩa là 'Yêu'. Gốc từ là <b>사랑</b>.",
+                },
+                {
+                  questionType: "multipleChoice",
+                  question:
+                    "Khi muốn nói 'Tuyệt nhất' hoặc 'Số 1', người Hàn dùng từ nào?",
+                  options: ["행복", "최고", "고맙습니다", "우리"],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "<b>최고</b> (Choego) có nghĩa là 'Tuyệt nhất', 'Đỉnh nhất'.",
+                },
+
+                // --- PHẦN 2: NGỮ PHÁP - ĐUÔI CÂU LÀ (이에요/예요) ---
+                {
+                  questionType: "dropDown",
+                  question:
+                    "이 사람은 제 어머니<<dropdown>>. (Người này là mẹ tôi.)",
+                  options: ["예요", "이에요", "입니다"],
+                  correctAnswerIndex: 0,
+                  explanation:
+                    "Danh từ <b>어머니</b> kết thúc bằng nguyên âm (i), nên dùng đuôi <b>예요</b>.",
+                },
+                {
+                  questionType: "dropDown",
+                  question:
+                    "저 사람은 제 가족<<dropdown>>. (Người kia là gia đình tôi.)",
+                  options: ["예요", "이에요", "있어요"],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "Danh từ <b>가족</b> kết thúc bằng phụ âm (k), nên dùng đuôi <b>이에요</b>.",
+                },
+                {
+                  questionType: "dropDown",
+                  question: "이름이 지훈<<dropdown>>. (Tên là Jihoon.)",
+                  options: ["예요", "이에요", "가"],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "Tên <b>지훈</b> (Jihoon) có phụ âm cuối (n), nên đi với <b>이에요</b>.",
+                },
+                {
+                  questionType: "dropDown",
+                  question: "여기는 우리 집<<dropdown>>. (Đây là nhà tôi.)",
+                  options: ["이에요", "예요", "이"],
+                  correctAnswerIndex: 0,
+                  explanation:
+                    "Danh từ <b>집</b> (nhà) có phụ âm cuối (p), nên dùng <b>이에요</b>.",
+                },
+
+                // --- PHẦN 3: NGỮ PHÁP - SỞ HỮU/TỒN TẠI (이/가 있다/없다) ---
+                {
+                  questionType: "dropDown",
+                  question: "저는 친구<<dropdown>> 있어요. (Tôi có bạn bè.)",
+                  options: ["이", "가", "은"],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "<b>친구</b> kết thúc bằng nguyên âm, nên dùng tiểu từ chủ ngữ <b>가</b> đi với cấu trúc 있다.",
+                },
+                {
+                  questionType: "dropDown",
+                  question:
+                    "가족<<dropdown>> 없어요? (Bạn không có gia đình à?)",
+                  options: ["이", "가", "는"],
+                  correctAnswerIndex: 0,
+                  explanation:
+                    "<b>가족</b> kết thúc bằng phụ âm, nên dùng tiểu từ chủ ngữ <b>이</b> đi với cấu trúc 없다.",
+                },
+                {
+                  questionType: "multipleChoice",
+                  question: "Chọn câu đúng ngữ pháp: 'Mẹ có ở nhà.'",
+                  options: [
+                    "어머니가 있어요.",
+                    "어머니이 있어요.",
+                    "어머니가 없어요.",
+                  ],
+                  correctAnswerIndex: 0,
+                  explanation: "어머니 (nguyên âm) + 가 + 있어요 (có/ở).",
+                },
+
+                // --- PHẦN 4: CÁCH DÙNG 'CỦA TÔI' (우리 vs 제) ---
+                {
+                  questionType: "multipleChoice",
+                  question: "Người Hàn thường nói 'Gia đình tôi' là:",
+                  options: ["내 가족", "제 가족", "우리 가족"],
+                  correctAnswerIndex: 2,
+                  explanation:
+                    "Với các danh từ tập thể như gia đình, nhà, trường học, người Hàn dùng <b>우리</b> (chúng tôi/của chúng tôi) thay vì 'của tôi' để thể hiện tính cộng đồng.",
+                },
+                {
+                  questionType: "fillInBlank",
+                  question:
+                    "Khi giới thiệu đồ vật cá nhân: 'Đây là cặp sách CỦA TÔI'. -> 이것은 ____ 가방이에요.",
+                  correctAnswer: "제",
+                  explanation:
+                    "Với đồ vật cá nhân sở hữu riêng, dùng <b>제</b> (của tôi - khiêm tốn).",
+                },
+
+                // --- PHẦN 5: HỘI THOẠI & TỔNG HỢP (CONTEXT) ---
+                {
+                  questionType: "multipleChoice",
+                  question:
+                    "A: '고맙습니다' (Cảm ơn). -> B nên đáp lại thế nào cho phù hợp?",
+                  options: [
+                    "아니에요 (Không có chi)",
+                    "네, 맞아요 (Vâng, đúng rồi)",
+                    "안녕히 가세요 (Tạm biệt)",
+                  ],
+                  correctAnswerIndex: 0,
+                  explanation:
+                    "Khi ai đó cảm ơn, cách đáp lại lịch sự phổ biến là <b>아니에요</b> (Không có gì đâu/Không có chi).",
+                },
+                {
+                  questionType: "multipleChoice",
+                  question:
+                    "Dịch câu sau sang tiếng Hàn: 'Bố mẹ tôi luôn hạnh phúc.'",
+                  options: [
+                    "우리 부모님은 늘 행복해요.",
+                    "우리 부모님은 늘 최고예요.",
+                    "제 부모님은 행복이 없어요.",
+                  ],
+                  correctAnswerIndex: 0,
+                  explanation:
+                    "늘 (luôn luôn) + 행복해요 (hạnh phúc). (부모님 = Bố mẹ).",
+                },
+                {
+                  questionType: "dropDown",
+                  question:
+                    "A: 누구예요? (Ai vậy?) - B: 제 <<dropdown>>예요. (Là bạn tôi.)",
+                  options: ["친구", "가족", "선생님"],
+                  correctAnswerIndex: 0,
+                  explanation:
+                    "Trong các lựa chọn, cả 3 đều đúng ngữ pháp, nhưng dựa vào bài học 'bạn bè' thì <b>친구</b> là đáp án phù hợp nhất để đi với đuôi '예요' (vì 가족 và 선생님 cần '이에요').",
+                },
+                {
+                  questionType: "fillInBlank",
+                  question:
+                    "Hoàn thành câu cảm ơn: 'Luôn luôn cảm ơn'. -> ________ 고맙습니다.",
+                  correctAnswer: "항상",
+                  explanation:
+                    "Có thể dùng '늘' hoặc '항상'. Trong ngữ cảnh này, đáp án yêu cầu từ vựng 2 âm tiết đã học: <b>항상</b>.",
+                },
+                {
+                  questionType: "multipleChoice",
+                  question: "Câu nào dưới đây SAI ngữ pháp?",
+                  options: ["친구가 있어요.", "가족이 없어요.", "엄마이예요."],
+                  correctAnswerIndex: 2,
+                  explanation:
+                    "Sai ở <b>엄마이예요</b>. Vì '엄마' kết thúc bằng nguyên âm, phải dùng <b>엄마예요</b>.",
+                },
+                {
+                  questionType: "fillInBlank",
+                  question:
+                    "Điền vào chỗ trống: 'Gia đình là số 1!' -> 가족이 ________!",
+                  correctAnswer: "최고",
+                  explanation:
+                    "Cụm từ phổ biến: <b>가족이 최고!</b> (Gia đình là tuyệt nhất/số 1).",
+                },
+              ],
+            },
           },
         ],
       },
@@ -1436,8 +1930,143 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             lessonLink: "/courses/1/topics/3/lessons/1",
             miniGameLink: "/courses/1/topics/3/lessons/1/minigame",
             status: "locked",
-            targets: [],
+            targets: [
+              "Học viên nhận biết và phát âm đúng 5 số đếm thuần Hàn đầu tiên (1-5).",
+              "Hiểu và áp dụng quy tắc biến đổi đặc biệt của 하나, 둘, 셋, 넷 khi có danh từ chỉ đơn vị đi kèm.",
+              "Phân biệt sơ lược mục đích sử dụng giữa số Thuần Hàn và Hán Hàn.",
+            ],
+            vnDialogue: {
+              mainRole: "A", // Người học đóng vai người chụp ảnh (A)
+              hasSpeakerBox: false,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [{ text: "Chúng ta cùng chụp ảnh nào! Chuẩn bị!" }],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [{ text: "Vâng, được ạ!" }],
+                },
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    { text: "Để mình đếm nhé." },
+                    { text: "Một, hai, ba!" },
+                    { text: "(Tách!)" },
+                  ],
+                },
+              ],
+            },
+            koDialogue: {
+              mainRole: "A",
+              hasSpeakerBox: true,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "같이 사진 찍어요! 준비!",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_num_A1.mp3", // Thay link audio thực tế
+                    },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    {
+                      text: "네, 좋아요!",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_num_B1.mp3",
+                    },
+                  ],
+                },
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "제가 셀게요. 하나, 둘, 셋!",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_num_A2.mp3",
+                    },
+                    {
+                      text: "(찰칵!)",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../sfx_camera.mp3", // Âm thanh máy ảnh
+                    },
+                  ],
+                },
+              ],
+            },
+            culturalStory: {
+              title: "Hai hệ thống số của Hàn Quốc",
+              content: `
+      Điều "hại não" nhưng thú vị nhất khi học tiếng Hàn là họ dùng hai hệ thống số song song!
+      <ul className="list-disc list-inside ml-2 mt-2">
+        <li className="mb-2"><b>Số Thuần Hàn (하나, 둘, 셋...):</b> Dùng để đếm những thứ nhìn thấy được (cái, quả, người...), đếm tuổi, và đếm GIỜ.</li>
+        <li className="mb-2"><b>Số Hán Hàn (일, 이, 삼...):</b> Dùng cho ngày tháng năm, số điện thoại, số tầng, giá tiền, và đếm PHÚT/GIÂY.</li>
+      </ul>
+      <div className="mt-4 p-3 bg-yellow-50 rounded-lg">
+        🕒 <b>Ví dụ kinh điển:</b> 3 giờ 10 phút = <b>세</b> 시 (Thuần Hàn) <b>십</b> 분 (Hán Hàn).
+      </div>
+    `,
+            },
+            funQuiz: {
+              question:
+                "Khi bạn muốn đếm số quả táo trên bàn, bạn sẽ dùng hệ thống số nào?",
+              options: [
+                "A. Số Thuần Hàn (하나, 둘...)",
+                "B. Số Hán Hàn (일, 이...)",
+              ],
+              correctAnswerIndex: 0, // Đáp án A
+              explanation:
+                "Số Thuần Hàn dùng để đếm số lượng đồ vật cụ thể (cái, quả, con...).",
+            },
+            vocabIds: [26, 27, 28, 29, 30],
+            practiceBox: {
+              questions: [
+                {
+                  questionType: "multipleChoice",
+                  question:
+                    "Dạng biến đổi đúng của '하나' (1) khi đi kèm với đơn vị đếm là gì?",
+                  options: ["하나", "한", "하"],
+                  correctAnswerIndex: 1,
+                  explanation: "Quy tắc: 하나 -> 한 (Ví dụ: 한 명).",
+                },
+                {
+                  questionType: "multipleChoice",
+                  question: "Chọn cụm từ đúng để nói '4 cái':",
+                  options: ["넷 개", "네 개", "너 개"],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "Quy tắc: 넷 -> 네 (bỏ phụ âm cuối 's/t'). Đáp án đúng là '네 개'.",
+                },
+                {
+                  questionType: "fillInBlank",
+                  question:
+                    "Điền dạng đúng của số 2: <<blank>> 시 (2 giờ). (Gợi ý: 둘 -> ?)",
+                  correctAnswer: "두",
+                  explanation:
+                    "둘 khi đứng trước đơn vị '시' (giờ) sẽ biến thành '두'.",
+                },
+                {
+                  questionType: "dropDown",
+                  question: "Có 3 người: <<dropdown>> 명.",
+                  options: ["셋", "세", "삼"],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "Khi đếm người (명), dùng số thuần Hàn và biến đổi '셋' thành '세'.",
+                },
+              ],
+            },
           },
+
           {
             id: 2,
             title: "Thời gian",
@@ -1445,7 +2074,141 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             lessonLink: "/courses/1/topics/3/lessons/2",
             miniGameLink: "/courses/1/topics/3/lessons/2/minigame",
             status: "locked",
-            targets: [],
+            targets: [
+              "Học viên có thể hỏi và trả lời về giờ hiện tại một cách tự nhiên.",
+              "Sử dụng thành thạo số đếm thuần Hàn kết hợp với đơn vị '시' (giờ).",
+              "Hiểu về văn hóa 'nhanh lên' (Palli-palli) và tầm quan trọng của thời gian ở Hàn Quốc.",
+            ],
+            vnDialogue: {
+              mainRole: "A", // Người học đóng vai A (người hỏi giờ)
+              hasSpeakerBox: false,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [{ text: "Cho tôi hỏi, bây giờ là mấy giờ ạ?" }],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [{ text: "À, bây giờ là 3 giờ." }],
+                },
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    { text: "Vâng, cảm ơn bạn." },
+                    { text: "Hôm nay tôi có cuộc hẹn..." },
+                  ],
+                },
+              ],
+            },
+            koDialogue: {
+              mainRole: "A",
+              hasSpeakerBox: true,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "저기요, 지금 몇 시예요?",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_time_A1.mp3", // Thay link audio thực tế
+                    },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    {
+                      text: "아, 지금 세 시입니다.",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_time_B1.mp3",
+                    },
+                  ],
+                },
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "네, 고맙습니다.",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_time_A2_1.mp3",
+                    },
+                    {
+                      text: "오늘 약속이 있는데...",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_time_A2_2.mp3",
+                    },
+                  ],
+                },
+              ],
+            },
+            culturalStory: {
+              title: "Văn hóa '빨리빨리' (Nhanh lên!)",
+              content: `
+      Nếu có một từ để miêu tả Hàn Quốc, đó chính là <b>"빨리빨리" (palli-palli)</b>, nghĩa là "nhanh lên, nhanh lên!".
+      <ul className="list-disc list-inside ml-2 mt-2">
+        <li className="mb-2">Mọi thứ từ internet, giao hàng, đến công việc đều diễn ra với tốc độ chóng mặt.</li>
+        <li>Thời gian (시간) rất được coi trọng. Trễ hẹn là điều tối kỵ.</li>
+      </ul>
+      <div className="mt-4 p-3 bg-blue-50 rounded-lg">
+        🏃 <b>Lời khuyên:</b> Khi có hẹn với người Hàn, hãy cố gắng đến sớm hơn giờ hẹn khoảng 5-10 phút để thể hiện sự tôn trọng nhé!
+      </div>
+    `,
+            },
+            funQuiz: {
+              question:
+                "Đặc điểm nổi bật nhất trong văn hóa thời gian của người Hàn Quốc là gì?",
+              options: [
+                "A. Từ từ, chậm rãi (천천히)",
+                "B. Nhanh lên, nhanh lên (빨리빨리)",
+                "C. Không quan trọng giờ giấc",
+              ],
+              correctAnswerIndex: 1, // Đáp án B
+              explanation:
+                "'빨리빨리' (Nhanh lên) là nét văn hóa đặc trưng, phản ánh nhịp sống năng động và coi trọng hiệu quả thời gian của người Hàn.",
+            },
+            vocabIds: [31, 32, 33],
+            practiceBox: {
+              questions: [
+                {
+                  questionType: "fillInBlank",
+                  question:
+                    "Điền dạng đúng để nói '1 giờ': 지금 <<blank>> 시예요.",
+                  correctAnswer: "한",
+                  explanation:
+                    "Số 1 (하나) biến đổi thành '한' khi đi với đơn vị '시'.",
+                },
+                {
+                  questionType: "fillInBlank",
+                  question:
+                    "Điền dạng đúng để nói '4 giờ': 지금 <<blank>> 시입니다.",
+                  correctAnswer: "네",
+                  explanation:
+                    "Số 4 (넷) biến đổi thành '네' khi đi với đơn vị '시'.",
+                },
+                {
+                  questionType: "multipleChoice",
+                  question: "Cách nói '5 giờ' nào sau đây là ĐÚNG?",
+                  options: ["다섯 시", "오 시", "다섯 개"],
+                  correctAnswerIndex: 0,
+                  explanation:
+                    "Khi nói giờ, dùng số thuần Hàn (다섯) + 시. Số 5 không bị biến đổi hình thái.",
+                },
+                {
+                  questionType: "dropDown",
+                  question:
+                    "Câu hỏi 'Bây giờ là mấy giờ?' là: <<dropdown>> 몇 시예요?",
+                  options: ["오늘", "지금", "시간"],
+                  correctAnswerIndex: 1,
+                  explanation: "'지금' nghĩa là 'bây giờ'.",
+                },
+              ],
+            },
           },
           {
             id: 3,
@@ -1454,7 +2217,161 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             lessonLink: "/courses/1/topics/3/lessons/3",
             miniGameLink: "/courses/1/topics/3/lessons/3/minigame",
             status: "locked",
-            targets: [],
+            targets: [
+              "Học viên có thể hẹn giờ cho một kế hoạch trong tương lai (ngày mai, giờ ăn trưa).",
+              "Sử dụng đúng tiểu từ chỉ thời gian '에' để xác định thời điểm.",
+              "Hiểu văn hóa 'Giờ ăn trưa' (점심시간) của dân công sở Hàn Quốc.",
+            ],
+            vnDialogue: {
+              mainRole: "A", // Người học đóng vai người mời (A)
+              hasSpeakerBox: false,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    { text: "Jihoon ơi, ngày mai bạn có thời gian không?" },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [{ text: "Có, mình rảnh." }, { text: "Sao vậy?" }],
+                },
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "Ngày mai vào giờ ăn trưa chúng mình cùng đi ăn nhé.",
+                    },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    { text: "Được đó!" },
+                    { text: "Vậy hẹn gặp lúc 1 giờ nhé." },
+                  ],
+                },
+              ],
+            },
+            koDialogue: {
+              mainRole: "A",
+              hasSpeakerBox: true,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "지훈 씨, 내일 시간 있어요?",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_appt_A1.mp3", // Thay link audio thực tế
+                    },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    {
+                      text: "네, 괜찮아요. 왜요?",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_appt_B1.mp3",
+                    },
+                  ],
+                },
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "우리 내일 점심시간에 같이 밥 먹어요.",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_appt_A2.mp3",
+                    },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    {
+                      text: "좋아요! 그럼 한 시에 만나요.",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_appt_B2.mp3",
+                    },
+                  ],
+                },
+              ],
+            },
+            culturalStory: {
+              title: "Giờ ăn trưa của dân công sở Hàn",
+              content: `
+      <b>점심시간 (Giờ ăn trưa)</b>, thường từ 12h-1h, là một "khoảng trời riêng" cực kỳ quan trọng đối với dân công sở Hàn Quốc.
+      <ul className="list-disc list-inside ml-2 mt-2">
+        <li className="mb-2">Đây là lúc để xả stress, đi cà phê ☕, hoặc thậm chí là chợp mắt một chút.</li>
+        <li>Rất nhiều nhà hàng có thực đơn <b>"bữa trưa công sở" (점심특선)</b> với giá ưu đãi.</li>
+      </ul>
+      <div className="mt-4 p-3 bg-orange-50 rounded-lg">
+        🍱 <b>Văn hóa:</b> Hẹn ai đó vào giờ ăn trưa là một lời mời rất phổ biến và tự nhiên để xây dựng mối quan hệ đồng nghiệp.
+      </div>
+    `,
+            },
+            funQuiz: {
+              question:
+                "Tại sao '점심시간' (giờ ăn trưa) lại quan trọng với người đi làm ở Hàn Quốc?",
+              options: [
+                "A. Vì bắt buộc phải họp vào giờ này.",
+                "B. Vì đây là thời gian để xả stress, nghỉ ngơi và giao lưu.",
+                "C. Vì các nhà hàng chỉ mở cửa vào giờ trưa.",
+              ],
+              correctAnswerIndex: 1, // Đáp án B
+              explanation:
+                "Giờ ăn trưa là khoảng thời gian quý báu để nghỉ ngơi, nạp năng lượng và thư giãn giữa giờ làm việc căng thẳng.",
+            },
+            vocabIds: [34, 35],
+            practiceBox: {
+              questions: [
+                {
+                  questionType: "multipleChoice",
+                  question: "Tiểu từ '에' được dùng để làm gì trong câu?",
+                  options: [
+                    "Chỉ chủ ngữ",
+                    "Chỉ thời điểm xảy ra hành động",
+                    "Chỉ tân ngữ",
+                  ],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "'에' gắn vào sau danh từ chỉ thời gian để chỉ thời điểm hành động diễn ra (vào lúc...).",
+                },
+                {
+                  questionType: "fillInBlank",
+                  question:
+                    "Điền từ phù hợp: 저는 다섯 시<<blank>> 집에 가요. (Tôi về nhà lúc 5 giờ)",
+                  correctAnswer: "에",
+                  explanation:
+                    "Vì '다섯 시' là thời điểm cụ thể, cần thêm '에'.",
+                },
+                {
+                  questionType: "fillInBlank",
+                  question:
+                    "Điền từ phù hợp (nhập X nếu không cần): 우리 오늘<<blank>> 영화 봐요. (Hôm nay xem phim nhé)",
+                  correctAnswer: "X",
+                  explanation:
+                    "Với các từ như '오늘' (hôm nay), '내일' (ngày mai), '지금' (bây giờ), người Hàn thường lược bỏ '에'.",
+                },
+                {
+                  questionType: "dropDown",
+                  question: "한 시<<dropdown>> 만나요. (Gặp nhau lúc 1 giờ)",
+                  options: ["가", "에", "는"],
+                  correctAnswerIndex: 1,
+                  explanation: "Thời gian cụ thể (1 giờ) cần tiểu từ '에'.",
+                },
+              ],
+            },
           },
           {
             id: 4,
@@ -1463,7 +2380,176 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             lessonLink: "/courses/1/topics/3/lessons/4",
             miniGameLink: "/courses/1/topics/3/lessons/4/minigame",
             status: "locked",
-            targets: [],
+            targets: [
+              "Học viên có thể sử dụng số đếm và đơn vị đếm để mua một số lượng đồ vật cụ thể.",
+              "Nắm vững cấu trúc 'Danh từ + Số lượng + Đơn vị đếm' (Ví dụ: Táo 5 quả).",
+              "Sử dụng thành thạo câu thần chú mua sắm '주세요' (Hãy cho tôi...).",
+            ],
+            vnDialogue: {
+              mainRole: "A", // Người học đóng vai Khách hàng (A)
+              hasSpeakerBox: false,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [{ text: "Chào bác chủ ạ!" }],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [{ text: "Xin mời vào!" }],
+                },
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [{ text: "Táo này bao nhiêu tiền ạ?" }],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [{ text: "Ba quả năm nghìn won ạ." }],
+                },
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [{ text: "Vậy thì, cho tôi năm quả táo ạ." }],
+                },
+              ],
+            },
+            koDialogue: {
+              mainRole: "A",
+              hasSpeakerBox: true,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "사장님, 안녕하세요!",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_shop_A1.mp3", // Thay link audio thực tế
+                    },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    {
+                      text: "어서 오세요!",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_shop_B1.mp3",
+                    },
+                  ],
+                },
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "이 사과 얼마예요?",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_shop_A2.mp3",
+                    },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    {
+                      text: "세 개에 오천 원입니다.",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_shop_B2.mp3",
+                    },
+                  ],
+                },
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "그럼, 사과 다섯 개 주세요.",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_shop_A3.mp3",
+                    },
+                  ],
+                },
+              ],
+            },
+            culturalStory: {
+              title: "'주세요!' - Câu thần chú khi mua sắm",
+              content: `
+      <b>주세요 (juseyo)</b> là một trong những cụm từ hữu ích nhất bạn có thể học. Nó có nghĩa là "Hãy cho tôi...".
+      <ul className="list-disc list-inside ml-2 mt-2">
+        <li className="mb-2">Tại quán cà phê: <b>커피 한 잔 주세요</b> (Cho tôi 1 ly cà phê).</li>
+        <li className="mb-2">Tại cửa hàng quần áo: <b>이거 보여 주세요</b> (Cho tôi xem cái này).</li>
+        <li>Trên taxi: <b>서울역으로 가 주세요</b> (Hãy đi đến ga Seoul).</li>
+      </ul>
+      <div className="mt-4 p-3 bg-green-50 rounded-lg">
+        🛍️ <b>Mẹo:</b> Chỉ cần chỉ vào món đồ bạn muốn và nói "이거 주세요" (Cho tôi cái này) là bạn đã có thể mua sắm dễ dàng!
+      </div>
+    `,
+            },
+            funQuiz: {
+              question:
+                "Câu '주세요' (Juseyo) thường được dùng trong tình huống nào?",
+              options: [
+                "A. Chào hỏi khi gặp mặt.",
+                "B. Yêu cầu hoặc mua sắm (Hãy cho tôi...)",
+                "C. Xin lỗi vì đến muộn.",
+              ],
+              correctAnswerIndex: 1, // Đáp án B
+              explanation:
+                "'주세요' xuất phát từ động từ '주다' (cho), dùng để yêu cầu người khác đưa hoặc làm gì đó cho mình một cách lịch sự.",
+            },
+            vocabIds: [36, 37],
+            practiceBox: {
+              questions: [
+                {
+                  questionType: "multipleChoice",
+                  question:
+                    "Thứ tự đúng của cụm từ '5 quả táo' trong tiếng Hàn là gì?",
+                  options: [
+                    "A. 사과 다섯 개 (Danh từ - Số - Đơn vị)",
+                    "B. 다섯 개 사과 (Số - Đơn vị - Danh từ)",
+                    "C. 개 다섯 사과 (Đơn vị - Số - Danh từ)",
+                  ],
+                  correctAnswerIndex: 0,
+                  explanation:
+                    "Trong tiếng Hàn, danh từ đứng trước, sau đó đến số lượng và cuối cùng là đơn vị đếm (사과 + 다섯 + 개).",
+                },
+                {
+                  questionType: "fillInBlank",
+                  question:
+                    "Điền từ còn thiếu: 사과 다섯 <<blank>> 주세요. (Cho tôi 5 quả táo)",
+                  correctAnswer: "개",
+                  explanation:
+                    "Đơn vị đếm cho táo (trái cây nói chung) là '개'.",
+                },
+                {
+                  questionType: "multipleChoice",
+                  question:
+                    "Bạn muốn mua 2 quả cam (오렌지). Bạn sẽ nói thế nào?",
+                  options: [
+                    "A. 오렌지 둘 개 주세요.",
+                    "B. 오렌지 두 개 주세요.",
+                    "C. 오렌지 이 개 주세요.",
+                  ],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "Số 2 (둘) khi đi với đơn vị đếm (개) phải đổi thành '두'. Câu đúng: 오렌지 두 개 주세요.",
+                },
+                {
+                  questionType: "dropDown",
+                  question: "커피 한 잔 <<dropdown>>. (Cho tôi một ly cà phê)",
+                  options: ["있어요", "주세요", "없어요"],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "Khi gọi món hoặc yêu cầu, dùng '주세요' (Hãy cho tôi).",
+                },
+              ],
+            },
           },
           {
             id: 5,
@@ -1502,7 +2588,156 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             lessonLink: "/courses/2/topics/4/lessons/1",
             miniGameLink: "/courses/2/topics/4/lessons/1/minigame",
             status: "locked",
-            targets: [],
+            targets: [
+              "Học viên có thể chỉ vào một món đồ và hỏi giá một cách lịch sự.",
+              "Phân biệt và sử dụng đúng các đại từ chỉ định: 이거 (cái này), 그거 (cái đó), 저거 (cái kia).",
+              "Hiểu văn hóa mua sắm khác biệt giữa Chợ truyền thống và Trung tâm thương mại tại Hàn Quốc.",
+            ],
+            vnDialogue: {
+              mainRole: "A", // Người học đóng vai Khách hàng (A)
+              hasSpeakerBox: false,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [{ text: "Cho tôi hỏi!" }],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    { text: "Vâng thưa quý khách." },
+                    { text: "Quý khách tìm gì ạ?" },
+                  ],
+                },
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [{ text: "Cái này bao nhiêu tiền ạ?" }],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [{ text: "À, bộ quần áo đó giá 30,000 won ạ." }],
+                },
+              ],
+            },
+            koDialogue: {
+              mainRole: "A",
+              hasSpeakerBox: true,
+              contents: [
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "저기요!",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_shop_basic_A1.mp3", // Thay link audio thực tế
+                    },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    {
+                      text: "네, 손님. 무엇을 찾으세요?",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_shop_basic_B1.mp3",
+                    },
+                  ],
+                },
+                {
+                  role: "A",
+                  avatarUrl: speakerAAvatarUrl,
+                  lines: [
+                    {
+                      text: "이거 얼마예요?",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_shop_basic_A2.mp3",
+                    },
+                  ],
+                },
+                {
+                  role: "B",
+                  avatarUrl: speakerBAvatarUrl,
+                  lines: [
+                    {
+                      text: "아, 그 옷은 삼만 원입니다.",
+                      audioUrl:
+                        "https://firebasestorage.googleapis.com/.../dialogue_shop_basic_B2.mp3",
+                    },
+                  ],
+                },
+              ],
+            },
+            culturalStory: {
+              title: "Mua sắm ở đâu? Chợ vs. TTTM",
+              content: `
+      Khi mua sắm ở Hàn Quốc, có sự khác biệt lớn về giá cả và văn hóa giữa hai nơi:
+      <ul className="list-disc list-inside ml-2 mt-2">
+        <li className="mb-2"><b>Trung tâm thương mại (백화점):</b> Giá niêm yết cố định (정찰제). Không thể mặc cả, nhưng đảm bảo chất lượng và dịch vụ.</li>
+        <li className="mb-2"><b>Chợ truyền thống (시장):</b> "Thiên đường" trả giá! Người bán thân thiện và thường giảm giá (깎아 주세요) nếu bạn mua nhiều hoặc trả tiền mặt.</li>
+      </ul>
+      <div className="mt-4 p-3 bg-yellow-50 rounded-lg">
+        💡 <b>Ghi nhớ:</b> Câu hỏi <b>"얼마예요?"</b> (Bao nhiêu tiền?) là chìa khóa để bắt đầu mọi cuộc giao dịch!
+      </div>
+    `,
+            },
+            funQuiz: {
+              question:
+                "Bạn có thể thoải mái mặc cả (trả giá) nhất ở địa điểm nào sau đây?",
+              options: [
+                "A. Trung tâm thương mại (백화점)",
+                "B. Chợ truyền thống (시장)",
+                "C. Cửa hàng tiện lợi (편의점)",
+              ],
+              correctAnswerIndex: 1, // Đáp án B
+              explanation:
+                "Ở chợ truyền thống (Sijang), việc hỏi giá và mặc cả là một phần thú vị của văn hóa mua sắm Hàn Quốc.",
+            },
+            vocabIds: [38, 39],
+            practiceBox: {
+              questions: [
+                {
+                  questionType: "fillInBlank",
+                  question:
+                    "(Vật ở xa cả bạn và người bán) <<blank>> 모자 정말 예뻐요. (Chiếc mũ kia thật đẹp)",
+                  correctAnswer: "저",
+                  explanation:
+                    "Khi vật ở xa cả người nói và người nghe, ta dùng '저' (kia) đứng trước danh từ.",
+                },
+                {
+                  questionType: "fillInBlank",
+                  question:
+                    "(Bạn đang cầm món đồ trên tay) <<blank>> 주세요. (Cho tôi cái này)",
+                  correctAnswer: "이거",
+                  explanation:
+                    "Khi vật ở gần người nói (trên tay bạn), dùng đại từ '이거' (cái này).",
+                },
+                {
+                  questionType: "multipleChoice",
+                  question:
+                    "Khi người bán hàng đang cầm chiếc áo (xa bạn, gần người bán), bạn sẽ gọi chiếc áo đó là gì?",
+                  options: [
+                    "이거 (Cái này)",
+                    "그거 (Cái đó)",
+                    "저거 (Cái kia)",
+                  ],
+                  correctAnswerIndex: 1,
+                  explanation:
+                    "Dùng '그거' (cái đó) khi vật nằm gần người nghe (người bán) nhưng xa người nói (bạn).",
+                },
+                {
+                  questionType: "dropDown",
+                  question: "Câu hỏi giá tiền: 이거 <<dropdown>>?",
+                  options: ["얼마예요", "몇 시예요", "누구예요"],
+                  correctAnswerIndex: 0,
+                  explanation: "'얼마예요?' nghĩa là 'Bao nhiêu tiền?'.",
+                },
+              ],
+            },
           },
           {
             id: 2,
@@ -2456,6 +3691,500 @@ export const vocabList: Record<number, Vocab> = {
     examples: [
       "시간이 없어요. (Tôi không có thời gian.)",
       "친구가 없어요. (Tôi không có bạn.)",
+    ],
+  },
+  20: {
+    text: "사랑",
+    transcription: "sarang",
+    meaning: "Tình yêu",
+    usage:
+      "Dùng để nói về tình cảm yêu thương giữa người với người, hoặc sự yêu thích một vật gì đó.",
+    description: "Danh từ chỉ tình yêu thương.",
+    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_sarang.mp3",
+    imgUrl: "https://cdn-icons-png.flaticon.com/512/2589/2589175.png", // Icon trái tim
+    wordType: "noun",
+    subdescription:
+      "Động từ là <b>사랑하다 (saranghada)</b>. Khi nói 'Tôi yêu bạn' thân mật: <b>사랑해요</b>.",
+    parts: [
+      {
+        text: "사",
+        color: "--custom-red",
+        description: "âm tiết 1",
+      },
+      {
+        text: "랑",
+        color: "--custom-pink",
+        description: "âm tiết 2",
+      },
+    ],
+    examples: [
+      "사랑해요. (Tôi yêu bạn.)",
+      "사랑이 많은 가족. (Gia đình giàu tình yêu thương.)",
+    ],
+  },
+  21: {
+    text: "행복",
+    transcription: "haengbok",
+    meaning: "Hạnh phúc",
+    usage: "Dùng để diễn tả trạng thái vui vẻ, mãn nguyện.",
+    description: "Danh từ chỉ sự hạnh phúc.",
+    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_haengbok.mp3",
+    imgUrl: "https://cdn-icons-png.flaticon.com/512/742/742751.png", // Icon mặt cười hạnh phúc
+    wordType: "noun",
+    subdescription:
+      "Bắt nguồn từ Hán tự 幸福 (Hạnh Phúc). Tính từ là <b>행복하다 (haengbokhada)</b>.",
+    parts: [
+      {
+        text: "행",
+        color: "--custom-blue",
+        description: "Hạnh (may mắn)",
+      },
+      {
+        text: "복",
+        color: "--custom-green",
+        description: "Phúc (phước lành)",
+      },
+    ],
+    examples: [
+      "우리 가족은 행복해요. (Gia đình tôi hạnh phúc.)",
+      "행복한 하루 되세요! (Chúc một ngày hạnh phúc!)",
+    ],
+  },
+  22: {
+    text: "최고",
+    transcription: "choego",
+    meaning: "Tuyệt nhất / Số 1",
+    usage: "Dùng để khen ngợi ai đó hoặc cái gì đó là đỉnh nhất, tốt nhất.",
+    description: "Danh từ chỉ mức độ cao nhất.",
+    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_choego.mp3",
+    imgUrl: "https://cdn-icons-png.flaticon.com/512/1628/1628931.png", // Icon ngón tay cái (Like/Best)
+    wordType: "noun",
+    subdescription:
+      "Bắt nguồn từ Hán tự 最高 (Tối Cao). Thường đi kèm cử chỉ giơ ngón cái 👍.",
+    parts: [
+      {
+        text: "최",
+        color: "--custom-orange",
+        description: "Tối (nhất)",
+      },
+      {
+        text: "고",
+        color: "--custom-purple",
+        description: "Cao (cao)",
+      },
+    ],
+    examples: [
+      "우리 아빠 최고! (Bố tôi là số 1!)",
+      "맛이 최고예요. (Vị ngon tuyệt vời.)",
+    ],
+  },
+  23: {
+    text: "고맙습니다",
+    transcription: "gomapseumnida",
+    meaning: "Cảm ơn (Lịch sự)",
+    usage:
+      "Dùng để cảm ơn một cách chân thành, ấm áp với người lớn hoặc trong giao tiếp lịch sự.",
+    description: "Từ cảm ơn gốc thuần Hàn, mang sắc thái tình cảm.",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/.../vocab_gomapseumnida.mp3",
+    imgUrl: "https://cdn-icons-png.flaticon.com/512/1067/1067357.png", // Icon bắt tay/cảm ơn
+    wordType: "phrase",
+    subdescription:
+      "Lưu ý phát âm: Chữ 'ㅂ' gặp 'ㄴ' đọc thành 'm'. Đọc là [go-map-seum-ni-da].",
+    parts: [
+      {
+        text: "고맙",
+        color: "--custom-blue",
+        description: "gốc từ: biết ơn",
+      },
+      {
+        text: "습니다",
+        color: "--custom-gray",
+        description: "đuôi câu trang trọng",
+      },
+    ],
+    examples: [
+      "도와주셔서 고맙습니다. (Cảm ơn vì đã giúp đỡ.)",
+      "늘 고맙습니다. (Luôn biết ơn bạn.)",
+    ],
+  },
+  24: {
+    text: "늘",
+    transcription: "neul",
+    meaning: "Luôn luôn (Văn thơ)",
+    usage:
+      "Phó từ chỉ tần suất, mang sắc thái tình cảm, thường dùng trong văn viết hoặc lời nói chân thành.",
+    description: "Phó từ chỉ sự liên tục, bền bỉ.",
+    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_neul.mp3",
+    imgUrl: "https://cdn-icons-png.flaticon.com/512/2089/2089678.png", // Icon vô cực/đồng hồ
+    wordType: "adverb",
+    subdescription: "Đồng nghĩa với '항상' nhưng nghe nhẹ nhàng hơn.",
+    parts: [
+      {
+        text: "늘",
+        color: "--custom-purple",
+        description: "luôn luôn",
+      },
+    ],
+    examples: [
+      "늘 건강하세요. (Chúc bạn luôn mạnh khỏe.)",
+      "늘 고맙습니다. (Luôn biết ơn bạn.)",
+    ],
+  },
+  25: {
+    text: "항상",
+    transcription: "hangsang",
+    meaning: "Luôn luôn (Thường dùng)",
+    usage: "Phó từ chỉ tần suất phổ biến nhất trong giao tiếp hàng ngày.",
+    description: "Phó từ chỉ sự thường xuyên, lúc nào cũng vậy.",
+    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_hangsang.mp3",
+    imgUrl: "https://cdn-icons-png.flaticon.com/512/2328/2328525.png", // Icon lịch/thời gian
+    wordType: "adverb",
+    subdescription: "Bắt nguồn từ Hán tự 恒常 (Hằng Thường).",
+    parts: [
+      {
+        text: "항",
+        color: "--custom-red",
+        description: "Hằng (mãi mãi)",
+      },
+      {
+        text: "상",
+        color: "--custom-orange",
+        description: "Thường (thường xuyên)",
+      },
+    ],
+    examples: [
+      "항상 행복하세요. (Chúc bạn luôn hạnh phúc.)",
+      "저는 항상 아침을 먹어요. (Tôi luôn ăn sáng.)",
+    ],
+  },
+  26: {
+    text: "하나",
+    transcription: "hana",
+    meaning: "Một (1)",
+    usage:
+      "Dùng đếm số lượng. Biến đổi thành '한' khi đứng trước danh từ đơn vị (ví dụ: 한 명).",
+    description: "Số đếm thuần Hàn số 1.",
+    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_hana.mp3",
+    imgUrl: "https://cdn-icons-png.flaticon.com/512/3570/3570095.png", // Icon số 1
+    wordType: "number",
+    subdescription:
+      "⚠️ Quy tắc biến đổi: <b>하나</b> → <b>한</b> (Ví dụ: 한 시 - 1 giờ).",
+    parts: [
+      { text: "하", color: "--custom-blue", description: "âm 1" },
+      { text: "나", color: "--custom-blue", description: "âm 2" },
+    ],
+    examples: ["사과 하나 (1 quả táo)", "한 개 (1 cái)"],
+  },
+  27: {
+    text: "둘",
+    transcription: "dul",
+    meaning: "Hai (2)",
+    usage:
+      "Dùng đếm số lượng. Biến đổi thành '두' khi đứng trước danh từ đơn vị.",
+    description: "Số đếm thuần Hàn số 2.",
+    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_dul.mp3",
+    imgUrl: "https://cdn-icons-png.flaticon.com/512/3570/3570098.png", // Icon số 2
+    wordType: "number",
+    subdescription:
+      "⚠️ Quy tắc biến đổi: <b>둘</b> → <b>두</b> (Ví dụ: 두 시 - 2 giờ).",
+    parts: [
+      { text: "둘", color: "--custom-green", description: "âm tiết duy nhất" },
+    ],
+    examples: ["둘이서 (hai người cùng làm)", "두 명 (2 người)"],
+  },
+  28: {
+    text: "셋",
+    transcription: "set",
+    meaning: "Ba (3)",
+    usage:
+      "Dùng đếm số lượng. Biến đổi thành '세' khi đứng trước danh từ đơn vị.",
+    description: "Số đếm thuần Hàn số 3.",
+    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_set.mp3",
+    imgUrl: "https://cdn-icons-png.flaticon.com/512/3570/3570100.png", // Icon số 3
+    wordType: "number",
+    subdescription:
+      "⚠️ Quy tắc biến đổi: <b>셋</b> → <b>세</b> (Ví dụ: 세 개 - 3 cái).",
+    parts: [
+      { text: "셋", color: "--custom-orange", description: "âm tiết duy nhất" },
+    ],
+    examples: ["하나, 둘, 셋! (1, 2, 3!)", "세 번 (3 lần)"],
+  },
+  29: {
+    text: "넷",
+    transcription: "net",
+    meaning: "Bốn (4)",
+    usage:
+      "Dùng đếm số lượng. Biến đổi thành '네' khi đứng trước danh từ đơn vị.",
+    description: "Số đếm thuần Hàn số 4.",
+    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_net.mp3",
+    imgUrl: "https://cdn-icons-png.flaticon.com/512/3570/3570103.png", // Icon số 4
+    wordType: "number",
+    subdescription:
+      "⚠️ Quy tắc biến đổi: <b>넷</b> → <b>네</b> (Ví dụ: 네 명 - 4 người).",
+    parts: [
+      { text: "넷", color: "--custom-red", description: "âm tiết duy nhất" },
+    ],
+    examples: ["네 시 (4 giờ)", "네 살 (4 tuổi)"],
+  },
+  30: {
+    text: "다섯",
+    transcription: "daseot",
+    meaning: "Năm (5)",
+    usage: "Dùng đếm số lượng. KHÔNG biến đổi hình thái.",
+    description: "Số đếm thuần Hàn số 5.",
+    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_daseot.mp3",
+    imgUrl: "https://cdn-icons-png.flaticon.com/512/3570/3570106.png", // Icon số 5
+    wordType: "number",
+    subdescription:
+      "Từ số 5 trở đi (다섯, 여섯...) thường không bị biến đổi khi ghép với đơn vị đếm.",
+    parts: [
+      { text: "다", color: "--custom-purple", description: "âm 1" },
+      { text: "섯", color: "--custom-purple", description: "âm 2" },
+    ],
+    examples: ["다섯 개 (5 cái)", "다섯 시 (5 giờ)"],
+  },
+  31: {
+    text: "시간",
+    transcription: "sigan",
+    meaning: "Thời gian / Giờ",
+    usage:
+      "Dùng để nói về khái niệm thời gian nói chung hoặc đơn vị đếm tiếng (ví dụ: 2 tiếng đồng hồ).",
+    description: "Danh từ chỉ thời gian.",
+    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_sigan.mp3",
+    imgUrl: "https://cdn-icons-png.flaticon.com/512/2928/2928750.png", // Icon đồng hồ cát/thời gian
+    wordType: "noun",
+    subdescription: "Bắt nguồn từ Hán tự 時間 (Thời Gian).",
+    parts: [
+      {
+        text: "시",
+        color: "--custom-blue",
+        description: "Thời (thời giờ)",
+      },
+      {
+        text: "간",
+        color: "--custom-green",
+        description: "Gian (khoảng cách)",
+      },
+    ],
+    examples: [
+      "시간이 있어요? (Bạn có thời gian không?)",
+      "두 시간 (2 tiếng đồng hồ).",
+    ],
+  },
+  32: {
+    text: "지금",
+    transcription: "jigeum",
+    meaning: "Bây giờ",
+    usage:
+      "Phó từ chỉ thời điểm hiện tại, thường đứng đầu câu hoặc trước động từ.",
+    description: "Từ chỉ thời điểm ngay lúc nói.",
+    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_jigeum.mp3",
+    imgUrl: "https://cdn-icons-png.flaticon.com/512/2088/2088617.png", // Icon 'Now' hoặc chỉ tay xuống đất
+    wordType: "adverb",
+    subdescription: "Bắt nguồn từ Hán tự 只今 (Chỉ Kim).",
+    parts: [
+      {
+        text: "지",
+        color: "--custom-orange",
+        description: "Chỉ (chỉ có)",
+      },
+      {
+        text: "금",
+        color: "--custom-red",
+        description: "Kim (nay/hiện tại)",
+      },
+    ],
+    examples: [
+      "지금 몇 시예요? (Bây giờ là mấy giờ?)",
+      "지금 가요. (Tôi đi ngay đây.)",
+    ],
+  },
+  33: {
+    text: "오늘",
+    transcription: "oneul",
+    meaning: "Hôm nay",
+    usage: "Danh từ chỉ ngày hiện tại.",
+    description: "Từ chỉ ngày hôm nay.",
+    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_oneul.mp3",
+    imgUrl: "https://cdn-icons-png.flaticon.com/512/2693/2693507.png", // Icon lịch ngày hôm nay
+    wordType: "noun",
+    subdescription:
+      "Là từ thuần Hàn. Hôm qua là <b>어제 (eoje)</b>, ngày mai là <b>내일 (naeil)</b>.",
+    parts: [
+      {
+        text: "오",
+        color: "--custom-purple",
+        description: "âm tiết 1",
+      },
+      {
+        text: "늘",
+        color: "--custom-purple",
+        description: "âm tiết 2",
+      },
+    ],
+    examples: [
+      "오늘 약속이 있어요. (Hôm nay tôi có hẹn.)",
+      "오늘 날씨가 좋아요. (Hôm nay thời tiết đẹp.)",
+    ],
+  },
+  34: {
+    text: "내일",
+    transcription: "naeil",
+    meaning: "Ngày mai",
+    usage:
+      "Danh từ chỉ ngày ngay sau hôm nay. Thường đứng đầu câu hoặc làm trạng ngữ chỉ thời gian.",
+    description: "Từ chỉ ngày mai.",
+    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_naeil.mp3",
+    imgUrl: "https://cdn-icons-png.flaticon.com/512/2693/2693633.png", // Icon lịch ngày tiếp theo
+    wordType: "noun",
+    subdescription: "Bắt nguồn từ Hán tự 來日 (Lai Nhật - Ngày sắp đến).",
+    parts: [
+      {
+        text: "내",
+        color: "--custom-blue",
+        description: "Lai (đến)",
+      },
+      {
+        text: "일",
+        color: "--custom-green",
+        description: "Nhật (ngày)",
+      },
+    ],
+    examples: [
+      "내일 만나요. (Mai gặp nhé.)",
+      "내일 시간 있어요? (Mai bạn rảnh không?)",
+    ],
+  },
+  35: {
+    text: "점심시간",
+    transcription: "jeomsimsigan",
+    meaning: "Giờ ăn trưa",
+    usage: "Dùng để chỉ khoảng thời gian nghỉ trưa để ăn uống.",
+    description: "Danh từ ghép chỉ giờ nghỉ trưa.",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/.../vocab_jeomsimsigan.mp3",
+    imgUrl: "https://cdn-icons-png.flaticon.com/512/2771/2771401.png", // Icon hộp cơm trưa/đồng hồ
+    wordType: "noun",
+    subdescription:
+      "Ghép từ <b>점심</b> (bữa trưa) và <b>시간</b> (thời gian).",
+    parts: [
+      {
+        text: "점심",
+        color: "--custom-orange",
+        description: "bữa trưa",
+      },
+      {
+        text: "시간",
+        color: "--custom-purple",
+        description: "thời gian",
+      },
+    ],
+    examples: [
+      "점심시간에 뭐 해요? (Giờ trưa bạn làm gì?)",
+      "점심시간이 12시예요. (Giờ ăn trưa là 12 giờ.)",
+    ],
+  },
+  36: {
+    text: "개",
+    transcription: "gae",
+    meaning: "Cái / Quả",
+    usage:
+      "Đơn vị đếm phổ biến nhất, dùng cho hầu hết các đồ vật nhỏ, trái cây, bánh kẹo...",
+    description: "Lượng từ (đơn vị đếm) phổ biến.",
+    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_gae.mp3",
+    imgUrl: "https://cdn-icons-png.flaticon.com/512/415/415682.png", // Icon quả táo/đồ vật
+    wordType: "counter",
+    subdescription: "Luôn đứng sau số đếm Thuần Hàn (Ví dụ: 한 개, 두 개).",
+    parts: [
+      {
+        text: "개",
+        color: "--custom-blue",
+        description: "cái/quả",
+      },
+    ],
+    examples: [
+      "사과 한 개 (1 quả táo).",
+      "몇 개 드릴까요? (Tôi đưa bạn mấy cái ạ?)",
+    ],
+  },
+  37: {
+    text: "주세요",
+    transcription: "juseyo",
+    meaning: "Hãy cho tôi",
+    usage:
+      "Dùng để yêu cầu ai đó đưa vật gì đó hoặc làm gì đó cho mình một cách lịch sự.",
+    description: "Câu yêu cầu lịch sự.",
+    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_juseyo.mp3",
+    imgUrl: "https://cdn-icons-png.flaticon.com/512/1001/1001100.png", // Icon bàn tay đưa/nhận
+    wordType: "phrase",
+    subdescription: "Kết hợp: [Danh từ] + [Số lượng] + <b>주세요</b>.",
+    parts: [
+      {
+        text: "주",
+        color: "--custom-orange",
+        description: "gốc từ: cho",
+      },
+      {
+        text: "세요",
+        color: "--custom-gray",
+        description: "đuôi yêu cầu lịch sự",
+      },
+    ],
+    examples: ["이거 주세요. (Cho tôi cái này.)", "물 주세요. (Cho tôi nước.)"],
+  },
+  39: {
+    text: "이거",
+    transcription: "igeo",
+    meaning: "Cái này",
+    usage: "Dùng để chỉ vật đang ở gần người nói.",
+    description: "Đại từ chỉ định (gần người nói).",
+    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_igeo.mp3",
+    imgUrl: "https://cdn-icons-png.flaticon.com/512/3523/3523887.png", // Icon ngón tay chỉ vật gần
+    wordType: "pronoun",
+    subdescription: "Là dạng rút gọn của <b>이것 (igeot)</b>.",
+    parts: [
+      {
+        text: "이",
+        color: "--custom-blue",
+        description: "này (gần)",
+      },
+      {
+        text: "거",
+        color: "--custom-green",
+        description: "cái",
+      },
+    ],
+    examples: [
+      "이거 주세요. (Cho tôi cái này.)",
+      "이거 뭐예요? (Cái này là gì?)",
+    ],
+  },
+  40: {
+    text: "얼마예요",
+    transcription: "eolmayeyo",
+    meaning: "Bao nhiêu tiền?",
+    usage: "Câu hỏi giá cả phổ biến và lịch sự nhất.",
+    description: "Cụm từ hỏi giá.",
+    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_eolmayeyo.mp3",
+    imgUrl: "https://cdn-icons-png.flaticon.com/512/2454/2454282.png", // Icon tag giá tiền/dấu hỏi
+    wordType: "phrase",
+    subdescription: "Gồm <b>얼마</b> (bao nhiêu) + <b>예요</b> (là).",
+    parts: [
+      {
+        text: "얼마",
+        color: "--custom-orange",
+        description: "bao nhiêu",
+      },
+      {
+        text: "예요",
+        color: "--custom-gray",
+        description: "là (đuôi câu)",
+      },
+    ],
+    examples: [
+      "이거 얼마예요? (Cái này bao nhiêu tiền?)",
+      "모두 얼마예요? (Tất cả bao nhiêu tiền?)",
     ],
   },
 };
