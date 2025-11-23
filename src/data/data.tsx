@@ -1699,7 +1699,6 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                   </ul>
                 </GreenExampleBox>
               </>
-
             )
           },
           {
@@ -1740,6 +1739,48 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             miniGameLink: "/courses/2/topics/7/lessons/1/minigame",
             status: "locked",
             targets: [],
+            grammar: (
+              <>
+                <p className="font-semibold text-xl my-3">
+                  Cấu trúc phỏng đoán:{" "}
+                  <span className="text-[var(--custom-orange)]">-(으)ㄹ</span>{" "}
+                  <span className="text-[var(--custom-green)]">것</span>{" "}
+                  <span className="text-[var(--custom-purple)]">같다</span>{" "}
+                  (Có vẻ như/Hình như...)
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  Đây là một trong những bất quy tắc phổ biến nhất trong tiếng Hàn. Khi một gốc động từ/tính từ kết thúc bằng phụ âm 'ㅂ' và theo sau nó là một nguyên âm (ví dụ như khi chia đuôi -아요/어요), quy tắc sau sẽ được áp dụng:
+                </p>
+                <p className="font-semibold text-[18px] my-3">
+                  Quy tắc chia gốc từ (Bỏ đuôi -다):
+                </p>
+                <p className="font-semibold text-[18px] my-3">
+                  1. Gốc từ kết thúc bằng nguyên âm <span className="font-medium">(hoặc kết thúc bằng phụ âm ㄹ):</span>
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  <b>Thêm:</b> -ㄹ 것 같다
+                </p>
+                <GreenExampleBox className="my-3">
+                  <ul className="list-disc list-inside">
+                    <li className="font-medium text-[18px]">내일은 비가 올 것 같아요. (Có vẻ như ngày mai trời sẽ mưa.)</li>
+                    <li className="font-medium text-[18px] mx-5">오다 (đến) → 올 것 같아요 (Có vẻ sẽ đến/mưa.)</li>
+                  </ul>
+                </GreenExampleBox>
+
+                <p className="font-semibold text-[18px] my-3">
+                  2. Gốc từ kết thúc bằng phụ âm <span className="font-medium">(trừ ㄹ):</span>
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  <b>Thêm:</b> -을 것 같다
+                </p>
+                <GreenExampleBox className="my-3">
+                  <ul className="list-disc list-inside">
+                    <li className="font-medium text-[18px]">이 식당은 정말 좋을 것 같아요. (Có vẻ như nhà hàng này sẽ rất tốt/ngon.)</li>
+                    <li className="font-medium text-[18px] mx-5">좋다 (tốt) → 좋을 것 같아요 (Có vẻ sẽ tốt.)</li>
+                  </ul>
+                </GreenExampleBox>
+              </>
+            )
           },
           {
             id: 2,
@@ -1749,6 +1790,68 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             miniGameLink: "/courses/2/topics/7/lessons/2/minigame",
             status: "locked",
             targets: [],
+            grammar: (
+              <>
+                <p className="font-semibold text-xl my-3">
+                  Bất quy tắc của{" "}
+                  '<span className="text-[var(--custom-green)]">ㅂ</span>'{" "}
+                  (<span className="text-[var(--custom-green)]">ㅂ 불규칙</span>{" "})
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  Đây là một trong những bất quy tắc phổ biến nhất trong tiếng Hàn. <br />
+                  Quy tắc này được áp dụng khi một <b>gốc từ kết thúc bằng phụ âm 'ㅂ'</b> và <b>theo sau
+                    nó là một nguyên âm</b> (ví dụ: khi chia đuôi -아요/어요 hoặc -았/었어요).
+                </p>
+                <p className="font-semibold text-xl my-3">Quy tắc biến đổi chuẩn (Thường gặp):</p>
+                <p className="font-medium text-[18px] my-3">
+                  <b>Bước 1</b>: Bỏ hẳn phụ âm ㅂ khỏi gốc từ.
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  <b>Bước 2</b>: Thay ㅂ bằng nguyên âm 우 (u).
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  <b>Bước 3</b>: Gốc từ mới kết thúc bằng 우 sẽ kết hợp với đuôi ~어요 (Lưu ý: 우 + 어 hợp nhất thành 워).
+                </p>
+                <GrammarTable
+                  className="my-3"
+                  headers={["Nguyên thể", "Biến đổi", "Kết quả (Thì hiện tại lịch sự)", "Phân tích"]}
+                  rows={[
+                    {
+                      col1: "춥다 (lạnh)",
+                      col2: "ㅂ → 추우",
+                      col3: "추워요",
+                      col4: "추우 + 어요 → 추워요"
+                    },
+                    {
+                      col1: "덥다 (nóng)",
+                      col2: "ㅂ → 더우",
+                      col3: "더워요",
+                      col4: "더우 + 어요 → 더워요"
+                    },
+                    {
+                      col1: "어렵다 (khó)",
+                      col2: "어렵 → 어려우",
+                      col3: "어려워요",
+                      col4: "어려우 + 어요 → 어려워요"
+                    }
+                  ]}
+                />
+                <p className="font-semibold text-[18px] my-3">
+                  Trường hợp Ngoại lệ (Thêm '오' thay vì '우'):
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  <b>Quy tắc</b>: Chỉ áp dụng cho hai từ 돕다 (giúp đỡ) và 곱다 (xinh đẹp/tốt).
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  <b>Biến đổi</b>: Hai từ này biến đổi thành 오 thay vì 우.
+                </p>
+                <GreenExampleBox className="my-3">
+                  <ul className="list-disc list-inside">
+                    <li className="font-medium text-[18px]">돕다 → 도오 → 도와요 (오 + 아 hợp nhất thành 와).</li>
+                  </ul>
+                </GreenExampleBox>
+              </>
+            )
           },
           {
             id: 3,
@@ -1758,6 +1861,64 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             miniGameLink: "/courses/2/topics/7/lessons/3/minigame",
             status: "locked",
             targets: [],
+            grammar: (
+              <>
+                <p className="font-semibold text-xl my-3">
+                  Diễn tả nguyên nhân/lý do với{" "}
+                  '<span className="text-[var(--custom-orange)]">-(으)니까</span>'{" "}
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  Cấu trúc này cũng dùng để chỉ nguyên nhân và kết quả như -아서/어서, nhưng có những điểm khác biệt quan trọng sau:
+                </p>
+                <p className="font-semibold text-[18px] my-3">
+                  Điểm khác biệt cốt lõi:
+                </p>
+                <ul className="list-disc list-inside my-3 mx-3">
+                  <li className="font-medium text-[18px] my-3">
+                    <b>Ngữ cảnh:</b> Cấu trúc này thường được dùng khi vế sau là một câu mệnh lệnh, đề nghị hoặc rủ rê (ví dụ: đuôi -세요, -ㅂ시다, -(으)ㄹ까요?). Đây là lý do chính khiến ta phải dùng -(으)니까.
+                  </li>
+                  <li className="font-medium text-[18px] my-3">
+                    <b>Sắc thái:</b> Nó nhấn mạnh vào lý do mà người nói vừa mới nhận ra hoặc là một lý do mang tính khách quan.
+                  </li>
+                </ul>
+                <p className="font-semibold text-[18px] my-3">
+                  Quy tắc chia đuôi:
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  Cấu trúc này cũng dùng để chỉ nguyên nhân và kết quả như -아서/어서, nhưng có những điểm khác biệt quan trọng sau:
+                </p>
+                <div className="mx-5">
+                  <p className="font-medium text-[18px] my-3">
+                    <b>1. -니까 (nikka):</b> Dùng khi gốc từ kết thúc bằng nguyên âm.
+                  </p>
+                  <GreenExampleBox className="my-3">
+                    <p className="font-medium text-[18px]">
+                      오다 (đến) → 오 + 니까 → 오니까 (vì đến...)
+                    </p>
+                  </GreenExampleBox>
+                  <p className="font-medium text-[18px] my-3">
+                    <b>2. -으니까 (eunika):</b> Dùng khi gốc từ kết thúc bằng phụ âm.
+                  </p>
+                  <GreenExampleBox className="my-3">
+                    <p className="font-medium text-[18px]">
+                      먹다 (ăn) → 먹 + 으니까 → 먹으니까 (vì ăn...)
+                    </p>
+                  </GreenExampleBox>
+                </div>
+                <p className="font-semibold text-[18px] my-3">
+                  Ví dụ và giải thích chi tiết
+                </p>
+                <GreenExampleBox className="my-6">
+                  <p className="font-medium text-[18px]">
+                    날씨가 추우니까 감기 조심하세요. (Vì thời tiết lạnh nên hãy cẩn thận cảm lạnh nhé.)
+                  </p>
+                </GreenExampleBox>
+                <p className="font-medium text-[18px]">
+                  Giải thích: Ở đây, vế sau (조심하세요 - hãy cẩn thận) là một câu mệnh <b>lệnh/khuyên nhủ</b>.
+                  Do đó, việc dùng <b>-(으)니까</b> sẽ tự nhiên và chính xác hơn so với dùng -아서/어서.
+                </p>
+              </>
+            )
           },
           {
             id: 4,
@@ -1767,6 +1928,74 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             miniGameLink: "/courses/2/topics/7/lessons/4/minigame",
             status: "locked",
             targets: [],
+            grammar: (
+              <>
+                <p className="font-semibold text-xl my-3">
+                  Biến danh từ/tính từ thành trang từ:{" "}
+                  <span className="text-[var(--custom-orange)]">-이/히/리/기</span>
+                  ...{" "}
+                  và{" "}
+                  <span className="text-[var(--custom-orange)]">-게</span>
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  Trong tiếng Hàn, để mô tả cách thức thực hiện hành động (Ví dụ: "ăn nhanh," "suy nghĩ tích cực"),
+                  ta cần biến đổi tính từ và một số danh từ thành trạng từ. Có hai cách phổ biến nhất:
+                </p>
+                <p className="font-semibold text-[18px] my-3">
+                  Cách 1 (Quy tắc chung): Thêm -게 vào gốc từ
+                </p>
+                <ul className="list-disc list-inside mx-3">
+                  <li className="font-medium text-[18px] my-3">
+                    Đây là cách dễ nhất, phổ biến nhất và có thể áp dụng cho hầu hết các tính từ.
+                  </li>
+                  <li className="font-medium text-[18px] my-3">
+                    <b>Thực hiện:</b> Bỏ -다 và thêm -게.
+                  </li>
+                </ul>
+                <GreenExampleBox className="my-6">
+                  <ul className="list-disc list-inside">
+                    <li className="font-medium text-[18px]">
+                      예쁘다 (đẹp) → 예쁘게 (một cách xinh đẹp)
+                    </li>
+                    <li className="font-medium text-[18px]">
+                      행복하다 (hạnh phúc) → 행복하게 (một cách hạnh phúc)
+                    </li>
+                    <li className="font-medium text-[18px]">
+                      긍정적이다 (tích cực) → 긍정적으로 (một cách tích cực - trường hợp đặc biệt với tính từ gốc Hán)
+                    </li>
+                  </ul>
+                </GreenExampleBox>
+                <p className="font-semibold text-[18px] my-3">
+                  Cách 2 (Trường hợp cố định): Thêm -이/-히
+                </p>
+                <ul className="list-disc list-inside mx-3">
+                  <li className="font-medium text-[18px] my-3">
+                    Cách này áp dụng cho một số từ nhất định và cần phải học thuộc lòng vì không có quy tắc chung nào.
+                  </li>
+                </ul>
+                <GreenExampleBox className="my-6">
+                  <ul className="list-disc list-inside">
+                    <li className="font-medium text-[18px]">
+                      많다 (nhiều) → 많이 (một cách nhiều)
+                    </li>
+                    <li className="font-medium text-[18px]">
+                      조용하다 (yên tĩnh) → 조용히 (một cách yên tĩnh)
+                    </li>
+                  </ul>
+                </GreenExampleBox>
+                <p className="font-semibold text-[18px] my-3">
+                  Ví dụ và giải thích chi tiết
+                </p>
+                <GreenExampleBox className="my-6">
+                  <p className="font-medium text-[18px]">
+                    긍정적으로 생각하세요. (Hãy suy nghĩ một cách tích cực.)
+                  </p>
+                </GreenExampleBox>
+                <p className="font-medium text-[18px]">
+                  Giải thích: Trong câu này, 긍정적으로 bổ nghĩa cho động từ "suy nghĩ" (생각하다).
+                </p>
+              </>
+            )
           },
           {
             id: 5,
