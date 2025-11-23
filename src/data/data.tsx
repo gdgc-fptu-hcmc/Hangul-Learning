@@ -6,6 +6,7 @@ import PurpleFlashCard from "@/components/grammar/PurpleFlashCard";
 import TuKhoa from "@/components/grammar/TuKhoa";
 import BorderedGrammarBox from "../components/grammar/BorderedGrammarBox.jsx";
 import GreenExampleBox from "@/components/grammar/GreenExampleBox";
+import GrammarTable from "@/components/grammar/GrammarTable";
 import { BsPersonBoundingBox } from "react-icons/bs";
 import {
   FaAppleAlt,
@@ -1252,6 +1253,67 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             miniGameLink: "/courses/2/topics/5/lessons/1/minigame",
             status: "locked",
             targets: [],
+            grammar: (
+              <>
+                <p className="font-semibold text-xl">
+                  <span>Cấu trúc thể hiện ý chí/dự định: </span>
+                  <span className="text-[var(--custom-orange)]">-(으)ㄹ게요</span>
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  Khi bạn đã <b>quyết định xong</b> món mình muốn gọi hoặc muốn thông báo một hành động sẽ làm ngay,
+                  bạn có thể dùng đuôi câu “<b>-(으)ㄹ게요</b>”. Cấu trúc này thể hiện ý chí <b>chủ động</b>, lịch sự và
+                  <b>rất được ưa chuộng khi gọi món</b> hoặc trả lời nhân viên phục vụ.
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  <b>Cách chia đuôi:</b>
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  Quy tắc chia đuôi dựa vào việc gốc động từ (sau khi bỏ -다) kết thúc bằng nguyên âm hay phụ âm.
+                </p>
+                <ul className="list-decimal list-inside">
+                  <li className="font-semibold text-[18px] my-3">
+                    Trường hợp gốc từ kết thúc bằng nguyên âm:
+                    <ul className="list-disc list-inside">
+                      <li className="font-medium text-[18px] my-3">Thêm: -ㄹ게요</li>
+                    </ul>
+                    <GreenExampleBox className="my-3">
+                      <ul className="list-disc list-inside ml-4 mb-3">
+                        <li className="">
+                          주문하다 (gọi món) → 주문할게요 (Tôi sẽ gọi món.)
+                        </li>
+                        <li className="">
+                          보다 (xem) → 볼게요 (Tôi sẽ xem.)
+                        </li>
+                      </ul>
+                    </GreenExampleBox>
+                  </li>
+
+                  <li className="font-semibold text-[18px] my-3">
+                    Trường hợp gốc từ kết thúc bằng phụ âm:
+                    <ul className="list-disc list-inside">
+                      <li className="font-medium text-[18px] my-3">Thêm: -을게요</li>
+                    </ul>
+                    <GreenExampleBox className="my-3">
+                      <ul className="list-disc list-inside ml-4 mb-3">
+                        <li className="">
+                          먹다 (ăn) → 먹을게요 (Tôi sẽ ăn.)
+                        </li>
+                        <li className="">
+                          앉다 (ngồi) → 앉을게요 (Tôi sẽ ngồi.)
+                        </li>
+                      </ul>
+                    </GreenExampleBox>
+                    <MeoNho className="font-medium text-[18px]">
+                      <p>
+                        <b>Mẹo nhỏ:</b> So với câu tường thuật "비빔밥 하나 주문<b>해요</b>",
+                        câu "비빔밥 하나 주문<b>할게요</b>" nghe tự nhiên và chủ động hơn hẳn, vì nó
+                        thể hiện bạn đang thông báo quyết định gọi món của mình cho nhân viên phục vụ.
+                      </p>
+                    </MeoNho>
+                  </li>
+                </ul>
+              </>
+            )
           },
           {
             id: 2,
@@ -1261,6 +1323,62 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             miniGameLink: "/courses/2/topics/5/lessons/2/minigame",
             status: "locked",
             targets: [],
+            grammar: (
+              <>
+                <p className="font-semibold text-xl">
+                  Thì quá khứ: <span className="text-[var(--custom-orange)]">-았/었-</span>
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  Cấu trúc này dùng để diễn tả một hành động đã xảy ra và kết thúc trong quá khứ. Ta thêm trung tố quá khứ (-았 hoặc -었) vào gốc từ, sau đó chia đuôi câu lịch sự ~어요 (tạo thành -았어요 hoặc -었어요).
+                </p>
+                <p className="font-semibold text-[18px] my-3">
+                  Cách chia đuôi:
+                  <ul className="list-disc list-inside">
+                    <li className="font-medium text-[18px] my-3"><b>Bước 1:</b> Bỏ đuôi -다 khỏi gốc từ.</li>
+                    <li className="font-medium text-[18px] my-3"><b>Bước 2:</b> Áp dụng hòa âm, nhìn vào nguyên âm cuối của gốc từ để xác định trung tố quá khứ:</li>
+                  </ul>
+                </p>
+                <GrammarTable
+                  headers={["Gốc từ có chứa nguyên âm ...", "Trung tố Quá khứ", "Ví dụ"]}
+                  rows={[
+                    {
+                      col1: "Sáng (十 hoặc +)",
+                      col2: "-았어요",
+                      col3: "좋다 (tốt) → 좋았어요 (Đã tốt)"
+                    },
+                    {
+                      col1: "Tối (các nguyên âm còn lại)",
+                      col2: "-았어요",
+                      col3: "먹다 (ăn) → 먹었어요 (Đã ăn)"
+                    }
+                  ]}
+                />
+                <p className="font-semibold text-[18px] my-3">
+                  Các Trường hợp Đặc biệt (Ngoại lệ & Rút gọn)
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  Đây là những trường hợp thường gặp khi các âm tiết bị gộp lại:
+                </p>
+                <div className="mx-5">
+                  <p className="font-semibold text-[18px] my-3">
+                    1. Ngoại lệ 하다:
+                  </p>
+                  <li className="list-disc list-inside text-[18px] my-3">Mọi động từ kết thúc bằng -하다 đều đổi thành -했어요.</li>
+                  <GreenExampleBox className="my-3">
+                    <p>주문하다 (gọi món) → 주문했어요 (Đã gọi món)</p>
+                  </GreenExampleBox>
+
+                  <p className="font-semibold text-[18px] my-3">
+                    2. Hợp nhất Nguyên âm:
+                  </p>
+                  <li className="list-disc list-inside text-[18px] my-3">Khi gốc từ kết thúc bằng một nguyên âm, gốc từ và trung tố quá khứ sẽ tự động hợp nhất.</li>
+                  <GreenExampleBox className="my-3">
+                    <p>마시다 (uống) → 마시 + 었어요 → 마셨어요 (Đã uống)<br />
+                      가다 (đi) → 가 + 았어요 → 갔어요 (Đã đi)</p>
+                  </GreenExampleBox>
+                </div>
+              </>
+            )
           },
           {
             id: 3,
@@ -1270,6 +1388,76 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             miniGameLink: "/courses/2/topics/5/lessons/3/minigame",
             status: "locked",
             targets: [],
+            grammar: (
+              <>
+                <p className="font-semibold text-xl my">
+                  Tiểu từ tân ngữ: <span className="text-[var(--custom-orange)]">-을/를-</span>
+                </p>
+                <p className="font-medium text-[18px] my-3">Đây là một trong những ngữ pháp cơ bản và quan trọng nhất. -을/를 được gắn sau danh từ để đánh dấu danh từ đó là Tân ngữ (đối tượng chịu sự tác động của hành động trong câu).</p>
+                <GrammarTable className="my-3"
+                  headers={["Dùng", "Gắn vào sau danh từ kết thúc bằng", "Ví dụ"]}
+                  rows={[
+                    {
+                      col1: "-를 (reul)",
+                      col2: "Nguyên âm",
+                      col3: "저는 콜라를 마셔요. (Tôi uống cola.)"
+                    },
+                    {
+                      col1: "-을 (eul)",
+                      col2: "Phụ âm",
+                      col3: "저는 밥을 먹어요. (Tôi ăn cơm.)"
+                    }
+                  ]}
+                />
+                <hr className="my-3 sm:my-4 border-gray-200" />
+                <p className="font-semibold text-[18px] my-3">
+                  Áp dụng Tiểu từ Tân ngữ: Phân biệt Tính từ (좋다) và Động từ (좋아하다)
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  Mối liên hệ giữa -을/를 và 좋아하다 nằm ở sự thay đổi từ loại:
+                </p>
+                <ul className="list-disc list-inside my-3">
+                  <li className="font-medium text-[18px]">
+                    <b>Tính từ (좋다):</b> Diễn tả một trạng thái.
+                  </li>
+                  <li className="mx-6 font-medium text-[18px]">
+                    Nên: Danh từ đứng trước nó là Chủ ngữ, dùng -이/가.
+                  </li>
+                </ul>
+
+                <ul className="list-disc list-inside my-3">
+                  <li className="font-medium text-[18px]">
+                    <b>Động từ (좋아하다):</b> Về mặt cấu trúc, nó đúng là <b>좋다 + 하</b>. Việc thêm '하' đã biến từ Tính từ (trạng thái) thành Động từ (hành động).
+                  </li>
+                  <li className="mx-6 font-medium text-[18px]">
+                    Nên: Khi có hành động, sẽ có Tân ngữ (đối tượng chịu tác động), và ta phải dùng -을/를 (tiểu từ tân ngữ bạn vừa học).
+                  </li>
+                </ul>
+                <GrammarTable
+                  className="my-3"
+                  headers={["Từ", "Loại từ", "Cấu trúc cơ bản", "Tiểu từ cần dùng", "Ví dụ"]}
+                  rows={[
+                    {
+                      col1: "좋다 (jota)",
+                      col2: "Tính từ (Tốt/Ngon)",
+                      col3: "Trạng thái",
+                      col4: "-이/가",
+                      col5: "불고기가 좋아요. (Món Bulgogi thì ngon/tuyệt.)"
+                    },
+                    {
+                      col1: "좋아하다\n(joahada)",
+                      col2: "Động từ (Thích)",
+                      col3: "Hành động (좋다 + 하)",
+                      col4: "-을/를",
+                      col5: "저는 불고기를 좋아해요. (Tôi thích món Bulgogi.)"
+                    }
+                  ]}
+                />
+                <p className="font-medium text-[18px] my-3">
+                  <b>Tổng kết:</b> Quy tắc cốt lõi là: Khi một Tính từ được chuyển thành Động từ hành động (thường bằng cách thêm -하), nó luôn yêu cầu Tân ngữ và bắt buộc phải dùng tiểu từ -을/를 để chỉ đối tượng tác động.
+                </p>
+              </>
+            )
           },
           {
             id: 4,
@@ -1279,6 +1467,66 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             miniGameLink: "/courses/2/topics/5/lessons/4/minigame",
             status: "locked",
             targets: [],
+            grammar: (
+              <>
+                <p className="font-semibold text-xl my">
+                  Cấu trúc Yêu cầu/Mời gọi lịch sự: <span className="text-[var(--custom-orange)]">-(으)세요</span>
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  Cấu trúc này dùng để ra lệnh, yêu cầu, hoặc mời gọi một người nào đó làm gì, với mức độ lịch sự và trang trọng.
+                </p>
+                <p className="font-semibold text-[18px] my-3">
+                  1. Gốc từ kết thúc bằng nguyên âm (hoặc gốc từ kết thúc bằng phụ âm ㄹ):
+                </p>
+                <ul className="list-disc list-inside">
+                  <li className="font-medium text-[18px] my-3">Thêm: -세요 (Trong trường hợp ㄹ, ta sẽ bỏ ㄹ đi rồi thêm -세요).</li>
+                </ul>
+                <GreenExampleBox className="my-3">
+                  <ul className="list-disc list-inside">
+                    <li className="font-medium text-[18px]">가다 (đi) → 가세요 (Hãy đi đi.)</li>
+                    <li className="font-medium text-[18px]">만들다 (làm) → 만드 + 세요 → 만드세요 (Hãy làm đi ạ.)</li>
+                  </ul>
+                </GreenExampleBox>
+                <p className="font-semibold text-[18px] my-3">
+                  2. Gốc từ kết thúc bằng phụ âm (Trừ ㄹ):
+                </p>
+                <ul className="list-disc list-inside">
+                  <li className="font-medium text-[18px] my-3">Thêm: -으세요</li>
+                </ul>
+                <GreenExampleBox className="my-3">
+                  <ul className="list-disc list-inside">
+                    <li className="font-medium text-[18px]">앉다 (ngồi) → 앉으세요 (Xin mời ngồi ạ.)</li>
+                  </ul>
+                </GreenExampleBox>
+
+                <BorderedGrammarBox
+                  title="Trường hợp Đặc biệt (Kính ngữ của Động từ)"
+                  className="mb-3"
+                >
+                  <p className="font-medium text-[18px]">
+                    Trong tiếng Hàn, một số động từ thông thường có dạng từ riêng biệt (gọi là Kính ngữ từ vựng) để thể hiện sự tôn trọng đối với Chủ ngữ (người được mời).
+                  </p>
+                  <p className="font-medium text-[18px]">
+                    <b>Tại sao phải đổi?</b>
+                    <ul className="list-disc list-inside">
+                      <li className="font-medium text-[18px]">먹다 (ăn) và 마시다 (uống) là các động từ thông thường.</li>
+                      <li className="font-medium text-[18px]">Khi bạn dùng -(으)세요 để mời người lớn tuổi hoặc cấp trên, bạn phải dùng dạng kính ngữ của động từ đó: 드시다.</li>
+                    </ul>
+                  </p>
+
+                  <p className="font-medium text-[18px]">
+                    <b>Quy tắc chia:</b>
+                    <ul className="list-disc list-inside">
+                      <li className="font-medium text-[18px]">Sau khi đổi thành 드시다, ta chia theo quy tắc bình thường:</li>
+                      <li className="font-medium text-[18px]">드시다 → 드 + 세요 → 드세요 (Xin mời ăn/uống ạ.)</li>
+                    </ul>
+                  </p>
+                  <MeoNho className="font-medium text-[16px]">
+                    <b>Mẹo nhỏ:</b> Bạn Chỉ cần nhớ ăn (mời), uống (mời) đều là 드세요
+                  </MeoNho>
+                </BorderedGrammarBox>
+              </>
+            )
           },
           {
             id: 5,
@@ -1310,6 +1558,29 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             miniGameLink: "/courses/2/topics/6/lessons/1/minigame",
             status: "locked",
             targets: [],
+            grammar: (
+              <>
+                <p className="font-semibold text-xl my-3">
+                  Cách nói "Đi/Sử dụng phương tiện":{" "}
+                  <span className="text-[var(--custom-green)]">[Phương tiện]</span>{" "}
+                  +{" "}
+                  <span className="text-[var(--custom-orange)]">-을/를</span>{" "}
+                  <span className="text-[var(--custom-red)]">타다</span>
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  Để diễn tả hành động "đi" hoặc "lên" một phương tiện giao thông nào đó, người Hàn sử dụng động từ <b>타다</b> (tada).
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  <b>Công thức:</b> [Danh từ phương tiện] + -을/를 타다.
+                </p>
+                <GreenExampleBox className="my-3">
+                  <ul className="list-disc list-inside">
+                    <li className="font-medium text-[18px]">지하철을 타요. (Tôi đi tàu điện ngầm.)</li>
+                    <li className="font-medium text-[18px]">버스를 타요. (Tôi đi xe buýt.)</li>
+                  </ul>
+                </GreenExampleBox>
+              </>
+            )
           },
           {
             id: 2,
@@ -1319,6 +1590,36 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             miniGameLink: "/courses/2/topics/6/lessons/2/minigame",
             status: "locked",
             targets: [],
+            grammar: (
+              <>
+                <p className="font-semibold text-xl my-3">
+                  Câu hỏi vị trí: [Địa điểm] + -이/가 어디예요? / 어디에 있어요?
+                </p>
+                <p className="font-semibold text-[18px] my-3">
+                  Hỏi một [Địa điểm] là ở đâu?
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  [Địa điểm] + -이/가 어디예요? (Địa điểm là ở đâu?)
+                </p>
+                <GreenExampleBox className="my-3">
+                  <p className="font-medium text-[18px] my-3">
+                    명동역이 어디예요? (Ga Myeongdong là ở đâu?)
+                  </p>
+                </GreenExampleBox>
+
+                <p className="font-semibold text-[18px] my-3">
+                  Hỏi một [Địa điểm] là ở đâu?
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  [Địa điểm] + -이/가 어디에 있어요? (Địa điểm có ở đâu?)
+                </p>
+                <GreenExampleBox className="my-3">
+                  <p className="font-medium text-[18px] my-3">
+                    화장실이 어디에 있어요? (Nhà vệ sinh có ở đâu ạ?)
+                  </p>
+                </GreenExampleBox>
+              </>
+            )
           },
           {
             id: 3,
@@ -1328,6 +1629,40 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             miniGameLink: "/courses/2/topics/6/lessons/3/minigame",
             status: "locked",
             targets: [],
+            grammar: (
+              <>
+                <p className="font-semibold text-xl my-3">
+                  Tiểu từ chỉ phương hướng: -(으)로
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  Đây là tiểu từ cực kỳ quan trọng khi chỉ đường. Nó được gắn sau danh từ chỉ phương hướng để diễn tả "về phía...", "hướng tới...".
+                </p>
+                <p className="font-semibold text-[18px] my-3">
+                  Quy tắc chia đuôi:
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  <b>-으로</b>: Dùng khi danh từ kết thúc bằng nguyên âm hoặc phụ âm 'ㄹ'.
+                </p>
+                <GreenExampleBox className="my-3">
+                  <p className="font-medium text-[18px] my-3">
+                    오른쪽으로 가세요. (Hãy đi về phía bên phải.)
+                  </p>
+                </GreenExampleBox>
+
+                <p className="font-medium text-[18px] my-3">
+                  <b>으로:</b> Dùng khi danh từ kết thúc bằng phụ âm (trừ 'ㄹ').
+                </p>
+                <GreenExampleBox className="my-3">
+                  <p className="font-medium text-[18px] my-3">
+                    한국으로 여행을 가요. (Tôi đi du lịch đến Hàn Quốc.)
+                  </p>
+                </GreenExampleBox>
+
+                <MeoNho className="font-medium text-[16px]">
+                  <b>Mẹo nhỏ:</b>Dùng -(으)로 để chỉ hướng đi hoặc phương tiện, còn 에 chỉ dùng để chỉ điểm đến cuối cùng (điểm dừng tĩnh).
+                </MeoNho>
+              </>
+            )
           },
           {
             id: 4,
@@ -1337,6 +1672,35 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             miniGameLink: "/courses/2/topics/6/lessons/4/minigame",
             status: "locked",
             targets: [],
+            grammar: (
+              <>
+                <p className="font-semibold text-xl my-3">
+                  Cấu trúc so sánh hơn:{" "}
+                  <span className="text-[var(--custom-green)]">A</span>{" "}
+                  +{" "}
+                  <span className="text-[var(--custom-orange)]">-보다 (더)</span>{" "}
+                  +{" "}
+                  <span className="text-[var(--custom-green)]">B</span>
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  Để so sánh hai đối tượng, ta sử dụng tiểu từ -보다 (boda), có nghĩa là "hơn".
+                </p>
+                <p className="font-medium text-[18px] my-3">
+                  <b>Công thức:</b> [Danh từ A] + [Danh từ B] + -보다 + (더) + [Tính từ/Động từ].
+                </p>
+                <GreenExampleBox className="my-3">
+                  <p className="font-medium text-[18px]">
+                    지하철이 버스보다 (더) 빨라요. (Tàu điện ngầm (thì) nhanh hơn xe buýt.)
+                  </p>
+                  <ul className="list-disc list-inside my-3">
+                    <li className="font-medium text-[18px]">A (지하철) là Chủ ngữ</li>
+                    <li className="font-medium text-[18px]">B (버스) là Danh từ (đối tượng so sánh)</li>
+                    <li className="font-medium text-[18px]">빨라요 (빠르다 - nhanh) là Tính từ</li>
+                  </ul>
+                </GreenExampleBox>
+              </>
+
+            )
           },
           {
             id: 5,
