@@ -1,10 +1,12 @@
+import { button } from "framer-motion/client";
 import React from "react";
 import { PiSpeakerHighFill } from "react-icons/pi";
 
 interface SpeakerBoxProps {
-  text: string;
+  text?: string;
   audioUrl?: string;
-  className?: string;
+  outerClassName?: string;
+  speakerClassName?: string;
 }
 
 // this is used to pass the argument of text and call api to speechlyze
@@ -12,7 +14,8 @@ interface SpeakerBoxProps {
 const SpeakerBox: React.FC<SpeakerBoxProps> = ({
   text,
   audioUrl = "",
-  className,
+  outerClassName = "",
+  speakerClassName = "",
 }) => {
   const handleClick = () => {
     if (audioUrl) {
@@ -25,10 +28,14 @@ const SpeakerBox: React.FC<SpeakerBoxProps> = ({
     }
   };
   return (
-    <PiSpeakerHighFill
+    <button
       onClick={handleClick}
-      className={`inline-block p-1 text-[35px] cursor-pointer rounded-lg border-2 border-gray-300 text-[var(--custom-purple)] ${className}`}
-    />
+      className={`inline-block text-[35px] cursor-pointer rounded-lg border-2 border-gray-300  ${outerClassName}`}
+    >
+      <PiSpeakerHighFill
+        className={`m-3 text-[var(--custom-purple)] ${speakerClassName}`}
+      />
+    </button>
   );
 };
 
