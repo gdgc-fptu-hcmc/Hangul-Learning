@@ -967,7 +967,9 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
           },
           {
             id: 5,
-
+            icon: <FaStar />,
+            lessonLink: "/courses/1/topics/1/lessons/5",
+            miniGameLink: "/courses/1/topics/1/lessons/5/minigame",
             title: "Ôn tập",
             status: "final",
             targets: [
@@ -3089,21 +3091,6 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                   người Hàn thường lược bỏ "에"
                   vì bản thân các từ này đã chỉ rõ thời điểm rồi.
                 </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
               </div>
             ),
           },
@@ -3331,18 +3318,37 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
           },
         ],
       },
+    ],
+  },
+  // Course 2: Cấp độ Trung cấp
+  {
+    id: 2,
+    level: "Cấp độ 2: Trung cấp",
+    title: "Mở rộng giao tiếp",
+    topics: [
       {
         id: 4,
-        title: "...",
-        accent: "from-yellow-200 to-yellow-50 text-yellow-800",
-        barColor: "bg-yellow-400",
-        cta: { label: "...", tone: "accent" },
+        title: "Mua sắm",
+        topicTitleClassName:
+          "text-[var(--custom-red)] bg-[#ffebeb] border-[var(--custom-red)]",
+        mainColor: "--custom-red",
+        images: [
+          "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/images%2Fman-buy-apple.png?alt=media&token=01efb961-7777-48f3-9321-d72942492a46",
+          "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/images%2Fman-luandry.png?alt=media&token=62279745-9b46-4692-ab23-436581d3d5f5",
+        ],
         lessons: [
           {
             id: 1,
-            title: "...",
+            title: "Hỏi giá",
+            icon: <FaDollarSign />,
+            lessonLink: "/courses/2/topics/4/lessons/1",
+            miniGameLink: "/courses/2/topics/4/lessons/1/minigame",
             status: "locked",
-            targets: [],
+            targets: [
+              "Học viên có thể chỉ vào một món đồ và hỏi giá một cách lịch sự.",
+              "Phân biệt và sử dụng đúng các đại từ chỉ định: 이거 (cái này), 그거 (cái đó), 저거 (cái kia).",
+              "Hiểu văn hóa mua sắm khác biệt giữa Chợ truyền thống và Trung tâm thương mại tại Hàn Quốc.",
+            ],
             grammar: (
               <div className="flex flex-col text-[#202020] font-nunito gap-3 md:gap-[18px] text-base md:text-[18px] font-normal leading-normal">
                 <h1 className="text-xl md:text-2xl font-bold">
@@ -3430,229 +3436,6 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
 
               </div>
             ),
-          },
-          {
-            id: 2,
-            title: "...",
-            status: "locked",
-            targets: [],
-            grammar: (
-              <div className="flex flex-col text-[#202020] font-nunito gap-3 md:gap-[18px] text-base md:text-[18px] font-normal leading-normal">
-                <h1 className="text-xl md:text-2xl font-bold">
-                  Cấu trúc yêu cầu với nhiều món đồ: {" "}
-                  <span className="text-[var(--custom-green)]">[Món 1]</span>{" "}
-                  + -<span className="text-[var(--custom-orange)]">하고</span>{" "}
-                  + <span className="text-[var(--custom-green)]">[Món 2]</span>{" "}
-                  + <span className="text-[var(--custom-red)]">주</span>
-                  <span className="text-[var(--custom-orange)]">세요</span>.
-                </h1>
-
-                <p>Khi bạn muốn mua nhiều hơn một món đồ,
-                  bạn có thể nối các danh từ lại với nhau bằng tiểu từ <b>-하고</b> (hago).
-                </p>
-                <p>-하고 (hago) có nghĩa là "và", "với". Nó được dùng để nối hai danh từ với nhau.</p>
-
-                <span><b>Công thức:</b> [Danh từ 1]하고 [Danh từ 2] 주세요.</span>
-
-                <div className="flex flex-col items-start gap-[10px] p-5 w-full rounded-[10px] bg-[#F4FAEE]">
-                  <span className="text-green font-bold">Ví dụ:</span>
-                  <p>콜라 한 병하고 빵 두 개 주세요. (Cho tôi một chai Cola và hai cái bánh mì.)</p>
-                  <p>가방하고 모자 주세요. (Cho tôi cái túi và cái mũ.)</p>
-                </div>
-
-                <p><b>Lưu ý:</b> "-하고" chủ yếu được dùng trong văn nói. Trong văn viết, người ta thường dùng "-와/과".</p>
-              </div>
-            ),
-          },
-          {
-            id: 3,
-            title: "...",
-            status: "final",
-            targets: [],
-            grammar: (
-              <div className="flex flex-col text-[#202020] font-nunito gap-3 md:gap-[18px] text-base md:text-[18px] font-normal leading-normal">
-                <h1 className="text-xl md:text-2xl font-bold">
-                  Cách chia tính từ đuôi {" "}
-                  <span className="text-[var(--custom-orange)]">-아요/어요</span>{" "}
-                </h1>
-
-                <p>Trong tiếng Hàn, cả động từ và tính từ đều cần được chia đuôi để hoàn thành câu.
-                  Đuôi <b>-아요/어요</b> là cách chia lịch sự, được sử dụng phổ biến nhất trong giao tiếp hàng ngày.
-                </p>
-
-                <b>Các bước cơ bản:</b>
-                <ul className="list-disc pl-7 space-y-4">
-                  <li><b>Bước 1 (Làm sạch):</b> Bỏ đuôi -다 khỏi động từ/tính từ nguyên thể để lấy gốc từ.</li>
-                  <li><b>Bước 2 (Xác định):</b> Nhìn vào nguyên âm cuối cùng của gốc từ để áp dụng Quy tắc Hòa âm Nguyên âm dưới đây.</li>
-                </ul>
-
-                {/* Bảng quy tắc */}
-                <div className="rounded-lg border border-gray-300 overflow-hidden">
-                  <table className="w-full table-auto divide-y divide-gray-300 items-start">
-                    <thead className="text-[16px] md:text-[18px]">
-                      <tr>
-                        <th className="px-6 py-3 text-left font-medium border-r border-gray-300">
-                          <b>Nguyên tắc</b>
-                        </th>
-                        <th className="px-6 py-3 text-left font-medium border-r border-gray-300">
-                          <b>Gốc từ có chứa nguyên âm ...</b>
-                        </th>
-                        <th className="px-6 py-3 text-left font-medium border-r border-gray-300">
-                          <b>Kết quả</b>
-                        </th>
-                        <th className="px-6 py-3 text-left font-medium">
-                          <b>Ví dụ minh họa</b>
-                        </th>
-                      </tr>
-                    </thead>
-
-                    <tbody className="divide-y divide-gray-300 text-[16px] md:text-[18px]">
-                      <tr>
-                        <td className="px-6 py-4 whitespace-nowrap font-medium border-r border-gray-300">
-                          Nguyên âm sáng
-                        </td>
-
-                        <td className="px-6 py-4 font-medium border-r border-gray-300">
-                          ㅏ hoặc ㅗ (như 좋, 가, 싸)
-                        </td>
-
-                        <td className="px-6 py-4 font-medium border-r border-gray-300">
-                          Thêm -아요
-                        </td>
-
-                        <td className="px-6 py-4">
-                          <ul className="list-disc pl-7">
-                            <li>좋다 → 좋아요</li>
-                            <li>싸다 → 싸요 (Vì ㅏ + 아요 được rút gọn)</li>
-                          </ul>
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td className="px-6 py-4 whitespace-nowrap font-medium border-r border-gray-300">
-                          Nguyên âm tối
-                        </td>
-
-                        <td className="px-6 py-4 font-medium border-r border-gray-300">
-                          Các nguyên âm còn lại (như ㅓ, ㅜ, ㅡ, ㅣ, v.v.)
-                        </td>
-
-                        <td className="px-6 py-4 font-medium border-r border-gray-300">
-                          Thêm -어요
-                        </td>
-
-                        <td className="px-6 py-4">
-                          <ul className="list-disc pl-7">
-                            <li>있다 → 있어요</li>
-                            <li>예쁘다 → 예뻐요 (Quy tắc rút gọn đặc biệt)</li>
-                          </ul>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-              </div>
-            ),
-          },
-          {
-            id: 4,
-            title: "...",
-            status: "final",
-            targets: [],
-            grammar: (
-              <div className="flex flex-col text-[#202020] font-nunito gap-3 md:gap-[18px] text-base md:text-[18px] font-normal leading-normal">
-                <h1 className="text-xl md:text-2xl font-bold">
-                  Diễn tả Nguyên nhân - Kết quả với {" "}
-                  <span className="text-[var(--custom-orange)]">-아서/어서</span>{" "}
-                </h1>
-
-                <p>Để nói "Vì (làm A)... nên (cảm thấy B)", ta sử dụng cấu trúc này.
-                  Cấu trúc này dùng để diễn tả nguyên nhân, kết quả,
-                  hoặc một hành động xảy ra trước hành động khác.
-                </p>
-                <p>Quy tắc chia đuôi của nó giống hệt với quy tắc Hòa âm Nguyên âm của đuôi -아요/어요.</p>
-
-                <b>Các bước cơ bản:</b>
-                <ul className="list-disc pl-7 space-y-4">
-                  <li><b>Bước 1:</b> Bỏ đuôi -다 khỏi gốc từ.</li>
-                  <li className="space-y-4">
-                    <b>Bước 2:</b> Áp dụng Hòa âm Nguyên âm
-                    <ul className="space-y-4">
-                      <li>
-                        1. Gốc từ có nguyên âm sáng (ㅏ, ㅗ): Thêm -아서
-                        <div className="flex flex-col items-start gap-[10px] p-5 w-full rounded-[10px] bg-[#F4FAEE] mt-3">
-                          <span className="text-green font-bold">Ví dụ:</span>
-                          <p>사다 (mua) → 사 + 아서 → 사서 (vì mua...)</p>
-                          <p>보다 (xem) → 보 + 아서 → 봐서 (vì xem... - rút gọn)</p>
-                        </div>
-                      </li>
-                      <li>
-                        2. Gốc từ có nguyên âm tối (các nguyên âm còn lại): Thêm -어서
-                        <div className="flex flex-col items-start gap-[10px] p-5 w-full rounded-[10px] bg-[#F4FAEE] mt-3">
-                          <span className="text-green font-bold">Ví dụ:</span>
-                          <p>먹다 (ăn) → 먹 + 어서 → 먹어서 (vì ăn...)</p>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="space-y-4">
-                    <b>Bước 3:</b> Bước 3: Ngoại lệ -하다
-                    <ul className="list-disc pl-7">
-                      <li>Mọi động từ/tính từ có đuôi ~하다 đều được chia thành ~해서.</li>
-                    </ul>
-
-                    <div className="flex flex-col items-start gap-[10px] p-5 w-full rounded-[10px] bg-[#F4FAEE]">
-                      <span className="text-green font-bold">Ví dụ:</span>
-                      <p>쇼핑하다 (mua sắm) → 쇼핑해서 (vì mua sắm...)</p>
-                    </div>
-                  </li>
-
-                </ul>
-
-
-
-
-
-
-
-
-              </div>
-            ),
-          },
-        ],
-      },
-    ],
-  },
-  // Course 2: Cấp độ Trung cấp
-  {
-    id: 2,
-    level: "Cấp độ 2: Trung cấp",
-    title: "Mở rộng giao tiếp",
-    topics: [
-      {
-        id: 4,
-        title: "Mua sắm",
-        topicTitleClassName:
-          "text-[var(--custom-red)] bg-[#ffebeb] border-[var(--custom-red)]",
-        mainColor: "--custom-red",
-        images: [
-          "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/images%2Fman-buy-apple.png?alt=media&token=01efb961-7777-48f3-9321-d72942492a46",
-          "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/images%2Fman-luandry.png?alt=media&token=62279745-9b46-4692-ab23-436581d3d5f5",
-        ],
-        lessons: [
-          {
-            id: 1,
-            title: "Hỏi giá",
-            icon: <FaDollarSign />,
-            lessonLink: "/courses/2/topics/4/lessons/1",
-            miniGameLink: "/courses/2/topics/4/lessons/1/minigame",
-            status: "locked",
-            targets: [
-              "Học viên có thể chỉ vào một món đồ và hỏi giá một cách lịch sự.",
-              "Phân biệt và sử dụng đúng các đại từ chỉ định: 이거 (cái này), 그거 (cái đó), 저거 (cái kia).",
-              "Hiểu văn hóa mua sắm khác biệt giữa Chợ truyền thống và Trung tâm thương mại tại Hàn Quốc.",
-            ],
             vnDialogue: {
               mainRole: "A", // Người học đóng vai Khách hàng (A)
               hasSpeakerBox: false,
@@ -3811,6 +3594,33 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
               "Sử dụng thành thạo cấu trúc nối danh từ '-하고' (và) để mua nhiều món đồ.",
               "Hiểu văn hóa 'Service' (đồ tặng kèm) hào phóng của người Hàn Quốc.",
             ],
+            grammar: (
+              <div className="flex flex-col text-[#202020] font-nunito gap-3 md:gap-[18px] text-base md:text-[18px] font-normal leading-normal">
+                <h1 className="text-xl md:text-2xl font-bold">
+                  Cấu trúc yêu cầu với nhiều món đồ: {" "}
+                  <span className="text-[var(--custom-green)]">[Món 1]</span>{" "}
+                  + -<span className="text-[var(--custom-orange)]">하고</span>{" "}
+                  + <span className="text-[var(--custom-green)]">[Món 2]</span>{" "}
+                  + <span className="text-[var(--custom-red)]">주</span>
+                  <span className="text-[var(--custom-orange)]">세요</span>.
+                </h1>
+
+                <p>Khi bạn muốn mua nhiều hơn một món đồ,
+                  bạn có thể nối các danh từ lại với nhau bằng tiểu từ <b>-하고</b> (hago).
+                </p>
+                <p>-하고 (hago) có nghĩa là "và", "với". Nó được dùng để nối hai danh từ với nhau.</p>
+
+                <span><b>Công thức:</b> [Danh từ 1]하고 [Danh từ 2] 주세요.</span>
+
+                <div className="flex flex-col items-start gap-[10px] p-5 w-full rounded-[10px] bg-[#F4FAEE]">
+                  <span className="text-green font-bold">Ví dụ:</span>
+                  <p>콜라 한 병하고 빵 두 개 주세요. (Cho tôi một chai Cola và hai cái bánh mì.)</p>
+                  <p>가방하고 모자 주세요. (Cho tôi cái túi và cái mũ.)</p>
+                </div>
+
+                <p><b>Lưu ý:</b> "-하고" chủ yếu được dùng trong văn nói. Trong văn viết, người ta thường dùng "-와/과".</p>
+              </div>
+            ),
             vnDialogue: {
               mainRole: "A", // Người học đóng vai Khách hàng (A)
               hasSpeakerBox: false,
@@ -3972,6 +3782,91 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
               "Nắm vững quy tắc chia tính từ đuôi '-아요/어요' (Ví dụ: 싸요, 비싸요).",
               "Hiểu văn hóa mặc cả '깎아주세요' (Giảm giá đi ạ) tại các chợ truyền thống.",
             ],
+            grammar: (
+              <div className="flex flex-col text-[#202020] font-nunito gap-3 md:gap-[18px] text-base md:text-[18px] font-normal leading-normal">
+                <h1 className="text-xl md:text-2xl font-bold">
+                  Cách chia tính từ đuôi {" "}
+                  <span className="text-[var(--custom-orange)]">-아요/어요</span>{" "}
+                </h1>
+
+                <p>Trong tiếng Hàn, cả động từ và tính từ đều cần được chia đuôi để hoàn thành câu.
+                  Đuôi <b>-아요/어요</b> là cách chia lịch sự, được sử dụng phổ biến nhất trong giao tiếp hàng ngày.
+                </p>
+
+                <b>Các bước cơ bản:</b>
+                <ul className="list-disc pl-7 space-y-4">
+                  <li><b>Bước 1 (Làm sạch):</b> Bỏ đuôi -다 khỏi động từ/tính từ nguyên thể để lấy gốc từ.</li>
+                  <li><b>Bước 2 (Xác định):</b> Nhìn vào nguyên âm cuối cùng của gốc từ để áp dụng Quy tắc Hòa âm Nguyên âm dưới đây.</li>
+                </ul>
+
+                {/* Bảng quy tắc */}
+                <div className="rounded-lg border border-gray-300 overflow-hidden">
+                  <table className="w-full table-auto divide-y divide-gray-300 items-start">
+                    <thead className="text-[16px] md:text-[18px]">
+                      <tr>
+                        <th className="px-6 py-3 text-left font-medium border-r border-gray-300">
+                          <b>Nguyên tắc</b>
+                        </th>
+                        <th className="px-6 py-3 text-left font-medium border-r border-gray-300">
+                          <b>Gốc từ có chứa nguyên âm ...</b>
+                        </th>
+                        <th className="px-6 py-3 text-left font-medium border-r border-gray-300">
+                          <b>Kết quả</b>
+                        </th>
+                        <th className="px-6 py-3 text-left font-medium">
+                          <b>Ví dụ minh họa</b>
+                        </th>
+                      </tr>
+                    </thead>
+
+                    <tbody className="divide-y divide-gray-300 text-[16px] md:text-[18px]">
+                      <tr>
+                        <td className="px-6 py-4 whitespace-nowrap font-medium border-r border-gray-300">
+                          Nguyên âm sáng
+                        </td>
+
+                        <td className="px-6 py-4 font-medium border-r border-gray-300">
+                          ㅏ hoặc ㅗ (như 좋, 가, 싸)
+                        </td>
+
+                        <td className="px-6 py-4 font-medium border-r border-gray-300">
+                          Thêm -아요
+                        </td>
+
+                        <td className="px-6 py-4">
+                          <ul className="list-disc pl-7">
+                            <li>좋다 → 좋아요</li>
+                            <li>싸다 → 싸요 (Vì ㅏ + 아요 được rút gọn)</li>
+                          </ul>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td className="px-6 py-4 whitespace-nowrap font-medium border-r border-gray-300">
+                          Nguyên âm tối
+                        </td>
+
+                        <td className="px-6 py-4 font-medium border-r border-gray-300">
+                          Các nguyên âm còn lại (như ㅓ, ㅜ, ㅡ, ㅣ, v.v.)
+                        </td>
+
+                        <td className="px-6 py-4 font-medium border-r border-gray-300">
+                          Thêm -어요
+                        </td>
+
+                        <td className="px-6 py-4">
+                          <ul className="list-disc pl-7">
+                            <li>있다 → 있어요</li>
+                            <li>예쁘다 → 예뻐요 (Quy tắc rút gọn đặc biệt)</li>
+                          </ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+            ),
             vnDialogue: {
               mainRole: "A", // Người học đóng vai Khách hàng (A)
               hasSpeakerBox: false,
@@ -4142,6 +4037,56 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
               "Biết cách bày tỏ cảm xúc vui vẻ, hạnh phúc khi mua được món đồ ưng ý.",
               "Sử dụng cấu trúc nguyên nhân - kết quả '-아서/어서' (Vì... nên...).",
             ],
+            grammar: (
+              <div className="flex flex-col text-[#202020] font-nunito gap-3 md:gap-[18px] text-base md:text-[18px] font-normal leading-normal">
+                <h1 className="text-xl md:text-2xl font-bold">
+                  Diễn tả Nguyên nhân - Kết quả với {" "}
+                  <span className="text-[var(--custom-orange)]">-아서/어서</span>{" "}
+                </h1>
+
+                <p>Để nói "Vì (làm A)... nên (cảm thấy B)", ta sử dụng cấu trúc này.
+                  Cấu trúc này dùng để diễn tả nguyên nhân, kết quả,
+                  hoặc một hành động xảy ra trước hành động khác.
+                </p>
+                <p>Quy tắc chia đuôi của nó giống hệt với quy tắc Hòa âm Nguyên âm của đuôi -아요/어요.</p>
+
+                <b>Các bước cơ bản:</b>
+                <ul className="list-disc pl-7 space-y-4">
+                  <li><b>Bước 1:</b> Bỏ đuôi -다 khỏi gốc từ.</li>
+                  <li className="space-y-4">
+                    <b>Bước 2:</b> Áp dụng Hòa âm Nguyên âm
+                    <ul className="space-y-4">
+                      <li>
+                        1. Gốc từ có nguyên âm sáng (ㅏ, ㅗ): Thêm -아서
+                        <div className="flex flex-col items-start gap-[10px] p-5 w-full rounded-[10px] bg-[#F4FAEE] mt-3">
+                          <span className="text-green font-bold">Ví dụ:</span>
+                          <p>사다 (mua) → 사 + 아서 → 사서 (vì mua...)</p>
+                          <p>보다 (xem) → 보 + 아서 → 봐서 (vì xem... - rút gọn)</p>
+                        </div>
+                      </li>
+                      <li>
+                        2. Gốc từ có nguyên âm tối (các nguyên âm còn lại): Thêm -어서
+                        <div className="flex flex-col items-start gap-[10px] p-5 w-full rounded-[10px] bg-[#F4FAEE] mt-3">
+                          <span className="text-green font-bold">Ví dụ:</span>
+                          <p>먹다 (ăn) → 먹 + 어서 → 먹어서 (vì ăn...)</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li className="space-y-4">
+                    <b>Bước 3:</b> Bước 3: Ngoại lệ -하다
+                    <ul className="list-disc pl-7">
+                      <li>Mọi động từ/tính từ có đuôi ~하다 đều được chia thành ~해서.</li>
+                    </ul>
+
+                    <div className="flex flex-col items-start gap-[10px] p-5 w-full rounded-[10px] bg-[#F4FAEE]">
+                      <span className="text-green font-bold">Ví dụ:</span>
+                      <p>쇼핑하다 (mua sắm) → 쇼핑해서 (vì mua sắm...)</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            ),
             vnDialogue: {
               mainRole: "A", // Người học đóng vai Khách hàng (A)
               hasSpeakerBox: false,

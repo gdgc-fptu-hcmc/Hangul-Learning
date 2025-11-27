@@ -66,57 +66,67 @@ const TopicSection: React.FC<TopicSectionProps> = ({
                   {/* Desktop: original roadmap layout */}
                   <div className="hidden md:grid max-w-xl h-full mx-auto grid-cols-2 auto-rows-[150px]">
                     <div className="relative border-t-4 border-l-4 border-dashed border-gray-300 rounded-tl-[100%]">
-                      <LessonNodeOnRoadmap
-                        icon={topic.lessons[0].icon}
-                        title={topic.lessons[0].title}
-                        lessonLink={topic.lessons[0].lessonLink}
-                        miniGameLink={topic.lessons[0].miniGameLink}
-                        mainColor={topic.mainColor}
-                        className="absolute left-full -translate-x-1/2 top-0 -translate-y-1/2 z-[999]"
-                      />
+                      {topic.lessons[0] && (
+                        <LessonNodeOnRoadmap
+                          icon={topic.lessons[0].icon}
+                          title={topic.lessons[0].title}
+                          lessonLink={topic.lessons[0].lessonLink}
+                          miniGameLink={topic.lessons[0].miniGameLink}
+                          mainColor={topic.mainColor}
+                          className="absolute left-full -translate-x-1/2 top-0 -translate-y-1/2 z-[999]"
+                        />
+                      )}
                     </div>
                     <div />
                     <div className="relative border-b-4 border-l-4 border-dashed border-gray-300 rounded-bl-[100%]">
-                      <LessonNodeOnRoadmap
-                        icon={topic.lessons[1].icon}
-                        title={topic.lessons[1].title}
-                        lessonLink={topic.lessons[1].lessonLink}
-                        miniGameLink={topic.lessons[1].miniGameLink}
-                        mainColor={topic.mainColor}
-                        className="absolute left-0 -translate-x-1/2 top-0 -translate-y-1/2 z-[998]"
-                      />
+                      {topic.lessons[1] && (
+                        <LessonNodeOnRoadmap
+                          icon={topic.lessons[1].icon}
+                          title={topic.lessons[1].title}
+                          lessonLink={topic.lessons[1].lessonLink}
+                          miniGameLink={topic.lessons[1].miniGameLink}
+                          mainColor={topic.mainColor}
+                          className="absolute left-0 -translate-x-1/2 top-0 -translate-y-1/2 z-[998]"
+                        />
+                      )}
                     </div>
                     <div />
                     <div />
                     <div className="relative border-t-4 border-r-4 border-dashed border-gray-300 rounded-tr-[100%]">
-                      <LessonNodeOnRoadmap
-                        icon={topic.lessons[2].icon}
-                        title={topic.lessons[2].title}
-                        lessonLink={topic.lessons[2].lessonLink}
-                        miniGameLink={topic.lessons[2].miniGameLink}
-                        mainColor={topic.mainColor}
-                        className="absolute left-0 -translate-x-1/2 top-0 -translate-y-1/2 z-[997]"
-                      />
+                      {topic.lessons[2] && (
+                        <LessonNodeOnRoadmap
+                          icon={topic.lessons[2].icon}
+                          title={topic.lessons[2].title}
+                          lessonLink={topic.lessons[2].lessonLink}
+                          miniGameLink={topic.lessons[2].miniGameLink}
+                          mainColor={topic.mainColor}
+                          className="absolute left-0 -translate-x-1/2 top-0 -translate-y-1/2 z-[997]"
+                        />
+                      )}
                     </div>
                     <div className="relative">
-                      <LessonNodeOnRoadmap
-                        icon={topic.lessons[4].icon}
-                        title={topic.lessons[4].title}
-                        lessonLink={topic.lessons[4].lessonLink}
-                        miniGameLink={topic.lessons[4].miniGameLink}
-                        mainColor={topic.mainColor}
-                        className="absolute left-full -translate-x-1/2 top-full -translate-y-1/2  z-[995]"
-                      />
+                      {topic.lessons[4] && (
+                        <LessonNodeOnRoadmap
+                          icon={topic.lessons[4].icon}
+                          title={topic.lessons[4].title}
+                          lessonLink={topic.lessons[4].lessonLink}
+                          miniGameLink={topic.lessons[4].miniGameLink}
+                          mainColor={topic.mainColor}
+                          className="absolute left-full -translate-x-1/2 top-full -translate-y-1/2  z-[995]"
+                        />
+                      )}
                     </div>
                     <div className="relative border-b-4 border-r-4 border-dashed border-gray-300 rounded-br-[100%]">
-                      <LessonNodeOnRoadmap
-                        icon={topic.lessons[3].icon}
-                        title={topic.lessons[3].title}
-                        lessonLink={topic.lessons[3].lessonLink}
-                        miniGameLink={topic.lessons[3].miniGameLink}
-                        mainColor={topic.mainColor}
-                        className="absolute left-full -translate-x-1/2 top-0 -translate-y-1/2 z-[996]"
-                      />
+                      {topic.lessons[3] && (
+                        <LessonNodeOnRoadmap
+                          icon={topic.lessons[3].icon}
+                          title={topic.lessons[3].title}
+                          lessonLink={topic.lessons[3].lessonLink}
+                          miniGameLink={topic.lessons[3].miniGameLink}
+                          mainColor={topic.mainColor}
+                          className="absolute left-full -translate-x-1/2 top-0 -translate-y-1/2 z-[996]"
+                        />
+                      )}
                     </div>
                   </div>
                 </>
