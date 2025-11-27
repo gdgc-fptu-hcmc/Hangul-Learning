@@ -4,6 +4,7 @@ import speakerBAvatarUrl from "@/assets/images/lessons/speaker-B.svg";
 import MeoNho from "@/components/grammar/MeoNho";
 import PurpleFlashCard from "@/components/grammar/PurpleFlashCard";
 import TuKhoa from "@/components/grammar/TuKhoa";
+import { P } from "node_modules/framer-motion/dist/types.d-BJcRxCew";
 import BorderedGrammarBox from "../components/grammar/BorderedGrammarBox.jsx";
 import GreenExampleBox from "@/components/grammar/GreenExampleBox";
 import GrammarTable from "@/components/grammar/GrammarTable";
@@ -36,6 +37,7 @@ import { IoHomeSharp } from "react-icons/io5";
 import { MdEmojiEmotions, MdOutlineSportsEsports } from "react-icons/md";
 import { TbCoins } from "react-icons/tb";
 import { WiDaySunnyOvercast } from "react-icons/wi";
+
 
 export const learningCourses: LearningCourse[] = [
   // Course 1: Cấp độ Sơ cấp
@@ -1423,6 +1425,77 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                 },
               ],
             },
+            grammar: (
+              <div className="flex flex-col text-[#202020] font-nunito gap-3 md:gap-[18px] text-base md:text-[18px] font-normal leading-normal">
+                <h1 className="text-xl md:text-2xl font-bold">
+                  <span>Sở hữu cách với "
+                    <span className="text-[var(--custom-orange)]">우리</span>" (uri) và "
+                    <span className="text-[var(--custom-orange)]">제</span>" (je)
+                  </span>
+                </h1>
+
+                <p>Khi muốn nói "của tôi" trong tiếng Hàn (như "tên của tôi" hay "nhà của tôi"), bạn sẽ dùng từ gì?</p>
+                <p>Không giống tiếng Anh (chỉ cần một từ "my"), tiếng Hàn có hai cách nói "của tôi" rất phổ biến.
+                  Việc dùng từ nào sẽ phụ thuộc vào việc bạn đang nói về thứ gì, và bạn đang nói chuyện với ai.</p>
+                <p>Hãy cùng tìm hiểu sự khác biệt giữa hai từ 제 (je) và 우리 (uri) nhé.</p>
+
+                <div className="xl:w-[100%] w-full mx-auto flex gap-16 xl:flex-row flex-col">
+                  <PurpleFlashCard
+                    header="제 (je)"
+                    className="text-sm font-medium flex-1 h-full">
+                    <div className="text-[16px] md:text-[18px] text-[#202020] font-nunito font-normal leading-normal">
+                      <p>Là dạng khiêm tốn của “내 (nae)” – nghĩa là “của tôi”.</p>
+                      <ul className="list-disc pl-5 md:pl-7 mt-2 space-y-4">
+                        <li><b>Dùng cho:</b> vật sở hữu mang tính cá nhân.</li>
+                        <li>
+                          <b>Ví dụ:</b>
+                          <ul className="list-disc pl-5 md:pl-7 mt-2">
+                            <li>제 이름 → Tên của tôi</li>
+                            <li>제 책 → Sách của tôi</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="mt-3 md:mt-4">
+                      <TuKhoa className="text-[#202020] font-nunito text-[18px] font-normal leading-normal">
+                        <b>Từ khóa:</b>  Cá nhân, Khiêm tốn, Lịch sự.
+                      </TuKhoa>
+                    </div>
+                  </PurpleFlashCard>
+
+                  <PurpleFlashCard
+                    header="우리 (uri)"
+                    className="text-sm font-medium flex-1 h-full">
+                    <div className="text-[16px] md:text-[18px] text-[#202020] font-nunito font-normal leading-normal">
+                      <p>Nghĩa gốc là “của chúng tôi”, nhưng được dùng ngay cả khi chỉ nói về chính bản thân mình.</p>
+                      <ul className="list-disc pl-5 md:pl-7 mt-2">
+                        <li><b>Dùng cho: </b>các điều thân thuộc, danh từ mang tính tập thể (gia đình, nhà, trường, đất nước).</li>
+                        <li><b>Ví dụ: </b>
+                          <ul className="list-disc pl-5 md:pl-7 mt-2">
+                            <li>우리 가족 → Gia đình tôi</li>
+                            <li>우리 나라 → Đất nước tôi</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="">
+                      <TuKhoa className="text-[#202020] font-nunito text-[18px] font-normal leading-normal">
+                        <b>Từ khóa:</b>  Tập thể, Gắn bó, Thân thuộc
+                      </TuKhoa>
+                    </div>
+
+                  </PurpleFlashCard>
+                </div>
+
+                <MeoNho className="mt-10">
+                  <b>Mẹo nhỏ:</b> Khi nói về người thân, nhà, trường, ưu tiên dùng 우리.
+                  Còn khi nói về đồ vật, tài sản cá nhân, dùng 제.
+                  Nói "우리 어머니" (mẹ của chúng tôi/tôi) nghe sẽ tự nhiên và thân thuộc hơn là "제 어머니".
+                </MeoNho>
+
+
+              </div>
+            ),
           },
           {
             id: 2,
@@ -1598,6 +1671,41 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                 },
               ],
             },
+            grammar: (
+              <div className="flex flex-col items-start gap-[18px] p-10 self-stretch text-[#202020] font-nunito text-[18px] font-normal leading-normal">
+                <h1 className="text-xl md:text-2xl font-bold">
+                  <span>
+                    Cấu trúc sở hữu:{" "}
+                    <span className="text-[var(--custom-green)]">[Danh từ]</span>{" "}
+                    + <span className="text-[var(--custom-orange)]">이/가</span>{" "}
+                    <span className="text-[var(--custom-purple)]">있다/없다</span>
+                  </span>
+                </h1>
+
+                <p>Đây là cấu trúc cơ bản để nói "Có/Không có cái gì đó".</p>
+                <span><b>[Danh từ] + 이 있다/없다: </b>Dùng khi danh từ kết thúc bằng phụ âm (patchim).</span>
+                <ul className="list-disc pl-7 mt-2">
+                  <li>책이 있어요. (Tôi có sách.) <b>- 책 (chaek)</b> kết thúc bằng 'ㄱ'.</li>
+                </ul>
+                <span><b>[Danh từ] + 가 있다/없다: </b>Dùng khi danh từ kết thúc bằng nguyên âm.</span>
+                <ul className="list-disc pl-7 mt-2">
+                  <li>친구가 없어요. (Tôi không có bạn.) <b>- 친구 (chingu)</b> kết thúc bằng nguyên âm '우'.</li>
+                </ul>
+
+                <div className="flex flex-col items-start gap-[10px] p-5 w-full rounded-[10px] bg-[#F4FAEE]">
+                  <span className="text-green font-bold">Ví dụ:</span>
+                  <span>저는 친구가 있어요. (Tôi có bạn bè.)</span>
+                  <ul className="list-disc pl-9">
+                    <li>Chủ thể sở hữu: 저 (Tôi) + 는</li>
+                    <li>Đối tượng bị sở hữu: 친구 (Bạn bè) + 가</li>
+                    <li>Động từ sở hữu: 있어요 (Có)</li>
+                  </ul>
+                </div>
+
+
+
+              </div>
+            ),
           },
           {
             id: 3,
@@ -1765,6 +1873,41 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                 },
               ],
             },
+            grammar: (
+              <div className="flex flex-col items-start gap-[18px] p-10 self-stretch text-[#202020] font-nunito text-[18px] font-normal leading-normal">
+                <h1 className="text-xl md:text-2xl font-bold">
+                  <span>
+                    Đuôi câu thân mật, lịch sự: {" "}
+                    <span className="text-[var(--custom-orange)]">-이에요 / -예요</span>{" "}
+                  </span>
+                </h1>
+
+                <p>Ở Chủ đề 1, bạn đã học đuôi câu trang trọng <b>"-입니다".</b>
+                  Bây giờ, chúng ta sẽ học một đuôi câu phổ biến hơn trong giao tiếp hàng ngày:
+                  <b>-이에요 / -예요.</b> Cả hai đều có nghĩa là "là".</p>
+
+                <span><b>[Danh từ] + -이에요</b> (ieyo): Dùng khi gốc danh từ kết thúc bằng phụ âm (patchim).</span>
+                <ul className="list-disc pl-7">
+                  <li>이것은 책이에요. (Đây là quyển sách.)</li>
+                  <li>우리 가족이에요. (Đây là gia đình tôi.)</li>
+                </ul>
+
+                <span><b>[Danh từ] + -예요</b>(yeyo): Dùng khi danh từ kết thúc bằng nguyên âm.</span>
+                <ul className="list-disc pl-7">
+                  <li>저는 학생이에요. (Tôi là học sinh.)</li>
+                  <li>우리 엄마예요. (Đây là mẹ tôi.)</li>
+                </ul>
+
+                <div className="flex flex-col items-start gap-[10px] p-5 w-full rounded-[10px] bg-[#F4FAEE]">
+                  <span className="text-green font-bold">Ví dụ:</span>
+                  <ul className="list-disc pl-7">
+                    <li>우리 가족은 최고예요! (Gia đình chúng ta là tuyệt nhất!)</li>
+                    <li>최고 (choego) kết thúc bằng nguyên âm 'ㅗ', nên kết hợp với -예요.</li>
+                  </ul>
+                </div>
+              </div>
+
+            ),
           },
           {
             id: 4,
@@ -1913,6 +2056,98 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                 },
               ],
             },
+            grammar: (
+              <div className="flex flex-col items-start gap-[18px] p-10 self-stretch text-[#202020] font-nunito text-[18px] font-normal leading-normal">
+                <h1 className="text-xl md:text-2xl font-bold">
+                  <span>
+                    Diễn đạt lòng biết ơn với "
+                    <span className="text-[var(--custom-orange)]">늘</span>
+                    " (neul) và "
+                    <span className="text-[var(--custom-orange)]">항상</span>
+                    " (hangsang)
+                  </span>
+                </h1>
+
+                <p>Khi muốn diễn đạt lòng biết ơn một cách sâu sắc,
+                  thể hiện rằng đó là sự trân trọng kéo dài chứ không phải cảm xúc nhất thời,
+                  bạn có thể thêm các phó từ "luôn luôn" vào trước lời cảm ơn.</p>
+                <p>Trong tiếng Hàn, hai từ phổ biến nhất để làm điều này là <b>늘</b> (neul) và <b>항상</b> (hangsang).</p>
+
+                <div className="xl:w-[100%] w-full mx-auto flex gap-16 xl:flex-row flex-col">
+                  <PurpleFlashCard
+                    header="늘 (neul)"
+                    className="text-sm font-medium flex-1 h-full flex flex-col justify-between">
+                    <div className="text-[16px] md:text-[18px] text-[#202020] font-nunito font-normal leading-normal">
+                      <span>Mang nghĩa "luôn luôn".</span>
+                      <ul className="list-disc pl-5 md:pl-7 mt-2 space-y-4">
+                        <li><b>Nhấn mạnh: </b>trạng thái (cảm xúc) liên tục.</li>
+                        <li><b>Sắc thái:</b> Tạo cảm giác tình cảm, gần gũi và có phần văn thơ. </li>
+                        <li><b>Ví dụ:</b> 늘 고맙습니다 → (Em/Con) luôn biết ơn.</li>
+                      </ul>
+                    </div>
+
+                    <TuKhoa className="text-[#202020] font-nunito text-[18px] font-normal leading-normal mt-[50px]">
+                      <b>Từ khóa:</b>  Liên tục, Tình cảm, Gần gũi.
+                    </TuKhoa>
+                  </PurpleFlashCard>
+
+                  <PurpleFlashCard
+                    header="항상 (hangsang)"
+                    className="text-sm font-medium flex-1 h-full flex flex-col justify-between">
+                    <div className="text-[16px] md:text-[18px] text-[#202020] font-nunito font-normal leading-normal">
+                      <span>Mang nghĩa "luôn luôn".</span>
+                      <ul className="list-disc pl-5 md:pl-7 mt-2 space-y-4">
+                        <li><b>Nhấn mạnh: </b>tần suất, sự lặp lại (thói quen). Mang nghĩa "lần nào cũng vậy".</li>
+                        <li><b>Sắc thái:</b> Trung tính và đa dụng, dùng được trong mọi hoàn cảnh (cả thân mật và trang trọng).</li>
+                        <li><b>Ví dụ:</b> 항상 감사합니다 → (Tôi luôn luôn [lần nào cũng] cảm ơn.)</li>
+                      </ul>
+                    </div>
+
+                    <TuKhoa className="text-[#202020] font-nunito text-[18px] font-normal leading-normal">
+                      <b>Từ khóa:</b>  Thói quen, Lặp lại, Đa dụng.
+                    </TuKhoa>
+                  </PurpleFlashCard>
+                </div>
+
+                <div className="flex p-[30px] flex-col items-start gap-[18px] self-stretch rounded-[10px] border-2 border-[#D9D9D9">
+
+                  <b>Phân tích sâu hai ví dụ</b>
+                  <span>Mặc dù cả hai đều đúng, nhưng chúng tạo ra những sắc thái khác nhau một chút:</span>
+                  {/* Dùng 늘 */}
+                  <ul className="list-disc pl-7">
+                    <li>
+                      <b>Dùng "늘" (neul):</b>
+                      <ul className="list-disc pl-7">
+                        <li>Câu nói: 늘 고맙습니다.</li>
+                        <li>Ngụ ý: "Lòng biết ơn của tôi dành cho bạn là một trạng thái liên tục".</li>
+                        <li>Trọng tâm: Nhấn mạnh vào cảm xúc (trạng thái không đổi).
+                          Thường mang lại cảm giác tình cảm, gần gũi hơn.
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  {/* Dùng 항상 */}
+                  <ul className="list-disc pl-7">
+                    <li>
+                      <b>Dùng "항상" (hangsang):</b>
+                      <ul className="list-disc pl-7">
+                        <li>Câu nói: 항상 감사합니다.</li>
+                        <li>Ngụ ý: "Lần nào bạn giúp tôi cũng cảm ơn".</li>
+                        <li>Trọng tâm: Nhấn mạnh vào hành động (tần suất lặp lại).
+                          Đây là cách nói phổ biến và an toàn trong hầu hết các tình huống.
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+
+                  <MeoNho>
+                    <b>Mẹo nhỏ:</b> Dùng <b>항상</b> khi bạn biết ơn về những lần họ giúp,
+                    và dùng <b>늘</b> khi bạn biết ơn vì sự tồn tại/sự hỗ trợ liên tục của họ.
+                  </MeoNho>
+                </div>
+              </div>
+
+            ),
           },
           {
             id: 5,
@@ -2276,8 +2511,116 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                 },
               ],
             },
-          },
+            grammar: (
+              <div className="flex flex-col text-[#202020] font-nunito gap-3 md:gap-[18px] text-base md:text-[18px] font-normal leading-normal">
+                <h1 className="text-xl md:text-2xl font-bold">
+                  Quy tắc biến đổi số điểm khi có đơn vị đi kèm
+                </h1>
 
+                <p>
+                  Đây là một quy tắc cực kỳ quan trọng. Khi các số 하나 (1), 둘 (2), 셋 (3), 넷 (4) đứng trước một danh từ đếm (như cái, người, giờ), chúng sẽ bị biến đổi, <b>lược bỏ phụ âm cuối.</b>
+                </p>
+
+                <p>
+                  Trong tiếng Hàn, hai từ phổ biến nhất để làm điều này là <span className="font-bold">블</span> (neul) và <span className="font-bold">항상</span> (hangsang).
+                </p>
+
+                {/* Bảng quy tắc */}
+                <div className="overflow-hidden rounded-lg border border-gray-300 ">
+                  <table className="min-w-full divide-y divide-gray-300 items-start">
+                    <thead className="text-[18px]">
+                      <tr>
+                        <th className="px-6 py-3 text-left font-medium border-r border-gray-300">
+                          <b>Số đếm</b>
+                        </th>
+                        <th className="px-6 py-3 text-left font-medium">
+                          <b>Số đếm đi kèm đơn vị</b>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-300 text-[18px]">
+                      <tr>
+                        <td className="px-6 py-4 whitespace-nowrap font-medium border-r border-gray-300">
+                          하나 (hana)
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap ">
+                          한 (han)
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="px-6 py-4 whitespace-nowrap font-medium  border-r border-gray-300">
+                          듣 (dul)
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          두 (du)
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="px-6 py-4 whitespace-nowrap font-medium  border-r border-gray-300">
+                          셋 (set)
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          세 (se)
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="px-6 py-4 whitespace-nowrapfont-medium border-r border-gray-300">
+                          빛 (net)
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          네 (ne)
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="px-6 py-4 whitespace-nowrap font-medium border-r border-gray-300">
+                          다섯 (daseot) trở đi
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          Giữ nguyên
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+
+                {/* Ví dụ */}
+                <div className="flex flex-col items-start gap-[10px] p-5 w-full rounded-[10px] bg-[#F4FAEE]">
+                  <span className="text-green font-bold">Ví dụ:</span>
+                  <ul className="list-disc pl-7">
+                    <li>Một người:
+                      <ul className="list-disc pl-7">
+                        <li>하나 사람 (hana salam) <b className="text-[#BB3030]">(SAI)</b></li>
+                        <li>한 명* (han myeong) <b className="text-[#6BA823]">(ĐÚNG)</b></li>
+                      </ul>
+                    </li>
+                    <li>Hai giờ:
+                      <ul className="list-disc pl-7">
+                        <li>둘 시간 (dul sigan) <b className="text-[#BB3030]">(SAI)</b></li>
+                        <li>두 시* (du si) <b className="text-[#6BA823]">(ĐÚNG)</b></li>
+                      </ul>
+                    </li>
+                    <li>Ba cái:
+                      <ul className="list-disc pl-7">
+                        <li>셋 개 (set gae) <b className="text-[#BB3030]">(SAI)</b></li>
+                        <li>세 개 (se gae) <b className="text-[#6BA823]">(ĐÚNG)</b></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+
+                <p className="text-[#202020] font-nunito text-[16px] italic font-normal leading-normal">
+                  * Khi đếm, một số danh từ (như "người", "giờ") phải dùng "đơn vị đếm" riêng (như 명, 시).
+                </p>
+
+                <div className="w-full h-[1px] bg-[#D9D9D9]"></div>
+
+                <p>Bạn sẽ thấy quy tắc này được áp dụng liên tục trong các bài tiếp theo!</p>
+
+              </div>
+
+            ),
+          },
           {
             id: 2,
             title: "Thời gian",
@@ -2420,6 +2763,143 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                 },
               ],
             },
+            grammar: (
+              <div className="flex flex-col text-[#202020] font-nunito gap-3 md:gap-[18px] text-base md:text-[18px] font-normal leading-normal">
+                <h1 className="text-xl md:text-2xl font-bold">
+                  1. Cách nói giờ: {" "}
+                  <span className="text-[var(--custom-green)]">[Số Thuần Hàn đã biến đổi]</span>{" "}
+                  + <span className="text-[var(--custom-green)]">시 (si)</span>
+                </h1>
+
+                <p>Để nói về "giờ", chúng ta áp dụng quy tắc đã học ở Bài 1.</p>
+
+                <p><b>Công thức:</b> Số Thuần Hàn (한, 두, 세, 네, 다섯...) + 시 (giờ)</p>
+                <b>Ví dụ:</b>
+
+                {/* Bảng quy tắc */}
+                <div className="overflow-hidden rounded-lg border border-gray-300 ">
+                  <table className="min-w-full divide-y divide-gray-300 items-start">
+                    <thead className="text-[18px]">
+                      <tr>
+                        <th className="px-6 py-3 text-left font-medium border-r border-gray-300">
+                          <b>Tiếng Việt</b>
+                        </th>
+                        <th className="px-6 py-3 text-left font-medium">
+                          <b>Tiếng Hàn</b>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-300 text-[18px]">
+                      <tr>
+                        <td className="px-6 py-4 whitespace-nowrap font-medium border-r border-gray-300">
+                          1 giờ
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap ">
+                          한 시 (han si)
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="px-6 py-4 whitespace-nowrap font-medium  border-r border-gray-300">
+                          2 giờ
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          두 시 (du si)
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="px-6 py-4 whitespace-nowrap font-medium  border-r border-gray-300">
+                          3 giờ
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          세 시 (se si)
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="px-6 py-4 whitespace-nowrapfont-medium border-r border-gray-300">
+                          4 giờ
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          네 시 (ne si)
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="px-6 py-4 whitespace-nowrap font-medium border-r border-gray-300">
+                          5 giờ
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          다섯 시 (daseot si)
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                {/* 2 */}
+                <h1 className="text-xl md:text-2xl font-bold">
+                  2. Câu hỏi giờ: {" "}
+                  <span className="text-[var(--custom-orange)]">몇</span>{" "}
+                  <span className="text-[var(--custom-green)]">시</span>
+                  <span className="text-[var(--custom-orange)]">예요</span>/{" "}
+                  <span className="text-[var(--custom-green)]">시</span>
+                  <span className="text-[var(--custom-orange)]">입니까</span>?
+                </h1>
+
+                <p>Để hỏi "Mấy giờ rồi?", ta dùng từ để hỏi 몇 (myeot - mấy, bao nhiêu)</p>
+
+                {/* Câu hỏi*/}
+                <div>
+                  <b>Câu hỏi: </b>
+                  <ul className="list-disc pl-7">
+                    <li>Tiếng Hàn: 지금 몇 시예요/ 시입니까?</li>
+                    <li>
+                      Phiên âm:
+                      <ul className="list-disc pl-9">
+                        <li>Jigeum myeot siyeyo?</li>
+                        <li>Jigeum myeot si-imnikka?</li>
+                      </ul>
+                    </li>
+                    <li>Dịch nghĩa: Bây giờ là mấy giờ rồi ạ? (thân mật, lịch sự)</li>
+                  </ul>
+                </div>
+
+                {/* Câu trả lời*/}
+                <div>
+                  <b>Câu trả lời: </b>
+                  <ul className="list-disc pl-7">
+                    <li>Tiếng Hàn: 지금 [Số giờ] 시예요 / 시입니다.</li>
+                    <li>
+                      Phiên âm:
+                      <ul className="list-disc pl-9">
+                        <li>Jigeum ... siyeyo.</li>
+                        <li>Jigeum ... si-imnida.</li>
+                      </ul>
+                    </li>
+                    <li>Dịch nghĩa: Bây giờ là [Số giờ] giờ ạ.</li>
+                  </ul>
+                </div>
+
+                {/* Ví dụ */}
+                <div className="flex flex-col items-start gap-[10px] p-5 w-full rounded-[10px] bg-[#F4FAEE]">
+                  <span className="text-green font-bold">Ví dụ:</span>
+                  <p>A: 몇 시예요? (Bây giờ là mấy giờ vậy?)</p>
+                  <p>B: 지금 세 시입니다. (Bây giờ là 3 giờ.)</p>
+                </div>
+
+                <div className="flex p-5 md:p-[30px] flex-col items-start gap-[18px] self-stretch rounded-[10px] border-2 border-[#D9D9D9]">
+                  <b>Câu trả lời tương ứng với câu hỏi</b>
+
+                  <div>
+                    <p>...시예요 (siyeyo): Cách trả lời lịch sự, thân thiện (tương ứng với câu hỏi ...예요?).</p>
+                    <p>...시입니다 (si-imnida): Cách trả lời trang trọng, khách sáo (tương ứng với câu hỏi ...입니까?).</p>
+                  </div>
+
+                  <MeoNho>
+                    <b>Mẹo nhỏ:</b> Trong thực tế, người ta vẫn thường dùng đuôi ...입니다 (trang trọng)
+                    để trả lời câu hỏi ...예요? (thân mật) như một cách để thể hiện sự tôn trọng.
+                  </MeoNho>
+
+                </div>
+              </div>
+            ),
           },
           {
             id: 3,
@@ -2583,6 +3063,49 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                 },
               ],
             },
+            grammar: (
+              <div className="flex flex-col text-[#202020] font-nunito gap-3 md:gap-[18px] text-base md:text-[18px] font-normal leading-normal">
+                <h1 className="text-xl md:text-2xl font-bold">
+                  Tiểu từ chỉ thời gian "
+                  <span className="text-[var(--custom-orange)]">에</span>" (e)
+                </h1>
+
+                <p>Để chỉ một hành động xảy ra "vào lúc",
+                  "vào" một thời điểm cụ thể, ta gắn tiểu từ "에"
+                  vào sau danh từ chỉ thời gian.
+                </p>
+
+                <p><b>Công thức:</b> [Danh từ thời gian] + 에</p>
+
+                <div className="flex flex-col items-start gap-[10px] p-5 w-full rounded-[10px] bg-[#F4FAEE]">
+                  <span className="text-green font-bold">Ví dụ:</span>
+                  <p><b>한 시에 </b>만나요. (Gặp nhau vào lúc 1 giờ.)</p>
+                  <p><b>점심시간에 </b>밥을 먹어요. (Ăn cơm vào giờ ăn trưa.)</p>
+                  <p><b>내일* </b>만나요. (Gặp nhau vào ngày mai.)</p>
+                </div>
+
+                <p className="text-[#202020] font-nunito text-[16px] italic font-normal leading-normal">
+                  * Với các từ như 오늘 (hôm nay), 내일 (ngày mai), 지금 (bây giờ),
+                  người Hàn thường lược bỏ "에"
+                  vì bản thân các từ này đã chỉ rõ thời điểm rồi.
+                </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </div>
+            ),
           },
           {
             id: 4,
@@ -2761,6 +3284,41 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                 },
               ],
             },
+            grammar: (
+              <div className="flex flex-col text-[#202020] font-nunito gap-3 md:gap-[18px] text-base md:text-[18px] font-normal leading-normal">
+                {/* 1 */}
+                <h1 className="text-xl md:text-2xl font-bold">
+                  1. Cấu trúc đếm đồ vật: {" "}
+                  <span className="text-[var(--custom-green)]">[Danh từ]</span>{" "}
+                  + <span className="text-[var(--custom-green)]">[Số Thuần Hàn đã biến đổi]</span>{" "}
+                  + <span className="text-[var(--custom-green)]">[Đơn vị đếm]</span>
+                </h1>
+
+                <p>Đây là công thức hoàn chỉnh để nói về số lượng của một vật.</p>
+
+                <div className="flex flex-col items-start gap-[10px] p-5 w-full rounded-[10px] bg-[#F4FAEE]">
+                  <span className="text-green font-bold">Ví dụ:</span>
+                  <p>사과 (táo) + 다섯 (năm) + 개 (quả) → 사과 다섯 개 (năm quả táo)</p>
+                  <p>빵 (bánh mì) + 한 (một) + 개 (cái) → 빵 한 개 (một cái bánh mì)</p>
+                </div>
+                {/* 2 */}
+                <h1 className="text-xl md:text-2xl font-bold">
+                  2. Cấu trúc yêu cầu/mua hàng: {" "}
+                  <span className="text-[var(--custom-green)]">[Danh từ]</span>{" "}
+                  + <span className="text-[var(--custom-green)]">[Số lượng]</span>{" "}
+                  + <span className="text-[var(--custom-red)]">주</span>
+                  <span className="text-[var(--custom-orange)]">세요</span>.
+                </h1>
+
+                <p>Kết hợp cấu trúc đếm với <b>"주세요"</b> (juseyo) để tạo thành câu mua hàng hoàn chỉnh.</p>
+
+                <div className="flex flex-col items-start gap-[10px] p-5 w-full rounded-[10px] bg-[#F4FAEE]">
+                  <span className="text-green font-bold">Ví dụ:</span>
+                  <p>사과 다섯 개 주세요. (Cho tôi năm quả táo.)</p>
+                  <p>물 두 병 주세요. (Cho tôi hai chai nước.) (병-byeong: chai)</p>
+                </div>
+              </div>
+            ),
           },
           {
             id: 5,
@@ -2769,211 +3327,298 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
             lessonLink: "/courses/1/topics/3/lessons/5",
             miniGameLink: "/courses/1/topics/3/lessons/5/minigame",
             status: "final",
-            targets: [
-              "Vận dụng chính xác ngữ pháp về sự tồn tại và định danh:Sử dụng thành thạo cấu trúc [Danh từ] + 이/가 있다/없다 (Có/Không có) và đuôi câu thân mật 이에요/예요 (Là) dựa trên quy tắc phụ âm cuối (batchim) để giới thiệu người hoặc sự vật.",
-              "<b>Phân biệt sắc thái sở hữu cách trong văn hóa Hàn:</b> Nắm vững cách dùng từ 우리 (chúng tôi/của chúng tôi) khi nói về các tập hợp cộng đồng (gia đình, nhà) và 제 (của tôi) cho đồ vật cá nhân, tránh nhầm lẫn khi xưng hô.",
-              "<b>Thực hành giao tiếp biểu cảm: Kết hợp từ vựng về cảm xúc</b> (사랑, 행복) và sự biết ơn (고맙습니다) để tự viết được các câu ngắn bày tỏ tình cảm với người thân hoặc hoàn thành đoạn hội thoại giới thiệu các mối quan hệ xã hội.",
-            ],
-            vocabIds: [26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37],
-            practiceBox: {
-              questions: [
-                // --- PHẦN 1: TỪ VỰNG SỐ ĐẾM THUẦN HÀN (PURE KOREAN NUMBERS) ---
-                {
-                  questionType: "multipleChoice",
-                  question: "Số '3' trong tiếng Hàn (hệ thuần Hàn) là gì?",
-                  options: ["하나 (Hana)", "둘 (Dul)", "셋 (Set)", "넷 (Net)"],
-                  correctAnswerIndex: 2,
-                  explanation:
-                    "<b>셋</b> (Set) là số 3. Các số còn lại: 하나 (1), 둘 (2), 넷 (4).",
-                },
-                {
-                  questionType: "multipleChoice",
-                  question: "Từ '다섯' (Daseot) có nghĩa là số mấy?",
-                  options: ["Số 2", "Số 4", "Số 5", "Số 10"],
-                  correctAnswerIndex: 2,
-                  explanation:
-                    "<b>다섯</b> (Daseot) là số 5 trong hệ số thuần Hàn.",
-                },
-                {
-                  questionType: "fillInBlank",
-                  question:
-                    "Điền từ còn thiếu: '하나, 둘, 셋, ________, 다섯.'",
-                  correctAnswer: "넷",
-                  explanation:
-                    "Thứ tự đếm là: 하나 (1), 둘 (2), 셋 (3), <b>넷</b> (4), 다섯 (5).",
-                },
+            targets: [],
+          },
+        ],
+      },
+      {
+        id: 4,
+        title: "...",
+        accent: "from-yellow-200 to-yellow-50 text-yellow-800",
+        barColor: "bg-yellow-400",
+        cta: { label: "...", tone: "accent" },
+        lessons: [
+          {
+            id: 1,
+            title: "...",
+            status: "locked",
+            targets: [],
+            grammar: (
+              <div className="flex flex-col text-[#202020] font-nunito gap-3 md:gap-[18px] text-base md:text-[18px] font-normal leading-normal">
+                <h1 className="text-xl md:text-2xl font-bold">
+                  Các đại từ chỉ định: {" "}
+                  <span className="text-[var(--custom-orange)]">이거</span>,{" "}
+                  <span className="text-[var(--custom-orange)]">그거</span>,{" "}
+                  <span className="text-[var(--custom-orange)]">저거</span>
+                </h1>
 
-                // --- PHẦN 2: QUY TẮC BIẾN ĐỔI SỐ (QUAN TRỌNG) ---
-                {
-                  questionType: "multipleChoice",
-                  question:
-                    "Khi đi với đơn vị đếm hoặc giờ, '하나' (1) đổi thành gì?",
-                  options: ["하나", "한", "일", "첫"],
-                  correctAnswerIndex: 1,
-                  explanation:
-                    "Các số 1, 2, 3, 4 bị biến đổi khi đứng trước danh từ đơn vị. 하나 trở thành <b>한</b> (ví dụ: 한 시 - 1 giờ).",
-                },
-                {
-                  questionType: "dropDown",
-                  question: "Bây giờ là 2 giờ. -> 지금 <<dropdown>> 시예요.",
-                  options: ["둘 (Dul)", "두 (Du)", "이 (I)"],
-                  correctAnswerIndex: 1,
-                  explanation:
-                    "Số 2 (둘) khi nói giờ phải đổi thành <b>두</b>. (두 시).",
-                },
-                {
-                  questionType: "dropDown",
-                  question: "Cho tôi 3 cái. -> <<dropdown>> 개 주세요.",
-                  options: ["셋 (Set)", "삼 (Sam)", "세 (Se)"],
-                  correctAnswerIndex: 2,
-                  explanation:
-                    "Số 3 (셋) khi đi với lượng từ '개' (cái) phải đổi thành <b>세</b>. (세 개).",
-                },
-                {
-                  questionType: "dropDown",
-                  question: "Bây giờ là 4 giờ. -> 지금 <<dropdown>> 시입니다.",
-                  options: ["넷 (Net)", "네 (Ne)", "사 (Sa)"],
-                  correctAnswerIndex: 1,
-                  explanation:
-                    "Số 4 (넷) khi nói giờ phải đổi thành <b>네</b>. (네 시).",
-                },
+                <p>Trong tiếng Hàn, việc chỉ định vật thể được thực hiện rất chính xác,
+                  dựa trên việc vật đó ở gần ai trong cuộc hội thoại (người nói hay người nghe).
+                </p>
 
-                // --- PHẦN 3: THỜI GIAN & GIỜ GIẤC (TIME) ---
-                {
-                  questionType: "fillInBlank",
-                  question:
-                    "Điền từ để hỏi giờ: 'Bây giờ là ________ giờ?' -> 지금 몇 시예요?",
-                  correctAnswer: "몇",
-                  explanation:
-                    "<b>몇</b> (Myeot) nghĩa là 'Mấy/Bao nhiêu', dùng để hỏi số lượng hoặc thời gian.",
-                },
-                {
-                  questionType: "multipleChoice",
-                  question: "Từ nào có nghĩa là 'Hôm nay'?",
-                  options: ["내일", "오늘", "지금", "어제"],
-                  correctAnswerIndex: 1,
-                  explanation:
-                    "<b>오늘</b> (Oneul) là 'Hôm nay'. 내일 là 'Ngày mai', 지금 là 'Bây giờ'.",
-                },
-                {
-                  questionType: "multipleChoice",
-                  question: "Từ '점심시간' có nghĩa là gì?",
-                  options: [
-                    "Thời gian nghỉ ngơi",
-                    "Giờ ăn trưa",
-                    "Giờ tan tầm",
-                    "Buổi sáng",
-                  ],
-                  correctAnswerIndex: 1,
-                  explanation:
-                    "<b>점심시간</b> (Jeomsimsigan) là ghép của '점심' (bữa trưa) và '시간' (thời gian) -> Giờ ăn trưa.",
-                },
-                {
-                  questionType: "dropDown",
-                  question:
-                    "Gặp nhau <<dropdown>> 5 giờ nhé. (Tiểu từ chỉ thời gian)",
-                  options: ["이", "가", "에"],
-                  correctAnswerIndex: 2,
-                  explanation:
-                    "Tiểu từ <b>에</b> gắn sau danh từ chỉ thời gian để chỉ thời điểm hành động diễn ra (Vào lúc...). -> 다섯 시에.",
-                },
+                {/* Bảng quy tắc */}
+                <div className="rounded-lg border border-gray-300 overflow-hidden">
+                  <table className="w-full table-auto divide-y divide-gray-300">
+                    <thead className="text-[16px] md:text-[18px]">
+                      <tr>
+                        <th className="px-4 py-3 text-left font-bold border-r border-gray-300">Đại từ</th>
+                        <th className="px-4 py-3 text-left font-bold border-r border-gray-300">Nghĩa</th>
+                        <th className="px-4 py-3 text-left font-bold border-r border-gray-300">Vị trí</th>
+                        <th className="px-4 py-3 text-left font-bold">Ví dụ minh họa</th>
+                      </tr>
+                    </thead>
 
-                // --- PHẦN 4: MUA SẮM (SHOPPING) ---
-                {
-                  questionType: "multipleChoice",
-                  question: "Đơn vị đếm chung cho đồ vật (cái, chiếc) là gì?",
-                  options: ["명 (người)", "개 (cái)", "시 (giờ)", "병 (bình)"],
-                  correctAnswerIndex: 1,
-                  explanation:
-                    "<b>개</b> (Gae) là lượng từ phổ biến nhất, nghĩa là 'cái/chiếc/quả'.",
-                },
-                {
-                  questionType: "fillInBlank",
-                  question:
-                    "Điền từ còn thiếu để yêu cầu lịch sự: 'Cho tôi...' -> ________.",
-                  correctAnswer: "주세요",
-                  explanation:
-                    "<b>주세요</b> (Juseyo) nghĩa là 'Hãy cho tôi', dùng khi gọi món hoặc mua hàng.",
-                },
-                {
-                  questionType: "multipleChoice",
-                  question:
-                    "Sắp xếp câu đúng: 'Cho tôi 1 quả táo.' (Táo = 사과)",
-                  options: [
-                    "주세요 사과 한 개.",
-                    "사과 한 개 주세요.",
-                    "한 개 사과 주세요.",
-                  ],
-                  correctAnswerIndex: 1,
-                  explanation:
-                    "Cấu trúc mua hàng chuẩn: <b>[Danh từ] + [Số lượng] + [Đơn vị] + 주세요</b>.",
-                },
-                {
-                  questionType: "dropDown",
-                  question: "Bánh mì (빵) 5 cái. -> 빵 <<dropdown>> 개.",
-                  options: ["다섯", "오", "다세"],
-                  correctAnswerIndex: 0,
-                  explanation:
-                    "Số 5 (다섯) <b>không bị biến đổi</b> hình thái khi đi với lượng từ. -> 다섯 개.",
-                },
+                    <tbody className="divide-y divide-gray-300 text-[16px] md:text-[18px]">
+                      <tr>
+                        <td className="px-4 py-4 whitespace-nowrap font-medium border-r border-gray-300">
+                          이거 (i-geo)
+                        </td>
+                        <td className="px-4 py-4 font-medium border-r border-gray-300">
+                          Cái này
+                        </td>
+                        <td className="px-4 py-4 font-medium border-r border-gray-300">
+                          Vật ở <b>gần người nói</b>
+                        </td>
+                        <td className="px-4 py-4">
+                          [Bạn cầm áo] <b>이거</b> 얼마예요?
+                        </td>
+                      </tr>
 
-                // --- PHẦN 5: HỘI THOẠI & TÌNH HUỐNG (CONTEXT) ---
-                {
-                  questionType: "multipleChoice",
-                  question:
-                    "A: '내일 시간 있어요?' (Ngày mai bạn rảnh không?) -> B nên trả lời:",
-                  options: [
-                    "네, 시간 주세요.",
-                    "네, 있어요.",
-                    "아니요, 다섯 시예요.",
-                  ],
-                  correctAnswerIndex: 1,
-                  explanation:
-                    "Câu hỏi dùng '있어요?' (có không?), nên câu trả lời xác nhận là '네, 있어요' (Vâng, tôi có).",
-                },
-                {
-                  questionType: "multipleChoice",
-                  question: "Dịch câu: 'Ngày mai gặp nhau lúc 2 giờ.'",
-                  options: [
-                    "내일 두 시 만나요.",
-                    "내일 두 시에 만나요.",
-                    "오늘 두 시에 만나요.",
-                  ],
-                  correctAnswerIndex: 1,
-                  explanation:
-                    "Cần dùng tiểu từ <b>에</b> sau thời gian và từ vựng <b>내일</b> (ngày mai).",
-                },
-                {
-                  questionType: "fillInBlank",
-                  question:
-                    "Hoàn thành câu: Bây giờ là 1 giờ. -> 지금 ____ 시예요.",
-                  correctAnswer: "한",
-                  explanation:
-                    "Số 1 (하나) chuyển thành <b>한</b> khi nói giờ.",
-                },
-                {
-                  questionType: "dropDown",
-                  question:
-                    "Cà phê (커피) hai ly (잔). -> 커피 <<dropdown>> 잔 주세요.",
-                  options: ["둘", "두", "이"],
-                  correctAnswerIndex: 1,
-                  explanation:
-                    "Tương tự như '개' hay '시', khi đếm ly (잔), số 2 (둘) cũng chuyển thành <b>두</b>.",
-                },
-                {
-                  questionType: "multipleChoice",
-                  question: "Câu nào sau đây SAI ngữ pháp?",
-                  options: [
-                    "세 시 (3 giờ)",
-                    "네 개 (4 cái)",
-                    "하나 시 (1 giờ)",
-                  ],
-                  correctAnswerIndex: 2,
-                  explanation:
-                    "Sai ở <b>하나 시</b>. Phải biến đổi thành <b>한 시</b> mới đúng.",
-                },
-              ],
-            },
+                      <tr>
+                        <td className="px-4 py-4 whitespace-nowrap font-medium border-r border-gray-300">
+                          그거 (geu-geo)
+                        </td>
+                        <td className="px-4 py-4 font-medium border-r border-gray-300">
+                          Cái đó
+                        </td>
+                        <td className="px-4 py-4 font-medium border-r border-gray-300">
+                          Vật ở <b>gần người nghe</b>
+                        </td>
+                        <td className="px-4 py-4">
+                          [Người bán cầm áo] <b>그거</b> 주세요.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td className="px-4 py-4 whitespace-nowrap font-medium border-r border-gray-300">
+                          저거 (jeo-geo)
+                        </td>
+                        <td className="px-4 py-4 font-medium border-r border-gray-300">
+                          Cái kia
+                        </td>
+                        <td className="px-4 py-4 font-medium border-r border-gray-300">
+                          Vật ở <b>xa cả hai</b>
+                        </td>
+                        <td className="px-4 py-4">
+                          [Chỉ vào mannequin] <b>저거</b> 예뻐요!
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+
+                <MeoNho>
+                  <b>Mẹo nhỏ ghi nhớ:</b> Chỉ cần nhớ âm tiết đầu.
+                </MeoNho>
+                <ul className="list-disc pl-7">
+                  <li>이 (i-): Mọi thứ gần tôi.</li>
+                  <li>그 (geu-): Mọi thứ gần bạn.</li>
+                  <li>저 (jeo-): Mọi thứ xa lắc.</li>
+                </ul>
+
+
+              </div>
+            ),
+          },
+          {
+            id: 2,
+            title: "...",
+            status: "locked",
+            targets: [],
+            grammar: (
+              <div className="flex flex-col text-[#202020] font-nunito gap-3 md:gap-[18px] text-base md:text-[18px] font-normal leading-normal">
+                <h1 className="text-xl md:text-2xl font-bold">
+                  Cấu trúc yêu cầu với nhiều món đồ: {" "}
+                  <span className="text-[var(--custom-green)]">[Món 1]</span>{" "}
+                  + -<span className="text-[var(--custom-orange)]">하고</span>{" "}
+                  + <span className="text-[var(--custom-green)]">[Món 2]</span>{" "}
+                  + <span className="text-[var(--custom-red)]">주</span>
+                  <span className="text-[var(--custom-orange)]">세요</span>.
+                </h1>
+
+                <p>Khi bạn muốn mua nhiều hơn một món đồ,
+                  bạn có thể nối các danh từ lại với nhau bằng tiểu từ <b>-하고</b> (hago).
+                </p>
+                <p>-하고 (hago) có nghĩa là "và", "với". Nó được dùng để nối hai danh từ với nhau.</p>
+
+                <span><b>Công thức:</b> [Danh từ 1]하고 [Danh từ 2] 주세요.</span>
+
+                <div className="flex flex-col items-start gap-[10px] p-5 w-full rounded-[10px] bg-[#F4FAEE]">
+                  <span className="text-green font-bold">Ví dụ:</span>
+                  <p>콜라 한 병하고 빵 두 개 주세요. (Cho tôi một chai Cola và hai cái bánh mì.)</p>
+                  <p>가방하고 모자 주세요. (Cho tôi cái túi và cái mũ.)</p>
+                </div>
+
+                <p><b>Lưu ý:</b> "-하고" chủ yếu được dùng trong văn nói. Trong văn viết, người ta thường dùng "-와/과".</p>
+              </div>
+            ),
+          },
+          {
+            id: 3,
+            title: "...",
+            status: "final",
+            targets: [],
+            grammar: (
+              <div className="flex flex-col text-[#202020] font-nunito gap-3 md:gap-[18px] text-base md:text-[18px] font-normal leading-normal">
+                <h1 className="text-xl md:text-2xl font-bold">
+                  Cách chia tính từ đuôi {" "}
+                  <span className="text-[var(--custom-orange)]">-아요/어요</span>{" "}
+                </h1>
+
+                <p>Trong tiếng Hàn, cả động từ và tính từ đều cần được chia đuôi để hoàn thành câu.
+                  Đuôi <b>-아요/어요</b> là cách chia lịch sự, được sử dụng phổ biến nhất trong giao tiếp hàng ngày.
+                </p>
+
+                <b>Các bước cơ bản:</b>
+                <ul className="list-disc pl-7 space-y-4">
+                  <li><b>Bước 1 (Làm sạch):</b> Bỏ đuôi -다 khỏi động từ/tính từ nguyên thể để lấy gốc từ.</li>
+                  <li><b>Bước 2 (Xác định):</b> Nhìn vào nguyên âm cuối cùng của gốc từ để áp dụng Quy tắc Hòa âm Nguyên âm dưới đây.</li>
+                </ul>
+
+                {/* Bảng quy tắc */}
+                <div className="rounded-lg border border-gray-300 overflow-hidden">
+                  <table className="w-full table-auto divide-y divide-gray-300 items-start">
+                    <thead className="text-[16px] md:text-[18px]">
+                      <tr>
+                        <th className="px-6 py-3 text-left font-medium border-r border-gray-300">
+                          <b>Nguyên tắc</b>
+                        </th>
+                        <th className="px-6 py-3 text-left font-medium border-r border-gray-300">
+                          <b>Gốc từ có chứa nguyên âm ...</b>
+                        </th>
+                        <th className="px-6 py-3 text-left font-medium border-r border-gray-300">
+                          <b>Kết quả</b>
+                        </th>
+                        <th className="px-6 py-3 text-left font-medium">
+                          <b>Ví dụ minh họa</b>
+                        </th>
+                      </tr>
+                    </thead>
+
+                    <tbody className="divide-y divide-gray-300 text-[16px] md:text-[18px]">
+                      <tr>
+                        <td className="px-6 py-4 whitespace-nowrap font-medium border-r border-gray-300">
+                          Nguyên âm sáng
+                        </td>
+
+                        <td className="px-6 py-4 font-medium border-r border-gray-300">
+                          ㅏ hoặc ㅗ (như 좋, 가, 싸)
+                        </td>
+
+                        <td className="px-6 py-4 font-medium border-r border-gray-300">
+                          Thêm -아요
+                        </td>
+
+                        <td className="px-6 py-4">
+                          <ul className="list-disc pl-7">
+                            <li>좋다 → 좋아요</li>
+                            <li>싸다 → 싸요 (Vì ㅏ + 아요 được rút gọn)</li>
+                          </ul>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td className="px-6 py-4 whitespace-nowrap font-medium border-r border-gray-300">
+                          Nguyên âm tối
+                        </td>
+
+                        <td className="px-6 py-4 font-medium border-r border-gray-300">
+                          Các nguyên âm còn lại (như ㅓ, ㅜ, ㅡ, ㅣ, v.v.)
+                        </td>
+
+                        <td className="px-6 py-4 font-medium border-r border-gray-300">
+                          Thêm -어요
+                        </td>
+
+                        <td className="px-6 py-4">
+                          <ul className="list-disc pl-7">
+                            <li>있다 → 있어요</li>
+                            <li>예쁘다 → 예뻐요 (Quy tắc rút gọn đặc biệt)</li>
+                          </ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+            ),
+          },
+          {
+            id: 4,
+            title: "...",
+            status: "final",
+            targets: [],
+            grammar: (
+              <div className="flex flex-col text-[#202020] font-nunito gap-3 md:gap-[18px] text-base md:text-[18px] font-normal leading-normal">
+                <h1 className="text-xl md:text-2xl font-bold">
+                  Diễn tả Nguyên nhân - Kết quả với {" "}
+                  <span className="text-[var(--custom-orange)]">-아서/어서</span>{" "}
+                </h1>
+
+                <p>Để nói "Vì (làm A)... nên (cảm thấy B)", ta sử dụng cấu trúc này.
+                  Cấu trúc này dùng để diễn tả nguyên nhân, kết quả,
+                  hoặc một hành động xảy ra trước hành động khác.
+                </p>
+                <p>Quy tắc chia đuôi của nó giống hệt với quy tắc Hòa âm Nguyên âm của đuôi -아요/어요.</p>
+
+                <b>Các bước cơ bản:</b>
+                <ul className="list-disc pl-7 space-y-4">
+                  <li><b>Bước 1:</b> Bỏ đuôi -다 khỏi gốc từ.</li>
+                  <li className="space-y-4">
+                    <b>Bước 2:</b> Áp dụng Hòa âm Nguyên âm
+                    <ul className="space-y-4">
+                      <li>
+                        1. Gốc từ có nguyên âm sáng (ㅏ, ㅗ): Thêm -아서
+                        <div className="flex flex-col items-start gap-[10px] p-5 w-full rounded-[10px] bg-[#F4FAEE] mt-3">
+                          <span className="text-green font-bold">Ví dụ:</span>
+                          <p>사다 (mua) → 사 + 아서 → 사서 (vì mua...)</p>
+                          <p>보다 (xem) → 보 + 아서 → 봐서 (vì xem... - rút gọn)</p>
+                        </div>
+                      </li>
+                      <li>
+                        2. Gốc từ có nguyên âm tối (các nguyên âm còn lại): Thêm -어서
+                        <div className="flex flex-col items-start gap-[10px] p-5 w-full rounded-[10px] bg-[#F4FAEE] mt-3">
+                          <span className="text-green font-bold">Ví dụ:</span>
+                          <p>먹다 (ăn) → 먹 + 어서 → 먹어서 (vì ăn...)</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li className="space-y-4">
+                    <b>Bước 3:</b> Bước 3: Ngoại lệ -하다
+                    <ul className="list-disc pl-7">
+                      <li>Mọi động từ/tính từ có đuôi ~하다 đều được chia thành ~해서.</li>
+                    </ul>
+
+                    <div className="flex flex-col items-start gap-[10px] p-5 w-full rounded-[10px] bg-[#F4FAEE]">
+                      <span className="text-green font-bold">Ví dụ:</span>
+                      <p>쇼핑하다 (mua sắm) → 쇼핑해서 (vì mua sắm...)</p>
+                    </div>
+                  </li>
+
+                </ul>
+
+
+
+
+
+
+
+
+              </div>
+            ),
           },
         ],
       },
