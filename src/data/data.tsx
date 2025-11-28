@@ -1315,9 +1315,9 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                   avatarUrl: speakerAAvatarUrl,
                   lines: [
                     {
-                      text: "이 사진은 무엇입니까?",
+                      text: "이사진은 무엇입니까?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_A1.mp3", // Thay link audio thực tế của bạn vào đây
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94%20%EC%9D%B4%EB%A6%84%EC%9D%B4%20%EB%AC%B4%EC%97%87%EC%9E%85%EB%8B%88%EA%B9%8C%20.mp3?alt=media",
                     },
                   ],
                 },
@@ -1328,7 +1328,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "제 가족 사진입니다.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_B1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%EC%A0%9C%20%EA%B0%80%EC%A1%B1%20%EC%82%AC%EC%A7%84%EC%9E%85%EB%8B%88%EB%8B%A4%20.m4a?alt=media",
                     },
                   ],
                 },
@@ -1339,7 +1339,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "아! 이분은 아버지입니까?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_A2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%EC%95%84%20%EC%9D%B4%EB%B6%84%EC%9D%80%20%EC%95%84%EB%B2%84%EC%A7%80%EC%9E%85%EB%8B%88%EA%B9%8C%20.m4a?alt=media",
                     },
                   ],
                 },
@@ -1350,12 +1350,12 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "네, 맞아요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_B2_1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%EB%84%A4%20%EB%A7%9E%EC%95%84%EC%9A%94.m4a?alt=media",
                     },
                     {
                       text: "그리고 이분은 우리 어머니입니다.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_B2_2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%EA%B7%B8%EB%A6%AC%EA%B3%A0%20%EC%9D%B4%EB%B6%84%EC%9D%80%20%EC%9A%B0%EB%A6%AC%20%EC%96%B4%EB%A8%B8%EB%8B%88%EC%9E%85%EB%8B%88%EB%8B%A4%20.m4a?alt=media",
                     },
                   ],
                 },
@@ -1762,7 +1762,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "남 씨, 기분이 좋아 보여요!",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_3_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%EB%82%A8%20%EC%94%A8%20%EA%B8%B0%EB%B6%84%EC%9D%B4%20%EC%A2%8B%EC%95%84%20%EB%B3%B4%EC%97%AC%EC%9A%94%20.m4a?alt=media",
                     },
                   ],
                 },
@@ -1773,7 +1773,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "네! 오늘은 우리 아버지 생신이에요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_3_B1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%EB%84%A4%20%EC%98%A4%EB%8A%98%EC%9D%80%20%EC%9A%B0%EB%A6%AC%20%EC%95%84%EB%B2%84%EC%A7%80%20%EC%83%9D%EC%8B%A0%EC%9D%B4%EC%97%90%EC%9A%94.m4a?alt=media",
                     },
                   ],
                 },
@@ -1784,7 +1784,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "와, 정말요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_3_A2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%EC%99%80%20%EC%A0%95%EB%A7%90%EC%9A%94%20.m4a?alt=media",
                     },
                   ],
                 },
@@ -1795,17 +1795,17 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "네. 우리 가족은 정말 행복해요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_3_B2_1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%EB%84%A4%20%EC%9A%B0%EB%A6%AC%20%EA%B0%80%EC%A1%B1%EC%9D%80%20%EC%A0%95%EB%A7%90%20%ED%96%89%EB%B3%B5%ED%95%B4%EC%9A%94%20.m4a?alt=media",
                     },
                     {
                       text: "사랑이 많은 가족이에요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_3_B2_2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%EC%82%AC%EB%9E%91%EC%9D%B4%20%EB%A7%8E%EC%9D%80%20%EA%B0%80%EC%A1%B1%EC%9D%B4%EC%97%90%EC%9A%94%20.m4a?alt=media",
                     },
                     {
                       text: "우리 가족 최고!",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_3_B2_3.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%EC%9A%B0%EB%A6%AC%20%EA%B0%80%EC%A1%B1%20%EC%B5%9C%EA%B3%A0%20.m4a?alt=media",
                     },
                   ],
                 },
@@ -1974,7 +1974,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "우리 아들, 왜 그래?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_4_B1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%EC%97%84%EB%A7%88%20%EC%95%84%EB%B2%84%EC%A7%80%20%EB%8A%98%20%EA%B3%A0%EB%A7%99%EC%8A%B5%EB%8B%88%EB%8B%A4%20.m4a?alt=media",
                     },
                   ],
                 },
@@ -1985,7 +1985,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "그냥요. 항상 사랑해요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_4_A2_1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%EA%B7%B8%EB%83%A5%EC%9A%94%20%ED%95%AD%EC%83%81%20%EC%82%AC%EB%9E%91%ED%95%B4%EC%9A%94.m4a?alt=media",
                     },
                   ],
                 },
@@ -1996,7 +1996,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "엄마도 사랑해.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_4_B2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%EC%97%84%EB%A7%88%EB%8F%84%20%EC%82%AC%EB%9E%91%ED%95%B4.m4a?alt=media",
                     },
                   ],
                 },
@@ -2419,7 +2419,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "같이 사진 찍어요! 준비!",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_num_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F1%2Fvocab%2F%EA%B0%99%EC%9D%B4%20%EC%82%AC%EC%A7%84%20%EC%B0%8D%EC%96%B4%EC%9A%94%20%EC%A4%80%EB%B9%84%20.m4a?alt=media",
                     },
                   ],
                 },
@@ -2430,7 +2430,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "네, 좋아요!",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_num_B1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F1%2Fvocab%2F%EB%84%A4%20%EC%A2%8B%EC%95%84%EC%9A%94%20.m4a?alt=media",
                     },
                   ],
                 },
@@ -2441,12 +2441,12 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "제가 셀게요. 하나, 둘, 셋!",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_num_A2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F1%2Fvocab%2F%EC%A0%9C%EA%B0%80%20%EC%85%80%EA%B2%8C%EC%9A%94%20%ED%95%98%EB%82%98%20%EB%91%98%20%EC%85%8B%20.m4a?alt=media",
                     },
                     {
                       text: "(찰칵!)",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../sfx_camera.mp3", // Âm thanh máy ảnh
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F1%2Fvocab%2F%EC%B0%B0%EC%B9%B5%20.m4a?alt=media", // Âm thanh máy ảnh
                     },
                   ],
                 },
@@ -2670,7 +2670,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "저기요, 지금 몇 시예요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_time_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F2%2Fvocab%2F%EC%A0%80%EA%B8%B0%EC%9A%94%20%EC%A7%80%EA%B8%88%20%EB%AA%87%20%EC%8B%9C%EC%98%88%EC%9A%94%20.m4a?alt=media",
                     },
                   ],
                 },
@@ -2681,7 +2681,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "아, 지금 세 시입니다.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_time_B1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F2%2Fvocab%2F%EC%95%84%2C%20%EC%A7%80%EA%B8%88%20%EC%84%B8%20%EC%8B%9C%EC%9E%85%EB%8B%88%EB%8B%A4.mp3?alt=media",
                     },
                   ],
                 },
@@ -2692,12 +2692,12 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "네, 고맙습니다.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_time_A2_1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F2%2Fvocab%2F%EB%84%A4%20%EA%B3%A0%EB%A7%99%EC%8A%B5%EB%8B%88%EB%8B%A4.m4a?alt=media",
                     },
                     {
                       text: "오늘 약속이 있는데...",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_time_A2_2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F2%2Fvocab%2F%EC%95%84%20%EC%A7%80%EA%B8%88%20%EC%84%B8%20%EC%8B%9C%EC%9E%85%EB%8B%88%EB%8B%A4.m4a?alt=media",
                     },
                   ],
                 },
@@ -2961,7 +2961,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "지훈 씨, 내일 시간 있어요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_appt_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F3%2Fvocab%2F%EC%A7%80%ED%9B%88%20%EC%94%A8%2C%20%EB%82%B4%EC%9D%BC%20%EC%8B%9C%EA%B0%84%20%EC%9E%88%EC%96%B4%EC%9A%94%20(1).mp3?alt=media",
                     },
                   ],
                 },
@@ -2972,7 +2972,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "네, 괜찮아요. 왜요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_appt_B1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F3%2Fvocab%2F%EB%84%A4%2C%20%EA%B4%9C%EC%B0%AE%EC%95%84%EC%9A%94.%20%EC%99%9C%EC%9A%94(1).mp3?alt=media",
                     },
                   ],
                 },
@@ -2983,7 +2983,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "우리 내일 점심시간에 같이 밥 먹어요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_appt_A2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F4%2Fvocab%2F%EC%9A%B0%EB%A6%AC%20%EB%82%B4%EC%9D%BC%20%EC%A0%90%EC%8B%AC%EC%8B%9C%EA%B0%84%EC%97%90%20%EA%B0%99%EC%9D%B4%20%EB%B0%A5%20%EB%A8%B9%EC%96%B4%EC%9A%94%20(2).mp3?alt=media",
                     },
                   ],
                 },
@@ -2994,7 +2994,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "좋아요! 그럼 한 시에 만나요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_appt_B2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F3%2Fvocab%2F%EC%A2%8B%EC%95%84%EC%9A%94!%20%EA%B7%B8%EB%9F%BC%20%ED%95%9C%20%EC%8B%9C%EC%97%90%20%EB%A7%8C%EB%82%98%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -3148,7 +3148,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "사장님, 안녕하세요!",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_shop_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F4%2Fvocab%2F%EC%82%AC%EC%9E%A5%EB%8B%98%2C%20%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94!.mp3?alt=media",
                     },
                   ],
                 },
@@ -3159,7 +3159,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "어서 오세요!",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_shop_B1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F4%2Fvocab%2F%EC%96%B4%EC%84%9C%20%EC%98%A4%EC%84%B8%EC%9A%94!.mp3?alt=media",
                     },
                   ],
                 },
@@ -3170,7 +3170,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "이 사과 얼마예요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_shop_A2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F4%2Fvocab%2F%EC%9D%B4%20%EC%82%AC%EA%B3%BC%20%EC%96%BC%EB%A7%88%EC%98%88%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -3181,7 +3181,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "세 개에 오천 원입니다.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_shop_B2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F4%2Fvocab%2F%EC%84%B8%20%EA%B0%9C%EC%97%90%20%EC%98%A4%EC%B2%9C%20%EC%9B%90%EC%9E%85%EB%8B%88%EB%8B%A4.mp3?alt=media",
                     },
                   ],
                 },
@@ -3192,7 +3192,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "그럼, 사과 다섯 개 주세요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_shop_A3.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F4%2Fvocab%2F%EA%B7%B8%EB%9F%BC%2C%20%EC%82%AC%EA%B3%BC%20%EB%8B%A4%EC%84%AF%20%EA%B0%9C%20%EC%A3%BC%EC%84%B8%EC%9A%94..mp3?alt=media&token=98aae4ac-9242-4c34-8bac-525c60e6477dhttps://firebasestorage.googleapis.com/.../dialogue_shop_A3.mp3",
                     },
                   ],
                 },
@@ -3476,7 +3476,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "저기요!",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_shop_basic_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F1%2Fvocab%2F%EC%A0%80%EA%B8%B0%EC%9A%94!.mp3?alt=media",
                     },
                   ],
                 },
@@ -3487,7 +3487,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "네, 손님. 무엇을 찾으세요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_shop_basic_B1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F1%2Fvocab%2F%EB%84%A4%2C%20%EC%86%90%EB%8B%98.%20%EB%AC%B4%EC%97%87%EC%9D%84%20%EC%B0%BE%EC%9C%BC%EC%84%B8%EC%9A%94%20(2).mp3?alt=media",
                     },
                   ],
                 },
@@ -3498,7 +3498,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "이거 얼마예요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_shop_basic_A2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F1%2Fvocab%2F%EC%9D%B4%EA%B1%B0%20%EC%96%BC%EB%A7%88%EC%98%88%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -3509,7 +3509,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "아, 그 옷은 삼만 원입니다.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_shop_basic_B2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F1%2Fvocab%2F%EC%95%84%2C%20%EA%B7%B8%20%EC%98%B7%EC%9D%80%20%EC%82%BC%EB%A7%8C%20%EC%9B%90%EC%9E%85%EB%8B%88%EB%8B%A4.mp3?alt=media",
                     },
                   ],
                 },
@@ -3664,7 +3664,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "안녕하세요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_shop_req_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F2%2Fvocab%2F%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -3675,7 +3675,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "어서 오세요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_shop_req_B1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F2%2Fvocab%2F%EC%96%B4%EC%84%9C%20%EC%98%A4%EC%84%B8%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -3686,7 +3686,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "저기... 콜라 한 병하고 빵 두 개 주세요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_shop_req_A2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F2%2Fvocab%2F%EC%A0%80%EA%B8%B0...%20%EC%BD%9C%EB%9D%BC%20%ED%95%9C%20%EB%B3%91%ED%95%98%EA%B3%A0%20%EB%B9%B5%20%EB%91%90%20%EA%B0%9C%20%EC%A3%BC%EC%84%B8%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -3697,7 +3697,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "네. 여기 있습니다.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_shop_req_B2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F2%2Fvocab%2F%EB%84%A4.%20%EC%97%AC%EA%B8%B0%20%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4.mp3?alt=media",
                     },
                   ],
                 },
@@ -3908,7 +3908,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "이 바지 얼마예요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_price_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F3%2Fvocab%2F%EC%9D%B4%20%EB%B0%94%EC%A7%80%20%EC%96%BC%EB%A7%88%EC%98%88%EC%9A%94.mp3?alt=media", // Thay link audio thực tế
                     },
                   ],
                 },
@@ -3919,7 +3919,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "그건 사만 원이에요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_price_B1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F3%2Fvocab%2F%EA%B7%B8%EA%B1%B4%20%EC%82%AC%EB%A7%8C%20%EC%9B%90%EC%9D%B4%EC%97%90%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -3930,7 +3930,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "와... 조금 비싸요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_price_A2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F3%2Fvocab%2F%EC%99%80...%20%EC%A1%B0%EA%B8%88%20%EB%B9%84%EC%8B%B8%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -3941,12 +3941,12 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "아니에요. 디자인이 정말 예뻐요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_price_B2_1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F3%2Fvocab%2F%EC%95%84%EB%8B%88%EC%97%90%EC%9A%94.%20%EB%94%94%EC%9E%90%EC%9D%B8%EC%9D%B4%20%EC%A0%95%EB%A7%90%20%EC%98%88%EB%BB%90%EC%9A%94.mp3?alt=media",
                     },
                     {
                       text: "비싸지 않아요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_price_B2_2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F3%2Fvocab%2F%EB%B9%84%EC%8B%B8%EC%A7%80%20%EC%95%8A%EC%95%84%EC%9A%94..mp3?alt=media",
                     },
                   ],
                 },
@@ -4138,7 +4138,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "이 신발 너무 예뻐요! 얼마예요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_emo_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F4%2Fvocab%2F%EC%9D%B4%20%EC%8B%A0%EB%B0%9C%20%EB%84%88%EB%AC%B4%20%EC%98%88%EB%BB%90%EC%9A%94!%20%EC%96%BC%EB%A7%88%EC%98%88%EC%9A%94.mp3?alt=media", // Thay link audio thực tế
                     },
                   ],
                 },
@@ -4149,7 +4149,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "오만 원입니다.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_emo_B1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F4%2Fvocab%2F%EC%98%A4%EB%A7%8C%20%EC%9B%90%EC%9E%85%EB%8B%88%EB%8B%A4.mp3?alt=media",
                     },
                   ],
                 },
@@ -4160,7 +4160,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "너무 비싸요... 할인해 주세요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_emo_A2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F4%2Fvocab%2F%EB%84%88%EB%AC%B4%20%EB%B9%84%EC%8B%B8%EC%9A%94...%20%ED%95%A0%EC%9D%B8%ED%95%B4%20%EC%A3%BC%EC%84%B8%EC%9A%94..mp3?alt=media",
                     },
                   ],
                 },
@@ -4171,7 +4171,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "음... 그럼 사만 오천 원 주세요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_emo_B2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F4%2Fvocab%2F%EC%9D%8C...%20%EA%B7%B8%EB%9F%BC%20%EC%82%AC%EB%A7%8C%20%EC%98%A4%EC%B2%9C%20%EC%9B%90%20%EC%A3%BC%EC%84%B8%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -4182,12 +4182,12 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "와! 고맙습니다!",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_emo_A3_1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F4%2Fvocab%2F%EC%99%80!%20%EA%B3%A0%EB%A7%99%EC%8A%B5%EB%8B%88%EB%8B%A4!.mp3?alt=media",
                     },
                     {
                       text: "이 신발을 사서 정말 행복해요!",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_emo_A3_2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F4%2Fvocab%2F%EC%9D%B4%20%EC%8B%A0%EB%B0%9C%EC%9D%84%20%EC%82%AC%EC%84%9C%20%EC%A0%95%EB%A7%90%20%ED%96%89%EB%B3%B5%ED%95%B4%EC%9A%94!.mp3?alt=media",
                     },
                   ],
                 },
@@ -4543,7 +4543,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "저기요, 메뉴 좀 주세요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_dining_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F1%2Fvocab%2F%EC%A0%80%EA%B8%B0%EC%9A%94%2C%20%EB%A9%94%EB%89%B4%20%EC%A2%80%20%EC%A3%BC%EC%84%B8%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -4554,7 +4554,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "네, 여기 있습니다. 주문하시겠어요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_dining_B1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F1%2Fvocab%2F%EB%84%A4%2C%20%EC%97%AC%EA%B8%B0%20%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4.%20%EC%A3%BC%EB%AC%B8%ED%95%98%EC%8B%9C%EA%B2%A0%EC%96%B4%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -4565,12 +4565,12 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "네, 비빔밥 하나 주세요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_dining_A2_1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F1%2Fvocab%2F%EB%84%A4%2C%20%EB%B9%84%EB%B9%94%EB%B0%A5%20%ED%95%98%EB%82%98%20%EC%A3%BC%EC%84%B8%EC%9A%94.mp3?alt=media",
                     },
                     {
                       text: "이 음식 정말 맛있어요!",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_dining_A2_2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F1%2Fvocab%2F%EC%9D%B4%20%EC%9D%8C%EC%8B%9D%20%EC%A0%95%EB%A7%90%20%EB%A7%9B%EC%9E%88%EC%96%B4%EC%9A%94!.mp3?alt=media",
                     },
                   ],
                 },
@@ -4581,7 +4581,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "알겠습니다. 잠시만 기다려주세요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_dining_B2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F1%2Fvocab%2F%EC%95%8C%EA%B2%A0%EC%8A%B5%EB%8B%88%EB%8B%A4.%20%EC%9E%A0%EC%8B%9C%EB%A7%8C%20%EA%B8%B0%EB%8B%A4%EB%A0%A4%EC%A3%BC%EC%84%B8%EC%9A%94..mp3?alt=media",
                     },
                   ],
                 },
@@ -4768,7 +4768,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "점심 먹었어요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_food_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F2%2Fvocab%2F%EC%A0%90%EC%8B%AC%20%EB%A8%B9%EC%97%88%EC%96%B4%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -4779,7 +4779,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "네, 먹었어요. 김치찌개를 먹었어요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_food_B1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F2%2Fvocab%2F%EB%84%A4%2C%20%EB%A8%B9%EC%97%88%EC%96%B4%EC%9A%94.%20%EA%B9%80%EC%B9%98%EC%B0%8C%EA%B0%9C%EB%A5%BC%20%EB%A8%B9%EC%97%88%EC%96%B4%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -4790,7 +4790,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "맛있었어요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_food_A2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F2%2Fvocab%2F%EB%A7%9B%EC%9E%88%EC%97%88%EC%96%B4%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -4801,12 +4801,12 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "네, 아주 맛있었어요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_food_B2_1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F2%2Fvocab%2F%EB%84%A4%2C%20%EC%95%84%EC%A3%BC%20%EB%A7%9B%EC%9E%88%EC%97%88%EC%96%B4%EC%9A%94..mp3?alt=media",
                     },
                     {
                       text: "시원한 물도 많이 마셨어요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_food_B2_2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F2%2Fvocab%2F%EC%8B%9C%EC%9B%90%ED%95%9C%20%EB%AC%BC%EB%8F%84%20%EB%A7%8E%EC%9D%B4%20%EB%A7%88%EC%85%A8%EC%96%B4%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -4985,7 +4985,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "민아 씨는 무슨 음식을 좋아해요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_pref_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F3%2Fvocab%2F%EB%AF%BC%EC%95%84%20%EC%94%A8%EB%8A%94%20%EB%AC%B4%EC%8A%A8%20%EC%9D%8C%EC%8B%9D%EC%9D%84%20%EC%A2%8B%EC%95%84%ED%95%B4%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -4996,12 +4996,12 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "저는 매운 음식을 좋아해요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_pref_B1_1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F3%2Fvocab%2F%EC%A0%80%EB%8A%94%20%EB%A7%A4%EC%9A%B4%20%EC%9D%8C%EC%8B%9D%EC%9D%84%20%EC%A2%8B%EC%95%84%ED%95%B4%EC%9A%94.mp3?alt=media",
                     },
                     {
                       text: "특히 떡볶이를 좋아해요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_pref_B1_2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F3%2Fvocab%2F%ED%8A%B9%ED%9E%88%20%EB%96%A1%EB%B3%B6%EC%9D%B4%EB%A5%BC%20%EC%A2%8B%EC%95%84%ED%95%B4%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -5012,12 +5012,12 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "정말요? 저는 매운 음식을 안 좋아해요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_pref_A2_1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F3%2Fvocab%2F%EC%A0%95%EB%A7%90%EC%9A%94%20%EC%A0%80%EB%8A%94%20%EB%A7%A4%EC%9A%B4%20%EC%9D%8C%EC%8B%9D%EC%9D%84%20%EC%95%88%20%EC%A2%8B%EC%95%84%ED%95%B4%EC%9A%94..mp3?alt=media",
                     },
                     {
                       text: "저는 불고기를 좋아해요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_pref_A2_2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F3%2Fvocab%2F%EC%A0%80%EB%8A%94%20%EB%B6%88%EA%B3%A0%EA%B8%B0%EB%A5%BC%20%EC%A2%8B%EC%95%84%ED%95%B4%EC%9A%94..mp3?alt=media",
                     },
                   ],
                 },
@@ -5216,7 +5216,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "요즘 너무 피곤해요. 힘이 없어요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_health_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F4%2Fvocab%2F%EC%9A%94%EC%A6%98%20%EB%84%88%EB%AC%B4%20%ED%94%BC%EA%B3%A4%ED%95%B4%EC%9A%94.%20%ED%9E%98%EC%9D%B4%20%EC%97%86%EC%96%B4%EC%9A%94..mp3?alt=media",
                     },
                   ],
                 },
@@ -5227,7 +5227,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "그럼 건강에 좋은 음식을 드세요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_health_B1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F4%2Fvocab%2F%EA%B7%B8%EB%9F%BC%20%EA%B1%B4%EA%B0%95%EC%97%90%20%EC%A2%8B%EC%9D%80%20%EC%9D%8C%EC%8B%9D%EC%9D%84%20%EB%93%9C%EC%84%B8%EC%9A%94..mp3?alt=media",
                     },
                   ],
                 },
@@ -5238,7 +5238,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "어떤 음식이 좋아요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_health_A2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F4%2Fvocab%2F%EC%96%B4%EB%96%A4%20%EC%9D%8C%EC%8B%9D%EC%9D%B4%20%EC%A2%8B%EC%95%84%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -5249,7 +5249,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "삼계탕을 드셔보세요. 먹으면 힘이 생겨요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_health_B2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F4%2Fvocab%2F%EC%82%BC%EA%B3%84%ED%83%95%EC%9D%84%20%EB%93%9C%EC%85%94%EB%B3%B4%EC%84%B8%EC%9A%94.%20%EB%A8%B9%EC%9C%BC%EB%A9%B4%20%ED%9E%98%EC%9D%B4%20%EC%83%9D%EA%B2%A8%EC%9A%94..mp3?alt=media",
                     },
                   ],
                 },
@@ -5664,7 +5664,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "민아 씨는 회사에 어떻게 가요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_trans_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F1%2Fvocab%2F%EB%AF%BC%EC%95%84%20%EC%94%A8%EB%8A%94%20%ED%9A%8C%EC%82%AC%EC%97%90%20%EC%96%B4%EB%96%BB%EA%B2%8C%20%EA%B0%80%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -5675,7 +5675,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "저는 보통 지하철을 타요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_trans_B1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F1%2Fvocab%2F%EC%A0%80%EB%8A%94%20%EB%B3%B4%ED%86%B5%20%EC%A7%80%ED%95%98%EC%B2%A0%EC%9D%84%20%ED%83%80%EC%9A%94..mp3?alt=media",
                     },
                   ],
                 },
@@ -5686,7 +5686,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "버스는 안 타요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_trans_A2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F1%2Fvocab%2F%EB%B2%84%EC%8A%A4%EB%8A%94%20%EC%95%88%20%ED%83%80%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -5697,12 +5697,12 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "네, 버스보다 지하철이 더 빨라요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_trans_B2_1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F1%2Fvocab%2F%EB%84%A4%2C%20%EB%B2%84%EC%8A%A4%EB%B3%B4%EB%8B%A4%20%EC%A7%80%ED%95%98%EC%B2%A0%EC%9D%B4%20%EB%8D%94%20%EB%B9%A8%EB%9D%BC%EC%9A%94.mp3?alt=media",
                     },
                     {
                       text: "남 씨는요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_trans_B2_2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F1%2Fvocab%2F%EB%82%A8%20%EC%94%A8%EB%8A%94%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -5713,12 +5713,12 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "저는 택시를 타요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_trans_A3_1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F1%2Fvocab%2F%EC%A0%80%EB%8A%94%20%ED%83%9D%EC%8B%9C%EB%A5%BC%20%ED%83%80%EC%9A%94..mp3?alt=media",
                     },
                     {
                       text: "택시가 제일 편해요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_trans_A3_2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F1%2Fvocab%2F%ED%83%9D%EC%8B%9C%EA%B0%80%20%EC%A0%9C%EC%9D%BC%20%ED%8E%B8%ED%95%B4%EC%9A%94..mp3?alt=media",
                     },
                   ],
                 },
@@ -5866,7 +5866,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "실례합니다. 명동역이 어디에 있어요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_loc_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F2%2Fvocab%2F%EC%8B%A4%EB%A1%80%ED%95%A9%EB%8B%88%EB%8B%A4.%20%EB%AA%85%EB%8F%99%EC%97%AD%EC%9D%B4%20%EC%96%B4%EB%94%94%EC%97%90%20%EC%9E%88%EC%96%B4%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -5877,12 +5877,12 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "아, 저쪽으로 쭉 가세요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_loc_B1_1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F2%2Fvocab%2F%EC%95%84%2C%20%EC%A0%80%EC%AA%BD%EC%9C%BC%EB%A1%9C%20%EC%AD%89%20%EA%B0%80%EC%84%B8%EC%9A%94..mp3?alt=media",
                     },
                     {
                       text: "은행 옆에 있어요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_loc_B1_2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F2%2Fvocab%2F%EC%9D%80%ED%96%89%20%EC%98%86%EC%97%90%20%EC%9E%88%EC%96%B4%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -5893,7 +5893,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "감사합니다. 지금 그쪽으로 갈게요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_loc_A2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F2%2Fvocab%2F%EA%B0%90%EC%82%AC%ED%95%A9%EB%8B%88%EB%8B%A4.%20%EC%A7%80%EA%B8%88%20%EA%B7%B8%EC%AA%BD%EC%9C%BC%EB%A1%9C%20%EA%B0%88%EA%B2%8C%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -6055,7 +6055,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "저기요, 약국이 어디에 있어요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_dir_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F3%2Fvocab%2F%EC%A0%80%EA%B8%B0%EC%9A%94%2C%20%EC%95%BD%EA%B5%AD%EC%9D%B4%20%EC%96%B4%EB%94%94%EC%97%90%20%EC%9E%88%EC%96%B4%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -6066,12 +6066,12 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "이 길로 쭉 가세요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_dir_B1_1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F3%2Fvocab%2F%EC%9D%B4%20%EA%B8%B8%EB%A1%9C%20%EC%AD%89%20%EA%B0%80%EC%84%B8%EC%9A%94.mp3?alt=media",
                     },
                     {
                       text: "그리고 사거리에서 오른쪽으로 가세요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_dir_B1_2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F3%2Fvocab%2F%EA%B7%B8%EB%A6%AC%EA%B3%A0%20%EC%82%AC%EA%B1%B0%EB%A6%AC%EC%97%90%EC%84%9C%20%EC%98%A4%EB%A5%B8%EC%AA%BD%EC%9C%BC%EB%A1%9C%20%EA%B0%80%EC%84%B8%EC%9A%94..mp3?alt=media",
                     },
                   ],
                 },
@@ -6082,7 +6082,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "왼쪽 아니고, 오른쪽이요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_dir_A2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F3%2Fvocab%2F%EC%99%BC%EC%AA%BD%20%EC%95%84%EB%8B%88%EA%B3%A0%2C%20%EC%98%A4%EB%A5%B8%EC%AA%BD%EC%9D%B4%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -6098,7 +6098,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "오른쪽으로 가면 바로 보여요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_dir_B2_2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F3%2Fvocab%2F%EB%84%A4%2C%20%EB%A7%9E%EC%95%84%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -6287,7 +6287,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "우리가 길을 잃은 것 같아요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_safe_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F4%2Fvocab%2F%EC%9A%B0%EB%A6%AC%EA%B0%80%20%EA%B8%B8%EC%9D%84%20%EC%9E%83%EC%9D%80%20%EA%B2%83%20%EA%B0%99%EC%95%84%EC%9A%94..mp3?alt=media",
                     },
                   ],
                 },
@@ -6298,7 +6298,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "괜찮아요. 걱정하지 마세요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_safe_B1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F4%2Fvocab%2F%EA%B4%9C%EC%B0%AE%EC%95%84%EC%9A%94.%20%EA%B1%B1%EC%A0%95%ED%95%98%EC%A7%80%20%EB%A7%88%EC%84%B8%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -6309,7 +6309,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "택시를 탈까요? 택시가 더 빠른 것 같아요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_safe_A2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F4%2Fvocab%2F%ED%83%9D%EC%8B%9C%EB%A5%BC%20%ED%83%88%EA%B9%8C%EC%9A%94%20%ED%83%9D%EC%8B%9C%EA%B0%80%20%EB%8D%94%20%EB%B9%A0%EB%A5%B8%20%EA%B2%83%20%EA%B0%99%EC%95%84%EC%9A%94..mp3?alt=media",
                     },
                   ],
                 },
@@ -6320,7 +6320,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "좋아요. 저기 택시가 와요!",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_safe_B2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F4%2Fvocab%2F%EC%A2%8B%EC%95%84%EC%9A%94.%20%EC%A0%80%EA%B8%B0%20%ED%83%9D%EC%8B%9C%EA%B0%80%20%EC%99%80%EC%9A%94!.mp3?alt=media",
                     },
                   ],
                 },
@@ -6675,7 +6675,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "오늘 날씨 정말 좋네요! 하늘이 아주 맑아요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_weather_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F1%2Fvocab%2F%EC%98%A4%EB%8A%98%20%EB%82%A0%EC%94%A8%20%EC%A0%95%EB%A7%90%20%EC%A2%8B%EB%84%A4%EC%9A%94!%20%ED%95%98%EB%8A%98%EC%9D%B4%20%EC%95%84%EC%A3%BC%20%EB%A7%91%EC%95%84%EC%9A%94.mp3?alt=media", // Thay link audio thực tế
                     },
                   ],
                 },
@@ -6686,12 +6686,12 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "네, 맞아요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_weather_B1_1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F1%2Fvocab%2F%EB%84%A4%2C%20%EB%A7%9E%EC%95%84%EC%9A%94%20(2).mp3?alt=media",
                     },
                     {
                       text: "그런데 뉴스에서 내일은 비가 올 것 같다고 했어요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_weather_B1_2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F1%2Fvocab%2F%EA%B7%B8%EB%9F%B0%EB%8D%B0%20%EB%89%B4%EC%8A%A4%EC%97%90%EC%84%9C%20%EB%82%B4%EC%9D%BC%EC%9D%80%20%EB%B9%84%EA%B0%80%20%EC%98%AC%20%EA%B2%83%20%EA%B0%99%EB%8B%A4%EA%B3%A0%20%ED%96%88%EC%96%B4%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -6702,7 +6702,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "정말요? 그럼 내일 약속은 다음에 할까요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_weather_A2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F1%2Fvocab%2F%EC%A0%95%EB%A7%90%EC%9A%94%20%EA%B7%B8%EB%9F%BC%20%EB%82%B4%EC%9D%BC%20%EC%95%BD%EC%86%8D%EC%9D%80%20%EB%8B%A4%EC%9D%8C%EC%97%90%20%ED%95%A0%EA%B9%8C%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -6713,7 +6713,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "네, 그게 좋겠어요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_weather_B2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F1%2Fvocab%2F%EB%84%A4%2C%20%EA%B7%B8%EA%B2%8C%20%EC%A2%8B%EA%B2%A0%EC%96%B4%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -6888,7 +6888,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "와, 오늘 너무 추워요! 겨울이 온 것 같아요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_feel_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F2%2Fvocab%2F%EC%99%80%2C%20%EC%98%A4%EB%8A%98%20%EB%84%88%EB%AC%B4%20%EC%B6%94%EC%9B%8C%EC%9A%94!%20%EA%B2%A8%EC%9A%B8%EC%9D%B4%20%EC%98%A8%20%EA%B2%83%20%EA%B0%99%EC%95%84%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -6899,12 +6899,12 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "맞아요. 어제는 괜찮았는데...",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_feel_B1_1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F2%2Fvocab%2F%EB%A7%9E%EC%95%84%EC%9A%94.%20%EC%96%B4%EC%A0%9C%EB%8A%94%20%EA%B4%9C%EC%B0%AE%EC%95%98%EB%8A%94%EB%8D%B0...mp3?alt=media",
                     },
                     {
                       text: "여름에는 너무 더워서 힘들고, 겨울에는 너무 추워서 힘들어요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_feel_B1_2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F2%2Fvocab%2F%EC%97%AC%EB%A6%84%EC%97%90%EB%8A%94%20%EB%84%88%EB%AC%B4%20%EB%8D%94%EC%9B%8C%EC%84%9C%20%ED%9E%98%EB%93%A4%EA%B3%A0%2C%20%EA%B2%A8%EC%9A%B8%EC%97%90%EB%8A%94%20%EB%84%88%EB%AC%B4%20%EC%B6%94%EC%9B%8C%EC%84%9C%20%ED%9E%98%EB%93%A4%EC%96%B4%EC%9A%94..mp3?alt=media",
                     },
                   ],
                 },
@@ -6915,7 +6915,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "그래도 저는 더운 것보다 추운 게 더 좋아요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_feel_A2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F2%2Fvocab%2F%EA%B7%B8%EB%9E%98%EB%8F%84%20%EC%A0%80%EB%8A%94%20%EB%8D%94%EC%9A%B4%20%EA%B2%83%EB%B3%B4%EB%8B%A4%20%EC%B6%94%EC%9A%B4%20%EA%B2%8C%20%EB%8D%94%20%EC%A2%8B%EC%95%84%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -7112,7 +7112,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "남 씨, 어디 아파요? 얼굴이 안 좋아요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_health_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F3%2Fvocab%2F%EB%82%A8%20%EC%94%A8%2C%20%EC%96%B4%EB%94%94%20%EC%95%84%ED%8C%8C%EC%9A%94%20%EC%96%BC%EA%B5%B4%EC%9D%B4%20%EC%95%88%20%EC%A2%8B%EC%95%84%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -7123,7 +7123,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "네, 어제부터 머리가 좀 아파요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_health_B1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F3%2Fvocab%2F%EB%84%A4%2C%20%EC%96%B4%EC%A0%9C%EB%B6%80%ED%84%B0%20%EB%A8%B8%EB%A6%AC%EA%B0%80%20%EC%A2%80%20%EC%95%84%ED%8C%8C%EC%9A%94..mp3?alt=media",
                     },
                   ],
                 },
@@ -7134,7 +7134,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "요즘 날씨가 추우니까 감기 조심하세요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_health_A2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F3%2Fvocab%2F%EC%9A%94%EC%A6%98%20%EB%82%A0%EC%94%A8%EA%B0%80%20%EC%B6%94%EC%9A%B0%EB%8B%88%EA%B9%8C%20%EA%B0%90%EA%B8%B0%20%EC%A1%B0%EC%8B%AC%ED%95%98%EC%84%B8%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -7145,7 +7145,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "네, 고마워요. 항상 건강이 최고예요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_health_B2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F3%2Fvocab%2F%EB%84%A4%2C%20%EA%B3%A0%EB%A7%88%EC%9B%8C%EC%9A%94.%20%ED%95%AD%EC%83%81%20%EA%B1%B4%EA%B0%95%EC%9D%B4%20%EC%B5%9C%EA%B3%A0%EC%98%88%EC%9A%94..mp3?alt=media",
                     },
                   ],
                 },
@@ -7332,7 +7332,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "요즘 기분이 어때요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_positive_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F4%2Fvocab%2F%EC%9A%94%EC%A6%98%20%EA%B8%B0%EB%B6%84%EC%9D%B4%20%EC%96%B4%EB%95%8C%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -7343,12 +7343,12 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "아주 좋아요!",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_positive_B1_1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F4%2Fvocab%2F%EC%95%84%EC%A3%BC%20%EC%A2%8B%EC%95%84%EC%9A%94%20.m4a?alt=media",
                     },
                     {
                       text: "긍정적으로 생각하니까 매일 행복해요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_positive_B1_2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F4%2Fvocab%2F%EA%B8%8D%EC%A0%95%EC%A0%81%EC%9C%BC%EB%A1%9C%20%EC%83%9D%EA%B0%81%ED%95%98%EB%8B%88%EA%B9%8C%20%EB%A7%A4%EC%9D%BC%20%ED%96%89%EB%B3%B5%ED%95%B4%EC%9A%94.m4a?alt=media",
                     },
                   ],
                 },
@@ -7359,7 +7359,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "와, 정말 보기 좋아요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_positive_A2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F4%2Fvocab%2F%EC%99%80%20%EC%A0%95%EB%A7%90%20%EB%B3%B4%EA%B8%B0%20%EC%A2%8B%EC%95%84%EC%9A%94%20.m4a?alt=media",
                     },
                   ],
                 },
@@ -7370,7 +7370,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "네, 몸도 마음도 건강한 게 중요해요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_positive_B2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F4%2Fvocab%2F%EB%84%A4%20%EB%AA%B8%EB%8F%84%20%EB%A7%88%EC%9D%8C%EB%8F%84%20%EA%B1%B4%EA%B0%95%ED%95%9C%20%EA%B2%8C%20%EC%A4%91%EC%9A%94%ED%95%B4%EC%9A%94%20.m4a?alt=media",
                     },
                   ],
                 },
@@ -7774,7 +7774,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "민아 씨, 취미가 뭐예요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_hobby_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F1%2Fvocab%2F%EB%AF%BC%EC%95%84%20%EC%94%A8%20%EC%B7%A8%EB%AF%B8%EA%B0%80%20%EB%AD%90%EC%98%88%EC%9A%94.m4a?alt=media",
                     },
                   ],
                 },
@@ -7785,17 +7785,17 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "제 취미는 책을 읽는 것이에요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_hobby_B1_1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F1%2Fvocab%2F%EC%A0%9C%20%EC%B7%A8%EB%AF%B8%EB%8A%94%20%EC%B1%85%EC%9D%84%20%EC%9D%BD%EB%8A%94%20%EA%B2%83%EC%9D%B4%EC%97%90%EC%9A%94%20.m4a?alt=media",
                     },
                     {
                       text: "조용한 카페에서 음악을 들으면서 책을 읽으면 정말 행복해요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_hobby_B1_2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F1%2Fvocab%2F%EC%A1%B0%EC%9A%A9%ED%95%9C%20%EC%B9%B4%ED%8E%98%EC%97%90%EC%84%9C%20%EC%9D%8C%EC%95%85%EC%9D%84%20%EB%93%A4%EC%9C%BC%EB%A9%B4%EC%84%9C%20%EC%B1%85%EC%9D%84.m4a?alt=media",
                     },
                     {
                       text: "남 씨는요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_hobby_B1_3.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F1%2Fvocab%2F%EB%82%A8%20%EC%94%A8%EB%8A%94%EC%9A%94%20.m4a?alt=media",
                     },
                   ],
                 },
@@ -7806,12 +7806,12 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "저는 활동적인 것을 좋아해서, 운동하는 것을 좋아해요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_hobby_A2_1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F1%2Fvocab%2F%EC%A0%80%EB%8A%94%20%ED%99%9C%EB%8F%99%EC%A0%81%EC%9D%B8%20%EA%B2%83%EC%9D%84%20%EC%A2%8B%EC%95%84%ED%95%B4%EC%84%9C%20%EC%9A%B4%EB%8F%99%ED%95%98%EB%8A%94.m4a?alt=media",
                     },
                     {
                       text: "특히 축구를 좋아해요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_hobby_A2_2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F1%2Fvocab%2F%EC%A0%80%EB%8A%94%20%ED%99%9C%EB%8F%99%EC%A0%81%EC%9D%B8%20%EA%B2%83%EC%9D%84%20%EC%A2%8B%EC%95%84%ED%95%B4%EC%84%9C%20%EC%9A%B4%EB%8F%99%ED%95%98%EB%8A%94%20(1).m4a?alt=media",
                     },
                   ],
                 },
@@ -7982,7 +7982,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "이번 주말에 특별한 계획 있어요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_weekend_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F2%2Fvocab%2F%EC%9D%B4%EB%B2%88%20%EC%A3%BC%EB%A7%90%EC%97%90%20%ED%8A%B9%EB%B3%84%ED%95%9C%20%EA%B3%84%ED%9A%8D%20%EC%9E%88%EC%96%B4%EC%9A%94%20.m4a?alt=media",
                     },
                   ],
                 },
@@ -7993,7 +7993,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "아니요, 아직 없어요. 왜요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_weekend_B1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F2%2Fvocab%2F%EC%95%84%EB%8B%88%EC%9A%94%20%EC%95%84%EC%A7%81%20%EC%97%86%EC%96%B4%EC%9A%94%20%EC%99%9C%EC%9A%94.m4a?alt=media",
                     },
                   ],
                 },
@@ -8004,12 +8004,12 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "그럼 우리 주말에 같이 운동할까요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_weekend_A2_1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F2%2Fvocab%2F%EA%B7%B8%EB%9F%BC%20%EC%9A%B0%EB%A6%AC%20%EC%A3%BC%EB%A7%90%EC%97%90%20%EA%B0%99%EC%9D%B4%20%EC%9A%B4%EB%8F%99%ED%95%A0%EA%B9%8C%EC%9A%94%20.m4a?alt=media",
                     },
                     {
                       text: "공원에서 배드민턴 치는 거 어때요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_weekend_A2_2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F2%2Fvocab%2F%EA%B3%B5%EC%9B%90%EC%97%90%EC%84%9C%20%EB%B0%B0%EB%93%9C%EB%AF%BC%ED%84%B4%20%EC%B9%98%EB%8A%94%20%EA%B1%B0%20%EC%96%B4%EB%95%8C%EC%9A%94.m4a?alt=media",
                     },
                   ],
                 },
@@ -8020,12 +8020,12 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "좋은 생각이에요!",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_weekend_B2_1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F2%2Fvocab%2F%EC%A2%8B%EC%9D%80%20%EC%83%9D%EA%B0%81%EC%9D%B4%EC%97%90%EC%9A%94.m4a?alt=media",
                     },
                     {
                       text: "운동 후에 맛있는 것도 먹으러 가요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_weekend_B2_2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F2%2Fvocab%2F%EC%9A%B4%EB%8F%99%20%ED%9B%84%EC%97%90%20%EB%A7%9B%EC%9E%88%EB%8A%94%20%EA%B2%83%EB%8F%84%20%EB%A8%B9%EC%9C%BC%EB%9F%AC%20%EA%B0%80%EC%9A%94.m4a?alt=media",
                     },
                   ],
                 },
@@ -8205,7 +8205,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "어제 본 영화 어땠어요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_emo_hobby_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F3%2Fvocab%2F%EC%96%B4%EC%A0%9C%20%EB%B3%B8%20%EC%98%81%ED%99%94%20%EC%96%B4%EB%95%A0%EC%96%B4%EC%9A%94%20%20(1).m4a?alt=media",
                     },
                   ],
                 },
@@ -8216,12 +8216,12 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "정말 재미있었어요!",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_emo_hobby_B1_1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F3%2Fvocab%2F%EC%A0%95%EB%A7%90%20%EC%9E%AC%EB%AF%B8%EC%9E%88%EC%97%88%EC%96%B4%EC%9A%94%20.m4a?alt=media",
                     },
                     {
-                      text: "이야기가 흥미진진했어요.",
+                      text: "흥미진진했어요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_emo_hobby_B1_2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F3%2Fvocab%2F%ED%9D%A5%EB%AF%B8%EC%A7%84%EC%A7%84%ED%96%88%EC%96%B4%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -8232,7 +8232,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "그럼 다음 주말에는 우리 같이 즐거운 시간을 보내요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_emo_hobby_A2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F3%2Fvocab%2F%EA%B7%B8%EB%9F%BC%20%EB%8B%A4%EC%9D%8C%20%EC%A3%BC%EB%A7%90%EC%97%90%EB%8A%94%20%EC%9A%B0%EB%A6%AC%20%EA%B0%99%EC%9D%B4%20%EC%A6%90%EA%B1%B0%EC%9A%B4%20%EC%8B%9C%EA%B0%84%EC%9D%84%20%EB%B3%B4%EB%82%B4%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -8243,12 +8243,12 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "좋아요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_emo_hobby_B2_1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F3%2Fvocab%2F%EC%A2%8B%EC%95%84%EC%9A%94.mp3?alt=media",
                     },
                     {
                       text: "생각만 해도 즐거워요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_emo_hobby_B2_2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F3%2Fvocab%2F%EC%83%9D%EA%B0%81%EB%A7%8C%20%ED%95%B4%EB%8F%84%20%EC%A6%90%EA%B1%B0%EC%9B%8C%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -8424,7 +8424,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "남 씨에게 인생에서 가장 중요한 것은 뭐예요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_fav_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F4%2Fvocab%2F%EB%82%A8%20%EC%94%A8%EC%97%90%EA%B2%8C%20%EC%9D%B8%EC%83%9D%EC%97%90%EC%84%9C%20%EA%B0%80%EC%9E%A5%20%EC%A4%91%EC%9A%94%ED%95%9C%20%EA%B2%83%EC%9D%80%20%EB%AD%90%EC%98%88%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -8435,12 +8435,12 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "음...",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_fav_B1_1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F4%2Fvocab%2F%EC%9D%8C....mp3?alt=media",
                     },
                     {
                       text: "제가 좋아하는 일을 하는 것이 최고라고 생각해요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_fav_B1_2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F4%2Fvocab%2F%EC%A0%9C%EA%B0%80%20%EC%A2%8B%EC%95%84%ED%95%98%EB%8A%94%20%EC%9D%BC%EC%9D%84%20%ED%95%98%EB%8A%94%20%EA%B2%83%EC%9D%B4%20%EC%B5%9C%EA%B3%A0%EB%9D%BC%EA%B3%A0%20%EC%83%9D%EA%B0%81%ED%95%B4%EC%9A%94..mp3?alt=media",
                     },
                   ],
                 },
@@ -8456,7 +8456,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "좋아하는 음악을 듣는 시간이 저에게는 최고의 시간이에요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_fav_A2_2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F4%2Fvocab%2F%EC%A0%80%EB%8F%84%20%EB%8F%99%EC%9D%98%ED%95%B4%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -8855,7 +8855,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "저는 요즘 한국 문화에 대해 배우고 있어요. 정말 흥미로워요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_culture_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F1%2Fvocab%2F%EC%A0%80%EB%8A%94%20%EC%9A%94%EC%A6%98%20%ED%95%9C%EA%B5%AD%20%EB%AC%B8%ED%99%94%EC%97%90%20%EB%8C%80%ED%95%B4%20%EB%B0%B0%EC%9A%B0%EA%B3%A0%20%EC%9E%88%EC%96%B4%EC%9A%94.%20%EC%A0%95%EB%A7%90%20%ED%9D%A5%EB%AF%B8%EB%A1%9C%EC%9B%8C%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -8866,7 +8866,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "와, 그래요? 한국 문화 중에서 어떤 것이 가장 재미있어요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_culture_B1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F1%2Fvocab%2F%EC%99%80%2C%20%EA%B7%B8%EB%9E%98%EC%9A%94%20%ED%95%9C%EA%B5%AD%20%EB%AC%B8%ED%99%94%20%EC%A4%91%EC%97%90%EC%84%9C%20%EC%96%B4%EB%96%A4%20%EA%B2%83%EC%9D%B4%20%EA%B0%80%EC%9E%A5%20%EC%9E%AC%EB%AF%B8%EC%9E%88%EC%96%B4%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -8877,12 +8877,12 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "저는 한국의 인사 문화가 인상 깊었어요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_culture_A2_1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F1%2Fvocab%2F%EC%A0%80%EB%8A%94%20%ED%95%9C%EA%B5%AD%EC%9D%98%20%EC%9D%B8%EC%82%AC%20%EB%AC%B8%ED%99%94%EA%B0%80%20%EC%9D%B8%EC%83%81%20%EA%B9%8A%EC%97%88%EC%96%B4%EC%9A%94.mp3?alt=media",
                     },
                     {
                       text: "단순한 인사가 아니라, 존경의 의미를 담고 있더라고요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_culture_A2_2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F1%2Fvocab%2F%EB%8B%A8%EC%88%9C%ED%95%9C%20%EC%9D%B8%EC%82%AC%EA%B0%80%20%EC%95%84%EB%8B%88%EB%9D%BC%2C%20%EC%A1%B4%EA%B2%BD%EC%9D%98%20%EC%9D%98%EB%AF%B8%EB%A5%BC%20%EB%8B%B4%EA%B3%A0%20%EC%9E%88%EB%8D%94%EB%9D%BC%EA%B3%A0%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -8893,7 +8893,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "맞아요. 한국에서는 인사가 정말 중요해요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_culture_B2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F1%2Fvocab%2F%EB%A7%9E%EC%95%84%EC%9A%94.%20%ED%95%9C%EA%B5%AD%EC%97%90%EC%84%9C%EB%8A%94%20%EC%9D%B8%EC%82%AC%EA%B0%80%20%EC%A0%95%EB%A7%90%20%EC%A4%91%EC%9A%94%ED%95%B4%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -9045,7 +9045,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "한국에서는 어른들을 존경하는 마음이 아주 중요해요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_etiquette_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F2%2Fvocab%2F%ED%95%9C%EA%B5%AD%EC%97%90%EC%84%9C%EB%8A%94%20%EC%96%B4%EB%A5%B8%EB%93%A4%EC%9D%84%20%EC%A1%B4%EA%B2%BD%ED%95%98%EB%8A%94%20%EB%A7%88%EC%9D%8C%EC%9D%B4%20%EC%95%84%EC%A3%BC%20%EC%A4%91%EC%9A%94%ED%95%B4%EC%9A%94.mp3?alt=media", // Thay link audio thực tế
                     },
                   ],
                 },
@@ -9056,7 +9056,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "네, 그래서 식사 예절이나 언어 예절이 발달한 것 같아요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_etiquette_B1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F2%2Fvocab%2F%EB%84%A4%2C%20%EA%B7%B8%EB%9E%98%EC%84%9C%20%EC%8B%9D%EC%82%AC%20%EC%98%88%EC%A0%88%EC%9D%B4%EB%82%98%20%EC%96%B8%EC%96%B4%20%EC%98%88%EC%A0%88%EC%9D%B4%20%EB%B0%9C%EB%8B%AC%ED%95%9C%20%EA%B2%83%20%EA%B0%99%EC%95%84%EC%9A%94..mp3?alt=media",
                     },
                   ],
                 },
@@ -9067,7 +9067,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "맞아요. 어른들께 물건을 드릴 때는 두 손으로 드리는 것이 기본 예절이에요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_etiquette_A2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F2%2Fvocab%2F%EB%A7%9E%EC%95%84%EC%9A%94.%20%EC%96%B4%EB%A5%B8%EB%93%A4%EA%BB%98%20%EB%AC%BC%EA%B1%B4%EC%9D%84%20%EB%93%9C%EB%A6%B4%20%EB%95%8C%EB%8A%94%20%EB%91%90%20%EC%86%90%EC%9C%BC%EB%A1%9C%20%EB%93%9C%EB%A6%AC%EB%8A%94%20%EA%B2%83%EC%9D%B4%20%EA%B8%B0%EB%B3%B8%20%EC%98%88%EC%A0%88%EC%9D%B4%EC%97%90%EC%9A%94..mp3?alt=media",
                     },
                   ],
                 },
@@ -9078,7 +9078,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "새로운 문화를 배울수록, 서로를 존경하는 것이 얼마나 중요한지 깨닫게 돼요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_etiquette_B2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F2%2Fvocab%2F%EC%83%88%EB%A1%9C%EC%9A%B4%20%EB%AC%B8%ED%99%94%EB%A5%BC%20%EB%B0%B0%EC%9A%B8%EC%88%98%EB%A1%9D%2C%20%EC%84%9C%EB%A1%9C%EB%A5%BC%20%EC%A1%B4%EA%B2%BD%ED%95%98%EB%8A%94%20%EA%B2%83%EC%9D%B4%20%EC%96%BC%EB%A7%88%EB%82%98%20%EC%A4%91%EC%9A%94%ED%95%9C%EC%A7%80%20%EA%B9%A8%EB%8B%AB%EA%B2%8C%20%EB%8F%BC%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -9260,7 +9260,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "저는 한국의 전통 음식을 정말 좋아해요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_culture_fc_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F3%2Fvocab%2F%EC%A0%80%EB%8A%94%20%ED%95%9C%EA%B5%AD%EC%9D%98%20%EC%A0%84%ED%86%B5%20%EC%9D%8C%EC%8B%9D%EC%9D%84%20%EC%A0%95%EB%A7%90%20%EC%A2%8B%EC%95%84%ED%95%B4%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -9271,7 +9271,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "어떤 음식을 좋아하세요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_culture_fc_B1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F3%2Fvocab%2F%EC%96%B4%EB%96%A4%20%EC%9D%8C%EC%8B%9D%EC%9D%84%20%EC%A2%8B%EC%95%84%ED%95%98%EC%84%B8%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -9282,12 +9282,12 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "불고기하고 비빔밥을 좋아해요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_culture_fc_A2_1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F3%2Fvocab%2F%EB%B6%88%EA%B3%A0%EA%B8%B0%ED%95%98%EA%B3%A0%20%EB%B9%84%EB%B9%94%EB%B0%A5%EC%9D%84%20%EC%A2%8B%EC%95%84%ED%95%B4%EC%9A%94.mp3?alt=media",
                     },
                     {
                       text: "그리고 명절에 입는 한복도 정말 아름다운 것 같아요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_culture_fc_A2_2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F3%2Fvocab%2F%EA%B7%B8%EB%A6%AC%EA%B3%A0%20%EB%AA%85%EC%A0%88%EC%97%90%20%EC%9E%85%EB%8A%94%20%ED%95%9C%EB%B3%B5%EB%8F%84%20%EC%A0%95%EB%A7%90%20%EC%95%84%EB%A6%84%EB%8B%A4%EC%9A%B4%20%EA%B2%83%20%EA%B0%99%EC%95%84%EC%9A%94..mp3?alt=media",
                     },
                   ],
                 },
@@ -9298,7 +9298,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "네, 한복은 색깔과 선이 아름다운 전통 옷이에요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_culture_fc_B2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F3%2Fvocab%2F%EB%84%A4%2C%20%ED%95%9C%EB%B3%B5%EC%9D%80%20%EC%83%89%EA%B9%94%EA%B3%BC%20%EC%84%A0%EC%9D%B4%20%EC%95%84%EB%A6%84%EB%8B%A4%EC%9A%B4%20%EC%A0%84%ED%86%B5%20%EC%98%B7%EC%9D%B4%EC%97%90%EC%9A%94..mp3?alt=media",
                     },
                   ],
                 },
@@ -9501,7 +9501,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "다른 나라의 문화를 이해하는 것은 어떤 의미가 있을까요?",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_culture_div_A1.mp3", // Thay link audio thực tế
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F4%2Fvocab%2F%EB%8B%A4%EB%A5%B8%20%EB%82%98%EB%9D%BC%EC%9D%98%20%EB%AC%B8%ED%99%94%EB%A5%BC%20%EC%9D%B4%ED%95%B4%ED%95%98%EB%8A%94%20%EA%B2%83%EC%9D%80%20%EC%96%B4%EB%96%A4%20%EC%9D%98%EB%AF%B8%EA%B0%80%20%EC%9E%88%EC%9D%84%EA%B9%8C%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -9512,7 +9512,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "저는 세상을 더 넓게 볼 수 있게 해준다고 생각해요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_culture_div_B1.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F4%2Fvocab%2F%EC%A0%80%EB%8A%94%20%EC%84%B8%EC%83%81%EC%9D%84%20%EB%8D%94%20%EB%84%93%EA%B2%8C%20%EB%B3%BC%20%EC%88%98%20%EC%9E%88%EA%B2%8C%20%ED%95%B4%EC%A4%80%EB%8B%A4%EA%B3%A0%20%EC%83%9D%EA%B0%81%ED%95%B4%EC%9A%94.mp3?alt=media",
                     },
                   ],
                 },
@@ -9523,7 +9523,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "맞아요. 모든 문화는 고유의 의미와 아름다움을 가지고 있어요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_culture_div_A2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F4%2Fvocab%2F%EB%A7%9E%EC%95%84%EC%9A%94.%20%EB%AA%A8%EB%93%A0%20%EB%AC%B8%ED%99%94%EB%8A%94%20%EA%B3%A0%EC%9C%A0%EC%9D%98%20%EC%9D%98%EB%AF%B8%EC%99%80%20%EC%95%84%EB%A6%84%EB%8B%A4%EC%9B%80%EC%9D%84%20%EA%B0%80%EC%A7%80%EA%B3%A0%20%EC%9E%88%EC%96%B4%EC%9A%94..mp3?alt=media",
                     },
                   ],
                 },
@@ -9534,7 +9534,7 @@ Nó không mang nghĩa "đánh nhau", mà là "Cố lên!", "Làm tốt nhé!".<
                     {
                       text: "그래서 우리는 서로의 문화를 존경하고 이해해야 해요.",
                       audioUrl:
-                        "https://firebasestorage.googleapis.com/.../dialogue_culture_div_B2.mp3",
+                        "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F4%2Fvocab%2F%EA%B7%B8%EB%9E%98%EC%84%9C%20%EC%9A%B0%EB%A6%AC%EB%8A%94%20%EC%84%9C%EB%A1%9C%EC%9D%98%20%EB%AC%B8%ED%99%94%EB%A5%BC%20%EC%A1%B4%EA%B2%BD%ED%95%98%EA%B3%A0%20%EC%9D%B4%ED%95%B4%ED%95%B4%EC%95%BC%20%ED%95%B4%EC%9A%94..mp3?alt=media",
                     },
                   ],
                 },
@@ -10315,7 +10315,8 @@ export const vocabList: Record<number, Vocab> = {
     usage:
       "Dùng để chỉ các thành viên trong nhà hoặc tập thể gia đình nói chung.",
     description: "Danh từ chỉ tập hợp những người thân thiết cùng chung sống.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_gajok.mp3", // Thay link
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%EA%B0%80%EC%A1%B1.m4a?alt=media&token=aeb646a4-be43-4207-a708-760b5f559073",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2990/2990432.png", // Icon gia đình
     wordType: "noun",
     subdescription: "Bắt nguồn từ Hán tự 家族 (Gia tộc).",
@@ -10343,7 +10344,8 @@ export const vocabList: Record<number, Vocab> = {
     usage:
       "Dùng khi giới thiệu mẹ với người lạ hoặc trong văn viết, hoàn cảnh trang trọng.",
     description: "Danh từ chỉ người mẹ, mang sắc thái kính trọng.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_eomeoni.mp3", // Thay link
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%ED%95%99%EC%83%9D%EC%9E%85%EB%8B%88%EB%8B%A4.mp3?alt=media&token=df3320b7-5420-49a9-862c-cbec9abafccd", // Thay link
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2922/2922561.png", // Icon mẹ
     wordType: "noun",
     subdescription: "Cách gọi thân mật hàng ngày là <b>엄마 (eomma)</b>.",
@@ -10375,7 +10377,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Bố (trang trọng)",
     usage: "Dùng khi giới thiệu bố với người lạ hoặc thể hiện sự kính trọng.",
     description: "Danh từ chỉ người cha, mang sắc thái kính trọng.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_abeoji.mp3", // Thay link
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%EC%95%84%EB%B2%84%EC%A7%80.m4a?alt=media", // Thay link
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2922/2922510.png", // Icon bố
     wordType: "noun",
     subdescription: "Cách gọi thân mật hàng ngày là <b>아빠 (appa)</b>.",
@@ -10409,7 +10412,8 @@ export const vocabList: Record<number, Vocab> = {
     usage:
       "Dùng để chỉ những người bạn cùng tuổi hoặc mối quan hệ bạn bè xã giao thân thiết (nếu đã thỏa thuận).",
     description: "Danh từ chỉ người bạn.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_chingu.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%EC%B9%9C%EA%B5%AC.m4a?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/3002/3002655.png", // Icon bạn bè
     wordType: "noun",
     subdescription: "Bắt nguồn từ Hán tự 親舊 (Thân Cựu).",
@@ -10437,7 +10441,8 @@ export const vocabList: Record<number, Vocab> = {
     usage:
       "Dùng để diễn tả sự sở hữu hoặc sự tồn tại của người/vật tại một địa điểm.",
     description: "Động từ chỉ sự tồn tại.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_itta.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%EC%9E%88%EB%8B%A4.m4a?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/10692/10692797.png", // Icon dấu tích/có
     wordType: "verb",
     subdescription:
@@ -10462,7 +10467,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Không có / Không ở",
     usage: "Là dạng phủ định của 있다.",
     description: "Động từ chỉ sự vắng mặt hoặc không sở hữu.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_eopda.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%EC%97%86%EB%8B%A4.m4a?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/1828/1828843.png", // Icon dấu X/không có
     wordType: "verb",
     subdescription:
@@ -10491,7 +10497,8 @@ export const vocabList: Record<number, Vocab> = {
     usage:
       "Dùng để nói về tình cảm yêu thương giữa người với người, hoặc sự yêu thích một vật gì đó.",
     description: "Danh từ chỉ tình yêu thương.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_sarang.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%EC%82%AC%EB%9E%91.m4a?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2589/2589175.png", // Icon trái tim
     wordType: "noun",
     subdescription:
@@ -10519,7 +10526,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Hạnh phúc",
     usage: "Dùng để diễn tả trạng thái vui vẻ, mãn nguyện.",
     description: "Danh từ chỉ sự hạnh phúc.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_haengbok.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%ED%96%89%EB%B3%B5.m4a?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/742/742751.png", // Icon mặt cười hạnh phúc
     wordType: "noun",
     subdescription:
@@ -10547,7 +10555,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Tuyệt nhất / Số 1",
     usage: "Dùng để khen ngợi ai đó hoặc cái gì đó là đỉnh nhất, tốt nhất.",
     description: "Danh từ chỉ mức độ cao nhất.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_choego.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%EC%B5%9C%EA%B3%A0.m4a?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/1628/1628931.png", // Icon ngón tay cái (Like/Best)
     wordType: "noun",
     subdescription:
@@ -10577,8 +10586,9 @@ export const vocabList: Record<number, Vocab> = {
       "Dùng để cảm ơn một cách chân thành, ấm áp với người lớn hoặc trong giao tiếp lịch sự.",
     description: "Từ cảm ơn gốc thuần Hàn, mang sắc thái tình cảm.",
     audioUrl:
-      "https://firebasestorage.googleapis.com/.../vocab_gomapseumnida.mp3",
-    imgUrl: "https://cdn-icons-png.flaticon.com/512/1067/1067357.png", // Icon bắt tay/cảm ơn
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%EA%B3%A0%EB%A7%99%EC%8A%B5%EB%8B%88%EB%8B%A4.m4a?alt=media",
+    imgUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%EA%B3%A0%EB%A7%99%EC%8A%B5%EB%8B%88%EB%8B%A4.m4a?alt", // Icon bắt tay/cảm ơn
     wordType: "phrase",
     subdescription:
       "Lưu ý phát âm: Chữ 'ㅂ' gặp 'ㄴ' đọc thành 'm'. Đọc là [go-map-seum-ni-da].",
@@ -10606,8 +10616,10 @@ export const vocabList: Record<number, Vocab> = {
     usage:
       "Phó từ chỉ tần suất, mang sắc thái tình cảm, thường dùng trong văn viết hoặc lời nói chân thành.",
     description: "Phó từ chỉ sự liên tục, bền bỉ.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_neul.mp3",
-    imgUrl: "https://cdn-icons-png.flaticon.com/512/2089/2089678.png", // Icon vô cực/đồng hồ
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%EB%8A%98.m4a?alt=media",
+    imgUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%EB%8A%98.m4a?alt=media",
     wordType: "adverb",
     subdescription: "Đồng nghĩa với '항상' nhưng nghe nhẹ nhàng hơn.",
     parts: [
@@ -10628,7 +10640,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Luôn luôn (Thường dùng)",
     usage: "Phó từ chỉ tần suất phổ biến nhất trong giao tiếp hàng ngày.",
     description: "Phó từ chỉ sự thường xuyên, lúc nào cũng vậy.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_hangsang.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-1%2F2%2Fvocab%2F%ED%95%AD%EC%83%81.m4a?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2328/2328525.png", // Icon lịch/thời gian
     wordType: "adverb",
     subdescription: "Bắt nguồn từ Hán tự 恒常 (Hằng Thường).",
@@ -10656,7 +10669,8 @@ export const vocabList: Record<number, Vocab> = {
     usage:
       "Dùng đếm số lượng. Biến đổi thành '한' khi đứng trước danh từ đơn vị (ví dụ: 한 명).",
     description: "Số đếm thuần Hàn số 1.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_hana.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F5%2Fvocab%2F%ED%95%98%EB%82%98.m4a?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/3570/3570095.png", // Icon số 1
     wordType: "number",
     subdescription:
@@ -10674,7 +10688,8 @@ export const vocabList: Record<number, Vocab> = {
     usage:
       "Dùng đếm số lượng. Biến đổi thành '두' khi đứng trước danh từ đơn vị.",
     description: "Số đếm thuần Hàn số 2.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_dul.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F5%2Fvocab%2F%EB%91%98.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/3570/3570098.png", // Icon số 2
     wordType: "number",
     subdescription:
@@ -10691,7 +10706,8 @@ export const vocabList: Record<number, Vocab> = {
     usage:
       "Dùng đếm số lượng. Biến đổi thành '세' khi đứng trước danh từ đơn vị.",
     description: "Số đếm thuần Hàn số 3.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_set.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F5%2Fvocab%2F%EC%85%8B.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/3570/3570100.png", // Icon số 3
     wordType: "number",
     subdescription:
@@ -10708,7 +10724,8 @@ export const vocabList: Record<number, Vocab> = {
     usage:
       "Dùng đếm số lượng. Biến đổi thành '네' khi đứng trước danh từ đơn vị.",
     description: "Số đếm thuần Hàn số 4.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_net.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F5%2Fvocab%2F%EB%84%B7.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/3570/3570103.png", // Icon số 4
     wordType: "number",
     subdescription:
@@ -10724,7 +10741,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Năm (5)",
     usage: "Dùng đếm số lượng. KHÔNG biến đổi hình thái.",
     description: "Số đếm thuần Hàn số 5.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_daseot.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F5%2Fvocab%2F%EB%8B%A4%EC%84%AF.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/3570/3570106.png", // Icon số 5
     wordType: "number",
     subdescription:
@@ -10742,7 +10760,8 @@ export const vocabList: Record<number, Vocab> = {
     usage:
       "Dùng để nói về khái niệm thời gian nói chung hoặc đơn vị đếm tiếng (ví dụ: 2 tiếng đồng hồ).",
     description: "Danh từ chỉ thời gian.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_sigan.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F5%2Fvocab%2F%EC%8B%9C%EA%B0%84.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2928/2928750.png", // Icon đồng hồ cát/thời gian
     wordType: "noun",
     subdescription: "Bắt nguồn từ Hán tự 時間 (Thời Gian).",
@@ -10770,7 +10789,8 @@ export const vocabList: Record<number, Vocab> = {
     usage:
       "Phó từ chỉ thời điểm hiện tại, thường đứng đầu câu hoặc trước động từ.",
     description: "Từ chỉ thời điểm ngay lúc nói.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_jigeum.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F5%2Fvocab%2F%EC%A7%80%EA%B8%88%20(2).mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2088/2088617.png", // Icon 'Now' hoặc chỉ tay xuống đất
     wordType: "adverb",
     subdescription: "Bắt nguồn từ Hán tự 只今 (Chỉ Kim).",
@@ -10797,7 +10817,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Hôm nay",
     usage: "Danh từ chỉ ngày hiện tại.",
     description: "Từ chỉ ngày hôm nay.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_oneul.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F5%2Fvocab%2F%EC%98%A4%EB%8A%98.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2693/2693507.png", // Icon lịch ngày hôm nay
     wordType: "noun",
     subdescription:
@@ -10826,7 +10847,8 @@ export const vocabList: Record<number, Vocab> = {
     usage:
       "Danh từ chỉ ngày ngay sau hôm nay. Thường đứng đầu câu hoặc làm trạng ngữ chỉ thời gian.",
     description: "Từ chỉ ngày mai.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_naeil.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F5%2Fvocab%2F%EB%82%B4%EC%9D%BC.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2693/2693633.png", // Icon lịch ngày tiếp theo
     wordType: "noun",
     subdescription: "Bắt nguồn từ Hán tự 來日 (Lai Nhật - Ngày sắp đến).",
@@ -10854,8 +10876,7 @@ export const vocabList: Record<number, Vocab> = {
     usage: "Dùng để chỉ khoảng thời gian nghỉ trưa để ăn uống.",
     description: "Danh từ ghép chỉ giờ nghỉ trưa.",
     audioUrl:
-      "https://firebasestorage.googleapis.com/.../vocab_jeomsimsigan.mp3",
-    imgUrl: "https://cdn-icons-png.flaticon.com/512/2771/2771401.png", // Icon hộp cơm trưa/đồng hồ
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F5%2Fvocab%2F%EC%A0%90%EC%8B%AC%EC%8B%9C%EA%B0%84.mp3?alt=media",
     wordType: "noun",
     subdescription:
       "Ghép từ <b>점심</b> (bữa trưa) và <b>시간</b> (thời gian).",
@@ -10883,7 +10904,8 @@ export const vocabList: Record<number, Vocab> = {
     usage:
       "Đơn vị đếm phổ biến nhất, dùng cho hầu hết các đồ vật nhỏ, trái cây, bánh kẹo...",
     description: "Lượng từ (đơn vị đếm) phổ biến.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_gae.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F5%2Fvocab%2F%EA%B0%9C.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/415/415682.png", // Icon quả táo/đồ vật
     wordType: "counter",
     subdescription: "Luôn đứng sau số đếm Thuần Hàn (Ví dụ: 한 개, 두 개).",
@@ -10906,7 +10928,8 @@ export const vocabList: Record<number, Vocab> = {
     usage:
       "Dùng để yêu cầu ai đó đưa vật gì đó hoặc làm gì đó cho mình một cách lịch sự.",
     description: "Câu yêu cầu lịch sự.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_juseyo.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-3%2F5%2Fvocab%2F%EC%A3%BC%EC%84%B8%EC%9A%94.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/1001/1001100.png", // Icon bàn tay đưa/nhận
     wordType: "phrase",
     subdescription: "Kết hợp: [Danh từ] + [Số lượng] + <b>주세요</b>.",
@@ -10930,7 +10953,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Cái này",
     usage: "Dùng để chỉ vật đang ở gần người nói.",
     description: "Đại từ chỉ định (gần người nói).",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_igeo.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F5%2Fvocab%2F%EC%9D%B4%EA%B1%B0.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/3523/3523887.png", // Icon ngón tay chỉ vật gần
     wordType: "pronoun",
     subdescription: "Là dạng rút gọn của <b>이것 (igeot)</b>.",
@@ -10957,7 +10981,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Bao nhiêu tiền?",
     usage: "Câu hỏi giá cả phổ biến và lịch sự nhất.",
     description: "Cụm từ hỏi giá.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_eolmayeyo.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F5%2Fvocab%2F%EC%96%BC%EB%A7%88%EC%98%88%EC%9A%94.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2454/2454282.png", // Icon tag giá tiền/dấu hỏi
     wordType: "phrase",
     subdescription: "Gồm <b>얼마</b> (bao nhiêu) + <b>예요</b> (là).",
@@ -10984,7 +11009,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Hãy cho tôi...",
     usage: "Dùng để yêu cầu người bán đưa món đồ mình muốn mua.",
     description: "Câu yêu cầu lịch sự khi mua hàng.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_juseyo.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F5%2Fvocab%2F%EC%A3%BC%EC%84%B8%EC%9A%94%20(2).mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/1001/1001100.png", // Icon đưa tay xin
     wordType: "phrase",
     subdescription: "Nhấn mạnh lại từ Chủ đề 3 trong ngữ cảnh mua sắm.",
@@ -11009,7 +11035,8 @@ export const vocabList: Record<number, Vocab> = {
     usage:
       "Đơn vị đếm (lượng từ) dùng cho các vật chứa chất lỏng như nước, rượu, nước ngọt.",
     description: "Lượng từ chỉ chai, lọ.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_byeong.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F5%2Fvocab%2F%EB%B3%91.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/820/820310.png", // Icon cái chai
     wordType: "counter",
     subdescription: "Bắt nguồn từ Hán tự 甁 (Bình).",
@@ -11031,7 +11058,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Và / Với",
     usage: "Tiểu từ dùng để nối hai danh từ, thường dùng trong văn nói.",
     description: "Tiểu từ liên kết.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_hago.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F5%2Fvocab%2F%ED%95%98%EA%B3%A0.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/659/659902.png", // Icon dấu cộng hoặc liên kết
     wordType: "particle",
     subdescription: "Dùng nối danh từ: N1 + 하고 + N2.",
@@ -11053,7 +11081,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Rẻ",
     usage: "Dùng để miêu tả giá cả thấp, hợp lý.",
     description: "Tính từ chỉ giá rẻ.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_ssada.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F5%2Fvocab%2F%EC%8B%B8%EB%8B%A4.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2534/2534204.png", // Icon giảm giá/giá rẻ
     wordType: "adjective",
     subdescription: "Khi chia đuôi câu thân mật: <b>싸요 (ssayo)</b>.",
@@ -11080,7 +11109,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Đắt",
     usage: "Dùng để miêu tả giá cả cao.",
     description: "Tính từ chỉ giá đắt.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_bissada.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F5%2Fvocab%2F%EB%B9%84%EC%8B%B8%EB%8B%A4.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2454/2454269.png", // Icon tiền bay đi/đắt đỏ
     wordType: "adjective",
     subdescription: "Khi chia đuôi câu thân mật: <b>비싸요 (bissayo)</b>.",
@@ -11104,7 +11134,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Giảm giá",
     usage: "Dùng để nói về việc chiết khấu giá cả.",
     description: "Danh từ chỉ sự giảm giá.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_harin.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F5%2Fvocab%2F%ED%95%A0%EC%9D%B8.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/726/726476.png", // Icon % giảm giá
     wordType: "noun",
     subdescription: "Thường dùng: <b>할인해 주세요</b> (Hãy giảm giá cho tôi).",
@@ -11132,7 +11163,7 @@ export const vocabList: Record<number, Vocab> = {
     usage: "Dùng để diễn tả cảm xúc vui vẻ, mãn nguyện.",
     description: "Tính từ chỉ trạng thái hạnh phúc.",
     audioUrl:
-      "https://firebasestorage.googleapis.com/.../vocab_haengbokhaeyo.mp3",
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F5%2Fvocab%2F%ED%96%89%EB%B3%B5%ED%95%B4%EC%9A%94.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/1067/1067357.png", // Icon mặt cười/trái tim
     wordType: "adjective",
     subdescription: "Gốc từ: <b>행복하다</b>.",
@@ -11159,7 +11190,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Thực đơn",
     usage: "Dùng để gọi thực đơn khi vào nhà hàng.",
     description: "Danh từ mượn từ tiếng Anh 'Menu'.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_menyu.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-4%2F5%2Fvocab%2F%EB%A9%94%EB%89%B4.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/1046/1046857.png", // Icon quyển menu
     wordType: "noun",
     subdescription:
@@ -11184,7 +11216,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Gọi món / Đặt hàng",
     usage: "Dùng khi quyết định chọn món ăn hoặc mua hàng.",
     description: "Danh từ chỉ việc đặt món.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_jumun.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F5%2Fvocab%2F%EC%A3%BC%EB%AC%B8.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/3500/3500833.png", // Icon người phục vụ ghi order
     wordType: "noun",
     subdescription:
@@ -11212,7 +11245,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Ngon",
     usage: "Dùng để khen ngợi thức ăn ngon.",
     description: "Tính từ/Cụm từ diễn tả vị ngon.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_masisseoyo.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F5%2Fvocab%2F%EB%A7%9B%EC%9E%88%EC%96%B4%EC%9A%94.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/1376/1376358.png", // Icon mặt ngon miệng (yummy)
     wordType: "phrase",
     subdescription:
@@ -11240,7 +11274,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Cơm / Bữa ăn",
     usage: "Dùng để chỉ món cơm nấu từ gạo, hoặc chỉ bữa ăn nói chung.",
     description: "Lương thực chính của người Hàn.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_bap.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F5%2Fvocab%2F%EB%B0%A5.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/3014/3014520.png", // Icon bát cơm
     wordType: "noun",
     subdescription: "Thường dùng trong câu chào: <b>밥 먹었어요?</b>",
@@ -11262,7 +11297,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Nước",
     usage: "Danh từ chỉ nước uống.",
     description: "Nước uống.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_mul.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F5%2Fvocab%2F%EB%AC%BC.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/3100/3100566.png", // Icon cốc nước
     wordType: "noun",
     subdescription: "Trong nhà hàng thường là tự phục vụ (Self).",
@@ -11281,7 +11317,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Ăn",
     usage: "Động từ chỉ hành động ăn uống.",
     description: "Động từ ăn.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_meokda.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F5%2Fvocab%2F%EB%A8%B9%EB%8B%A4.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/1046/1046755.png", // Icon người ăn
     wordType: "verb",
     subdescription: "Quá khứ: <b>먹었어요</b>. Hiện tại: <b>먹어요</b>.",
@@ -11308,7 +11345,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Uống",
     usage: "Động từ chỉ hành động uống chất lỏng.",
     description: "Động từ uống.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_masida.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F5%2Fvocab%2F%EB%A7%88%EC%8B%9C%EB%8B%A4.mp3?alt=media&token=0c344c2a-80fb-418e-8fc7-7787b372fc06",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/3050/3050239.png", // Icon người uống
     wordType: "verb",
     subdescription: "Quá khứ đặc biệt: <b>마셨어요</b>.",
@@ -11336,7 +11374,8 @@ export const vocabList: Record<number, Vocab> = {
     usage:
       "Động từ diễn tả sự yêu thích đối với người hoặc vật. Luôn đi với tiểu từ tân ngữ -을/를.",
     description: "Động từ 'Thích'.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_joahada.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F5%2Fvocab%2F%EC%A2%8B%EC%95%84%ED%95%98%EB%8B%A4.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/1077/1077035.png", // Icon trái tim/like
     wordType: "verb",
     subdescription:
@@ -11364,7 +11403,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Bánh gạo cay",
     usage: "Tên một món ăn đường phố nổi tiếng của Hàn Quốc.",
     description: "Món bánh gạo cay truyền thống.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_tteokbokki.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F5%2Fvocab%2F%EB%96%A1%EB%B3%B6%EC%9D%B4.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/1895/1895685.png", // Icon Tteokbokki
     wordType: "noun",
     subdescription: "Món ăn tiêu biểu cho vị cay ngọt của Hàn Quốc.",
@@ -11391,7 +11431,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Thịt bò xào (Bulgogi)",
     usage: "Món thịt nướng/xào ướp gia vị ngọt đặc trưng.",
     description: "Món thịt bò tẩm gia vị.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_bulgogi.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F5%2Fvocab%2F%EB%B6%88%EA%B3%A0%EA%B8%B0.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/1134/1134447.png", // Icon thịt nướng
     wordType: "noun",
     subdescription: "Ghép từ <b>불</b> (lửa) + <b>고기</b> (thịt).",
@@ -11418,7 +11459,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Sức khỏe",
     usage: "Dùng để nói về tình trạng thể chất.",
     description: "Danh từ chỉ sức khỏe.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_geongang.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F5%2Fvocab%2F%EA%B1%B4%EA%B0%95.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2966/2966334.png", // Icon sức khỏe/trái tim
     wordType: "noun",
     subdescription: "Bắt nguồn từ Hán tự 健康 (Kiện Khang).",
@@ -11445,7 +11487,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Sức lực / Năng lượng",
     usage: "Dùng để diễn tả sức mạnh thể chất hoặc tinh thần.",
     description: "Danh từ chỉ sức lực.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_him.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F5%2Fvocab%2F%ED%9E%98.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/1545/1545626.png", // Icon cánh tay cơ bắp
     wordType: "noun",
     subdescription:
@@ -11468,7 +11511,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Gà hầm sâm",
     usage: "Món ăn tẩm bổ nổi tiếng, thường ăn khi mệt mỏi hoặc vào mùa hè.",
     description: "Món canh gà nhân sâm.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_samgyetang.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-5%2F5%2Fvocab%2F%EC%82%BC%EA%B3%84%ED%83%95.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2515/2515129.png", // Icon bát canh nóng
     wordType: "noun",
     subdescription:
@@ -11501,7 +11545,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Tàu điện ngầm",
     usage: "Phương tiện công cộng phổ biến nhất ở các thành phố lớn Hàn Quốc.",
     description: "Tàu điện chạy dưới lòng đất.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_jihacheol.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F5%2Fvocab%2F%EC%A7%80%ED%95%98%EC%B2%A0.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2084/2084169.png", // Icon tàu điện ngầm
     wordType: "noun",
     subdescription:
@@ -11522,7 +11567,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Xe buýt",
     usage: "Phương tiện công cộng đường bộ.",
     description: "Xe buýt.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_beoseu.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F5%2Fvocab%2F%EB%B2%84%EC%8A%A4.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/3448/3448339.png", // Icon xe buýt
     wordType: "noun",
     subdescription: "Là từ mượn từ tiếng Anh 'Bus'.",
@@ -11541,7 +11587,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Taxi",
     usage: "Phương tiện di chuyển cá nhân có trả phí.",
     description: "Xe taxi.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_taeksi.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F5%2Fvocab%2F%ED%83%9D%EC%8B%9C.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2555/2555013.png", // Icon taxi
     wordType: "noun",
     subdescription: "Là từ mượn từ tiếng Anh 'Taxi'.",
@@ -11557,7 +11604,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Ở đâu / Nơi nào",
     usage: "Đại từ nghi vấn dùng để hỏi về địa điểm, vị trí.",
     description: "Từ để hỏi nơi chốn.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_eodi.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F5%2Fvocab%2F%EC%96%B4%EB%94%94.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2838/2838912.png", // Icon bản đồ/định vị hỏi chấm
     wordType: "pronoun",
     subdescription: "Thường dùng: <b>어디예요?</b> hoặc <b>어디에 있어요?</b>",
@@ -11606,7 +11654,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Đến / Lại đây",
     usage: "Di chuyển hướng về phía người nói.",
     description: "Động từ đến.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_oda.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F5%2Fvocab%2F%EA%B0%80%EB%8B%A4.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2928/2928867.png", // Icon mũi tên chỉ vào điểm đến
     wordType: "verb",
     subdescription: "Hiện tại: <b>와요</b>. Quá khứ: <b>왔어요</b>.",
@@ -11633,7 +11682,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Bên trái",
     usage: "Danh từ chỉ hướng bên trái.",
     description: "Hướng trái.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_oenjjok.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F5%2Fvocab%2F%EC%99%BC%EC%AA%BD.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/271/271220.png", // Icon mũi tên rẽ trái
     wordType: "noun",
     subdescription: "Ghép từ <b>왼</b> (trái) + <b>쪽</b> (phía).",
@@ -11657,7 +11707,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Bên phải",
     usage: "Danh từ chỉ hướng bên phải.",
     description: "Hướng phải.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_oreunjjok.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F5%2Fvocab%2F%EC%98%A4%EB%A5%B8%EC%AA%BD.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/271/271228.png", // Icon mũi tên rẽ phải
     wordType: "noun",
     subdescription: "Ghép từ <b>오른</b> (phải) + <b>쪽</b> (phía).",
@@ -11684,7 +11735,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Nhanh",
     usage: "Tính từ miêu tả tốc độ di chuyển hoặc thời gian trôi qua nhanh.",
     description: "Tính từ chỉ tốc độ nhanh.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_ppareuda.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F5%2Fvocab%2F%EB%B9%A0%EB%A5%B4%EB%8B%A4.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2764/2764527.png", // Icon đồng hồ chạy nhanh/thỏ
     wordType: "adjective",
     subdescription:
@@ -11718,7 +11770,7 @@ export const vocabList: Record<number, Vocab> = {
     usage: "Dùng để trấn an người khác, hoặc từ chối lịch sự.",
     description: "Cụm từ trấn an phổ biến.",
     audioUrl:
-      "https://firebasestorage.googleapis.com/.../vocab_gwaenchanayo.mp3",
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-6%2F5%2Fvocab%2F%EA%B4%9C%EC%B0%AE%EC%95%84%EC%9A%94.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/14442/14442923.png", // Icon OK hand sign
     wordType: "phrase",
     subdescription:
@@ -11746,7 +11798,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Thời tiết",
     usage: "Danh từ chỉ trạng thái khí quyển.",
     description: "Từ thuần Hàn chỉ thời tiết.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_nalssi.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F5%2Fvocab%2F%EB%82%A0%EC%94%A8.m4a?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/1163/1163661.png", // Icon mặt trời/mây
     wordType: "noun",
     subdescription:
@@ -11774,7 +11827,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Trong lành / Quang đãng",
     usage: "Tính từ miêu tả bầu trời không mây, trong xanh hoặc nước trong.",
     description: "Trời trong, không mây.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_makda.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F5%2Fvocab%2F%EB%A7%91%EB%8B%A4.m4a?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/869/869869.png", // Icon mặt trời sáng
     wordType: "adjective",
     subdescription: "Khi chia đuôi câu thân mật: <b>맑아요 (malgayo)</b>.",
@@ -11801,7 +11855,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Mưa",
     usage: "Danh từ chỉ nước mưa.",
     description: "Hiện tượng mưa.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_bi.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F5%2Fvocab%2F%EB%B9%84.m4a?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/1146/1146858.png", // Icon đám mây mưa
     wordType: "noun",
     subdescription: "Cụm từ phổ biến: <b>비가 오다</b> (Mưa rơi/Mưa đến).",
@@ -11823,7 +11878,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Lạnh",
     usage: "Dùng để miêu tả thời tiết lạnh hoặc cảm giác lạnh của cơ thể.",
     description: "Tính từ chỉ cảm giác lạnh.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_chupda.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F5%2Fvocab%2F%EC%B6%A5%EB%8B%A4.m4a?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2322/2322701.png", // Icon người run rẩy/tuyết
     wordType: "adjective",
     subdescription:
@@ -11848,7 +11904,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Nóng",
     usage: "Dùng để miêu tả thời tiết nóng hoặc cảm giác nóng bức.",
     description: "Tính từ chỉ cảm giác nóng.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_deopda.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F5%2Fvocab%2F%EB%8D%A5%EB%8B%A4.m4a?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/890/890347.png", // Icon người toát mồ hôi/mặt trời đỏ
     wordType: "adjective",
     subdescription:
@@ -11876,7 +11933,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Sức khỏe",
     usage: "Dùng để nói về tình trạng thể chất nói chung.",
     description: "Danh từ chỉ sức khỏe.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_geongang.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F5%2Fvocab%2F%EA%B1%B4%EA%B0%95.m4a?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2966/2966486.png", // Icon nhịp tim/sức khỏe
     wordType: "noun",
     subdescription:
@@ -11905,7 +11963,8 @@ export const vocabList: Record<number, Vocab> = {
     usage:
       "Dùng để diễn tả cảm giác đau đớn ở bộ phận cơ thể hoặc tình trạng bị bệnh.",
     description: "Tính từ chỉ sự đau ốm.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_apeuda.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F5%2Fvocab%2F%EC%95%84%ED%94%84%EB%8B%A4.m4a?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2355/2355436.png", // Icon người ôm đầu/băng bó
     wordType: "adjective",
     subdescription:
@@ -11933,7 +11992,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Cẩn thận",
     usage: "Dùng để nhắc nhở hoặc cảnh báo ai đó chú ý an toàn.",
     description: "Động từ cẩn thận, chú ý.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_josimhada.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F5%2Fvocab%2F%EC%A1%B0%EC%8B%AC%ED%95%98%EB%8B%A4.m4a?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/1008/1008932.png", // Icon biển báo chú ý
     wordType: "verb",
     subdescription:
@@ -11961,7 +12021,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Hạnh phúc",
     usage: "Danh từ chỉ trạng thái sung sướng, mãn nguyện.",
     description: "Danh từ hạnh phúc.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_haengbok.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F5%2Fvocab%2F%ED%96%89%EB%B3%B5%20(1).m4a?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/3933/3933022.png", // Icon cầu vồng/mặt cười
     wordType: "noun",
     subdescription:
@@ -11990,7 +12051,7 @@ export const vocabList: Record<number, Vocab> = {
     usage: "Dùng để chỉ thái độ, suy nghĩ lạc quan, mang tính xây dựng.",
     description: "Mang tính tích cực.",
     audioUrl:
-      "https://firebasestorage.googleapis.com/.../vocab_geungjeongjeok.mp3",
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-7%2F5%2Fvocab%2F%EA%B8%8D%EC%A0%95%EC%A0%81.m4a?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/1533/1533913.png", // Icon dấu cộng/pin đầy
     wordType: "noun",
     subdescription:
@@ -12019,7 +12080,8 @@ export const vocabList: Record<number, Vocab> = {
     usage:
       "Dùng để hỏi hoặc nói về những hoạt động yêu thích làm trong thời gian rảnh.",
     description: "Danh từ chỉ sở thích.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_chwimi.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F5%2Fvocab%2F%EC%B7%A8%EB%AF%B8.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/3079/3079165.png", // Icon bảng màu vẽ/đàn
     wordType: "noun",
     subdescription: "Bắt nguồn từ Hán tự <b>趣味 (Thú Vị)</b>.",
@@ -12038,7 +12100,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Sách",
     usage: "Danh từ chỉ sách vở nói chung.",
     description: "Sách.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_chaek.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F5%2Fvocab%2F%EC%B1%85.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/3330/3330314.png", // Icon quyển sách
     wordType: "noun",
     subdescription: "Thường đi với động từ <b>읽다</b> (đọc).",
@@ -12051,7 +12114,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Thể thao / Vận động",
     usage: "Dùng để chỉ các hoạt động thể dục thể thao.",
     description: "Sự vận động cơ thể.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_undong.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F5%2Fvocab%2F%EC%9A%B4%EB%8F%99.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2964/2964514.png", // Icon tạ/người chạy
     wordType: "noun",
     subdescription:
@@ -12071,7 +12135,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Âm nhạc",
     usage: "Danh từ chỉ âm nhạc.",
     description: "Âm nhạc.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_eumak.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F5%2Fvocab%2F%EC%9D%8C%EC%95%85.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/461/461238.png", // Icon nốt nhạc
     wordType: "noun",
     subdescription:
@@ -12088,7 +12153,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Phim điện ảnh",
     usage: "Chỉ phim chiếu rạp hoặc phim lẻ.",
     description: "Phim điện ảnh.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_yeonghwa.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F5%2Fvocab%2F%EC%98%81%ED%99%94.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2503/2503508.png", // Icon cuộn phim
     wordType: "noun",
     subdescription:
@@ -12105,7 +12171,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Cuối tuần",
     usage: "Chỉ thứ 7 và Chủ nhật.",
     description: "Thời gian nghỉ ngơi cuối tuần.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_jumal.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F5%2Fvocab%2F%EC%A3%BC%EB%A7%90.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2693/2693507.png", // Icon lịch đỏ cuối tuần
     wordType: "noun",
     subdescription: "Bắt nguồn từ Hán tự <b>週末 (Chu Mạt)</b>.",
@@ -12124,7 +12191,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Cùng nhau",
     usage: "Phó từ dùng để rủ rê hoặc mô tả hành động làm chung với ai đó.",
     description: "Phó từ chỉ sự cùng nhau.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_gachi.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F5%2Fvocab%2F%EA%B0%99%EC%9D%B4.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/1189/1189166.png", // Icon 2 người nắm tay
     wordType: "adverb",
     subdescription: "⚠️ Phát âm là <b>[가치] (ga-chi)</b>.",
@@ -12143,7 +12211,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Kế hoạch",
     usage: "Dùng để nói về dự định.",
     description: "Dự định, kế hoạch.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_gyehoek.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F5%2Fvocab%2F%EA%B3%84%ED%9A%8D.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/3209/3209965.png", // Icon bản kế hoạch/giấy note
     wordType: "noun",
     subdescription: "Bắt nguồn từ Hán tự <b>計劃 (Kế Hoạch)</b>.",
@@ -12162,7 +12231,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Công viên",
     usage: "Nơi vui chơi giải trí công cộng.",
     description: "Công viên.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_gongwon.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F5%2Fvocab%2F%EA%B3%B5%EC%9B%90.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2830/2830160.png", // Icon ghế đá công viên/cây
     wordType: "noun",
     subdescription: "Bắt nguồn từ Hán tự <b>公園 (Công Viên)</b>.",
@@ -12182,7 +12252,8 @@ export const vocabList: Record<number, Vocab> = {
     usage:
       "Dùng để đánh giá nội dung của một bộ phim, cuốn sách, trò chơi... là hay, hấp dẫn.",
     description: "Tính từ chỉ sự thú vị.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_jaemiitda.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F5%2Fvocab%2F%EC%9E%AC%EB%AF%B8%EC%9E%88%EB%8B%A4.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/408/408421.png", // Icon mặt cười/bỏng ngô
     wordType: "adjective",
     subdescription:
@@ -12203,7 +12274,8 @@ export const vocabList: Record<number, Vocab> = {
     usage:
       "Dùng để diễn tả tâm trạng hân hoan, sảng khoái của bản thân khi trải nghiệm điều gì đó.",
     description: "Tính từ chỉ cảm giác vui vẻ.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_jeulgeopda.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F5%2Fvocab%2F%EC%A6%90%EA%B2%81%EB%8B%A4.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/1933/1933691.png", // Icon người nhảy múa vui vẻ
     wordType: "adjective",
     subdescription:
@@ -12223,7 +12295,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Tuyệt nhất / Số 1",
     usage: "Dùng để khen ngợi hoặc khẳng định vị trí cao nhất.",
     description: "Danh từ chỉ mức độ cao nhất.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_choego.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F5%2Fvocab%2F%EC%B5%9C%EA%B3%A0.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/1628/1628931.png", // Icon ngón tay cái
     wordType: "noun",
     subdescription: "Bắt nguồn từ Hán tự <b>最高 (Tối Cao)</b>.",
@@ -12242,7 +12315,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Cuộc sống / Đời người",
     usage: "Dùng để nói về cuộc đời.",
     description: "Danh từ nhân sinh.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_insaeng.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F5%2Fvocab%2F%EC%9D%B8%EC%83%9D.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2921/2921229.png", // Icon con đường đời/cây đời
     wordType: "noun",
     subdescription: "Bắt nguồn từ Hán tự <b>人生 (Nhân Sinh)</b>.",
@@ -12261,7 +12335,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Việc / Công việc",
     usage: "Chỉ công việc làm ăn hoặc một sự việc nào đó.",
     description: "Danh từ chỉ công việc.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_il.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-8%2F5%2Fvocab%2F%EC%9D%BC.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2082/2082103.png", // Icon cặp tài liệu
     wordType: "noun",
     subdescription: "Cũng có nghĩa là 'Ngày' hoặc số '1', tùy ngữ cảnh.",
@@ -12277,7 +12352,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Văn hóa",
     usage: "Dùng để nói về phong tục, tập quán, lối sống.",
     description: "Danh từ văn hóa.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_munhwa.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F5%2Fvocab%2F%EB%AC%B8%ED%99%94.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2041/2041164.png", // Icon mặt nạ truyền thống/quạt
     wordType: "noun",
     subdescription: "Bắt nguồn từ Hán tự <b>文化 (Văn Hóa)</b>.",
@@ -12304,7 +12380,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Chào hỏi",
     usage: "Hành động chào hỏi khi gặp mặt hoặc chia tay.",
     description: "Danh từ chào hỏi.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_insa.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F5%2Fvocab%2F%EC%9D%B8%EC%82%AC.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2645/2645962.png", // Icon hai người cúi chào
     wordType: "noun",
     subdescription:
@@ -12332,7 +12409,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Phép tắc / Lễ nghi",
     usage: "Dùng để nói về các quy tắc ứng xử trong xã hội.",
     description: "Danh từ lễ nghi.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_yejeol.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F5%2Fvocab%2F%EC%98%88%EC%A0%88.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/3322/3322064.png", // Icon người cúi chào lịch sự
     wordType: "noun",
     subdescription: "Bắt nguồn từ Hán tự <b>禮節 (Lễ Tiết)</b>.",
@@ -12361,7 +12439,7 @@ export const vocabList: Record<number, Vocab> = {
       "Dùng để bày tỏ sự ngưỡng mộ và kính nể đối với ai đó (thường là người lớn, thầy cô, vĩ nhân).",
     description: "Động từ tôn trọng.",
     audioUrl:
-      "https://firebasestorage.googleapis.com/.../vocab_jongyeonghada.mp3",
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F5%2Fvocab%2F%EC%A1%B4%EA%B2%BD%ED%95%98%EB%8B%A4.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2353/2353678.png", // Icon huy chương/người được tôn vinh
     wordType: "verb",
     subdescription: "Bắt nguồn từ Hán tự <b>尊敬 (Tôn Kính)</b>.",
@@ -12389,7 +12467,8 @@ export const vocabList: Record<number, Vocab> = {
     usage:
       "Dùng cho việc học tập kiến thức, kỹ năng (từ ai đó hoặc trường lớp).",
     description: "Động từ học.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_baeuda.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F5%2Fvocab%2F%EB%B0%B0%EC%9A%B0%EB%8B%A4.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2436/2436874.png", // Icon học sinh/sách vở
     wordType: "verb",
     subdescription:
@@ -12417,7 +12496,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Món ăn / Đồ ăn",
     usage: "Dùng để chỉ thực phẩm, các món ăn nói chung.",
     description: "Danh từ món ăn.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_eumsik.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F5%2Fvocab%2F%EC%9D%8C%EC%8B%9D.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/1046/1046751.png", // Icon đĩa thức ăn
     wordType: "noun",
     subdescription: "Bắt nguồn từ Hán tự <b>飮食 (Ẩm Thực)</b>.",
@@ -12444,7 +12524,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Truyền thống",
     usage: "Dùng để chỉ những giá trị, tập quán được lưu truyền từ xưa.",
     description: "Danh từ truyền thống.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_jeontong.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F5%2Fvocab%2F%EC%A0%84%ED%86%B5.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/3665/3665919.png", // Icon quạt/trống truyền thống
     wordType: "noun",
     subdescription: "Bắt nguồn từ Hán tự <b>傳統 (Truyền Thống)</b>.",
@@ -12472,7 +12553,8 @@ export const vocabList: Record<number, Vocab> = {
     usage:
       "Dùng để miêu tả vẻ đẹp lộng lẫy, thường dùng cho phong cảnh, nghệ thuật hoặc vẻ đẹp cao quý.",
     description: "Tính từ đẹp (mức độ cao).",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_areumdapda.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F5%2Fvocab%2F%EC%95%84%EB%A6%84%EB%8B%B5%EB%8B%A4.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/890/890122.png", // Icon bông hoa/cảnh đẹp
     wordType: "adjective",
     subdescription:
@@ -12500,7 +12582,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Hiểu / Thấu hiểu",
     usage: "Dùng khi nắm bắt được ý nghĩa, nội dung hoặc cảm thông với ai đó.",
     description: "Động từ hiểu.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_ihaehada.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F5%2Fvocab%2F%EC%9D%B4%ED%95%B4%ED%95%98%EB%8B%A4.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/3153/3153060.png", // Icon bóng đèn bật sáng trong đầu
     wordType: "verb",
     subdescription: "Bắt nguồn từ Hán tự <b>理解 (Lý Giải)</b>.",
@@ -12527,7 +12610,8 @@ export const vocabList: Record<number, Vocab> = {
     meaning: "Ý nghĩa",
     usage: "Dùng để nói về giá trị hoặc nội dung hàm ẩn của sự việc.",
     description: "Danh từ ý nghĩa.",
-    audioUrl: "https://firebasestorage.googleapis.com/.../vocab_uimi.mp3",
+    audioUrl:
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F5%2Fvocab%2F%EC%9D%98%EB%AF%B8.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/1754/1754260.png", // Icon cuốn từ điển/dấu hỏi
     wordType: "noun",
     subdescription: "Bắt nguồn từ Hán tự <b>意味 (Ý Vị)</b>.",
@@ -12555,7 +12639,7 @@ export const vocabList: Record<number, Vocab> = {
     usage: "Động từ chỉ hoạt động tư duy hoặc đưa ra quan điểm.",
     description: "Động từ suy nghĩ.",
     audioUrl:
-      "https://firebasestorage.googleapis.com/.../vocab_saenggakhada.mp3",
+      "https://firebasestorage.googleapis.com/v0/b/nguyenductuan-bf7a1.firebasestorage.app/o/uploads%2Fhangul-audio%2Ftopic-9%2F5%2Fvocab%2F%EC%83%9D%EA%B0%81%ED%95%98%EB%8B%A4.mp3?alt=media",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/2906/2906308.png", // Icon người đang suy nghĩ
     wordType: "verb",
     subdescription:
